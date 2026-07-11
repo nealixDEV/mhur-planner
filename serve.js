@@ -100,4 +100,4 @@ http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': types[path.extname(filePath)] || 'application/octet-stream', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Pragma': 'no-cache', 'Expires': '0' });
     res.end(data);
   });
-}).listen(port, () => console.log('Serving ' + root + ' at http://localhost:' + port + '/'));
+}).listen(port, '0.0.0.0', () => console.log('Serving ' + root + ' at http://0.0.0.0:' + port + '/'));
