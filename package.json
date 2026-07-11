@@ -1,0 +1,12 @@
+{
+  "name": "mhur-planner",
+  "version": "1.0.0",
+  "description": "MHUR T.U.N.I.N.G. Planner & Build Forum",
+  "main": "serve.js",
+  "scripts": {
+    "start": "node serve.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

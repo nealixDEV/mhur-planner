@@ -1,0 +1,760 @@
+{
+  "generatedAt": "2026-07-10T03:04:19.525Z",
+  "source": "workspace scrape data",
+  "characterCount": 38,
+  "characters": [
+    {
+      "id": "izuku",
+      "num": 1,
+      "name": "Izuku Midoriya",
+      "group": "Hero",
+      "role": "Assault",
+      "battleStyles": [
+        {
+          "name": "Full Bullet",
+          "type": "Strike"
+        }
+      ],
+      "stats": {
+        "hp": 300,
+        "gp": 250,
+        "melee": null,
+        "alpha": 58,
+        "beta": 120,
+        "gamma": 58,
+        "sa": 14
+      }
+    },
+    {
+      "id": "izuku_ofa",
+      "num": 202,
+      "name": "Izuku Midoriya (OFA)",
+      "group": "Hero",
+      "role": "Rapid",
+      "battleStyles": [],
+      "stats": {
+        "hp": 300,
+        "gp": 250,
+        "melee": null,
+        "alpha": 80,
+        "beta": 14,
+        "gamma": 133,
+        "sa": null
+      }
+    },
+    {
+      "id": "katsuki",
+      "num": 2,
+      "name": "Katsuki Bakugo",
+      "group": "Hero",
+      "role": "Strike",
+      "battleStyles": [
+        {
+          "name": "Machine Gun",
+          "type": "Rapid"
+        },
+        {
+          "name": "Cluster",
+          "type": "Technical"
+        }
+      ],
+      "stats": {
+        "hp": 350,
+        "gp": 250,
+        "melee": null,
+        "alpha": 58,
+        "beta": 75,
+        "gamma": 4,
+        "sa": 18
+      }
+    },
+    {
+      "id": "ochaco",
+      "num": 3,
+      "name": "Ochaco Uraraka",
+      "group": "Hero",
+      "role": "Rapid",
+      "battleStyles": [
+        {
+          "name": "Zero Satellites",
+          "type": "Assault"
+        }
+      ],
+      "stats": {
+        "hp": 300,
+        "gp": 250,
+        "melee": null,
+        "alpha": 60,
+        "beta": 40,
+        "gamma": 60,
+        "sa": 101
+      }
+    },
+    {
+      "id": "tenya",
+      "num": 5,
+      "name": "Tenya Iida",
+      "group": "Hero",
+      "role": "Rapid",
+      "battleStyles": [],
+      "stats": {
+        "hp": 300,
+        "gp": 250,
+        "melee": null,
+        "alpha": 40,
+        "beta": 110,
+        "gamma": null,
+        "sa": null
+      }
+    },
+    {
+      "id": "tsuyu",
+      "num": 6,
+      "name": "Tsuyu Asui",
+      "group": "Hero",
+      "role": "Rapid",
+      "battleStyles": [],
+      "stats": {
+        "hp": 250,
+        "gp": 250,
+        "melee": null,
+        "alpha": 55,
+        "beta": 76,
+        "gamma": null,
+        "sa": null
+      }
+    },
+    {
+      "id": "shoto",
+      "num": 4,
+      "name": "Shoto Todoroki",
+      "group": "Hero",
+      "role": "Strike",
+      "battleStyles": [
+        {
+          "name": "Ice Fang Wind Flame",
+          "type": "Technical"
+        }
+      ],
+      "stats": {
+        "hp": 350,
+        "gp": 250,
+        "melee": null,
+        "alpha": 54,
+        "beta": 130,
+        "gamma": 54,
+        "sa": 55
+      }
+    },
+    {
+      "id": "eijiro",
+      "num": 8,
+      "name": "Eijiro Kirishima",
+      "group": "Hero",
+      "role": "Assault",
+      "battleStyles": [
+        {
+          "name": "Red Drive",
+          "type": "Strike"
+        }
+      ],
+      "stats": {
+        "hp": 400,
+        "gp": 250,
+        "melee": null,
+        "alpha": 11,
+        "beta": 100,
+        "gamma": 120,
+        "sa": 38
+      }
+    },
+    {
+      "id": "momo",
+      "num": 10,
+      "name": "Momo Yaoyorozu",
+      "group": "Hero",
+      "role": "Support",
+      "battleStyles": [],
+      "stats": {
+        "hp": 350,
+        "gp": 250,
+        "melee": null,
+        "alpha": 44,
+        "beta": 100,
+        "gamma": 80,
+        "sa": null
+      }
+    },
+    {
+      "id": "fumikage",
+      "num": 11,
+      "name": "Fumikage Tokoyami",
+      "group": "Hero",
+      "role": "Assault",
+      "battleStyles": [],
+      "stats": {
+        "hp": 300,
+        "gp": 250,
+        "melee": null,
+        "alpha": 50,
+        "beta": 16,
+        "gamma": null,
+        "sa": null
+      }
+    },
+    {
+      "id": "denki",
+      "num": 7,
+      "name": "Denki Kaminari",
+      "group": "Hero",
+      "role": "Strike",
+      "battleStyles": [
+        {
+          "name": "Lightning",
+          "type": "Technical"
+        }
+      ],
+      "stats": {
+        "hp": 350,
+        "gp": 250,
+        "melee": null,
+        "alpha": 55,
+        "beta": 55,
+        "gamma": 80,
+        "sa": 31
+      }
+    },
+    {
+      "id": "neito",
+      "num": 104,
+      "name": "Neito Monoma",
+      "group": "Hero",
+      "role": "Technical",
+      "battleStyles": [],
+      "stats": {
+        "hp": 300,
+        "gp": 250,
+        "melee": null,
+        "alpha": 10,
+        "beta": 80,
+        "gamma": null,
+        "sa": 10
+      }
+    },
+    {
+      "id": "kendo",
+      "num": 46,
+      "name": "Itsuka Kendo",
+      "group": "Hero",
+      "role": "Assault",
+      "battleStyles": [
+        {
+          "name": "Twin Palm Strike",
+          "type": "Strike"
+        }
+      ],
+      "stats": {
+        "hp": 400,
+        "gp": 250,
+        "melee": null,
+        "alpha": 22,
+        "beta": 0,
+        "gamma": 130,
+        "sa": 34
+      }
+    },
+    {
+      "id": "ibara",
+      "num": 102,
+      "name": "Ibara Shiozaki",
+      "group": "Hero",
+      "role": "Support",
+      "battleStyles": [],
+      "stats": {
+        "hp": 400,
+        "gp": 250,
+        "melee": null,
+        "alpha": 53,
+        "beta": 40,
+        "gamma": 15,
+        "sa": null
+      }
+    },
+    {
+      "id": "mirio",
+      "num": 24,
+      "name": "Mirio Togata",
+      "group": "Hero",
+      "role": "Rapid",
+      "battleStyles": [
+        {
+          "name": "Sheer Counter",
+          "type": "Technical"
+        }
+      ],
+      "stats": {
+        "hp": 250,
+        "gp": 250,
+        "melee": null,
+        "alpha": 35,
+        "beta": 120,
+        "gamma": 80,
+        "sa": 40
+      }
+    },
+    {
+      "id": "tamaki",
+      "num": 26,
+      "name": "Tamaki Amajiki",
+      "group": "Hero",
+      "role": "Strike",
+      "battleStyles": [],
+      "stats": {
+        "hp": 350,
+        "gp": 250,
+        "melee": null,
+        "alpha": 55,
+        "beta": 110,
+        "gamma": 55,
+        "sa": null
+      }
+    },
+    {
+      "id": "nejire",
+      "num": 25,
+      "name": "Nejire Hado",
+      "group": "Hero",
+      "role": "Technical",
+      "battleStyles": [
+        {
+          "name": "Fairy",
+          "type": "Support"
+        }
+      ],
+      "stats": {
+        "hp": 300,
+        "gp": 250,
+        "melee": null,
+        "alpha": 22,
+        "beta": 23,
+        "gamma": 22,
+        "sa": 35
+      }
+    },
+    {
+      "id": "hitoshi",
+      "num": 105,
+      "name": "Hitoshi Shinso",
+      "group": "Hero",
+      "role": "Strike",
+      "battleStyles": [],
+      "stats": {
+        "hp": 300,
+        "gp": 250,
+        "melee": null,
+        "alpha": 25,
+        "beta": 25,
+        "gamma": 0,
+        "sa": null
+      }
+    },
+    {
+      "id": "allmight",
+      "num": 12,
+      "name": "All Might",
+      "group": "Hero",
+      "role": "Assault",
+      "battleStyles": [
+        {
+          "name": "Gatling",
+          "type": "Rapid"
+        }
+      ],
+      "stats": {
+        "hp": 350,
+        "gp": 250,
+        "melee": null,
+        "alpha": 63,
+        "beta": 40,
+        "gamma": 75,
+        "sa": 22
+      }
+    },
+    {
+      "id": "armored",
+      "num": 200,
+      "name": "Armored All Might",
+      "group": "Hero",
+      "role": "Technical",
+      "battleStyles": [],
+      "stats": {
+        "hp": 350,
+        "gp": 250,
+        "melee": null,
+        "alpha": 30,
+        "beta": 30,
+        "gamma": 10,
+        "sa": null
+      }
+    },
+    {
+      "id": "aizawa",
+      "num": 13,
+      "name": "Shota Aizawa",
+      "group": "Hero",
+      "role": "Technical",
+      "battleStyles": [
+        {
+          "name": "Flow Runner",
+          "type": "Strike"
+        }
+      ],
+      "stats": {
+        "hp": 300,
+        "gp": 250,
+        "melee": null,
+        "alpha": 100,
+        "beta": 5,
+        "gamma": 12,
+        "sa": 30
+      }
+    },
+    {
+      "id": "mic",
+      "num": 109,
+      "name": "Present Mic",
+      "group": "Hero",
+      "role": "Strike",
+      "battleStyles": [
+        {
+          "name": "D.J. Board",
+          "type": "Technical"
+        }
+      ],
+      "stats": {
+        "hp": 300,
+        "gp": 250,
+        "melee": null,
+        "alpha": 55,
+        "beta": 80,
+        "gamma": 100,
+        "sa": 55
+      }
+    },
+    {
+      "id": "cement",
+      "num": 101,
+      "name": "Cementoss",
+      "group": "Hero",
+      "role": "Support",
+      "battleStyles": [],
+      "stats": {
+        "hp": 350,
+        "gp": 250,
+        "melee": null,
+        "alpha": 40,
+        "beta": 125,
+        "gamma": 35,
+        "sa": null
+      }
+    },
+    {
+      "id": "endeavor",
+      "num": 23,
+      "name": "Endeavor",
+      "group": "Hero",
+      "role": "Strike",
+      "battleStyles": [
+        {
+          "name": "Inferno Fist",
+          "type": "Assault"
+        }
+      ],
+      "stats": {
+        "hp": 350,
+        "gp": 250,
+        "melee": null,
+        "alpha": 18,
+        "beta": 90,
+        "gamma": 16,
+        "sa": 50
+      }
+    },
+    {
+      "id": "hawks",
+      "num": 43,
+      "name": "Hawks",
+      "group": "Hero",
+      "role": "Rapid",
+      "battleStyles": [
+        {
+          "name": "Slicing Wind",
+          "type": "Strike"
+        }
+      ],
+      "stats": {
+        "hp": 250,
+        "gp": 250,
+        "melee": 90,
+        "alpha": 12,
+        "beta": 65,
+        "gamma": 75,
+        "sa": 50
+      }
+    },
+    {
+      "id": "mirko",
+      "num": 111,
+      "name": "Mirko",
+      "group": "Hero",
+      "role": "Rapid",
+      "battleStyles": [],
+      "stats": {
+        "hp": 300,
+        "gp": 250,
+        "melee": null,
+        "alpha": 32,
+        "beta": 32,
+        "gamma": 6,
+        "sa": null
+      }
+    },
+    {
+      "id": "star",
+      "num": 114,
+      "name": "Star and Stripe",
+      "group": "Hero",
+      "role": "Strike",
+      "battleStyles": [],
+      "stats": {
+        "hp": 350,
+        "gp": 250,
+        "melee": null,
+        "alpha": 12,
+        "beta": 0,
+        "gamma": 2,
+        "sa": null
+      }
+    },
+    {
+      "id": "mtlady",
+      "num": 100,
+      "name": "Mt. Lady",
+      "group": "Hero",
+      "role": "Assault",
+      "battleStyles": [],
+      "stats": {
+        "hp": 350,
+        "gp": 250,
+        "melee": null,
+        "alpha": 30,
+        "beta": 30,
+        "gamma": 85,
+        "sa": null
+      }
+    },
+    {
+      "id": "tomura",
+      "num": 15,
+      "name": "Tomura Shigaraki",
+      "group": "Villain",
+      "role": "Strike",
+      "battleStyles": [
+        {
+          "name": "Catastrophe",
+          "type": "Assault"
+        },
+        {
+          "name": "Thousand-Hand Break",
+          "type": "Technical"
+        }
+      ],
+      "stats": {
+        "hp": 300,
+        "gp": 250,
+        "melee": null,
+        "alpha": 17,
+        "beta": 18,
+        "gamma": 24,
+        "sa": 60
+      }
+    },
+    {
+      "id": "afo",
+      "num": 16,
+      "name": "All For One",
+      "group": "Villain",
+      "role": "Technical",
+      "battleStyles": [
+        {
+          "name": "Factor Fusion",
+          "type": "Strike"
+        }
+      ],
+      "stats": {
+        "hp": 350,
+        "gp": 250,
+        "melee": null,
+        "alpha": 54,
+        "beta": 18,
+        "gamma": null,
+        "sa": 54
+      }
+    },
+    {
+      "id": "afo_youth",
+      "num": 201,
+      "name": "All For One (Youth)",
+      "group": "Villain",
+      "role": "Assault",
+      "battleStyles": [],
+      "stats": {
+        "hp": 300,
+        "gp": 250,
+        "melee": null,
+        "alpha": 56,
+        "beta": 5,
+        "gamma": 56,
+        "sa": null
+      }
+    },
+    {
+      "id": "dabi",
+      "num": 17,
+      "name": "Dabi",
+      "group": "Villain",
+      "role": "Technical",
+      "battleStyles": [
+        {
+          "name": "Crazy Torch",
+          "type": "Strike"
+        }
+      ],
+      "stats": {
+        "hp": 350,
+        "gp": 250,
+        "melee": null,
+        "alpha": 20,
+        "beta": 20,
+        "gamma": 20,
+        "sa": 60
+      }
+    },
+    {
+      "id": "himiko",
+      "num": 18,
+      "name": "Himiko Toga",
+      "group": "Villain",
+      "role": "Technical",
+      "battleStyles": [
+        {
+          "name": "Sting Dance",
+          "type": "Rapid"
+        }
+      ],
+      "stats": {
+        "hp": 350,
+        "gp": 250,
+        "melee": null,
+        "alpha": 20,
+        "beta": 20,
+        "gamma": 20,
+        "sa": 19
+      }
+    },
+    {
+      "id": "twice",
+      "num": 37,
+      "name": "Twice",
+      "group": "Villain",
+      "role": "Rapid",
+      "battleStyles": [],
+      "stats": {
+        "hp": 300,
+        "gp": 250,
+        "melee": null,
+        "alpha": 23,
+        "beta": 23,
+        "gamma": null,
+        "sa": null
+      }
+    },
+    {
+      "id": "compress",
+      "num": 38,
+      "name": "Mr. Compress",
+      "group": "Villain",
+      "role": "Support",
+      "battleStyles": [],
+      "stats": {
+        "hp": 300,
+        "gp": 250,
+        "melee": null,
+        "alpha": 52,
+        "beta": 60,
+        "gamma": 60,
+        "sa": null
+      }
+    },
+    {
+      "id": "kurogiri",
+      "num": 103,
+      "name": "Kurogiri",
+      "group": "Villain",
+      "role": "Support",
+      "battleStyles": [],
+      "stats": {
+        "hp": 300,
+        "gp": 250,
+        "melee": null,
+        "alpha": 44,
+        "beta": 100,
+        "gamma": 44,
+        "sa": null
+      }
+    },
+    {
+      "id": "nagant",
+      "num": 115,
+      "name": "Lady Nagant",
+      "group": "Villain",
+      "role": "Strike",
+      "battleStyles": [],
+      "stats": {
+        "hp": 250,
+        "gp": 250,
+        "melee": null,
+        "alpha": 47,
+        "beta": 25,
+        "gamma": 120,
+        "sa": null
+      }
+    },
+    {
+      "id": "overhaul",
+      "num": 34,
+      "name": "Overhaul",
+      "group": "Villain",
+      "role": "Support",
+      "battleStyles": [
+        {
+          "name": "Blighted Precipice",
+          "type": "Assault"
+        }
+      ],
+      "stats": {
+        "hp": 350,
+        "gp": 250,
+        "melee": null,
+        "alpha": 15,
+        "beta": 30,
+        "gamma": 15,
+        "sa": 54
+      }
+    }
+  ],
+  "tuningCounts": {
+    "normal": 59,
+    "special": 59
+  }
+}

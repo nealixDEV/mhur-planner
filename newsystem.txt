@@ -1,0 +1,208 @@
+Implement a global Team Role Bonus system.
+
+The Team Role Bonus system is NOT a standalone calculator. It is a global modifier that automatically affects every calculator in the planner.
+
+━━━━━━━━━━━━━━━━━━━━
+UI
+━━━━━━━━━━━━━━━━━━━━
+
+Create a new panel titled:
+
+Team Role Bonuses
+
+Controls:
+
+☑ Enable Team Role Bonuses
+
+Teammate 1
+[ None ▼ ]
+
+Teammate 2
+[ None ▼ ]
+
+Dropdown Options:
+
+• None
+• Strike
+• Assault
+• Rapid
+• Technical
+• Support
+
+Display the currently active bonuses underneath.
+
+Example:
+
+Active Bonuses
+
+Strike Lv.2
+Assault Lv.1
+
+━━━━━━━━━━━━━━━━━━━━
+Logic
+━━━━━━━━━━━━━━━━━━━━
+
+The selected character always counts as one member of their own role.
+
+The user never selects their own role.
+
+Example
+
+Selected Character:
+Strike Deku
+
+Starting Counts
+
+Strike = 1
+
+If Teammate 1 = Strike
+
+Strike = 2
+
+If Teammate 2 = Assault
+
+Strike = 2
+Assault = 1
+
+Active Bonuses
+
+Strike Lv.2
+Assault Lv.1
+
+━━━━━━━━━━━━━━━━━━━━
+Counting Rules
+━━━━━━━━━━━━━━━━━━━━
+
+For every role:
+
+0 Characters
+No bonus.
+
+1 Character
+Apply Level 1 Team Bonus.
+
+2 Characters
+Apply Level 2 Team Bonus.
+
+3 Characters
+Apply Level 3 Team Bonus.
+
+Every active Team Role Bonus is applied simultaneously.
+
+Examples
+
+Team
+
+Strike
+Strike
+Rapid
+
+Results
+
+Strike Lv.2
+Rapid Lv.1
+
+--------------------------------
+
+Team
+
+Assault
+Technical
+Support
+
+Results
+
+Assault Lv.1
+Technical Lv.1
+Support Lv.1
+
+--------------------------------
+
+Team
+
+Rapid
+Rapid
+Rapid
+
+Results
+
+Rapid Lv.3
+
+━━━━━━━━━━━━━━━━━━━━
+Solo Behavior
+━━━━━━━━━━━━━━━━━━━━
+
+If both teammate dropdowns are set to None, the selected character still counts as one member of their own role.
+
+Example
+
+Selected Character:
+Strike
+
+Teammate 1:
+None
+
+Teammate 2:
+None
+
+Result
+
+Strike Lv.1
+
+━━━━━━━━━━━━━━━━━━━━
+Global System
+━━━━━━━━━━━━━━━━━━━━
+
+This system should not perform calculations itself.
+
+Instead, it should maintain a single global Team Role Bonus state that every calculator automatically reads.
+
+Whenever any of the following changes:
+
+• Selected Character
+• Enable Team Role Bonuses
+• Teammate 1
+• Teammate 2
+
+Recalculate the active Team Role Bonuses once and update the global state.
+
+Every calculator should automatically include those bonuses without requiring any additional user input.
+
+━━━━━━━━━━━━━━━━━━━━
+Integration
+━━━━━━━━━━━━━━━━━━━━
+
+When Team Role Bonuses are enabled, they should automatically modify every applicable calculator, including:
+
+• Damage Calculator
+• HP Calculator
+• HP / Defense Calculator
+• Reload Calculator
+• Movement Calculator
+• Misc Calculator
+• Ability Manifest Calculator (if applicable to future role effects)
+
+The user should never need to enable role bonuses separately inside each calculator.
+
+━━━━━━━━━━━━━━━━━━━━
+Architecture
+━━━━━━━━━━━━━━━━━━━━
+
+Create a centralized TeamRoleBonusManager (or equivalent shared state).
+
+Responsibilities:
+
+• Determine the selected character's role.
+• Count teammate roles.
+• Determine each active Team Role Bonus level.
+• Store every active Team Role Bonus globally.
+• Provide those bonuses to every calculator.
+
+All calculators should consume this shared Team Role Bonus state instead of implementing their own team bonus logic.
+
+This ensures:
+
+• One source of truth.
+• No duplicated calculations.
+• Every calculator remains synchronized.
+• Future Team Role Bonus value changes only require updating one data table.

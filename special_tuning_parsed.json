@@ -1,0 +1,1485 @@
+[
+  {
+    "chara": "1",
+    "role": "Assault",
+    "class": "HERO",
+    "name": "Izuku Midoriya",
+    "skillName": "Speedy Civilian Rescue",
+    "skillDesc": "For a set amount of time after the battle starts, shortens the time required to rescue/threaten a civilian.",
+    "levels": [
+      "Level 1: 60",
+      "Level 2: 90",
+      "Level 3: 120",
+      "Level 4: 150",
+      "Level 5: 180",
+      "Level 6: 370",
+      "Level 7: 490",
+      "Level 8: 610",
+      "Level 9: 730",
+      "Level 10: 850",
+      "Level 11: 1200"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 0.2"
+    ],
+    "id": "1_speedy_civilian_rescue"
+  },
+  {
+    "chara": "1",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Izuku Midoriya (Full Bullet)",
+    "skillName": "Kota Finder",
+    "skillDesc": "Shows you Kota's location on the Stage and Map.",
+    "levels": [
+      "Level 1: 60",
+      "Level 2: 56",
+      "Level 3: 52",
+      "Level 4: 48",
+      "Level 5: 44",
+      "Level 6: 24",
+      "Level 7: 20",
+      "Level 8: 16",
+      "Level 9: 12",
+      "Level 10: 8",
+      "Level 11: 0"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1"
+    ],
+    "id": "1_kota_finder"
+  },
+  {
+    "chara": "2",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Katsuki Bakugo",
+    "skillName": "Crushing PU Charge",
+    "skillDesc": "Fills up your PU/PC Gauge when you K.O. opponents.",
+    "levels": [
+      "Level 1: 0.99",
+      "Level 2: 0.98",
+      "Level 3: 0.97",
+      "Level 4: 0.96",
+      "Level 5: 0.95",
+      "Level 6: 0.85",
+      "Level 7: 0.84",
+      "Level 8: 0.83",
+      "Level 9: 0.82",
+      "Level 10: 0.81",
+      "Level 11: 0.8"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1"
+    ],
+    "id": "2_crushing_pu_charge"
+  },
+  {
+    "chara": "2",
+    "role": "Rapid",
+    "class": "HERO",
+    "name": "Katsuki Bakugo (Machine Gun)",
+    "skillName": "PU Turbo",
+    "skillDesc": "When you make opponents go DOWN, fills up your PU/PC Gauge and allows you to wall run for a set amount of time.",
+    "levels": [
+      "Level 1: 6",
+      "Level 2: 7",
+      "Level 3: 8",
+      "Level 4: 9",
+      "Level 5: 10",
+      "Level 6: 20",
+      "Level 7: 25",
+      "Level 8: 30",
+      "Level 9: 35",
+      "Level 10: 40",
+      "Level 11: 50"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 0.95"
+    ],
+    "id": "2_pu_turbo"
+  },
+  {
+    "chara": "2",
+    "role": "Technical",
+    "class": "HERO",
+    "name": "Katsuki Bakugo (Cluster)",
+    "skillName": "Explosive Rampage",
+    "skillDesc": "If you take DOWN an opponent while GP is full, a Team Enhancement Kit appears when that opponent is K.O.'d.",
+    "levels": [
+      "Level 1: 1",
+      "Level 2: 2",
+      "Level 3: 3",
+      "Level 4: 4",
+      "Level 5: 5",
+      "Level 6: 6",
+      "Level 7: 7",
+      "Level 8: 8",
+      "Level 9: 9",
+      "Level 10: 10",
+      "Level 11: 11"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1"
+    ],
+    "id": "2_explosive_rampage"
+  },
+  {
+    "chara": "3",
+    "role": "Rapid",
+    "class": "HERO",
+    "name": "Ochaco Uraraka",
+    "skillName": "Revenge Rapid",
+    "skillDesc": "When your Guard breaks, increases your movement speed and allows you to wall run for a set amount of time.",
+    "levels": [
+      "Level 1: 3",
+      "Level 2: 3.5",
+      "Level 3: 4",
+      "Level 4: 4.5",
+      "Level 5: 5",
+      "Level 6: 10",
+      "Level 7: 11.5",
+      "Level 8: 13",
+      "Level 9: 14.5",
+      "Level 10: 16",
+      "Level 11: 20"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1.2"
+    ],
+    "id": "3_revenge_rapid"
+  },
+  {
+    "chara": "3",
+    "role": "Assault",
+    "class": "HERO",
+    "name": "Ochaco Uraraka (Zero Satellites)",
+    "skillName": "Space Hop",
+    "skillDesc": "For a set amount of time after the battle starts, vertical jumps are enhanced.",
+    "levels": [
+      "Level 1: 60",
+      "Level 2: 90",
+      "Level 3: 120",
+      "Level 4: 150",
+      "Level 5: 180",
+      "Level 6: 370",
+      "Level 7: 490",
+      "Level 8: 610",
+      "Level 9: 730",
+      "Level 10: 850",
+      "Level 11: 1200"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1",
+      "Sub Effect 2: 1100"
+    ],
+    "id": "3_space_hop"
+  },
+  {
+    "chara": "4",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Shoto Todoroki",
+    "skillName": "Resist Heat",
+    "skillDesc": "Cancels all burning effects immediately.",
+    "levels": [
+      "Level 1: 70",
+      "Level 2: 65",
+      "Level 3: 60",
+      "Level 4: 55",
+      "Level 5: 50",
+      "Level 6: 25",
+      "Level 7: 21",
+      "Level 8: 17",
+      "Level 9: 14",
+      "Level 10: 10",
+      "Level 11: 5"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 0.01"
+    ],
+    "id": "4_resist_heat"
+  },
+  {
+    "chara": "4",
+    "role": "Technical",
+    "class": "HERO",
+    "name": "Shoto Todoroki (Ice Fang Wind Flame)",
+    "skillName": "Resist Cold",
+    "skillDesc": "Cancels all freezing effects immediately.",
+    "levels": [
+      "Level 1: 70",
+      "Level 2: 65",
+      "Level 3: 60",
+      "Level 4: 55",
+      "Level 5: 50",
+      "Level 6: 25",
+      "Level 7: 21",
+      "Level 8: 17",
+      "Level 9: 14",
+      "Level 10: 10",
+      "Level 11: 5"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 0.1"
+    ],
+    "id": "4_resist_cold"
+  },
+  {
+    "chara": "5",
+    "role": "Rapid",
+    "class": "HERO",
+    "name": "Tenya Iida",
+    "skillName": "Wall Runner",
+    "skillDesc": "Allows you to wall run for a set amount of time after the battle starts.",
+    "levels": [
+      "Level 1: 60",
+      "Level 2: 90",
+      "Level 3: 120",
+      "Level 4: 150",
+      "Level 5: 180",
+      "Level 6: 370",
+      "Level 7: 490",
+      "Level 8: 610",
+      "Level 9: 730",
+      "Level 10: 850",
+      "Level 11: 1200"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1"
+    ],
+    "id": "5_wall_runner"
+  },
+  {
+    "chara": "6",
+    "role": "Rapid",
+    "class": "HERO",
+    "name": "Tsuyu Asui",
+    "skillName": "Camouflage",
+    "skillDesc": "Makes you invisible for a set amount of time if an ally goes DOWN.",
+    "levels": [
+      "Level 1: 30",
+      "Level 2: 32",
+      "Level 3: 34",
+      "Level 4: 36",
+      "Level 5: 38",
+      "Level 6: 50",
+      "Level 7: 58",
+      "Level 8: 66",
+      "Level 9: 74",
+      "Level 10: 82",
+      "Level 11: 90"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 2"
+    ],
+    "id": "6_camouflage"
+  },
+  {
+    "chara": "7",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Denki Kaminari",
+    "skillName": "Resist Shock",
+    "skillDesc": "Cancels all stun effects immediately.",
+    "levels": [
+      "Level 1: 70",
+      "Level 2: 65",
+      "Level 3: 60",
+      "Level 4: 55",
+      "Level 5: 50",
+      "Level 6: 25",
+      "Level 7: 21",
+      "Level 8: 17",
+      "Level 9: 14",
+      "Level 10: 10",
+      "Level 11: 5"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 0.1"
+    ],
+    "id": "7_resist_shock"
+  },
+  {
+    "chara": "7",
+    "role": "Technical",
+    "class": "HERO",
+    "name": "Denki Kaminari (Lightning)",
+    "skillName": "Electrification",
+    "skillDesc": "Makes enemies electrified for a set amount of time when you break their Guard.",
+    "levels": [
+      "Level 1: 3",
+      "Level 2: 3.5",
+      "Level 3: 4",
+      "Level 4: 4.5",
+      "Level 5: 5",
+      "Level 6: 10",
+      "Level 7: 11",
+      "Level 8: 12",
+      "Level 9: 13",
+      "Level 10: 14",
+      "Level 11: 15"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 0.8"
+    ],
+    "id": "7_electrification"
+  },
+  {
+    "chara": "8",
+    "role": "Assault",
+    "class": "HERO",
+    "name": "Eijiro Kirishima",
+    "skillName": "Indestructible",
+    "skillDesc": "When you K.O. opponents, allows you to resist flinching from opponent attacks for a set amount of time.",
+    "levels": [
+      "Level 1: 10",
+      "Level 2: 10.5",
+      "Level 3: 11",
+      "Level 4: 11.5",
+      "Level 5: 12",
+      "Level 6: 15",
+      "Level 7: 16",
+      "Level 8: 17",
+      "Level 9: 18",
+      "Level 10: 19",
+      "Level 11: 20"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1"
+    ],
+    "id": "8_indestructible"
+  },
+  {
+    "chara": "8",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Eijiro Kirishima (Red Drive)",
+    "skillName": "Willpower",
+    "skillDesc": "Leaves you with 1 HP after a fatal attack.",
+    "levels": [
+      "Level 1: 720",
+      "Level 2: 600",
+      "Level 3: 540",
+      "Level 4: 480",
+      "Level 5: 420",
+      "Level 6: 210",
+      "Level 7: 180",
+      "Level 8: 150",
+      "Level 9: 120",
+      "Level 10: 90",
+      "Level 11: 60"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1"
+    ],
+    "id": "8_willpower"
+  },
+  {
+    "chara": "10",
+    "role": "Support",
+    "class": "HERO",
+    "name": "Momo Yaoyorozu",
+    "skillName": "Battlefield Analysis",
+    "skillDesc": "Shows you the location of the next Safe Area.",
+    "levels": [
+      "Level 1: 40",
+      "Level 2: 50",
+      "Level 3: 60",
+      "Level 4: 70",
+      "Level 5: 80",
+      "Level 6: 205",
+      "Level 7: 330",
+      "Level 8: 455",
+      "Level 9: 565",
+      "Level 10: 685",
+      "Level 11: 805"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1"
+    ],
+    "id": "10_battlefield_analysis"
+  },
+  {
+    "chara": "11",
+    "role": "Assault",
+    "class": "HERO",
+    "name": "Fumikage Tokoyami",
+    "skillName": "Black Arm",
+    "skillDesc": "Finishing Attacks restore HP, and flinching from opponent attacks is prevented while attacking.",
+    "levels": [
+      "Level 1: 20",
+      "Level 2: 25",
+      "Level 3: 30",
+      "Level 4: 35",
+      "Level 5: 40",
+      "Level 6: 70",
+      "Level 7: 80",
+      "Level 8: 90",
+      "Level 9: 100",
+      "Level 10: 110",
+      "Level 11: 125"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1"
+    ],
+    "id": "11_black_arm"
+  },
+  {
+    "chara": "12",
+    "role": "Assault",
+    "class": "HERO",
+    "name": "All Might",
+    "skillName": "Symbol of Peace",
+    "skillDesc": "Increases your PU/PC Gauge at the start of battle.",
+    "levels": [
+      "Level 1: 0.03",
+      "Level 2: 0.05",
+      "Level 3: 0.07",
+      "Level 4: 0.09",
+      "Level 5: 0.15",
+      "Level 6: 0.4",
+      "Level 7: 0.44",
+      "Level 8: 0.48",
+      "Level 9: 0.52",
+      "Level 10: 0.56",
+      "Level 11: 0.6"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1"
+    ],
+    "id": "12_symbol_of_peace"
+  },
+  {
+    "chara": "12",
+    "role": "Rapid",
+    "class": "HERO",
+    "name": "All Might (Gatling)",
+    "skillName": "Muscle Form",
+    "skillDesc": "Activating PU/PC restores HP and grants flinch resistance while active.",
+    "levels": [
+      "Level 1: 20",
+      "Level 2: 25",
+      "Level 3: 30",
+      "Level 4: 35",
+      "Level 5: 40",
+      "Level 6: 70",
+      "Level 7: 80",
+      "Level 8: 90",
+      "Level 9: 100",
+      "Level 10: 110",
+      "Level 11: 125"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1"
+    ],
+    "id": "12_muscle_form"
+  },
+  {
+    "chara": "13",
+    "role": "Technical",
+    "class": "HERO",
+    "name": "Shota Aizawa",
+    "skillName": "High-Speed GP Replenishment",
+    "skillDesc": "For a set amount of time after the battle starts, shortens the time required to use GP Recovery Items.",
+    "levels": [
+      "Level 1: 60",
+      "Level 2: 90",
+      "Level 3: 120",
+      "Level 4: 150",
+      "Level 5: 180",
+      "Level 6: 370",
+      "Level 7: 490",
+      "Level 8: 610",
+      "Level 9: 730",
+      "Level 10: 850",
+      "Level 11: 1200"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 0.7"
+    ],
+    "id": "13_high_speed_gp_replenishment"
+  },
+  {
+    "chara": "13",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Shota Aizawa (Flow Runner)",
+    "skillName": "High-Speed HP Replenishment",
+    "skillDesc": "For a set time after battle starts, shorten the time required to use HP Recovery Items.",
+    "levels": [
+      "Level 1: 60",
+      "Level 2: 90",
+      "Level 3: 120",
+      "Level 4: 150",
+      "Level 5: 180",
+      "Level 6: 300",
+      "Level 7: 400",
+      "Level 8: 500",
+      "Level 9: 600",
+      "Level 10: 700",
+      "Level 11: 800"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 0.7"
+    ],
+    "id": "13_high_speed_hp_replenishment"
+  },
+  {
+    "chara": "15",
+    "role": "Strike",
+    "class": "VILLAIN",
+    "name": "Tomura Shigaraki",
+    "skillName": "Revenge Strike",
+    "skillDesc": "Increases your Attack Power for a set amount of time if your Guard breaks.",
+    "levels": [
+      "Level 1: 5",
+      "Level 2: 5.5",
+      "Level 3: 6",
+      "Level 4: 6.5",
+      "Level 5: 7",
+      "Level 6: 14",
+      "Level 7: 15",
+      "Level 8: 16",
+      "Level 9: 17",
+      "Level 10: 18",
+      "Level 11: 20"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1.1"
+    ],
+    "id": "15_revenge_strike"
+  },
+  {
+    "chara": "15",
+    "role": "Assault",
+    "class": "VILLAIN",
+    "name": "Tomura Shigaraki (Catastrophe)",
+    "skillName": "Embrittlement",
+    "skillDesc": "Inflicts Defense DOWN for a set amount of time on opponents you hit with melee attacks.",
+    "levels": [
+      "Level 1: 2",
+      "Level 2: 3",
+      "Level 3: 4",
+      "Level 4: 5",
+      "Level 5: 6",
+      "Level 6: 10",
+      "Level 7: 11",
+      "Level 8: 12",
+      "Level 9: 13",
+      "Level 10: 14",
+      "Level 11: 15"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1.25"
+    ],
+    "id": "15_embrittlement"
+  },
+  {
+    "chara": "15",
+    "role": "Technical",
+    "class": "VILLAIN",
+    "name": "Tomura Shigaraki (Thousand-Hand Break)",
+    "skillName": "Hyper Regeneration",
+    "skillDesc": "Break an opponent's Guard to gradually recover GP and HP for a limited time.",
+    "levels": [
+      "Level 1: 3",
+      "Level 2: 4",
+      "Level 3: 5",
+      "Level 4: 6",
+      "Level 5: 7",
+      "Level 6: 10",
+      "Level 7: 11",
+      "Level 8: 12",
+      "Level 9: 13",
+      "Level 10: 14",
+      "Level 11: 15"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 20",
+      "Sub Effect 2: 4"
+    ],
+    "id": "15_hyper_regeneration"
+  },
+  {
+    "chara": "16",
+    "role": "Technical",
+    "class": "VILLAIN",
+    "name": "All For One",
+    "skillName": "Special Attack Reload Boost",
+    "skillDesc": "Increases your Special Action Reload Speed for a set amount of time after making an opponent go DOWN.",
+    "levels": [
+      "Level 1: 5",
+      "Level 2: 5.5",
+      "Level 3: 6",
+      "Level 4: 6.5",
+      "Level 5: 7",
+      "Level 6: 14",
+      "Level 7: 15",
+      "Level 8: 16",
+      "Level 9: 17",
+      "Level 10: 18",
+      "Level 11: 20"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 5"
+    ],
+    "id": "16_special_attack_reload_boost"
+  },
+  {
+    "chara": "16",
+    "role": "Strike",
+    "class": "VILLAIN",
+    "name": "All For One (Factor Fusion)",
+    "skillName": "Annihilation",
+    "skillDesc": "When you take DOWN an opponent, the positions of that opponent's allies are revealed for a set time.",
+    "levels": [
+      "Level 1: 5",
+      "Level 2: 6",
+      "Level 3: 7",
+      "Level 4: 8",
+      "Level 5: 9",
+      "Level 6: 14",
+      "Level 7: 15",
+      "Level 8: 16",
+      "Level 9: 17",
+      "Level 10: 18",
+      "Level 11: 20"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1"
+    ],
+    "id": "16_annihilation"
+  },
+  {
+    "chara": "17",
+    "role": "Technical",
+    "class": "VILLAIN",
+    "name": "Dabi",
+    "skillName": "Revenge Technical",
+    "skillDesc": "Increases your Reload Speed for a set amount of time if your Guard breaks.",
+    "levels": [
+      "Level 1: 5",
+      "Level 2: 5.5",
+      "Level 3: 6",
+      "Level 4: 6.5",
+      "Level 5: 7",
+      "Level 6: 14",
+      "Level 7: 15",
+      "Level 8: 16",
+      "Level 9: 17",
+      "Level 10: 18",
+      "Level 11: 20"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1.5"
+    ],
+    "id": "17_revenge_technical"
+  },
+  {
+    "chara": "17",
+    "role": "Strike",
+    "class": "VILLAIN",
+    "name": "Dabi (Crazy Torch)",
+    "skillName": "Speedy Self-Revive",
+    "skillDesc": "Shortens the time it takes for you to recover from a DOWN state.",
+    "levels": [
+      "Level 1: 1",
+      "Level 2: 2",
+      "Level 3: 3",
+      "Level 4: 4",
+      "Level 5: 5",
+      "Level 6: 6",
+      "Level 7: 7",
+      "Level 8: 8",
+      "Level 9: 9",
+      "Level 10: 10",
+      "Level 11: 12"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1"
+    ],
+    "id": "17_speedy_self_revive"
+  },
+  {
+    "chara": "18",
+    "role": "Technical",
+    "class": "VILLAIN",
+    "name": "Himiko Toga",
+    "skillName": "HP Sucker",
+    "skillDesc": "Restores your HP when you make an opponent go DOWN.",
+    "levels": [
+      "Level 1: 50",
+      "Level 2: 54",
+      "Level 3: 58",
+      "Level 4: 62",
+      "Level 5: 66",
+      "Level 6: 90",
+      "Level 7: 95",
+      "Level 8: 100",
+      "Level 9: 105",
+      "Level 10: 110",
+      "Level 11: 125"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1"
+    ],
+    "id": "18_hp_sucker"
+  },
+  {
+    "chara": "18",
+    "role": "Rapid",
+    "class": "VILLAIN",
+    "name": "Himiko Toga (Sting Dance)",
+    "skillName": "GP Sucker",
+    "skillDesc": "Restores your GP when you make an opponent go DOWN.",
+    "levels": [
+      "Level 1: 20",
+      "Level 2: 24",
+      "Level 3: 28",
+      "Level 4: 32",
+      "Level 5: 36",
+      "Level 6: 60",
+      "Level 7: 65",
+      "Level 8: 70",
+      "Level 9: 75",
+      "Level 10: 80",
+      "Level 11: 95"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1"
+    ],
+    "id": "18_gp_sucker"
+  },
+  {
+    "chara": "23",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Endeavor",
+    "skillName": "PU Power Intensified",
+    "skillDesc": "Increases the Attack Power of your PU/PC attack, but makes the PU/PC attack time shorter.",
+    "levels": [
+      "Level 1: 3.5",
+      "Level 2: 4",
+      "Level 3: 4.5",
+      "Level 4: 5",
+      "Level 5: 5.5",
+      "Level 6: 7.5",
+      "Level 7: 8",
+      "Level 8: 8.5",
+      "Level 9: 9",
+      "Level 10: 9.5",
+      "Level 11: 10"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1.5"
+    ],
+    "id": "23_pu_power_intensified"
+  },
+  {
+    "chara": "23",
+    "role": "Assault",
+    "class": "HERO",
+    "name": "Endeavor (Inferno Fist)",
+    "skillName": "Full Burn",
+    "skillDesc": "Increases the active duration of PU/PC.",
+    "levels": [
+      "Level 1: 2",
+      "Level 2: 3",
+      "Level 3: 4",
+      "Level 4: 5",
+      "Level 5: 6",
+      "Level 6: 10",
+      "Level 7: 11",
+      "Level 8: 12",
+      "Level 9: 13",
+      "Level 10: 14",
+      "Level 11: 15"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1"
+    ],
+    "id": "23_full_burn"
+  },
+  {
+    "chara": "24",
+    "role": "Rapid",
+    "class": "HERO",
+    "name": "Mirio Togata",
+    "skillName": "Quasi-Permeation",
+    "skillDesc": "Makes you invincible for a set amount of time after the battle starts. The effect ends if you try to attack.",
+    "levels": [
+      "Level 1: 10",
+      "Level 2: 11",
+      "Level 3: 12",
+      "Level 4: 13",
+      "Level 5: 14",
+      "Level 6: 24",
+      "Level 7: 26",
+      "Level 8: 28",
+      "Level 9: 30",
+      "Level 10: 32",
+      "Level 11: 40"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1"
+    ],
+    "id": "24_quasi_permeation"
+  },
+  {
+    "chara": "24",
+    "role": "Technical",
+    "class": "HERO",
+    "name": "Mirio Togata (Sheer Counter)",
+    "skillName": "Critical Permeation",
+    "skillDesc": "Gain temporary invincibility if your Guard breaks. The effect ends if you try to attack.",
+    "levels": [
+      "Level 1: 1.3",
+      "Level 2: 1.8",
+      "Level 3: 2.3",
+      "Level 4: 2.8",
+      "Level 5: 3.3",
+      "Level 6: 4.5",
+      "Level 7: 5",
+      "Level 8: 5.5",
+      "Level 9: 6",
+      "Level 10: 6.5",
+      "Level 11: 7"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1.3",
+      "Sub Effect 2: 30"
+    ],
+    "id": "24_critical_permeation"
+  },
+  {
+    "chara": "25",
+    "role": "Technical",
+    "class": "HERO",
+    "name": "Nejire Hado",
+    "skillName": "Spiraling Leap",
+    "skillDesc": "Gives you Nejire Hado's jump for a set amount of time after the battle starts.",
+    "levels": [
+      "Level 1: 60",
+      "Level 2: 90",
+      "Level 3: 120",
+      "Level 4: 150",
+      "Level 5: 180",
+      "Level 6: 370",
+      "Level 7: 490",
+      "Level 8: 610",
+      "Level 9: 730",
+      "Level 10: 850",
+      "Level 11: 1200"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1"
+    ],
+    "id": "25_spiraling_leap"
+  },
+  {
+    "chara": "25",
+    "role": "Support",
+    "class": "HERO",
+    "name": "Nejire Hado (Fairy)",
+    "skillName": "Twisted Fortune",
+    "skillDesc": "When using a team Recovery Item, there is a chance the item will not be consumed.",
+    "levels": [
+      "Level 1: 5",
+      "Level 2: 10",
+      "Level 3: 15",
+      "Level 4: 20",
+      "Level 5: 25",
+      "Level 6: 30",
+      "Level 7: 35",
+      "Level 8: 40",
+      "Level 9: 45",
+      "Level 10: 50",
+      "Level 11: 55"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1"
+    ],
+    "id": "25_twisted_fortune"
+  },
+  {
+    "chara": "26",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Tamaki Amajiki",
+    "skillName": "Ability Manifest",
+    "skillDesc": "Increases the active duration of abilities when using a Quirk Skill Card.",
+    "levels": [
+      "Level 1: 1.1",
+      "Level 2: 1.15",
+      "Level 3: 1.2",
+      "Level 4: 1.25",
+      "Level 5: 1.3",
+      "Level 6: 1.35",
+      "Level 7: 1.4",
+      "Level 8: 1.45",
+      "Level 9: 1.5",
+      "Level 10: 1.55",
+      "Level 11: 1.6"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1"
+    ],
+    "id": "26_ability_manifest"
+  },
+  {
+    "chara": "34",
+    "role": "Support",
+    "class": "VILLAIN",
+    "name": "Overhaul",
+    "skillName": "Reinforced Revive",
+    "skillDesc": "Restores the GP of allies that you revive.",
+    "levels": [
+      "Level 1: 10",
+      "Level 2: 20",
+      "Level 3: 30",
+      "Level 4: 40",
+      "Level 5: 50",
+      "Level 6: 100",
+      "Level 7: 125",
+      "Level 8: 150",
+      "Level 9: 175",
+      "Level 10: 200",
+      "Level 11: 250"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1"
+    ],
+    "id": "34_reinforced_revive"
+  },
+  {
+    "chara": "34",
+    "role": "Assault",
+    "class": "VILLAIN",
+    "name": "Overhaul (Blighted Precipice)",
+    "skillName": "PU Rejection",
+    "skillDesc": "When activating PU PC, any launched opponent takes damage.",
+    "levels": [
+      "Level 1: 10",
+      "Level 2: 15",
+      "Level 3: 20",
+      "Level 4: 25",
+      "Level 5: 30",
+      "Level 6: 60",
+      "Level 7: 70",
+      "Level 8: 80",
+      "Level 9: 90",
+      "Level 10: 100",
+      "Level 11: 110"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1"
+    ],
+    "id": "34_pu_rejection"
+  },
+  {
+    "chara": "37",
+    "role": "Rapid",
+    "class": "VILLAIN",
+    "name": "Twice",
+    "skillName": "Card Duplication",
+    "skillDesc": "For a set amount of time after the battle starts, increases the number of Level Up Cards opponents drop when they get K.O.",
+    "levels": [
+      "Level 1: 60",
+      "Level 2: 90",
+      "Level 3: 120",
+      "Level 4: 150",
+      "Level 5: 180",
+      "Level 6: 370",
+      "Level 7: 490",
+      "Level 8: 610",
+      "Level 9: 730",
+      "Level 10: 850",
+      "Level 11: 1200"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 99"
+    ],
+    "id": "37_card_duplication"
+  },
+  {
+    "chara": "38",
+    "role": "Support",
+    "class": "VILLAIN",
+    "name": "Mr. Compress",
+    "skillName": "Compression Magic",
+    "skillDesc": "Increases the number of Support Drinks you can carry.",
+    "levels": [
+      "Level 1: 2",
+      "Level 2: 3",
+      "Level 3: 4",
+      "Level 4: 5",
+      "Level 5: 6",
+      "Level 6: 10",
+      "Level 7: 11",
+      "Level 8: 12",
+      "Level 9: 13",
+      "Level 10: 14",
+      "Level 11: 15"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1"
+    ],
+    "id": "38_compression_magic"
+  },
+  {
+    "chara": "43",
+    "role": "Rapid",
+    "class": "HERO",
+    "name": "Hawks",
+    "skillName": "Perception",
+    "skillDesc": "Allows you to see the location of opponents you hit with melee attacks for a set amount of time.",
+    "levels": [
+      "Level 1: 5",
+      "Level 2: 6",
+      "Level 3: 7",
+      "Level 4: 8",
+      "Level 5: 9",
+      "Level 6: 10",
+      "Level 7: 11",
+      "Level 8: 12",
+      "Level 9: 13",
+      "Level 10: 14",
+      "Level 11: 15"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1"
+    ],
+    "id": "43_perception"
+  },
+  {
+    "chara": "43",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Hawks (Slicing Wind)",
+    "skillName": "Extra Wind",
+    "skillDesc": "When your Quirk Skill Level increases, your PU/PC Gauge fills up.",
+    "levels": [
+      "Level 1: 90",
+      "Level 2: 85",
+      "Level 3: 80",
+      "Level 4: 75",
+      "Level 5: 70",
+      "Level 6: 40",
+      "Level 7: 35",
+      "Level 8: 30",
+      "Level 9: 25",
+      "Level 10: 15",
+      "Level 11: 9"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 0.9"
+    ],
+    "id": "43_extra_wind"
+  },
+  {
+    "chara": "46",
+    "role": "Assault",
+    "class": "HERO",
+    "name": "Itsuka Kendo",
+    "skillName": "Sisterly Disposition",
+    "skillDesc": "Increases your Defense for a set amount of time after landing a melee attack on an opponent.",
+    "levels": [
+      "Level 1: 60",
+      "Level 2: 55",
+      "Level 3: 50",
+      "Level 4: 45",
+      "Level 5: 40",
+      "Level 6: 25",
+      "Level 7: 22",
+      "Level 8: 19",
+      "Level 9: 16",
+      "Level 10: 13",
+      "Level 11: 10"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 0.7",
+      "Sub Effect 2: 10"
+    ],
+    "id": "46_sisterly_disposition"
+  },
+  {
+    "chara": "46",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Itsuka Kendo (Twin Palm Strike)",
+    "skillName": "Iron Fist",
+    "skillDesc": "Landing a melee attack boosts Attack Power for a short time.",
+    "levels": [
+      "Level 1: 60",
+      "Level 2: 55",
+      "Level 3: 50",
+      "Level 4: 45",
+      "Level 5: 40",
+      "Level 6: 25",
+      "Level 7: 22",
+      "Level 8: 19",
+      "Level 9: 16",
+      "Level 10: 13",
+      "Level 11: 10"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1.05",
+      "Sub Effect 2: 10"
+    ],
+    "id": "46_iron_fist"
+  },
+  {
+    "chara": "100",
+    "role": "Assault",
+    "class": "HERO",
+    "name": "Mt. Lady",
+    "skillName": "Revenge Assault",
+    "skillDesc": "Increases your Defense for a set amount of time if your Guard breaks.",
+    "levels": [
+      "Level 1: 5",
+      "Level 2: 5.5",
+      "Level 3: 6",
+      "Level 4: 6.5",
+      "Level 5: 7",
+      "Level 6: 14",
+      "Level 7: 15",
+      "Level 8: 16",
+      "Level 9: 17",
+      "Level 10: 18",
+      "Level 11: 20"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 0.8"
+    ],
+    "id": "100_revenge_assault"
+  },
+  {
+    "chara": "101",
+    "role": "Support",
+    "class": "HERO",
+    "name": "Cementoss",
+    "skillName": "Revenge Support",
+    "skillDesc": "Restores the HP of allies in a certain area around you for a set amount of time if your Guard breaks.",
+    "levels": [
+      "Level 1: 3",
+      "Level 2: 3.5",
+      "Level 3: 4",
+      "Level 4: 4.5",
+      "Level 5: 5",
+      "Level 6: 10",
+      "Level 7: 11",
+      "Level 8: 12",
+      "Level 9: 13",
+      "Level 10: 14",
+      "Level 11: 15"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 7"
+    ],
+    "id": "101_revenge_support"
+  },
+  {
+    "chara": "102",
+    "role": "Support",
+    "class": "HERO",
+    "name": "Ibara Shiozaki",
+    "skillName": "Divine Protection",
+    "skillDesc": "For a set amount of time after the battle starts, shortens the time it takes to open an Item Box (Large).",
+    "levels": [
+      "Level 1: 60",
+      "Level 2: 90",
+      "Level 3: 120",
+      "Level 4: 150",
+      "Level 5: 180",
+      "Level 6: 370",
+      "Level 7: 490",
+      "Level 8: 610",
+      "Level 9: 730",
+      "Level 10: 850",
+      "Level 11: 1200"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 0.2"
+    ],
+    "id": "102_divine_protection"
+  },
+  {
+    "chara": "103",
+    "role": "Support",
+    "class": "VILLAIN",
+    "name": "Kurogiri",
+    "skillName": "Warp Heal",
+    "skillDesc": "For a set amount of time after the battle starts, using HP Recovery items also restores your allies' HP by a little bit.",
+    "levels": [
+      "Level 1: 60",
+      "Level 2: 90",
+      "Level 3: 120",
+      "Level 4: 150",
+      "Level 5: 180",
+      "Level 6: 370",
+      "Level 7: 490",
+      "Level 8: 610",
+      "Level 9: 730",
+      "Level 10: 850",
+      "Level 11: 1200"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 25",
+      "Sub Effect 2: 80"
+    ],
+    "id": "103_warp_heal"
+  },
+  {
+    "chara": "104",
+    "role": "Technical",
+    "class": "HERO",
+    "name": "Neito Monoma",
+    "skillName": "Fixer",
+    "skillDesc": "Enhances the effects of the Tuning Skill in the same column as the equipped slot.",
+    "levels": [
+      "Level 1: 1.1",
+      "Level 2: 1.2",
+      "Level 3: 1.3",
+      "Level 4: 1.4",
+      "Level 5: 1.5",
+      "Level 6: 1.6",
+      "Level 7: 1.7",
+      "Level 8: 1.8",
+      "Level 9: 1.9",
+      "Level 10: 2",
+      "Level 11: 2.1"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1"
+    ],
+    "id": "104_fixer"
+  },
+  {
+    "chara": "105",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Hitoshi Shinso",
+    "skillName": "Trance Blow",
+    "skillDesc": "Landing a melee attack puts the enemy in a brainwashed state for a set amount of time.",
+    "levels": [
+      "Level 1: 60",
+      "Level 2: 55",
+      "Level 3: 50",
+      "Level 4: 45",
+      "Level 5: 40",
+      "Level 6: 25",
+      "Level 7: 22",
+      "Level 8: 19",
+      "Level 9: 16",
+      "Level 10: 13",
+      "Level 11: 10"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 6"
+    ],
+    "id": "105_trance_blow"
+  },
+  {
+    "chara": "109",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Present Mic",
+    "skillName": "Booming PU Voice",
+    "skillDesc": "Stuns opponents around you with a booming sound when you use your PU/PC.",
+    "levels": [
+      "Level 1: 4",
+      "Level 2: 4.5",
+      "Level 3: 5",
+      "Level 4: 5.5",
+      "Level 5: 6",
+      "Level 6: 9",
+      "Level 7: 9.5",
+      "Level 8: 10",
+      "Level 9: 10.5",
+      "Level 10: 11",
+      "Level 11: 12"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1.5"
+    ],
+    "id": "109_booming_pu_voice"
+  },
+  {
+    "chara": "109",
+    "role": "Technical",
+    "class": "HERO",
+    "name": "Present Mic (D.J. Board)",
+    "skillName": "Hip-Hop Spirit",
+    "skillDesc": "When an ally gets their Guard broken, Attack Power increases for a set time.",
+    "levels": [
+      "Level 1: 60",
+      "Level 2: 55",
+      "Level 3: 50",
+      "Level 4: 45",
+      "Level 5: 40",
+      "Level 6: 25",
+      "Level 7: 22",
+      "Level 8: 19",
+      "Level 9: 16",
+      "Level 10: 13",
+      "Level 11: 10"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1.2",
+      "Sub Effect 2: 7"
+    ],
+    "id": "109_hip_hop_spirit"
+  },
+  {
+    "chara": "111",
+    "role": "Rapid",
+    "class": "HERO",
+    "name": "Mirko",
+    "skillName": "Bunny Hop",
+    "skillDesc": "For a set amount time after battle starts, gain the same wall jump performance as Mirko and faster recovery speed.",
+    "levels": [
+      "Level 1: 60",
+      "Level 2: 90",
+      "Level 3: 120",
+      "Level 4: 150",
+      "Level 5: 180",
+      "Level 6: 370",
+      "Level 7: 490",
+      "Level 8: 610",
+      "Level 9: 730",
+      "Level 10: 850",
+      "Level 11: 1200"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 1.8",
+      "Sub Effect 2: 2.6"
+    ],
+    "id": "111_bunny_hop"
+  },
+  {
+    "chara": "114",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Star and Stripe",
+    "skillName": "Area Reduction",
+    "skillDesc": "Reduces damage taken outside the Safe Area for a set time after the battle starts.",
+    "levels": [
+      "Level 1: 80",
+      "Level 2: 110",
+      "Level 3: 140",
+      "Level 4: 170",
+      "Level 5: 200",
+      "Level 6: 300",
+      "Level 7: 400",
+      "Level 8: 500",
+      "Level 9: 600",
+      "Level 10: 700",
+      "Level 11: 800"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 50"
+    ],
+    "id": "114_area_reduction"
+  },
+  {
+    "chara": "115",
+    "role": "Strike",
+    "class": "VILLAIN",
+    "name": "Lady Nagant",
+    "skillName": "Quick Reload",
+    "skillDesc": "Take DOWN an opponent with Quirk Skill α to speed up its reload for a limited time.",
+    "levels": [
+      "Level 1: 2",
+      "Level 2: 2.5",
+      "Level 3: 3",
+      "Level 4: 3.5",
+      "Level 5: 4",
+      "Level 6: 7",
+      "Level 7: 7.5",
+      "Level 8: 8",
+      "Level 9: 8.5",
+      "Level 10: 9",
+      "Level 11: 10"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 10"
+    ],
+    "id": "115_quick_reload"
+  },
+  {
+    "chara": "200",
+    "role": "Technical",
+    "class": "HERO",
+    "name": "Armored All Might",
+    "skillName": "Foundation of Peace",
+    "skillDesc": "Rescue or threaten citizens, or rescue allies to level up your Quirk Skills.",
+    "levels": [
+      "Level 1: 300",
+      "Level 2: 290",
+      "Level 3: 280",
+      "Level 4: 270",
+      "Level 5: 260",
+      "Level 6: 200",
+      "Level 7: 180",
+      "Level 8: 160",
+      "Level 9: 140",
+      "Level 10: 120",
+      "Level 11: 100"
+    ],
+    "subEffects": [],
+    "id": "200_foundation_of_peace"
+  },
+  {
+    "chara": "201",
+    "role": "Assault",
+    "class": "VILLAIN",
+    "name": "All For One (Youth age)",
+    "skillName": "Quirk Factor Release",
+    "skillDesc": "Breaking an opponent's Guard increases Reload Speed for a limited time.",
+    "levels": [
+      "Level 1: 120",
+      "Level 2: 110",
+      "Level 3: 100",
+      "Level 4: 90",
+      "Level 5: 80",
+      "Level 6: 60",
+      "Level 7: 55",
+      "Level 8: 50",
+      "Level 9: 45",
+      "Level 10: 40",
+      "Level 11: 35"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 10",
+      "Sub Effect 2: 2"
+    ],
+    "id": "201_quirk_factor_release"
+  },
+  {
+    "chara": "202",
+    "role": "Rapid",
+    "class": "HERO",
+    "name": "Izuku Midoriya OFA",
+    "skillName": "Acceleration",
+    "skillDesc": "Landing a melee attack increases Movement Speed and Attack Speed for a limited time.",
+    "levels": [
+      "Level 1: 240",
+      "Level 2: 220",
+      "Level 3: 200",
+      "Level 4: 180",
+      "Level 5: 160",
+      "Level 6: 120",
+      "Level 7: 100",
+      "Level 8: 80",
+      "Level 9: 60",
+      "Level 10: 40",
+      "Level 11: 20"
+    ],
+    "subEffects": [
+      "Sub Effect 1: 30",
+      "Sub Effect 2: 1.2"
+    ],
+    "id": "202_acceleration"
+  }
+]

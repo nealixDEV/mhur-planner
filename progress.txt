@@ -1,0 +1,41 @@
+Now I'll add a search input, refactor option-building into a reusable function, and wire the filter.
+
+Now refactor the option building into a reusable function:
+
+Now add the search input event listener near the cosSel listener:
+
+Done. Added a "Search costumes..." box above the costume dropdown.
+
+As you type, the dropdown (cosSel) filters to costumes whose name contains the text (case-insensitive).
+The currently selected costume stays highlighted if it still matches; option values keep their real indices so selecting still works.
+Shows a disabled "No costumes match..." entry when nothing matches, and the search clears when you switch characters.
+Refresh http://localhost:8080/index.html to try it.
+
+searching up the fit works but it doesnt update the rest of the UI like the tuning or cosumte previw or other uis
+Now typing in the search auto-selects and applies the top matching costume, so the tuning slots, costume preview, and all calculators update live as you type. Selecting from the dropdown still works too. Refresh to try it.
+
+alr dpuble check that every special tuning is buffing what theyre supposed to when set. check database for special tuning descriptions they should explain. if a special tuningg doesnt effect, hp, dmg, movement, or relaod put it in misc.
+This requires understanding how each calculator currently categorizes special tunings. Let me map the current logic.
+
+Tool execution aborted
+hows it going
+sorry contine, i just wanted to make sure u didnt disconnect
+sorry contine, i just wanted to make sure u didnt disconnect
+hello
+hello
+Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so, purchase more at https://openrouter.ai/settings/credits
+
+[resumed session] Finished the special-tuning categorization task from line 17.
+- Rewrote specialTuningKind() in index.html to bucket every special tuning into hp / dmg / movement / reload / misc (added missing hp + movement; dropped the old standalone "defense" bucket per the user's 5-bucket rule -> defense effects now fall to misc).
+- Verified all 59 special tunings against special_tuning_parsed.json: HP(9), DMG(6), MOVEMENT(5), RELOAD(4), MISC(35).
+- Wired rendering: Defense Calculator renamed "HP / Defense Calculator" and shows the hp special section; added a Movement special section to the Movement Calculator.
+- Defense-type specials (Sisterly Disposition, Area Reduction, Resist Heat, Critical Permeation, Indestructible) now classify as misc since they don't directly affect hp/dmg/movement/reload. Normal-tuning defense still computes.
+- JS syntax check passed. Temp analysis scripts deleted.
+
+[resumed session 2] Built the full numeric engine so special tunings apply to the planner's calculators (user chose "Full numeric engine").
+- Added a new "HP Calculator" panel to index.html (id=hpStats) + renderHpStats(): shows Max Stat Bonuses from normal tuning AND lists equipped HP/Survival specials with their duration + subEffect values + activation (guard break / passive).
+- Wired renderHpStats into renderAll() and onCardClick().
+- Movement calculator now lists ALL equipped movement specials (guard-break + passive) with values; speed-type specials (Revenge Rapid, Acceleration) already apply their movement-speed multiplier via procSpecial.
+- Damage & Reload special bonuses unchanged (they already computed +X% on guard break).
+- Removed the old standalone special_tunings.html (user wanted it in the planner, not a new site) and deleted temp scripts.
+- To view: serve the folder and refresh (e.g. the localhost:8080 index.html the planner uses). Data is embedded so no fetch needed for SPECIAL_TUNING.

@@ -1,0 +1,39 @@
+id,num,name,group,role,battleStyles,hp,gp,melee,alpha,beta,gamma,sa
+izuku,1,Izuku Midoriya,Hero,Assault,Full Bullet (Strike),300,250,,58,120,58,14
+izuku_ofa,202,Izuku Midoriya (OFA),Hero,Rapid,,300,250,,80,14,133,
+katsuki,2,Katsuki Bakugo,Hero,Strike,Machine Gun (Rapid) | Cluster (Technical),350,250,,58,75,4,18
+ochaco,3,Ochaco Uraraka,Hero,Rapid,Zero Satellites (Assault),300,250,,60,40,60,101
+tenya,5,Tenya Iida,Hero,Rapid,,300,250,,40,110,,
+tsuyu,6,Tsuyu Asui,Hero,Rapid,,250,250,,55,76,,
+shoto,4,Shoto Todoroki,Hero,Strike,Ice Fang Wind Flame (Technical),350,250,,54,130,54,55
+eijiro,8,Eijiro Kirishima,Hero,Assault,Red Drive (Strike),400,250,,11,100,120,38
+momo,10,Momo Yaoyorozu,Hero,Support,,350,250,,44,100,80,
+fumikage,11,Fumikage Tokoyami,Hero,Assault,,300,250,,50,16,,
+denki,7,Denki Kaminari,Hero,Strike,Lightning (Technical),350,250,,55,55,80,31
+neito,104,Neito Monoma,Hero,Technical,,300,250,,10,80,,10
+kendo,46,Itsuka Kendo,Hero,Assault,Twin Palm Strike (Strike),400,250,,22,0,130,34
+ibara,102,Ibara Shiozaki,Hero,Support,,400,250,,53,40,15,
+mirio,24,Mirio Togata,Hero,Rapid,Sheer Counter (Technical),250,250,,35,120,80,40
+tamaki,26,Tamaki Amajiki,Hero,Strike,,350,250,,55,110,55,
+nejire,25,Nejire Hado,Hero,Technical,Fairy (Support),300,250,,22,23,22,35
+hitoshi,105,Hitoshi Shinso,Hero,Strike,,300,250,,25,25,0,
+allmight,12,All Might,Hero,Assault,Gatling (Rapid),350,250,,63,40,75,22
+armored,200,Armored All Might,Hero,Technical,,350,250,,30,30,10,
+aizawa,13,Shota Aizawa,Hero,Technical,Flow Runner (Strike),300,250,,100,5,12,30
+mic,109,Present Mic,Hero,Strike,D.J. Board (Technical),300,250,,55,80,100,55
+cement,101,Cementoss,Hero,Support,,350,250,,40,125,35,
+endeavor,23,Endeavor,Hero,Strike,Inferno Fist (Assault),350,250,,18,90,16,50
+hawks,43,Hawks,Hero,Rapid,Slicing Wind (Strike),250,250,90,12,65,75,50
+mirko,111,Mirko,Hero,Rapid,,300,250,,32,32,6,
+star,114,Star and Stripe,Hero,Strike,,350,250,,12,0,2,
+mtlady,100,Mt. Lady,Hero,Assault,,350,250,,30,30,85,
+tomura,15,Tomura Shigaraki,Villain,Strike,Catastrophe (Assault) | Thousand-Hand Break (Technical),300,250,,17,18,24,60
+afo,16,All For One,Villain,Technical,Factor Fusion (Strike),350,250,,54,18,,54
+afo_youth,201,All For One (Youth),Villain,Assault,,300,250,,56,5,56,
+dabi,17,Dabi,Villain,Technical,Crazy Torch (Strike),350,250,,20,20,20,60
+himiko,18,Himiko Toga,Villain,Technical,Sting Dance (Rapid),350,250,,20,20,20,19
+twice,37,Twice,Villain,Rapid,,300,250,,23,23,,
+compress,38,Mr. Compress,Villain,Support,,300,250,,52,60,60,
+kurogiri,103,Kurogiri,Villain,Support,,300,250,,44,100,44,
+nagant,115,Lady Nagant,Villain,Strike,,250,250,,47,25,120,
+overhaul,34,Overhaul,Villain,Support,Blighted Precipice (Assault),350,250,,15,30,15,54

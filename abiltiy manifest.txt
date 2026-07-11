@@ -1,0 +1,62 @@
+Ability Cards (Match Pickups)
+
+Ability Cards provide temporary buffs during a match. Card Level (Lv.1–Lv.9) only increases the buff duration—the strength of the buff remains the same.
+
+Strike Card
+• Effect: +10% Attack Power.
+
+Assault Card
+• Effect: 20% Damage Reduction.
+
+Rapid Card
+• Effect: +10% Movement Speed, +10% Attack/Animation Speed, and enables Wall Running.
+
+Technical Card
+• Effect: +50% Skill Reload Speed.
+
+Support Card
+• Effect: Creates a healing field that restores 50 HP over 5 seconds to yourself and nearby allies.
+
+Card Duration by Level
+Lv.1: 5s
+Lv.2: 11s
+Lv.3: 17s
+Lv.4: 23s
+Lv.5: 29s
+Lv.6: 35s
+Lv.7: 41s
+Lv.8: 47s
+Lv.9: 53s
+
+Ability Manifest (Tamaki Amajiki Special Tuning)
+
+Ability Manifest increases the duration of all Ability Card buffs. It does not increase the potency of the buffs themselves—only their active duration.
+
+Duration Multiplier by Level
+Lv.1: ×1.10
+Lv.2: ×1.15
+Lv.3: ×1.20
+Lv.4: ×1.25
+Lv.5: ×1.30
+Lv.6: ×1.35
+Lv.7: ×1.40
+Lv.8: ×1.45
+Lv.9: ×1.50
+Lv.10: ×1.55
+Lv.11: ×1.60
+
+Formula
+Final Duration = Base Card Duration × Ability Manifest Multiplier
+
+Example (Lv.9 Ability Card)
+Base Duration: 53s
+
+Manifest Lv.1 → 58.3s
+Manifest Lv.5 → 68.9s
+Manifest Lv.9 → 79.5s
+Manifest Lv.11 → 84.8s
+
+Notes
+• Ability Manifest affects Strike, Assault, Rapid, Technical, and Support Cards.
+• It only extends duration and never increases attack, defense, speed, healing, or reload values.
+• Multiple Ability Cards of the same type stack their effects normally; Ability Manifest only modifies how long those effects remain active.

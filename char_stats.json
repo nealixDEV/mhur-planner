@@ -1,0 +1,2011 @@
+{
+  "izuku": {
+    "id": "izuku",
+    "num": 1,
+    "hp": 300,
+    "gp": 250,
+    "melee": 15,
+    "alpha": 58,
+    "beta": 120,
+    "gamma": 58,
+    "sa": 14,
+    "size": "Medium",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 600,
+      "dashSpeed": 1000,
+      "wallShuffleSpeed": 700,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 300,
+      "forwardJumpHeight": 150,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 0.95,
+      "Shield": 0.95,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 315.789,
+      "shield": 263.158,
+      "total": 578.947
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Assault"
+  },
+  "izuku_ofa": {
+    "id": "izuku_ofa",
+    "num": 202,
+    "hp": 300,
+    "gp": 250,
+    "melee": 5,
+    "alpha": 80,
+    "beta": 14,
+    "gamma": 133,
+    "sa": null,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 0,
+      "dashSpeed": 0,
+      "wallShuffleSpeed": 0,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 0,
+      "forwardJumpHeight": 0,
+      "wallJumpHeight": 0
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 300,
+      "shield": 250,
+      "total": 550
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Rapid"
+  },
+  "katsuki": {
+    "id": "katsuki",
+    "num": 2,
+    "hp": 350,
+    "gp": 250,
+    "melee": 95,
+    "alpha": 58,
+    "beta": 75,
+    "gamma": 4,
+    "sa": 18,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 600,
+      "dashSpeed": 1000,
+      "wallShuffleSpeed": 700,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 300,
+      "forwardJumpHeight": 150,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1.05,
+      "Shield": 1.05,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 350,
+      "shield": 250,
+      "total": 600
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Strike"
+  },
+  "ochaco": {
+    "id": "ochaco",
+    "num": 3,
+    "hp": 300,
+    "gp": 250,
+    "melee": 20,
+    "alpha": 60,
+    "beta": 40,
+    "gamma": 60,
+    "sa": 101,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 630,
+      "dashSpeed": 1050,
+      "wallShuffleSpeed": 735,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 300,
+      "forwardJumpHeight": 150,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 300,
+      "shield": 250,
+      "total": 550
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Rapid"
+  },
+  "tenya": {
+    "id": "tenya",
+    "num": 5,
+    "hp": 300,
+    "gp": 250,
+    "melee": 20,
+    "alpha": 40,
+    "beta": 110,
+    "gamma": null,
+    "sa": null,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 735,
+      "dashSpeed": 1155,
+      "wallShuffleSpeed": 735,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 300,
+      "forwardJumpHeight": 150,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 300,
+      "shield": 250,
+      "total": 550
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Rapid"
+  },
+  "tsuyu": {
+    "id": "tsuyu",
+    "num": 6,
+    "hp": 250,
+    "gp": 250,
+    "melee": 15,
+    "alpha": 55,
+    "beta": 76,
+    "gamma": null,
+    "sa": null,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 682,
+      "dashSpeed": 1102,
+      "wallShuffleSpeed": 945,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 800,
+      "forwardJumpHeight": 500,
+      "wallJumpHeight": 350
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 250,
+      "shield": 250,
+      "total": 500
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Rapid"
+  },
+  "shoto": {
+    "id": "shoto",
+    "num": 4,
+    "hp": 350,
+    "gp": 250,
+    "melee": null,
+    "alpha": 54,
+    "beta": 130,
+    "gamma": 54,
+    "sa": 55,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 600,
+      "dashSpeed": 1000,
+      "wallShuffleSpeed": 700,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 300,
+      "forwardJumpHeight": 150,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1.05,
+      "Shield": 1.05,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 350,
+      "shield": 250,
+      "total": 600
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Strike"
+  },
+  "eijiro": {
+    "id": "eijiro",
+    "num": 8,
+    "hp": 400,
+    "gp": 250,
+    "melee": 25,
+    "alpha": 11,
+    "beta": 100,
+    "gamma": 120,
+    "sa": 38,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 600,
+      "dashSpeed": 1000,
+      "wallShuffleSpeed": 700,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 300,
+      "forwardJumpHeight": 150,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 0.95,
+      "Shield": 0.95,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 421.053,
+      "shield": 263.158,
+      "total": 684.211
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Assault"
+  },
+  "momo": {
+    "id": "momo",
+    "num": 10,
+    "hp": 350,
+    "gp": 250,
+    "melee": 25,
+    "alpha": 44,
+    "beta": 100,
+    "gamma": 80,
+    "sa": null,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 600,
+      "dashSpeed": 1000,
+      "wallShuffleSpeed": 700,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 300,
+      "forwardJumpHeight": 150,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 350,
+      "shield": 250,
+      "total": 600
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Support"
+  },
+  "fumikage": {
+    "id": "fumikage",
+    "num": 11,
+    "hp": 300,
+    "gp": 250,
+    "melee": null,
+    "alpha": 50,
+    "beta": 16,
+    "gamma": null,
+    "sa": null,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 0,
+      "dashSpeed": 0,
+      "wallShuffleSpeed": 0,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 0,
+      "forwardJumpHeight": 0,
+      "wallJumpHeight": 0
+    },
+    "defenseMult": {
+      "Health": 0.95,
+      "Shield": 0.95,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 315.789,
+      "shield": 263.158,
+      "total": 578.947
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Assault"
+  },
+  "denki": {
+    "id": "denki",
+    "num": 7,
+    "hp": 350,
+    "gp": 250,
+    "melee": 21,
+    "alpha": 55,
+    "beta": 55,
+    "gamma": 80,
+    "sa": 31,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 600,
+      "dashSpeed": 1000,
+      "wallShuffleSpeed": 700,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 300,
+      "forwardJumpHeight": 150,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1.05,
+      "Shield": 1.05,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 350,
+      "shield": 250,
+      "total": 600
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Strike"
+  },
+  "neito": {
+    "id": "neito",
+    "num": 104,
+    "hp": 300,
+    "gp": 250,
+    "melee": null,
+    "alpha": 10,
+    "beta": 80,
+    "gamma": null,
+    "sa": 10,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 0,
+      "dashSpeed": 0,
+      "wallShuffleSpeed": 0,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 0,
+      "forwardJumpHeight": 0,
+      "wallJumpHeight": 0
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 300,
+      "shield": 250,
+      "total": 550
+    },
+    "reloadMult": {
+      "Alpha": 0.9,
+      "Beta": 0.9,
+      "Gamma": 0.9,
+      "Special": 0.9,
+      "PC": 0.668
+    },
+    "udClass": "Technical"
+  },
+  "kendo": {
+    "id": "kendo",
+    "num": 46,
+    "hp": 400,
+    "gp": 250,
+    "melee": null,
+    "alpha": 22,
+    "beta": 0,
+    "gamma": 130,
+    "sa": 34,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 700,
+      "dashSpeed": 1100,
+      "wallShuffleSpeed": 700,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 400,
+      "forwardJumpHeight": 250,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 0.95,
+      "Shield": 0.95,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 421.053,
+      "shield": 263.158,
+      "total": 684.211
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Assault"
+  },
+  "ibara": {
+    "id": "ibara",
+    "num": 102,
+    "hp": 400,
+    "gp": 250,
+    "melee": null,
+    "alpha": 53,
+    "beta": 40,
+    "gamma": 15,
+    "sa": null,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 600,
+      "dashSpeed": 1000,
+      "wallShuffleSpeed": 700,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 400,
+      "forwardJumpHeight": 250,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 400,
+      "shield": 250,
+      "total": 650
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Support"
+  },
+  "mirio": {
+    "id": "mirio",
+    "num": 24,
+    "hp": 250,
+    "gp": 250,
+    "melee": 35,
+    "alpha": 35,
+    "beta": 120,
+    "gamma": 80,
+    "sa": 40,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 630,
+      "dashSpeed": 1050,
+      "wallShuffleSpeed": 735,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 400,
+      "forwardJumpHeight": 250,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 250,
+      "shield": 250,
+      "total": 500
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Rapid"
+  },
+  "tamaki": {
+    "id": "tamaki",
+    "num": 26,
+    "hp": 350,
+    "gp": 250,
+    "melee": 27,
+    "alpha": 55,
+    "beta": 110,
+    "gamma": 55,
+    "sa": null,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 0,
+      "dashSpeed": 0,
+      "wallShuffleSpeed": 0,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 0,
+      "forwardJumpHeight": 0,
+      "wallJumpHeight": 0
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1.05,
+      "Shield": 1.05,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 350,
+      "shield": 250,
+      "total": 600
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Strike"
+  },
+  "nejire": {
+    "id": "nejire",
+    "num": 25,
+    "hp": 300,
+    "gp": 250,
+    "melee": 20,
+    "alpha": 22,
+    "beta": 23,
+    "gamma": 22,
+    "sa": 35,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 600,
+      "dashSpeed": 1000,
+      "wallShuffleSpeed": 700,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 500,
+      "forwardJumpHeight": 450,
+      "wallJumpHeight": 400
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 300,
+      "shield": 250,
+      "total": 550
+    },
+    "reloadMult": {
+      "Alpha": 0.9,
+      "Beta": 0.9,
+      "Gamma": 0.9,
+      "Special": 0.9,
+      "PC": 0.668
+    },
+    "udClass": "Technical"
+  },
+  "hitoshi": {
+    "id": "hitoshi",
+    "num": 105,
+    "hp": 300,
+    "gp": 250,
+    "melee": null,
+    "alpha": 25,
+    "beta": 25,
+    "gamma": 0,
+    "sa": null,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 600,
+      "dashSpeed": 1000,
+      "wallShuffleSpeed": 700,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 300,
+      "forwardJumpHeight": 150,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1.05,
+      "Shield": 1.05,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 300,
+      "shield": 250,
+      "total": 550
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Strike"
+  },
+  "allmight": {
+    "id": "allmight",
+    "num": 12,
+    "hp": 350,
+    "gp": 250,
+    "melee": null,
+    "alpha": 63,
+    "beta": 40,
+    "gamma": 75,
+    "sa": 22,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 650,
+      "dashSpeed": 1050,
+      "wallShuffleSpeed": 700,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 400,
+      "forwardJumpHeight": 300,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 0.95,
+      "Shield": 0.95,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 368.421,
+      "shield": 263.158,
+      "total": 631.579
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Assault"
+  },
+  "armored": {
+    "id": "armored",
+    "num": 200,
+    "hp": 350,
+    "gp": 250,
+    "melee": null,
+    "alpha": 30,
+    "beta": 30,
+    "gamma": 10,
+    "sa": null,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 0,
+      "dashSpeed": 0,
+      "wallShuffleSpeed": 0,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 0,
+      "forwardJumpHeight": 0,
+      "wallJumpHeight": 0
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 350,
+      "shield": 250,
+      "total": 600
+    },
+    "reloadMult": {
+      "Alpha": 0.9,
+      "Beta": 0.9,
+      "Gamma": 0.9,
+      "Special": 0.9,
+      "PC": 0.668
+    },
+    "udClass": "Technical"
+  },
+  "aizawa": {
+    "id": "aizawa",
+    "num": 13,
+    "hp": 300,
+    "gp": 250,
+    "melee": 20,
+    "alpha": 100,
+    "beta": 5,
+    "gamma": 12,
+    "sa": 30,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 600,
+      "dashSpeed": 1000,
+      "wallShuffleSpeed": 700,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 300,
+      "forwardJumpHeight": 150,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 300,
+      "shield": 250,
+      "total": 550
+    },
+    "reloadMult": {
+      "Alpha": 0.9,
+      "Beta": 0.9,
+      "Gamma": 0.9,
+      "Special": 0.9,
+      "PC": 0.668
+    },
+    "udClass": "Technical"
+  },
+  "mic": {
+    "id": "mic",
+    "num": 109,
+    "hp": 300,
+    "gp": 250,
+    "melee": null,
+    "alpha": 55,
+    "beta": 80,
+    "gamma": 100,
+    "sa": 55,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 600,
+      "dashSpeed": 1000,
+      "wallShuffleSpeed": 700,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 400,
+      "forwardJumpHeight": 250,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1.05,
+      "Shield": 1.05,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 300,
+      "shield": 250,
+      "total": 550
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Strike"
+  },
+  "cement": {
+    "id": "cement",
+    "num": 101,
+    "hp": 350,
+    "gp": 250,
+    "melee": null,
+    "alpha": 40,
+    "beta": 125,
+    "gamma": 35,
+    "sa": null,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 600,
+      "dashSpeed": 1000,
+      "wallShuffleSpeed": 700,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 300,
+      "forwardJumpHeight": 150,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 350,
+      "shield": 250,
+      "total": 600
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Support"
+  },
+  "endeavor": {
+    "id": "endeavor",
+    "num": 23,
+    "hp": 350,
+    "gp": 250,
+    "melee": null,
+    "alpha": 18,
+    "beta": 90,
+    "gamma": 16,
+    "sa": 50,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 600,
+      "dashSpeed": 1000,
+      "wallShuffleSpeed": 700,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 400,
+      "forwardJumpHeight": 300,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1.05,
+      "Shield": 1.05,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 350,
+      "shield": 250,
+      "total": 600
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Strike"
+  },
+  "hawks": {
+    "id": "hawks",
+    "num": 43,
+    "hp": 250,
+    "gp": 250,
+    "melee": 90,
+    "alpha": 12,
+    "beta": 65,
+    "gamma": 75,
+    "sa": 50,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 735,
+      "dashSpeed": 1260,
+      "wallShuffleSpeed": 735,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 600,
+      "forwardJumpHeight": 400,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 250,
+      "shield": 250,
+      "total": 500
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Rapid"
+  },
+  "mirko": {
+    "id": "mirko",
+    "num": 111,
+    "hp": 300,
+    "gp": 250,
+    "melee": 10,
+    "alpha": 32,
+    "beta": 32,
+    "gamma": 6,
+    "sa": null,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 0,
+      "dashSpeed": 0,
+      "wallShuffleSpeed": 0,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 0,
+      "forwardJumpHeight": 0,
+      "wallJumpHeight": 0
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 300,
+      "shield": 250,
+      "total": 550
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Rapid"
+  },
+  "star": {
+    "id": "star",
+    "num": 114,
+    "hp": 350,
+    "gp": 250,
+    "melee": null,
+    "alpha": 12,
+    "beta": 0,
+    "gamma": 2,
+    "sa": null,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 0,
+      "dashSpeed": 0,
+      "wallShuffleSpeed": 0,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 0,
+      "forwardJumpHeight": 0,
+      "wallJumpHeight": 0
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1.05,
+      "Shield": 1.05,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 350,
+      "shield": 250,
+      "total": 600
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Strike"
+  },
+  "mtlady": {
+    "id": "mtlady",
+    "num": 100,
+    "hp": 350,
+    "gp": 250,
+    "melee": null,
+    "alpha": 30,
+    "beta": 30,
+    "gamma": 85,
+    "sa": null,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 600,
+      "dashSpeed": 1000,
+      "wallShuffleSpeed": 700,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 300,
+      "forwardJumpHeight": 150,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 0.95,
+      "Shield": 0.95,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 368.421,
+      "shield": 263.158,
+      "total": 631.579
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Assault"
+  },
+  "tomura": {
+    "id": "tomura",
+    "num": 15,
+    "hp": 300,
+    "gp": 250,
+    "melee": null,
+    "alpha": 17,
+    "beta": 18,
+    "gamma": 24,
+    "sa": 60,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 650,
+      "dashSpeed": 1050,
+      "wallShuffleSpeed": 700,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 300,
+      "forwardJumpHeight": 150,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1.05,
+      "Shield": 1.05,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 300,
+      "shield": 250,
+      "total": 550
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Strike"
+  },
+  "afo": {
+    "id": "afo",
+    "num": 16,
+    "hp": 350,
+    "gp": 250,
+    "melee": 20,
+    "alpha": 54,
+    "beta": 18,
+    "gamma": null,
+    "sa": 54,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 700,
+      "dashSpeed": 1200,
+      "wallShuffleSpeed": 700,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 600,
+      "forwardJumpHeight": 400,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 350,
+      "shield": 250,
+      "total": 600
+    },
+    "reloadMult": {
+      "Alpha": 0.9,
+      "Beta": 0.9,
+      "Gamma": 0.9,
+      "Special": 0.9,
+      "PC": 0.668
+    },
+    "udClass": "Technical"
+  },
+  "afo_youth": {
+    "id": "afo_youth",
+    "num": 201,
+    "hp": 300,
+    "gp": 250,
+    "melee": null,
+    "alpha": 56,
+    "beta": 5,
+    "gamma": 56,
+    "sa": null
+  },
+  "dabi": {
+    "id": "dabi",
+    "num": 17,
+    "hp": 350,
+    "gp": 250,
+    "melee": null,
+    "alpha": 20,
+    "beta": 20,
+    "gamma": 20,
+    "sa": 60,
+    "size": "Medium",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 600,
+      "dashSpeed": 1000,
+      "wallShuffleSpeed": 700,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 300,
+      "forwardJumpHeight": 150,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 350,
+      "shield": 250,
+      "total": 600
+    },
+    "reloadMult": {
+      "Alpha": 0.9,
+      "Beta": 0.9,
+      "Gamma": 0.9,
+      "Special": 0.9,
+      "PC": 0.668
+    },
+    "udClass": "Technical"
+  },
+  "himiko": {
+    "id": "himiko",
+    "num": 18,
+    "hp": 350,
+    "gp": 250,
+    "melee": 25,
+    "alpha": 20,
+    "beta": 20,
+    "gamma": 20,
+    "sa": 19,
+    "size": "Medium",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 700,
+      "dashSpeed": 1050,
+      "wallShuffleSpeed": 700,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 400,
+      "forwardJumpHeight": 300,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 350,
+      "shield": 250,
+      "total": 600
+    },
+    "reloadMult": {
+      "Alpha": 0.9,
+      "Beta": 0.9,
+      "Gamma": 0.9,
+      "Special": 0.9,
+      "PC": 0.668
+    },
+    "udClass": "Technical"
+  },
+  "twice": {
+    "id": "twice",
+    "num": 37,
+    "hp": 300,
+    "gp": 250,
+    "melee": null,
+    "alpha": 23,
+    "beta": 23,
+    "gamma": null,
+    "sa": null,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 630,
+      "dashSpeed": 1050,
+      "wallShuffleSpeed": 735,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 400,
+      "forwardJumpHeight": 250,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 300,
+      "shield": 250,
+      "total": 550
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Rapid"
+  },
+  "compress": {
+    "id": "compress",
+    "num": 38,
+    "hp": 300,
+    "gp": 250,
+    "melee": null,
+    "alpha": 52,
+    "beta": 60,
+    "gamma": 60,
+    "sa": null,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 600,
+      "dashSpeed": 1000,
+      "wallShuffleSpeed": 700,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 300,
+      "forwardJumpHeight": 150,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 300,
+      "shield": 250,
+      "total": 550
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Support"
+  },
+  "kurogiri": {
+    "id": "kurogiri",
+    "num": 103,
+    "hp": 350,
+    "gp": 250,
+    "melee": null,
+    "alpha": 44,
+    "beta": 100,
+    "gamma": 44,
+    "sa": null,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 600,
+      "dashSpeed": 1050,
+      "wallShuffleSpeed": 700,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 300,
+      "forwardJumpHeight": 175,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 350,
+      "shield": 250,
+      "total": 600
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Support"
+  },
+  "nagant": {
+    "id": "nagant",
+    "num": 115,
+    "hp": 250,
+    "gp": 250,
+    "melee": null,
+    "alpha": 47,
+    "beta": 25,
+    "gamma": 120,
+    "sa": null,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 0,
+      "dashSpeed": 0,
+      "wallShuffleSpeed": 0,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 0,
+      "forwardJumpHeight": 0,
+      "wallJumpHeight": 0
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1.05,
+      "Shield": 1.05,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 250,
+      "shield": 250,
+      "total": 500
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Strike"
+  },
+  "overhaul": {
+    "id": "overhaul",
+    "num": 34,
+    "hp": 350,
+    "gp": 250,
+    "melee": null,
+    "alpha": 15,
+    "beta": 30,
+    "gamma": 15,
+    "sa": 54,
+    "size": "Unknown",
+    "downedHealth": 400,
+    "puPcDuration": 20,
+    "movement": {
+      "runSpeed": 600,
+      "dashSpeed": 1050,
+      "wallShuffleSpeed": 700,
+      "downedCrawlSpeed": 0,
+      "floatiness": 0,
+      "jumpHeight": 300,
+      "forwardJumpHeight": 150,
+      "wallJumpHeight": 250
+    },
+    "defenseMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1
+    },
+    "damageMult": {
+      "Health": 1,
+      "Shield": 1,
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Melee": 1,
+      "PC": 1.2
+    },
+    "effective": {
+      "health": 350,
+      "shield": 250,
+      "total": 600
+    },
+    "reloadMult": {
+      "Alpha": 1,
+      "Beta": 1,
+      "Gamma": 1,
+      "Special": 1,
+      "PC": 0.668
+    },
+    "udClass": "Support"
+  }
+}

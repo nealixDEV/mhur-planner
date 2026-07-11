@@ -1,0 +1,415 @@
+[
+  {
+    "chara": "1",
+    "role": "Assault",
+    "class": "HERO",
+    "name": "Izuku Midoriya",
+    "skills": []
+  },
+  {
+    "chara": "1",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Izuku Midoriya (Full Bullet)",
+    "skills": []
+  },
+  {
+    "chara": "2",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Katsuki Bakugo",
+    "skills": []
+  },
+  {
+    "chara": "2",
+    "role": "Rapid",
+    "class": "HERO",
+    "name": "Katsuki Bakugo (Machine Gun)",
+    "skills": []
+  },
+  {
+    "chara": "2",
+    "role": "Technical",
+    "class": "HERO",
+    "name": "Katsuki Bakugo (Cluster)",
+    "skills": []
+  },
+  {
+    "chara": "3",
+    "role": "Rapid",
+    "class": "HERO",
+    "name": "Ochaco Uraraka",
+    "skills": []
+  },
+  {
+    "chara": "3",
+    "role": "Assault",
+    "class": "HERO",
+    "name": "Ochaco Uraraka (Zero Satellites)",
+    "skills": []
+  },
+  {
+    "chara": "4",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Shoto Todoroki",
+    "skills": []
+  },
+  {
+    "chara": "4",
+    "role": "Technical",
+    "class": "HERO",
+    "name": "Shoto Todoroki (Ice Fang Wind Flame)",
+    "skills": []
+  },
+  {
+    "chara": "5",
+    "role": "Rapid",
+    "class": "HERO",
+    "name": "Tenya Iida",
+    "skills": []
+  },
+  {
+    "chara": "6",
+    "role": "Rapid",
+    "class": "HERO",
+    "name": "Tsuyu Asui",
+    "skills": []
+  },
+  {
+    "chara": "7",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Denki Kaminari",
+    "skills": []
+  },
+  {
+    "chara": "7",
+    "role": "Technical",
+    "class": "HERO",
+    "name": "Denki Kaminari (Lightning)",
+    "skills": []
+  },
+  {
+    "chara": "8",
+    "role": "Assault",
+    "class": "HERO",
+    "name": "Eijiro Kirishima",
+    "skills": []
+  },
+  {
+    "chara": "8",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Eijiro Kirishima (Red Drive)",
+    "skills": []
+  },
+  {
+    "chara": "10",
+    "role": "Support",
+    "class": "HERO",
+    "name": "Momo Yaoyorozu",
+    "skills": []
+  },
+  {
+    "chara": "11",
+    "role": "Assault",
+    "class": "HERO",
+    "name": "Fumikage Tokoyami",
+    "skills": []
+  },
+  {
+    "chara": "12",
+    "role": "Assault",
+    "class": "HERO",
+    "name": "All Might",
+    "skills": []
+  },
+  {
+    "chara": "12",
+    "role": "Rapid",
+    "class": "HERO",
+    "name": "All Might (Gatling)",
+    "skills": []
+  },
+  {
+    "chara": "13",
+    "role": "Technical",
+    "class": "HERO",
+    "name": "Shota Aizawa",
+    "skills": []
+  },
+  {
+    "chara": "13",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Shota Aizawa (Flow Runner)",
+    "skills": []
+  },
+  {
+    "chara": "15",
+    "role": "Strike",
+    "class": "VILLAIN",
+    "name": "Tomura Shigaraki",
+    "skills": []
+  },
+  {
+    "chara": "15",
+    "role": "Assault",
+    "class": "VILLAIN",
+    "name": "Tomura Shigaraki (Catastrophe)",
+    "skills": []
+  },
+  {
+    "chara": "15",
+    "role": "Technical",
+    "class": "VILLAIN",
+    "name": "Tomura Shigaraki (Thousand-Hand Break)",
+    "skills": []
+  },
+  {
+    "chara": "16",
+    "role": "Technical",
+    "class": "VILLAIN",
+    "name": "All For One",
+    "skills": []
+  },
+  {
+    "chara": "16",
+    "role": "Strike",
+    "class": "VILLAIN",
+    "name": "All For One (Factor Fusion)",
+    "skills": []
+  },
+  {
+    "chara": "17",
+    "role": "Technical",
+    "class": "VILLAIN",
+    "name": "Dabi",
+    "skills": []
+  },
+  {
+    "chara": "17",
+    "role": "Strike",
+    "class": "VILLAIN",
+    "name": "Dabi (Crazy Torch)",
+    "skills": []
+  },
+  {
+    "chara": "18",
+    "role": "Technical",
+    "class": "VILLAIN",
+    "name": "Himiko Toga",
+    "skills": []
+  },
+  {
+    "chara": "18",
+    "role": "Rapid",
+    "class": "VILLAIN",
+    "name": "Himiko Toga (Sting Dance)",
+    "skills": []
+  },
+  {
+    "chara": "23",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Endeavor",
+    "skills": []
+  },
+  {
+    "chara": "23",
+    "role": "Assault",
+    "class": "HERO",
+    "name": "Endeavor (Inferno Fist)",
+    "skills": []
+  },
+  {
+    "chara": "24",
+    "role": "Rapid",
+    "class": "HERO",
+    "name": "Mirio Togata",
+    "skills": []
+  },
+  {
+    "chara": "24",
+    "role": "Technical",
+    "class": "HERO",
+    "name": "Mirio Togata (Sheer Counter)",
+    "skills": []
+  },
+  {
+    "chara": "25",
+    "role": "Technical",
+    "class": "HERO",
+    "name": "Nejire Hado",
+    "skills": []
+  },
+  {
+    "chara": "25",
+    "role": "Support",
+    "class": "HERO",
+    "name": "Nejire Hado (Fairy)",
+    "skills": []
+  },
+  {
+    "chara": "26",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Tamaki Amajiki",
+    "skills": []
+  },
+  {
+    "chara": "34",
+    "role": "Support",
+    "class": "VILLAIN",
+    "name": "Overhaul",
+    "skills": []
+  },
+  {
+    "chara": "34",
+    "role": "Assault",
+    "class": "VILLAIN",
+    "name": "Overhaul (Blighted Precipice)",
+    "skills": []
+  },
+  {
+    "chara": "37",
+    "role": "Rapid",
+    "class": "VILLAIN",
+    "name": "Twice",
+    "skills": []
+  },
+  {
+    "chara": "38",
+    "role": "Support",
+    "class": "VILLAIN",
+    "name": "Mr. Compress",
+    "skills": []
+  },
+  {
+    "chara": "43",
+    "role": "Rapid",
+    "class": "HERO",
+    "name": "Hawks",
+    "skills": []
+  },
+  {
+    "chara": "43",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Hawks (Slicing Wind)",
+    "skills": []
+  },
+  {
+    "chara": "46",
+    "role": "Assault",
+    "class": "HERO",
+    "name": "Itsuka Kendo",
+    "skills": []
+  },
+  {
+    "chara": "46",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Itsuka Kendo (Twin Palm Strike)",
+    "skills": []
+  },
+  {
+    "chara": "100",
+    "role": "Assault",
+    "class": "HERO",
+    "name": "Mt. Lady",
+    "skills": []
+  },
+  {
+    "chara": "101",
+    "role": "Support",
+    "class": "HERO",
+    "name": "Cementoss",
+    "skills": []
+  },
+  {
+    "chara": "102",
+    "role": "Support",
+    "class": "HERO",
+    "name": "Ibara Shiozaki",
+    "skills": []
+  },
+  {
+    "chara": "103",
+    "role": "Support",
+    "class": "VILLAIN",
+    "name": "Kurogiri",
+    "skills": []
+  },
+  {
+    "chara": "104",
+    "role": "Technical",
+    "class": "HERO",
+    "name": "Neito Monoma",
+    "skills": []
+  },
+  {
+    "chara": "105",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Hitoshi Shinso",
+    "skills": []
+  },
+  {
+    "chara": "109",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Present Mic",
+    "skills": []
+  },
+  {
+    "chara": "109",
+    "role": "Technical",
+    "class": "HERO",
+    "name": "Present Mic (D.J. Board)",
+    "skills": []
+  },
+  {
+    "chara": "111",
+    "role": "Rapid",
+    "class": "HERO",
+    "name": "Mirko",
+    "skills": []
+  },
+  {
+    "chara": "114",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Star and Stripe",
+    "skills": []
+  },
+  {
+    "chara": "115",
+    "role": "Strike",
+    "class": "VILLAIN",
+    "name": "Lady Nagant",
+    "skills": []
+  },
+  {
+    "chara": "200",
+    "role": "Technical",
+    "class": "HERO",
+    "name": "Armored All Might",
+    "skills": []
+  },
+  {
+    "chara": "201",
+    "role": "Assault",
+    "class": "VILLAIN",
+    "name": "All For One (Youth age)",
+    "skills": []
+  },
+  {
+    "chara": "202",
+    "role": "Rapid",
+    "class": "HERO",
+    "name": "Izuku Midoriya OFA",
+    "skills": []
+  }
+]
