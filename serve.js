@@ -4,7 +4,7 @@ const path = require('path');
 const forum = require('./forum_db');
 
 const root = __dirname;
-const port = 8080;
+const port = process.env.PORT || 8080;
 const types = {
   '.html':'text/html', '.js':'text/javascript', '.json':'application/json',
   '.css':'text/css', '.png':'image/png', '.jpg':'image/jpeg', '.svg':'image/svg+xml'
