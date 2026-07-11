@@ -17,7 +17,8 @@
 @keyframes btnGlow{0%,100%{box-shadow:0 0 12px rgba(168,85,247,.2),0 4px 16px rgba(0,0,0,.3)}50%{box-shadow:0 0 28px rgba(168,85,247,.4),0 8px 24px rgba(0,0,0,.4)}}
 @keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 @keyframes cardGlow{0%,100%{box-shadow:0 0 8px rgba(245,200,0,.15)}50%{box-shadow:0 0 25px rgba(245,200,0,.3)}}
-body{background:linear-gradient(-45deg,#0f0c29,#1a0a2e,#16213e,#0f3460);background-size:500% 500%;animation:bgFloat 25s ease infinite;font-family:"Segoe UI","Arial Black",system-ui,sans-serif;font-size:14px;min-height:100vh;padding:12px 16px;color:#e2e8f0;overflow-x:hidden;}
+body{background:linear-gradient(-45deg,#0f0c29,#1a0a2e,#16213e,#0f3460);background-size:500% 500%;animation:bgFloat 25s ease infinite;font-family:"Segoe UI","Arial Black",system-ui,sans-serif;font-size:14px;min-height:100vh;padding:12px 16px;color:#e2e8f0;overflow-x:hidden;position:relative;}
+body::after{content:"";position:fixed;inset:0;z-index:0;background:url('https://ultrarumble.com/assets/Gallery/T_ui_Gallery_Illust_10101_L.png') center/cover no-repeat;opacity:.02;pointer-events:none;}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(circle,rgba(255,255,255,.025) 1px,transparent 1px);background-size:20px 20px;}
 .screen{max-width:1600px;margin:0 auto;display:grid;grid-template-columns:300px 1fr 260px;gap:12px;overflow:hidden;}
 .title{grid-column:1/-1;text-align:center;font-size:2.2rem;font-weight:900;letter-spacing:.15em;color:#f5c800;text-shadow:0 0 10px rgba(245,200,0,.3),0 0 30px rgba(245,200,0,.15),2px 2px 0 rgba(0,0,0,.5);text-transform:uppercase;padding:8px 0 4px;animation:glowPulse 3s ease-in-out infinite;position:relative;}
@@ -213,9 +214,9 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
 .tab-content{animation:fadeIn .3s ease-out;}
 .forum-hero{background:linear-gradient(135deg,rgba(245,200,0,.06),rgba(168,85,247,.06));border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:18px 22px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;box-shadow:0 4px 20px rgba(0,0,0,.1);position:relative;overflow:hidden;}
 .forum-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(245,200,0,.03),transparent);transform:translateX(-100%);animation:shimmer 4s ease-in-out infinite;}
-.forum-post{background:linear-gradient(145deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.05);border-radius:10px;padding:12px 14px;margin-bottom:8px;cursor:pointer;transition:all .25s;box-shadow:0 2px 8px rgba(0,0,0,.08);animation:slideUp .4s ease-out;}
+.forum-post{background:linear-gradient(145deg,rgba(30,35,50,.7),rgba(20,25,40,.8));border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:12px 14px;margin-bottom:8px;cursor:pointer;transition:all .25s;box-shadow:0 2px 8px rgba(0,0,0,.08);animation:slideUp .4s ease-out;}
 .forum-post:hover{background:rgba(255,255,255,.06);border-color:rgba(245,200,0,.12);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.15),0 0 20px rgba(245,200,0,.04);}
-.forum-card{background:linear-gradient(145deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:16px;margin-bottom:12px;box-shadow:0 4px 16px rgba(0,0,0,.1);}
+.forum-card{background:linear-gradient(145deg,rgba(30,35,50,.7),rgba(20,25,40,.8));border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:16px;margin-bottom:12px;box-shadow:0 4px 16px rgba(0,0,0,.1);}
 .forum-tag{font-size:.52rem;font-weight:700;background:linear-gradient(135deg,rgba(245,200,0,.12),rgba(245,200,0,.06));color:#f5c800;border:1px solid rgba(245,200,0,.12);border-radius:4px;padding:2px 6px;cursor:pointer;transition:all .15s;}
 .forum-tag:hover{background:rgba(245,200,0,.2);}
 .forum-input{background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:7px 10px;font-size:.74rem;color:#e2e8f0;transition:all .2s;box-sizing:border-box;}
@@ -226,7 +227,12 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
 .forum-btn:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(245,200,0,.25);}
 .forum-btn-danger{background:linear-gradient(135deg,#ef4444,#dc2626);color:#fff;border:none;}
 .forum-btn-danger:hover{box-shadow:0 4px 16px rgba(239,68,68,.2);}
-@keyframes shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+@keyframes shake{0%,100%{transform:rotate(0deg)}20%{transform:rotate(-15deg)}40%{transform:rotate(15deg)}60%{transform:rotate(-10deg)}80%{transform:rotate(10deg)}}
+.skel{background:linear-gradient(90deg,rgba(255,255,255,.04) 25%,rgba(255,255,255,.08) 50%,rgba(255,255,255,.04) 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:6px;}
+.skel-banner{height:100px;width:100%;margin-bottom:8px;}
+.skel-line{height:14px;width:70%;margin-bottom:6px;}
+.skel-line-sm{height:10px;width:40%;margin-bottom:6px;}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
 @keyframes slideUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:850px){.screen{grid-template-columns:1fr}.title{text-align:center}.ts-row{grid-template-columns:1fr}.slot-columns{grid-template-columns:1fr}.cgrid{grid-template-columns:repeat(6,1fr)}.cospanel{order:1;position:static}.left{order:3}.right{order:2}.bot{order:4}.srow5{grid-template-columns:repeat(5,1fr)}}
 </style>
@@ -426,6 +432,10 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
   <div class="forum-wrap" id="forumApp" style="max-width:900px;margin:0 auto;">
     <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px;flex-wrap:wrap;">
       <h2 style="font-size:1.8rem;font-weight:900;letter-spacing:.12em;color:#f5c800;">&#128172; Build Forum</h2>
+      <div style="position:relative;display:flex;align-items:center;gap:6px;">
+        <span id="notifBell" style="font-size:1.1rem;cursor:pointer;padding:2px 6px;border-radius:6px;transition:all .15s;position:relative;" title="Notifications">&#128276;</span>
+        <span id="adminLink" style="font-size:.85rem;cursor:pointer;padding:4px 8px;border:1px solid rgba(255,255,255,.08);border-radius:6px;transition:all .15s;color:#64748b;">&#9881;</span>
+      </div>
     </div>
     <div id="forumContent"><div style="text-align:center;padding:60px 0;color:#64748b;font-size:.9rem;">Loading forum...</div></div>
   </div>
@@ -5166,8 +5176,8 @@ function rebuildCosOptions(ch,filter){
   }
   function fmt(i,selMode){
     var cos=ch.c[i];if(!cos)return'No costumes match';
-    var r=cos.ra||'';var sc='#94a3b8';if(r==='PUR')sc='#a855f7';else if(r==='SR')sc='#22c55e';
-    var s='<span style="color:'+sc+';font-weight:900;">'+(r==='PUR'?'\u2605\u2605\u2605':r==='SR'?'\u2605\u2605':'\u2605')+'</span> ';
+    var r=cos.ra||'';var sc='#94a3b8',glow='';if(r==='PUR'){sc='#a855f7';glow='text-shadow:0 0 12px rgba(168,85,247,.4);animation:rainbow 2s linear infinite;'}else if(r==='SR'){sc='#f59e0b';glow='text-shadow:0 0 10px rgba(245,158,11,.5),0 0 20px rgba(245,158,11,.2);'}else if(r==='R'){sc='#ef4444';glow='text-shadow:0 0 10px rgba(239,68,68,.5),0 0 20px rgba(239,68,68,.2);'}
+    var s='<span style="color:'+sc+';font-weight:900;'+glow+'">'+(r==='PUR'?'\u2605\u2605\u2605':r==='SR'?'\u2605\u2605':'\u2605')+'</span> ';
     s+=cos.n;
     var sp1=cos.sp1||(cos.s&&cos.s[0]?{r:cos.s[0].r}:null);
     var sp2=cos.sp2||(cos.s&&cos.s[5]?{r:cos.s[5].r}:null);
@@ -7153,53 +7163,131 @@ document.querySelectorAll('.tab-btn').forEach(function(btn){
 // Forum init
 function initForum(){
   var API='/api/posts',likedPosts={},sessionName=localStorage.getItem('forumName')||'',myKeys=JSON.parse(localStorage.getItem('forumKeys')||'{}');
+  masterKey=localStorage.getItem('mhurMasterKey')||'';
+  try{var likedLS=JSON.parse(localStorage.getItem('mhurLiked')||'{}');for(var k in likedLS)if(likedLS[k])likedPosts[k]=true;}catch(e){}
   function genKey(){return Math.random().toString(36).slice(2)+Math.random().toString(36).slice(2);}
-  function api2(p,m,d,cb){var x=new XMLHttpRequest();x.open(m||'GET',API+p,true);x.setRequestHeader('Content-Type','application/json');x.onload=function(){if(x.status>=400){cb(null);return;}try{cb(JSON.parse(x.responseText));}catch(e){cb(null);}};x.onerror=function(){cb(null);};x.send(d?JSON.stringify(d):null);}
+  function api2(p,m,d,cb){var x=new XMLHttpRequest();x.open(m||'GET',API+p,true);x.setRequestHeader('Content-Type','application/json');x.onload=function(){if(x.status>=400){console.log('API ERROR:',m,API+p,x.status);cb(null);return;}try{cb(JSON.parse(x.responseText));}catch(e){console.log('API PARSE ERROR:',e);cb(null);}};x.onerror=function(){console.log('API NETWORK ERROR:',m,API+p);cb(null);};x.send(d?JSON.stringify(d):null);}
   function esc(s){return String(s||'').replace(/[<>&]/g,function(c){return{'<':'&lt;','>':'&gt;','&':'&amp;'}[c];});}
   function timeAgo(ts){var diff=Date.now()-ts,s=Math.floor(diff/1000);if(s<60)return'just now';var m=Math.floor(s/60);if(m<60)return m+'m ago';var h=Math.floor(m/60);if(h<24)return h+'h ago';var d=Math.floor(h/24);if(d<30)return d+'d ago';return new Date(ts).toLocaleDateString();}
+  function charBanner(code){
+    if(!code)return'';
+    try{
+      var p=JSON.parse(decodeURIComponent(escape(atob(code))));
+      var cid=p.charId;if(!cid)return'';
+      var ch=null;for(var i=0;i<CH.length;i++){if(CH[i].id===cid){ch=CH[i];break;}}
+      if(!ch)return'';
+      var cn=CH_NUM[ch.id];
+      var rc=(ch.role||'').toLowerCase();
+      var bgColors={strike:'linear-gradient(160deg,#7a0000,#FF0000)',assault:'linear-gradient(160deg,#a08000,#FFDD00)',rapid:'linear-gradient(160deg,#006080,#00C8FF)',technical:'linear-gradient(160deg,#3d007a,#8400FF)',support:'linear-gradient(160deg,#016e0c,#02DB18)'};
+      var bg=bgColors[rc]||'linear-gradient(160deg,#1e293b,#4a6070)';
+      var imgSrc=cn?bnPortrait(cn,p.styleIdx||0):'';
+      var style=(p.styleIdx||0);
+      var dispRole=ch.role;
+      if(style>0&&ch.bs&&ch.bs[style-1])dispRole=ch.bs[style-1].t;
+      var roleColor={strike:'#cc0000',assault:'#ccb000',rapid:'#009fcc',technical:'#6600cc',support:'#01aa13'}[dispRole.toLowerCase()]||'#1e293b';
+      return'<div style="position:relative;overflow:hidden;border-radius:8px;aspect-ratio:16/9;display:flex;align-items:flex-end;margin-bottom:8px;background:'+bg+';border:1px solid rgba(255,255,255,.08);">'+
+        (imgSrc?'<img src="'+imgSrc+'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:.85;">':'')+
+        '<div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.7));"></div>'+
+        '<div style="position:relative;z-index:2;display:flex;align-items:center;gap:6px;padding:6px 10px;width:100%;">'+
+        '<span style="font-size:.7rem;font-weight:900;color:#fff;text-shadow:0 0 8px rgba(0,0,0,.5);">'+esc(ch.n)+'</span>'+
+        '<span style="font-size:.52rem;font-weight:900;text-transform:uppercase;background:'+roleColor+';color:#fff;border-radius:3px;padding:1px 5px;">'+esc(dispRole)+'</span>'+
+        '<span style="font-size:.5rem;color:rgba(255,255,255,.5);margin-left:auto;">'+(p.styleIdx>0?'Style '+(p.styleIdx):'Original')+'</span>'+
+        '</div></div>';
+    }catch(e){return'';}
+  }
+  function charNameFromCode(code){
+    if(!code)return'';
+    try{var p=JSON.parse(decodeURIComponent(escape(atob(code))));var cid=p.charId;if(!cid)return'';
+      for(var i=0;i<CH.length;i++){if(CH[i].id===cid)return CH[i].n;}return'';
+    }catch(e){return'';}
+  }
+  function skeleton(){return'<div style="padding:4px 0;"><div class="skel skel-banner"></div><div class="skel skel-line"></div><div class="skel skel-line-sm"></div><div class="skel skel-line" style="width:50%;"></div></div>';}
   var el=document.getElementById('forumContent');
   function r(h){el.innerHTML=h;}
-  function showHome(sort){
-    sort=sort||'hot';r('<div style="text-align:center;padding:60px 0;color:#64748b;">Loading forum...</div>');
+  function showHome(sort,page,filter){
+    page=page||1;sort=sort||'hot';filter=filter||'all';
+    r(skeleton()+skeleton()+skeleton());
     var newsData=null,postData=null;
     var xn=new XMLHttpRequest();xn.open('GET','/api/news',true);xn.onload=function(){try{newsData=JSON.parse(xn.responseText);}catch(e){};tr();};xn.onerror=function(){tr();};xn.send();
-    api2('?sort='+sort,'GET',null,function(d){postData=d;tr();});
+    api2('?sort='+sort+'&page='+page,'GET',null,function(d){postData=d;tr();});
     function tr(){
       if(!postData)return;var d=postData;
       if(!d||!d.items){r('<div class="error">Failed to load.</div>');return;}
-      var total=d.items.length,totalLikes=0,tags={};
-      d.items.forEach(function(p){totalLikes+=p.likes||0;(p.tags||[]).forEach(function(t){tags[t]=(tags[t]||0)+1;});});
+      var items=d.items;
+      if(filter==='mylikes'){var likedItems=JSON.parse(localStorage.getItem('mhurLiked')||'{}');items=items.filter(function(p){return likedItems[p.id];});}
+      if(filter==='myposts'){items=items.filter(function(p){return myKeys[p.id];});}
+      var total=items.length,totalLikes=0,charCount={},catCount={},tags={},totalPages=Math.ceil(Math.max(1,total)/20);
+      items.forEach(function(p){totalLikes+=p.likes||0;(p.tags||[]).forEach(function(t){tags[t]=(tags[t]||0)+1;});if(p.category)catCount[p.category]=(catCount[p.category]||0)+1;
+        try{var bc=JSON.parse(decodeURIComponent(escape(atob(p.buildCode||''))));if(bc.charId)charCount[bc.charId]=(charCount[bc.charId]||0)+1;}catch(e){}
+      });
+      var topChar=Object.keys(charCount).sort(function(a,b){return charCount[b]-charCount[a];})[0]||'';
       var top=Object.keys(tags).sort(function(a,b){return tags[b]-tags[a];}).slice(0,6);
-      var h='<div class="forum-hero"><div><h2 style="font-size:1.2rem;font-weight:900;color:#f5c800;">&#128172; Build Forum</h2><p style="font-size:.72rem;color:#94a3b8;margin-top:2px;">Share and discover MHUR builds</p></div><div style="display:flex;gap:16px;"><div style="text-align:center;"><div style="font-size:1.3rem;font-weight:900;color:#fff;">'+total+'</div><div style="font-size:.6rem;color:#64748b;text-transform:uppercase;letter-spacing:.05em;">Builds</div></div><div style="text-align:center;border-left:1px solid rgba(255,255,255,.06);padding-left:12px;"><div style="font-size:1.3rem;font-weight:900;color:#fff;">'+totalLikes+'</div><div style="font-size:.6rem;color:#64748b;text-transform:uppercase;letter-spacing:.05em;">Likes</div></div>'+(newsData&&newsData.season?'<div style="text-align:center;border-left:1px solid rgba(255,255,255,.06);padding-left:12px;"><div style="font-size:1rem;font-weight:900;color:#f5c800;" id="sTimer2">S'+newsData.season+'</div><div style="font-size:.6rem;color:#64748b;text-transform:uppercase;letter-spacing:.05em;">Season</div></div>':'')+'</div></div>';
+      var h='<div class="forum-hero"><div><h2 style="font-size:1.2rem;font-weight:900;color:#f5c800;">&#128172; Build Forum</h2><p style="font-size:.72rem;color:#94a3b8;margin-top:2px;">Share and discover MHUR builds</p></div><div style="display:flex;gap:16px;"><div style="text-align:center;"><div style="font-size:1.3rem;font-weight:900;color:#fff;">'+total+'</div><div style="font-size:.6rem;color:#64748b;text-transform:uppercase;letter-spacing:.05em;">Builds</div></div><div style="text-align:center;border-left:1px solid rgba(255,255,255,.06);padding-left:12px;"><div style="font-size:1.3rem;font-weight:900;color:#fff;">'+totalLikes+'</div><div style="font-size:.6rem;color:#64748b;text-transform:uppercase;letter-spacing:.05em;">Likes</div></div>'+(topChar?'<div style="text-align:center;border-left:1px solid rgba(255,255,255,.06);padding-left:12px;"><div style="font-size:.75rem;font-weight:900;color:#f5c800;">'+esc(topChar.charAt(0).toUpperCase()+topChar.slice(1))+'</div><div style="font-size:.55rem;color:#64748b;text-transform:uppercase;letter-spacing:.04em;">Most Built</div></div>':'')+(newsData&&newsData.season?'<div style="text-align:center;border-left:1px solid rgba(255,255,255,.06);padding-left:12px;"><div style="font-size:1rem;font-weight:900;color:#f5c800;" id="sTimer2">S'+newsData.season+'</div><div style="font-size:.6rem;color:#64748b;text-transform:uppercase;letter-spacing:.05em;">Season</div></div>':'')+'</div></div>';
       if(newsData&&newsData.seasonEnd){(function(es){var t=new Date(es.replace(/-/g,'/')).getTime();function tk(){var df=Math.max(0,t-Date.now()),dd=Math.floor(df/864e5),hh=Math.floor((df%864e5)/36e5),mm=Math.floor((df%36e5)/6e4);var e2=document.getElementById('sTimer2');if(e2)e2.textContent=dd+'d '+hh+'h '+mm+'m';}tk();setInterval(tk,1e4);})(newsData.seasonEnd);}
       if(top.length)h+='<div style="display:flex;gap:4px;margin-bottom:10px;flex-wrap:wrap;align-items:center;"><span style="font-size:.58rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-right:4px;">Tags:</span>'+top.map(function(t){return'<span class="post-tag" style="font-size:.55rem;font-weight:700;background:linear-gradient(135deg,rgba(245,200,0,.12),rgba(245,200,0,.06));color:#f5c800;border:1px solid rgba(245,200,0,.12);border-radius:4px;padding:2px 6px;cursor:pointer;transition:all .15s;" data-tag="'+esc(t)+'">'+esc(t)+'</span>';}).join('')+'</div>';
-      h+='<div style="display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;">'+['hot','likes','new'].map(function(s){return'<button class="tab-btn '+(sort===s?'active':'')+'" data-fsort="'+s+'" style="font-size:.68rem;padding:4px 10px;">'+(s==='hot'?'&#128293; Hot':s==='likes'?'&#128147; Top':'&#128337; New')+'</button>';}).join('')+'<div style="flex:1;min-width:140px;display:flex;gap:4px;"><input id="fq" class="forum-input" style="flex:1;font-size:.7rem;padding:5px 8px;" placeholder="Search..."><button class="tab-btn" id="fsq" style="font-size:.68rem;padding:4px 10px;">&#128269;</button></div><button class="forum-btn" id="newPostBtn" style="font-size:.68rem;padding:4px 10px;">+ New Post</button></div>';
-      if(!d.items.length)h+='<div style="text-align:center;padding:60px 0;color:#475569;">No builds yet. <button class="tab-btn" id="newPostBtn2" style="background:linear-gradient(135deg,#f5c800,#e6b800);color:#1a1a1a;border:none;">Post the first one!</button></div>';
-      d.items.forEach(function(p){h+='<div class="forum-post" data-id="'+p.id+'"><div style="font-size:.85rem;font-weight:700;color:#f1f5f9;margin-bottom:3px;">'+esc(p.title)+'</div><div style="font-size:.64rem;color:#64748b;display:flex;gap:12px;flex-wrap:wrap;"><span>&#128100; '+esc(p.author||'Anonymous')+'</span><span class="flc-'+p.id+'">&#128147; '+p.likes+'</span><span class="fcc-'+p.id+'">&#128172; '+(p.comments||0)+'</span><span>&#128337; '+timeAgo(p.createdAt)+'</span></div>'+(p.tags&&p.tags.length?'<div class="forum-tags" style="display:flex;gap:4px;flex-wrap:wrap;margin-top:4px;">'+p.tags.map(function(t){return'<span class="forum-tag">'+esc(t)+'</span>';}).join('')+'</div>':'')+(p.buildCode?'<div style="font-size:.56rem;color:#475569;margin-top:3px;font-family:monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Code: '+esc(p.buildCode.slice(0,50))+'...</div>':'')+'</div>';});
+      h+='<div style="display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;">'+['hot','likes','new'].map(function(s){return'<button class="tab-btn '+(sort===s?'active':'')+'" data-fsort="'+s+'" style="font-size:.68rem;padding:4px 10px;">'+(s==='hot'?'&#128293; Hot':s==='likes'?'&#128147; Top':'&#128337; New')+'</button>';}).join('')+
+        '<span style="font-size:.55rem;color:#475569;margin:0 2px;">|</span>'+
+        ['all','mylikes','myposts'].map(function(f){return'<button class="tab-btn '+(filter===f?'active':'')+'" data-ffilter="'+f+'" style="font-size:.62rem;padding:3px 8px;">'+(f==='all'?'All':f==='mylikes'?'&#10084; Liked':f==='myposts'?'&#128221; Mine':'')+'</button>';}).join('')+
+        '<div style="flex:1;min-width:140px;display:flex;gap:4px;"><input id="fq" class="forum-input" style="flex:1;font-size:.7rem;padding:5px 8px;" placeholder="Search..."><button class="tab-btn" id="fsq" style="font-size:.68rem;padding:4px 10px;">&#128269;</button></div><button class="forum-btn" id="newPostBtn" style="font-size:.68rem;padding:4px 10px;">+ New Post</button></div>';
+      if(!items.length)h+='<div style="text-align:center;padding:60px 20px;color:#475569;"><div style="font-size:3rem;margin-bottom:12px;">'+(filter==='mylikes'?'&#10084;':filter==='myposts'?'&#128221;':'&#128221;')+'</div><div style="font-size:.9rem;font-weight:700;color:#94a3b8;margin-bottom:4px;">'+(filter==='mylikes'?'No liked builds yet':filter==='myposts'?'You haven\'t posted anything yet':'No builds posted yet')+'</div><div style="font-size:.72rem;color:#64748b;margin-bottom:14px;">'+(filter==='mylikes'?'Like some builds to see them here!':filter==='myposts'?'Create your first build to get started!':'Be the first to share your build!')+'</div>'+(filter==='all'?'<button class="forum-btn" id="newPostBtn2" style="font-size:.72rem;">+ Create Your First Build</button>':'')+'</div>';
+      items.forEach(function(p){var cn=charNameFromCode(p.buildCode),catLabel={'guide':'&#128218;','showcase':'&#127775;','question':'&#128173;','fun':'&#127918;'}[p.category]||'';h+='<div class="forum-post" data-id="'+p.id+'" style="'+(p.pinned?'border-left:3px solid #f5c800;':'')+'">'+(p.pinned?'<div style="font-size:.5rem;color:#f5c800;font-weight:900;text-transform:uppercase;letter-spacing:.04em;margin-bottom:2px;">&#128204; Pinned</div>':'')+(p.image?'<div style="position:relative;overflow:hidden;border-radius:8px;aspect-ratio:16/9;margin-bottom:8px;background:rgba(0,0,0,.2);"><img src="'+esc(p.image)+'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display=\'none\'"></div>':charBanner(p.buildCode))+'<div style="font-size:.85rem;font-weight:700;color:#f1f5f9;margin-bottom:3px;">'+(catLabel?'<span style="margin-right:3px;">'+catLabel+'</span>':'')+(cn?'<span style="font-size:.58rem;font-weight:700;background:rgba(245,200,0,.12);color:#f5c800;border-radius:3px;padding:1px 5px;margin-right:4px;">'+esc(cn)+'</span> ':'')+esc(p.title)+'</div><div style="font-size:.64rem;color:#64748b;display:flex;gap:12px;flex-wrap:wrap;"><span>&#128100; '+esc(p.author||'Anonymous')+'</span><span class="flc-'+p.id+'">&#128147; '+p.likes+'</span><span class="fcc-'+p.id+'">&#128172; '+(p.comments||0)+'</span><span>&#128337; '+timeAgo(p.createdAt)+'</span>'+(masterKey?'<span class="pin-btn" data-id="'+p.id+'" style="cursor:pointer;color:'+(p.pinned?'#f5c800':'#64748b')+';font-size:.55rem;">'+(p.pinned?'&#128204; Unpin':'&#128204; Pin')+'</span>':'')+'</div>'+(p.tags&&p.tags.length?'<div class="forum-tags" style="display:flex;gap:4px;flex-wrap:wrap;margin-top:4px;">'+p.tags.map(function(t){return'<span class="forum-tag">'+esc(t)+'</span>';}).join('')+'</div>':'')+'</div>';});
+      if(totalPages>1){
+        h+='<div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:14px;flex-wrap:wrap;">';
+        h+='<button class="tab-btn" data-gopage="'+(page-1)+'" style="font-size:.62rem;padding:3px 10px;'+(page<=1?'opacity:.3;pointer-events:none;':'')+'">&#8592; Prev</button>';
+        h+='<span style="font-size:.65rem;color:#64748b;">Page '+page+'/'+totalPages+'</span>';
+        h+='<button class="tab-btn" data-gopage="'+(page+1)+'" style="font-size:.62rem;padding:3px 10px;'+(page>=totalPages?'opacity:.3;pointer-events:none;':'')+'">Next &#8594;</button>';
+        h+='</div>';
+      }
       r(h);
       document.querySelectorAll('#forumContent .forum-post').forEach(function(e){e.addEventListener('click',function(){showPost(this.getAttribute('data-id'));});});
-      document.querySelectorAll('[data-fsort]').forEach(function(e){e.addEventListener('click',function(){showHome(this.getAttribute('data-fsort'));});});
+      document.querySelectorAll('[data-fsort]').forEach(function(e){e.addEventListener('click',function(){showHome(this.getAttribute('data-fsort'),1,filter);});});
+      document.querySelectorAll('[data-ffilter]').forEach(function(e){e.addEventListener('click',function(){showHome(sort,1,this.getAttribute('data-ffilter'));});});
+      document.querySelectorAll('[data-gopage]').forEach(function(e){e.addEventListener('click',function(){var p=parseInt(this.getAttribute('data-gopage'));if(p>0&&p<=totalPages)showHome(sort,p,filter);});});
+      document.querySelectorAll('.pin-btn').forEach(function(e){e.addEventListener('click',function(ev){ev.stopPropagation();var pid=this.getAttribute('data-id');api2('/'+pid+'/pin','POST',{deleteKey:masterKey},function(r2){if(r2)showHome(sort,page,filter);});});});
       document.querySelectorAll('[data-tag]').forEach(function(e){e.addEventListener('click',function(){searchPosts(this.getAttribute('data-tag'));});});
       document.getElementById('fsq').addEventListener('click',function(){searchPosts(document.getElementById('fq').value.trim());});
       document.getElementById('fq').addEventListener('keydown',function(e){if(e.key==='Enter')searchPosts(this.value.trim());});
       (document.getElementById('newPostBtn')||document.getElementById('newPostBtn2'))&&(document.getElementById('newPostBtn')||document.getElementById('newPostBtn2')).addEventListener('click',showNewForm);
+      checkNotifs(d.items);
     }
   }
+  function checkNotifs(items){
+    if(!items||!items.length)return;
+    var nCount=0,nList=[],seen=JSON.parse(localStorage.getItem('notifSeen')||'{}');
+    var topLikes=items.slice(0,Math.min(10,items.length));
+    var myPostIds=Object.keys(myKeys);
+    items.forEach(function(p){
+      var isMine=myPostIds.indexOf(p.id)!==-1;
+      var prev=seen[p.id]||{likes:0,comments:0};
+      if(p.likes>prev.likes){nCount+=p.likes-prev.likes;if(isMine)nList.push({t:'like',id:p.id,title:p.title,count:p.likes-prev.likes});}
+      if(p.comments>prev.comments){nCount+=p.comments-prev.comments;if(isMine)nList.push({t:'comment',id:p.id,title:p.title,count:p.comments-prev.comments});}
+      if(isMine)seen[p.id]={likes:p.likes,comments:p.comments};
+    });
+    // Check top 10 likes
+    if(topLikes.length){
+      var top10=topLikes.filter(function(p){return myPostIds.indexOf(p.id)!==-1;});
+      top10.forEach(function(p){if(!seen[p.id+'_top'])nList.push({t:'top10',id:p.id,title:p.title});seen[p.id+'_top']=true;});
+    }
+    localStorage.setItem('notifSeen',JSON.stringify(seen));
+    var bell=document.getElementById('notifBell');
+    if(bell)bell.style.animation=nCount>0?'shake .6s ease-in-out infinite':'none';
+    localStorage.setItem('notifList',JSON.stringify(nList));
+  }
   function searchPosts(q){
-    if(!q){showHome();return;}r('<div style="text-align:center;padding:60px 0;color:#64748b;">Searching...</div>');
+    if(!q){showHome();return;}r(skeleton()+skeleton());
     api2('/search?q='+encodeURIComponent(q),'GET',null,function(items){
-      if(!items||!items.length){r('<div style="text-align:center;padding:40px 0;color:#475569;">No results. <button class="tab-btn" onclick="showHome()" style="font-size:.7rem;padding:4px 10px;">&#8592; Back</button></div>');return;}
-      var h='<div style="margin-bottom:10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;"><span style="font-size:.7rem;color:#64748b;">Results for "'+esc(q)+'" ('+items.length+')</span><button class="tab-btn" onclick="showHome()" style="font-size:.7rem;padding:4px 10px;">&#8592; Back</button></div>';
+      if(!items||!items.length){r('<div style="text-align:center;padding:60px 20px;color:#475569;"><div style="font-size:2.5rem;margin-bottom:10px;">&#128270;</div><div style="font-size:.85rem;font-weight:700;color:#94a3b8;margin-bottom:4px;">No results found</div><div style="font-size:.7rem;color:#64748b;margin-bottom:12px;">Try different keywords or tags</div><button class="tab-btn" id="b1" onclick="window.forumBack()" style="font-size:.7rem;padding:4px 10px;">&#8592; Back to Browse</button></div>');return;}
+      var h='<div style="margin-bottom:10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;"><span style="font-size:.7rem;color:#64748b;">Results for "'+esc(q)+'" ('+items.length+')</span><button class="tab-btn" id="b2" onclick="window.forumBack()" style="font-size:.7rem;padding:4px 10px;">&#8592; Back</button></div>';
       items.forEach(function(p){h+='<div class="forum-post" data-id="'+p.id+'"><div style="font-size:.85rem;font-weight:700;color:#f1f5f9;">'+esc(p.title)+'</div><div style="font-size:.64rem;color:#64748b;display:flex;gap:12px;flex-wrap:wrap;"><span>&#128100; '+esc(p.author||'Anonymous')+'</span><span>&#128147; '+p.likes+'</span><span>&#128172; '+(p.comments||0)+'</span><span>&#128337; '+timeAgo(p.createdAt)+'</span></div>'+(p.tags&&p.tags.length?'<div class="forum-tags" style="display:flex;gap:4px;flex-wrap:wrap;margin-top:4px;">'+p.tags.map(function(t){return'<span class="forum-tag">'+esc(t)+'</span>';}).join('')+'</div>':'')+'</div>';});
       r(h);
       document.querySelectorAll('#forumContent .forum-post').forEach(function(e){e.addEventListener('click',function(){showPost(this.getAttribute('data-id'));});});
     });
   }
   function showPost(id){
-    r('<div style="text-align:center;padding:60px 0;color:#64748b;">Loading post...</div>');
+    r(skeleton()+skeleton()+skeleton());
     api2('/'+id,'GET',null,function(post){
-      if(!post||post.error){r('<div style="text-align:center;padding:40px 0;color:#ef4444;">Not found. <button class="tab-btn" onclick="showHome()">&#8592; Back</button></div>');return;}
-      var liked=likedPosts[id],h='<button class="tab-btn" onclick="showHome()" style="font-size:.7rem;padding:4px 10px;margin-bottom:8px;">&#8592; All Posts</button><div class="forum-card"><h2 style="font-size:1.1rem;font-weight:900;color:#f5c800;"><span id="postTitle">'+esc(post.title)+'</span></h2><div style="color:#64748b;font-size:.7rem;margin-bottom:8px;">by '+esc(post.author||'Anonymous')+'</div>'+(post.tags&&post.tags.length?'<div id="postTags" class="forum-tags" style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:8px;">'+post.tags.map(function(t){return'<span class="forum-tag">'+esc(t)+'</span>';}).join('')+'</div>':'')+'<div id="postDesc" style="color:#94a3b8;font-size:.74rem;line-height:1.4;margin-bottom:8px;">'+(post.description?esc(post.description):'')+'</div>'+(post.editedAt?'<div style="font-size:.55rem;color:#64748b;margin-bottom:4px;">(edited)</div>':'')+'<div style="display:flex;gap:12px;font-size:.66rem;color:#64748b;margin-bottom:8px;flex-wrap:wrap;"><span id="flc">&#128147; '+(post.likes||0)+'</span><span>&#128172; '+(post.comments||[]).length+'</span><span>&#128337; '+timeAgo(post.createdAt)+'</span><span>&#128065; '+(post.views||0)+'</span></div>'+(post.buildCode?'<div id="fbp" style="background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.05);border-radius:8px;padding:10px 12px;font-size:.65rem;margin-bottom:8px;"></div>':'')+'<div style="display:flex;gap:6px;flex-wrap:wrap;"><button class="tab-btn '+(liked?'active':'')+'" id="flb" style="font-size:.68rem;padding:4px 10px;">'+(liked?'&#10004; Liked':'&#10084; Like')+'</button>'+(myKeys[id]?'<button class="tab-btn" id="fep" style="font-size:.6rem;padding:3px 8px;">&#9998; Edit</button>':'')+(myKeys[id]?'<button class="forum-btn forum-btn-danger" id="fdp" style="font-size:.65rem;padding:4px 10px;">&#128465; Delete</button>':'')+'</div></div>';
+      if(!post||post.error){r('<div style="text-align:center;padding:40px 0;color:#ef4444;">Not found. <button class="tab-btn" onclick="window.forumBack()">&#8592; Back</button></div>');return;}
+      var liked=likedPosts[id],canMod=myKeys[id]||masterKey,catLabel={'guide':'&#128218; Guide','showcase':'&#127775; Showcase','question':'&#128173; Question','fun':'&#127918; Fun'}[post.category]||'';var h='<button class="tab-btn" id="b4" style="font-size:.7rem;padding:4px 10px;margin-bottom:8px;">&#8592; All Posts</button><div class="forum-card" style="'+(post.pinned?'border-left:3px solid #f5c800;':'')+'">'+(post.pinned?'<div style="font-size:.55rem;color:#f5c800;font-weight:900;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px;">&#128204; Pinned</div>':'')+(post.image?'<div style="position:relative;overflow:hidden;border-radius:8px;aspect-ratio:16/9;margin-bottom:8px;background:rgba(0,0,0,.2);"><img src="'+esc(post.image)+'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display=\'none\'"></div>':charBanner(post.buildCode))+(catLabel?'<div style="font-size:.6rem;color:#64748b;margin-bottom:4px;">'+catLabel+'</div>':'')+'<h2 style="font-size:1.1rem;font-weight:900;color:#f5c800;"><span id="postTitle">'+esc(post.title)+'</span></h2><div style="color:#64748b;font-size:.7rem;margin-bottom:8px;">by '+esc(post.author||'Anonymous')+'</div>'+(post.tags&&post.tags.length?'<div id="postTags" class="forum-tags" style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:8px;">'+post.tags.map(function(t){return'<span class="forum-tag">'+esc(t)+'</span>';}).join('')+'</div>':'')+'<div id="postDesc" style="color:#94a3b8;font-size:.74rem;line-height:1.4;margin-bottom:8px;">'+(post.description?esc(post.description):'')+'</div>'+(post.editedAt?'<div style="font-size:.55rem;color:#64748b;margin-bottom:4px;">(edited)</div>':'')+'<div style="display:flex;gap:12px;font-size:.66rem;color:#64748b;margin-bottom:8px;flex-wrap:wrap;"><span id="flc">&#128147; '+(post.likes||0)+'</span><span>&#128172; '+(post.comments||[]).length+'</span><span>&#128337; '+timeAgo(post.createdAt)+'</span><span>&#128065; '+(post.views||0)+'</span></div>'+(post.buildCode?'<div id="fbp" style="background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.05);border-radius:8px;padding:10px 12px;font-size:.65rem;margin-bottom:8px;"></div>':'')+'<div style="display:flex;gap:6px;flex-wrap:wrap;"><button class="tab-btn '+(liked?'active':'')+'" id="flb" style="font-size:.68rem;padding:4px 10px;">'+(liked?'&#10004; Liked':'&#10084; Like')+'</button>'+(canMod?'<button class="tab-btn" id="fep" style="font-size:.6rem;padding:3px 8px;">&#9998; Edit</button>':'')+(canMod?'<button class="forum-btn forum-btn-danger" id="fdp" style="font-size:.65rem;padding:4px 10px;">&#128465; Delete</button>':'')+(masterKey?'<button class="tab-btn" id="fpin" style="font-size:.6rem;padding:3px 8px;">'+(post.pinned?'&#128204; Unpin':'&#128204; Pin')+'</button>':'')+'</div></div>';
       h+='<div style="font-size:.75rem;font-weight:700;color:#94a3b8;margin:10px 0 6px;">Comments</div><div style="display:flex;gap:6px;margin-bottom:8px;flex-wrap:wrap;"><input id="fcn" class="forum-input" style="width:90px;" placeholder="Name" value="'+esc(sessionName)+'"><div style="flex:1;display:flex;gap:6px;min-width:180px;"><input id="fci" class="forum-input" style="flex:1;" placeholder="Write..."><button class="forum-btn" id="fcb" style="font-size:.65rem;">Post</button></div></div><div id="fcmts">';
       function rc(cs){if(!cs||!cs.length)return'<div style="font-size:.68rem;color:#475569;padding:6px 0;">No comments.</div>';
         return cs.map(function(c){var ck=myKeys[id+'_c_'+c.id],r='<div style="font-size:.68rem;color:#94a3b8;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.03);"><span style="color:#f5c800;font-weight:700;font-size:.6rem;">'+esc(c.author||'Anonymous')+'</span> <span class="cmt-text-'+c.id+'">'+esc(c.text)+'</span>'+(c.editedAt?'<span style="font-size:.48rem;color:#64748b;"> (edited)</span>':'')+'<span style="font-size:.52rem;color:#475569;margin-left:4px;">'+timeAgo(c.createdAt)+'</span><button class="frb" data-cid="'+c.id+'" style="font-size:.55rem;color:#64748b;cursor:pointer;margin-left:6px;background:none;border:none;padding:1px 3px;">Reply</button>'+(ck?'<button class="fec" style="font-size:.52rem;color:#64748b;cursor:pointer;background:none;border:none;margin-left:3px;" data-cid="'+c.id+'">&#9998;</button>':'')+(ck?'<button class="fdc" style="font-size:.52rem;color:#ef4444;cursor:pointer;background:none;border:none;margin-left:3px;" data-cid="'+c.id+'">&#128465;</button>':'');
@@ -7209,12 +7297,49 @@ function initForum(){
       }
       h+='<div id="fcmtsr">'+rc(post.comments)+'</div></div>';
       r(h);
-      document.getElementById('flb').addEventListener('click',function(){if(likedPosts[id])return;api2('/'+id+'/like','POST',null,function(r2){if(r2&&r2.likes!==undefined){likedPosts[id]=true;document.getElementById('flb').className='tab-btn active';document.getElementById('flb').innerHTML='&#10004; Liked';document.getElementById('flc').innerHTML='&#128147; '+r2.likes;var le=document.querySelector('.flc-'+id);if(le)le.innerHTML='&#128147; '+r2.likes;}});});
-      if(myKeys[id])document.getElementById('fdp').addEventListener('click',function(){if(!confirm('Delete this post?'))return;api2('/'+id,'DELETE',{deleteKey:myKeys[id]},function(r2){if(r2&&r2.deleted){delete myKeys[id];localStorage.setItem('forumKeys',JSON.stringify(myKeys));showHome();}});});
-      if(myKeys[id])document.getElementById('fep').addEventListener('click',function(){
-        var newTitle=prompt('Edit title:',document.getElementById('postTitle').textContent);
-        if(newTitle===null)return;
-        api2('/'+id,'PUT',{title:newTitle.trim(),deleteKey:myKeys[id]},function(r2){if(r2&&r2.edited)showPost(id);});
+      document.getElementById('b4').addEventListener('click',showHome);
+      document.getElementById('flb').addEventListener('click',function(){
+        var isLiked=likedPosts[id];
+        api2('/'+id+'/'+(isLiked?'unlike':'like'),'POST',null,function(r2){
+          if(r2&&r2.likes!==undefined){
+            likedPosts[id]=!isLiked;
+            try{var ls=JSON.parse(localStorage.getItem('mhurLiked')||'{}');ls[id]=likedPosts[id];localStorage.setItem('mhurLiked',JSON.stringify(ls));}catch(e){}
+            document.getElementById('flb').className='tab-btn'+(likedPosts[id]?' active':'');
+            document.getElementById('flb').innerHTML=likedPosts[id]?'&#10004; Liked':'&#10084; Like';
+            document.getElementById('flc').innerHTML='&#128147; '+r2.likes;
+            var le=document.querySelector('.flc-'+id);if(le)le.innerHTML='&#128147; '+r2.likes;
+          }
+  });
+  // Image upload
+  document.getElementById('fuimg').addEventListener('click',function(){document.getElementById('ffimgfile').click();});
+  document.getElementById('ffimgfile').addEventListener('change',function(){
+    var file=this.files[0];if(!file)return;
+    var reader=new FileReader();
+    reader.onload=function(e){
+      var imgData=e.target.result;
+      var x=new XMLHttpRequest();x.open('POST','/api/upload',true);x.setRequestHeader('Content-Type','application/json');
+      x.onload=function(){try{var r=JSON.parse(x.responseText);if(r&&r.url){document.getElementById('ffimg').value=r.url;document.getElementById('fimgprev').style.display='block';document.getElementById('fimgpreview').src=r.url;}}catch(e){}};
+      x.send(JSON.stringify({image:imgData}));
+    };
+    reader.readAsDataURL(file);
+  });
+  document.getElementById('fimgrm').addEventListener('click',function(){document.getElementById('ffimg').value='';document.getElementById('fimgprev').style.display='none';});
+  document.getElementById('ffimg').addEventListener('input',function(){
+    var v=this.value.trim();
+    if(v){document.getElementById('fimgprev').style.display='block';document.getElementById('fimgpreview').src=v;}
+    else{document.getElementById('fimgprev').style.display='none';}
+  });
+      });
+      if(canMod)document.getElementById('fdp').addEventListener('click',function(){if(!confirm('Delete this post?'))return;api2('/'+id,'DELETE',{deleteKey:myKeys[id]||masterKey},function(r2){if(r2&&r2.deleted){delete myKeys[id];localStorage.setItem('forumKeys',JSON.stringify(myKeys));showHome();}});});
+      if(masterKey&&document.getElementById('fpin'))document.getElementById('fpin').addEventListener('click',function(){api2('/'+id+'/pin','POST',{deleteKey:masterKey},function(){showPost(id);});});
+      if(canMod)document.getElementById('fep').addEventListener('click',function(){
+        var curTitle=document.getElementById('postTitle').textContent;
+        var curDesc=document.getElementById('postDesc')?document.getElementById('postDesc').textContent:'';
+        var curTags=document.getElementById('postTags')?Array.from(document.getElementById('postTags').querySelectorAll('.forum-tag')).map(function(t){return t.textContent;}).join(', '):'';
+        var newTitle=prompt('Title:',curTitle);if(newTitle===null)return;
+        var newDesc=prompt('Description:',curDesc);if(newDesc===null)return;
+        var newTags=prompt('Tags (comma separated):',curTags);if(newTags===null)return;
+        api2('/'+id,'PUT',{title:newTitle.trim(),description:newDesc.trim(),tags:newTags.split(',').map(function(t){return t.trim();}).filter(Boolean),deleteKey:myKeys[id]||masterKey},function(r2){if(r2&&r2.edited)showPost(id);});
       });
       document.getElementById('fcb').addEventListener('click',function(){var inp=document.getElementById('fci'),txt=inp.value.trim(),name=document.getElementById('fcn').value.trim();if(name&&name!==sessionName){sessionName=name;localStorage.setItem('forumName',name);}if(!txt)return;var ck=genKey();api2('/'+id+'/comment','POST',{text:txt,author:name,deleteKey:ck},function(r2){if(r2&&r2.id){var ks=JSON.parse(localStorage.getItem('forumKeys')||'{}');ks[id+'_c_'+r2.id]=ck;localStorage.setItem('forumKeys',JSON.stringify(ks));inp.value='';showPost(id);}});});
       document.querySelectorAll('#forumContent .frb').forEach(function(e){e.addEventListener('click',function(){document.getElementById('frp-'+this.getAttribute('data-cid')).style.display='block';});});
@@ -7227,25 +7352,120 @@ function initForum(){
         if(newText===null)return;
         api2('/'+id+'/comment/'+cid,'PUT',{text:newText.trim(),deleteKey:key,isReply:!!this.getAttribute('data-reply')},function(r2){if(r2&&r2.edited)showPost(id);});
       });});
-      try{var code=post.buildCode;if(code){var p=JSON.parse(decodeURIComponent(escape(atob(code))));var bp=document.getElementById('fbp');bp.innerHTML='<span style="color:#f5c800;font-weight:700;">Build</span> <span style="color:#94a3b8;">'+esc(p.charId||'?')+' | '+(p.left||[]).filter(function(s){return s.t;}).length+'L / '+(p.right||[]).filter(function(s){return s.t;}).length+'R / '+(p.specs||[]).filter(function(s){return s.t;}).length+'S</span> <button class="tab-btn" id="flb2" style="font-size:.6rem;padding:2px 8px;">Load</button>';document.getElementById('flb2').addEventListener('click',function(){try{document.getElementById('ioCode').value=code;document.querySelectorAll('.tab-btn')[1].click();setTimeout(function(){document.getElementById('btnImp').click();},100);}catch(e){}});}}catch(e){}
+      try{var code=post.buildCode;if(code){var p=JSON.parse(decodeURIComponent(escape(atob(code))));var bp=document.getElementById('fbp');bp.innerHTML='<div style="margin-bottom:4px;font-size:.68rem;font-weight:700;color:#f5c800;">&#128220; Tuning Layout</div><div style="display:flex;gap:10px;flex-wrap:wrap;">'+
+        ['left','right'].map(function(side){
+          var slots=p[side]||[];
+          var html='<div style="flex:1;min-width:120px;"><div style="font-size:.55rem;color:#64748b;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px;">'+(side==='left'?'Left Memory':'Right Memory')+'</div><div style="display:flex;gap:2px;">';
+          for(var i=0;i<5;i++){
+            var s=slots[i]||{t:'',l:1};var filled=!!s.t;var img='';
+            if(filled){var e=findNormal(s.t);var cn=e&&e.chara;if(cn)img='<img src="'+portrait(cn)+'" style="width:100%;height:100%;object-fit:cover;border-radius:3px;">';}
+            html+='<div style="flex:1;aspect-ratio:1;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:.5rem;font-weight:700;overflow:hidden;position:relative;'+(filled?'background:rgba(245,200,0,.12);border:1px solid rgba(245,200,0,.15);':'background:rgba(255,255,255,.03);color:#475569;border:1px solid rgba(255,255,255,.05);')+'">'+(img||'<span style="color:#475569;">-</span>')+'</div>';
+          }
+          return html+'</div></div>';
+        }).join('')+
+        '<div style="width:100%;"><div style="font-size:.55rem;color:#64748b;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px;">Special Tuning</div><div style="display:flex;gap:2px;">'+
+        (p.specs||[]).map(function(s,i){
+          var filled=!!s.t;var img='';
+          if(filled){var e=findSpecial(s.t);var cn=e&&e.chara;if(cn)img='<img src="'+specialIcon(cn)+'" style="width:100%;height:100%;object-fit:cover;border-radius:3px;">';}
+          return '<div style="flex:1;aspect-ratio:2.5;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:.5rem;font-weight:700;overflow:hidden;position:relative;'+(filled?'background:rgba(192,132,252,.12);border:1px solid rgba(192,132,252,.15);':'background:rgba(255,255,255,.03);color:#475569;border:1px solid rgba(255,255,255,.05);')+'">'+(img||'<span style="color:#475569;">Sp '+(i+1)+'</span>')+'</div>';
+        }).join('')+
+        '</div></div></div><button class="tab-btn" id="flb2" style="font-size:.6rem;padding:2px 8px;margin-top:6px;">Load Build</button>';document.getElementById('flb2').addEventListener('click',function(){try{document.getElementById('ioCode').value=code;document.querySelectorAll('.tab-btn')[1].click();setTimeout(function(){document.getElementById('btnImp').click();},100);}catch(e){}});}}catch(e){}
     });
   }
   function showNewForm(){
     var code=document.getElementById('ioCode')?document.getElementById('ioCode').value.trim():'';
-    var h='<button class="tab-btn" onclick="showHome()" style="font-size:.7rem;padding:4px 10px;margin-bottom:8px;">&#8592; All Posts</button><div class="forum-card"><h2 style="font-size:1.1rem;font-weight:900;color:#f5c800;">+ New Build Post</h2><div style="margin-bottom:10px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:3px;">Build Code *</label><input id="ffc" value="'+esc(code)+'" class="forum-input" style="width:100%;" placeholder="Paste export code"></div><div style="margin-bottom:10px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:3px;">Title *</label><input id="fft" class="forum-input" style="width:100%;" placeholder="E.g. My Kendo Gamma Build"></div><div style="margin-bottom:10px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:3px;">Your Name</label><input id="ffa" value="'+esc(sessionName)+'" class="forum-input" style="width:100%;" placeholder="Anonymous"></div><div style="margin-bottom:10px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:3px;">Description</label><textarea id="ffd" class="forum-textarea" style="width:100%;min-height:60px;" placeholder="Tell us about this build..."></textarea></div><div style="margin-bottom:10px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:3px;">Tags <span style="font-weight:400;color:#64748b;">(comma separated)</span></label><input id="ffg" class="forum-input" style="width:100%;" placeholder="kendo, gamma, assault"></div><button class="forum-btn" id="fsb">&#128221; Post Build</button><div id="fserr" style="color:#ef4444;font-size:.68rem;margin-top:4px;"></div></div>';
-    r(h);
+    var h='<button class="tab-btn" id="b5" style="font-size:.7rem;padding:4px 10px;margin-bottom:8px;">&#8592; All Posts</button><div class="forum-card"><h2 style="font-size:1.1rem;font-weight:900;color:#f5c800;">+ New Build Post</h2><div style="margin-bottom:10px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:3px;">Build Code *</label><input id="ffc" value="'+esc(code)+'" class="forum-input" style="width:100%;" placeholder="Paste export code"></div><div style="margin-bottom:10px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:3px;">Title *</label><input id="fft" class="forum-input" style="width:100%;" placeholder="E.g. My Kendo Gamma Build"></div><div style="margin-bottom:10px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:3px;">Banner Image <span style="font-weight:400;color:#64748b;">(optional, replaces character art)</span></label><div style="display:flex;gap:6px;"><input id="ffimg" class="forum-input" style="flex:1;" placeholder="Paste image URL or upload..."><button class="tab-btn" id="fuimg" style="font-size:.62rem;padding:3px 8px;">&#128206; Upload</button></div><input id="ffimgfile" type="file" accept="image/png,image/jpeg,image/gif,image/webp" style="display:none;"><div id="fimgprev" style="display:none;margin-top:4px;max-width:200px;border-radius:6px;overflow:hidden;position:relative;"><img id="fimgpreview" style="width:100%;display:block;"><span id="fimgrm" style="position:absolute;top:2px;right:2px;background:rgba(0,0,0,.6);color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.7rem;">&times;</span></div></div><div style="margin-bottom:10px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:3px;">Category</label><select id="ffcat" class="forum-input" style="width:100%;"><option value="">None</option><option value="guide">&#128218; Guide</option><option value="showcase">&#127775; Showcase</option><option value="question">&#128173; Question</option><option value="fun">&#127918; Fun</option></select></div><div style="margin-bottom:10px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:3px;">Your Name</label><input id="ffa" value="'+esc(sessionName)+'" class="forum-input" style="width:100%;" placeholder="Anonymous"></div><div style="margin-bottom:10px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:3px;">Description</label><textarea id="ffd" class="forum-textarea" style="width:100%;min-height:60px;" placeholder="Tell us about this build..."></textarea></div><div style="margin-bottom:10px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:3px;">Tags <span style="font-weight:400;color:#64748b;">(comma separated)</span></label><input id="ffg" class="forum-input" style="width:100%;" placeholder="kendo, gamma, assault"></div><button class="forum-btn" id="fsb" style="margin-right:6px;">&#128221; Post Build</button><button class="tab-btn" id="fprev" style="font-size:.7rem;">&#128065; Preview</button><div id="fserr" style="color:#ef4444;font-size:.68rem;margin-top:4px;"></div><div id="fpreview" style="display:none;margin-top:10px;border-top:1px solid rgba(255,255,255,.06);padding-top:10px;"></div></div>';
+  r(h);
+  document.getElementById('b5').addEventListener('click',showHome);
+  document.getElementById('fprev').addEventListener('click',function(){
+    var title=document.getElementById('fft').value.trim()||'Untitled';
+    var author=document.getElementById('ffa').value.trim()||'Anonymous';
+    var desc=document.getElementById('ffd').value.trim();
+    var code=document.getElementById('ffc').value.trim();
+    var tags=document.getElementById('ffg').value.split(',').map(function(t){return t.trim();}).filter(Boolean);
+    var prev=document.getElementById('fpreview');
+    prev.style.display='block';
+    prev.innerHTML='<div style="font-size:.7rem;color:#64748b;margin-bottom:6px;font-weight:700;">&#128065; Preview</div><div class="forum-post" style="cursor:default;">'+charBanner(code)+'<div style="font-size:.85rem;font-weight:700;color:#f1f5f9;margin-bottom:3px;">'+esc(title)+'</div><div style="font-size:.64rem;color:#64748b;display:flex;gap:12px;flex-wrap:wrap;"><span>&#128100; '+esc(author)+'</span><span>&#128147; 0</span><span>&#128172; 0</span></div>'+(tags.length?'<div class="forum-tags" style="display:flex;gap:4px;flex-wrap:wrap;margin-top:4px;">'+tags.map(function(t){return'<span class="forum-tag">'+esc(t)+'</span>';}).join('')+'</div>':'')+(desc?'<div style="font-size:.7rem;color:#94a3b8;margin-top:4px;">'+esc(desc)+'</div>':'')+'</div>';
+  });
     document.getElementById('fsb').addEventListener('click',function(){
       var title=document.getElementById('fft').value.trim(),author=document.getElementById('ffa').value.trim()||'Anonymous';if(author&&author!==sessionName){sessionName=author;localStorage.setItem('forumName',author);}
       var desc=document.getElementById('ffd').value.trim(),code=document.getElementById('ffc').value.trim(),tags=document.getElementById('ffg').value.split(',').map(function(t){return t.trim();}).filter(Boolean);
       if(!title){document.getElementById('fserr').textContent='Title is required!';return;}if(!code){document.getElementById('fserr').textContent='Build code is required!';return;}
       document.getElementById('fsb').disabled=true;document.getElementById('fsb').textContent='Posting...';
-      var key=genKey();api2('','POST',{title:title,author:author,description:desc,buildCode:code,tags:tags,deleteKey:key},function(result){
+      var key=genKey();api2('','POST',{title:title,author:author,description:desc,buildCode:code,tags:tags,category:document.getElementById('ffcat').value,image:document.getElementById('ffimg').value.trim(),deleteKey:key},function(result){
         if(!result||result.error){document.getElementById('fserr').textContent=(result&&result.error)||'Failed.';document.getElementById('fsb').disabled=false;document.getElementById('fsb').textContent='&#128221; Post Build';return;}
         myKeys[result.id]=key;localStorage.setItem('forumKeys',JSON.stringify(myKeys));showPost(result.id);
       });
     });
+  // Image upload
+  document.getElementById('fuimg').addEventListener('click',function(){document.getElementById('ffimgfile').click();});
+  document.getElementById('ffimgfile').addEventListener('change',function(){
+    var file=this.files[0];if(!file)return;
+    var reader=new FileReader();
+    reader.onload=function(e){
+      var imgData=e.target.result;
+      var x=new XMLHttpRequest();x.open('POST','/api/upload',true);x.setRequestHeader('Content-Type','application/json');
+      x.onload=function(){try{var r=JSON.parse(x.responseText);if(r&&r.url){document.getElementById('ffimg').value=r.url;document.getElementById('fimgprev').style.display='block';document.getElementById('fimgpreview').src=r.url;}}catch(e){}};
+      x.send(JSON.stringify({image:imgData}));
+    };
+    reader.readAsDataURL(file);
+  });
+  document.getElementById('fimgrm').addEventListener('click',function(){document.getElementById('ffimg').value='';document.getElementById('fimgprev').style.display='none';});
+  document.getElementById('ffimg').addEventListener('input',function(){
+    var v=this.value.trim();
+    if(v){document.getElementById('fimgprev').style.display='block';document.getElementById('fimgpreview').src=v;}
+    else{document.getElementById('fimgprev').style.display='none';}
+  });
   }
   showHome();
+  window.forumBack=showHome;
+  window.forumShowPost=showPost;
+  updateAdminUI();
+  // Notification bell click
+  document.getElementById('notifBell').onclick=function(e){
+    e.stopPropagation();
+    var existing=document.getElementById('notifPanel');
+    if(existing){existing.remove();return;}
+    var list=JSON.parse(localStorage.getItem('notifList')||'[]');
+    var panel=document.createElement('div');panel.id='notifPanel';
+    panel.style.cssText='position:fixed;top:80px;right:20px;width:300px;max-height:400px;overflow-y:auto;background:rgba(20,25,35,.98);border:1px solid rgba(255,255,255,.1);border-radius:10px;z-index:500;box-shadow:0 8px 32px rgba(0,0,0,.5);padding:10px;';
+    panel.innerHTML='<div style="font-size:.75rem;font-weight:700;color:#f5c800;margin-bottom:6px;">&#128276; Notifications</div>';
+    if(!list.length)panel.innerHTML+='<div style="font-size:.68rem;color:#475569;padding:8px 0;">No new notifications.</div>';
+    list.forEach(function(n){
+      var msg='';
+      if(n.t==='like')msg='<span style="color:#ef4444;">&#10084;</span> +'+n.count+' likes on <strong>'+esc(n.title)+'</strong>';
+      else if(n.t==='comment')msg='<span style="color:#38bdf8;">&#128172;</span> +'+n.count+' comments on <strong>'+esc(n.title)+'</strong>';
+      else if(n.t==='top10')msg='<span style="color:#f5c800;">&#127942;</span> <strong>'+esc(n.title)+'</strong> is in Top 10!';
+      panel.innerHTML+='<div style="font-size:.64rem;color:#94a3b8;padding:4px 0;border-bottom:1px solid rgba(255,255,255,.03);cursor:pointer;" onclick="window.forumShowPost(\''+n.id+'\');var p=document.getElementById(\'notifPanel\');if(p)p.remove();">'+msg+'</div>';
+    });
+    document.body.appendChild(panel);
+    var closer=function(e2){if(!panel.contains(e2.target)&&e2.target!==document.getElementById('notifBell')){panel.remove();document.removeEventListener('click',closer);}};
+    setTimeout(function(){document.addEventListener('click',closer);},100);
+  };
+}
+var masterKey='';
+function updateAdminUI(){
+  var el=document.getElementById('adminLink');
+  if(!el)return;
+  if(masterKey&&masterKey.length>0){
+    el.style.cssText='font-size:.85rem;cursor:pointer;padding:4px 8px;border-radius:6px;transition:all .15s;background:rgba(245,200,0,.12);color:#f5c800;border:1px solid rgba(245,200,0,.25);animation:rainbow 1.5s linear infinite;box-shadow:0 0 16px rgba(245,200,0,.2);';
+    el.title='Admin mode active';
+  }else{
+    el.style.cssText='font-size:.85rem;cursor:pointer;padding:4px 8px;border:1px solid rgba(255,255,255,.08);border-radius:6px;transition:all .15s;color:#64748b;';
+    el.title='Enter admin key to manage posts';
+  }
+}
+updateAdminUI();
+var adminEl=document.getElementById('adminLink');
+if(adminEl){
+  adminEl.onclick=function(){
+    var key=prompt('Enter admin key:');
+    if(key&&key.trim()){
+      masterKey=key.trim();localStorage.setItem('mhurMasterKey',masterKey);
+      updateAdminUI();
+      if(typeof showHome==='function')showHome();
+    }
+  };
 }
 })();
 </script>

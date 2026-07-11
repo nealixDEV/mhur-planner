@@ -7,7 +7,7 @@ const root = __dirname;
 const port = process.env.PORT || 8080;
 const types = {
   '.html':'text/html', '.js':'text/javascript', '.json':'application/json',
-  '.css':'text/css', '.png':'image/png', '.jpg':'image/jpeg', '.svg':'image/svg+xml'
+  '.css':'text/css', '.png':'image/png', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.gif':'image/gif', '.webp':'image/webp', '.svg':'image/svg+xml'
 };
 
 function json(res, data, status){
@@ -41,28 +41,26 @@ http.createServer((req, res) => {
       json(res, result, 201);
     });
   }
+  if(url === '/api/posts/search' && req.method === 'GET'){
+    return json(res, forum.search(query.q||''));
+  }
   if(url.match(/^\/api\/posts\/([a-z0-9]+)$/) && req.method === 'GET'){
     var id = url.match(/^\/api\/posts\/([a-z0-9]+)$/)[1];
     var post = forum.get(id);
     if(!post) return json(res, {error:'Not found'}, 404);
     return json(res, post);
   }
+  if(url === '/api/news'){
+    json(res, {season:'17',seasonEnd:'2026-07-29 12:59:59',patches:[]});
+    return;
+  }
   if(url.match(/^\/api\/posts\/([a-z0-9]+)\/like$/) && req.method === 'POST'){
     var id = url.match(/^\/api\/posts\/([a-z0-9]+)\/like$/)[1];
     return json(res, forum.like(id));
   }
-  if(url.match(/^\/api\/posts\/([a-z0-9]+)\/comment$/) && req.method === 'POST'){
-    var id = url.match(/^\/api\/posts\/([a-z0-9]+)\/comment$/)[1];
-    return body(req, function(data){
-      json(res, forum.comment(id, data));
-    });
-  }
-  if(url === '/api/posts/search' && req.method === 'GET'){
-    return json(res, forum.search(query.q||''));
-  }
-  if(url === '/api/news'){
-    json(res, {season:'17',seasonEnd:'2026-07-29 12:59:59',patches:[]});
-    return;
+  if(url.match(/^\/api\/posts\/([a-z0-9]+)\/unlike$/) && req.method === 'POST'){
+    var id = url.match(/^\/api\/posts\/([a-z0-9]+)\/unlike$/)[1];
+    return json(res, forum.unlike(id));
   }
   if(url.match(/^\/api\/posts\/([a-z0-9]+)$/) && req.method === 'DELETE'){
     var id = url.match(/^\/api\/posts\/([a-z0-9]+)$/)[1];
@@ -82,10 +80,30 @@ http.createServer((req, res) => {
       json(res, forum.editPost(id, data, data.deleteKey||''));
     });
   }
+  if(url.match(/^\/api\/posts\/([a-z0-9]+)\/pin$/) && req.method === 'POST'){
+    var id = url.match(/^\/api\/posts\/([a-z0-9]+)\/pin$/)[1];
+    return body(req, function(data){
+      json(res, forum.togglePin(id, data.deleteKey||''));
+    });
+  }
   if(url.match(/^\/api\/posts\/([a-z0-9]+)\/comment\/([a-z0-9]+)$/) && req.method === 'PUT'){
     var m = url.match(/^\/api\/posts\/([a-z0-9]+)\/comment\/([a-z0-9]+)$/);
     return body(req, function(data){
       json(res, forum.editComment(m[1], m[2], data, data.deleteKey||'', data.isReply||false));
+    });
+  }
+  if(url === '/api/upload' && req.method === 'POST'){
+    return body(req, function(data){
+      var imgData = data.image || '';
+      var matches = imgData.match(/^data:image\/(png|jpeg|jpg|gif|webp);base64,(.+)$/);
+      if(!matches) return json(res, {error:'Invalid image'}, 400);
+      var ext = matches[1] === 'jpeg' ? 'jpg' : matches[1];
+      var fileName = Date.now().toString(36) + Math.random().toString(36).slice(2,6) + '.' + ext;
+      var filePath2 = path.join(root, 'uploads', fileName);
+      try{
+        fs.writeFileSync(filePath2, Buffer.from(matches[2], 'base64'));
+        json(res, {url:'/uploads/'+fileName});
+      }catch(e){json(res, {error:'Save failed'}, 500);}
     });
   }
 
