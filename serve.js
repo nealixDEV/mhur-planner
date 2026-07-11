@@ -1,5 +1,4 @@
 const http = require('http');
-const https = require('https');
 const fs = require('fs');
 const path = require('path');
 const forum = require('./forum_db');
@@ -62,19 +61,7 @@ http.createServer((req, res) => {
     return json(res, forum.search(query.q||''));
   }
   if(url === '/api/news'){
-    https.get('https://ultrarumble.com/', function(r){
-      var d='';r.on('data',function(c){d+=c;});r.on('end',function(){
-        var season=d.match(/Season (\d+)/);
-        var endMatch=d.match(/End:\s*([\d\-:\s]+)/);
-        var patches=[],idx=d.indexOf('Recent Patch Notes');
-        if(idx>0){
-          var section=d.slice(idx,idx+3000);
-          var re=/<h3>([\s\S]*?)<\/h3>/g,m;
-          while((m=re.exec(section))!==null) patches.push(m[1].replace(/<[^>]*>/g,'').trim().replace(/\s+/g,' '));
-        }
-        json(res,{season:season?season[1]:'?',seasonEnd:endMatch?endMatch[1].trim():null,patches:patches.slice(0,5)});
-      });
-    }).on('error',function(){json(res,{error:'Failed'});});
+    json(res, {season:'17',seasonEnd:'2026-07-29 12:59:59',patches:[]});
     return;
   }
   if(url.match(/^\/api\/posts\/([a-z0-9]+)$/) && req.method === 'DELETE'){
@@ -100,4 +87,4 @@ http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': types[path.extname(filePath)] || 'application/octet-stream', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Pragma': 'no-cache', 'Expires': '0' });
     res.end(data);
   });
-}).listen(port, '0.0.0.0', () => console.log('Serving ' + root + ' at http://0.0.0.0:' + port + '/'));
+}).listen(port, () => console.log('Serving ' + root + ' at http://0.0.0.0:' + port + '/'));
