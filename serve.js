@@ -106,6 +106,11 @@ http.createServer((req, res) => {
       }catch(e){json(res, {error:'Save failed'}, 500);}
     });
   }
+  if(url === '/api/verify-key' && req.method === 'POST'){
+    return body(req, function(data){
+      json(res, {valid: data.deleteKey === 'mhur_admin_2026'});
+    });
+  }
 
   // Static files
   let urlPath = decodeURIComponent(url);

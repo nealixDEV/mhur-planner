@@ -7164,6 +7164,12 @@ document.querySelectorAll('.tab-btn').forEach(function(btn){
 function initForum(){
   var API='/api/posts',likedPosts={},sessionName=localStorage.getItem('forumName')||'',myKeys=JSON.parse(localStorage.getItem('forumKeys')||'{}');
   masterKey=localStorage.getItem('mhurMasterKey')||'';
+  // Verify stored admin key
+  if(masterKey){
+    var vx=new XMLHttpRequest();vx.open('POST','/api/verify-key',true);vx.setRequestHeader('Content-Type','application/json');
+    vx.onload=function(){try{var vr=JSON.parse(vx.responseText);if(!vr||!vr.valid){masterKey='';localStorage.removeItem('mhurMasterKey');updateAdminUI();}}catch(e){masterKey='';localStorage.removeItem('mhurMasterKey');}};
+    vx.send(JSON.stringify({deleteKey:masterKey}));
+  }
   try{var likedLS=JSON.parse(localStorage.getItem('mhurLiked')||'{}');for(var k in likedLS)if(likedLS[k])likedPosts[k]=true;}catch(e){}
   function genKey(){return Math.random().toString(36).slice(2)+Math.random().toString(36).slice(2);}
   function api2(p,m,d,cb){var x=new XMLHttpRequest();x.open(m||'GET',API+p,true);x.setRequestHeader('Content-Type','application/json');x.onload=function(){if(x.status>=400){console.log('API ERROR:',m,API+p,x.status);cb(null);return;}try{cb(JSON.parse(x.responseText));}catch(e){console.log('API PARSE ERROR:',e);cb(null);}};x.onerror=function(){console.log('API NETWORK ERROR:',m,API+p);cb(null);};x.send(d?JSON.stringify(d):null);}
@@ -7461,9 +7467,10 @@ if(adminEl){
   adminEl.onclick=function(){
     var key=prompt('Enter admin key:');
     if(key&&key.trim()){
-      masterKey=key.trim();localStorage.setItem('mhurMasterKey',masterKey);
-      updateAdminUI();
-      if(typeof showHome==='function')showHome();
+      var x=new XMLHttpRequest();x.open('POST','/api/verify-key',true);x.setRequestHeader('Content-Type','application/json');
+      x.onload=function(){try{var r=JSON.parse(x.responseText);if(r&&r.valid){masterKey=key.trim();localStorage.setItem('mhurMasterKey',masterKey);updateAdminUI();if(typeof showHome==='function')showHome();}else{alert('Invalid key');}}catch(e){alert('Error verifying key');}};
+      x.onerror=function(){alert('Network error');};
+      x.send(JSON.stringify({deleteKey:key.trim()}));
     }
   };
 }
