@@ -76,6 +76,18 @@ http.createServer((req, res) => {
       json(res, forum.deleteComment(m[1], m[2], data.deleteKey||'', data.isReply||false));
     });
   }
+  if(url.match(/^\/api\/posts\/([a-z0-9]+)$/) && req.method === 'PUT'){
+    var id = url.match(/^\/api\/posts\/([a-z0-9]+)$/)[1];
+    return body(req, function(data){
+      json(res, forum.editPost(id, data, data.deleteKey||''));
+    });
+  }
+  if(url.match(/^\/api\/posts\/([a-z0-9]+)\/comment\/([a-z0-9]+)$/) && req.method === 'PUT'){
+    var m = url.match(/^\/api\/posts\/([a-z0-9]+)\/comment\/([a-z0-9]+)$/);
+    return body(req, function(data){
+      json(res, forum.editComment(m[1], m[2], data, data.deleteKey||'', data.isReply||false));
+    });
+  }
 
   // Static files
   let urlPath = decodeURIComponent(url);

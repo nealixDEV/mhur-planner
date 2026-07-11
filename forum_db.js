@@ -120,6 +120,54 @@ exports.deleteComment = function(postId, commentId, key, isReply){
   return {error:'Not found'};
 };
 
+exports.editPost = function(id, data, key){
+  var posts = load();
+  for(var i=0;i<posts.length;i++){
+    if(posts[i].id === id){
+      if(posts[i].deleteKey !== key) return {error:'Wrong key'};
+      if(data.title!==undefined) posts[i].title = (data.title||'').trim();
+      if(data.description!==undefined) posts[i].description = (data.description||'').trim();
+      if(data.tags!==undefined) posts[i].tags = (data.tags||[]).map(function(t){return t.trim().toLowerCase();}).filter(Boolean);
+      if(data.buildCode!==undefined) posts[i].buildCode = data.buildCode || '';
+      posts[i].editedAt = Date.now();
+      save(posts);
+      return {edited:true, editedAt:posts[i].editedAt, title:posts[i].title, description:posts[i].description, tags:posts[i].tags, buildCode:posts[i].buildCode};
+    }
+  }
+  return {error:'Not found'};
+};
+
+exports.editComment = function(postId, commentId, data, key, isReply){
+  var posts = load();
+  for(var i=0;i<posts.length;i++){
+    if(posts[i].id === postId){
+      if(!posts[i].comments) return {error:'No comments'};
+      for(var j=0;j<posts[i].comments.length;j++){
+        var cm = posts[i].comments[j];
+        if(isReply && cm.replies){
+          for(var k=0;k<cm.replies.length;k++){
+            if(cm.replies[k].id === commentId){
+              if(cm.replies[k].deleteKey !== key) return {error:'Wrong key'};
+              if(data.text!==undefined) cm.replies[k].text = (data.text||'').trim();
+              cm.replies[k].editedAt = Date.now();
+              save(posts);
+              return {edited:true, editedAt:cm.replies[k].editedAt};
+            }
+          }
+        }else if(!isReply && cm.id === commentId){
+          if(cm.deleteKey !== key) return {error:'Wrong key'};
+          if(data.text!==undefined) cm.text = (data.text||'').trim();
+          cm.editedAt = Date.now();
+          save(posts);
+          return {edited:true, editedAt:cm.editedAt};
+        }
+      }
+      return {error:'Comment not found'};
+    }
+  }
+  return {error:'Not found'};
+};
+
 exports.create = function(data){
   var posts = load();
   var post = {
