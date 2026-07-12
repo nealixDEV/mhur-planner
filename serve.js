@@ -152,6 +152,16 @@ function handler(req, res) {
       forum.setUserBanner(data.username||'', data.banner||'', function(){json(res, {saved:true});});
     });
   }
+  if(url === '/api/set-banner-desc' && req.method === 'POST'){
+    return body(req, function(data){
+      forum.setUserBannerDesc(data.username||'', data.desc||'', function(){json(res, {saved:true});});
+    });
+  }
+  if(url === '/api/set-links' && req.method === 'POST'){
+    return body(req, function(data){
+      forum.setUserLinks(data.username||'', JSON.stringify(data.links||[]), function(){json(res, {saved:true});});
+    });
+  }
   if(url === '/api/check-user' && req.method === 'GET'){
     return forum.getUser(query.name||'', function(user){json(res, user||{exists:false});});
   }
