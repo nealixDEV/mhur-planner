@@ -7464,7 +7464,7 @@ function initForum(){
     return'<div style="position:relative;overflow:hidden;border-radius:8px;aspect-ratio:16/9;margin-bottom:8px;background:rgba(0,0,0,.2);"><img src="'+esc(url)+'" onclick="expandImage(this.src)" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;cursor:pointer;" onerror="this.style.display=\'none\'"></div>';
   }
   function showUsernameModal(loginMode){
-    var isLogin=loginMode||!localStorage.getItem('forumUsername');
+    var isLogin=(loginMode===undefined?!localStorage.getItem('forumUsername'):loginMode);
     var title=isLogin?'Sign In':'Welcome to the Forum!';
     var sub=isLogin?'Sign in to your account.':'Choose a unique username to start posting.';
     var btnLabel=isLogin?'Sign In':'Register';
