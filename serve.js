@@ -32,25 +32,27 @@ function handler(req, res) {
     var kv=p.split('=');if(kv[0])query[decodeURIComponent(kv[0])]=decodeURIComponent(kv[1]||'');
   });
 
-  // API routes
+  // API routes - all async via callbacks
   if(url === '/api/posts' && req.method === 'GET'){
-    return json(res, forum.list(parseInt(query.page)||1, query.sort||'hot'));
+    return forum.list(parseInt(query.page)||1, query.sort||'hot', function(data){json(res, data);});
   }
   if(url === '/api/posts' && req.method === 'POST'){
     return body(req, function(data){
-      var result = forum.create(data);
-      if(result.error) return json(res, result, 400);
-      json(res, result, 201);
+      forum.create(data, function(result){
+        if(result.error) return json(res, result, 400);
+        json(res, result, 201);
+      });
     });
   }
   if(url === '/api/posts/search' && req.method === 'GET'){
-    return json(res, forum.search(query.q||''));
+    return forum.search(query.q||'', function(data){json(res, data);});
   }
   if(url.match(/^\/api\/posts\/([a-z0-9]+)$/) && req.method === 'GET'){
     var id = url.match(/^\/api\/posts\/([a-z0-9]+)$/)[1];
-    var post = forum.get(id);
-    if(!post) return json(res, {error:'Not found'}, 404);
-    return json(res, post);
+    return forum.get(id, function(post){
+      if(!post) return json(res, {error:'Not found'}, 404);
+      json(res, post);
+    });
   }
   if(url === '/api/news'){
     json(res, {season:'17',seasonEnd:'2026-07-29 12:59:59',patches:[]});
@@ -58,46 +60,46 @@ function handler(req, res) {
   }
   if(url.match(/^\/api\/posts\/([a-z0-9]+)\/like$/) && req.method === 'POST'){
     var id = url.match(/^\/api\/posts\/([a-z0-9]+)\/like$/)[1];
-    return json(res, forum.like(id));
+    return forum.like(id, function(data){json(res, data);});
   }
   if(url.match(/^\/api\/posts\/([a-z0-9]+)\/unlike$/) && req.method === 'POST'){
     var id = url.match(/^\/api\/posts\/([a-z0-9]+)\/unlike$/)[1];
-    return json(res, forum.unlike(id));
+    return forum.unlike(id, function(data){json(res, data);});
   }
   if(url.match(/^\/api\/posts\/([a-z0-9]+)\/comment$/) && req.method === 'POST'){
     var id = url.match(/^\/api\/posts\/([a-z0-9]+)\/comment$/)[1];
     return body(req, function(data){
-      json(res, forum.comment(id, data));
+      forum.comment(id, data, function(result){json(res, result);});
     });
   }
   if(url.match(/^\/api\/posts\/([a-z0-9]+)$/) && req.method === 'DELETE'){
     var id = url.match(/^\/api\/posts\/([a-z0-9]+)$/)[1];
     return body(req, function(data){
-      json(res, forum.deletePost(id, data.deleteKey||''));
+      forum.deletePost(id, data.deleteKey||'', function(result){json(res, result);});
     });
   }
   if(url.match(/^\/api\/posts\/([a-z0-9]+)\/comment\/([a-z0-9]+)$/) && req.method === 'DELETE'){
     var m = url.match(/^\/api\/posts\/([a-z0-9]+)\/comment\/([a-z0-9]+)$/);
     return body(req, function(data){
-      json(res, forum.deleteComment(m[1], m[2], data.deleteKey||'', data.isReply||false));
+      forum.deleteComment(m[1], m[2], data.deleteKey||'', data.isReply||false, function(result){json(res, result);});
     });
   }
   if(url.match(/^\/api\/posts\/([a-z0-9]+)$/) && req.method === 'PUT'){
     var id = url.match(/^\/api\/posts\/([a-z0-9]+)$/)[1];
     return body(req, function(data){
-      json(res, forum.editPost(id, data, data.deleteKey||''));
+      forum.editPost(id, data, data.deleteKey||'', function(result){json(res, result);});
     });
   }
   if(url.match(/^\/api\/posts\/([a-z0-9]+)\/pin$/) && req.method === 'POST'){
     var id = url.match(/^\/api\/posts\/([a-z0-9]+)\/pin$/)[1];
     return body(req, function(data){
-      json(res, forum.togglePin(id, data.deleteKey||''));
+      forum.togglePin(id, data.deleteKey||'', function(result){json(res, result);});
     });
   }
   if(url.match(/^\/api\/posts\/([a-z0-9]+)\/comment\/([a-z0-9]+)$/) && req.method === 'PUT'){
     var m = url.match(/^\/api\/posts\/([a-z0-9]+)\/comment\/([a-z0-9]+)$/);
     return body(req, function(data){
-      json(res, forum.editComment(m[1], m[2], data, data.deleteKey||'', data.isReply||false));
+      forum.editComment(m[1], m[2], data, data.deleteKey||'', data.isReply||false, function(result){json(res, result);});
     });
   }
   if(url === '/api/upload' && req.method === 'POST'){
