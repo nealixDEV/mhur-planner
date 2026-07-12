@@ -7753,12 +7753,16 @@ function initForum(){
     var v=document.getElementById('fvidprev');
     if(isVid){if(!v){v=document.createElement('video');v.id='fvidprev';v.controls=true;v.style.cssText='width:100%;display:block;border-radius:4px;';p.insertBefore(v,document.getElementById('fimgrm'));}v.src=url;v.style.display='block';}else if(v){v.style.display='none';}
   }
+  var _profileLoading={};
   function showProfile(author){
     if(!author){showHome();return;}
     r(skeleton()+skeleton());
     var isTargetAdmin=false;
-    var ax=new XMLHttpRequest();ax.open('GET','/api/check-user?name='+encodeURIComponent(author),true);
-    ax.onload=function(){try{var ar=JSON.parse(ax.responseText);if(ar&&ar.admin)isTargetAdmin=true;if(ar&&ar.avatar){var c={};c[(author||'').toLowerCase()]=ar.avatar;window._avatarCache=window._avatarCache||{};for(var k in c)window._avatarCache[k]=c[k];showProfile(author);}}catch(e){}};ax.send();
+    if(!_profileLoading[(author||'').toLowerCase()]){
+      _profileLoading[(author||'').toLowerCase()]=true;
+      var ax=new XMLHttpRequest();ax.open('GET','/api/check-user?name='+encodeURIComponent(author),true);
+      ax.onload=function(){try{var ar=JSON.parse(ax.responseText);if(ar&&ar.admin)isTargetAdmin=true;if(ar&&ar.avatar){window._avatarCache=window._avatarCache||{};window._avatarCache[(author||'').toLowerCase()]=ar.avatar;showProfile(author);}}catch(e){}};ax.send();
+    }
     api2('/by-author?author='+encodeURIComponent(author)+'&page=1','GET',null,function(data){
       if(!data||!data.items){r('<div style="text-align:center;padding:40px 0;color:#ef4444;">Error loading profile. <button class="tab-btn" onclick="window.forumBack()">Back</button></div>');return;}
       var pa=author||'';var pav=window.avatarImg?window.avatarImg(author):'';var isOwnProfile=(author||'').toLowerCase()===(localStorage.getItem('forumUsername')||'').toLowerCase();
