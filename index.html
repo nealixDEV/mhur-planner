@@ -7843,7 +7843,7 @@ function initForum(){
           var curArr=[];try{curArr=JSON.parse(typeof curLinks==='string'?curLinks:'[]');}catch(e){}
           var linksStr=prompt('Enter links (format: label1|url1,label2|url2)\nExample: Discord|https://discord.gg/invite,YouTube|https://youtube.com/@channel',curArr.map(function(lk){return (lk.label||'')+'|'+(lk.url||'');}).join(','));
           if(linksStr===null){showProfile(author);return;}
-          var newArr=[];if(linksStr.trim()){linksStr.split(',').forEach(function(pair){var parts=pair.trim().split('|');if(parts.length>=2&&parts[1].trim()){newArr.push({label:parts[0].trim()||parts[1].trim(),url:parts[1].trim()});}});}
+          var newArr=[];if(linksStr.trim()){linksStr.split(',').forEach(function(pair){var parts=pair.trim().split('|');var label=parts[0].trim();var url=(parts[1]||'').trim()||label;if(url&&url.match(/^https?:\/\//i)){newArr.push({label:label||url,url:url});}});}
           window._linksCache=window._linksCache||{};window._linksCache[un]=JSON.stringify(newArr);console.log('Links saved to cache:',un,newArr);
           var xl=new XMLHttpRequest();xl.open('POST','/api/set-links',true);xl.setRequestHeader('Content-Type','application/json');
           xl.onload=function(){showProfile(author);};
