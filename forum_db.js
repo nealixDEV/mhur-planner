@@ -1,329 +1,120 @@
+var initSqlJs = require('sql.js');
 var fs = require('fs');
 var path = require('path');
-var DB_PATH = path.join(__dirname, 'forum_posts.json');
+var DB_PATH = path.join(__dirname, 'forum.db');
+var db;
 var MASTER_KEY = 'mhur_admin_2026';
-var writeQueue = Promise.resolve();
 
-function load(){
-  try{
-    var raw = fs.readFileSync(DB_PATH, 'utf8');
-    return JSON.parse(raw);
-  }catch(e){
-    return [];
-  }
-}
+function genId(){return Date.now().toString(36)+Math.random().toString(36).slice(2,6);}
+function saveDb(){try{fs.writeFileSync(DB_PATH, Buffer.from(db.export()));}catch(e){}}
+function parseTags(t){try{return JSON.parse(t||'[]');}catch(e){return[];}}
+function countComments(postId){var r=db.exec("SELECT COUNT(*) as c FROM comments WHERE postId='"+postId.replace(/'/g,"''")+"' AND replyTo IS NULL");return r.length&&r[0].values.length?r[0].values[0][0]:0;}
+function esc(s){return String(s||'').replace(/'/g,"''");}
+function rowToPost(r){return{id:r[0],buildCode:r[1]||'',title:r[2],description:r[3]||'',author:r[4],tags:parseTags(r[5]),category:r[6]||'',image:r[7]||'',pinned:r[8]||0,likes:r[9]||0,views:r[10]||0,createdAt:r[11],comments:countComments(r[0]),editedAt:r[13]||0};}
 
-function save(posts){
-  fs.writeFileSync(DB_PATH, JSON.stringify(posts, null, 2), 'utf8');
-}
+var api = {};
 
-function genId(){
-  return Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
-}
-
-function countComments(comments){
-  if(!comments)return 0;
-  var n=comments.length;
-  for(var i=0;i<comments.length;i++){if(comments[i].replies)n+=comments[i].replies.length;}
-  return n;
-}
-
-exports.list = function(page, sort){
-  var posts = load();
-  var perPage = 20;
-  posts.sort(function(a,b){
-    if((a.pinned||0)!==(b.pinned||0))return (b.pinned||0) - (a.pinned||0);
-    if(sort === 'likes') return (b.likes||0) - (a.likes||0) || b.createdAt - a.createdAt;
-    if(sort === 'new') return b.createdAt - a.createdAt;
-    return (b.views||0) - (a.views||0) || (b.likes||0) - (a.likes||0) || b.createdAt - a.createdAt;
-  });
-  var start = ((page||1)-1) * perPage;
-  var items = posts.slice(start, start + perPage).map(function(p){
-    return { id:p.id, title:p.title, author:p.author, tags:p.tags||[], category:p.category||'', pinned:p.pinned||0, image:p.image||'', likes:p.likes||0, comments:countComments(p.comments), createdAt:p.createdAt, buildCode:p.buildCode };
-  });
-  return { items:items, total:posts.length, page:page||1, perPage:perPage };
+api.list = function(page, sort){
+  var order = "pinned DESC, createdAt DESC";
+  if(sort==='likes') order = "pinned DESC, likes DESC, createdAt DESC";
+  else if(sort==='new') order = "pinned DESC, createdAt DESC";
+  else order = "pinned DESC, views DESC, likes DESC, createdAt DESC";
+  var total = db.exec("SELECT COUNT(*) FROM posts");
+  var rows = db.exec("SELECT * FROM posts ORDER BY "+order+" LIMIT "+(page*20|0)+" OFFSET "+(((page||1)-1)*20|0));
+  return {items:(rows[0]?rows[0].values:[]).map(rowToPost), total:total[0].values[0][0], page:page||1, perPage:20};
 };
 
-function stripKey(post){
-  if(!post)return null;
-  var out = JSON.parse(JSON.stringify(post));
-  delete out.deleteKey;
-  if(out.comments){
-    for(var i=0;i<out.comments.length;i++){
-      delete out.comments[i].deleteKey;
-      if(out.comments[i].replies){
-        for(var j=0;j<out.comments[i].replies.length;j++){
-          delete out.comments[i].replies[j].deleteKey;
-        }
-      }
-    }
-  }
-  return out;
-}
-
-exports.get = function(id){
-  var posts = load();
-  for(var i=0;i<posts.length;i++){
-    if(posts[i].id === id){
-      posts[i].views = (posts[i].views||0) + 1;
-      save(posts);
-      return stripKey(posts[i]);
-    }
-  }
-  return null;
+api.get = function(id){
+  var rows = db.exec("SELECT * FROM posts WHERE id='"+esc(id)+"'");
+  if(!rows.length||!rows[0].values.length)return null;
+  db.run("UPDATE posts SET views=views+1 WHERE id='"+esc(id)+"'");saveDb();
+  var r=rows[0].values[0],p=rowToPost(r);
+  var crows=db.exec("SELECT * FROM comments WHERE postId='"+esc(id)+"' ORDER BY createdAt ASC");
+  var cs=[];
+  if(crows.length)cs=crows[0].values.map(function(c){return{id:c[0],text:c[2],author:c[3],createdAt:c[5],editedAt:c[6]||0,replyTo:c[7]};});
+  var tl=[],rm={};
+  cs.forEach(function(c){if(c.replyTo){if(!rm[c.replyTo])rm[c.replyTo]=[];rm[c.replyTo].push(c);}else tl.push(c);});
+  tl.forEach(function(c){if(rm[c.id])c.replies=rm[c.id];});
+  p.comments=tl;
+  return p;
 };
 
-exports.deletePost = function(id, key){
-  var posts = load();
-  for(var i=0;i<posts.length;i++){
-    if(posts[i].id === id){
-      if(posts[i].deleteKey !== key && key !== MASTER_KEY) return {error:'Wrong key'};
-      posts.splice(i,1);
-      save(posts);
-      return {deleted:true};
-    }
-  }
-  return {error:'Not found'};
+api.create = function(data){
+  var id=genId(),title=(data.title||'').trim();
+  if(!title)return{error:'Title is required'};
+  var tags=JSON.stringify((data.tags||[]).map(function(t){return t.trim().toLowerCase();}).filter(Boolean));
+  db.run("INSERT INTO posts VALUES('"+esc(id)+"','"+esc(data.buildCode||'')+"','"+esc(title)+"','"+esc((data.description||'').trim())+"','"+esc((data.author||'Anonymous').trim())+"','"+esc(tags)+"','"+esc(data.category||'')+"','"+esc(data.image||'')+"',0,0,0,"+Date.now()+",'"+esc(data.deleteKey||'')+"',0)");
+  saveDb();
+  return{id:id,buildCode:data.buildCode||'',title:title,description:(data.description||'').trim(),author:(data.author||'Anonymous').trim(),tags:(data.tags||[]).map(function(t){return t.trim().toLowerCase();}).filter(Boolean),category:data.category||'',image:data.image||'',pinned:0,likes:0,views:0,createdAt:Date.now(),comments:[],deleteKey:data.deleteKey,editedAt:0};
 };
 
-exports.deleteComment = function(postId, commentId, key, isReply){
-  var posts = load();
-  for(var i=0;i<posts.length;i++){
-    if(posts[i].id === postId){
-      if(posts[i].deleteKey !== key && key !== MASTER_KEY) return {error:'Wrong key'};
-      if(!posts[i].comments) return {error:'No comments'};
-      for(var j=0;j<posts[i].comments.length;j++){
-        var cm = posts[i].comments[j];
-        if(isReply && cm.replies){
-          for(var k=0;k<cm.replies.length;k++){
-            if(cm.replies[k].id === commentId){
-              if(cm.replies[k].deleteKey !== key && key !== MASTER_KEY) return {error:'Wrong key for reply'};
-              cm.replies.splice(k,1);
-              save(posts);
-              return {deleted:true};
-            }
-          }
-        }else if(!isReply && cm.id === commentId){
-          if(cm.deleteKey !== key && key !== MASTER_KEY) return {error:'Wrong key for comment'};
-          posts[i].comments.splice(j,1);
-          save(posts);
-          return {deleted:true};
-        }
-      }
-      return {error:'Comment not found'};
-    }
-  }
-  return {error:'Not found'};
+api.deletePost = function(id,key){
+  var r=db.exec("SELECT deleteKey FROM posts WHERE id='"+esc(id)+"'");
+  if(!r.length||!r[0].values.length)return{error:'Not found'};
+  if(r[0].values[0][0]!==key&&key!==MASTER_KEY)return{error:'Wrong key'};
+  db.run("DELETE FROM posts WHERE id='"+esc(id)+"'");db.run("DELETE FROM comments WHERE postId='"+esc(id)+"'");saveDb();
+  return{deleted:true};
 };
 
-exports.editPost = function(id, data, key){
-  var posts = load();
-  for(var i=0;i<posts.length;i++){
-    if(posts[i].id === id){
-      if(posts[i].deleteKey !== key && key !== MASTER_KEY) return {error:'Wrong key'};
-      if(data.title!==undefined) posts[i].title = (data.title||'').trim();
-      if(data.description!==undefined) posts[i].description = (data.description||'').trim();
-      if(data.tags!==undefined) posts[i].tags = (data.tags||[]).map(function(t){return t.trim().toLowerCase();}).filter(Boolean);
-      if(data.buildCode!==undefined) posts[i].buildCode = data.buildCode || '';
-      posts[i].editedAt = Date.now();
-      save(posts);
-      return {edited:true, editedAt:posts[i].editedAt, title:posts[i].title, description:posts[i].description, tags:posts[i].tags, buildCode:posts[i].buildCode};
-    }
-  }
-  return {error:'Not found'};
+api.deleteComment = function(postId,commentId,key,isReply){
+  var col=isReply?'replyTo':'id';
+  var r=db.exec("SELECT deleteKey FROM comments WHERE "+col+"='"+esc(commentId)+"' AND postId='"+esc(postId)+"'");
+  if(!r.length||!r[0].values.length)return{error:'Not found'};
+  if(r[0].values[0][0]!==key&&key!==MASTER_KEY)return{error:'Wrong key'};
+  db.run("DELETE FROM comments WHERE "+col+"='"+esc(commentId)+"' AND postId='"+esc(postId)+"'");saveDb();
+  return{deleted:true};
 };
 
-exports.editComment = function(postId, commentId, data, key, isReply){
-  var posts = load();
-  for(var i=0;i<posts.length;i++){
-    if(posts[i].id === postId){
-      if(!posts[i].comments) return {error:'No comments'};
-      for(var j=0;j<posts[i].comments.length;j++){
-        var cm = posts[i].comments[j];
-        if(isReply && cm.replies){
-          for(var k=0;k<cm.replies.length;k++){
-            if(cm.replies[k].id === commentId){
-              if(cm.replies[k].deleteKey !== key) return {error:'Wrong key'};
-              if(data.text!==undefined) cm.replies[k].text = (data.text||'').trim();
-              cm.replies[k].editedAt = Date.now();
-              save(posts);
-              return {edited:true, editedAt:cm.replies[k].editedAt};
-            }
-          }
-        }else if(!isReply && cm.id === commentId){
-          if(cm.deleteKey !== key) return {error:'Wrong key'};
-          if(data.text!==undefined) cm.text = (data.text||'').trim();
-          cm.editedAt = Date.now();
-          save(posts);
-          return {edited:true, editedAt:cm.editedAt};
-        }
-      }
-      return {error:'Comment not found'};
-    }
-  }
-  return {error:'Not found'};
+api.editPost = function(id,data,key){
+  var r=db.exec("SELECT deleteKey FROM posts WHERE id='"+esc(id)+"'");
+  if(!r.length||!r[0].values.length)return{error:'Not found'};
+  if(r[0].values[0][0]!==key&&key!==MASTER_KEY)return{error:'Wrong key'};
+  var sets=[];if(data.title!==undefined){sets.push("title='"+esc((data.title||'').trim())+"'");}
+  if(data.description!==undefined){sets.push("description='"+esc((data.description||'').trim())+"'");}
+  if(data.tags!==undefined){sets.push("tags='"+esc(JSON.stringify((data.tags||[]).map(function(t){return t.trim().toLowerCase();}).filter(Boolean)))+"'");}
+  if(data.buildCode!==undefined){sets.push("buildCode='"+esc(data.buildCode||'')+"'");}
+  sets.push("editedAt="+Date.now());
+  db.run("UPDATE posts SET "+sets.join(",")+" WHERE id='"+esc(id)+"'");saveDb();
+  return{edited:true,editedAt:Date.now()};
 };
 
-exports.create = function(data){
-  var posts = load();
-  var post = {
-    id: genId(),
-    buildCode: data.buildCode || '',
-    title: (data.title || '').trim(),
-    description: (data.description || '').trim(),
-    author: (data.author || 'Anonymous').trim(),
-    tags: (data.tags || []).map(function(t){return t.trim().toLowerCase();}).filter(Boolean),
-    category: data.category || '',
-    pinned: data.pinned ? 1 : 0,
-    likes: 0,
-    views: 0,
-    createdAt: Date.now(),
-    deleteKey: data.deleteKey || '',
-    comments: []
-  };
-  if(!post.title){ return {error:'Title is required'}; }
-  if(data.image) post.image = data.image;
-  posts.unshift(post);
-  save(posts);
-  var out = JSON.parse(JSON.stringify(post));
-  delete out.deleteKey;
-  out.deleteKey = post.deleteKey;
-  return out;
+api.editComment = function(postId,commentId,data,key,isReply){
+  var col=isReply?'replyTo':'id';
+  var r=db.exec("SELECT deleteKey FROM comments WHERE "+col+"='"+esc(commentId)+"' AND postId='"+esc(postId)+"'");
+  if(!r.length||!r[0].values.length)return{error:'Not found'};
+  if(r[0].values[0][0]!==key&&key!==MASTER_KEY)return{error:'Wrong key'};
+  if(data.text!==undefined)db.run("UPDATE comments SET text='"+esc((data.text||'').trim())+"',editedAt="+Date.now()+" WHERE "+col+"='"+esc(commentId)+"' AND postId='"+esc(postId)+"'");saveDb();
+  return{edited:true,editedAt:Date.now()};
 };
 
-exports.like = function(id){
-  var posts = load();
-  for(var i=0;i<posts.length;i++){
-    if(posts[i].id === id){
-      posts[i].likes = (posts[i].likes||0) + 1;
-      save(posts);
-      return { likes: posts[i].likes };
-    }
-  }
-  return {error:'Not found'};
-};
-exports.unlike = function(id){
-  var posts = load();
-  for(var i=0;i<posts.length;i++){
-    if(posts[i].id === id){
-      posts[i].likes = Math.max(0, (posts[i].likes||0) - 1);
-      save(posts);
-      return { likes: posts[i].likes };
-    }
-  }
-  return {error:'Not found'};
+api.like = function(id){db.run("UPDATE posts SET likes=likes+1 WHERE id='"+esc(id)+"'");saveDb();var r=db.exec("SELECT likes FROM posts WHERE id='"+esc(id)+"'");return r.length&&r[0].values.length?{likes:r[0].values[0][0]}:{error:'Not found'};};
+api.unlike = function(id){db.run("UPDATE posts SET likes=MAX(0,likes-1) WHERE id='"+esc(id)+"'");saveDb();var r=db.exec("SELECT likes FROM posts WHERE id='"+esc(id)+"'");return r.length&&r[0].values.length?{likes:r[0].values[0][0]}:{error:'Not found'};};
+
+api.togglePin = function(id,key){
+  if(key!==MASTER_KEY)return{error:'Wrong key'};
+  db.run("UPDATE posts SET pinned = CASE WHEN pinned=1 THEN 0 ELSE 1 END WHERE id='"+esc(id)+"'");saveDb();
+  var r=db.exec("SELECT pinned FROM posts WHERE id='"+esc(id)+"'");
+  return r.length&&r[0].values.length?{pinned:r[0].values[0][0]}:{error:'Not found'};
 };
 
-exports.comment = function(id, data){
-  var posts = load();
-  for(var i=0;i<posts.length;i++){
-    if(posts[i].id === id){
-      var c = {
-        id: genId(),
-        text: (data.text||'').trim(),
-        author: (data.author||'').trim()||'Anonymous',
-        deleteKey: data.deleteKey || '',
-        createdAt: Date.now()
-      };
-      if(!c.text){ return {error:'Comment text is required'}; }
-      if(!posts[i].comments){ posts[i].comments = []; }
-      if(data.replyTo){
-        for(var j=0;j<posts[i].comments.length;j++){
-          if(posts[i].comments[j].id === data.replyTo){
-            if(!posts[i].comments[j].replies) posts[i].comments[j].replies = [];
-            posts[i].comments[j].replies.push(c);
-            save(posts);
-            return c;
-          }
-        }
-      }
-      posts[i].comments.push(c);
-      save(posts);
-      return c;
-    }
-  }
-  return {error:'Not found'};
+api.comment = function(id,data){
+  var cid=genId(),text=(data.text||'').trim();
+  if(!text)return{error:'Comment text is required'};
+  db.run("INSERT INTO comments VALUES('"+esc(cid)+"','"+esc(id)+"','"+esc(text)+"','"+esc((data.author||'').trim()||'Anonymous')+"','"+esc(data.deleteKey||'')+"',"+Date.now()+",0,"+(data.replyTo?"'"+esc(data.replyTo)+"'":"NULL")+")");saveDb();
+  return{id:cid,text:text,author:(data.author||'').trim()||'Anonymous',createdAt:Date.now()};
 };
-exports.togglePin = function(id, key){
-  var posts = load();
-  for(var i=0;i<posts.length;i++){
-    if(posts[i].id === id){
-      if(key !== MASTER_KEY) return {error:'Wrong key'};
-      posts[i].pinned = posts[i].pinned ? 0 : 1;
-      save(posts);
-      return {pinned:posts[i].pinned};
-    }
-  }
-  return {error:'Not found'};
+
+api.search = function(q){
+  var query=(q||'').toLowerCase().trim();
+  if(!query)return[];
+  var rows=db.exec("SELECT * FROM posts WHERE LOWER(title) LIKE '%"+esc(query)+"%' OR LOWER(author) LIKE '%"+esc(query)+"%' OR LOWER(description) LIKE '%"+esc(query)+"%' OR LOWER(tags) LIKE '%"+esc(query)+"%' ORDER BY pinned DESC, likes DESC, createdAt DESC LIMIT 50");
+  return(rows[0]?rows[0].values:[]).map(rowToPost);
 };
-exports.search = function(q){
-  var posts = load();
-  var query = q.toLowerCase().trim();
-  if(!query){ return []; }
-  var aliases={
-    deku:['izuku','midoriya'],'izuku midoriya':['deku','midoriya','izuku'],
-    bakugo:['katsuki','bakugou'],katsuki:['bakugo','bakugou'],
-    ochaco:['uraraka','ochako'],uraraka:['ochaco','ochako'],
-    shoto:['todoroki','shouto'],todoroki:['shoto','shouto'],
-    tenya:['iida','tenya'],iida:['tenya'],
-    tsuyu:['asui','tsuyu','froppy'],asui:['tsuyu','froppy'],
-    eijiro:['kirishima','red','eijirou','kiri'],kirishima:['eijiro','red','kiri'],
-    momo:['yaoyorozu'],yaoyorozu:['momo'],
-    fumikage:['tokoyami','dark shadow','fumi'],tokoyami:['fumikage','dark shadow'],
-    denki:['kaminari','denki','pikachu'],kaminari:['denki','pikachu'],
-    kendo:['itsuka','kendo'],'itsuka':['kendo'],
-    ibara:['shiozaki','ibara'],shiozaki:['ibara'],
-    mirio:['togata','mirio','lemillion'],togata:['mirio','lemillion'],
-    tamaki:['amajiki','tamaki','suneater'],amajiki:['tamaki','suneater'],
-    nejire:['hado','nejire','nejire-chan'],hado:['nejire'],
-    hitoshi:['shinso','hitoshi','shinsou'],shinso:['hitoshi','shinsou'],
-    allmight:['all might','allmight','yagi','toshinori','symbol of peace'],
-    aizawa:['shota','aizawa','eraserhead','shouta'],'shota':['aizawa','eraserhead'],
-    mic:['present mic','mic','present','yamada','hizashi'],'present mic':['mic','present mic'],
-    cement:['cementoss','cement','isoda','ken'],
-    endeavor:['endeavor','enji','todoroki','flame'],
-    hawks:['hawks','keigo','takami','fierce wings'],
-    mirko:['mirko','rumi','usagiyama'],
-    star:['star and stripe','star','cathleen','bate','stars'],
-    mtlady:['mt lady','mtlady','yu','takeyama','gigantification'],
-    tomura:['shigaraki','tomura','shiggy','decay'],shigaraki:['tomura','shiggy','decay'],
-    afo:['all for one','afo','allforone'],'all for one':['afo','allforone'],
-    dabi:['dabi','toya','touya','todoroki'],
-    toga:['himiko','toga','himiko toga'],'himiko':['toga'],
-    twice:['twice','jin','bubaigawara'],
-    compress:['mr compress','compress','sako','oguro','mr.compress'],'mr compress':['compress'],
-    kurogiri:['kurogiri','oboro','shirakumo'],
-    nagant:['lady nagant','nagant','kaina','tsutsumi'],'lady nagant':['nagant'],
-    overhaul:['overhaul','chisaki','kai','shie hassaikai'],
-    'izuku ofa':['ofa','one for all','100%','izuku ofa','full cowling','deku ofa'],
-    armored:['armored all might','armored','all might armored'],
-    'afo youth':['afo young','young afo','afo youth','all for one young'],
-    'rapid deku':['izuku ofa','ofa','deku rapid','rapid izuku'],
-    'red riot':['eijiro','kirishima','red','unbreakable'],
-    'shiggy':['tomura','shigaraki'],
-    'eraser':['aizawa','shota','eraserhead'],
-    'mha':[],'mhur':[],'ultra rumble':[],'my hero':[]
-  };
-  var expanded=[query];
-  if(aliases[query])expanded=expanded.concat(aliases[query]);
-  for(var key in aliases){
-    if(aliases[key].indexOf(query)!==-1)expanded.push(key);
-  }
-  return posts.filter(function(p){
-    var text=(p.title||'').toLowerCase()+' '+(p.author||'').toLowerCase()+' '+(p.description||'').toLowerCase()+' '+(p.tags||[]).join(' ')+' '+(p.buildCode||'');
-    try{
-      var bc=JSON.parse(decodeURIComponent(escape(atob(p.buildCode||''))));
-      if(bc.charId)text+=' '+bc.charId;
-      if(bc.label)text+=' '+bc.label.toLowerCase();
-      // Add character role from CH array lookup
-      var chNames={izuku:'assault',izuku_ofa:'rapid',katsuki:'strike',ochaco:'rapid',tenya:'rapid',tsuyu:'rapid',shoto:'strike',eijiro:'assault',momo:'support',fumikage:'assault',denki:'strike',neito:'technical',kendo:'assault',ibara:'support',mirio:'rapid',tamaki:'strike',nejire:'technical',hitoshi:'strike',allmight:'assault',armored:'technical',aizawa:'technical',mic:'strike',cement:'support',endeavor:'strike',hawks:'rapid',mirko:'rapid',star:'strike',mtlady:'assault',tomura:'strike',afo:'technical',afo_youth:'assault',dabi:'technical',himiko:'technical',twice:'rapid',compress:'support',kurogiri:'support',nagant:'strike',overhaul:'support'};
-      if(chNames[bc.charId])text+=' '+chNames[bc.charId];
-    }catch(e){}
-    for(var i=0;i<expanded.length;i++){
-      if(text.indexOf(expanded[i])!==-1)return true;
-    }
-    return false;
-  }).slice(0, 50).map(function(p){
-    return { id:p.id, title:p.title, author:p.author, tags:p.tags||[], likes:p.likes||0, comments:countComments(p.comments), createdAt:p.createdAt };
-  });
-};
+
+module.exports = initSqlJs().then(function(SQL){
+  try{db=new SQL.Database(fs.readFileSync(DB_PATH));}catch(e){db=new SQL.Database();}
+  db.run("CREATE TABLE IF NOT EXISTS posts (id TEXT PRIMARY KEY, buildCode TEXT, title TEXT, description TEXT, author TEXT, tags TEXT, category TEXT, image TEXT, pinned INTEGER DEFAULT 0, likes INTEGER DEFAULT 0, views INTEGER DEFAULT 0, createdAt INTEGER, deleteKey TEXT, editedAt INTEGER)");
+  db.run("CREATE TABLE IF NOT EXISTS comments (id TEXT, postId TEXT, text TEXT, author TEXT, deleteKey TEXT, createdAt INTEGER, editedAt INTEGER, replyTo TEXT)");
+  saveDb();
+  return api;
+});

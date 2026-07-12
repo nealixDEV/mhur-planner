@@ -1,7 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const forum = require('./forum_db');
+var forum;
 
 const root = __dirname;
 const port = process.env.PORT || 8080;
@@ -24,7 +24,8 @@ function body(req, cb){
   });
 }
 
-http.createServer((req, res) => {
+function handler(req, res) {
+  if(!forum){res.writeHead(503);res.end('Initializing...');return;}
   var url = req.url.split('?')[0];
   var query = {};
   (req.url.split('?')[1]||'').split('&').forEach(function(p){
@@ -129,4 +130,9 @@ http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': types[path.extname(filePath)] || 'application/octet-stream', 'Cache-Control': 'no-store, no-cache, must-revalidate', 'Pragma': 'no-cache', 'Expires': '0' });
     res.end(data);
   });
-}).listen(port, () => console.log('Serving ' + root + ' at http://0.0.0.0:' + port + '/'));
+}
+function start(){
+  http.createServer(handler).listen(port, () => console.log('Serving ' + root + ' at http://0.0.0.0:' + port + '/'));
+}
+
+require('./forum_db').then(function(f){forum=f;start();});
