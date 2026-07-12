@@ -126,6 +126,7 @@ module.exports = new Promise(function(resolve){
       });
     });
     });
+  });
   }else{
     var initSqlJs = require('sql.js');
     initSqlJs().then(function(SQL){
