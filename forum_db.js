@@ -85,13 +85,14 @@ function save(){
 
 var _userCache={};
 function getUserCached(username,cb){
-  if(_userCache[username]){cb(_userCache[username]);return;}
-  qOne("SELECT admin,avatar FROM forum_users WHERE username=$1",[username],function(r){
-    _userCache[username]=r||{admin:0,avatar:''};cb(_userCache[username]);
+  var key=(username||'').toLowerCase();
+  if(_userCache[key]){cb(_userCache[key]);return;}
+  qOne("SELECT admin,avatar FROM forum_users WHERE username=$1",[key],function(r){
+    _userCache[key]=r||{admin:0,avatar:''};cb(_userCache[key]);
   });
 }
 function rowToPost(r,cc,userData){
-  userData=userData||_userCache[r.author];
+  userData=userData||_userCache[(r.author||'').toLowerCase()];
   return {id:r.id,buildCode:r.buildcode||r.buildCode||'',title:r.title,description:r.description||'',author:r.author,authorAdmin:(userData?userData.admin:0),authorAvatar:(userData?userData.avatar:''),tags:parseTags(r.tags),category:r.category||'',image:r.image||r.image||'',pinned:r.pinned||0,likes:r.likes||0,views:r.views||0,createdAt:r.createdat||r.createdAt,comments:cc||0,editedAt:r.editedat||r.editedAt||0};
 }
 
@@ -181,7 +182,7 @@ function buildAPI(){
         crows.forEach(function(c){if(c.author)authors[c.author]=true;});
         var authorList=Object.keys(authors),authorPending=authorList.length;
         function finishGet(){
-          var cs=crows.map(function(c){var uData=_userCache[c.author];return{id:c.id,text:c.text,author:c.author,authorAdmin:(uData?uData.admin:0),authorAvatar:(uData?uData.avatar:''),image:c.image||'',createdAt:c.createdat||c.createdAt,editedAt:c.editedat||c.editedAt||0,replyTo:c.replyto||c.replyTo};});
+          var cs=crows.map(function(c){var uData=_userCache[(c.author||'').toLowerCase()];return{id:c.id,text:c.text,author:c.author,authorAdmin:(uData?uData.admin:0),authorAvatar:(uData?uData.avatar:''),image:c.image||'',createdAt:c.createdat||c.createdAt,editedAt:c.editedat||c.editedAt||0,replyTo:c.replyto||c.replyTo};});
           var tl=[],rm={};
           cs.forEach(function(c){if(c.replyTo){if(!rm[c.replyTo])rm[c.replyTo]=[];rm[c.replyTo].push(c);}else tl.push(c);});
           tl.forEach(function(c){if(rm[c.id])c.replies=rm[c.id];});
