@@ -81,9 +81,11 @@ module.exports = new Promise(function(resolve){
       if(err){console.log('PG error:',err.message);process.exit(1);}
       db.query("CREATE TABLE IF NOT EXISTS posts (id TEXT PRIMARY KEY, buildCode TEXT, title TEXT, description TEXT, author TEXT, tags TEXT, category TEXT, image TEXT, pinned INTEGER DEFAULT 0, likes INTEGER DEFAULT 0, views INTEGER DEFAULT 0, createdAt BIGINT, deleteKey TEXT, editedAt BIGINT)",[],function(){
         db.query("CREATE TABLE IF NOT EXISTS comments (id TEXT, postId TEXT, text TEXT, author TEXT, deleteKey TEXT, createdAt BIGINT, editedAt BIGINT, replyTo TEXT)",[],function(){
+        db.query("CREATE TABLE IF NOT EXISTS uploads (id TEXT PRIMARY KEY, data TEXT, mime TEXT, createdAt BIGINT)",[],function(){
           console.log('PostgreSQL connected');
           resolve(buildAPI());
         });
+      });
       });
     });
   }else{
@@ -92,6 +94,7 @@ module.exports = new Promise(function(resolve){
       try{db=new SQL.Database(fs.readFileSync(DB_PATH));}catch(e){db=new SQL.Database();}
       db.run("CREATE TABLE IF NOT EXISTS posts (id TEXT PRIMARY KEY, buildCode TEXT, title TEXT, description TEXT, author TEXT, tags TEXT, category TEXT, image TEXT, pinned INTEGER DEFAULT 0, likes INTEGER DEFAULT 0, views INTEGER DEFAULT 0, createdAt INTEGER, deleteKey TEXT, editedAt INTEGER)");
       db.run("CREATE TABLE IF NOT EXISTS comments (id TEXT, postId TEXT, text TEXT, author TEXT, deleteKey TEXT, createdAt INTEGER, editedAt INTEGER, replyTo TEXT)");
+      db.run("CREATE TABLE IF NOT EXISTS uploads (id TEXT PRIMARY KEY, data TEXT, mime TEXT, createdAt INTEGER)");
       save();
       console.log('SQLite ready');
       resolve(buildAPI());
@@ -216,6 +219,15 @@ function buildAPI(){
           if(--pending===0)cb(items);
         });
       });
+    });
+  };
+
+  a.saveUpload = function(id, data, mime, cb){
+    qRun("INSERT INTO uploads(id,data,mime,createdAt) VALUES($1,$2,$3,$4)",[id,data,mime,Date.now()],cb);
+  };
+  a.getUpload = function(id, cb){
+    qOne("SELECT id,data,mime FROM uploads WHERE id=$1",[id],function(r){
+      cb(r||null);
     });
   };
 

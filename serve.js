@@ -102,18 +102,25 @@ function handler(req, res) {
       forum.editComment(m[1], m[2], data, data.deleteKey||'', data.isReply||false, function(result){json(res, result);});
     });
   }
+  if(url.match(/^\/api\/uploads\/([a-z0-9]+)\.\w+$/) && req.method === 'GET'){
+    var uploadId = url.match(/^\/api\/uploads\/([a-z0-9]+)\.\w+$/)[1];
+    return forum.getUpload(uploadId, function(file){
+      if(!file){res.writeHead(404);res.end('Not found');return;}
+      res.writeHead(200,{'Content-Type':file.mime,'Cache-Control':'no-store'});
+      res.end(Buffer.from(file.data,'base64'));
+    });
+  }
   if(url === '/api/upload' && req.method === 'POST'){
     return body(req, function(data){
       var imgData = data.image || '';
       var matches = imgData.match(/^data:image\/(png|jpeg|jpg|gif|webp);base64,(.+)$/) || imgData.match(/^data:video\/(mp4|webm|ogg);base64,(.+)$/);
       if(!matches) return json(res, {error:'Invalid image'}, 400);
       var ext = matches[1] === 'jpeg' ? 'jpg' : matches[1];
-      var fileName = Date.now().toString(36) + Math.random().toString(36).slice(2,6) + '.' + ext;
-      var filePath2 = path.join(root, 'uploads', fileName);
-      try{
-        fs.writeFileSync(filePath2, Buffer.from(matches[2], 'base64'));
-        json(res, {url:'/uploads/'+fileName});
-      }catch(e){json(res, {error:'Save failed'}, 500);}
+      var mime = matches[0].startsWith('data:image/') ? 'image/'+ext : 'video/'+ext;
+      var uploadId = Date.now().toString(36) + Math.random().toString(36).slice(2,6);
+      forum.saveUpload(uploadId, matches[2], mime, function(){
+        json(res, {url:'/api/uploads/'+uploadId+'.'+ext});
+      });
     });
   }
   if(url === '/api/verify-key' && req.method === 'POST'){
