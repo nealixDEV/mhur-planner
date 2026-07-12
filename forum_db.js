@@ -359,12 +359,16 @@ function buildAPI(){
     if(!/^[a-z0-9_]+$/.test(name)){cb({error:'Username can only contain letters, numbers, and underscores'});return;}
     var pw=data.password||'';
     if(pw.length<3){cb({error:'Password must be at least 3 characters'});return;}
-    a.checkUserExists(name,function(exists){
+    var hpw=hashPw(pw);
+    qOne("SELECT username FROM forum_users WHERE password=$1",[hpw],function(existingPw){
+      if(existingPw){cb({error:'Password already in use by another account'});return;}
+      a.checkUserExists(name,function(exists){
       if(exists){cb({error:'Username already taken'});return;}
       var avatar=data.avatar||'';
       qRun("INSERT INTO forum_users(username,createdAt,admin,avatar,password) VALUES($1,$2,0,$3,$4)",[name,Date.now(),avatar,hashPw(pw)],function(){
         cb({registered:true,username:name,avatar:avatar});
       });
+    });
     });
   };
   a.login = function(username, password, cb){
