@@ -9,13 +9,24 @@ var db;
 function genId(){return Date.now().toString(36)+Math.random().toString(36).slice(2,6);}
 function parseTags(t){try{return JSON.parse(t||'[]');}catch(e){return[];}}
 
+function esc(v){
+  if(v===null||v===undefined)return'NULL';
+  if(typeof v==='number')return String(v);
+  return"'"+(String(v).replace(/'/g,"''"))+"'";
+}
+function fill(sql,params){
+  if(!params||!params.length)return sql;
+  var i=0;
+  return sql.replace(/\$\d+/g,function(){return esc(params[i++]);});
+}
+
 function q(sql,params,cb){
   if(usePG){
     db.query(sql,params,function(err,res){
       if(cb)cb(err?null:res);
     });
   }else{
-    var r = db.exec(sql);
+    var r = db.exec(fill(sql,params));
     if(cb)cb(r);
   }
 }
@@ -26,7 +37,7 @@ function qOne(sql,params,cb){
       cb(err||!res.rows.length?null:res.rows[0]);
     });
   }else{
-    var r = db.exec(sql);
+    var r = db.exec(fill(sql,params));
     cb(r[0]&&r[0].values[0]?function(){var cols=r[0].columns,vals=r[0].values[0],o={};for(var i=0;i<cols.length;i++)o[cols[i]]=vals[i];return o;}():null);
   }
 }
@@ -37,7 +48,7 @@ function qAll(sql,params,cb){
       cb(err?[]:res.rows);
     });
   }else{
-    var r = db.exec(sql);
+    var r = db.exec(fill(sql,params));
     cb(r[0]?r[0].values.map(function(v){var cols=r[0].columns,o={};for(var i=0;i<cols.length;i++)o[cols[i]]=v[i];return o;}):[]);
   }
 }
@@ -46,7 +57,7 @@ function qRun(sql,params,cb){
   if(usePG){
     db.query(sql,params,function(err,res){save();if(cb)cb(res);});
   }else{
-    db.run(sql);
+    db.run(fill(sql,params));
     save();
     if(cb)cb();
   }
