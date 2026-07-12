@@ -203,6 +203,14 @@ function handler(req, res) {
 }
 function start(){
   try{fs.mkdirSync(path.join(root,'uploads'),{recursive:true});}catch(e){}
+  // Auto-generate an owner key if no admin keys exist
+  forum.listAdminKeys(function(keys){
+    if(!keys||!keys.length){
+      forum.generateAdminKeys(1, 'mhur_owner_', function(ownerKeys){
+        console.log('🚀 First-time setup: Owner key generated — ' + (ownerKeys&&ownerKeys[0]||''));
+      });
+    }
+  });
   http.createServer(handler).listen(port, () => console.log('Serving ' + root + ' at http://0.0.0.0:' + port + '/'));
 }
 
