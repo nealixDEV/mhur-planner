@@ -187,7 +187,7 @@ function handler(req, res) {
     return forum.listAdminKeys(function(keys){json(res,{keys:keys});});
   }
   if(url === '/api/admin/list-admins' && req.method === 'GET'){
-    return forum.listAdmins(function(admins){json(res,{admins:admins});});
+    return forum.listAdmins(function(admins){console.log('listAdmins result:',admins);json(res,{admins:admins});});
   }
   if(url === '/api/admin/demote' && req.method === 'POST'){
     return body(req, function(data){

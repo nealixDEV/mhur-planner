@@ -7988,8 +7988,8 @@ if(adminEl){
         function loadAdmins(){
           var al=document.getElementById('adminList');if(!al)return;
           var xa=new XMLHttpRequest();xa.open('GET','/api/admin/list-admins',true);
-          xa.onload=function(){try{var ar=JSON.parse(xa.responseText);if(ar&&ar.admins){
-            al.innerHTML='<div style="margin-bottom:4px;color:#f5c800;font-size:.6rem;">&#128100; Site Staff</div>'+ar.admins.map(function(u){
+          xa.onload=function(){try{var ar=JSON.parse(xa.responseText);console.log('listAdmins response:',xa.responseText.substring(0,200));if(ar&&ar.admins){
+            al.innerHTML='<div style="margin-bottom:4px;color:#f5c800;font-size:.6rem;">&#128100; Site Staff ('+ar.admins.length+')</div>'+ar.admins.map(function(u){
               var isOwner=u.admin>=2;
               return '<div style="display:flex;justify-content:space-between;align-items:center;padding:3px 6px;background:rgba(0,0,0,.15);border-radius:4px;margin-bottom:3px;"><span style="'+(isOwner?'color:#ef4444;text-shadow:0 0 8px rgba(239,68,68,.3);font-weight:900;':'color:#f5c800;')+'font-size:.62rem;">'+u.username+(isOwner?' <span style="font-size:.5rem;color:#ef4444;">&#9733; Owner</span>':' <span style="font-size:.5rem;color:#f5c800;">Admin</span>')+'</span>'+(isOwner?'':'<span style="cursor:pointer;color:#ef4444;font-size:.55rem;" class="demoteBtn" data-user="'+esc(u.username)+'">&#128465; Remove</span>')+'</div>';
             }).join('')+'</div>';
