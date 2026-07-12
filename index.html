@@ -7409,7 +7409,8 @@ document.querySelectorAll('.tab-btn').forEach(function(btn){
 // Forum init
 function initForum(){
   var API='/api/posts',likedPosts={},sessionName=localStorage.getItem('forumUsername')||'',myKeys=JSON.parse(localStorage.getItem('forumKeys')||'{}');
-  if(!sessionName){showUsernameModal();return;}
+  if(!sessionName){showUsernameModal(false);return;}
+  if(!localStorage.getItem('forumLoggedIn')){showUsernameModal(true);return;}
   var mpb=document.getElementById('myProfileBtn');
   if(mpb){mpb.style.display='';mpb.title='My Profile';mpb.onclick=function(){showProfile(sessionName);};}
   masterKey=localStorage.getItem('mhurMasterKey')||'';
@@ -7462,40 +7463,66 @@ function initForum(){
     if(url.match(/\.(mp4|webm|ogg)$/i))return'<video src="'+esc(url)+'" controls style="width:100%;border-radius:8px;margin-bottom:8px;max-height:300px;background:#000;"></video>';
     return'<div style="position:relative;overflow:hidden;border-radius:8px;aspect-ratio:16/9;margin-bottom:8px;background:rgba(0,0,0,.2);"><img src="'+esc(url)+'" onclick="expandImage(this.src)" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;cursor:pointer;" onerror="this.style.display=\'none\'"></div>';
   }
-  function showUsernameModal(){
-    r('<div style="position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;"><div style="background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:30px;max-width:360px;width:90%;text-align:center;"><div style="font-size:1.5rem;margin-bottom:4px;">&#128172;</div><h2 style="color:#f5c800;font-size:1.1rem;margin-bottom:4px;">Welcome to the Forum!</h2><p style="color:#94a3b8;font-size:.75rem;margin-bottom:16px;">Choose a unique username to start posting.</p><div style="position:relative;width:72px;height:72px;margin:0 auto 12px;cursor:pointer;" id="regAvatarWrap"><img id="regAvatarPreview" src="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'72\' height=\'72\'%3E%3Crect width=\'72\' height=\'72\' fill=\'%23333\' rx=\'36\'/%3E%3Ctext x=\'36\' y=\'44\' font-size=\'30\' text-anchor=\'middle\' fill=\'%2394a3b8\'%3E%3F%3C/text%3E%3C/svg%3E" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.15);"><div style="position:absolute;bottom:0;right:0;background:#f5c800;color:#000;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:900;border:2px solid #1e1e2e;">+</div></div><input type="file" id="regAvatarFile" accept="image/png,image/jpeg,image/gif,image/webp" style="display:none;"><input id="regName" class="forum-input" style="width:100%;text-align:center;font-size:.9rem;padding:8px;margin-bottom:8px;" placeholder="Your username..." maxlength="20" autocomplete="off"><div id="regErr" style="color:#ef4444;font-size:.65rem;margin-bottom:8px;min-height:1.2em;"></div><button class="forum-btn" id="regBtn" style="width:100%;font-size:.8rem;padding:8px;">Register</button><p style="color:#475569;font-size:.55rem;margin-top:8px;">2-20 characters, letters, numbers, underscores</p></div></div>');
+  function showUsernameModal(loginMode){
+    var isLogin=loginMode||!localStorage.getItem('forumUsername');
+    var title=isLogin?'Sign In':'Welcome to the Forum!';
+    var sub=isLogin?'Sign in to your account.':'Choose a unique username to start posting.';
+    var btnLabel=isLogin?'Sign In':'Register';
+    var extraFields=isLogin?'':'<div style="position:relative;width:72px;height:72px;margin:0 auto 12px;cursor:pointer;" id="regAvatarWrap"><img id="regAvatarPreview" src="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'72\' height=\'72\'%3E%3Crect width=\'72\' height=\'72\' fill=\'%23333\' rx=\'36\'/%3E%3Ctext x=\'36\' y=\'44\' font-size=\'30\' text-anchor=\'middle\' fill=\'%2394a3b8\'%3E%3F%3C/text%3E%3C/svg%3E" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.15);"><div style="position:absolute;bottom:0;right:0;background:#f5c800;color:#000;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:900;border:2px solid #1e1e2e;">+</div></div><input type="file" id="regAvatarFile" accept="image/png,image/jpeg,image/gif,image/webp" style="display:none;">';
+    var nameVal=isLogin?esc(localStorage.getItem('forumUsername')||''):'';
+    r('<div style="position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;"><div style="background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:30px;max-width:360px;width:90%;text-align:center;"><div style="font-size:1.5rem;margin-bottom:4px;">&#128272;</div><h2 style="color:#f5c800;font-size:1.1rem;margin-bottom:4px;">'+title+'</h2><p style="color:#94a3b8;font-size:.75rem;margin-bottom:16px;">'+sub+'</p>'+extraFields+'<input id="regName" class="forum-input" style="width:100%;text-align:center;font-size:.9rem;padding:8px;margin-bottom:8px;" placeholder="Username..." maxlength="20" value="'+nameVal+'" autocomplete="off"><input id="regPass" type="password" class="forum-input" style="width:100%;text-align:center;font-size:.9rem;padding:8px;margin-bottom:8px;" placeholder="Password..." autocomplete="off"><div id="regErr" style="color:#ef4444;font-size:.65rem;margin-bottom:8px;min-height:1.2em;"></div><button class="forum-btn" id="regBtn" style="width:100%;font-size:.8rem;padding:8px;">'+btnLabel+'</button>'+(isLogin?'<p style="color:#475569;font-size:.55rem;margin-top:8px;cursor:pointer;" id="switchRegMode">New here? Create an account</p>':'<p style="color:#475569;font-size:.55rem;margin-top:8px;">2-20 chars, letters, numbers, underscores</p>')+'</div></div>');
     document.getElementById('regName').focus();
     document.getElementById('regName').addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('regBtn').click();});
+    document.getElementById('regPass').addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('regBtn').click();});
     var regAvatarData='';
-    document.getElementById('regAvatarWrap').onclick=function(){document.getElementById('regAvatarFile').click();};
-    document.getElementById('regAvatarFile').onchange=function(){
-      var file=this.files[0];if(!file)return;
-      var reader=new FileReader();
-      reader.onload=function(e){
-        regAvatarData=e.target.result;
-        document.getElementById('regAvatarPreview').src=regAvatarData;
+    var avatarWrap=document.getElementById('regAvatarWrap');
+    if(avatarWrap){
+      avatarWrap.onclick=function(){document.getElementById('regAvatarFile').click();};
+      document.getElementById('regAvatarFile').onchange=function(){
+        var file=this.files[0];if(!file)return;
+        var reader=new FileReader();
+        reader.onload=function(e){regAvatarData=e.target.result;document.getElementById('regAvatarPreview').src=regAvatarData;};
+        reader.readAsDataURL(file);
       };
-      reader.readAsDataURL(file);
-    };
+    }
     document.getElementById('regBtn').addEventListener('click',function(){
       var name=document.getElementById('regName').value.trim();
-      if(name.length<2||name.length>20){document.getElementById('regErr').textContent='Must be 2-20 characters.';return;}
-      if(!/^[a-zA-Z0-9_]+$/.test(name)){document.getElementById('regErr').textContent='Letters, numbers, underscores only.';return;}
-      var btn=this;btn.disabled=true;btn.textContent='Checking...';
-      var x=new XMLHttpRequest();x.open('POST','/api/register-user',true);x.setRequestHeader('Content-Type','application/json');
+      var pass=document.getElementById('regPass').value;
+      if(!name){document.getElementById('regErr').textContent='Username is required.';return;}
+      if(!pass){document.getElementById('regErr').textContent='Password is required.';return;}
+      if(!isLogin){
+        if(name.length<2||name.length>20){document.getElementById('regErr').textContent='Must be 2-20 characters.';return;}
+        if(!/^[a-zA-Z0-9_]+$/.test(name)){document.getElementById('regErr').textContent='Letters, numbers, underscores only.';return;}
+        if(pass.length<3){document.getElementById('regErr').textContent='Password must be 3+ characters.';return;}
+      }
+      var btn=this;btn.disabled=true;btn.textContent='Please wait...';
+      var url=isLogin?'/api/login':'/api/register-user';
+      var payload={username:name,password:pass};
+      if(!isLogin)payload.avatar=regAvatarData;
+      var x=new XMLHttpRequest();x.open('POST',url,true);x.setRequestHeader('Content-Type','application/json');
       x.onload=function(){
         try{var r=JSON.parse(x.responseText);
-          if(r&&r.registered){
-            if(regAvatarData)localStorage.setItem('forumAvatar',regAvatarData);
-            localStorage.setItem('forumUsername',name);sessionName=name;initForum();return;
+          if(isLogin&&r&&r.success){
+            localStorage.setItem('forumUsername',name);sessionName=name;
+            localStorage.setItem('forumLoggedIn','1');
+            if(r.avatar)localStorage.setItem('forumAvatar',r.avatar);
+            initForum();return;
           }
-          document.getElementById('regErr').textContent=r&&r.error||'Registration failed.';
+          if(!isLogin&&r&&r.registered){
+            if(regAvatarData)localStorage.setItem('forumAvatar',regAvatarData);
+            localStorage.setItem('forumUsername',name);sessionName=name;
+            localStorage.setItem('forumLoggedIn','1');
+            initForum();return;
+          }
+          document.getElementById('regErr').textContent=r&&r.error||'Failed.';
         }catch(e){document.getElementById('regErr').textContent='Server error.';}
-        btn.disabled=false;btn.textContent='Register';
+        btn.disabled=false;btn.textContent=btnLabel;
       };
-      x.onerror=function(){document.getElementById('regErr').textContent='Network error.';btn.disabled=false;btn.textContent='Register';};
-      x.send(JSON.stringify({username:name,avatar:regAvatarData}));
+      x.onerror=function(){document.getElementById('regErr').textContent='Network error.';btn.disabled=false;btn.textContent=btnLabel;};
+      x.send(JSON.stringify(payload));
     });
+    var switchBtn=document.getElementById('switchRegMode');
+    if(switchBtn)switchBtn.onclick=function(){showUsernameModal(false);};
   }
   function skeleton(){return'<div style="padding:4px 0;"><div class="skel skel-banner"></div><div class="skel skel-line"></div><div class="skel skel-line-sm"></div><div class="skel skel-line" style="width:50%;"></div></div>';}
   var _fel=document.getElementById('forumContent');

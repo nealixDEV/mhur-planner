@@ -132,6 +132,11 @@ function handler(req, res) {
       forum.registerUser(data, function(result){json(res, result);});
     });
   }
+  if(url === '/api/login' && req.method === 'POST'){
+    return body(req, function(data){
+      forum.login(data.username||'', data.password||'', function(result){json(res, result);});
+    });
+  }
   if(url === '/api/set-avatar' && req.method === 'POST'){
     return body(req, function(data){
       forum.setUserAvatar(data.username||'', data.avatar||'', function(){json(res, {saved:true});});

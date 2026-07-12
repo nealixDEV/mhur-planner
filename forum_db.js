@@ -109,6 +109,7 @@ module.exports = new Promise(function(resolve){
         db.query("CREATE TABLE IF NOT EXISTS forum_users (username TEXT PRIMARY KEY, createdAt BIGINT, admin INTEGER DEFAULT 0)",[],function(){
         db.query("ALTER TABLE forum_users ADD COLUMN IF NOT EXISTS admin INTEGER DEFAULT 0",[],function(){
         db.query("ALTER TABLE forum_users ADD COLUMN IF NOT EXISTS avatar TEXT",[],function(){
+        db.query("ALTER TABLE forum_users ADD COLUMN IF NOT EXISTS password TEXT",[],function(){
         db.query("CREATE TABLE IF NOT EXISTS used_admin_keys (key_hash TEXT PRIMARY KEY, usedAt BIGINT)",[],function(){
         db.query("CREATE TABLE IF NOT EXISTS admin_keys (key_id TEXT PRIMARY KEY, used INTEGER DEFAULT 0, createdAt BIGINT)",[],function(){
           console.log('PostgreSQL connected');
@@ -118,11 +119,12 @@ module.exports = new Promise(function(resolve){
         });
         });
         });
-        });
       });
-          });
-        });
       });
+      });
+      });
+    });
+    });
   }else{
     var initSqlJs = require('sql.js');
     initSqlJs().then(function(SQL){
@@ -134,6 +136,7 @@ module.exports = new Promise(function(resolve){
       db.run("CREATE TABLE IF NOT EXISTS forum_users (username TEXT PRIMARY KEY, createdAt INTEGER, admin INTEGER DEFAULT 0)");
       try{db.run("ALTER TABLE forum_users ADD COLUMN admin INTEGER DEFAULT 0");}catch(e){}
       try{db.run("ALTER TABLE forum_users ADD COLUMN avatar TEXT");}catch(e){}
+      try{db.run("ALTER TABLE forum_users ADD COLUMN password TEXT");}catch(e){}
       db.run("CREATE TABLE IF NOT EXISTS used_admin_keys (key_hash TEXT PRIMARY KEY, usedAt INTEGER)");
       db.run("CREATE TABLE IF NOT EXISTS admin_keys (key_id TEXT PRIMARY KEY, used INTEGER DEFAULT 0, createdAt INTEGER)");
       save();
@@ -347,18 +350,28 @@ function buildAPI(){
     });
   };
 
+  function hashPw(p){var c=require('crypto');return c.createHash('sha256').update(String(p||'')).digest('hex');}
   a.registerUser = function(data, cb){
     var username=(typeof data==='string'?data:data&&data.username)||'';
     if(!username||!username.trim()){cb({error:'Username is required'});return;}
     var name=username.trim().toLowerCase();
     if(name.length<2||name.length>20){cb({error:'Username must be 2-20 characters'});return;}
     if(!/^[a-z0-9_]+$/.test(name)){cb({error:'Username can only contain letters, numbers, and underscores'});return;}
+    var pw=data.password||'';
+    if(pw.length<3){cb({error:'Password must be at least 3 characters'});return;}
     a.checkUserExists(name,function(exists){
       if(exists){cb({error:'Username already taken'});return;}
       var avatar=data.avatar||'';
-      qRun("INSERT INTO forum_users(username,createdAt,admin,avatar) VALUES($1,$2,0,$3)",[name,Date.now(),avatar],function(){
+      qRun("INSERT INTO forum_users(username,createdAt,admin,avatar,password) VALUES($1,$2,0,$3,$4)",[name,Date.now(),avatar,hashPw(pw)],function(){
         cb({registered:true,username:name,avatar:avatar});
       });
+    });
+  };
+  a.login = function(username, password, cb){
+    if(!username||!password){cb({error:'Username and password required'});return;}
+    qOne("SELECT username,admin,avatar FROM forum_users WHERE username=$1 AND password=$2",[username.toLowerCase().trim(),hashPw(password)],function(r){
+      if(!r){cb({error:'Invalid username or password'});return;}
+      cb({success:true,username:r.username,admin:r.admin,avatar:r.avatar||''});
     });
   };
   a.checkUserExists = function(username, cb){
