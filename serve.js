@@ -7,7 +7,8 @@ const root = __dirname;
 const port = process.env.PORT || 8080;
 const types = {
   '.html':'text/html', '.js':'text/javascript', '.json':'application/json',
-  '.css':'text/css', '.png':'image/png', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.gif':'image/gif', '.webp':'image/webp', '.svg':'image/svg+xml'
+  '.css':'text/css', '.png':'image/png', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.gif':'image/gif', '.webp':'image/webp', '.svg':'image/svg+xml',
+  '.mp4':'video/mp4', '.webm':'video/webm', '.ogg':'video/ogg'
 };
 
 function json(res, data, status){
@@ -95,7 +96,7 @@ http.createServer((req, res) => {
   if(url === '/api/upload' && req.method === 'POST'){
     return body(req, function(data){
       var imgData = data.image || '';
-      var matches = imgData.match(/^data:image\/(png|jpeg|jpg|gif|webp);base64,(.+)$/);
+      var matches = imgData.match(/^data:image\/(png|jpeg|jpg|gif|webp);base64,(.+)$/) || imgData.match(/^data:video\/(mp4|webm|ogg);base64,(.+)$/);
       if(!matches) return json(res, {error:'Invalid image'}, 400);
       var ext = matches[1] === 'jpeg' ? 'jpg' : matches[1];
       var fileName = Date.now().toString(36) + Math.random().toString(36).slice(2,6) + '.' + ext;
