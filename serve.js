@@ -63,6 +63,12 @@ http.createServer((req, res) => {
     var id = url.match(/^\/api\/posts\/([a-z0-9]+)\/unlike$/)[1];
     return json(res, forum.unlike(id));
   }
+  if(url.match(/^\/api\/posts\/([a-z0-9]+)\/comment$/) && req.method === 'POST'){
+    var id = url.match(/^\/api\/posts\/([a-z0-9]+)\/comment$/)[1];
+    return body(req, function(data){
+      json(res, forum.comment(id, data));
+    });
+  }
   if(url.match(/^\/api\/posts\/([a-z0-9]+)$/) && req.method === 'DELETE'){
     var id = url.match(/^\/api\/posts\/([a-z0-9]+)$/)[1];
     return body(req, function(data){
