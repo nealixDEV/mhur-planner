@@ -7944,7 +7944,7 @@ var adminEl=document.getElementById('adminLink');
 if(adminEl){
   adminEl.onclick=function(){
     console.log('admin link clicked, masterKey:', masterKey, 'forumIsAdmin:', localStorage.getItem('forumIsAdmin'));
-    if(masterKey&&localStorage.getItem('forumIsAdmin')==='1'){
+    if(localStorage.getItem('forumIsOwner')==='1'||(masterKey&&localStorage.getItem('forumIsAdmin')==='1')){
       // Show admin panel
       var panel=document.getElementById('adminPanel');
       if(panel){panel.remove();return;}
