@@ -129,6 +129,16 @@ function handler(req, res) {
     });
   }
 
+  // Backward-compatible: serve old /uploads/* from database
+  if(url.match(/^\/uploads\/([a-z0-9]+)\.\w+$/) && req.method === 'GET'){
+    var oid = url.match(/^\/uploads\/([a-z0-9]+)\.\w+$/)[1];
+    return forum.getUpload(oid, function(file){
+      if(!file){res.writeHead(404);res.end('Not found');return;}
+      res.writeHead(200,{'Content-Type':file.mime,'Cache-Control':'no-store'});
+      res.end(Buffer.from(file.data,'base64'));
+    });
+  }
+
   // Static files
   let urlPath = decodeURIComponent(url);
   if (urlPath === '/') urlPath = '/index.html';
