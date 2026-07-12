@@ -83,8 +83,16 @@ function save(){
   }
 }
 
-function rowToPost(r,cc){
-  return {id:r.id,buildCode:r.buildcode||r.buildCode||'',title:r.title,description:r.description||'',author:r.author,tags:parseTags(r.tags),category:r.category||'',image:r.image||r.image||'',pinned:r.pinned||0,likes:r.likes||0,views:r.views||0,createdAt:r.createdat||r.createdAt,comments:cc||0,editedAt:r.editedat||r.editedAt||0};
+var _userCache={};
+function getUserCached(username,cb){
+  if(_userCache[username]){cb(_userCache[username]);return;}
+  qOne("SELECT admin,avatar FROM forum_users WHERE username=$1",[username],function(r){
+    _userCache[username]=r||{admin:0,avatar:''};cb(_userCache[username]);
+  });
+}
+function rowToPost(r,cc,userData){
+  userData=userData||_userCache[r.author];
+  return {id:r.id,buildCode:r.buildcode||r.buildCode||'',title:r.title,description:r.description||'',author:r.author,authorAdmin:(userData?userData.admin:0),authorAvatar:(userData?userData.avatar:''),tags:parseTags(r.tags),category:r.category||'',image:r.image||r.image||'',pinned:r.pinned||0,likes:r.likes||0,views:r.views||0,createdAt:r.createdat||r.createdAt,comments:cc||0,editedAt:r.editedat||r.editedAt||0};
 }
 
 module.exports = new Promise(function(resolve){
@@ -144,13 +152,21 @@ function buildAPI(){
     var off=((page||1)-1)*20;
     qAll("SELECT * FROM posts ORDER BY "+order+" LIMIT 20 OFFSET "+off,[],function(rows){
       qOne("SELECT COUNT(*) as c FROM posts",[],function(tot){
-        var pending=rows.length,items=[];
+        var pending=rows.length,items=[],authors={};
         if(!pending){cb({items:[],total:tot?tot.c:0,page:page||1,perPage:20});return;}
-        rows.forEach(function(r){
-          qOne("SELECT COUNT(*) as c FROM comments WHERE postId=$1 AND replyTo IS NULL",[r.id],function(cc){
-            items.push(rowToPost(r,cc?cc.c:0));
-            if(--pending===0)cb({items:items,total:tot?tot.c:0,page:page||1,perPage:20});
+        rows.forEach(function(r){if(r.author)authors[r.author]=true;});
+        var authorList=Object.keys(authors),authorPending=authorList.length;
+        function finish(){
+          rows.forEach(function(r){
+            qOne("SELECT COUNT(*) as c FROM comments WHERE postId=$1 AND replyTo IS NULL",[r.id],function(cc){
+              items.push(rowToPost(r,cc?cc.c:0,_userCache[r.author]));
+              if(--pending===0)cb({items:items,total:tot?tot.c:0,page:page||1,perPage:20});
+            });
           });
+        }
+        if(!authorPending){finish();return;}
+        authorList.forEach(function(u){
+          getUserCached(u,function(){if(--authorPending===0)finish();});
         });
       });
     });
@@ -161,13 +177,22 @@ function buildAPI(){
       if(!r){cb(null);return;}
       qRun("UPDATE posts SET views=views+1 WHERE id=$1",[id]);
       qAll("SELECT * FROM comments WHERE postId=$1 ORDER BY createdAt ASC",[id],function(crows){
-        var cs=crows.map(function(c){return{id:c.id,text:c.text,author:c.author,image:c.image||'',createdAt:c.createdat||c.createdAt,editedAt:c.editedat||c.editedAt||0,replyTo:c.replyto||c.replyTo};});
-        var tl=[],rm={};
-        cs.forEach(function(c){if(c.replyTo){if(!rm[c.replyTo])rm[c.replyTo]=[];rm[c.replyTo].push(c);}else tl.push(c);});
-        tl.forEach(function(c){if(rm[c.id])c.replies=rm[c.id];});
-        var p=rowToPost(r,cs.length);
-        p.comments=tl;
-        cb(p);
+        var authors={};if(r.author)authors[r.author]=true;
+        crows.forEach(function(c){if(c.author)authors[c.author]=true;});
+        var authorList=Object.keys(authors),authorPending=authorList.length;
+        function finishGet(){
+          var cs=crows.map(function(c){var uData=_userCache[c.author];return{id:c.id,text:c.text,author:c.author,authorAdmin:(uData?uData.admin:0),authorAvatar:(uData?uData.avatar:''),image:c.image||'',createdAt:c.createdat||c.createdAt,editedAt:c.editedat||c.editedAt||0,replyTo:c.replyto||c.replyTo};});
+          var tl=[],rm={};
+          cs.forEach(function(c){if(c.replyTo){if(!rm[c.replyTo])rm[c.replyTo]=[];rm[c.replyTo].push(c);}else tl.push(c);});
+          tl.forEach(function(c){if(rm[c.id])c.replies=rm[c.id];});
+          var p=rowToPost(r,cs.length);
+          p.comments=tl;
+          cb(p);
+        }
+        if(!authorPending){finishGet();return;}
+        authorList.forEach(function(u){
+          getUserCached(u,function(){if(--authorPending===0)finishGet();});
+        });
       });
     });
   };
