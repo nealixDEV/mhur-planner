@@ -132,6 +132,7 @@ function handler(req, res) {
   });
 }
 function start(){
+  try{fs.mkdirSync(path.join(root,'uploads'),{recursive:true});}catch(e){}
   http.createServer(handler).listen(port, () => console.log('Serving ' + root + ' at http://0.0.0.0:' + port + '/'));
 }
 
