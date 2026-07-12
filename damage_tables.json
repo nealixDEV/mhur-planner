@@ -14013,7 +14013,7 @@
                 "rows": [
                   [
                     "Lv.1",
-                    63,
+                    22,
                     "x28",
                     "x1",
                     "0.3s",
@@ -14021,7 +14021,7 @@
                   ],
                   [
                     "Lv.2",
-                    "23",
+                    23,
                     "x28",
                     "x1",
                     "0.3s",
@@ -14029,7 +14029,7 @@
                   ],
                   [
                     "Lv.3",
-                    "24",
+                    24,
                     "x28",
                     "x1",
                     "0.3s",
@@ -14037,7 +14037,7 @@
                   ],
                   [
                     "Lv.4",
-                    "24",
+                    24,
                     "x32",
                     "x1",
                     "0.3s",
@@ -14045,7 +14045,7 @@
                   ],
                   [
                     "Lv.5",
-                    "25",
+                    25,
                     "x32",
                     "x1",
                     "0.3s",
@@ -14053,7 +14053,7 @@
                   ],
                   [
                     "Lv.6",
-                    "26",
+                    26,
                     "x32",
                     "x1",
                     "0.3s",
@@ -14061,7 +14061,7 @@
                   ],
                   [
                     "Lv.7",
-                    "27",
+                    27,
                     "x32",
                     "x1",
                     "0.3s",
@@ -14069,7 +14069,7 @@
                   ],
                   [
                     "Lv.8",
-                    "28",
+                    28,
                     "x32",
                     "x1",
                     "0.3s",
@@ -14077,7 +14077,7 @@
                   ],
                   [
                     "Lv.9",
-                    "28",
+                    28,
                     "x36",
                     "x1",
                     "0.3s",
@@ -25074,27 +25074,30 @@
             },
             {
               "type": "special",
-              "name": "Phantom Strike",
+              "name": "Void Halberd",
               "baseTable": null,
               "additionalTable": null,
               "specialTable": {
                 "headers": [
-                  "Damage",
                   "Ammo",
                   "Use Ammo",
                   "Reload",
+                  "Damage",
+                  "Guard Break",
                   "Down Power"
                 ],
                 "rows": [
                   [
-                    "50",
                     "x100",
                     "x30",
                     "0.25s",
+                    "50",
+                    "50",
                     "200"
                   ]
                 ]
-              }
+              },
+              "skillDesc": "Offensive special that deals 50 damage + 50 guard break damage. 200 down power. Consumes 30 ammo per use."
             }
           ]
         }
@@ -28879,23 +28882,38 @@
             },
             {
               "type": "special",
-              "name": "Air Walk",
+              "name": "Scope Mode / Air Walk",
               "baseTable": null,
               "additionalTable": null,
               "specialTable": {
                 "headers": [
+                  "Mode",
                   "Ammo",
                   "Use Ammo",
-                  "Reload"
+                  "Reload",
+                  "Body Dmg",
+                  "Headshot Dmg"
                 ],
                 "rows": [
                   [
+                    "Scope Shot",
+                    "x10",
+                    "x1",
+                    "17s",
+                    "150",
+                    "300"
+                  ],
+                  [
+                    "Air Walk",
                     "x1",
                     "x1",
-                    "17s"
+                    "17s",
+                    "-",
+                    "-"
                   ]
                 ]
-              }
+              },
+              "skillDesc": "Scope Mode: Sniper shot that pierces enemies. Body 150 damage, Headshot 300 damage. Air Walk: hover for mobility."
             }
           ]
         }
@@ -29284,16 +29302,19 @@
                 "headers": [
                   "Ammo",
                   "Use Ammo",
-                  "Reload"
+                  "Reload",
+                  "Damage"
                 ],
                 "rows": [
                   [
                     "x2",
                     "x1",
-                    "30s"
+                    "30s",
+                    "80"
                   ]
                 ]
-              }
+              },
+              "skillDesc": "Combo-breaker attack that knocks back nearby enemies. 80 damage, does not scale with level. Can KO on lethal damage."
             }
           ]
         },

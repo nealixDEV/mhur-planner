@@ -47,6 +47,9 @@ function handler(req, res) {
   if(url === '/api/posts/search' && req.method === 'GET'){
     return forum.search(query.q||'', function(data){json(res, data);});
   }
+  if(url === '/api/posts/by-author' && req.method === 'GET'){
+    return forum.listByAuthor(query.author||'', parseInt(query.page)||1, function(data){json(res, data);});
+  }
   if(url.match(/^\/api\/posts\/([a-z0-9]+)$/) && req.method === 'GET'){
     var id = url.match(/^\/api\/posts\/([a-z0-9]+)$/)[1];
     return forum.get(id, function(post){
@@ -124,9 +127,56 @@ function handler(req, res) {
       });
     });
   }
+  if(url === '/api/register-user' && req.method === 'POST'){
+    return body(req, function(data){
+      forum.registerUser(data, function(result){json(res, result);});
+    });
+  }
+  if(url === '/api/set-avatar' && req.method === 'POST'){
+    return body(req, function(data){
+      forum.setUserAvatar(data.username||'', data.avatar||'', function(){json(res, {saved:true});});
+    });
+  }
+  if(url === '/api/check-user' && req.method === 'GET'){
+    return forum.getUser(query.name||'', function(user){json(res, user||{exists:false});});
+  }
   if(url === '/api/verify-key' && req.method === 'POST'){
     return body(req, function(data){
-      json(res, {valid: data.deleteKey === 'mhur_admin_2026'});
+      var key=data.deleteKey||'';
+      var username=(data.username||'').toLowerCase().trim();
+      var isOwnerKey=key.indexOf('mhur_owner_')===0;
+      forum.isKeyUsed(key,function(used){
+        if(used){json(res,{valid:false,error:'Invalid or already used key'});return;}
+        forum.markKeyUsed(key,function(){
+          if(username){
+            forum.setUserAdmin(username, isOwnerKey?2:1, function(){});
+            json(res,{valid:true,username:username,owner:isOwnerKey});
+          }else{
+            json(res,{valid:true,username:username});
+          }
+        });
+      });
+    });
+  }
+  if(url === '/api/admin/generate-keys' && req.method === 'POST'){
+    return body(req, function(data){
+      forum.generateAdminKeys(parseInt(data.count)||1, function(keys){json(res,{keys:keys});});
+    });
+  }
+  if(url === '/api/admin/generate-owner-keys' && req.method === 'POST'){
+    return body(req, function(data){
+      forum.generateAdminKeys(parseInt(data.count)||1, 'mhur_owner_', function(keys){json(res,{keys:keys});});
+    });
+  }
+  if(url === '/api/admin/list-keys' && req.method === 'GET'){
+    return forum.listAdminKeys(function(keys){json(res,{keys:keys});});
+  }
+  if(url === '/api/admin/list-admins' && req.method === 'GET'){
+    return forum.listAdmins(function(admins){json(res,{admins:admins});});
+  }
+  if(url === '/api/admin/demote' && req.method === 'POST'){
+    return body(req, function(data){
+      forum.demoteUser((data.caller||'').toLowerCase().trim(), (data.username||'').trim(), function(result){json(res, result);});
     });
   }
 

@@ -17,10 +17,10 @@
 @keyframes btnGlow{0%,100%{box-shadow:0 0 12px rgba(168,85,247,.2),0 4px 16px rgba(0,0,0,.3)}50%{box-shadow:0 0 28px rgba(168,85,247,.4),0 8px 24px rgba(0,0,0,.4)}}
 @keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 @keyframes cardGlow{0%,100%{box-shadow:0 0 8px rgba(245,200,0,.15)}50%{box-shadow:0 0 25px rgba(245,200,0,.3)}}
-body{background:linear-gradient(-45deg,#0f0c29,#1a0a2e,#16213e,#0f3460);background-size:500% 500%;animation:bgFloat 25s ease infinite;font-family:"Segoe UI","Arial Black",system-ui,sans-serif;font-size:14px;min-height:100vh;padding:12px 16px;color:#e2e8f0;overflow-x:hidden;position:relative;}
+body{background:linear-gradient(-45deg,#0f0c29,#1a0a2e,#16213e,#0f3460);background-size:500% 500%;animation:bgFloat 25s ease infinite;font-family:"Segoe UI","Arial Black",system-ui,sans-serif;font-size:15px;min-height:100vh;padding:12px 16px;color:#e2e8f0;overflow-x:hidden;position:relative;}
 body::after{content:"";position:fixed;inset:0;z-index:0;background:url('https://ultrarumble.com/assets/Gallery/T_ui_Gallery_Illust_10101_L.png') center/cover no-repeat;opacity:.02;pointer-events:none;}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(circle,rgba(255,255,255,.025) 1px,transparent 1px);background-size:20px 20px;}
-.screen{max-width:1600px;margin:0 auto;display:grid;grid-template-columns:300px 1fr 260px;gap:12px;overflow:hidden;}
+.screen{max-width:1600px;margin:0 auto;display:grid;grid-template-columns:300px 1fr 260px;gap:12px;}
 .title{grid-column:1/-1;text-align:center;font-size:2.2rem;font-weight:900;letter-spacing:.15em;color:#f5c800;text-shadow:0 0 10px rgba(245,200,0,.3),0 0 30px rgba(245,200,0,.15),2px 2px 0 rgba(0,0,0,.5);text-transform:uppercase;padding:8px 0 4px;animation:glowPulse 3s ease-in-out infinite;position:relative;}
 .title::after{content:"";position:absolute;bottom:0;left:20%;right:20%;height:2px;background:linear-gradient(90deg,transparent,rgba(245,200,0,.4),transparent);}
 .left{background:linear-gradient(145deg,rgba(58,127,154,.6),rgba(20,50,70,.85));border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:10px;display:flex;flex-direction:column;gap:8px;box-shadow:0 8px 32px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06);backdrop-filter:blur(8px);min-width:0;}
@@ -62,10 +62,10 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;background-im
 .cospanel-empty{color:rgba(255,255,255,.4);font-size:.75rem;text-align:center;padding:20px 4px;}
 .cd-rolebadge{display:flex;align-items:center;gap:5px;margin-bottom:3px;flex-wrap:wrap;}
 .cd-roledot{width:12px;height:12px;border-radius:50%;border:2px solid rgba(255,255,255,.8);flex-shrink:0;box-shadow:0 0 8px currentColor;}
-.cd-rolelbl{font-size:.74rem;font-weight:900;text-shadow:1px 1px 0 #000,0 0 12px rgba(255,255,255,.1);}
-.cd-name{font-size:1.65rem;font-weight:900;color:#fff;letter-spacing:.04em;text-shadow:2px 2px 0 #000,4px 4px 0 rgba(0,0,0,.2),0 0 20px rgba(255,255,255,.08);line-height:1;}
-.cd-grp{font-size:.65rem;font-weight:900;color:#f5c800;text-shadow:1px 1px 0 #000,0 0 10px rgba(245,200,0,.2);margin-top:2px;}
-.cd-stats{font-size:.65rem;font-weight:900;color:#fff;text-shadow:1px 1px 0 #000;margin-top:2px;display:flex;gap:8px;}
+.cd-rolelbl{font-size:.95rem;font-weight:900;text-shadow:1px 1px 0 #000,0 0 12px rgba(255,255,255,.15);}
+.cd-name{font-size:2rem;font-weight:900;color:#fff;letter-spacing:.04em;text-shadow:2px 2px 0 #000,4px 4px 0 rgba(0,0,0,.2),0 0 20px rgba(255,255,255,.1);line-height:1.1;}
+.cd-grp{font-size:.78rem;font-weight:900;color:#f5c800;text-shadow:1px 1px 0 #000,0 0 10px rgba(245,200,0,.2);margin-top:4px;}
+.cd-stats{font-size:.75rem;font-weight:900;color:#fff;text-shadow:1px 1px 0 #000;margin-top:4px;display:flex;gap:10px;}
 .cd-stats span{background:rgba(0,0,0,.45);padding:2px 6px;border-radius:4px;border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(2px);}
 .cd-styles{display:flex;gap:5px;margin-top:5px;flex-wrap:wrap;}
 .style-btn{font-size:.7rem;font-weight:900;border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:3px 10px;cursor:pointer;background:rgba(0,0,0,.35);color:#cbd5e1;transition:all .15s;box-shadow:0 2px 8px rgba(0,0,0,.2);}
@@ -116,8 +116,8 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;background-im
 .tuning-ic{width:18px;height:18px;border-radius:50%;object-fit:cover;object-position:top center;border:1.5px solid rgba(255,255,255,.4);background:#0a1a0a;vertical-align:middle;margin-left:5px;}
 .shdr{display:flex;align-items:center;justify-content:space-between;gap:6px;min-width:0;}
 .shdr-l{display:flex;align-items:center;gap:5px;min-width:0;}
-.snum{font-size:.62rem;color:#7fb0c8;font-weight:900;letter-spacing:.03em;white-space:nowrap;}
-.srole{font-size:.52rem;font-weight:900;border-radius:3px;padding:2px 6px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;}
+.snum{font-size:.68rem;color:#7fb0c8;font-weight:900;letter-spacing:.03em;white-space:nowrap;}
+.srole{font-size:.6rem;font-weight:900;border-radius:3px;padding:2px 6px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;}
 .sal{font-size:.5rem;font-weight:900;border-radius:2px;padding:1px 4px;white-space:nowrap;flex-shrink:0;}
 .rs  .srole{background:#cc0000;color:#fff;}
 .ra  .srole{background:#ccb000;color:#1a1a1a;}
@@ -128,25 +128,25 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;background-im
 .ah .sal{background:#1e3a8a;color:#93c5fd;}
 .av .sal{background:#7f1d1d;color:#fca5a5;}
 .slot.spec{padding-top:9px;}
-.slot select{background:rgba(0,0,0,.88);color:#e2e8f0;border:1px solid rgba(255,255,255,.08);border-radius:6px;font-size:.66rem;width:100%;max-width:100%;padding:4px 20px 4px 6px;cursor:pointer;transition:all .2s;-webkit-appearance:none;-moz-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2364748b'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 6px center;background-size:10px 6px;overflow:hidden;text-overflow:ellipsis;}
+.slot select{background:rgba(0,0,0,.88);color:#e2e8f0;border:1px solid rgba(255,255,255,.08);border-radius:6px;font-size:.72rem;width:100%;max-width:100%;padding:4px 20px 4px 6px;cursor:pointer;transition:all .2s;-webkit-appearance:none;-moz-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2364748b'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 6px center;background-size:10px 6px;overflow:hidden;text-overflow:ellipsis;}
 .slot select:hover,.slot select:focus{border-color:rgba(245,200,0,.25);box-shadow:0 0 10px rgba(245,200,0,.06);outline:none;}
 .slot .sel-wrap{width:100%;max-width:100%;overflow:hidden;position:relative;}
 .slot select option{font-size:.6rem;}
-.sdesc{font-size:.56rem;line-height:1.3;color:#8bb4c6;overflow:hidden;max-height:3.9em;max-width:100%;word-break:break-word;}
+.sdesc{font-size:.62rem;line-height:1.3;color:#8bb4c6;overflow:hidden;max-height:3.9em;max-width:100%;word-break:break-word;}
 .lvbar{display:flex;align-items:center;gap:7px;}
-.lvlbl{font-size:.58rem;font-weight:900;color:#5a8fa8;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;}
+.lvlbl{font-size:.64rem;font-weight:900;color:#5a8fa8;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;}
 .lvslider{flex:1;min-width:0;height:5px;accent-color:#f5c800;cursor:pointer;}
-.lvval{font-size:.68rem;font-weight:900;color:#fff;min-width:1.5em;text-align:right;}
-.lvmax{font-size:.56rem;color:#46607a;white-space:nowrap;}
-.spec-ttl{font-size:.74rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#c084fc;text-shadow:0 0 12px rgba(192,132,252,.3),1px 1px 0 #000;margin:8px 0 5px;}
+.lvval{font-size:.75rem;font-weight:900;color:#fff;min-width:1.5em;text-align:right;}
+.lvmax{font-size:.62rem;color:#46607a;white-space:nowrap;}
+.spec-ttl{font-size:.85rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#c084fc;text-shadow:0 0 12px rgba(192,132,252,.3),1px 1px 0 #000;margin:8px 0 5px;}
 .slot.lk{opacity:.3;pointer-events:none;}
 .spanel{background:linear-gradient(145deg,rgba(17,17,17,.9),rgba(30,30,30,.95));border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:10px;box-shadow:0 8px 32px rgba(0,0,0,.4);}
-.sptitle{font-size:.84rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#f5c800;text-shadow:0 0 12px rgba(245,200,0,.3);margin-bottom:8px;}
+.sptitle{font-size:.95rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#f5c800;text-shadow:0 0 12px rgba(245,200,0,.3);margin-bottom:8px;}
 .sgp{margin-bottom:8px;}
-.sglbl{font-size:.56rem;text-transform:uppercase;letter-spacing:.1em;color:#64748b;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:3px;padding-bottom:1px;}
+.sglbl{font-size:.64rem;text-transform:uppercase;letter-spacing:.1em;color:#64748b;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:3px;padding-bottom:1px;}
 .dpanel,.rpanel{background:linear-gradient(145deg,rgba(17,17,17,.9),rgba(30,30,30,.95));border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:10px;box-shadow:0 8px 32px rgba(0,0,0,.4);margin-top:10px;}
-.dptitle{font-size:.84rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#c084fc;text-shadow:0 0 12px rgba(192,132,252,.3);margin-bottom:8px;}
-.cardtoggle{display:flex;align-items:center;gap:6px;margin:-2px 0 8px;font-size:.62rem;font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:#64748b;cursor:pointer;user-select:none;transition:color .15s;}
+.dptitle{font-size:.95rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#c084fc;text-shadow:0 0 12px rgba(192,132,252,.3);margin-bottom:8px;}
+.cardtoggle{display:flex;align-items:center;gap:6px;margin:-2px 0 8px;font-size:.7rem;font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:#64748b;cursor:pointer;user-select:none;transition:color .15s;}
 .cardtoggle input{accent-color:#f5c800;width:14px;height:14px;cursor:pointer;}
 .cardtoggle.on{color:#f5c800;text-shadow:0 0 10px rgba(245,200,0,.2);}
 .card-active{margin:2px 0 8px;padding:5px 7px;background:linear-gradient(135deg,rgba(26,20,5,.8),rgba(40,30,8,.9));border:1px solid rgba(245,200,0,.25);border-radius:6px;font-size:.62rem;font-weight:700;color:#f5c800;box-shadow:0 0 12px rgba(245,200,0,.08);}
@@ -156,32 +156,35 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;background-im
 .dmgctl span:last-child{min-width:42px;text-align:right;color:#f5c800;}
 .dmg-row{display:flex;justify-content:space-between;align-items:center;padding:4px 0;border-bottom:1px solid rgba(255,255,255,.05);}
 .dmg-row:last-child{border-bottom:none;}
-.dmg-label{font-size:.7rem;color:#94a3b8;}
-.dmg-base{font-size:.7rem;color:#64748b;}
-.dmg-bonus{font-size:.7rem;color:#4ade80;font-weight:900;}
-.dmg-total{font-size:.75rem;color:#fff;font-weight:900;}
-.dmg-header{display:flex;justify-content:space-between;font-size:.6rem;color:#64748b;text-transform:uppercase;letter-spacing:.05em;padding-bottom:3px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:5px;}
+.dmg-label{font-size:.78rem;color:#94a3b8;}
+.dmg-base{font-size:.78rem;color:#64748b;}
+.dmg-bonus{font-size:.78rem;color:#4ade80;font-weight:900;}
+.dmg-total{font-size:.85rem;color:#fff;font-weight:900;}
+.dmg-header{display:flex;justify-content:space-between;font-size:.68rem;color:#64748b;text-transform:uppercase;letter-spacing:.05em;padding-bottom:3px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:5px;}
 .dmg-header strong,.dmg-base strong,.dmg-extra-value strong{font-weight:900;color:#f1f5f9;}
-.dmg-skillblock{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);}
-.dmg-skillblock:last-child{border-bottom:none;}
-.dmg-skilltitle{font-size:.72rem;font-weight:900;letter-spacing:.03em;text-transform:none;color:#f1f5f9;margin-bottom:5px;}
+.dmg-skillblock{padding:10px 12px;border:1px solid rgba(255,255,255,.06);border-radius:10px;margin-bottom:8px;background:rgba(255,255,255,.02);}
+.dmg-skillblock:last-child{margin-bottom:0;}
+.dmg-skillblock:hover{border-color:rgba(245,200,0,.1);background:rgba(245,200,0,.02);}
+.dmg-skilltitle{font-size:.8rem;font-weight:900;letter-spacing:.03em;text-transform:none;color:#f1f5f9;margin-bottom:8px;display:flex;align-items:center;gap:6px;}
 .dmg-skilltitle .qtag{color:#f5c800;text-transform:uppercase;}
-.dmg-note{display:block;font-size:.55rem;line-height:1;color:#4ade80;font-weight:900;margin-top:2px;text-transform:lowercase;}
+.dmg-tuned-label{color:#4ade80;font-weight:900;}
+.dmg-tuned-header{color:#4ade80;}
+.dmg-note{display:block;font-size:.62rem;line-height:1;color:#4ade80;font-weight:900;margin-top:2px;text-transform:lowercase;}
 .dmg-extra{margin-top:8px;padding-top:7px;border-top:1px dashed rgba(255,255,255,.08);}
-.dmg-extra-title{font-size:.62rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#f5c800;margin-bottom:4px;text-shadow:0 0 8px rgba(245,200,0,.15);}
-.dmg-extra-line{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:2px 0;font-size:.66rem;}
+.dmg-extra-title{font-size:.7rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#f5c800;margin-bottom:4px;text-shadow:0 0 8px rgba(245,200,0,.15);}
+.dmg-extra-line{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:2px 0;font-size:.72rem;}
 .dmg-extra-label{color:#94a3b8;}
 .dmg-extra-value{color:#f1f5f9;font-weight:900;}
 .calc-sum{margin-top:8px;padding-top:7px;border-top:1px dashed rgba(255,255,255,.08);}
 .calc-sum .dmg-extra-title{margin-bottom:5px;}
-.stat-bonus-row{display:flex;justify-content:space-between;padding:3px 0;font-size:.7rem;}
+.stat-bonus-row{display:flex;justify-content:space-between;padding:3px 0;font-size:.75rem;}
 .stat-bonus-label{color:#94a3b8;}
 .stat-bonus-value{color:#4ade80;font-weight:900;}
-.def-input{display:flex;align-items:center;gap:6px;margin-bottom:8px;color:#64748b;font-size:.65rem;font-weight:900;text-transform:uppercase;letter-spacing:.05em;}
+.def-input{display:flex;align-items:center;gap:6px;margin-bottom:8px;color:#64748b;font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:.05em;}
 .def-input input{width:86px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.1);border-radius:4px;color:#e2e8f0;padding:3px 6px;font-size:.68rem;font-weight:900;}
-.statrow{display:flex;justify-content:space-between;gap:6px;align-items:flex-start;padding:2px 0;font-size:.67rem;}
+.statrow{display:flex;justify-content:space-between;gap:6px;align-items:flex-start;padding:2px 0;font-size:.74rem;}
 .statn{color:#94a3b8;min-width:0;}
-.statv{font-weight:900;font-size:.66rem;text-align:right;color:#f5c800;white-space:nowrap;}
+.statv{font-weight:900;font-size:.74rem;text-align:right;color:#f5c800;white-space:nowrap;}
 .statv.p{color:#4ade80;}.statv.n{color:#f87171;}.statv.z{color:#475569;}
 .sempty{color:#475569;font-size:.7rem;text-align:center;padding:14px 0;}
 .team-note{display:inline-block;font-size:.52rem;font-weight:900;text-transform:uppercase;letter-spacing:.03em;margin-top:2px;}
@@ -211,7 +214,7 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
 .tab-btn{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:8px 20px;font-size:.82rem;font-weight:700;color:#94a3b8;cursor:pointer;transition:all .2s;box-shadow:0 2px 8px rgba(0,0,0,.1);}
 .tab-btn:hover{background:rgba(255,255,255,.1);color:#fff;}
 .tab-btn.active{background:linear-gradient(135deg,rgba(245,200,0,.12),rgba(245,200,0,.06));color:#f5c800;border-color:rgba(245,200,0,.25);box-shadow:0 0 16px rgba(245,200,0,.08);}
-.tab-content{animation:fadeIn .3s ease-out;}
+.tab-content{animation:fadeIn .3s ease-out;grid-column:1/-1;overflow:visible;}
 .forum-hero{background:linear-gradient(135deg,rgba(245,200,0,.06),rgba(168,85,247,.06));border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:18px 22px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;box-shadow:0 4px 20px rgba(0,0,0,.1);position:relative;overflow:hidden;}
 .forum-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(245,200,0,.03),transparent);transform:translateX(-100%);animation:shimmer 4s ease-in-out infinite;}
 .forum-post{background:linear-gradient(145deg,rgba(30,35,50,.7),rgba(20,25,40,.8));border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:12px 14px;margin-bottom:8px;cursor:pointer;transition:all .25s;box-shadow:0 2px 8px rgba(0,0,0,.08);animation:slideUp .4s ease-out;}
@@ -307,10 +310,13 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
         <div id="statSum"><p class="sempty">Equip tunings to see bonuses.</p></div>
       </div>
       <div class="dpanel">
-        <div class="dptitle">Damage Calculator</div>
-          <label class="cardtoggle" id="lblCardStrike"><input type="checkbox" id="cardStrike"> Enable Strike Card (+10% Attack)</label>
+        <div class="dptitle">&#9889; PU/PC Mode</div>
           <label class="cardtoggle" id="lblPuActive"><input type="checkbox" id="puActive"> Enable PU/PC (LvMAX &bull; +20% Dmg &bull; +50% Reload)</label>
-          <label class="cardtoggle" id="lblDoubleCard"><input type="checkbox" id="doubleCard"> Double Cards (2� effect of all enabled cards)</label>
+      </div>
+      <div class="dpanel">
+        <div class="dptitle">Damage Calculator</div>
+          <label class="cardtoggle" id="lblCardStrike"><input type="checkbox" id="cardStrike"> Single Strike Card (+10% Attack)</label>
+          <label class="cardtoggle" id="lblCardStrikeD"><input type="checkbox" id="cardStrikeD"> Double Strike Card (+20% Attack)</label>
         <div class="dmgctl">
           <span>Skill Lv</span>
           <input type="range" id="dmgLevel" min="1" max="9" step="1" value="1">
@@ -320,7 +326,8 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
       </div>
       <div class="rpanel">
         <div class="dptitle">Reload Calculator</div>
-        <label class="cardtoggle" id="lblCardTechnical"><input type="checkbox" id="cardTechnical"> Enable Technical Card (+50% Reload)</label>
+          <label class="cardtoggle" id="lblCardTechnical"><input type="checkbox" id="cardTechnical"> Single Technical Card (+50% Reload)</label>
+          <label class="cardtoggle" id="lblCardTechnicalD"><input type="checkbox" id="cardTechnicalD"> Double Technical Card (+100% Reload)</label>
         <div class="dmgctl">
           <span>Skill Lv</span>
           <input type="range" id="reloadLevel" min="1" max="9" step="1" value="1">
@@ -330,7 +337,8 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
       </div>
       <div class="dpanel">
         <div class="dptitle">HP / Defense Calculator</div>
-        <label class="cardtoggle" id="lblCardAssault"><input type="checkbox" id="cardAssault"> Enable Assault Card (20% Damage Reduction)</label>
+          <label class="cardtoggle" id="lblCardAssault"><input type="checkbox" id="cardAssault"> Single Assault Card (20% Damage Reduction)</label>
+          <label class="cardtoggle" id="lblCardAssaultD"><input type="checkbox" id="cardAssaultD"> Double Assault Card (40% Damage Reduction)</label>
         <div class="def-input">
           <span>Base Damage</span>
           <input type="number" id="defBaseDamage" min="1" step="1" value="100">
@@ -339,7 +347,13 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
       </div>
       <div class="dpanel">
         <div class="dptitle">HP Calculator</div>
-        <label class="cardtoggle" id="lblCardSupport"><input type="checkbox" id="cardSupport"> Enable Support Card (+50 HP over 5s)</label>
+          <label class="cardtoggle" id="lblCardSupport"><input type="checkbox" id="cardSupport"> Single Support Card (+50 HP over 5s)</label>
+          <label class="cardtoggle" id="lblCardSupportD"><input type="checkbox" id="cardSupportD"> Double Support Card (+100 HP over 5s)</label>
+          <div class="dmgctl">
+            <span>Card Lv</span>
+            <input type="range" id="supportLevel" min="1" max="9" step="1" value="1">
+            <span id="supportLevelLbl">Lv 1</span>
+          </div>
         <div id="hpStats"><p class="sempty">Select a character to see HP / survival stats.</p></div>
       </div>
       <div class="dpanel">
@@ -348,7 +362,8 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
       </div>
       <div class="dpanel">
          <div class="dptitle">Movement Calculator</div>
-        <label class="cardtoggle" id="lblCardRapid"><input type="checkbox" id="cardRapid"> Enable Rapid Card (+10% Move/Atk, Wall Run)</label>
+          <label class="cardtoggle" id="lblCardRapid"><input type="checkbox" id="cardRapid"> Single Rapid Card (+10% Move/Atk, Wall Run)</label>
+          <label class="cardtoggle" id="lblCardRapidD"><input type="checkbox" id="cardRapidD"> Double Rapid Card (+20% Move/Atk, Wall Run)</label>
         <div id="movementStats"><p class="sempty">Select a character to see movement stats.</p></div>
       </div>
 <div class="dpanel">
@@ -407,6 +422,7 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
       <button class="gbtn g" id="btnExp">Export</button>
       <button class="gbtn b" id="btnImp">Import</button>
       <button class="gbtn r" id="btnClr">Clear</button>
+      <button class="gbtn" id="btnResetAll" style="background:linear-gradient(135deg,#dc2626,#b91c1c);">Reset All Builds</button>
     </div>
   </div>
   <footer>Made by Sirreggix on Discord &mdash; <a href="https://discord.gg/mh373yCWux" target="_blank" style="color:#94a3b8;text-decoration:none;">Join Discord for suggestions/bugs</a></footer>
@@ -434,6 +450,7 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
       <h2 style="font-size:1.8rem;font-weight:900;letter-spacing:.12em;color:#f5c800;">&#128172; Build Forum</h2>
       <div style="position:relative;display:flex;align-items:center;gap:6px;">
         <span id="notifBell" style="font-size:1.1rem;cursor:pointer;padding:2px 6px;border-radius:6px;transition:all .15s;position:relative;" title="Notifications">&#128276;</span>
+        <span id="myProfileBtn" style="font-size:.7rem;cursor:pointer;padding:4px 8px;border:1px solid rgba(255,255,255,.08);border-radius:6px;transition:all .15s;color:#94a3b8;display:none;">&#128100;</span>
         <span id="adminLink" style="font-size:.85rem;cursor:pointer;padding:4px 8px;border:1px solid rgba(255,255,255,.08);border-radius:6px;transition:all .15s;color:#64748b;">&#9881;</span>
       </div>
     </div>
@@ -2066,13 +2083,39 @@ function portrait(chNum){
   var n=String(chNum).padStart(3,"0");
   return BASE+"Ch"+n+"/GUI/FaceIcon/T_ui_com_cahraface_Ch"+n+".png";
 }
-function specialIcon(chNum){
+function specialIcon(chNum,variant){
   var n=String(chNum).padStart(3,"0");
-  return BASE_ROLE+"T_ui_UniqueSkill_ch"+n+"_00.png";
+  var v=variant!==undefined?String(variant).padStart(2,"0"):"00";
+  return BASE_ROLE+"T_ui_UniqueSkill_ch"+n+"_"+v+".png";
+}
+function specialTuningIcon(tuning){
+  if(!tuning||!tuning.chara)return '';
+  var v=0;
+  for(var i=0;i<CH.length;i++){
+    if(CH_NUM[CH[i].id]==tuning.chara){
+      var bs=CH[i].bs||[];
+      for(var j=0;j<bs.length;j++){
+        if(bs[j].t===tuning.role){v=j+1;break;}
+      }
+      break;
+    }
+  }
+  return specialIcon(tuning.chara,v);
 }
 function portraitHQ(chNum){
   var n=String(chNum).padStart(3,"0");
   return BASE+"Ch"+n+"/GUI/FaceIcon/T_ui_Ch"+n+"_CharaImage.png";
+}
+function skillIcon(chNum,skillType,styleIdx){
+  var n=String(chNum).padStart(3,"0");
+  var map={alpha:'Unique1',beta:'Unique2',gamma:'Unique3',sa:'SpecialSkill'};
+  var suffix=map[skillType];
+  if(!suffix)return '';
+  // SA icons don't have variation-specific versions, use default path
+  var useVar=styleIdx&&suffix!=='SpecialSkill';
+  var basePath=useVar?'Ch'+n+'/Variation/Var'+(String(styleIdx).padStart(2,'0'))+'/GUI/Skill':'Ch'+n+'/GUI/Skill';
+  if(suffix==='SpecialSkill')return BASE+basePath+'/T_ui_'+suffix+'_Ch'+n+'.png';
+  return BASE+basePath+'/T_ui_Skill_Ch'+n+'_'+suffix+'.png';
 }
 function bnPortrait(chNum,styleIdx){
   var n=String(chNum).padStart(3,"0");
@@ -2396,6 +2439,11 @@ function teamRoleNote(role, pct, verb) {
   if (!(pct > 0)) return "";
   var col = (window.RC && RC[role]) ? RC[role] : "#fff";
   return '<br><span class="team-note" style="color:' + col + '">&#9650; ' + verb + ' by ' + role + ' role (+' + Math.round(pct * 100) + '%)</span>';
+}
+function cardNote(role, pct, verb) {
+  if (!(pct > 0)) return "";
+  var col = (window.RC && RC[role]) ? RC[role] : "#fff";
+  return '<br><span class="team-note" style="color:' + col + '">&#9650; ' + verb + ' by ' + role + ' Card (+' + Math.round(pct * 100) + '%)</span>';
 }
 
 var NORMAL_TUNING = [];
@@ -3966,51 +4014,56 @@ for(var _ci=0;_ci<CH.length;_ci++){
 
 
 var CHAR_STATS={
-  izuku:{id:"izuku",num:1,hp:300,gp:250,melee:15,alpha:58,beta:120,gamma:58,sa:14},
-  izuku_ofa:{id:"izuku_ofa",num:202,hp:300,gp:250,melee:5,alpha:80,beta:14,gamma:133,sa:null},
-  katsuki:{id:"katsuki",num:2,hp:350,gp:250,melee:95,alpha:58,beta:75,gamma:4,sa:18},
-  ochaco:{id:"ochaco",num:3,hp:300,gp:250,melee:20,alpha:60,beta:40,gamma:60,sa:101},
-  tenya:{id:"tenya",num:5,hp:300,gp:250,melee:20,alpha:40,beta:110,gamma:null,sa:null},
-  tsuyu:{id:"tsuyu",num:6,hp:250,gp:250,melee:15,alpha:55,beta:76,gamma:null,sa:null},
-  shoto:{id:"shoto",num:4,hp:350,gp:250,melee:null,alpha:54,beta:130,gamma:54,sa:55},
-  eijiro:{id:"eijiro",num:8,hp:400,gp:250,melee:25,alpha:11,beta:100,gamma:120,sa:38},
-  momo:{id:"momo",num:10,hp:350,gp:250,melee:25,alpha:44,beta:100,gamma:80,sa:null},
-  fumikage:{id:"fumikage",num:11,hp:300,gp:250,melee:null,alpha:50,beta:16,gamma:null,sa:null},
-  denki:{id:"denki",num:7,hp:350,gp:250,melee:21,alpha:55,beta:55,gamma:80,sa:31},
-  neito:{id:"neito",num:104,hp:300,gp:250,melee:null,alpha:10,beta:80,gamma:null,sa:10},
-  kendo:{id:"kendo",num:46,hp:400,gp:250,melee:null,alpha:22,beta:0,gamma:130,sa:34},
-  ibara:{id:"ibara",num:102,hp:400,gp:250,melee:null,alpha:53,beta:40,gamma:15,sa:null},
-  mirio:{id:"mirio",num:24,hp:250,gp:250,melee:35,alpha:35,beta:120,gamma:80,sa:40},
-  tamaki:{id:"tamaki",num:26,hp:350,gp:250,melee:27,alpha:55,beta:110,gamma:55,sa:null},
-  nejire:{id:"nejire",num:25,hp:300,gp:250,melee:20,alpha:22,beta:23,gamma:22,sa:35},
-  hitoshi:{id:"hitoshi",num:105,hp:300,gp:250,melee:20,alpha:25,beta:25,gamma:0,sa:null},
-  allmight:{id:"allmight",num:12,hp:350,gp:250,melee:null,alpha:63,beta:40,gamma:75,sa:22},
-  armored:{id:"armored",num:200,hp:350,gp:250,melee:null,alpha:30,beta:30,gamma:10,sa:null},
-  aizawa:{id:"aizawa",num:13,hp:300,gp:250,melee:null,alpha:100,beta:5,gamma:12,sa:30},
-  mic:{id:"mic",num:109,hp:300,gp:250,melee:null,alpha:55,beta:80,gamma:100,sa:55},
-  cement:{id:"cement",num:101,hp:350,gp:250,melee:null,alpha:40,beta:125,gamma:35,sa:null},
-  endeavor:{id:"endeavor",num:23,hp:350,gp:250,melee:null,alpha:18,beta:90,gamma:16,sa:50},
-  hawks:{id:"hawks",num:43,hp:250,gp:250,melee:90,alpha:12,beta:65,gamma:75,sa:50},
-  mirko:{id:"mirko",num:111,hp:300,gp:250,melee:10,alpha:32,beta:32,gamma:6,sa:null},
-  star:{id:"star",num:114,hp:350,gp:250,melee:null,alpha:12,beta:0,gamma:2,sa:null},
-  mtlady:{id:"mtlady",num:100,hp:350,gp:250,melee:null,alpha:30,beta:30,gamma:85,sa:null},
-  tomura:{id:"tomura",num:15,hp:300,gp:250,melee:null,alpha:17,beta:18,gamma:24,sa:60},
-  afo:{id:"afo",num:16,hp:350,gp:250,melee:20,alpha:54,beta:18,gamma:null,sa:54},
-  afo_youth:{id:"afo_youth",num:201,hp:300,gp:250,melee:null,alpha:56,beta:5,gamma:56,sa:null},
-  dabi:{id:"dabi",num:17,hp:350,gp:250,melee:null,alpha:20,beta:20,gamma:20,sa:60},
-  himiko:{id:"himiko",num:18,hp:350,gp:250,melee:25,alpha:20,beta:20,gamma:20,sa:19},
-  twice:{id:"twice",num:37,hp:300,gp:250,melee:null,alpha:23,beta:23,gamma:null,sa:null},
-  compress:{id:"compress",num:38,hp:300,gp:250,melee:null,alpha:52,beta:60,gamma:60,sa:null},
-  kurogiri:{id:"kurogiri",num:103,hp:300,gp:250,melee:null,alpha:44,beta:100,gamma:44,sa:null},
-  nagant:{id:"nagant",num:115,hp:250,gp:250,melee:null,alpha:47,beta:25,gamma:120,sa:null},
-  overhaul:{id:"overhaul",num:34,hp:350,gp:250,melee:null,alpha:15,beta:30,gamma:15,sa:54}
+  izuku:{id:'izuku',num:1,hp:300,gp:250,melee:15,alpha:58,beta:120,gamma:58,sa:14,downedHealth:400,puPcDuration:20,movement:{runSpeed:600,dashSpeed:1000,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:300,forwardJumpHeight:150,wallJumpHeight:250},defenseMult:{Health:0.95,Shield:0.95,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:315.789,shield:263.158,total:578.947},size:'Medium',udClass:'Assault'},
+  izuku_ofa:{id:'izuku_ofa',num:202,hp:300,gp:250,melee:5,alpha:80,beta:14,gamma:133,sa:null,downedHealth:400,puPcDuration:20,movement:{runSpeed:0,dashSpeed:0,wallShuffleSpeed:0,downedCrawlSpeed:0,floatiness:0,jumpHeight:0,forwardJumpHeight:0,wallJumpHeight:0},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:300,shield:250,total:550},size:'Unknown',udClass:'Rapid'},
+  katsuki:{id:'katsuki',num:2,hp:350,gp:250,melee:95,alpha:61,beta:79,gamma:126,sa:18,downedHealth:400,puPcDuration:20,movement:{runSpeed:600,dashSpeed:1000,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:300,forwardJumpHeight:150,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1.05,Shield:1.05,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:350,shield:250,total:600},size:'Unknown',udClass:'Strike'},
+  ochaco:{id:'ochaco',num:3,hp:300,gp:250,melee:20,alpha:60,beta:40,gamma:50,sa:101,downedHealth:400,puPcDuration:20,movement:{runSpeed:630,dashSpeed:1050,wallShuffleSpeed:735,downedCrawlSpeed:0,floatiness:0,jumpHeight:300,forwardJumpHeight:150,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:300,shield:250,total:550},size:'Unknown',udClass:'Rapid'},
+  tenya:{id:'tenya',num:5,hp:300,gp:250,melee:20,alpha:40,beta:110,gamma:null,sa:null,downedHealth:400,puPcDuration:20,movement:{runSpeed:735,dashSpeed:1155,wallShuffleSpeed:735,downedCrawlSpeed:0,floatiness:0,jumpHeight:300,forwardJumpHeight:150,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:300,shield:250,total:550},size:'Unknown',udClass:'Rapid'},
+  tsuyu:{id:'tsuyu',num:6,hp:250,gp:250,melee:15,alpha:56,beta:76,gamma:null,sa:null,downedHealth:400,puPcDuration:20,movement:{runSpeed:682,dashSpeed:1102,wallShuffleSpeed:945,downedCrawlSpeed:0,floatiness:0,jumpHeight:800,forwardJumpHeight:500,wallJumpHeight:350},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:250,shield:250,total:500},size:'Unknown',udClass:'Rapid'},
+  shoto:{id:'shoto',num:4,hp:350,gp:250,melee:null,alpha:57,beta:140,gamma:100,sa:55,downedHealth:400,puPcDuration:20,movement:{runSpeed:600,dashSpeed:1000,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:300,forwardJumpHeight:150,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1.05,Shield:1.05,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:350,shield:250,total:600},size:'Unknown',udClass:'Strike'},
+  eijiro:{id:'eijiro',num:8,hp:400,gp:250,melee:25,alpha:45,beta:100,gamma:120,sa:38,downedHealth:400,puPcDuration:20,movement:{runSpeed:600,dashSpeed:1000,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:300,forwardJumpHeight:150,wallJumpHeight:250},defenseMult:{Health:0.95,Shield:0.95,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:421.053,shield:263.158,total:684.211},size:'Unknown',udClass:'Assault'},
+  momo:{id:'momo',num:10,hp:350,gp:250,melee:25,alpha:44,beta:100,gamma:80,sa:null,downedHealth:400,puPcDuration:20,movement:{runSpeed:600,dashSpeed:1000,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:300,forwardJumpHeight:150,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:350,shield:250,total:600},size:'Unknown',udClass:'Support'},
+  fumikage:{id:'fumikage',num:11,hp:300,gp:250,melee:null,alpha:50,beta:16,gamma:null,sa:null,downedHealth:400,puPcDuration:20,movement:{runSpeed:0,dashSpeed:0,wallShuffleSpeed:0,downedCrawlSpeed:0,floatiness:0,jumpHeight:0,forwardJumpHeight:0,wallJumpHeight:0},defenseMult:{Health:0.95,Shield:0.95,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:315.789,shield:263.158,total:578.947},size:'Unknown',udClass:'Assault'},
+  denki:{id:'denki',num:7,hp:350,gp:250,melee:21,alpha:58,beta:11,gamma:11,sa:31,downedHealth:400,puPcDuration:20,movement:{runSpeed:600,dashSpeed:1000,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:300,forwardJumpHeight:150,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1.05,Shield:1.05,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:350,shield:250,total:600},size:'Unknown',udClass:'Strike'},
+  neito:{id:'neito',num:104,hp:300,gp:250,melee:null,alpha:10,beta:60,gamma:null,sa:10,downedHealth:400,puPcDuration:20,movement:{runSpeed:0,dashSpeed:0,wallShuffleSpeed:0,downedCrawlSpeed:0,floatiness:0,jumpHeight:0,forwardJumpHeight:0,wallJumpHeight:0},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:0.9,Beta:0.9,Gamma:0.9,Special:0.9,PC:0.668},effective:{health:300,shield:250,total:550},size:'Unknown',udClass:'Technical'},
+  kendo:{id:'kendo',num:46,hp:400,gp:250,melee:null,alpha:22,beta:10,gamma:130,sa:34,downedHealth:400,puPcDuration:20,movement:{runSpeed:700,dashSpeed:1100,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:400,forwardJumpHeight:250,wallJumpHeight:250},defenseMult:{Health:0.95,Shield:0.95,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:421.053,shield:263.158,total:684.211},size:'Unknown',udClass:'Assault'},
+  ibara:{id:'ibara',num:102,hp:400,gp:250,melee:null,alpha:35,beta:42,gamma:15,sa:null,downedHealth:400,puPcDuration:20,movement:{runSpeed:600,dashSpeed:1000,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:400,forwardJumpHeight:250,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:400,shield:250,total:650},size:'Unknown',udClass:'Support'},
+  mirio:{id:'mirio',num:24,hp:250,gp:250,melee:35,alpha:100,beta:120,gamma:80,sa:40,downedHealth:400,puPcDuration:20,movement:{runSpeed:630,dashSpeed:1050,wallShuffleSpeed:735,downedCrawlSpeed:0,floatiness:0,jumpHeight:400,forwardJumpHeight:250,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:250,shield:250,total:500},size:'Unknown',udClass:'Rapid'},
+  tamaki:{id:'tamaki',num:26,hp:350,gp:250,melee:27,alpha:58,beta:116,gamma:29,sa:null,downedHealth:400,puPcDuration:20,movement:{runSpeed:0,dashSpeed:0,wallShuffleSpeed:0,downedCrawlSpeed:0,floatiness:0,jumpHeight:0,forwardJumpHeight:0,wallJumpHeight:0},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1.05,Shield:1.05,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:350,shield:250,total:600},size:'Unknown',udClass:'Strike'},
+  nejire:{id:'nejire',num:25,hp:300,gp:250,melee:20,alpha:3,beta:23,gamma:100,sa:35,downedHealth:400,puPcDuration:20,movement:{runSpeed:600,dashSpeed:1000,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:500,forwardJumpHeight:450,wallJumpHeight:400},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:0.9,Beta:0.9,Gamma:0.9,Special:0.9,PC:0.668},effective:{health:300,shield:250,total:550},size:'Unknown',udClass:'Technical'},
+  hitoshi:{id:'hitoshi',num:105,hp:300,gp:250,melee:null,alpha:42,beta:25,gamma:0,sa:null,downedHealth:400,puPcDuration:20,movement:{runSpeed:600,dashSpeed:1000,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:300,forwardJumpHeight:150,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1.05,Shield:1.05,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:300,shield:250,total:550},size:'Unknown',udClass:'Strike'},
+  allmight:{id:'allmight',num:12,hp:350,gp:250,melee:null,alpha:63,beta:99,gamma:75,sa:22,downedHealth:400,puPcDuration:20,movement:{runSpeed:650,dashSpeed:1050,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:400,forwardJumpHeight:300,wallJumpHeight:250},defenseMult:{Health:0.95,Shield:0.95,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:368.421,shield:263.158,total:631.579},size:'Unknown',udClass:'Assault'},
+  armored:{id:'armored',num:200,hp:350,gp:250,melee:null,alpha:30,beta:30,gamma:10,sa:null,downedHealth:400,puPcDuration:20,movement:{runSpeed:0,dashSpeed:0,wallShuffleSpeed:0,downedCrawlSpeed:0,floatiness:0,jumpHeight:0,forwardJumpHeight:0,wallJumpHeight:0},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:0.9,Beta:0.9,Gamma:0.9,Special:0.9,PC:0.668},effective:{health:350,shield:250,total:600},size:'Unknown',udClass:'Technical'},
+  aizawa:{id:'aizawa',num:13,hp:300,gp:250,melee:20,alpha:20,beta:70,gamma:10,sa:30,downedHealth:400,puPcDuration:20,movement:{runSpeed:600,dashSpeed:1000,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:300,forwardJumpHeight:150,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:0.9,Beta:0.9,Gamma:0.9,Special:0.9,PC:0.668},effective:{health:300,shield:250,total:550},size:'Unknown',udClass:'Technical'},
+  mic:{id:'mic',num:109,hp:300,gp:250,melee:null,alpha:40,beta:40,gamma:100,sa:55,downedHealth:400,puPcDuration:20,movement:{runSpeed:600,dashSpeed:1000,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:400,forwardJumpHeight:250,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1.05,Shield:1.05,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:300,shield:250,total:550},size:'Unknown',udClass:'Strike'},
+  cement:{id:'cement',num:101,hp:350,gp:250,melee:null,alpha:50,beta:125,gamma:65,sa:null,downedHealth:400,puPcDuration:20,movement:{runSpeed:600,dashSpeed:1000,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:300,forwardJumpHeight:150,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:350,shield:250,total:600},size:'Unknown',udClass:'Support'},
+  endeavor:{id:'endeavor',num:23,hp:350,gp:250,melee:null,alpha:18,beta:45,gamma:16,sa:50,downedHealth:400,puPcDuration:20,movement:{runSpeed:600,dashSpeed:1000,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:400,forwardJumpHeight:300,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1.05,Shield:1.05,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:350,shield:250,total:600},size:'Unknown',udClass:'Strike'},
+  hawks:{id:'hawks',num:43,hp:250,gp:250,melee:90,alpha:12,beta:65,gamma:75,sa:50,downedHealth:400,puPcDuration:20,movement:{runSpeed:735,dashSpeed:1260,wallShuffleSpeed:735,downedCrawlSpeed:0,floatiness:0,jumpHeight:600,forwardJumpHeight:400,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:250,shield:250,total:500},size:'Unknown',udClass:'Rapid'},
+  mirko:{id:'mirko',num:111,hp:300,gp:250,melee:10,alpha:32,beta:39,gamma:5,sa:null,downedHealth:400,puPcDuration:20,movement:{runSpeed:0,dashSpeed:0,wallShuffleSpeed:0,downedCrawlSpeed:0,floatiness:0,jumpHeight:0,forwardJumpHeight:0,wallJumpHeight:0},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:300,shield:250,total:550},size:'Unknown',udClass:'Rapid'},
+  star:{id:'star',num:114,hp:350,gp:250,melee:null,alpha:55,beta:0,gamma:2,sa:null,downedHealth:400,puPcDuration:20,movement:{runSpeed:0,dashSpeed:0,wallShuffleSpeed:0,downedCrawlSpeed:0,floatiness:0,jumpHeight:0,forwardJumpHeight:0,wallJumpHeight:0},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1.05,Shield:1.05,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:350,shield:250,total:600},size:'Unknown',udClass:'Strike'},
+  mtlady:{id:'mtlady',num:100,hp:350,gp:250,melee:null,alpha:50,beta:100,gamma:5,sa:null,downedHealth:400,puPcDuration:20,movement:{runSpeed:600,dashSpeed:1000,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:300,forwardJumpHeight:150,wallJumpHeight:250},defenseMult:{Health:0.95,Shield:0.95,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:368.421,shield:263.158,total:631.579},size:'Unknown',udClass:'Assault'},
+  tomura:{id:'tomura',num:15,hp:300,gp:250,melee:null,alpha:17,beta:18,gamma:24,sa:60,downedHealth:400,puPcDuration:20,movement:{runSpeed:650,dashSpeed:1050,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:300,forwardJumpHeight:150,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1.05,Shield:1.05,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:300,shield:250,total:550},size:'Unknown',udClass:'Strike'},
+  afo:{id:'afo',num:16,hp:350,gp:250,melee:20,alpha:54,beta:6,gamma:null,sa:54,downedHealth:400,puPcDuration:20,movement:{runSpeed:700,dashSpeed:1200,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:600,forwardJumpHeight:400,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:0.9,Beta:0.9,Gamma:0.9,Special:0.9,PC:0.668},effective:{health:350,shield:250,total:600},size:'Unknown',udClass:'Technical'},
+  afo_youth:{id:'afo_youth',num:201,hp:300,gp:250,melee:null,alpha:56,beta:5,gamma:42,sa:null,downedHealth:400},
+  dabi:{id:'dabi',num:17,hp:350,gp:250,melee:null,alpha:42,beta:4,gamma:20,sa:60,downedHealth:400,puPcDuration:20,movement:{runSpeed:600,dashSpeed:1000,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:300,forwardJumpHeight:150,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:0.9,Beta:0.9,Gamma:0.9,Special:0.9,PC:0.668},effective:{health:350,shield:250,total:600},size:'Medium',udClass:'Technical'},
+  himiko:{id:'himiko',num:18,hp:350,gp:250,melee:25,alpha:20,beta:10,gamma:2,sa:19,downedHealth:400,puPcDuration:20,movement:{runSpeed:700,dashSpeed:1050,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:400,forwardJumpHeight:300,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:0.9,Beta:0.9,Gamma:0.9,Special:0.9,PC:0.668},effective:{health:350,shield:250,total:600},size:'Medium',udClass:'Technical'},
+  twice:{id:'twice',num:37,hp:300,gp:250,melee:null,alpha:23,beta:23,gamma:20,sa:null,downedHealth:400,puPcDuration:20,movement:{runSpeed:630,dashSpeed:1050,wallShuffleSpeed:735,downedCrawlSpeed:0,floatiness:0,jumpHeight:400,forwardJumpHeight:250,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:300,shield:250,total:550},size:'Unknown',udClass:'Rapid'},
+  compress:{id:'compress',num:38,hp:300,gp:250,melee:null,alpha:22,beta:60,gamma:70,sa:null,downedHealth:400,puPcDuration:20,movement:{runSpeed:600,dashSpeed:1000,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:300,forwardJumpHeight:150,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:300,shield:250,total:550},size:'Unknown',udClass:'Support'},
+  kurogiri:{id:'kurogiri',num:103,hp:350,gp:250,melee:null,alpha:44,beta:100,gamma:25,sa:null,downedHealth:400,puPcDuration:20,movement:{runSpeed:600,dashSpeed:1050,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:300,forwardJumpHeight:175,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:350,shield:250,total:600},size:'Unknown',udClass:'Support'},
+  nagant:{id:'nagant',num:115,hp:250,gp:250,melee:null,alpha:47,beta:25,gamma:120,sa:null,downedHealth:400,puPcDuration:20,movement:{runSpeed:0,dashSpeed:0,wallShuffleSpeed:0,downedCrawlSpeed:0,floatiness:0,jumpHeight:0,forwardJumpHeight:0,wallJumpHeight:0},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1.05,Shield:1.05,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:250,shield:250,total:500},size:'Unknown',udClass:'Strike'},
+  overhaul:{id:'overhaul',num:34,hp:350,gp:250,melee:null,alpha:12,beta:30,gamma:15,sa:54,downedHealth:400,puPcDuration:20,movement:{runSpeed:600,dashSpeed:1050,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:300,forwardJumpHeight:150,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:350,shield:250,total:600},size:'Unknown',udClass:'Support'}
 };
 
 var ST={charId:CH[0].id,cosIdx:0,styleIdx:0,left:bk(5),right:bk(5),specs:bk(2)};
+var savedStates={};
+function saveState(){savedStates[ST.charId]={charId:ST.charId,cosIdx:ST.cosIdx,styleIdx:ST.styleIdx,left:ST.left.map(function(s){return{tid:s.tid,lv:s.lv};}),right:ST.right.map(function(s){return{tid:s.tid,lv:s.lv};}),specs:ST.specs.map(function(s){return{tid:s.tid,lv:s.lv};})};}
+function loadState(cid){var s=savedStates[cid];if(s){ST.cosIdx=s.cosIdx;ST.styleIdx=s.styleIdx||0;ST.left=s.left.map(function(x){return{tid:x.tid||'',lv:x.lv||1};});ST.right=s.right.map(function(x){return{tid:x.tid||'',lv:x.lv||1};});ST.specs=s.specs.map(function(x){return{tid:x.tid||'',lv:x.lv||1};});}else{ST.cosIdx=0;ST.styleIdx=styleMem[cid]||0;resetBuild();}}
+var BUILD_TAGS_LIST=["damage","support","movement","defense","burst","teamplay","revive","mobility"];
 var styleMem={};styleMem[CH[0].id]=0;
 var bypassSlotLock=localStorage&&localStorage.getItem("mhurBypassLock")==="1"?true:false;
-var CARD={strike:false,assault:false,rapid:false,technical:false,support:false,pu:false,double:false};
+var CARD={strike:false,strikeD:false,assault:false,assaultD:false,rapid:false,rapidD:false,technical:false,technicalD:false,support:false,supportD:false,pu:false};
 var savedPULvls={dmg:1,reload:1};
+var SUPPORT_LEVEL=1;
 initNormalTuning(NORMAL_TUNING);
 for(var _si=0;_si<SPECIAL_TUNING.length;_si++)SPECIAL_TUNING[_si].id="s"+_si;
 
@@ -4194,7 +4247,7 @@ function reloadStyleSkills(ch){
   var out=[];
   for(var i=0;i<style.skills.length;i++){
     var sk=style.skills[i];
-    if(sk&&hasReloadColumn(sk.baseTable))out.push(sk);
+    if(sk&&(hasReloadColumn(sk.baseTable)||hasReloadColumn(sk.specialTable)))out.push(sk);
   }
   return out;
 }
@@ -4328,6 +4381,17 @@ function getExtraAdditionalGroups(table){
   }
   return out;
 }
+function firstNonZero(table){
+  if(!table||!table.rows||!table.headers)return null;
+  var idx=table.headers.indexOf('Damage');
+  if(idx<0)return null;
+  for(var r=0;r<table.rows.length;r++){
+    var raw=table.rows[r][idx];
+    var num=parseFloat(String(raw).replace(/[^0-9.+-]/g,''));
+    if(!isNaN(num)&&num>0)return num;
+  }
+  return null;
+}
 function damageSkillParts(ch,type,lv){
   var style=damageStyleFor(ch);
   if(!style||!style.skills)return null;
@@ -4335,6 +4399,7 @@ function damageSkillParts(ch,type,lv){
     var sk=style.skills[i];
     if(!sk||sk.type!==type)continue;
     var base=tableDamageValue(sk.baseTable,lv);
+    if(base!==null&&base===0)base=firstNonZero(sk.baseTable);
     var mainGroups=getMainAdditionalGroups(sk.additionalTable);
     var add=null;
     if(mainGroups.length){
@@ -4342,6 +4407,7 @@ function damageSkillParts(ch,type,lv){
       for(var j=0;j<mainGroups.length;j++){
         var g=mainGroups[j];
         var val=tableDamageValue(sk.additionalTable,lv,g.rows);
+        if(val!==null&&val===0)val=firstNonZero({headers:sk.additionalTable.headers,rows:g.rows});
         if(val!==null)add+=val;
       }
     }
@@ -4359,8 +4425,19 @@ function reloadSkillParts(ch,type,lv){
   if(!style||!style.skills)return null;
   for(var i=0;i<style.skills.length;i++){
     var sk=style.skills[i];
-    if(!sk||sk.type!==type)continue;
-    var base=tableReloadValue(sk.baseTable,lv);
+    if(!sk)continue;
+    if(sk.type!==type&&!(type==='sa'&&sk.type==='special')&&!(type==='special'&&sk.type==='sa'))continue;
+    var base=null;
+    if(sk.baseTable&&hasReloadColumn(sk.baseTable)){
+      base=tableReloadValue(sk.baseTable,lv);
+    }else if(sk.specialTable&&hasReloadColumn(sk.specialTable)){
+      var rIdx=tableHeaderIndex(sk.specialTable,["reload"]);
+      if(rIdx>=0&&sk.specialTable.rows&&sk.specialTable.rows.length>0){
+        var raw=sk.specialTable.rows[0][rIdx];
+        var num=parseFloat(String(raw).replace(/[^0-9.+-]/g,''));
+        if(!isNaN(num))base=num;
+      }
+    }
     if(base===null||base===undefined)return null;
     return {base:base,style:style,skill:sk};
   }
@@ -4933,7 +5010,7 @@ function equippedSpecialIcons(kind){
     if(specialTuningKind(sp)!==kind)continue;
     var c=sp.chara;
     if(c===undefined||c===null||c==="")continue;
-    out+='<img class="tuning-ic" src="'+specialIcon(c)+'" alt="'+specialSummaryLabel(sp)+'" title="'+specialSummaryLabel(sp)+'" style="background:'+roleColor(sp.role||charaRole(c))+'"/>';
+    out+='<img class="tuning-ic" src="'+(specialTuningIcon(sp)||specialIcon(c))+'" alt="'+specialSummaryLabel(sp)+'" title="'+specialSummaryLabel(sp)+'" style="background:'+roleColor(sp.role||charaRole(c))+'"/>';
   }
   return out;
 }
@@ -5063,7 +5140,7 @@ function updCharStats(ch){
   var cs=CHAR_STATS[ch.id];
   var baseHp=styleHp||(cs?cs.hp:300);
   var baseGp=styleGp||(cs?cs.gp:250);
-  var baseDownHp=styleDownHp||(cs?cs.downedHealth||400:400);
+  var baseDownHp=cs?cs.downedHealth||400:400;
   var b=getMaxStatBonuses();
   var hpSpan=document.createElement("span");
   hpSpan.textContent="HP "+(baseHp+b.hp)+(b.hp?" (+"+b.hp+")":"");
@@ -5290,7 +5367,9 @@ function buildNormalSide(gridId,side,ch){
     for(var j=0;j<opts.length;j++){
       var e=opts[j];
       var bonusText=getTuningBonusText(e,ch,mx);
-      sel.appendChild(mkOpt(e.id,trunc(tuningLabel(e)+bonusText,80),s.tid===e.id));
+      var opt=mkOpt(e.id,trunc(tuningLabel(e)+bonusText,80),s.tid===e.id);
+      if(e.chara&&charaUsedInOtherSlot(e.chara,true))opt.disabled=true;
+      sel.appendChild(opt);
     }
     var selWrap=document.createElement("div");selWrap.className="sel-wrap";selWrap.appendChild(sel);
     d.appendChild(selWrap);
@@ -5330,7 +5409,7 @@ function buildSpecs(ch){
     hdr.appendChild(hl);
     var chosenSp=findSpecial(s.tid);
     if(open&&chosenSp&&chosenSp.chara){
-      var icS=document.createElement("img");icS.className="slot-ic";icS.src=specialIcon(chosenSp.chara);icS.alt=chosenSp.name||"";icS.title=(chosenSp.name||"")+" - "+(chosenSp.skillName||"");icS.style.background=roleColor(chosenSp.role||charaRole(chosenSp.chara));icS.onerror=function(){this.style.visibility="hidden";};
+      var icS=document.createElement("img");icS.className="slot-ic";icS.src=specialTuningIcon(chosenSp)||specialIcon(chosenSp.chara);icS.alt=chosenSp.name||"";icS.title=(chosenSp.name||"")+" - "+(chosenSp.skillName||"");icS.style.background=roleColor(chosenSp.role||charaRole(chosenSp.chara));icS.onerror=function(){this.style.visibility="hidden";};
       hdr.appendChild(icS);
     }
     d.appendChild(hdr);
@@ -5341,7 +5420,9 @@ function buildSpecs(ch){
     for(var j=0;j<specList.length;j++){
       var e=specList[j];
       var bonusText=getTuningBonusText(e,ch,mx);
-      sel.appendChild(mkOpt(e.id,trunc(tuningLabel(e)+bonusText,80),s.tid===e.id));
+      var opt=mkOpt(e.id,trunc(tuningLabel(e)+bonusText,80),s.tid===e.id);
+      if(e.chara&&charaUsedInOtherSlot(e.chara,false))opt.disabled=true;
+      sel.appendChild(opt);
     }
     var selWrap=document.createElement("div");selWrap.className="sel-wrap";selWrap.appendChild(sel);
     d.appendChild(selWrap);
@@ -5468,6 +5549,16 @@ function renderStats(){
   }
 }
 
+function hasTuning(){
+  for(var i=0;i<ST.left.length;i++)if(ST.left[i].tid)return true;
+  for(var i=0;i<ST.right.length;i++)if(ST.right[i].tid)return true;
+  for(var i=0;i<ST.specs.length;i++)if(ST.specs[i].tid)return true;
+  return false;
+}
+function hasSpecials(){
+  for(var i=0;i<ST.specs.length;i++)if(ST.specs[i].tid)return true;
+  return false;
+}
 function renderDamageStats(){
   var panel=document.getElementById("damageStats");clr(panel);
   var ch=gc();
@@ -5478,6 +5569,7 @@ function renderDamageStats(){
   var style=damageStyleFor(ch);
   var skills=damageStyleSkills(ch);
   var rendered=false;
+  var tuningOn=hasTuning();
   var totalBonuses={melee:{pct:0,flat:0},alpha:{pct:0,flat:0},beta:{pct:0,flat:0},gamma:{pct:0,flat:0},sa:{pct:0,flat:0},hp:{pct:0,flat:0},gp:{pct:0,flat:0}};
   // totalBonusesFixer: same keys, accumulates WITH column multiplier (for "With Fixer" column)
   var totalBonusesFixer={melee:{pct:0,flat:0},alpha:{pct:0,flat:0},beta:{pct:0,flat:0},gamma:{pct:0,flat:0},sa:{pct:0,flat:0},hp:{pct:0,flat:0},gp:{pct:0,flat:0}};
@@ -5495,7 +5587,7 @@ function renderDamageStats(){
     var gpFlat=(totalBonuses.gp&&totalBonuses.gp.flat)||0;
     var hpPct=(totalBonuses.hp&&totalBonuses.hp.pct)||0;
     var hpFlat=(totalBonuses.hp&&totalBonuses.hp.flat)||0;
-    var bm=(1+teamDamageBonus)*(CARD.strike?(CARD.double?1.20:1.10):1)*(CARD.pu?1.20:1);
+    var bm=(1+teamDamageBonus)*(CARD.strikeD?1.20:(CARD.strike?1.10:1))*(CARD.pu?1.20:1);
     var gv=Math.round((value*(1+pctB+gpPct)+flatB+gpFlat)*bm*(1+(activeDamage.pct||0)));
     var hv=Math.round((value*(1+pctB+hpPct)+flatB+hpFlat)*bm*(1+(activeDamage.pct||0)));
     return {gp:gv, hp:hv};
@@ -5520,16 +5612,16 @@ function renderDamageStats(){
       }
     }
   }
-  function dmgValueHtml(value,bonus,prefix){
-    if(value===null||value===undefined)return "<strong>"+(prefix||"")+"�</strong>";
+  function dmgValueHtml(value,bonus,prefix,hpOnly){
+    if(value===null||value===undefined)return "<strong style=\"color:#64748b;\">"+(prefix||"")+"none</strong>";
     var pctB=(bonus&&bonus.pct)||0;
     var flatB=(bonus&&bonus.flat)||0;
     var gpPct=(totalBonuses.gp&&totalBonuses.gp.pct)||0;
     var gpFlat=(totalBonuses.gp&&totalBonuses.gp.flat)||0;
     var hpPct=(totalBonuses.hp&&totalBonuses.hp.pct)||0;
     var hpFlat=(totalBonuses.hp&&totalBonuses.hp.flat)||0;
-    var bm=(1+teamDamageBonus)*(CARD.strike?(CARD.double?1.20:1.10):1)*(CARD.pu?1.20:1);
-    var gv=Math.round((value*(1+pctB+gpPct)+flatB+gpFlat)*bm);
+    var bm=(1+teamDamageBonus)*(CARD.strikeD?1.20:(CARD.strike?1.10:1))*(CARD.pu?1.20:1);
+    var gv=hpOnly?0:Math.round((value*(1+pctB+gpPct)+flatB+gpFlat)*bm);
     var hv=Math.round((value*(1+pctB+hpPct)+flatB+hpFlat)*bm);
     var html="<strong>"+(prefix||"")+gv+" GP / "+hv+" HP</strong>";
     var tuneNote="";
@@ -5550,49 +5642,54 @@ function renderDamageStats(){
     return html;
   }
   function addSkillRow(skill,parts,bonus){
+    var rawBonus={pct:0,flat:0};
     var row=document.createElement("div");
     row.className="dmg-row";
-    row.style.display="grid";
-    row.style.gridTemplateColumns=hasSpecial&&hasFixer?"1.5fr 1fr 1fr 1fr 1fr":hasSpecial?"1.5fr 1fr 1fr 1fr":hasFixer?"1.5fr 1fr 1fr 1fr":"1.5fr 1fr 1fr";
-    row.style.gap="6px";
+    var cols=["1.5fr","1fr","1fr"];if(tuningOn)cols.push("1fr");if(hasSpecial)cols.push("1fr");if(hasFixer)cols.push("1fr");
+    row.style.display="grid";row.style.gridTemplateColumns=cols.join(" ");row.style.gap="6px";
     var label=document.createElement("span");
     label.className="dmg-label";
     var typeLabel=skill.type==="alpha"?"Quirk Skill A":skill.type==="beta"?"Quirk Skill B":skill.type==="gamma"?"Quirk Skill Y":skill.type||"Skill";
-    label.innerHTML="<strong><span class=\"qtag\">"+typeLabel+"</span></strong>"+(skill.name?"<br><span style=\"color:#8e8e8e;font-size:.62rem\">"+skill.name+"</span>":"");
+    var si=skill.type==='sa'?'sa':skill.type;var cn=activeCharaNum(ch);
+    label.innerHTML=(cn&&si!=='melee'?'<img src="'+skillIcon(cn,si,ST.styleIdx)+'" style="width:48px;height:48px;border-radius:8px;object-fit:cover;vertical-align:middle;margin-right:8px;border:1px solid rgba(255,255,255,.15);" onerror="var s=this.src;if(s.indexOf(\'_2.png\')<0)this.src=s.replace(/\\.png$/,\'_2.png\');else this.style.display=\'none\';">':'')+"<strong><span class=\"qtag\">"+typeLabel+"</span></strong>"+(skill.name?"<br><span style=\"color:#8e8e8e;font-size:.62rem\">"+skill.name+"</span>":"");
+    var cardDmgPct=CARD.strikeD?0.20:(CARD.strike?0.10:0);
     var baseSpan=document.createElement("span");
     baseSpan.className="dmg-base";
-    baseSpan.innerHTML=parts.base===null||parts.base===undefined?"<strong>�</strong>":dmgValueHtml(parts.base,bonus) + teamRoleNote("Strike", teamDamageBonus, "Damage buffed");
-    var addText="�";
-    var wsText="�";
+    var baseVal=parts.base;
+    var bv=baseVal!==null&&baseVal!==undefined?dmgValueHtml(baseVal,rawBonus):'<strong style="color:#64748b;">No base</strong>';
+    baseSpan.innerHTML=bv + (baseVal!==null&&baseVal!==undefined?'<br><span style="color:#64748b;font-size:.5rem;font-weight:400;">per hit</span>':'') + teamRoleNote("Strike", teamDamageBonus, "Damage buffed") + cardNote("Strike", cardDmgPct, "Damage buffed");
+    var addText='<span style="color:#64748b;">No additional</span>';
+    var wsText='<span style="color:#64748b;">No additional</span>';
+    var tsText='<span style="color:#64748b;">&#8212;</span>';
     var mainGroups=getMainAdditionalGroups(skill.additionalTable);
     if(mainGroups.length){
-      var lines=[];
-      var wlines=[];
+      var lines=[],tlines=[],wlines=[];
       for(var gi=0;gi<mainGroups.length;gi++){
         var g=mainGroups[gi];
         var v=tableDamageValue(skill.additionalTable,DAMAGE_LEVEL||1,g.rows);
-        lines.push(dmgValueHtml(v,bonus,(g.label||"Additional")+": "));
-        if(hasSpecial){
-          var wv=withSpecialValue(v,bonus);
-          wlines.push(wv===null?"�":((g.label||"Additional")+": "+wv.gp+" GP / "+wv.hp+" HP"));
-        }
+        lines.push(dmgValueHtml(v,rawBonus,(g.label||"Additional")+": ")+'<br><span style="color:#64748b;font-size:.5rem;font-weight:400;">per hit</span>');
+        if(tuningOn&&v!==null){var tv=v+(parts.base||0);tlines.push(dmgValueHtml(tv,bonus,(g.label||"Total")+": "));}
+        if(hasSpecial){var wv=withSpecialValue(v,rawBonus);wlines.push(wv===null?"�":((g.label||"Additional")+": "+wv.gp+" GP / "+wv.hp+" HP"));}
       }
       addText=lines.join("<br>");
+      if(tuningOn)tsText=tlines.join("<br>");
       wsText=wlines.join("<br>");
     }else if(parts.additional!==null&&parts.additional!==undefined){
-      addText=dmgValueHtml(parts.additional,bonus);
-      if(hasSpecial){
-        var wv2=withSpecialValue(parts.additional,bonus);
-        wsText=wv2===null?"�":wv2.gp+" GP / "+wv2.hp+" HP";
-      }
+      addText=dmgValueHtml(parts.additional,rawBonus)+'<br><span style="color:#64748b;font-size:.5rem;font-weight:400;">per hit</span>';
+      if(tuningOn)tsText=dmgValueHtml((parts.additional+(parts.base||0)),bonus);
+      if(hasSpecial){var wv2=withSpecialValue(parts.additional,rawBonus);wsText=wv2===null?"�":wv2.gp+" GP / "+wv2.hp+" HP";}
     }else if(hasSpecial&&parts.base!==null&&parts.base!==undefined){
-      var wv3=withSpecialValue(parts.base,bonus);
-      wsText=wv3===null?"�":wv3.gp+" GP / "+wv3.hp+" HP";
+      var wv3=withSpecialValue(parts.base,rawBonus);wsText=wv3===null?"�":wv3.gp+" GP / "+wv3.hp+" HP";
     }
     var addSpan=document.createElement("span");
     addSpan.className="dmg-base";
-    addSpan.innerHTML=addText + teamRoleNote("Strike", teamDamageBonus, "Damage buffed");
+    addSpan.innerHTML=addText + teamRoleNote("Strike", teamDamageBonus, "Damage buffed") + cardNote("Strike", cardDmgPct, "Damage buffed");
     row.appendChild(label);row.appendChild(baseSpan);row.appendChild(addSpan);
+    if(tuningOn){
+      var tsSpan=document.createElement("span");tsSpan.className="dmg-base dmg-tuned-label";
+      tsSpan.innerHTML="<strong>"+tsText+"</strong>";
+      row.appendChild(tsSpan);
+    }
     if(hasSpecial){
       var wsSpan=document.createElement("span");
       wsSpan.className="dmg-base";
@@ -5631,17 +5728,18 @@ function renderDamageStats(){
       if(hasSpecial){line.style.display="grid";line.style.gridTemplateColumns="1fr 1fr 1fr";}
       var ln=document.createElement("span");
       ln.className="dmg-extra-label";
-      ln.textContent=g.label;
+      var eCh=gc();if(eCh){var si2=skill.type==='sa'?'sa':skill.type;var cn2=activeCharaNum(eCh);if(cn2&&si2!=='melee'){var iconSrc=skillIcon(cn2,si2,ST.styleIdx);if(i>0)iconSrc=iconSrc.replace(/\.png$/,'_2.png');ln.innerHTML='<img src="'+iconSrc+'" style="width:18px;height:18px;border-radius:3px;object-fit:cover;vertical-align:middle;margin-right:3px;" onerror="this.style.display=\'none\'"> '+g.label;}else ln.textContent=g.label;}else ln.textContent=g.label;
       var lv=document.createElement("span");
       lv.className="dmg-extra-value";
-      lv.innerHTML=dmgValueHtml(val,bonus);
+      var ch=gc();var hpOnly=!!(ch&&((ch.id==='nagant'&&skill.type==='alpha'&&g.label.toLowerCase().indexOf('bullet')>=0)||(ch.id==='tomura'&&skill.type==='gamma'&&g.label.toLowerCase().indexOf('continuous')>=0)));
+      lv.innerHTML=dmgValueHtml(val,bonus,'',hpOnly);
       line.appendChild(ln);line.appendChild(lv);
       if(hasSpecial){
         var wsv=document.createElement("span");
         wsv.className="dmg-extra-value";
         wsv.style.color="#4caf50";
         var w=withSpecialValue(val,bonus);
-        wsv.innerHTML="<strong>"+(w===null?"�":w.gp+" GP / "+w.hp+" HP")+"</strong>";
+        wsv.innerHTML="<strong>"+(w===null?"�":(hpOnly?0:w.gp)+" GP / "+w.hp+" HP")+"</strong>";
         line.appendChild(wsv);
       }
       sec.appendChild(line);
@@ -5649,13 +5747,14 @@ function renderDamageStats(){
     container.appendChild(sec);
   }
   if(style&&skills.length){
-    var cols=2+(hasSpecial?1:0)+(hasFixer?1:0);
+    var cols=2+(tuningOn?1:0)+(hasSpecial?1:0)+(hasFixer?1:0);
     var hcols="1.5fr"+Array(cols).fill(" 1fr").join("");
     var header=document.createElement("div");
     header.className="dmg-header";
     header.style.display="grid";
     header.style.gridTemplateColumns=hcols;
     var hhtml="<span>Skill</span><span><strong>Base</strong></span><span><strong>Additional</strong></span>";
+    if(tuningOn) hhtml+="<span class=\"dmg-tuned-header\"><strong>With Tuning</strong></span>";
     if(hasSpecial) hhtml+="<span><strong>"+spLabel+"</strong>"+equippedSpecialIcons("damage")+"</span>";
     if(hasFixer) hhtml+="<span><strong>With Fixer</strong></span>";
     header.innerHTML=hhtml;
@@ -5667,27 +5766,26 @@ function renderDamageStats(){
       var parts=damageSkillParts(ch,type,DAMAGE_LEVEL||1);
       if(!parts)continue;
       var bonus=totalBonuses[type]||{pct:0,flat:0};
-      // Add team role damage bonus
-      bonus = {pct: bonus.pct + teamDamageBonus, flat: bonus.flat};
       var block=document.createElement("div");
       block.className="dmg-skillblock";
       var title=document.createElement("div");
       title.className="dmg-skilltitle";
       var skillLabel=skills[dt].type==="alpha"?"Quirk Skill A":skills[dt].type==="beta"?"Quirk Skill B":skills[dt].type==="gamma"?"Quirk Skill Y":skills[dt].type||"Skill";
+      var stype=skills[dt].type;
       title.innerHTML="<span class=\"qtag\">"+skillLabel+"</span> - "+(skills[dt].name||"");
       block.appendChild(title);
       var skillRow=addSkillRow(skills[dt],parts,bonus);
       if(hasFixer){
         var fixerBonus=totalBonusesFixer[type]||{pct:0,flat:0};
         fixerBonus={pct:fixerBonus.pct+teamDamageBonus,flat:fixerBonus.flat};
-        var fv=parts.base;
+        var fv=(parts.base||0)+(parts.additional||0);
         var fpct=(fixerBonus&&fixerBonus.pct)||0;
         var fflat=(fixerBonus&&fixerBonus.flat)||0;
         var fgpPct=(totalBonusesFixer.gp&&totalBonusesFixer.gp.pct)||0;
         var fgpFlat=(totalBonusesFixer.gp&&totalBonusesFixer.gp.flat)||0;
         var fhpPct=(totalBonusesFixer.hp&&totalBonusesFixer.hp.pct)||0;
         var fhpFlat=(totalBonusesFixer.hp&&totalBonusesFixer.hp.flat)||0;
-        var fbm=(1+teamDamageBonus)*(CARD.strike?(CARD.double?1.20:1.10):1)*(CARD.pu?1.20:1);
+        var fbm=(1+teamDamageBonus)*(CARD.strikeD?1.20:(CARD.strike?1.10:1))*(CARD.pu?1.20:1);
         var fgv=Math.round((fv*(1+fpct+fgpPct)+fflat+fgpFlat)*fbm);
         var fhv=Math.round((fv*(1+fpct+fhpPct)+fflat+fhpFlat)*fbm);
         var fixerCell=document.createElement("span");fixerCell.className="dmg-base";fixerCell.innerHTML="<strong>"+fgv+" GP / "+fhv+" HP</strong>";
@@ -5717,7 +5815,7 @@ function renderDamageStats(){
       var gpFlat=(totalBonuses.gp&&totalBonuses.gp.flat)||0;
       var hpPct=(totalBonuses.hp&&totalBonuses.hp.pct)||0;
       var hpFlat=(totalBonuses.hp&&totalBonuses.hp.flat)||0;
-      var baseMult=(1+teamDamageBonus)*(CARD.strike?(CARD.double?1.20:1.10):1)*(CARD.pu?1.20:1);
+      var baseMult=(1+teamDamageBonus)*(CARD.strikeD?1.20:(CARD.strike?1.10:1))*(CARD.pu?1.20:1);
       var bg=mv.dmg?mv.dmg.gp:0;
       var bh=mv.dmg?mv.dmg.hp:0;
       var meleeGv=Math.round((bg*(1+meleePct+gpPct)+meleeFlat+gpFlat)*baseMult);
@@ -5733,7 +5831,8 @@ function renderDamageStats(){
       var fhpFlat=(totalBonusesFixer.hp&&totalBonusesFixer.hp.flat)||0;
       var fmeleeGv=Math.round((bg*(1+fmeleePct+fgpPct)+fmeleeFlat+fgpFlat)*baseMult);
       var fmeleeHv=Math.round((bh*(1+fmeleePct+fhpPct)+fmeleeFlat+fhpFlat)*baseMult);
-      var bs=document.createElement("span");bs.className="dmg-base";bs.innerHTML="<strong>"+bg+" GP / "+bh+" HP</strong>";
+      var cardDmgPct=CARD.strikeD?0.20:(CARD.strike?0.10:0);
+      var bs=document.createElement("span");bs.className="dmg-base";bs.innerHTML="<strong>"+bg+" GP / "+bh+" HP</strong>"+cardNote("Strike", cardDmgPct, "Damage buffed");
       var ts=document.createElement("span");ts.className="dmg-base";
       var tnote="";
       var skillNote="";
@@ -5774,7 +5873,7 @@ function renderDamageStats(){
       var gpFlat=(totalBonuses.gp&&totalBonuses.gp.flat)||0;
       var hpPct=(totalBonuses.hp&&totalBonuses.hp.pct)||0;
       var hpFlat=(totalBonuses.hp&&totalBonuses.hp.flat)||0;
-      var baseMult=(1+teamDamageBonus)*(CARD.strike?(CARD.double?1.20:1.10):1)*(CARD.pu?1.20:1);
+      var baseMult=(1+teamDamageBonus)*(CARD.strikeD?1.20:(CARD.strike?1.10:1))*(CARD.pu?1.20:1);
       var tunedG=Math.round((mb*(1+meleePct+gpPct)+meleeFlat+gpFlat)*baseMult);
       var tunedH=Math.round((mb*(1+meleePct+hpPct)+meleeFlat+hpFlat)*baseMult);
       var specG=Math.round((mb*(1+meleePct+gpPct)+meleeFlat+gpFlat)*baseMult*(1+(activeDamage.pct||0)));
@@ -5871,7 +5970,7 @@ function renderDamageStats(){
   }
   if(CARD.strike){
     var cardDiv=document.createElement("div");cardDiv.className="card-active";
-    cardDiv.textContent="Strike Card Active: +"+(CARD.double?"20":"10")+"% Attack Power (damage dealt increased).";
+    cardDiv.textContent=(CARD.strikeD?"Double ":"Single ")+"Strike Card Active: +"+(CARD.strikeD?"20":"10")+"% Attack Power (damage dealt increased).";
     panel.appendChild(cardDiv);
   }
   if(CARD.pu){
@@ -5899,14 +5998,15 @@ function renderReloadStats(){
   if(reloadLbl)reloadLbl.innerHTML=CARD.pu&&(RELOAD_LEVEL||1)>=9?'<span style="animation:rainbow 1.5s linear infinite;font-weight:900;">PLUS</span>':"Lv "+(RELOAD_LEVEL||1);
   var skills=reloadStyleSkills(ch);
   var rendered=false;
+  var tuningOn=hasTuning();
   var totalBonuses={alpha:0,beta:0,gamma:0,sa:0};
   var totalBonusesFixer={alpha:0,beta:0,gamma:0,sa:0};
   var hasFixer=isFixerSpecial(findSpecial(ST.specs[0]&&ST.specs[0].tid))||isFixerSpecial(findSpecial(ST.specs[1]&&ST.specs[1].tid));
   var fixerLabel=hasFixer?"With Fixer":"";
   var activeReload=activeSpecialBonus("reload");
-  var teamReloadBonus = getTeamRoleBonus("Technical", "reload"); // Technical gives reload bonus
-  var cardRel=CARD.technical?(CARD.double?1/2:1/1.5):1;
+  var teamReloadBonus = getTeamRoleBonus("Technical", "reload");
   var puReloadBonus=CARD.pu?0.50:0;
+  var techReloadBonus=CARD.technicalD?1.0:(CARD.technical?0.50:0);
   var colMultLeft=specialColumnMultiplier(findSpecial(ST.specs[0]&&ST.specs[0].tid),ST.specs[0]&&ST.specs[0].lv);
   var colMultRight=specialColumnMultiplier(findSpecial(ST.specs[1]&&ST.specs[1].tid),ST.specs[1]&&ST.specs[1].lv);
   function processTuning(s,side){
@@ -5922,57 +6022,60 @@ function renderReloadStats(){
     }
   }
   if(skills.length){
-    var cols=3+1+(hasFixer?1:0);
-    var hcols="1.45fr .65fr 1fr 1fr"+(hasFixer?" 1fr":"");
+    var cols=2+(tuningOn?1:0)+(hasFixer?1:0);
+    var hcols="1.45fr .65fr 1fr"+(tuningOn?" 1fr":"")+(hasFixer?" 1fr":"");
     var header=document.createElement("div");
     header.className="dmg-header";
     header.style.display="grid";
     header.style.gridTemplateColumns=hcols;
-    header.innerHTML="<span>Skill</span><span><strong>Ammo</strong></span><span><strong>Base</strong></span><span><strong>With Tuning</strong>"+equippedSpecialIcons("reload")+"</span>"+(hasFixer?"<span><strong>With Fixer</strong></span>":"");
+    header.innerHTML="<span>Skill</span><span><strong>Ammo</strong></span><span><strong>Base</strong></span>"+(tuningOn?"<span class=\"dmg-tuned-header\"><strong>With Tuning</strong>"+equippedSpecialIcons("reload")+"</span>":"")+(hasFixer?"<span><strong>With Fixer</strong></span>":"");
     panel.appendChild(header);
     for(var i=0;i<ST.left.length;i++)processTuning(ST.left[i],"left");
     for(var j=0;j<ST.right.length;j++)processTuning(ST.right[j],"right");
     for(var dt=0;dt<skills.length;dt++){
       var skill=skills[dt];
-      var type=skill.type;
-      var parts=reloadSkillParts(ch,type,RELOAD_LEVEL||1);
+      var type=skill.type==='special'?'sa':skill.type;
+      var parts=reloadSkillParts(ch,skill.type,RELOAD_LEVEL||1);
       if(!parts)continue;
-      var bonus=(totalBonuses[type]||0)+(activeReload.pct||0)+teamReloadBonus+puReloadBonus;
+      var bonus=(totalBonuses[type]||0)+(activeReload.pct||0)+teamReloadBonus+puReloadBonus+techReloadBonus;
       var tuned=bonus!==0?parts.base/(1+bonus):parts.base;
-      var ammoText=tableAmmoValue(skill.baseTable,RELOAD_LEVEL||1,skill.baseTable&&skill.baseTable.rows||null);
-      var useAmmoText=tableTextValue(skill.baseTable,RELOAD_LEVEL||1,tableHeaderIndex(skill.baseTable,["use ammo"]),tableHeaderIndex(skill.baseTable,["level"]),skill.baseTable&&skill.baseTable.rows||null);
-      var ammoCell=ammoText===null||ammoText===undefined?"�":String(ammoText);
+      var ammoTable=skill.baseTable||skill.specialTable;
+      var ammoText=tableAmmoValue(ammoTable,RELOAD_LEVEL||1,ammoTable&&ammoTable.rows||null);
+      var useAmmoText=tableTextValue(ammoTable,RELOAD_LEVEL||1,tableHeaderIndex(ammoTable,["use ammo"]),tableHeaderIndex(ammoTable,["level"]),ammoTable&&ammoTable.rows||null);
+      var ammoCell=ammoText===null||ammoText===undefined?"—":String(ammoText);
       if(useAmmoText!==null&&useAmmoText!==undefined&&String(useAmmoText).trim()!==""){
         ammoCell+=" / "+String(useAmmoText);
       }
       var row=document.createElement("div");
       row.className="dmg-row";
-      row.style.display="grid";
-      row.style.gridTemplateColumns="1.45fr .65fr 1fr 1fr"+(hasFixer?" 1fr":"");
-      row.style.gap="6px";
+      var rcols=["1.45fr",".65fr","1fr"];if(tuningOn)rcols.push("1fr");if(hasFixer)rcols.push("1fr");
+      row.style.display="grid";row.style.gridTemplateColumns=rcols.join(" ");row.style.gap="6px";
       var label=document.createElement("span");
       label.className="dmg-label";
-      var typeLabel=type==="alpha"?"Quirk Skill A":type==="beta"?"Quirk Skill B":type==="gamma"?"Quirk Skill Y":type==="sa"?"Special Action":type||"Skill";
-      label.innerHTML="<strong><span class=\"qtag\">"+typeLabel+"</span></strong>"+(skill.name?"<br><span style=\"color:#8e8e8e;font-size:.62rem\">"+skill.name+"</span>":"");
+      var typeLabel=type==="alpha"?"Quirk Skill A":type==="beta"?"Quirk Skill B":type==="gamma"?"Quirk Skill Y":(type==="sa"||type==="special")?"Special Action":type||"Skill";
+      var si=type==='sa'?'sa':type;var cn=activeCharaNum(ch);
+      label.innerHTML=(cn&&si!=='melee'?'<img src="'+skillIcon(cn,si,ST.styleIdx)+'" style="width:48px;height:48px;border-radius:8px;object-fit:cover;vertical-align:middle;margin-right:8px;border:1px solid rgba(255,255,255,.15);" onerror="var s=this.src;if(s.indexOf(\'_2.png\')<0)this.src=s.replace(/\\.png$/,\'_2.png\');else this.style.display=\'none\';">':'')+"<strong><span class=\"qtag\">"+typeLabel+"</span></strong>"+(skill.name?"<br><span style=\"color:#8e8e8e;font-size:.62rem\">"+skill.name+"</span>":"");
       var ammoSpan=document.createElement("span");
       ammoSpan.className="dmg-base";
       ammoSpan.innerHTML="<strong>"+ammoCell+"</strong>";
+      var baseBonus=1+puReloadBonus+techReloadBonus;
       var baseSpan=document.createElement("span");
       baseSpan.className="dmg-base";
-      baseSpan.innerHTML="<strong>"+fmtReloadValue(parts.base*cardRel)+"s</strong>";
+      baseSpan.innerHTML="<strong>"+fmtReloadValue(parts.base/baseBonus)+"s</strong><br><span style=\"color:#64748b;font-size:.5rem;font-weight:400;\">per tick</span>"+cardNote("Technical", techReloadBonus, "Reload sped up")+(CARD.pu?'<br><span class="team-note" style="color:#f5c800;">&#9650; Reload sped up by PU/PC (+50%)</span>':'');
       var normalBonus=totalBonuses[type]||0;
       var activePct=activeReload.pct||0;
-      var normalTuned=(normalBonus!==0?parts.base/(1+normalBonus):parts.base)*cardRel;
-      var activeTuned=(bonus!==0?parts.base/(1+bonus):parts.base)*cardRel;
+      var normalTuned=(normalBonus!==0?parts.base/(1+normalBonus):parts.base)/baseBonus;
+      var activeTuned=(bonus!==0?parts.base/(1+bonus):parts.base);
       var       tunedHtml="<strong>"+fmtReloadValue(activeTuned)+"s</strong>";
       var tunedSpan=document.createElement("span");
-      tunedSpan.className="dmg-base";
-      tunedSpan.innerHTML=tunedHtml + teamRoleNote("Technical", teamReloadBonus, "Reload sped up");
+      tunedSpan.className="dmg-base dmg-tuned-label";
+      tunedSpan.innerHTML=tunedHtml+'<br><span style="color:#64748b;font-size:.5rem;font-weight:400;">per tick</span>' + teamRoleNote("Technical", teamReloadBonus, "Reload sped up");
 
-      var fixerBonus=(totalBonusesFixer[type]||0)+(activeReload.pct||0)+teamReloadBonus+puReloadBonus;
+      var fixerBonus=(totalBonusesFixer[type]||0)+(activeReload.pct||0)+teamReloadBonus+puReloadBonus+techReloadBonus;
       var fixerTuned=fixerBonus!==0?parts.base/(1+fixerBonus):parts.base;
-      var fixerHtml="<strong>"+fmtReloadValue(fixerTuned*cardRel)+"s</strong>";
-      row.appendChild(label);row.appendChild(ammoSpan);row.appendChild(baseSpan);row.appendChild(tunedSpan);
+      var fixerHtml="<strong>"+fmtReloadValue(fixerTuned)+"s</strong><br><span style=\"color:#64748b;font-size:.5rem;font-weight:400;\">per tick</span>";
+      row.appendChild(label);row.appendChild(ammoSpan);row.appendChild(baseSpan);
+      if(tuningOn)row.appendChild(tunedSpan);
       if(hasFixer){
         var fixerSpan=document.createElement("span");fixerSpan.className="dmg-base";fixerSpan.innerHTML=fixerHtml;
         row.appendChild(fixerSpan);
@@ -5992,6 +6095,14 @@ function renderReloadStats(){
   }
   if(CARD.pu){
     bonusRows.push({key:"PU/PC Active",val:0.50});
+  }
+  if(CARD.technical){
+    bonusRows.push({key:"Technical Card",val:techReloadBonus});
+  }
+  if(activeReload.pct>0){
+    for(var arn=0;arn<activeReload.names.length;arn++){
+      bonusRows.push({key:activeReload.names[arn],val:activeReload.pct/activeReload.names.length});
+    }
   }
   if(bonusRows.length){
     var sumDiv=document.createElement("div");sumDiv.className="calc-sum";
@@ -6019,7 +6130,7 @@ function renderReloadStats(){
   }
   if(CARD.technical){
     var cardDiv=document.createElement("div");cardDiv.className="card-active";
-    cardDiv.textContent="Technical Card Active: +"+(CARD.double?"100":"50")+"% Skill Reload Speed (reload time \u00f7"+(CARD.double?"2":"1.5")+").";
+    cardDiv.textContent=(CARD.technicalD?"Double ":"Single ")+"Technical Card Active: +"+(CARD.technicalD?"100":"50")+"% Skill Reload Speed.";
     panel.appendChild(cardDiv);
   }
   if(CARD.pu){
@@ -6081,7 +6192,8 @@ function renderDefenseStats(){
     block.className="dmg-skillblock";
     var title=document.createElement("div");
     title.className="dmg-skilltitle";
-    title.innerHTML="<span class=\"qtag\">"+groupLabels[key]+"</span> Defense";
+    var si=key==='sa'?'sa':key;var cn=activeCharaNum(ch);
+    title.innerHTML=(cn&&['alpha','beta','gamma','sa'].indexOf(key)>=0?'<img src="'+skillIcon(cn,si,ST.styleIdx)+'" style="width:40px;height:40px;border-radius:6px;object-fit:cover;vertical-align:middle;margin-right:6px;border:1px solid rgba(255,255,255,.12);" onerror="var s=this.src;if(s.indexOf(\'_2.png\')<0)this.src=s.replace(/\\.png$/,\'_2.png\');else this.style.display=\'none\';">':'')+"<span class=\"qtag\">"+groupLabels[key]+"</span> Defense";
     block.appendChild(title);
     var header=document.createElement("div");
     header.className="dmg-header";
@@ -6103,9 +6215,10 @@ function renderDefenseStats(){
       var label=document.createElement("span");
       label.className="dmg-label";
       label.innerHTML="<strong>"+(rows[r].name||"Defense")+"</strong><br><span style=\"color:#8e8e8e;font-size:.62rem\">"+rows[r].group+" "+rows[r].slot+"</span>";
+      var assaultCardPct=CARD.assaultD?0.40:(CARD.assault?0.20:0);
       var baseSpan=document.createElement("span");
       baseSpan.className="dmg-base";
-      baseSpan.innerHTML="<strong>"+fmtMult(1)+"</strong>";
+      baseSpan.innerHTML="<strong>"+fmtMult(1)+"</strong>"+cardNote("Assault", assaultCardPct, "Damage reduced");
       var tunedSpan=document.createElement("span");
       tunedSpan.className="dmg-base";
       var defHtml="<strong>"+fmtMult(rows[r].effect.multiplierBase*(1-teamDefenseBonus))+"</strong>";
@@ -6152,8 +6265,8 @@ function renderDefenseStats(){
       var guardName=document.createElement("span");guardName.className="dmg-extra-label";guardName.textContent="Guard Break Multiplier";
       var guardVal=document.createElement("span");guardVal.className="dmg-extra-value";      guardVal.innerHTML="<strong>"+fmtMult(activeDefense.mult)+"</strong>";
       guardRow.appendChild(guardName);guardRow.appendChild(guardVal);sumDiv.appendChild(guardRow);
-      var acPct=CARD.double?"40":"20";
-      var acMult=CARD.double?0.60:0.80;
+      var acPct=CARD.assaultD?"40":"20";
+      var acMult=CARD.assaultD?0.60:0.80;
     }
 if(CARD.assault){
       var cardRow=document.createElement("div");cardRow.className="dmg-extra-line";
@@ -6167,7 +6280,7 @@ if(CARD.assault){
       var teamVal=document.createElement("span");teamVal.className="dmg-extra-value";teamVal.innerHTML="<strong>"+fmtMult(1-teamDefenseBonus)+"</strong>";
       teamRow.appendChild(teamName);teamRow.appendChild(teamVal);sumDiv.appendChild(teamRow);
     }
-    var cardMult=CARD.assault?(CARD.double?0.60:0.80):1;
+    var cardMult=CARD.assaultD?0.60:(CARD.assault?0.80:1);
     var multRow=document.createElement("div");multRow.className="dmg-extra-line";
     var multName=document.createElement("span");multName.className="dmg-extra-label";multName.textContent="Total Defense Multiplier";
     var multVal=document.createElement("span");multVal.className="dmg-extra-value";multVal.innerHTML="<strong>"+fmtMult(groupMultiplier*cardMult)+"</strong>";
@@ -6210,7 +6323,7 @@ if(CARD.assault){
   }
   if(CARD.assault){
     var cardDiv=document.createElement("div");cardDiv.className="card-active";
-    cardDiv.textContent="Assault Card Active: "+(CARD.double?"40":"20")+"% Damage Reduction (incoming damage reduced).";
+    cardDiv.textContent=(CARD.assaultD?"Double ":"Single ")+"Assault Card Active: "+(CARD.assaultD?"40":"20")+"% Damage Reduction (incoming damage reduced).";
     panel.appendChild(cardDiv);
   }
   if(!any&&!specialRendered&&!allActive.length){
@@ -6409,9 +6522,11 @@ function renderMiscStats(){
   var chNum=CH_NUM[ch.id]?String(CH_NUM[ch.id]):null;
   var skills=allStyleSkills(ch);
   var miscSkills=[];
+  var saSkill=null;
   for(var i=0;i<skills.length;i++){
     var sk=skills[i];
     if(!skillHasDamage(sk)&&sk.type&&["alpha","beta","gamma"].indexOf(sk.type)!==-1)miscSkills.push(sk);
+    if(sk.type==='special'||sk.type==='sa')saSkill=sk;
   }
   var rendered=false;
   function renderFilteredTable(block,label,tbl){
@@ -6477,7 +6592,8 @@ function renderMiscStats(){
     var title=document.createElement("div");
     title.className="dmg-skilltitle";
     var skillLabel=skill.type==="alpha"?"Quirk Skill A":skill.type==="beta"?"Quirk Skill B":skill.type==="gamma"?"Quirk Skill Y":skill.type||"Skill";
-    title.innerHTML="<span class=\"qtag\">"+skillLabel+"</span> - "+(skill.name||"");
+    var si=skill.type==='sa'?'sa':skill.type;var cn=chNum;
+    title.innerHTML=(cn?('<img src="'+skillIcon(cn,si,ST.styleIdx)+'" style="width:40px;height:40px;border-radius:6px;object-fit:cover;vertical-align:middle;margin-right:6px;border:1px solid rgba(255,255,255,.12);" onerror="var s=this.src;if(s.indexOf(\'_2.png\')<0)this.src=s.replace(/\\.png$/,\'_2.png\');else this.style.display=\'none\';">'):'')+"<span class=\"qtag\">"+skillLabel+"</span> - "+(skill.name||"");
     block.appendChild(title);
     var desc=document.createElement("div");
     desc.className="sdesc";
@@ -6489,6 +6605,33 @@ function renderMiscStats(){
     if(skill.specialTable)showed=renderFilteredTable(block,"Special Values",skill.specialTable)||showed;
     panel.appendChild(block);
     rendered=true;
+  }
+  // Special Action section
+  if(saSkill){
+    var saBlock=document.createElement("div");saBlock.className="dmg-skillblock";
+    var saTitle=document.createElement("div");saTitle.className="dmg-skilltitle";
+    var saSI='sa';var saCN=chNum;
+    saTitle.innerHTML=(saCN?'<img src="'+skillIcon(saCN,saSI,ST.styleIdx)+'" style="width:40px;height:40px;border-radius:6px;object-fit:cover;vertical-align:middle;margin-right:6px;border:1px solid rgba(255,255,255,.12);" onerror="var s=this.src;if(s.indexOf(\'_2.png\')<0)this.src=s.replace(/\\.png$/,\'_2.png\');else this.style.display=\'none\';">':'')+"<span class=\"qtag\">Special Action</span> - "+(saSkill.name||"");
+    saBlock.appendChild(saTitle);
+    var saDesc=document.createElement("div");saDesc.className="sdesc";saDesc.textContent=(saSkill.skillDesc||"Special action unique to this character.");saBlock.appendChild(saDesc);
+    if(saSkill.specialTable&&saSkill.specialTable.headers&&saSkill.specialTable.rows){
+      var st=saSkill.specialTable;
+      var stHeader=document.createElement("div");stHeader.className="dmg-header";stHeader.style.display="grid";
+      var stCols=st.headers.length;stHeader.style.gridTemplateColumns="repeat("+stCols+", minmax(0, 1fr))";
+      st.headers.forEach(function(h){var hs=document.createElement("span");hs.innerHTML="<strong>"+h+"</strong>";stHeader.appendChild(hs);});
+      saBlock.appendChild(stHeader);
+      st.rows.forEach(function(rr){
+        var stRow=document.createElement("div");stRow.className="dmg-row";stRow.style.display="grid";
+        stRow.style.gridTemplateColumns="repeat("+stCols+", minmax(0, 1fr))";stRow.style.gap="6px";
+        rr.forEach(function(cell,i){
+          var stCell=document.createElement("span");stCell.className="dmg-base";
+          stCell.innerHTML="<strong>"+(cell!==undefined?cell:"")+"</strong>";
+          stRow.appendChild(stCell);
+        });
+        saBlock.appendChild(stRow);
+      });
+    }
+    panel.appendChild(saBlock);rendered=true;
   }
   var specialRendered=renderSpecialTuningSection(panel,"misc","Misc");
   var wrap=panel.parentNode;
@@ -6511,6 +6654,8 @@ function renderHpStats(){
   var panel=document.getElementById("hpStats");clr(panel);
   var ch=gc();
   if(!ch){var pe=document.createElement("p");pe.className="sempty";pe.textContent="Select a character to see HP / survival stats.";panel.appendChild(pe);return;}
+  var sl=document.getElementById("supportLevel");if(sl){sl.value=String(SUPPORT_LEVEL||1);}
+  var sll=document.getElementById("supportLevelLbl");if(sll){sll.textContent="Lv "+(SUPPORT_LEVEL||1);}
   var hpBonus=0,gpBonus=0,downhpBonus=0,hpBonusBase=0,gpBonusBase=0,downhpBonusBase=0;
   var hasFixer=isFixerSpecial(findSpecial(ST.specs[0]&&ST.specs[0].tid))||isFixerSpecial(findSpecial(ST.specs[1]&&ST.specs[1].tid));
   var fixerLabel=hasFixer?"With Fixer":"";
@@ -6556,7 +6701,7 @@ function renderHpStats(){
       var vals=specialNumericValues(ev, sp.lv);
       var perTick=specialPerTickHeal(ev);
       var line=document.createElement("div");line.className="dmg-extra-line";
-      var lbl=document.createElement("span");lbl.className="dmg-extra-label";      lbl.innerHTML="<strong>"+specialSummaryLabel(ev)+"</strong>"+(ev.chara!==undefined&&ev.chara!==null&&ev.chara!==""?'<img class="tuning-ic" src="'+specialIcon(ev.chara)+'" alt="'+specialSummaryLabel(ev)+'" title="'+specialSummaryLabel(ev)+'" style="background:'+roleColor(ev.role||charaRole(ev.chara))+'"/>':"")+"<br><span style=\"font-size:.58rem;color:#8e8e8e\">"+(sp.guard?"on guard break � ":"")+"Lv"+sp.lv+"</span>";
+      var lbl=document.createElement("span");lbl.className="dmg-extra-label";      lbl.innerHTML="<strong>"+specialSummaryLabel(ev)+"</strong>"+(ev.chara!==undefined&&ev.chara!==null&&ev.chara!==""?'<img class="tuning-ic" src="'+(specialTuningIcon(ev)||specialIcon(ev.chara))+'" alt="'+specialSummaryLabel(ev)+'" title="'+specialSummaryLabel(ev)+'" style="background:'+roleColor(ev.role||charaRole(ev.chara))+'"/>':"")+"<br><span style=\"font-size:.58rem;color:#8e8e8e\">"+(sp.guard?"on guard break � ":"")+"Lv"+sp.lv+"</span>";
       var val=document.createElement("span");val.className="stat-bonus-value";
       var parts=[];
       if(dur!==""&&dur!==null)parts.push("Dur "+(/^\d+$/.test(String(dur))?dur+"s":dur));
@@ -6572,19 +6717,23 @@ function renderHpStats(){
     panel.appendChild(hdiv);
   }
   if(CARD.support){
-    var scHP=CARD.double?100:50;
-    var scHPS=CARD.double?20:10;
+    var scBase=CARD.supportD?50:25;
+    var scHP=scBase+Math.round((SUPPORT_LEVEL||1)*5.5);
+    var scDur=5;
+    var scHPS=Math.round(scHP/scDur);
+    var cardDurations=[5,11,17,23,29,35,41,47,52];
+    var cardBuffDur=cardDurations[Math.min((SUPPORT_LEVEL||1)-1,cardDurations.length-1)];
     var supdiv=document.createElement("div");supdiv.className="dmg-extra";
     var supt=document.createElement("div");supt.className="dmg-extra-title";supt.textContent="Support Card (Healing Field)";supdiv.appendChild(supt);
     var suprow=document.createElement("div");suprow.className="dmg-extra-line";
     var suplbl=document.createElement("span");suplbl.className="dmg-extra-label";suplbl.innerHTML="<strong>Healing Field</strong>";
     var supval=document.createElement("span");supval.className="stat-bonus-value";
-    supval.textContent="+"+scHP+" HP over 5s ("+scHPS+" HP/s, self + allies)";
+    supval.textContent="+"+scHP+" HP over "+scDur+"s ("+scHPS+" HP/s) &bull; Card buff: "+cardBuffDur+"s";
     suprow.appendChild(suplbl);suprow.appendChild(supval);
     var supdsc=document.createElement("div");supdsc.style.fontSize=".6rem";supdsc.style.color="#777";supdsc.style.margin="1px 0 4px";
-    supdsc.textContent="Restores "+scHP+" HP over 5 seconds to yourself and nearby allies.";
+    supdsc.textContent="Restores "+scHP+" HP over "+scDur+"s to self + nearby allies. Card buff lasts "+cardBuffDur+"s.";
     supdiv.appendChild(suprow);supdiv.appendChild(supdsc);
-    var supCard=document.createElement("div");supCard.className="card-active";supCard.textContent="Support Card Active: Healing field restores "+scHP+" HP over 5s ("+scHPS+" HP/s).";
+    var supCard=document.createElement("div");supCard.className="card-active";supCard.textContent=(CARD.supportD?"Double ":"Single ")+"Support Card Active: +"+scHP+" HP over "+scDur+"s ("+scHPS+" HP/s, self+allies) &bull; Buff "+cardBuffDur+"s";
     supdiv.appendChild(supCard);
     panel.appendChild(supdiv);any=true;
   }
@@ -6678,7 +6827,7 @@ function renderMovementStats(){
   for(var j=0;j<ST.right.length;j++)procNormal(ST.right[j]);
   for(var q=0;q<ST.specs.length;q++)procSpecial(ST.specs[q]);
   if(CARD.rapid){
-    var rcBonus=CARD.double?0.20:0.10;
+    var rcBonus=CARD.rapidD?0.20:0.10;
     move.walk.add+=rcBonus; move.walk.src.push("Rapid Card +"+(rcBonus*100)+"%");
     move.dash.add+=rcBonus; move.dash.src.push("Rapid Card +"+(rcBonus*100)+"%");
     move.run.add+=rcBonus; move.run.src.push("Rapid Card +"+(rcBonus*100)+"%");
@@ -6695,7 +6844,8 @@ function renderMovementStats(){
       var row=document.createElement("div");row.className="dmg-row";row.style.display="grid";row.style.gridTemplateColumns="1.45fr 1fr 1fr";row.style.gap="6px";
       var label=document.createElement("span");label.className="dmg-label";
       label.innerHTML="<strong>"+rw.label+"</strong>"+(rw.src.length?"<br><span style=\"color:#8e8e8e;font-size:.62rem\">"+rw.src.join("<br>")+"</span>":"");
-      var b=document.createElement("span");b.className="dmg-base";b.innerHTML="<strong>1.00\u00d7</strong>";
+      var rapidCardPct=CARD.rapidD?0.20:(CARD.rapid?0.10:0);
+      var b=document.createElement("span");b.className="dmg-base";b.innerHTML="<strong>1.00\u00d7</strong>"+cardNote("Rapid", rapidCardPct, "Speed buffed");
       var wt=document.createElement("span");wt.className="dmg-base";
        wt.innerHTML="<strong>"+val.toFixed(2)+"\u00d7</strong>" + teamRoleNote("Rapid", teamMovementBonus, "Speed buffed");
       row.appendChild(label);row.appendChild(b);row.appendChild(wt);block.appendChild(row);
@@ -6740,8 +6890,8 @@ function renderMovementStats(){
   renderSpecialTuningSection(panel,"movement","Movement");
   if(CARD.rapid){
     var cardDiv=document.createElement("div");cardDiv.className="card-active";
-    var rcPct=CARD.double?20:10;
-    cardDiv.textContent="Rapid Card Active: +"+rcPct+"% Movement & Attack Speed, Wall Running enabled.";
+    var rcPct=CARD.rapidD?20:10;
+    cardDiv.textContent=(CARD.rapidD?"Double ":"Single ")+"Rapid Card Active: +"+rcPct+"% Movement & Attack Speed, Wall Running enabled.";
     panel.appendChild(cardDiv);
   }
 }
@@ -6799,6 +6949,17 @@ function renderManifestStats(){
 
 function resetBuild(){ST.left=bk(5);ST.right=bk(5);ST.specs=bk(2);}
 function updTitle(ch){var el=document.getElementById("pageTitle");if(!el)return;var s=el.querySelector('span:first-child');if(s)s.textContent=ch?ch.n.toUpperCase():"SELECT CHARACTER";}
+function charaUsedInOtherSlot(charaNum,checkSpec){
+  // If checkSpec is true, checks if charaNum is used in any special slot
+  // If checkSpec is false, checks if charaNum is used in any normal slot
+  var arr=checkSpec?ST.specs:(ST.left||[]).concat(ST.right||[]);
+  for(var i=0;i<arr.length;i++){
+    if(!arr[i].tid)continue;
+    var e=checkSpec?findSpecial(arr[i].tid):findNormal(arr[i].tid);
+    if(e&&String(e.chara)===String(charaNum))return true;
+  }
+  return false;
+}
 function initSpecialTuning(){
   if(!window.SPECIAL_TUNING_INITIALIZED){
     for(var i=0;i<SPECIAL_TUNING.length;i++){
@@ -6815,8 +6976,8 @@ function onCardClick(e){
   var card=e.target;
   while(card&&card!==e.currentTarget){if(card.getAttribute&&card.getAttribute("data-cid"))break;card=card.parentNode;}
   if(!card||!card.getAttribute)return;
-  var cid=card.getAttribute("data-cid");if(!cid)return;
-  ST.charId=cid;ST.cosIdx=0;ST.styleIdx=styleMem[cid]||0;resetBuild();
+  var cid=card.getAttribute("data-cid");if(!cid||cid===ST.charId)return;
+  saveState();ST.charId=cid;loadState(cid);styleMem[cid]=ST.styleIdx;
   buildGrids();var ch=gc();updTitle(ch);updDisplay(ch);buildSlots(ch);recalcTeamRoleBonuses();renderTeamRoleBonuses();renderStats();renderDamageStats();renderReloadStats();renderDefenseStats();renderMiscStats();renderHpStats();renderMovementStats();renderManifestStats();
 }
 document.getElementById("heroGrid").addEventListener("click",onCardClick);
@@ -6827,13 +6988,13 @@ document.getElementById("cdstyles").addEventListener("click",function(e){
   while(btn&&btn!==this){if(btn.getAttribute&&btn.getAttribute("data-si")!==null)break;btn=btn.parentNode;}
   if(!btn||btn===this)return;
   var si=btn.getAttribute("data-si");if(si===null)return;
-  ST.styleIdx=parseInt(si);styleMem[ST.charId]=ST.styleIdx;resetBuild();
+  saveState();ST.styleIdx=parseInt(si);styleMem[ST.charId]=ST.styleIdx;resetBuild();
   var ch=gc();buildGrids();updDisplay(ch);buildSlots(ch);recalcTeamRoleBonuses();renderTeamRoleBonuses();renderStats();renderDamageStats();renderReloadStats();renderDefenseStats();renderMiscStats();renderHpStats();renderMovementStats();renderManifestStats();
 });
 
 function applyCostume(idx){
   if(isNaN(idx)||idx<0)return;
-  ST.cosIdx=idx;
+  saveState();ST.cosIdx=idx;
   ST.left=bk(5);
   ST.right=bk(5);
   ST.specs=bk(2);
@@ -6983,6 +7144,13 @@ document.getElementById("reloadLevel").addEventListener("input",function(){
   renderMovementStats();
 });
 
+document.getElementById("supportLevel").addEventListener("input",function(){
+  SUPPORT_LEVEL=Math.max(1,Math.min(9,parseInt(this.value)||1));
+  var lbl=document.getElementById("supportLevelLbl");
+  if(lbl)lbl.textContent="Lv "+SUPPORT_LEVEL;
+  renderHpStats();
+});
+
 document.getElementById("defBaseDamage").addEventListener("input",function(){
   recalcTeamRoleBonuses();
   renderTeamRoleBonuses();
@@ -6999,15 +7167,19 @@ function bindCardToggle(id,key,renderFn){
   });
 }
 bindCardToggle("cardStrike","strike",renderDamageStats);
+bindCardToggle("cardStrikeD","strikeD",renderDamageStats);
 bindCardToggle("cardAssault","assault",renderDefenseStats);
+bindCardToggle("cardAssaultD","assaultD",renderDefenseStats);
 bindCardToggle("cardRapid","rapid",renderMovementStats);
+bindCardToggle("cardRapidD","rapidD",renderMovementStats);
 bindCardToggle("cardTechnical","technical",renderReloadStats);
+bindCardToggle("cardTechnicalD","technicalD",renderReloadStats);
 bindCardToggle("cardSupport","support",renderHpStats);
+bindCardToggle("cardSupportD","supportD",renderHpStats);
 bindCardToggle("puActive","pu",function(){
   if(CARD.pu){savedPULvls.dmg=DAMAGE_LEVEL;savedPULvls.reload=RELOAD_LEVEL;DAMAGE_LEVEL=9;RELOAD_LEVEL=9;}else{DAMAGE_LEVEL=savedPULvls.dmg;RELOAD_LEVEL=savedPULvls.reload;}
   renderDamageStats();renderReloadStats();
 });
-bindCardToggle("doubleCard","double",function(){renderDamageStats();renderReloadStats();renderDefenseStats();renderMovementStats();renderHpStats();});
   document.getElementById("cardTeam").addEventListener("change",function(){
     TEAM_ROLE_BONUS_STATE.enabled=this.checked;
     var lbl=document.getElementById("lblCardTeam");
@@ -7070,6 +7242,18 @@ document.getElementById("btnUnlock").addEventListener("click",function(){
   this.style.background=bypassSlotLock?"linear-gradient(135deg,#059669,#10b981)":"linear-gradient(135deg,#d97706,#f59e0b)";
   var ch=gc();buildSlots(ch);renderStats();renderDamageStats();renderReloadStats();renderDefenseStats();renderMiscStats();renderHpStats();renderMovementStats();renderManifestStats();
 });
+document.getElementById("btnResetAll").addEventListener("click",function(){
+  if(!confirm("Reset all character builds? This cannot be undone."))return;
+  savedStates={};loadState(ST.charId);renderAll();saveState();
+});
+var tunedCharsMsg=function(){
+  var names=[];for(var k in savedStates){var s=savedStates[k];if(s&&s.left&&s.left.some(function(x){return x.tid;})){for(var i=0;i<CH.length;i++){if(CH[i].id===k){names.push(CH[i].n);break;}}}}
+  return names.length?"You have builds tuned for: "+names.join(", ")+". Save before leaving?":"";
+};
+window.addEventListener("beforeunload",function(e){
+  var msg=tunedCharsMsg();if(!msg)return;
+  e.preventDefault();e.returnValue=msg;return msg;
+});
 // Save/Load builds
 function getSaves(){try{return JSON.parse(localStorage.getItem('mhurSaves')||'[]');}catch(e){return[];}}
 function setSaves(s){localStorage.setItem('mhurSaves',JSON.stringify(s));}
@@ -7129,6 +7313,68 @@ Promise.all([loadNormalTuningData(),loadDamageTablesData()]).then(function(){
     btn.style.background=bypassSlotLock?"linear-gradient(135deg,#059669,#10b981)":"linear-gradient(135deg,#d97706,#f59e0b)";
   }
   renderAll();
+  // First-time tutorial
+  if(!localStorage.getItem('mhurTutorialDone')){
+    setTimeout(function(){
+      var steps=[
+        {sel:'.title',msg:'<b>Welcome to the MHUR T.U.N.I.N.G. Planner!</b><br>This tool lets you plan and optimize your character builds. Click <b>Next</b> for a quick tour.',pos:'bottom'},
+        {sel:'.left .grp-ttl',msg:'<b>Character Selection</b><br>Pick any character from the Hero or Villain grids. Each has unique stats and tuning slots.',pos:'bottom'},
+        {sel:'.cd-info',msg:'<b>Character Details</b><br>Shows HP, GP, Down HP, and available battle styles/costumes for the selected character.',pos:'right'},
+        {sel:'.tpanel',msg:'<b>Tuning Memory Slots</b><br>10 Normal slots (Left/Right) + 2 Special slots. Equip tuning memories here to boost your stats.',pos:'top'},
+        {sel:'.dpanel',msg:'<b>Damage Calculator</b><br>Shows skill damage with your tuning bonuses applied. Toggle PU/PC and Ability Cards below.',pos:'top'},
+        {sel:'#lblPuActive',msg:'<b>PU/PC Mode</b><br>Toggle Plus Ultra to max all skill levels and get +20% damage & +50% reload speed.',pos:'right'},
+        {sel:'.spanel',msg:'<b>Stat Summary</b><br>See all your active tuning bonuses and total damage increases in one place.',pos:'top'},
+        {sel:'.bot',msg:'<b>Export & Share</b><br>Name your build, export a code to share, or import someone else\'s build. <br>Post it on the <b>Forum</b> tab to share with the community!',pos:'top'},
+      ];
+      var step=0, tutorialEl=null, overlayEl=null, highlightEl=null;
+      function showTutorialStep(){
+        if(!steps[step]){endTutorial();return;}
+        var s=steps[step], el=document.querySelector(s.sel);
+        if(!el){step++;showTutorialStep();return;}
+        // Remove old elements
+        if(tutorialEl)tutorialEl.remove();
+        if(overlayEl)overlayEl.remove();
+        if(highlightEl)highlightEl.remove();
+        // Create overlay
+        overlayEl=document.createElement('div');
+        overlayEl.style.cssText='position:fixed;inset:0;z-index:99997;background:rgba(0,0,0,.5);pointer-events:auto;';
+        overlayEl.onclick=function(e){if(e.target===overlayEl)endTutorial();};
+        document.body.appendChild(overlayEl);
+        // Scroll element into view
+        el.scrollIntoView({behavior:'smooth',block:'center'});
+        // Create highlight and tooltip after scroll
+        setTimeout(function(){
+        var rect=el.getBoundingClientRect();
+        highlightEl=document.createElement('div');
+        highlightEl.style.cssText='position:fixed;z-index:99998;border:3px solid #f5c800;border-radius:8px;box-shadow:0 0 0 9999px rgba(0,0,0,.45),0 0 30px rgba(245,200,0,.3);pointer-events:none;animation:glowPulse 2s ease-in-out infinite;';
+        highlightEl.style.left=rect.left+'px';highlightEl.style.top=rect.top+'px';
+        highlightEl.style.width=rect.width+'px';highlightEl.style.height=rect.height+'px';
+        document.body.appendChild(highlightEl);
+        tutorialEl=document.createElement('div');
+        tutorialEl.style.cssText='position:fixed;z-index:99999;background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(245,200,0,.3);border-radius:12px;padding:16px 20px;max-width:360px;box-shadow:0 10px 40px rgba(0,0,0,.5);font-size:.75rem;color:#e2e8f0;line-height:1.5;';
+        var topPos,leftPos;
+        if(s.pos==='bottom'){topPos=rect.bottom+12;leftPos=Math.max(10,Math.min(window.innerWidth-380,rect.left+rect.width/2-170));}
+        else if(s.pos==='top'){topPos=rect.top-12-200;leftPos=Math.max(10,Math.min(window.innerWidth-380,rect.left+rect.width/2-170));}
+        else if(s.pos==='right'){topPos=rect.top+rect.height/2-100;leftPos=rect.right+12;}
+        else{topPos=rect.top+rect.height/2-100;leftPos=rect.left-12-360;}
+        tutorialEl.style.top=Math.max(10,topPos)+'px';tutorialEl.style.left=Math.max(10,leftPos)+'px';
+        if(parseInt(tutorialEl.style.left)+360>window.innerWidth)tutorialEl.style.left=(window.innerWidth-370)+'px';
+        if(parseInt(tutorialEl.style.top)+200>window.innerHeight)tutorialEl.style.top=(window.innerHeight-210)+'px';
+        tutorialEl.innerHTML=s.msg+'<div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px;"><span style="font-size:.6rem;color:#64748b;">'+(step+1)+'/'+steps.length+'</span><div style="display:flex;gap:6px;"><button id="tutSkip" style="font-size:.65rem;padding:4px 10px;border-radius:5px;border:1px solid rgba(255,255,255,.1);background:transparent;color:#94a3b8;cursor:pointer;">Skip</button><button id="tutNext" style="font-size:.65rem;padding:4px 14px;border-radius:5px;border:none;background:rgba(245,200,0,.15);color:#f5c800;font-weight:700;cursor:pointer;">'+(step<steps.length-1?'Next &rarr;':'Done')+'</button></div></div>';
+        document.body.appendChild(tutorialEl);
+        document.getElementById('tutNext').onclick=function(){step++;showTutorialStep();};
+        document.getElementById('tutSkip').onclick=endTutorial;
+        }, 400);
+      }
+      function endTutorial(){
+        localStorage.setItem('mhurTutorialDone','1');
+        if(tutorialEl)tutorialEl.remove();
+        if(overlayEl)overlayEl.remove();
+        if(highlightEl)highlightEl.remove();
+      }
+      showTutorialStep();
+    }, 800);
+  }
 });
 // Click burst effect
 document.addEventListener('click',function(e){
@@ -7162,13 +7408,17 @@ document.querySelectorAll('.tab-btn').forEach(function(btn){
 });
 // Forum init
 function initForum(){
-  var API='/api/posts',likedPosts={},sessionName=localStorage.getItem('forumName')||'',myKeys=JSON.parse(localStorage.getItem('forumKeys')||'{}');
+  var API='/api/posts',likedPosts={},sessionName=localStorage.getItem('forumUsername')||'',myKeys=JSON.parse(localStorage.getItem('forumKeys')||'{}');
+  if(!sessionName){showUsernameModal();return;}
+  var mpb=document.getElementById('myProfileBtn');
+  if(mpb){mpb.style.display='';mpb.title='My Profile';mpb.onclick=function(){showProfile(sessionName);};}
   masterKey=localStorage.getItem('mhurMasterKey')||'';
-  // Verify stored admin key
-  if(masterKey){
-    var vx=new XMLHttpRequest();vx.open('POST','/api/verify-key',true);vx.setRequestHeader('Content-Type','application/json');
-    vx.onload=function(){try{var vr=JSON.parse(vx.responseText);if(!vr||!vr.valid){masterKey='';localStorage.removeItem('mhurMasterKey');updateAdminUI();}}catch(e){masterKey='';localStorage.removeItem('mhurMasterKey');}};
-    vx.send(JSON.stringify({deleteKey:masterKey}));
+  // Check if user is admin from database
+  var checkAdminName=sessionName||localStorage.getItem('forumUsername')||'';
+  if(checkAdminName){
+    var vx2=new XMLHttpRequest();vx2.open('GET','/api/check-user?name='+encodeURIComponent(checkAdminName),true);
+    vx2.onload=function(){try{var vr2=JSON.parse(vx2.responseText);if(vr2&&vr2.admin>=1){localStorage.setItem('forumIsAdmin','1');masterKey=localStorage.getItem('mhurMasterKey')||'admin';if(vr2.admin>=2){localStorage.setItem('forumIsOwner','1');}else{localStorage.removeItem('forumIsOwner');}}else{localStorage.removeItem('forumIsAdmin');localStorage.removeItem('forumIsOwner');}updateAdminUI();if(window.forumBack&&typeof window.forumBack==='function')window.forumBack();}catch(e){}};
+    vx2.send();
   }
   try{var likedLS=JSON.parse(localStorage.getItem('mhurLiked')||'{}');for(var k in likedLS)if(likedLS[k])likedPosts[k]=true;}catch(e){}
   function genKey(){return Math.random().toString(36).slice(2)+Math.random().toString(36).slice(2);}
@@ -7194,10 +7444,10 @@ function initForum(){
       return'<div style="position:relative;overflow:hidden;border-radius:8px;aspect-ratio:16/9;display:flex;align-items:flex-end;margin-bottom:8px;background:'+bg+';border:1px solid rgba(255,255,255,.08);">'+
         (imgSrc?'<img src="'+imgSrc+'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:.85;">':'')+
         '<div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.7));"></div>'+
-        '<div style="position:relative;z-index:2;display:flex;align-items:center;gap:6px;padding:6px 10px;width:100%;">'+
-        '<span style="font-size:.7rem;font-weight:900;color:#fff;text-shadow:0 0 8px rgba(0,0,0,.5);">'+esc(ch.n)+'</span>'+
-        '<span style="font-size:.52rem;font-weight:900;text-transform:uppercase;background:'+roleColor+';color:#fff;border-radius:3px;padding:1px 5px;">'+esc(dispRole)+'</span>'+
-        '<span style="font-size:.5rem;color:rgba(255,255,255,.5);margin-left:auto;">'+(p.styleIdx>0?'Style '+(p.styleIdx):'Original')+'</span>'+
+        '<div style="position:relative;z-index:2;display:flex;align-items:center;gap:8px;padding:8px 12px;width:100%;">'+
+        '<span style="font-size:.95rem;font-weight:900;color:#fff;text-shadow:0 0 8px rgba(0,0,0,.5);">'+esc(ch.n)+'</span>'+
+        '<span style="font-size:.7rem;font-weight:900;text-transform:uppercase;background:'+roleColor+';color:#fff;border-radius:3px;padding:2px 7px;">'+esc(dispRole)+'</span>'+
+        
         '</div></div>';
     }catch(e){return'';}
   }
@@ -7210,11 +7460,46 @@ function initForum(){
   function mediaHtml(url){
     if(!url)return'';
     if(url.match(/\.(mp4|webm|ogg)$/i))return'<video src="'+esc(url)+'" controls style="width:100%;border-radius:8px;margin-bottom:8px;max-height:300px;background:#000;"></video>';
-    return'<div style="position:relative;overflow:hidden;border-radius:8px;aspect-ratio:16/9;margin-bottom:8px;background:rgba(0,0,0,.2);"><img src="'+esc(url)+'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display=\'none\'"></div>';
+    return'<div style="position:relative;overflow:hidden;border-radius:8px;aspect-ratio:16/9;margin-bottom:8px;background:rgba(0,0,0,.2);"><img src="'+esc(url)+'" onclick="expandImage(this.src)" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;cursor:pointer;" onerror="this.style.display=\'none\'"></div>';
+  }
+  function showUsernameModal(){
+    r('<div style="position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;"><div style="background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:30px;max-width:360px;width:90%;text-align:center;"><div style="font-size:1.5rem;margin-bottom:4px;">&#128172;</div><h2 style="color:#f5c800;font-size:1.1rem;margin-bottom:4px;">Welcome to the Forum!</h2><p style="color:#94a3b8;font-size:.75rem;margin-bottom:16px;">Choose a unique username to start posting.</p><div style="position:relative;width:72px;height:72px;margin:0 auto 12px;cursor:pointer;" id="regAvatarWrap"><img id="regAvatarPreview" src="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'72\' height=\'72\'%3E%3Crect width=\'72\' height=\'72\' fill=\'%23333\' rx=\'36\'/%3E%3Ctext x=\'36\' y=\'44\' font-size=\'30\' text-anchor=\'middle\' fill=\'%2394a3b8\'%3E%3F%3C/text%3E%3C/svg%3E" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.15);"><div style="position:absolute;bottom:0;right:0;background:#f5c800;color:#000;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:900;border:2px solid #1e1e2e;">+</div></div><input type="file" id="regAvatarFile" accept="image/png,image/jpeg,image/gif,image/webp" style="display:none;"><input id="regName" class="forum-input" style="width:100%;text-align:center;font-size:.9rem;padding:8px;margin-bottom:8px;" placeholder="Your username..." maxlength="20" autocomplete="off"><div id="regErr" style="color:#ef4444;font-size:.65rem;margin-bottom:8px;min-height:1.2em;"></div><button class="forum-btn" id="regBtn" style="width:100%;font-size:.8rem;padding:8px;">Register</button><p style="color:#475569;font-size:.55rem;margin-top:8px;">2-20 characters, letters, numbers, underscores</p></div></div>');
+    document.getElementById('regName').focus();
+    document.getElementById('regName').addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('regBtn').click();});
+    var regAvatarData='';
+    document.getElementById('regAvatarWrap').onclick=function(){document.getElementById('regAvatarFile').click();};
+    document.getElementById('regAvatarFile').onchange=function(){
+      var file=this.files[0];if(!file)return;
+      var reader=new FileReader();
+      reader.onload=function(e){
+        regAvatarData=e.target.result;
+        document.getElementById('regAvatarPreview').src=regAvatarData;
+      };
+      reader.readAsDataURL(file);
+    };
+    document.getElementById('regBtn').addEventListener('click',function(){
+      var name=document.getElementById('regName').value.trim();
+      if(name.length<2||name.length>20){document.getElementById('regErr').textContent='Must be 2-20 characters.';return;}
+      if(!/^[a-zA-Z0-9_]+$/.test(name)){document.getElementById('regErr').textContent='Letters, numbers, underscores only.';return;}
+      var btn=this;btn.disabled=true;btn.textContent='Checking...';
+      var x=new XMLHttpRequest();x.open('POST','/api/register-user',true);x.setRequestHeader('Content-Type','application/json');
+      x.onload=function(){
+        try{var r=JSON.parse(x.responseText);
+          if(r&&r.registered){
+            if(regAvatarData)localStorage.setItem('forumAvatar',regAvatarData);
+            localStorage.setItem('forumUsername',name);sessionName=name;initForum();return;
+          }
+          document.getElementById('regErr').textContent=r&&r.error||'Registration failed.';
+        }catch(e){document.getElementById('regErr').textContent='Server error.';}
+        btn.disabled=false;btn.textContent='Register';
+      };
+      x.onerror=function(){document.getElementById('regErr').textContent='Network error.';btn.disabled=false;btn.textContent='Register';};
+      x.send(JSON.stringify({username:name,avatar:regAvatarData}));
+    });
   }
   function skeleton(){return'<div style="padding:4px 0;"><div class="skel skel-banner"></div><div class="skel skel-line"></div><div class="skel skel-line-sm"></div><div class="skel skel-line" style="width:50%;"></div></div>';}
-  var el=document.getElementById('forumContent');
-  function r(h){el.innerHTML=h;}
+  var _fel=document.getElementById('forumContent');
+  function r(h){var el=_fel||document.getElementById('forumContent');if(el)el.innerHTML=h;}
   function showHome(sort,page,filter){
     page=page||1;sort=sort||'hot';filter=filter||'all';
     r(skeleton()+skeleton()+skeleton());
@@ -7227,7 +7512,7 @@ function initForum(){
       var items=d.items;
       if(filter==='mylikes'){var likedItems=JSON.parse(localStorage.getItem('mhurLiked')||'{}');items=items.filter(function(p){return likedItems[p.id];});}
       if(filter==='myposts'){items=items.filter(function(p){return myKeys[p.id];});}
-      var total=items.length,totalLikes=0,charCount={},catCount={},tags={},totalPages=Math.ceil(Math.max(1,total)/20);
+      var total=d.total||items.length,totalLikes=0,charCount={},catCount={},tags={},totalPages=Math.ceil(Math.max(1,total)/20);
       items.forEach(function(p){totalLikes+=p.likes||0;(p.tags||[]).forEach(function(t){tags[t]=(tags[t]||0)+1;});if(p.category)catCount[p.category]=(catCount[p.category]||0)+1;
         try{var bc=JSON.parse(decodeURIComponent(escape(atob(p.buildCode||''))));if(bc.charId)charCount[bc.charId]=(charCount[bc.charId]||0)+1;}catch(e){}
       });
@@ -7241,7 +7526,7 @@ function initForum(){
         ['all','mylikes','myposts'].map(function(f){return'<button class="tab-btn '+(filter===f?'active':'')+'" data-ffilter="'+f+'" style="font-size:.62rem;padding:3px 8px;">'+(f==='all'?'All':f==='mylikes'?'&#10084; Liked':f==='myposts'?'&#128221; Mine':'')+'</button>';}).join('')+
         '<div style="flex:1;min-width:140px;display:flex;gap:4px;"><input id="fq" class="forum-input" style="flex:1;font-size:.7rem;padding:5px 8px;" placeholder="Search..."><button class="tab-btn" id="fsq" style="font-size:.68rem;padding:4px 10px;">&#128269;</button></div><button class="forum-btn" id="newPostBtn" style="font-size:.68rem;padding:4px 10px;">+ New Post</button></div>';
       if(!items.length)h+='<div style="text-align:center;padding:60px 20px;color:#475569;"><div style="font-size:3rem;margin-bottom:12px;">'+(filter==='mylikes'?'&#10084;':filter==='myposts'?'&#128221;':'&#128221;')+'</div><div style="font-size:.9rem;font-weight:700;color:#94a3b8;margin-bottom:4px;">'+(filter==='mylikes'?'No liked builds yet':filter==='myposts'?'You haven\'t posted anything yet':'No builds posted yet')+'</div><div style="font-size:.72rem;color:#64748b;margin-bottom:14px;">'+(filter==='mylikes'?'Like some builds to see them here!':filter==='myposts'?'Create your first build to get started!':'Be the first to share your build!')+'</div>'+(filter==='all'?'<button class="forum-btn" id="newPostBtn2" style="font-size:.72rem;">+ Create Your First Build</button>':'')+'</div>';
-      items.forEach(function(p){var cn=charNameFromCode(p.buildCode),catLabel={'guide':'&#128218;','showcase':'&#127775;','question':'&#128173;','fun':'&#127918;'}[p.category]||'';h+='<div class="forum-post" data-id="'+p.id+'" style="'+(p.pinned?'border-left:3px solid #f5c800;':'')+'">'+(p.pinned?'<div style="font-size:.5rem;color:#f5c800;font-weight:900;text-transform:uppercase;letter-spacing:.04em;margin-bottom:2px;">&#128204; Pinned</div>':'')+(p.image?mediaHtml(p.image):charBanner(p.buildCode))+'<div style="font-size:.85rem;font-weight:700;color:#f1f5f9;margin-bottom:3px;">'+(catLabel?'<span style="margin-right:3px;">'+catLabel+'</span>':'')+(cn?'<span style="font-size:.58rem;font-weight:700;background:rgba(245,200,0,.12);color:#f5c800;border-radius:3px;padding:1px 5px;margin-right:4px;">'+esc(cn)+'</span> ':'')+esc(p.title)+'</div><div style="font-size:.64rem;color:#64748b;display:flex;gap:12px;flex-wrap:wrap;"><span>&#128100; '+esc(p.author||'Anonymous')+'</span><span class="flc-'+p.id+'">&#128147; '+p.likes+'</span><span class="fcc-'+p.id+'">&#128172; '+(p.comments||0)+'</span><span>&#128337; '+timeAgo(p.createdAt)+'</span>'+(masterKey?'<span class="pin-btn" data-id="'+p.id+'" style="cursor:pointer;color:'+(p.pinned?'#f5c800':'#64748b')+';font-size:.55rem;">'+(p.pinned?'&#128204; Unpin':'&#128204; Pin')+'</span>':'')+'</div>'+(p.tags&&p.tags.length?'<div class="forum-tags" style="display:flex;gap:4px;flex-wrap:wrap;margin-top:4px;">'+p.tags.map(function(t){return'<span class="forum-tag">'+esc(t)+'</span>';}).join('')+'</div>':'')+'</div>';});
+      items.forEach(function(p){var cn=charNameFromCode(p.buildCode),catLabel={'guide':'&#128218;','showcase':'&#127775;','question':'&#128173;','fun':'&#127918;'}[p.category]||'',pa=esc(p.author||'Anonymous');h+='<div class="forum-post" data-id="'+p.id+'" style="'+(p.pinned?'border-left:3px solid #f5c800;':'')+'">'+(p.pinned?'<div style="font-size:.5rem;color:#f5c800;font-weight:900;text-transform:uppercase;letter-spacing:.04em;margin-bottom:2px;">&#128204; Pinned</div>':'')+(p.image?mediaHtml(p.image):charBanner(p.buildCode))+'<div style="font-size:.85rem;font-weight:700;color:#f1f5f9;margin-bottom:3px;">'+(catLabel?'<span style="margin-right:3px;">'+catLabel+'</span>':'')+(cn?'<span style="font-size:.58rem;font-weight:700;background:rgba(245,200,0,.12);color:#f5c800;border-radius:3px;padding:1px 5px;margin-right:4px;">'+esc(cn)+'</span> ':'')+esc(p.title)+'</div><div style="font-size:.64rem;color:#64748b;display:flex;gap:12px;flex-wrap:wrap;"><span style="cursor:pointer;'+(window.userStyle?window.userStyle(p.author):'')+'" onclick="event.stopPropagation();window.forumShowProfile&&window.forumShowProfile(\''+pa+'\');">'+(window.avatarImg?window.avatarImg(p.author):'')+'&#128100; '+pa+'</span><span class="flc-'+p.id+'">&#128147; '+p.likes+'</span><span class="fcc-'+p.id+'">&#128172; '+(p.comments||0)+'</span><span>&#128337; '+timeAgo(p.createdAt)+'</span>'+(masterKey?'<span class="pin-btn" data-id="'+p.id+'" style="cursor:pointer;color:'+(p.pinned?'#f5c800':'#64748b')+';font-size:.55rem;">'+(p.pinned?'&#128204; Unpin':'&#128204; Pin')+'</span>':'')+'</div>'+(p.tags&&p.tags.length?'<div class="forum-tags" style="display:flex;gap:4px;flex-wrap:wrap;margin-top:4px;">'+p.tags.map(function(t){return'<span class="forum-tag">'+esc(t)+'</span>';}).join('')+'</div>':'')+'</div>';});
       if(totalPages>1){
         h+='<div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:14px;flex-wrap:wrap;">';
         h+='<button class="tab-btn" data-gopage="'+(page-1)+'" style="font-size:.62rem;padding:3px 10px;'+(page<=1?'opacity:.3;pointer-events:none;':'')+'">&#8592; Prev</button>';
@@ -7258,7 +7543,7 @@ function initForum(){
       document.querySelectorAll('[data-tag]').forEach(function(e){e.addEventListener('click',function(){searchPosts(this.getAttribute('data-tag'));});});
       document.getElementById('fsq').addEventListener('click',function(){searchPosts(document.getElementById('fq').value.trim());});
       document.getElementById('fq').addEventListener('keydown',function(e){if(e.key==='Enter')searchPosts(this.value.trim());});
-      (document.getElementById('newPostBtn')||document.getElementById('newPostBtn2'))&&(document.getElementById('newPostBtn')||document.getElementById('newPostBtn2')).addEventListener('click',showNewForm);
+      document.querySelectorAll('#newPostBtn,#newPostBtn2').forEach(function(el){el.addEventListener('click',showNewForm);});
       checkNotifs(d.items);
     }
   }
@@ -7289,7 +7574,7 @@ function initForum(){
     api2('/search?q='+encodeURIComponent(q),'GET',null,function(items){
       if(!items||!items.length){r('<div style="text-align:center;padding:60px 20px;color:#475569;"><div style="font-size:2.5rem;margin-bottom:10px;">&#128270;</div><div style="font-size:.85rem;font-weight:700;color:#94a3b8;margin-bottom:4px;">No results found</div><div style="font-size:.7rem;color:#64748b;margin-bottom:12px;">Try different keywords or tags</div><button class="tab-btn" id="b1" onclick="window.forumBack()" style="font-size:.7rem;padding:4px 10px;">&#8592; Back to Browse</button></div>');return;}
       var h='<div style="margin-bottom:10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;"><span style="font-size:.7rem;color:#64748b;">Results for "'+esc(q)+'" ('+items.length+')</span><button class="tab-btn" id="b2" onclick="window.forumBack()" style="font-size:.7rem;padding:4px 10px;">&#8592; Back</button></div>';
-      items.forEach(function(p){h+='<div class="forum-post" data-id="'+p.id+'"><div style="font-size:.85rem;font-weight:700;color:#f1f5f9;">'+esc(p.title)+'</div><div style="font-size:.64rem;color:#64748b;display:flex;gap:12px;flex-wrap:wrap;"><span>&#128100; '+esc(p.author||'Anonymous')+'</span><span>&#128147; '+p.likes+'</span><span>&#128172; '+(p.comments||0)+'</span><span>&#128337; '+timeAgo(p.createdAt)+'</span></div>'+(p.tags&&p.tags.length?'<div class="forum-tags" style="display:flex;gap:4px;flex-wrap:wrap;margin-top:4px;">'+p.tags.map(function(t){return'<span class="forum-tag">'+esc(t)+'</span>';}).join('')+'</div>':'')+'</div>';});
+      items.forEach(function(p){h+='<div class="forum-post" data-id="'+p.id+'"><div style="font-size:.85rem;font-weight:700;color:#f1f5f9;">'+esc(p.title)+'</div><div style="font-size:.64rem;color:#64748b;display:flex;gap:12px;flex-wrap:wrap;"><span style="cursor:pointer;" onclick="event.stopPropagation();window.forumShowProfile&&window.forumShowProfile(\''+esc(p.author||'Anonymous')+'\');">'+(window.avatarImg?window.avatarImg(p.author):'')+'&#128100; '+esc(p.author||'Anonymous')+'</span><span>&#128147; '+p.likes+'</span><span>&#128172; '+(p.comments||0)+'</span><span>&#128337; '+timeAgo(p.createdAt)+'</span></div>'+(p.tags&&p.tags.length?'<div class="forum-tags" style="display:flex;gap:4px;flex-wrap:wrap;margin-top:4px;">'+p.tags.map(function(t){return'<span class="forum-tag">'+esc(t)+'</span>';}).join('')+'</div>':'')+'</div>';});
       r(h);
       document.querySelectorAll('#forumContent .forum-post').forEach(function(e){e.addEventListener('click',function(){showPost(this.getAttribute('data-id'));});});
     });
@@ -7298,11 +7583,11 @@ function initForum(){
     r(skeleton()+skeleton()+skeleton());
     api2('/'+id,'GET',null,function(post){
       if(!post||post.error){r('<div style="text-align:center;padding:40px 0;color:#ef4444;">Not found. <button class="tab-btn" onclick="window.forumBack()">&#8592; Back</button></div>');return;}
-      var liked=likedPosts[id],canMod=myKeys[id]||masterKey,catLabel={'guide':'&#128218; Guide','showcase':'&#127775; Showcase','question':'&#128173; Question','fun':'&#127918; Fun'}[post.category]||'';var h='<button class="tab-btn" id="b4" style="font-size:.7rem;padding:4px 10px;margin-bottom:8px;">&#8592; All Posts</button><div class="forum-card" style="'+(post.pinned?'border-left:3px solid #f5c800;':'')+'">'+(post.pinned?'<div style="font-size:.55rem;color:#f5c800;font-weight:900;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px;">&#128204; Pinned</div>':'')+(post.image?mediaHtml(post.image):charBanner(post.buildCode))+(catLabel?'<div style="font-size:.6rem;color:#64748b;margin-bottom:4px;">'+catLabel+'</div>':'')+'<h2 style="font-size:1.1rem;font-weight:900;color:#f5c800;"><span id="postTitle">'+esc(post.title)+'</span></h2><div style="color:#64748b;font-size:.7rem;margin-bottom:8px;">by '+esc(post.author||'Anonymous')+'</div>'+(post.tags&&post.tags.length?'<div id="postTags" class="forum-tags" style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:8px;">'+post.tags.map(function(t){return'<span class="forum-tag">'+esc(t)+'</span>';}).join('')+'</div>':'')+'<div id="postDesc" style="color:#94a3b8;font-size:.74rem;line-height:1.4;margin-bottom:8px;">'+(post.description?esc(post.description):'')+'</div>'+(post.editedAt?'<div style="font-size:.55rem;color:#64748b;margin-bottom:4px;">(edited)</div>':'')+'<div style="display:flex;gap:12px;font-size:.66rem;color:#64748b;margin-bottom:8px;flex-wrap:wrap;"><span id="flc">&#128147; '+(post.likes||0)+'</span><span>&#128172; '+(post.comments||[]).length+'</span><span>&#128337; '+timeAgo(post.createdAt)+'</span><span>&#128065; '+(post.views||0)+'</span></div>'+(post.buildCode?'<div id="fbp" style="background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.05);border-radius:8px;padding:10px 12px;font-size:.65rem;margin-bottom:8px;"></div>':'')+'<div style="display:flex;gap:6px;flex-wrap:wrap;"><button class="tab-btn '+(liked?'active':'')+'" id="flb" style="font-size:.68rem;padding:4px 10px;">'+(liked?'&#10004; Liked':'&#10084; Like')+'</button>'+(canMod?'<button class="tab-btn" id="fep" style="font-size:.6rem;padding:3px 8px;">&#9998; Edit</button>':'')+(canMod?'<button class="forum-btn forum-btn-danger" id="fdp" style="font-size:.65rem;padding:4px 10px;">&#128465; Delete</button>':'')+(masterKey?'<button class="tab-btn" id="fpin" style="font-size:.6rem;padding:3px 8px;">'+(post.pinned?'&#128204; Unpin':'&#128204; Pin')+'</button>':'')+'</div></div>';
-      h+='<div style="font-size:.75rem;font-weight:700;color:#94a3b8;margin:10px 0 6px;">Comments</div><div style="display:flex;gap:6px;margin-bottom:8px;flex-wrap:wrap;"><input id="fcn" class="forum-input" style="width:90px;" placeholder="Name" value="'+esc(sessionName)+'"><div style="flex:1;display:flex;gap:6px;min-width:180px;"><input id="fci" class="forum-input" style="flex:1;" placeholder="Write..."><button class="forum-btn" id="fcb" style="font-size:.65rem;">Post</button></div></div><div id="fcmts">';
+      var liked=likedPosts[id],canMod=myKeys[id]||masterKey,catLabel={'guide':'&#128218; Guide','showcase':'&#127775; Showcase','question':'&#128173; Question','fun':'&#127918; Fun'}[post.category]||'';var h='<button class="tab-btn" id="b4" style="font-size:.7rem;padding:4px 10px;margin-bottom:8px;">&#8592; All Posts</button><div class="forum-card" style="'+(post.pinned?'border-left:3px solid #f5c800;':'')+'">'+(post.pinned?'<div style="font-size:.55rem;color:#f5c800;font-weight:900;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px;">&#128204; Pinned</div>':'')+(post.image?mediaHtml(post.image):charBanner(post.buildCode))+(catLabel?'<div style="font-size:.6rem;color:#64748b;margin-bottom:4px;">'+catLabel+'</div>':'')+'<h2 style="font-size:1.1rem;font-weight:900;color:#f5c800;"><span id="postTitle">'+esc(post.title)+'</span></h2><div style="color:#64748b;font-size:.7rem;margin-bottom:8px;">by '+(window.avatarImg?window.avatarImg(post.author):'')+'<span style="cursor:pointer;'+(window.userStyle?window.userStyle(post.author):'color:#f5c800;')+'" onclick="event.stopPropagation();window.forumShowProfile&&window.forumShowProfile(\''+esc(post.author||'Anonymous')+'\');">'+esc(post.author||'Anonymous')+'</span></div>'+(post.tags&&post.tags.length?'<div id="postTags" class="forum-tags" style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:8px;">'+post.tags.map(function(t){return'<span class="forum-tag">'+esc(t)+'</span>';}).join('')+'</div>':'')+'<div id="postDesc" style="color:#94a3b8;font-size:.74rem;line-height:1.4;margin-bottom:8px;">'+(post.description?esc(post.description):'')+'</div>'+(post.editedAt?'<div style="font-size:.55rem;color:#64748b;margin-bottom:4px;">(edited)</div>':'')+'<div style="display:flex;gap:12px;font-size:.66rem;color:#64748b;margin-bottom:8px;flex-wrap:wrap;"><span id="flc">&#128147; '+(post.likes||0)+'</span><span>&#128172; '+(post.comments||[]).length+'</span><span>&#128337; '+timeAgo(post.createdAt)+'</span><span>&#128065; '+(post.views||0)+'</span></div>'+(post.buildCode?'<div id="fbp" style="background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.05);border-radius:8px;padding:10px 12px;font-size:.65rem;margin-bottom:8px;"></div>':'')+'<div style="display:flex;gap:6px;flex-wrap:wrap;"><button class="tab-btn '+(liked?'active':'')+'" id="flb" style="font-size:.68rem;padding:4px 10px;">'+(liked?'&#10004; Liked':'&#10084; Like')+'</button>'+(canMod?'<button class="tab-btn" id="fep" style="font-size:.6rem;padding:3px 8px;">&#9998; Edit</button>':'')+(canMod?'<button class="forum-btn forum-btn-danger" id="fdp" style="font-size:.65rem;padding:4px 10px;">&#128465; Delete</button>':'')+(masterKey?'<button class="tab-btn" id="fpin" style="font-size:.6rem;padding:3px 8px;">'+(post.pinned?'&#128204; Unpin':'&#128204; Pin')+'</button>':'')+'</div></div>';
+      h+='<div style="font-size:.75rem;font-weight:700;color:#94a3b8;margin:10px 0 6px;">Comments</div><div style="display:flex;gap:6px;margin-bottom:4px;flex-wrap:wrap;"><div style="display:flex;align-items:center;gap:6px;">'+(localStorage.getItem('forumAvatar')?'<img src="'+esc(localStorage.getItem('forumAvatar'))+'" style="width:22px;height:22px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.1);">':'')+'<span style="font-size:.72rem;font-weight:700;color:#f5c800;">'+esc(sessionName)+'</span></div><div style="flex:1;display:flex;gap:6px;min-width:180px;"><input id="fci" class="forum-input" style="flex:1;" placeholder="Write a comment..."><button class="tab-btn" id="fciu" style="font-size:.5rem;padding:2px 5px;">&#128206;</button><button class="forum-btn" id="fcb" style="font-size:.65rem;">Post</button></div></div><input id="fciuimg" type="hidden"><input id="fciufile" type="file" accept="image/png,image/jpeg,image/gif,image/webp" style="display:none;"><div id="fciuprev" style="display:none;margin-bottom:6px;max-width:120px;border-radius:4px;overflow:hidden;position:relative;"><img id="fciupreview" style="width:100%;display:block;"><span id="fciurm" style="position:absolute;top:1px;right:1px;background:rgba(0,0,0,.6);color:#fff;border-radius:50%;width:16px;height:16px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.55rem;">&times;</span></div><div id="fcmts">';
       function rc(cs){if(!cs||!cs.length)return'<div style="font-size:.68rem;color:#475569;padding:6px 0;">No comments.</div>';
-        return cs.map(function(c){var ck=myKeys[id+'_c_'+c.id],r='<div style="font-size:.68rem;color:#94a3b8;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.03);"><span style="color:#f5c800;font-weight:700;font-size:.6rem;">'+esc(c.author||'Anonymous')+'</span> <span class="cmt-text-'+c.id+'">'+esc(c.text)+'</span>'+(c.editedAt?'<span style="font-size:.48rem;color:#64748b;"> (edited)</span>':'')+'<span style="font-size:.52rem;color:#475569;margin-left:4px;">'+timeAgo(c.createdAt)+'</span><button class="frb" data-cid="'+c.id+'" style="font-size:.55rem;color:#64748b;cursor:pointer;margin-left:6px;background:none;border:none;padding:1px 3px;">Reply</button>'+(ck?'<button class="fec" style="font-size:.52rem;color:#64748b;cursor:pointer;background:none;border:none;margin-left:3px;" data-cid="'+c.id+'">&#9998;</button>':'')+(ck?'<button class="fdc" style="font-size:.52rem;color:#ef4444;cursor:pointer;background:none;border:none;margin-left:3px;" data-cid="'+c.id+'">&#128465;</button>':'');
-        if(c.replies&&c.replies.length)r+='<div style="margin-left:18px;margin-top:4px;padding-left:10px;border-left:2px solid rgba(255,255,255,.04);">'+c.replies.map(function(r2){var rk=myKeys[id+'_c_'+r2.id];return'<div style="padding:3px 0;"><span style="color:#f5c800;font-weight:700;font-size:.6rem;">'+esc(r2.author||'Anonymous')+'</span> <span class="cmt-text-'+r2.id+'">'+esc(r2.text)+'</span>'+(r2.editedAt?'<span style="font-size:.48rem;color:#64748b;"> (edited)</span>':'')+'<span style="font-size:.52rem;color:#475569;margin-left:4px;">'+timeAgo(r2.createdAt)+'</span>'+(rk?'<button class="fec" style="font-size:.52rem;color:#64748b;cursor:pointer;background:none;border:none;margin-left:3px;" data-cid="'+r2.id+'" data-reply="1">&#9998;</button>':'')+(rk?'<button class="fdc" style="font-size:.52rem;color:#ef4444;cursor:pointer;background:none;border:none;margin-left:3px;" data-cid="'+r2.id+'" data-reply="1">&#128465;</button>':'')+'</div>';}).join('')+'</div>';
+        return cs.map(function(c){var ck=myKeys[id+'_c_'+c.id],ca=c.author||'Anonymous',r='<div style="font-size:.85rem;color:#cbd5e1;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.03);"><span style="color:#f5c800;font-weight:700;font-size:.72rem;cursor:pointer;'+(window.userStyle?window.userStyle(ca):'')+'" onclick="event.stopPropagation();window.forumShowProfile&&window.forumShowProfile(\''+esc(ca)+'\');">'+(window.avatarImg?window.avatarImg(ca):'')+esc(ca)+'</span> <span class="cmt-text-'+c.id+'">'+esc(c.text)+'</span>'+(c.editedAt?'<span style="font-size:.6rem;color:#64748b;"> (edited)</span>':'')+'<span style="font-size:.62rem;color:#475569;margin-left:6px;">'+timeAgo(c.createdAt)+'</span><button class="frb" data-cid="'+c.id+'" style="font-size:.6rem;color:#64748b;cursor:pointer;margin-left:8px;background:none;border:none;padding:1px 4px;">Reply</button>'+(ck?'<button class="fec" style="font-size:.6rem;color:#64748b;cursor:pointer;background:none;border:none;margin-left:3px;" data-cid="'+c.id+'">&#9998;</button>':'')+(ck?'<button class="fdc" style="font-size:.6rem;color:#ef4444;cursor:pointer;background:none;border:none;margin-left:3px;" data-cid="'+c.id+'">&#128465;</button>':'')+(c.image?'<div style="margin-top:4px;"><img src="'+esc(c.image)+'" onclick="expandImage(this.src)" style="max-width:200px;max-height:150px;border-radius:4px;object-fit:cover;cursor:pointer;"></div>':'');
+        if(c.replies&&c.replies.length)r+='<div style="margin-left:18px;margin-top:4px;padding-left:10px;border-left:2px solid rgba(255,255,255,.04);">'+c.replies.map(function(r2){var rk=myKeys[id+'_c_'+r2.id],r2a=r2.author||'Anonymous';return'<div style="padding:4px 0;"><span style="color:#f5c800;font-weight:700;font-size:.72rem;cursor:pointer;'+(window.userStyle?window.userStyle(r2a):'')+'" onclick="event.stopPropagation();window.forumShowProfile&&window.forumShowProfile(\''+esc(r2a)+'\');">'+(window.avatarImg?window.avatarImg(r2a):'')+esc(r2a)+'</span> <span style="font-size:.85rem;color:#cbd5e1;" class="cmt-text-'+r2.id+'">'+esc(r2.text)+'</span>'+(r2.editedAt?'<span style="font-size:.6rem;color:#64748b;"> (edited)</span>':'')+'<span style="font-size:.62rem;color:#475569;margin-left:6px;">'+timeAgo(r2.createdAt)+'</span>'+(rk?'<button class="fec" style="font-size:.6rem;color:#64748b;cursor:pointer;background:none;border:none;margin-left:3px;" data-cid="'+r2.id+'" data-reply="1">&#9998;</button>':'')+(rk?'<button class="fdc" style="font-size:.6rem;color:#ef4444;cursor:pointer;background:none;border:none;margin-left:3px;" data-cid="'+r2.id+'" data-reply="1">&#128465;</button>':'')+(r2.image?'<div style="margin-top:4px;"><img src="'+esc(r2.image)+'" onclick="expandImage(this.src)" style="max-width:160px;max-height:120px;border-radius:4px;object-fit:cover;cursor:pointer;"></div>':'')+'</div>';}).join('')+'</div>';
         r+='<div class="frp" id="frp-'+c.id+'" style="display:none;margin:3px 0 3px 18px;"><input class="fri" style="width:calc(100% - 66px);background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.06);border-radius:4px;padding:3px 6px;font-size:.64rem;color:#e2e8f0;" placeholder="Reply..."><button class="frbs" style="background:rgba(245,200,0,.12);color:#f5c800;border:1px solid rgba(245,200,0,.2);border-radius:4px;padding:3px 6px;font-size:.58rem;cursor:pointer;margin-left:3px;" data-cid="'+c.id+'">Reply</button></div></div>';return r;
         }).join('');
       }
@@ -7352,7 +7637,20 @@ function initForum(){
         var newTags=prompt('Tags (comma separated):',curTags);if(newTags===null)return;
         api2('/'+id,'PUT',{title:newTitle.trim(),description:newDesc.trim(),tags:newTags.split(',').map(function(t){return t.trim();}).filter(Boolean),deleteKey:myKeys[id]||masterKey},function(r2){if(r2&&r2.edited)showPost(id);});
       });
-      document.getElementById('fcb').addEventListener('click',function(){var inp=document.getElementById('fci'),txt=inp.value.trim(),name=document.getElementById('fcn').value.trim();if(name&&name!==sessionName){sessionName=name;localStorage.setItem('forumName',name);}if(!txt)return;var ck=genKey();api2('/'+id+'/comment','POST',{text:txt,author:name,deleteKey:ck},function(r2){if(r2&&r2.id){var ks=JSON.parse(localStorage.getItem('forumKeys')||'{}');ks[id+'_c_'+r2.id]=ck;localStorage.setItem('forumKeys',JSON.stringify(ks));inp.value='';showPost(id);}});});
+      document.getElementById('fcb').addEventListener('click',function(){var inp=document.getElementById('fci'),txt=inp.value.trim(),cimg=document.getElementById('fciuimg').value;if(!txt&&!cimg)return;var ck=genKey();api2('/'+id+'/comment','POST',{text:txt,author:sessionName,deleteKey:ck,image:cimg},function(r2){if(r2&&r2.id){var ks=JSON.parse(localStorage.getItem('forumKeys')||'{}');ks[id+'_c_'+r2.id]=ck;localStorage.setItem('forumKeys',JSON.stringify(ks));inp.value='';document.getElementById('fciuimg').value='';document.getElementById('fciuprev').style.display='none';showPost(id);}});});
+      document.getElementById('fciu').addEventListener('click',function(){document.getElementById('fciufile').click();});
+      document.getElementById('fciufile').addEventListener('change',function(){
+        var file=this.files[0];if(!file)return;
+        var reader=new FileReader();
+        reader.onload=function(e){
+          var imgData=e.target.result;
+          var x=new XMLHttpRequest();x.open('POST','/api/upload',true);x.setRequestHeader('Content-Type','application/json');
+          x.onload=function(){try{var r=JSON.parse(x.responseText);if(r&&r.url){document.getElementById('fciuimg').value=r.url;document.getElementById('fciupreview').src=r.url;document.getElementById('fciuprev').style.display='block';}}catch(e){}};
+          x.send(JSON.stringify({image:imgData}));
+        };
+        reader.readAsDataURL(file);
+      });
+      document.getElementById('fciurm').addEventListener('click',function(){document.getElementById('fciuimg').value='';document.getElementById('fciuprev').style.display='none';});
       document.querySelectorAll('#forumContent .frb').forEach(function(e){e.addEventListener('click',function(){document.getElementById('frp-'+this.getAttribute('data-cid')).style.display='block';});});
       document.querySelectorAll('#forumContent .frbs').forEach(function(e){e.addEventListener('click',function(){var cid=this.getAttribute('data-cid'),inp=document.getElementById('frp-'+cid).querySelector('.fri'),txt=inp.value.trim();if(!txt)return;api2('/'+id+'/comment','POST',{text:txt,replyTo:cid},function(r2){if(r2&&r2.id){inp.value='';showPost(id);}});});});
       document.querySelectorAll('#forumContent .fdc').forEach(function(e){e.addEventListener('click',function(){var cid=this.getAttribute('data-cid'),key=myKeys[id+'_c_'+cid];if(!key||!confirm('Delete?'))return;api2('/'+id+'/comment/'+cid,'DELETE',{deleteKey:key,isReply:!!this.getAttribute('data-reply')},function(r2){if(r2&&r2.deleted){delete myKeys[id+'_c_'+cid];localStorage.setItem('forumKeys',JSON.stringify(myKeys));showPost(id);}});});});
@@ -7363,34 +7661,52 @@ function initForum(){
         if(newText===null)return;
         api2('/'+id+'/comment/'+cid,'PUT',{text:newText.trim(),deleteKey:key,isReply:!!this.getAttribute('data-reply')},function(r2){if(r2&&r2.edited)showPost(id);});
       });});
-      try{var code=post.buildCode;if(code){var p=JSON.parse(decodeURIComponent(escape(atob(code))));var bp=document.getElementById('fbp');bp.innerHTML='<div style="margin-bottom:4px;font-size:.68rem;font-weight:700;color:#f5c800;">&#128220; Tuning Layout</div><div style="display:flex;gap:10px;flex-wrap:wrap;">'+
-        ['left','right'].map(function(side){
+      try{var code=post.buildCode;if(code){var p=JSON.parse(decodeURIComponent(escape(atob(code))));var bp=document.getElementById('fbp');var rc={'strike':'#FF0000','assault':'#FFDD00','rapid':'#00C8FF','technical':'#8400FF','support':'#02DB18'};var html='<div style="margin-bottom:6px;font-size:.68rem;font-weight:900;color:#f5c800;">&#128220; Tuning Layout</div><div style="display:flex;gap:12px;flex-wrap:wrap;">';
+        ['left','right'].forEach(function(side){
           var slots=p[side]||[];
-          var html='<div style="flex:1;min-width:120px;"><div style="font-size:.55rem;color:#64748b;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px;">'+(side==='left'?'Left Memory':'Right Memory')+'</div><div style="display:flex;gap:2px;">';
+          html+='<div style="flex:1;min-width:120px;"><div style="font-size:.55rem;color:#64748b;font-weight:900;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px;">'+(side==='left'?'Left Memory':'Right Memory')+'</div><div style="display:flex;gap:3px;">';
           for(var i=0;i<5;i++){
-            var s=slots[i]||{t:'',l:1};var filled=!!s.t;var img='';
-            if(filled){var e=findNormal(s.t);var cn=e&&e.chara;if(cn)img='<img src="'+portrait(cn)+'" style="width:100%;height:100%;object-fit:cover;border-radius:3px;">';}
-            html+='<div style="flex:1;aspect-ratio:1;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:.5rem;font-weight:700;overflow:hidden;position:relative;'+(filled?'background:rgba(245,200,0,.12);border:1px solid rgba(245,200,0,.15);':'background:rgba(255,255,255,.03);color:#475569;border:1px solid rgba(255,255,255,.05);')+'">'+(img||'<span style="color:#475569;">-</span>')+'</div>';
+            var s=slots[i]||{t:'',l:1};var filled=!!s.t;var e=filled?findNormal(s.t):null;var cn=e?e.chara:null;var role=e?((e.role||'').toLowerCase()):'';var col=rc[role]||'#4a6070';
+            html+='<div style="flex:1;aspect-ratio:1;border-radius:5px;overflow:hidden;position:relative;border:2px solid '+(filled?col:'rgba(255,255,255,.06)')+';background:'+(filled?'rgba(0,0,0,.3)':'rgba(255,255,255,.02)')+';display:flex;align-items:center;justify-content:center;">'+
+              (filled?(cn?'<img src="'+portrait(cn)+'" style="width:100%;height:100%;object-fit:cover;">':'<span style="color:#475569;font-size:.5rem;font-weight:700;">-</span>'):'<span style="color:#475569;font-size:.5rem;font-weight:700;">-</span>')+
+              (filled?'<span style="position:absolute;bottom:1px;left:1px;right:1px;text-align:center;font-size:.4rem;font-weight:900;color:#f5c800;background:rgba(0,0,0,.7);border-radius:2px;padding:1px 0;">Lv'+s.l+'</span>':'')+
+              '</div>';
           }
-          return html+'</div></div>';
-        }).join('')+
-        '<div style="width:100%;"><div style="font-size:.55rem;color:#64748b;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px;">Special Tuning</div><div style="display:flex;gap:2px;">'+
+          html+='</div></div>';
+        });
+        html+='<div style="width:100%;"><div style="font-size:.55rem;color:#c084fc;font-weight:900;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px;">&#10022; Special Tuning</div><div style="display:flex;gap:4px;">'+
         (p.specs||[]).map(function(s,i){
-          var filled=!!s.t;var img='';
-          if(filled){var e=findSpecial(s.t);var cn=e&&e.chara;if(cn)img='<img src="'+specialIcon(cn)+'" style="width:100%;height:100%;object-fit:cover;border-radius:3px;">';}
-          return '<div style="flex:1;aspect-ratio:2.5;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:.5rem;font-weight:700;overflow:hidden;position:relative;'+(filled?'background:rgba(192,132,252,.12);border:1px solid rgba(192,132,252,.15);':'background:rgba(255,255,255,.03);color:#475569;border:1px solid rgba(255,255,255,.05);')+'">'+(img||'<span style="color:#475569;">Sp '+(i+1)+'</span>')+'</div>';
+          var filled=!!s.t;var e=filled?findSpecial(s.t):null;var cn=e?e.chara:null;var role=e?((e.role||'').toLowerCase()):'';var col=rc[role]||'#4a6070';
+          return '<div style="flex:1;border-radius:5px;overflow:hidden;border:2px solid '+(filled?col:'rgba(255,255,255,.06)')+';background:'+(filled?'rgba(0,0,0,.3)':'rgba(255,255,255,.02)')+';display:flex;align-items:center;padding:3px 5px;gap:5px;">'+
+            (filled?(cn?'<img src="'+(specialTuningIcon(e)||specialIcon(cn))+'" style="width:26px;height:26px;border-radius:3px;object-fit:cover;flex-shrink:0;border:1px solid '+col+';"><div style="flex:1;min-width:0;font-size:.58rem;font-weight:700;color:#f1f5f9;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">'+(e.skillName||'Special')+'</div><span style="font-size:.48rem;font-weight:900;color:#c084fc;background:rgba(192,132,252,.15);padding:1px 5px;border-radius:3px;white-space:nowrap;">Lv'+s.l+'</span>':'<span style="color:#475569;font-size:.5rem;font-weight:700;">Empty</span>'):'<span style="color:#475569;font-size:.5rem;font-weight:700;">Empty</span>')+
+            '</div>';
         }).join('')+
-        '</div></div></div><button class="tab-btn" id="flb2" style="font-size:.6rem;padding:2px 8px;margin-top:6px;">Load Build</button>';document.getElementById('flb2').addEventListener('click',function(){try{document.getElementById('ioCode').value=code;document.querySelectorAll('.tab-btn')[1].click();setTimeout(function(){document.getElementById('btnImp').click();},100);}catch(e){}});}}catch(e){}
+        '</div></div></div><button class="tab-btn" id="flb2" style="font-size:.82rem;font-weight:900;padding:8px 16px;margin-top:8px;width:100%;animation:rainbow 1.5s linear infinite;border:2px solid rgba(245,200,0,.3);box-shadow:0 0 20px rgba(245,200,0,.15);">&#128259; Load Build into Planner</button>';
+        bp.innerHTML=html;document.getElementById('flb2').addEventListener('click',function(){try{document.getElementById('ioCode').value=code;document.querySelector('[data-tab=\"planner\"]').click();setTimeout(function(){document.getElementById('btnImp').click();},150);}catch(e){}});}}catch(e){}
     });
   }
   function showNewForm(){
     var code=document.getElementById('ioCode')?document.getElementById('ioCode').value.trim():'';
-    var h='<button class="tab-btn" id="b5" style="font-size:.7rem;padding:4px 10px;margin-bottom:8px;">&#8592; All Posts</button><div class="forum-card"><h2 style="font-size:1.1rem;font-weight:900;color:#f5c800;">+ New Build Post</h2><div style="margin-bottom:10px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:3px;">Build Code *</label><input id="ffc" value="'+esc(code)+'" class="forum-input" style="width:100%;" placeholder="Paste export code"></div><div style="margin-bottom:10px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:3px;">Title *</label><input id="fft" class="forum-input" style="width:100%;" placeholder="E.g. My Kendo Gamma Build"></div><div style="margin-bottom:10px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:3px;">Banner Image <span style="font-weight:400;color:#64748b;">(optional, replaces character art)</span></label><div style="display:flex;gap:6px;"><input id="ffimg" class="forum-input" style="flex:1;" placeholder="Paste image URL or upload..."><button class="tab-btn" id="fuimg" style="font-size:.62rem;padding:3px 8px;">&#128206; Upload</button></div><input id="ffimgfile" type="file" accept="image/png,image/jpeg,image/gif,image/webp,video/mp4,video/webm,video/ogg" style="display:none;"><div id="fimgprev" style="display:none;margin-top:4px;max-width:200px;border-radius:6px;overflow:hidden;position:relative;"><img id="fimgpreview" style="width:100%;display:block;"><span id="fimgrm" style="position:absolute;top:2px;right:2px;background:rgba(0,0,0,.6);color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.7rem;">&times;</span></div></div><div style="margin-bottom:10px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:3px;">Category</label><select id="ffcat" class="forum-input" style="width:100%;"><option value="">None</option><option value="guide">&#128218; Guide</option><option value="showcase">&#127775; Showcase</option><option value="question">&#128173; Question</option><option value="fun">&#127918; Fun</option></select></div><div style="margin-bottom:10px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:3px;">Your Name</label><input id="ffa" value="'+esc(sessionName)+'" class="forum-input" style="width:100%;" placeholder="Anonymous"></div><div style="margin-bottom:10px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:3px;">Description</label><textarea id="ffd" class="forum-textarea" style="width:100%;min-height:60px;" placeholder="Tell us about this build..."></textarea></div><div style="margin-bottom:10px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:3px;">Tags <span style="font-weight:400;color:#64748b;">(comma separated)</span></label><input id="ffg" class="forum-input" style="width:100%;" placeholder="kendo, gamma, assault"></div><button class="forum-btn" id="fsb" style="margin-right:6px;">&#128221; Post Build</button><button class="tab-btn" id="fprev" style="font-size:.7rem;">&#128065; Preview</button><div id="fserr" style="color:#ef4444;font-size:.68rem;margin-top:4px;"></div><div id="fpreview" style="display:none;margin-top:10px;border-top:1px solid rgba(255,255,255,.06);padding-top:10px;"></div></div>';
+    var h='<button class="tab-btn" id="b5" style="font-size:.7rem;padding:4px 10px;margin-bottom:8px;">&#8592; All Posts</button><div class="forum-card"><h2 style="font-size:1.1rem;font-weight:900;color:#f5c800;">+ New Build Post</h2><div style="margin-bottom:10px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:3px;">Build Code *</label><input id="ffc" value="'+esc(code)+'" class="forum-input" style="width:100%;" placeholder="Paste export code"></div><div style="margin-bottom:10px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:3px;">Title *</label><input id="fft" class="forum-input" style="width:100%;" placeholder="E.g. My Kendo Gamma Build"></div><div style="margin-bottom:10px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:3px;">Banner Image <span style="font-weight:400;color:#64748b;">(optional, replaces character art)</span></label><div style="display:flex;gap:6px;"><input id="ffimg" class="forum-input" style="flex:1;" placeholder="Paste image URL or upload..."><button class="tab-btn" id="fuimg" style="font-size:.62rem;padding:3px 8px;">&#128206; Upload</button></div><input id="ffimgfile" type="file" accept="image/png,image/jpeg,image/gif,image/webp,video/mp4,video/webm,video/ogg" style="display:none;"><div id="fimgprev" style="display:none;margin-top:4px;max-width:200px;border-radius:6px;overflow:hidden;position:relative;"><img id="fimgpreview" style="width:100%;display:block;"><span id="fimgrm" style="position:absolute;top:2px;right:2px;background:rgba(0,0,0,.6);color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.7rem;">&times;</span></div></div><div style="margin-bottom:10px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:3px;">Category</label><select id="ffcat" class="forum-input" style="width:100%;"><option value="">None</option><option value="guide">&#128218; Guide</option><option value="showcase">&#127775; Showcase</option><option value="question">&#128173; Question</option><option value="fun">&#127918; Fun</option></select></div><div style="margin-bottom:10px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:3px;">Posting as <strong style="color:#f5c800;">'+esc(sessionName)+'</strong></label></div><div style="margin-bottom:10px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:3px;">Description</label><textarea id="ffd" class="forum-textarea" style="width:100%;min-height:60px;" placeholder="Tell us about this build..."></textarea></div><div style="margin-bottom:8px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:4px;">Quick Tags</label><div id="ftags" style="display:flex;gap:4px;flex-wrap:wrap;"></div></div><div style="margin-bottom:10px;"><label style="display:block;font-size:.68rem;font-weight:700;color:#94a3b8;margin-bottom:3px;">Tags <span style="font-weight:400;color:#64748b;">(comma separated)</span></label><input id="ffg" class="forum-input" style="width:100%;" placeholder="kendo, gamma, assault"></div><button class="forum-btn" id="fsb" style="margin-right:6px;">&#128221; Post Build</button><button class="tab-btn" id="fprev" style="font-size:.7rem;">&#128065; Preview</button><div id="fserr" style="color:#ef4444;font-size:.68rem;margin-top:4px;"></div><div id="fpreview" style="display:none;margin-top:10px;border-top:1px solid rgba(255,255,255,.06);padding-top:10px;"></div></div>';
   r(h);
+  (function(){
+    var el=document.getElementById('ftags');if(!el)return;
+    el.innerHTML=BUILD_TAGS_LIST.map(function(t){return'<span data-tag="'+t+'" style="display:inline-block;font-size:.6rem;font-weight:900;padding:2px 7px;border-radius:4px;cursor:pointer;text-transform:lowercase;letter-spacing:.02em;transition:all .12s;background:rgba(255,255,255,.05);color:#64748b;border:1px solid rgba(255,255,255,.08);">#'+t+'</span>';}).join('');
+    Array.from(el.children).forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var tag=this.getAttribute('data-tag');var inp=document.getElementById('ffg');var cur=inp.value.split(',').map(function(s){return s.trim();}).filter(Boolean);var idx=cur.indexOf(tag);
+        if(idx>=0)cur.splice(idx,1);else cur.push(tag);
+        inp.value=cur.join(', ');
+        this.style.background=idx>=0?'rgba(255,255,255,.05)':'rgba(245,200,0,.2)';
+        this.style.color=idx>=0?'#64748b':'#f5c800';
+        this.style.borderColor=idx>=0?'rgba(255,255,255,.08)':'rgba(245,200,0,.4)';
+      });
+    });
+  })();
   document.getElementById('b5').addEventListener('click',showHome);
   document.getElementById('fprev').addEventListener('click',function(){
     var title=document.getElementById('fft').value.trim()||'Untitled';
-    var author=document.getElementById('ffa').value.trim()||'Anonymous';
+    var author=sessionName;
     var desc=document.getElementById('ffd').value.trim();
     var code=document.getElementById('ffc').value.trim();
     var tags=document.getElementById('ffg').value.split(',').map(function(t){return t.trim();}).filter(Boolean);
@@ -7399,7 +7715,7 @@ function initForum(){
     prev.innerHTML='<div style="font-size:.7rem;color:#64748b;margin-bottom:6px;font-weight:700;">&#128065; Preview</div><div class="forum-post" style="cursor:default;">'+charBanner(code)+'<div style="font-size:.85rem;font-weight:700;color:#f1f5f9;margin-bottom:3px;">'+esc(title)+'</div><div style="font-size:.64rem;color:#64748b;display:flex;gap:12px;flex-wrap:wrap;"><span>&#128100; '+esc(author)+'</span><span>&#128147; 0</span><span>&#128172; 0</span></div>'+(tags.length?'<div class="forum-tags" style="display:flex;gap:4px;flex-wrap:wrap;margin-top:4px;">'+tags.map(function(t){return'<span class="forum-tag">'+esc(t)+'</span>';}).join('')+'</div>':'')+(desc?'<div style="font-size:.7rem;color:#94a3b8;margin-top:4px;">'+esc(desc)+'</div>':'')+'</div>';
   });
     document.getElementById('fsb').addEventListener('click',function(){
-      var title=document.getElementById('fft').value.trim(),author=document.getElementById('ffa').value.trim()||'Anonymous';if(author&&author!==sessionName){sessionName=author;localStorage.setItem('forumName',author);}
+      var title=document.getElementById('fft').value.trim(),author=sessionName;
       var desc=document.getElementById('ffd').value.trim(),code=document.getElementById('ffc').value.trim(),tags=document.getElementById('ffg').value.split(',').map(function(t){return t.trim();}).filter(Boolean);
       if(!title){document.getElementById('fserr').textContent='Title is required!';return;}if(!code){document.getElementById('fserr').textContent='Build code is required!';return;}
       document.getElementById('fsb').disabled=true;document.getElementById('fsb').textContent='Posting...';
@@ -7437,9 +7753,82 @@ function initForum(){
     var v=document.getElementById('fvidprev');
     if(isVid){if(!v){v=document.createElement('video');v.id='fvidprev';v.controls=true;v.style.cssText='width:100%;display:block;border-radius:4px;';p.insertBefore(v,document.getElementById('fimgrm'));}v.src=url;v.style.display='block';}else if(v){v.style.display='none';}
   }
+  function showProfile(author){
+    if(!author){showHome();return;}
+    r(skeleton()+skeleton());
+    var isTargetAdmin=false;
+    var ax=new XMLHttpRequest();ax.open('GET','/api/check-user?name='+encodeURIComponent(author),true);
+    ax.onload=function(){try{var ar=JSON.parse(ax.responseText);if(ar&&ar.admin)isTargetAdmin=true;}catch(e){}};ax.send();
+    api2('/by-author?author='+encodeURIComponent(author)+'&page=1','GET',null,function(data){
+      if(!data||!data.items){r('<div style="text-align:center;padding:40px 0;color:#ef4444;">Error loading profile. <button class="tab-btn" onclick="window.forumBack()">Back</button></div>');return;}
+      var pa=author||'';var pav=window.avatarImg?window.avatarImg(author):'';var isOwnProfile=(author||'').toLowerCase()===(localStorage.getItem('forumUsername')||'').toLowerCase();
+      var h='<button class="tab-btn" id="bp" style="font-size:.7rem;padding:4px 10px;margin-bottom:8px;">&#8592; All Posts</button><div class="forum-card"><div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">'+(isOwnProfile?'<div style="position:relative;cursor:pointer;" id="profAvatarWrap"><img id="profAvatarImg" src="'+esc(localStorage.getItem('forumAvatar')||'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\'%3E%3Crect width=\'48\' height=\'48\' fill=\'%23333\' rx=\'24\'/%3E%3Ctext x=\'24\' y=\'32\' font-size=\'22\' text-anchor=\'middle\' fill=\'%2394a3b8\'%3E%3F%3C/text%3E%3C/svg%3E')+'" style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.15);"><div style="position:absolute;bottom:-2px;right:-2px;background:#f5c800;color:#000;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:.55rem;font-weight:900;border:2px solid #1e1e2e;">+</div></div><input type="file" id="profAvatarFile" accept="image/png,image/jpeg,image/gif,image/webp" style="display:none;">':(localStorage.getItem('forumAvatar')?'<img src="'+esc(localStorage.getItem('forumAvatar'))+'" style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.1);">':''))+'<h2 style="font-size:1rem;font-weight:900;margin:0;'+(isTargetAdmin&&author.toLowerCase()===sessionName.toLowerCase()&&localStorage.getItem('forumIsOwner')==='1'?'color:#ef4444;text-shadow:0 0 12px rgba(239,68,68,.4);':isTargetAdmin?'animation:rainbow 1.5s linear infinite;':'color:#f5c800;')+'">&#128100; '+esc(author)+(isTargetAdmin&&author.toLowerCase()===sessionName.toLowerCase()&&localStorage.getItem('forumIsOwner')==='1'?' <span style="color:#ef4444;font-size:.6rem;font-weight:900;text-shadow:0 0 8px rgba(239,68,68,.3);">&#9733; Owner</span>':isTargetAdmin?' <span style="animation:rainbow 1.5s linear infinite;font-size:.6rem;font-weight:900;">&#9733; Site Admin</span>':'')+'</h2></div><div style="color:#64748b;font-size:.7rem;">'+(data.total||0)+' build'+(data.total!==1?'s':'')+' posted</div></div>';
+      if(isOwnProfile){h+='<input type="file" id="profAvatarFile2" accept="image/png,image/jpeg,image/gif,image/webp" style="display:none;">';}
+      if(!data.items.length){h+='<div style="text-align:center;padding:30px 0;color:#475569;">No builds yet.</div>';}else{
+        data.items.forEach(function(p){
+          var cn=charNameFromCode(p.buildCode);
+          h+='<div class="forum-post" data-id="'+p.id+'" style="cursor:pointer;"><div style="font-size:.82rem;font-weight:700;color:#f1f5f9;margin-bottom:2px;">'+(cn?'<span style="font-size:.58rem;font-weight:700;background:rgba(245,200,0,.12);color:#f5c800;border-radius:3px;padding:1px 5px;margin-right:4px;">'+esc(cn)+'</span> ':'')+esc(p.title)+'</div><div style="font-size:.62rem;color:#64748b;display:flex;gap:10px;"><span>&#128147; '+(p.likes||0)+'</span><span>&#128172; '+(p.comments||0)+'</span><span>&#128337; '+timeAgo(p.createdAt)+'</span></div></div>';
+        });
+      }
+      r(h);
+      document.getElementById('bp').addEventListener('click',showHome);
+      var paf=document.getElementById('profAvatarFile')||document.getElementById('profAvatarFile2');
+      var paw=document.getElementById('profAvatarWrap');
+      if(paw&&paf){
+        paw.onclick=function(){paf.click();};
+        paf.onchange=function(){
+          var file=this.files[0];if(!file)return;
+          var reader=new FileReader();
+          reader.onload=function(ev){
+            var imgData=ev.target.result;
+            localStorage.setItem('forumAvatar',imgData);
+            var x=new XMLHttpRequest();x.open('POST','/api/set-avatar',true);x.setRequestHeader('Content-Type','application/json');
+            x.onload=function(){showProfile(author);};
+            x.send(JSON.stringify({username:localStorage.getItem('forumUsername'),avatar:imgData}));
+          };
+          reader.readAsDataURL(file);
+        };
+      }
+      document.querySelectorAll('#forumContent .forum-post:not([id])').forEach(function(e){e.addEventListener('click',function(){showPost(this.getAttribute('data-id'));});});
+      if(data.total>20){
+        var pages=Math.ceil(data.total/20);
+        var pgDiv=document.createElement('div');pgDiv.style.cssText='display:flex;gap:4px;justify-content:center;margin-top:10px;flex-wrap:wrap;';
+        for(var pi=1;pi<=pages;pi++){
+          (function(pg){var pb=document.createElement('button');pb.className='tab-btn';pb.textContent=pg;pb.style.fontSize='.6rem';pb.style.padding='3px 8px';pb.addEventListener('click',function(){showProfilePage(author,pg);});pgDiv.appendChild(pb);})(pi);
+        }
+        document.getElementById('forumContent').appendChild(pgDiv);
+      }
+    });
+  }
+  function showProfilePage(author,page){
+    r(skeleton());
+    api2('/by-author?author='+encodeURIComponent(author)+'&page='+page,'GET',null,function(data){
+      if(!data||!data.items){showHome();return;}
+      var h='';
+      data.items.forEach(function(p){
+        var cn=charNameFromCode(p.buildCode);
+        h+='<div class="forum-post" data-id="'+p.id+'" style="cursor:pointer;"><div style="font-size:.82rem;font-weight:700;color:#f1f5f9;margin-bottom:2px;">'+(cn?'<span style="font-size:.58rem;font-weight:700;background:rgba(245,200,0,.12);color:#f5c800;border-radius:3px;padding:1px 5px;margin-right:4px;">'+esc(cn)+'</span> ':'')+esc(p.title)+'</div><div style="font-size:.62rem;color:#64748b;display:flex;gap:10px;"><span>&#128147; '+(p.likes||0)+'</span><span>&#128172; '+(p.comments||0)+'</span><span>&#128337; '+timeAgo(p.createdAt)+'</span></div></div>';
+      });
+      r(h);
+      document.querySelectorAll('#forumContent .forum-post').forEach(function(e){e.addEventListener('click',function(){showPost(this.getAttribute('data-id'));});});
+    });
+  }
   showHome();
+  window.forumShowProfile=showProfile;
   window.forumBack=showHome;
   window.forumShowPost=showPost;
+  window.avatarImg=function(u){return(u||'').toLowerCase()===(localStorage.getItem('forumUsername')||'').toLowerCase()&&localStorage.getItem('forumAvatar')?'<img src="'+esc(localStorage.getItem('forumAvatar'))+'" style="width:18px;height:18px;border-radius:50%;object-fit:cover;vertical-align:middle;margin-right:3px;border:1px solid rgba(255,255,255,.1);">':'';};
+  window.userStyle=function(u){var un=(u||'').toLowerCase(),my=(localStorage.getItem('forumUsername')||'').toLowerCase();if(!u||un!==my)return'';if(localStorage.getItem('forumIsOwner')==='1')return'color:#ef4444;text-shadow:0 0 12px rgba(239,68,68,.4);font-weight:900;';if(localStorage.getItem('forumIsAdmin')==='1')return'animation:rainbow 1.5s linear infinite;font-weight:900;';return'';};
+  var mpb2=document.getElementById('myProfileBtn');
+  if(mpb2&&localStorage.getItem('forumAvatar')){mpb2.innerHTML='<img src="'+esc(localStorage.getItem('forumAvatar'))+'" style="width:20px;height:20px;border-radius:50%;object-fit:cover;vertical-align:middle;border:1px solid rgba(255,255,255,.1);">';}
+  // Check if current user is admin
+  var isAdmin=localStorage.getItem('forumIsAdmin')==='1';
+  var globalSessionName=localStorage.getItem('forumUsername')||'';
+  if(isAdmin&&globalSessionName){
+    var ax=new XMLHttpRequest();ax.open('GET','/api/check-user?name='+encodeURIComponent(globalSessionName),true);
+    ax.onload=function(){try{var ar=JSON.parse(ax.responseText);if(!ar||!ar.exists)localStorage.removeItem('forumIsAdmin');}catch(e){}};
+    ax.send();
+  }
   updateAdminUI();
   // Notification bell click
   document.getElementById('notifBell').onclick=function(e){
@@ -7464,10 +7853,28 @@ function initForum(){
   };
 }
 var masterKey='';
+window.expandImage=function(src){
+  var ov=document.getElementById('imgOverlay');
+  if(!ov){
+    ov=document.createElement('div');ov.id='imgOverlay';
+    ov.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);z-index:99999;display:flex;align-items:center;justify-content:center;cursor:pointer;';
+    ov.onclick=function(){ov.style.display='none';};
+    var img=document.createElement('img');
+    img.id='imgOverlayImg';
+    img.style.cssText='max-width:90vw;max-height:90vh;border-radius:8px;box-shadow:0 0 40px rgba(0,0,0,.6);';
+    ov.appendChild(img);
+    document.body.appendChild(ov);
+  }
+  document.getElementById('imgOverlayImg').src=src;
+  ov.style.display='flex';
+};
 function updateAdminUI(){
   var el=document.getElementById('adminLink');
   if(!el)return;
-  if(masterKey&&masterKey.length>0){
+  if(localStorage.getItem('forumIsOwner')==='1'){
+    el.style.cssText='font-size:.85rem;cursor:pointer;padding:4px 8px;border-radius:6px;transition:all .15s;background:rgba(239,68,68,.15);color:#ef4444;border:1px solid rgba(239,68,68,.3);text-shadow:0 0 12px rgba(239,68,68,.4);font-weight:900;box-shadow:0 0 20px rgba(239,68,68,.15);';
+    el.title='Owner mode active';
+  }else if(masterKey&&masterKey.length>0){
     el.style.cssText='font-size:.85rem;cursor:pointer;padding:4px 8px;border-radius:6px;transition:all .15s;background:rgba(245,200,0,.12);color:#f5c800;border:1px solid rgba(245,200,0,.25);animation:rainbow 1.5s linear infinite;box-shadow:0 0 16px rgba(245,200,0,.2);';
     el.title='Admin mode active';
   }else{
@@ -7479,12 +7886,79 @@ updateAdminUI();
 var adminEl=document.getElementById('adminLink');
 if(adminEl){
   adminEl.onclick=function(){
+    console.log('admin link clicked, masterKey:', masterKey, 'forumIsAdmin:', localStorage.getItem('forumIsAdmin'));
+    if(masterKey&&localStorage.getItem('forumIsAdmin')==='1'){
+      // Show admin panel
+      var panel=document.getElementById('adminPanel');
+      if(panel){panel.remove();return;}
+      panel=document.createElement('div');panel.id='adminPanel';
+      panel.style.cssText='position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:99999;background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:24px;max-width:450px;width:90%;max-height:70vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.6);';
+      panel.innerHTML='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;"><h2 style="font-size:1rem;font-weight:900;color:#f5c800;animation:rainbow 1.5s linear infinite;">&#128272; Admin Panel</h2><span id="adminPanelClose" style="font-size:1.3rem;color:#64748b;cursor:pointer;">&times;</span></div><div id="adminKeysList" style="font-size:.7rem;color:#94a3b8;">Loading keys...</div><button id="genKeysBtn" style="margin-top:12px;font-size:.72rem;font-weight:700;padding:6px 14px;border-radius:6px;border:none;cursor:pointer;background:rgba(245,200,0,.15);color:#f5c800;border:1px solid rgba(245,200,0,.2);">+ Generate 5 Admin Keys</button><button id="genOwnerBtn" style="margin-left:6px;font-size:.68rem;font-weight:700;padding:6px 10px;border-radius:6px;border:none;cursor:pointer;background:rgba(239,68,68,.15);color:#ef4444;border:1px solid rgba(239,68,68,.2);">+ Owner Key</button>';
+      var overlay=document.createElement('div');overlay.id='adminPanelOverlay';
+      overlay.style.cssText='position:fixed;inset:0;z-index:99998;background:rgba(0,0,0,.5);';
+      overlay.onclick=function(){panel.remove();overlay.remove();};
+      document.body.appendChild(overlay);document.body.appendChild(panel);
+      document.getElementById('adminPanelClose').onclick=function(){panel.remove();overlay.remove();};
+      function loadKeys(){
+        var kl=document.getElementById('adminKeysList');if(!kl)return;
+        var xk=new XMLHttpRequest();xk.open('GET','/api/admin/list-keys',true);
+        xk.onload=function(){try{var kr=JSON.parse(xk.responseText);if(kr&&kr.keys){
+          var avail=kr.keys.filter(function(k){return !k.used;}),used=kr.keys.filter(function(k){return k.used;});
+          kl.innerHTML='<div style="margin-bottom:6px;"><span style="font-weight:700;color:#f5c800;">'+avail.length+'</span> available / <span style="color:#64748b;">'+used.length+'</span> used</div>';
+          if(avail.length){kl.innerHTML+='<div style="font-size:.6rem;color:#64748b;margin-bottom:4px;text-transform:uppercase;">Available Keys:</div>'+avail.map(function(k){return'<div style="display:flex;justify-content:space-between;align-items:center;padding:3px 6px;background:rgba(0,0,0,.2);border-radius:4px;margin-bottom:3px;"><span style="font-family:monospace;font-size:.65rem;color:#e2e8f0;">'+k.key_id+'</span><span style="font-size:.55rem;color:#4ade80;">Available</span></div>';}).join('');}
+          if(used.length){kl.innerHTML+='<div style="font-size:.6rem;color:#64748b;margin:8px 0 4px;text-transform:uppercase;">Used Keys:</div>'+used.slice(0,10).map(function(k){return'<div style="display:flex;justify-content:space-between;align-items:center;padding:2px 6px;background:rgba(0,0,0,.1);border-radius:4px;margin-bottom:2px;opacity:.5;"><span style="font-family:monospace;font-size:.6rem;color:#64748b;">'+k.key_id+'</span><span style="font-size:.5rem;color:#ef4444;">Used</span></div>';}).join('');}
+        }}catch(e){kl.textContent='Error loading keys.';}};
+        xk.send();
+      }
+      loadKeys();
+      document.getElementById('genKeysBtn').onclick=function(){
+        this.disabled=true;this.textContent='Generating...';
+        var xg=new XMLHttpRequest();xg.open('POST','/api/admin/generate-keys',true);xg.setRequestHeader('Content-Type','application/json');
+        xg.onload=function(){try{var gr=JSON.parse(xg.responseText);if(gr&&gr.keys){loadKeys();}}catch(e){};document.getElementById('genKeysBtn').disabled=false;document.getElementById('genKeysBtn').textContent='+ Generate 5 Admin Keys';};
+        xg.send(JSON.stringify({count:5}));
+      };
+      document.getElementById('genOwnerBtn').onclick=function(){
+        this.disabled=true;this.textContent='Generating...';
+        var xo=new XMLHttpRequest();xo.open('POST','/api/admin/generate-owner-keys',true);xo.setRequestHeader('Content-Type','application/json');
+        xo.onload=function(){try{var gr=JSON.parse(xo.responseText);if(gr&&gr.keys){loadKeys();}}catch(e){};document.getElementById('genOwnerBtn').disabled=false;document.getElementById('genOwnerBtn').textContent='+ Owner Key';};
+        xo.send(JSON.stringify({count:1}));
+      };
+      // Owner-only: admin management
+      if(localStorage.getItem('forumIsOwner')==='1'){
+        var ownerDiv=document.createElement('div');ownerDiv.style.marginTop='16px';ownerDiv.style.borderTop='1px solid rgba(255,255,255,.06)';ownerDiv.style.paddingTop='12px';
+        ownerDiv.innerHTML='<div style="font-size:.7rem;font-weight:900;color:#ef4444;margin-bottom:8px;text-shadow:0 0 10px rgba(239,68,68,.3);">&#128308; Owner Controls</div><div id="adminList" style="font-size:.65rem;color:#94a3b8;">Loading admins...</div>';
+        document.getElementById('adminKeysList').parentNode.appendChild(ownerDiv);
+        function loadAdmins(){
+          var al=document.getElementById('adminList');if(!al)return;
+          var xa=new XMLHttpRequest();xa.open('GET','/api/admin/list-admins',true);
+          xa.onload=function(){try{var ar=JSON.parse(xa.responseText);if(ar&&ar.admins){
+            al.innerHTML='<div style="margin-bottom:4px;color:#f5c800;font-size:.6rem;">&#128100; Site Staff</div>'+ar.admins.map(function(u){
+              var isOwner=u.admin>=2;
+              return '<div style="display:flex;justify-content:space-between;align-items:center;padding:3px 6px;background:rgba(0,0,0,.15);border-radius:4px;margin-bottom:3px;"><span style="'+(isOwner?'color:#ef4444;text-shadow:0 0 8px rgba(239,68,68,.3);font-weight:900;':'color:#f5c800;')+'font-size:.62rem;">'+u.username+(isOwner?' <span style="font-size:.5rem;color:#ef4444;">&#9733; Owner</span>':' <span style="font-size:.5rem;color:#f5c800;">Admin</span>')+'</span>'+(isOwner?'':'<span style="cursor:pointer;color:#ef4444;font-size:.55rem;" class="demoteBtn" data-user="'+esc(u.username)+'">&#128465; Remove</span>')+'</div>';
+            }).join('')+'</div>';
+            document.querySelectorAll('.demoteBtn').forEach(function(btn){
+              btn.onclick=function(){
+                if(!confirm('Remove '+this.getAttribute('data-user')+' as admin?'))return;
+                var xd=new XMLHttpRequest();xd.open('POST','/api/admin/demote',true);xd.setRequestHeader('Content-Type','application/json');
+                xd.onload=function(){loadAdmins();};
+                xd.send(JSON.stringify({caller:localStorage.getItem('forumUsername'),username:this.getAttribute('data-user')}));
+              };
+            });
+          }}catch(e){al.textContent='Error loading admins.';}};
+          xa.send();
+        }
+        loadAdmins();
+      }
+      return;
+    }
     var key=prompt('Enter admin key:');
     if(key&&key.trim()){
+      var uname=localStorage.getItem('forumUsername')||'';
+      if(!uname){alert('You must be registered in the forum first.');return;}
       var x=new XMLHttpRequest();x.open('POST','/api/verify-key',true);x.setRequestHeader('Content-Type','application/json');
-      x.onload=function(){try{var r=JSON.parse(x.responseText);if(r&&r.valid){masterKey=key.trim();localStorage.setItem('mhurMasterKey',masterKey);updateAdminUI();if(typeof showHome==='function')showHome();}else{alert('Invalid key');}}catch(e){alert('Error verifying key');}};
+      x.onload=function(){try{var r=JSON.parse(x.responseText);if(r&&r.valid){masterKey=key.trim();localStorage.setItem('mhurMasterKey',masterKey);localStorage.setItem('forumIsAdmin','1');if(r.owner){localStorage.setItem('forumIsOwner','1');}else{localStorage.removeItem('forumIsOwner');}updateAdminUI();if(window.forumBack)window.forumBack();}else{alert(r&&r.error||'Invalid key');}}catch(e){alert('Error verifying key');}};
       x.onerror=function(){alert('Network error');};
-      x.send(JSON.stringify({deleteKey:key.trim()}));
+      x.send(JSON.stringify({deleteKey:key.trim(),username:uname}));
     }
   };
 }
