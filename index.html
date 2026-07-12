@@ -7825,7 +7825,7 @@ function initForum(){
         };
       }
       var banBtn=document.getElementById('banBtn');
-      if(banBtn){var banInput=document.createElement('input');banInput.type='file';banInput.accept='image/png,image/jpeg,image/gif,image/webp';banInput.style.display='none';banInput.onchange=function(){var f=this.files[0];if(!f)return;var r=new FileReader();r.onload=function(ev){var bd=ev.target.result;localStorage.setItem('forumBanner',bd);var x=new XMLHttpRequest();x.open('POST','/api/set-banner',true);x.setRequestHeader('Content-Type','application/json');x.onload=function(){showProfile(author);};x.send(JSON.stringify({username:localStorage.getItem('forumUsername'),banner:bd}));};r.readAsDataURL(f);};document.body.appendChild(banInput);banBtn.onclick=function(){banInput.click();};}
+      if(banBtn){banBtn.onclick=function(){var inp=document.getElementById('banFile');if(!inp){inp=document.createElement('input');inp.id='banFile';inp.type='file';inp.accept='image/png,image/jpeg,image/gif,image/webp';inp.style.display='none';inp.onchange=function(){var f=this.files[0];if(!f)return;var rd=new FileReader();rd.onload=function(ev){var bd=ev.target.result;localStorage.setItem('forumBanner',bd);var x=new XMLHttpRequest();x.open('POST','/api/set-banner',true);x.setRequestHeader('Content-Type','application/json');x.onload=function(){showProfile(author);};x.send(JSON.stringify({username:localStorage.getItem('forumUsername'),banner:bd}));};rd.readAsDataURL(f);};document.body.appendChild(inp);}inp.click();};}
       var loBtn=document.getElementById('logoutBtn');
       if(loBtn)loBtn.onclick=function(){
         if(!confirm('Logout? You will need to sign in again.'))return;
