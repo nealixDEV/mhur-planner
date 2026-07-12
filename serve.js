@@ -147,6 +147,11 @@ function handler(req, res) {
       forum.setUserAvatar(data.username||'', data.avatar||'', function(){json(res, {saved:true});});
     });
   }
+  if(url === '/api/set-banner' && req.method === 'POST'){
+    return body(req, function(data){
+      forum.setUserBanner(data.username||'', data.banner||'', function(){json(res, {saved:true});});
+    });
+  }
   if(url === '/api/check-user' && req.method === 'GET'){
     return forum.getUser(query.name||'', function(user){json(res, user||{exists:false});});
   }

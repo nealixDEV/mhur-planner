@@ -110,6 +110,7 @@ module.exports = new Promise(function(resolve){
         db.query("ALTER TABLE forum_users ADD COLUMN IF NOT EXISTS admin INTEGER DEFAULT 0",[],function(){
         db.query("ALTER TABLE forum_users ADD COLUMN IF NOT EXISTS avatar TEXT",[],function(){
         db.query("ALTER TABLE forum_users ADD COLUMN IF NOT EXISTS password TEXT",[],function(){
+        db.query("ALTER TABLE forum_users ADD COLUMN IF NOT EXISTS banner TEXT",[],function(){
         db.query("CREATE TABLE IF NOT EXISTS used_admin_keys (key_hash TEXT PRIMARY KEY, usedAt BIGINT)",[],function(){
         db.query("CREATE TABLE IF NOT EXISTS admin_keys (key_id TEXT PRIMARY KEY, used INTEGER DEFAULT 0, createdAt BIGINT)",[],function(){
           console.log('PostgreSQL connected');
@@ -137,6 +138,7 @@ module.exports = new Promise(function(resolve){
       try{db.run("ALTER TABLE forum_users ADD COLUMN admin INTEGER DEFAULT 0");}catch(e){}
       try{db.run("ALTER TABLE forum_users ADD COLUMN avatar TEXT");}catch(e){}
       try{db.run("ALTER TABLE forum_users ADD COLUMN password TEXT");}catch(e){}
+      try{db.run("ALTER TABLE forum_users ADD COLUMN banner TEXT");}catch(e){}
       db.run("CREATE TABLE IF NOT EXISTS used_admin_keys (key_hash TEXT PRIMARY KEY, usedAt INTEGER)");
       db.run("CREATE TABLE IF NOT EXISTS admin_keys (key_id TEXT PRIMARY KEY, used INTEGER DEFAULT 0, createdAt INTEGER)");
       save();
@@ -467,8 +469,11 @@ function buildAPI(){
   a.setUserAvatar = function(username, avatar, cb){
     qRun("UPDATE forum_users SET avatar=$1 WHERE username=$2",[avatar,username.toLowerCase().trim()],cb);
   };
+  a.setUserBanner = function(username, banner, cb){
+    qRun("UPDATE forum_users SET banner=$1 WHERE username=$2",[banner,username.toLowerCase().trim()],cb);
+  };
   a.getUser = function(username, cb){
-    qOne("SELECT username,admin,avatar FROM forum_users WHERE username=$1",[username.toLowerCase().trim()],function(r){
+    qOne("SELECT username,admin,avatar,banner FROM forum_users WHERE username=$1",[username.toLowerCase().trim()],function(r){
       cb(r||null);
     });
   };
