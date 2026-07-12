@@ -369,9 +369,23 @@ function buildAPI(){
   };
   a.login = function(username, password, cb){
     if(!username||!password){cb({error:'Username and password required'});return;}
-    qOne("SELECT username,admin,avatar FROM forum_users WHERE username=$1 AND password=$2",[username.toLowerCase().trim(),hashPw(password)],function(r){
-      if(!r){cb({error:'Invalid username or password'});return;}
-      cb({success:true,username:r.username,admin:r.admin,avatar:r.avatar||''});
+    var uname=username.toLowerCase().trim();
+    // First check if account exists and has a password
+    qOne("SELECT password FROM forum_users WHERE username=$1",[uname],function(r){
+      if(!r){cb({error:'Account not found'});return;}
+      if(!r.password){
+        // Account exists but no password set — set it now
+        qRun("UPDATE forum_users SET password=$1 WHERE username=$2",[hashPw(password),uname],function(){
+          qOne("SELECT username,admin,avatar FROM forum_users WHERE username=$1",[uname],function(r2){
+            cb({success:true,username:r2.username,admin:r2.admin,avatar:r2.avatar||'',firstLogin:true});
+          });
+        });
+      }else{
+        qOne("SELECT username,admin,avatar FROM forum_users WHERE username=$1 AND password=$2",[uname,hashPw(password)],function(r2){
+          if(!r2){cb({error:'Invalid password'});return;}
+          cb({success:true,username:r2.username,admin:r2.admin,avatar:r2.avatar||''});
+        });
+      }
     });
   };
   a.checkUserExists = function(username, cb){
