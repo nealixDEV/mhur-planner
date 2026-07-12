@@ -137,6 +137,11 @@ function handler(req, res) {
       forum.login(data.username||'', data.password||'', function(result){json(res, result);});
     });
   }
+  if(url === '/api/change-password' && req.method === 'POST'){
+    return body(req, function(data){
+      forum.changePassword(data.username||'', data.oldPassword||'', data.newPassword||'', function(result){json(res, result);});
+    });
+  }
   if(url === '/api/set-avatar' && req.method === 'POST'){
     return body(req, function(data){
       forum.setUserAvatar(data.username||'', data.avatar||'', function(){json(res, {saved:true});});

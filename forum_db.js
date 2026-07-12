@@ -371,6 +371,24 @@ function buildAPI(){
     });
     });
   };
+  a.changePassword = function(username, oldPw, newPw, cb){
+    if(!username||!oldPw||!newPw){cb({error:'All fields required'});return;}
+    if(newPw.length<3){cb({error:'New password must be 3+ characters'});return;}
+    var uname=username.toLowerCase().trim();
+    var newHash=hashPw(newPw);
+    // Check if new password is unique (exclude current user)
+    qOne("SELECT username FROM forum_users WHERE password=$1 AND username!=$2",[newHash,uname],function(existing){
+      if(existing){cb({error:'New password already in use by another account'});return;}
+      // Verify old password
+      qOne("SELECT password FROM forum_users WHERE username=$1",[uname],function(r){
+        if(!r){cb({error:'Account not found'});return;}
+        if(r.password&&r.password!==hashPw(oldPw)){cb({error:'Current password is incorrect'});return;}
+        qRun("UPDATE forum_users SET password=$1 WHERE username=$2",[newHash,uname],function(){
+          cb({changed:true});
+        });
+      });
+    });
+  };
   a.login = function(username, password, cb){
     if(!username||!password){cb({error:'Username and password required'});return;}
     var uname=username.toLowerCase().trim();
