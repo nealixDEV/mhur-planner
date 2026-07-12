@@ -223,7 +223,9 @@ function buildAPI(){
   };
 
   a.saveUpload = function(id, data, mime, cb){
-    qRun("INSERT INTO uploads(id,data,mime,createdAt) VALUES($1,$2,$3,$4)",[id,data,mime,Date.now()],cb);
+    qRun("INSERT INTO uploads(id,data,mime,createdAt) VALUES($1,$2,$3,$4)",[id,data,mime,Date.now()],function(r){
+      cb(r ? true : false);
+    });
   };
   a.getUpload = function(id, cb){
     qOne("SELECT id,data,mime FROM uploads WHERE id=$1",[id],function(r){

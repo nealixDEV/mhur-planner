@@ -118,7 +118,8 @@ function handler(req, res) {
       var ext = matches[1] === 'jpeg' ? 'jpg' : matches[1];
       var mime = matches[0].startsWith('data:image/') ? 'image/'+ext : 'video/'+ext;
       var uploadId = Date.now().toString(36) + Math.random().toString(36).slice(2,6);
-      forum.saveUpload(uploadId, matches[2], mime, function(){
+      forum.saveUpload(uploadId, matches[2], mime, function(ok){
+        if(ok===false) return json(res, {error:'Database save failed'}, 500);
         json(res, {url:'/api/uploads/'+uploadId+'.'+ext});
       });
     });
