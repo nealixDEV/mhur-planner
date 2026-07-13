@@ -7952,6 +7952,7 @@ function initForum(){
     if(existing){existing.remove();return;}
     var list=JSON.parse(localStorage.getItem('notifList')||'[]');
     var ov=document.createElement('div');ov.id='notifOverlay';ov.style.cssText='position:fixed;inset:0;z-index:99998;background:transparent;';
+    var panel=document.createElement('div');panel.id='notifPanel';
     panel.style.cssText='position:fixed;top:80px;right:20px;width:300px;max-height:400px;overflow-y:auto;background:rgba(20,25,35,.98);border:1px solid rgba(255,255,255,.1);border-radius:10px;z-index:99999;box-shadow:0 8px 32px rgba(0,0,0,.5);padding:10px;';
     panel.innerHTML='<div style="font-size:.75rem;font-weight:700;color:#f5c800;margin-bottom:6px;">&#128276; Notifications</div>';
     if(!list.length)panel.innerHTML+='<div style="font-size:.68rem;color:#475569;padding:8px 0;">No new notifications.</div>';
