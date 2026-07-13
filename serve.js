@@ -165,6 +165,9 @@ function handler(req, res) {
   if(url === '/api/check-user' && req.method === 'GET'){
     return forum.getUser(query.name||'', function(user){json(res, user||{exists:false});});
   }
+  if(url === '/api/users' && req.method === 'GET'){
+    return forum.listUsers(function(users){json(res, {users:users});});
+  }
   if(url === '/api/verify-key' && req.method === 'POST'){
     return body(req, function(data){
       var key=data.deleteKey||'';

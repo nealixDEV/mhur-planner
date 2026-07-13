@@ -473,6 +473,7 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
       <div style="position:relative;display:flex;align-items:center;gap:6px;">
         <span id="notifBell" style="font-size:1.1rem;cursor:pointer;padding:2px 6px;border-radius:6px;transition:all .15s;position:relative;animation:none;" title="Notifications">&#128276;</span>
         <span id="myProfileBtn" style="font-size:.7rem;cursor:pointer;padding:4px 8px;border:1px solid rgba(255,255,255,.08);border-radius:6px;transition:all .15s;color:#94a3b8;display:none;">&#128100;</span>
+        <span id="membersLink" style="font-size:.7rem;cursor:pointer;padding:4px 8px;border:1px solid rgba(255,255,255,.08);border-radius:6px;transition:all .15s;color:#64748b;" title="All Members">&#128101;</span>
         <span id="adminLink" style="font-size:.85rem;cursor:pointer;padding:4px 8px;border:1px solid rgba(255,255,255,.08);border-radius:6px;transition:all .15s;color:#64748b;">&#9881;</span>
       </div>
     </div>
@@ -8004,6 +8005,16 @@ function updateAdminUI(){
 }
 updateAdminUI();
 var adminEl=document.getElementById('adminLink');
+var membersEl=document.getElementById('membersLink');
+if(membersEl)membersEl.onclick=function(){
+  var ov=document.createElement('div');ov.style.cssText='position:fixed;inset:0;z-index:99998;background:rgba(0,0,0,.6);';
+  ov.onclick=function(){ov.remove();bx.remove();};
+  var bx=document.createElement('div');bx.style.cssText='position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:99999;background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:24px;max-width:400px;width:90%;max-height:70vh;overflow-y:auto;';
+  bx.innerHTML='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;"><span style="font-size:1rem;font-weight:900;color:#f5c800;">&#128101; All Members</span><span style="font-size:1.3rem;color:#64748b;cursor:pointer;" onclick="this.closest(\'div[style]\').remove();document.body.lastChild.remove();">&times;</span></div><div id="membersList" style="font-size:.7rem;color:#94a3b8;">Loading...</div>';
+  document.body.appendChild(ov);document.body.appendChild(bx);
+  var xm=new XMLHttpRequest();xm.open('GET','/api/users',true);
+  xm.onload=function(){try{var mr=JSON.parse(xm.responseText);var ml=document.getElementById('membersList');if(!ml)return;if(mr&&mr.users&&mr.users.length){ml.innerHTML='<div style="margin-bottom:6px;color:#64748b;font-size:.6rem;">'+mr.users.length+' registered user'+(mr.users.length!==1?'s':'')+'</div>'+mr.users.map(function(u){var isOwner=u.admin>=2,isAdmin=u.admin>=1;return'<div style="display:flex;justify-content:space-between;align-items:center;padding:4px 6px;background:rgba(0,0,0,.15);border-radius:6px;margin-bottom:3px;"><span style="cursor:pointer;color:'+(isOwner?'#ef4444;text-shadow:0 0 8px rgba(239,68,68,.3)':isAdmin?'#f5c800':'#e2e8f0')+';font-size:.65rem;font-weight:'+(isOwner||isAdmin?'900':'400')+';" onclick="this.closest(\'div[style]\').parentNode.parentNode.remove();document.body.lastChild.remove();showProfile(\''+esc(u.username)+'\');">'+(isOwner?'&#9733; ':isAdmin?'&#9734; ':'')+esc(u.username)+'</span><span style="font-size:.5rem;color:'+(isOwner?'#ef4444':isAdmin?'#f5c800':'#475569')+';">'+(isOwner?'Owner':isAdmin?'Admin':'Member')+'</span></div>';}).join('');}else{ml.innerHTML='<div style="text-align:center;padding:20px 0;color:#475569;">No users found.</div>';}}catch(e){var ml2=document.getElementById('membersList');if(ml2)ml2.innerHTML='Error loading members.';}};xm.send();
+};
 if(adminEl){
   adminEl.onclick=function(){
     console.log('admin link clicked, masterKey:', masterKey, 'forumIsAdmin:', localStorage.getItem('forumIsAdmin'));

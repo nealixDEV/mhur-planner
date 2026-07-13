@@ -429,6 +429,11 @@ function isAdminKey(key,cb){
       cb(!!r);
     });
   };
+  a.listUsers = function(cb){
+    qAll("SELECT username,admin,createdAt FROM forum_users ORDER BY username ASC",[],function(rows){
+      cb(rows||[]);
+    });
+  };
   a.isAdminUser = function(username, cb){
     qOne("SELECT admin FROM forum_users WHERE username=$1",[username.toLowerCase().trim()],function(r){
       cb(r&&r.admin>=1);
