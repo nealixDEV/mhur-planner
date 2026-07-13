@@ -7944,15 +7944,14 @@ function initForum(){
     ax.send();
   }
   updateAdminUI();
-  // Notification bell click
-  document.getElementById('notifBell').onclick=function(e){
+  // Notification bell click (also set from initForum for scope access)
+  var bell=document.getElementById('notifBell');
+  if(bell)bell.onclick=function(e){
     e.stopPropagation();
     var existing=document.getElementById('notifPanel');
     if(existing){existing.remove();return;}
     var list=JSON.parse(localStorage.getItem('notifList')||'[]');
     var ov=document.createElement('div');ov.id='notifOverlay';ov.style.cssText='position:fixed;inset:0;z-index:99998;background:transparent;';
-    ov.onclick=function(){var p=document.getElementById('notifPanel');if(p)p.remove();this.remove();};
-    var panel=document.createElement('div');panel.id='notifPanel';
     panel.style.cssText='position:fixed;top:80px;right:20px;width:300px;max-height:400px;overflow-y:auto;background:rgba(20,25,35,.98);border:1px solid rgba(255,255,255,.1);border-radius:10px;z-index:99999;box-shadow:0 8px 32px rgba(0,0,0,.5);padding:10px;';
     panel.innerHTML='<div style="font-size:.75rem;font-weight:700;color:#f5c800;margin-bottom:6px;">&#128276; Notifications</div>';
     if(!list.length)panel.innerHTML+='<div style="font-size:.68rem;color:#475569;padding:8px 0;">No new notifications.</div>';
@@ -7965,6 +7964,8 @@ function initForum(){
     });
     document.body.appendChild(ov);
     document.body.appendChild(panel);
+    function closeNotif(e2){if(!panel.contains(e2.target)&&e2.target!==document.getElementById('notifBell')){panel.remove();ov.remove();document.removeEventListener('click',closeNotif);}}
+    setTimeout(function(){document.addEventListener('click',closeNotif);},10);
   };
 }
 var masterKey='';
