@@ -471,7 +471,7 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
     <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px;flex-wrap:wrap;">
       <h2 class="gold-grad" style="font-size:1.8rem;font-weight:900;letter-spacing:.12em;">&#128172; Build Forum</h2>
       <div style="position:relative;display:flex;align-items:center;gap:6px;">
-        <span id="notifBell" style="font-size:1.1rem;cursor:pointer;padding:2px 6px;border-radius:6px;transition:all .15s;position:relative;" title="Notifications">&#128276;</span>
+        <span id="notifBell" style="font-size:1.1rem;cursor:pointer;padding:2px 6px;border-radius:6px;transition:all .15s;position:relative;animation:none;" title="Notifications">&#128276;</span>
         <span id="myProfileBtn" style="font-size:.7rem;cursor:pointer;padding:4px 8px;border:1px solid rgba(255,255,255,.08);border-radius:6px;transition:all .15s;color:#94a3b8;display:none;">&#128100;</span>
         <span id="adminLink" style="font-size:.85rem;cursor:pointer;padding:4px 8px;border:1px solid rgba(255,255,255,.08);border-radius:6px;transition:all .15s;color:#64748b;">&#9881;</span>
       </div>
@@ -7623,6 +7623,8 @@ function initForum(){
     localStorage.setItem('notifSeen',JSON.stringify(seen));
     var bell=document.getElementById('notifBell');
     if(bell)bell.style.animation=nCount>0?'shake .6s ease-in-out infinite':'none';
+    localStorage.setItem('notifList',JSON.stringify(nList));
+    if(!nCount)nList=[];
     localStorage.setItem('notifList',JSON.stringify(nList));
   }
   function searchPosts(q){
