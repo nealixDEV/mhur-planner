@@ -7950,8 +7950,10 @@ function initForum(){
     var existing=document.getElementById('notifPanel');
     if(existing){existing.remove();return;}
     var list=JSON.parse(localStorage.getItem('notifList')||'[]');
+    var ov=document.createElement('div');ov.id='notifOverlay';ov.style.cssText='position:fixed;inset:0;z-index:99998;background:transparent;';
+    ov.onclick=function(){var p=document.getElementById('notifPanel');if(p)p.remove();this.remove();};
     var panel=document.createElement('div');panel.id='notifPanel';
-    panel.style.cssText='position:fixed;top:80px;right:20px;width:300px;max-height:400px;overflow-y:auto;background:rgba(20,25,35,.98);border:1px solid rgba(255,255,255,.1);border-radius:10px;z-index:500;box-shadow:0 8px 32px rgba(0,0,0,.5);padding:10px;';
+    panel.style.cssText='position:fixed;top:80px;right:20px;width:300px;max-height:400px;overflow-y:auto;background:rgba(20,25,35,.98);border:1px solid rgba(255,255,255,.1);border-radius:10px;z-index:99999;box-shadow:0 8px 32px rgba(0,0,0,.5);padding:10px;';
     panel.innerHTML='<div style="font-size:.75rem;font-weight:700;color:#f5c800;margin-bottom:6px;">&#128276; Notifications</div>';
     if(!list.length)panel.innerHTML+='<div style="font-size:.68rem;color:#475569;padding:8px 0;">No new notifications.</div>';
     list.forEach(function(n){
@@ -7961,9 +7963,8 @@ function initForum(){
       else if(n.t==='top10')msg='<span style="color:#f5c800;">&#127942;</span> <strong>'+esc(n.title)+'</strong> is in Top 10!';
       panel.innerHTML+='<div style="font-size:.64rem;color:#94a3b8;padding:4px 0;border-bottom:1px solid rgba(255,255,255,.03);cursor:pointer;" onclick="window.forumShowPost(\''+n.id+'\');var p=document.getElementById(\'notifPanel\');if(p)p.remove();">'+msg+'</div>';
     });
+    document.body.appendChild(ov);
     document.body.appendChild(panel);
-    var closer=function(e2){if(!panel.contains(e2.target)&&e2.target!==document.getElementById('notifBell')){panel.remove();document.removeEventListener('click',closer);}};
-    setTimeout(function(){document.addEventListener('click',closer);},100);
   };
 }
 var masterKey='';
