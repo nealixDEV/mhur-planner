@@ -7613,7 +7613,7 @@ function initForum(){
       var prev=seen[p.id]||{likes:0,comments:0};
       if(p.likes>prev.likes){nCount+=p.likes-prev.likes;if(isMine)nList.push({t:'like',id:p.id,title:p.title,count:p.likes-prev.likes});}
       if(p.comments>prev.comments){nCount+=p.comments-prev.comments;if(isMine)nList.push({t:'comment',id:p.id,title:p.title,count:p.comments-prev.comments});}
-      if(isMine)seen[p.id]={likes:p.likes,comments:p.comments};
+      seen[p.id]={likes:p.likes,comments:p.comments};
     });
     // Check top 10 likes
     if(topLikes.length){
