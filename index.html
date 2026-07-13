@@ -7914,12 +7914,10 @@ function initForum(){
   showHome();
   var mpb2=document.getElementById('myProfileBtn');
   if(mpb2&&localStorage.getItem('forumAvatar')){mpb2.innerHTML='<img src="'+esc(localStorage.getItem('forumAvatar'))+'" style="width:20px;height:20px;border-radius:50%;object-fit:cover;vertical-align:middle;border:1px solid rgba(255,255,255,.1);">';}
-  // Check if current user is admin
-  var isAdmin=localStorage.getItem('forumIsAdmin')==='1';
-  var globalSessionName=localStorage.getItem('forumUsername')||'';
-  if(isAdmin&&globalSessionName){
+  // Preload current user's profile data
+  if(globalSessionName){
     var ax=new XMLHttpRequest();ax.open('GET','/api/check-user?name='+encodeURIComponent(globalSessionName),true);
-    ax.onload=function(){try{var ar=JSON.parse(ax.responseText);if(!ar||!ar.exists)localStorage.removeItem('forumIsAdmin');}catch(e){}};
+    ax.onload=function(){try{var ar=JSON.parse(ax.responseText);if(ar){if(!ar.exists)localStorage.removeItem('forumIsAdmin');window._bannerCache=window._bannerCache||{};window._bannerDescCache=window._bannerDescCache||{};window._linksCache=window._linksCache||{};window._adminCache=window._adminCache||{};var un=globalSessionName.toLowerCase();if(ar.banner)window._bannerCache[un]=ar.banner;window._bannerDescCache[un]=ar.bannerdesc||'';window._linksCache[un]=ar.links||'[]';window._adminCache[un]=ar.admin||0;}}catch(e){}};
     ax.send();
   }
   updateAdminUI();
