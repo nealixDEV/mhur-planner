@@ -6,6 +6,9 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <title>MHUR T.U.N.I.N.G. Planner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Limelight&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e09bdfc4-503d-47f3-a277-46c8e2f15fd0/djbht3k-bdcb8553-7fc5-4f2c-86fb-ba865db65e59.png/v1/fit/w_734,h_661/mei_hatsume__my_hero_academia___png__render__6_by_spider_monkie_djbht3k-375w-2x.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjYxIiwicGF0aCI6Ii9mL2UwOWJkZmM0LTUwM2QtNDdmMy1hMjc3LTQ2YzhlMmYxNWZkMC9kamJodDNrLWJkY2I4NTUzLTdmYzUtNGYyYy04NmZiLWJhODY1ZGI2NWU1OS5wbmciLCJ3aWR0aCI6Ijw9NzM0In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.VcE54mCm4QODaMHDR1rWmIPmcJawoVaGH5-MfkUlfQc">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -17,14 +20,24 @@
 @keyframes btnGlow{0%,100%{box-shadow:0 0 12px rgba(168,85,247,.2),0 4px 16px rgba(0,0,0,.3)}50%{box-shadow:0 0 28px rgba(168,85,247,.4),0 8px 24px rgba(0,0,0,.4)}}
 @keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 @keyframes cardGlow{0%,100%{box-shadow:0 0 8px rgba(245,200,0,.15)}50%{box-shadow:0 0 25px rgba(245,200,0,.3)}}
-body{background:linear-gradient(-45deg,#0f0c29,#1a0a2e,#16213e,#0f3460);background-size:500% 500%;animation:bgFloat 25s ease infinite;font-family:"Segoe UI","Arial Black",system-ui,sans-serif;font-size:15px;min-height:100vh;padding:12px 16px;color:#e2e8f0;overflow-x:hidden;position:relative;}
+body{background:linear-gradient(-45deg,#0f0c29,#1a0a2e,#16213e,#0f3460);background-size:500% 500%;animation:bgFloat 25s ease infinite;font-family:'Rajdhani','Segoe UI',sans-serif;font-size:16px;min-height:100vh;padding:12px 16px;color:#e2e8f0;overflow-x:hidden;position:relative;}
+h1,h2,h3{font-family:'Limelight',cursive;letter-spacing:.04em;}
+.gold-grad{background:linear-gradient(135deg,#f5c800,#f59e0b,#f5c800);-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 8px rgba(245,200,0,.3));}
+.purple-grad{background:linear-gradient(135deg,#c084fc,#a78bfa,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 8px rgba(192,132,252,.3));}
+.glow-gold{text-shadow:0 0 10px rgba(245,200,0,.3),0 0 20px rgba(245,200,0,.15);}
+.glow-purple{text-shadow:0 0 10px rgba(192,132,252,.3),0 0 20px rgba(192,132,252,.15);}
+.glow-white{text-shadow:0 0 8px rgba(255,255,255,.2),0 0 16px rgba(255,255,255,.1);}
+.text-stroke{-webkit-text-stroke:1px rgba(0,0,0,.3);text-stroke:1px rgba(0,0,0,.3);}
+.anime-btn{position:relative;overflow:hidden;transition:all .2s;}
+.anime-btn::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,.1) 50%,transparent 70%);transform:translateX(-100%);transition:transform .4s;pointer-events:none;}
+.anime-btn:hover::after{transform:translateX(100%);}
 body::after{content:"";position:fixed;inset:0;z-index:0;background:url('https://ultrarumble.com/assets/Gallery/T_ui_Gallery_Illust_10101_L.png') center/cover no-repeat;opacity:.02;pointer-events:none;}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(circle,rgba(255,255,255,.025) 1px,transparent 1px);background-size:20px 20px;}
 .screen{max-width:1600px;margin:0 auto;display:grid;grid-template-columns:300px 1fr 260px;gap:12px;}
-.title{grid-column:1/-1;text-align:center;font-size:2.2rem;font-weight:900;letter-spacing:.15em;color:#f5c800;text-shadow:0 0 10px rgba(245,200,0,.3),0 0 30px rgba(245,200,0,.15),2px 2px 0 rgba(0,0,0,.5);text-transform:uppercase;padding:8px 0 4px;animation:glowPulse 3s ease-in-out infinite;position:relative;}
+.title{grid-column:1/-1;text-align:center;font-size:2.2rem;font-weight:900;letter-spacing:.15em;background:linear-gradient(135deg,#f5c800,#f59e0b,#f5c800);-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 10px rgba(245,200,0,.3)) drop-shadow(0 0 30px rgba(245,200,0,.15));text-transform:uppercase;padding:8px 0 4px;animation:glowPulse 3s ease-in-out infinite;position:relative;font-family:'Limelight',cursive;}
 .title::after{content:"";position:absolute;bottom:0;left:20%;right:20%;height:2px;background:linear-gradient(90deg,transparent,rgba(245,200,0,.4),transparent);}
 .left{background:linear-gradient(145deg,rgba(58,127,154,.6),rgba(20,50,70,.85));border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:10px;display:flex;flex-direction:column;gap:8px;box-shadow:0 8px 32px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06);backdrop-filter:blur(8px);min-width:0;}
-.grp-ttl{display:inline-block;font-size:.88rem;font-weight:900;letter-spacing:.06em;color:#fff;text-shadow:0 0 10px rgba(255,255,255,.2),1px 1px 0 #000;border:1px solid rgba(255,255,255,.15);border-radius:5px;padding:2px 10px;margin-bottom:4px;box-shadow:inset 0 1px 0 rgba(255,255,255,.15);}
+.grp-ttl{display:inline-block;font-size:.88rem;font-weight:900;letter-spacing:.06em;color:#fff;text-shadow:0 0 10px rgba(255,255,255,.2),1px 1px 0 #000;border:1px solid rgba(255,255,255,.15);border-radius:5px;padding:2px 10px;margin-bottom:4px;box-shadow:inset 0 1px 0 rgba(255,255,255,.15);font-family:'Limelight',cursive;}
 .grp-ttl.h{background:linear-gradient(135deg,#15803d,#22c55e);}
 .grp-ttl.v{background:linear-gradient(135deg,#991b1b,#ef4444);}
 .cgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;}
@@ -101,7 +114,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;background-im
 .tpanel-ttl{font-size:.9rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#f5c800;text-shadow:0 0 15px rgba(245,200,0,.3),1px 1px 0 #000;margin-bottom:8px;}
 .slot-columns{display:grid;grid-template-columns:1fr;gap:10px;align-items:start;}
 .slot-col{background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:9px;}
-.slot-col-ttl{font-size:.66rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#f5c800;text-shadow:0 0 8px rgba(245,200,0,.2);margin-bottom:5px;}
+.slot-col-ttl{font-size:.66rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;background:linear-gradient(135deg,#f5c800,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 6px rgba(245,200,0,.25));margin-bottom:5px;}
 .srow5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin-bottom:5px;overflow:hidden;}
 .spec-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;overflow:hidden;}
 @media(max-width:768px){.spec-row{grid-template-columns:1fr;}.forum-post{padding:10px;}.dmg-row{font-size:.72rem;flex-wrap:wrap;}.dmg-header{flex-wrap:wrap;gap:4px;}}
@@ -139,14 +152,14 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;background-im
 .lvslider{flex:1;min-width:0;height:5px;accent-color:#f5c800;cursor:pointer;}
 .lvval{font-size:.75rem;font-weight:900;color:#fff;min-width:1.5em;text-align:right;}
 .lvmax{font-size:.62rem;color:#46607a;white-space:nowrap;}
-.spec-ttl{font-size:.85rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#c084fc;text-shadow:0 0 12px rgba(192,132,252,.3),1px 1px 0 #000;margin:8px 0 5px;}
+.spec-ttl{font-size:.85rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;background:linear-gradient(135deg,#c084fc,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 12px rgba(192,132,252,.3));margin:8px 0 5px;}
 .slot.lk{opacity:.3;pointer-events:none;}
 .spanel{background:linear-gradient(145deg,rgba(17,17,17,.9),rgba(30,30,30,.95));border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:10px;box-shadow:0 8px 32px rgba(0,0,0,.4);}
-.sptitle{font-size:.95rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#f5c800;text-shadow:0 0 12px rgba(245,200,0,.3);margin-bottom:8px;}
+.sptitle{font-size:.95rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;background:linear-gradient(135deg,#f5c800,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 8px rgba(245,200,0,.3));margin-bottom:8px;}
 .sgp{margin-bottom:8px;}
 .sglbl{font-size:.64rem;text-transform:uppercase;letter-spacing:.1em;color:#64748b;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:3px;padding-bottom:1px;}
 .dpanel,.rpanel{background:linear-gradient(145deg,rgba(17,17,17,.9),rgba(30,30,30,.95));border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:10px;box-shadow:0 8px 32px rgba(0,0,0,.4);margin-top:10px;}
-.dptitle{font-size:.95rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#c084fc;text-shadow:0 0 12px rgba(192,132,252,.3);margin-bottom:8px;}
+.dptitle{font-size:.95rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;background:linear-gradient(135deg,#c084fc,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 8px rgba(192,132,252,.3));margin-bottom:8px;}
 .cardtoggle{display:flex;align-items:center;gap:6px;margin:-2px 0 8px;font-size:.7rem;font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:#64748b;cursor:pointer;user-select:none;transition:color .15s;}
 .cardtoggle input{accent-color:#f5c800;width:14px;height:14px;cursor:pointer;}
 .cardtoggle.on{color:#f5c800;text-shadow:0 0 10px rgba(245,200,0,.2);}
@@ -170,7 +183,8 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;background-im
 .dmg-skilltitle{font-size:.8rem;font-weight:900;letter-spacing:.03em;text-transform:none;color:#f1f5f9;margin-bottom:8px;display:flex;align-items:center;gap:6px;}
 .dmg-skilltitle .qtag{color:#f5c800;text-transform:uppercase;}
 .dmg-tuned-label{color:#4ade80;font-weight:900;}
-.dmg-tuned-header{color:#4ade80;}
+.dmg-tuned-header{color:#4ade80;font-weight:900;}
+.dmg-tuned-header strong{background:linear-gradient(135deg,#4ade80,#22c55e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 6px rgba(74,222,128,.3));}
 .dmg-note{display:block;font-size:.62rem;line-height:1;color:#4ade80;font-weight:900;margin-top:2px;text-transform:lowercase;}
 .dmg-extra{margin-top:8px;padding-top:7px;border-top:1px dashed rgba(255,255,255,.08);}
 .dmg-extra-title{font-size:.7rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#f5c800;margin-bottom:4px;text-shadow:0 0 8px rgba(245,200,0,.15);}
@@ -244,6 +258,10 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
 </style>
 </head>
 <body>
+<div style="text-align:center;padding:6px 0 4px;border-bottom:1px solid rgba(255,255,255,.05);margin-bottom:6px;">
+  <h1 class="gold-grad" style="font-size:1.2rem;margin:0;letter-spacing:.15em;">MHUR T.U.N.I.N.G. PLANNER</h1>
+  <div style="font-size:.55rem;color:#64748b;letter-spacing:.1em;text-transform:uppercase;margin-top:-2px;">My Hero Ultra Rumble</div>
+</div>
 <div class="tabs-bar">
   <button class="tab-btn active" data-tab="planner">&#128221; Planner</button>
   <button class="tab-btn" data-tab="forum">&#128172; Forum</button>
@@ -294,7 +312,7 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
     </div>
     <div class="ts-row">
       <div class="tpanel">
-        <div class="tpanel-ttl" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px;">T.U.N.I.N.G. Memory Slots <span style="display:flex;gap:4px;"><button class="gbtn gmax" id="btnUnlock" style="font-size:.6rem;padding:3px 8px;background:linear-gradient(135deg,#d97706,#f59e0b);box-shadow:0 0 10px rgba(245,158,11,.2);">&#128274; Unlock Specs</button><button class="gbtn gmax" id="btnMax" style="font-size:.6rem;padding:3px 10px;animation:btnGlow 2s ease-in-out infinite;">&#9733; Max All</button></span></div>
+        <div class="tpanel-ttl" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px;"><span class="gold-grad" style="font-size:.95rem;font-weight:900;letter-spacing:.08em;">T.U.N.I.N.G. Memory Slots</span> <span style="display:flex;gap:4px;"><button class="gbtn gmax" id="btnUnlock" style="font-size:.6rem;padding:3px 8px;background:linear-gradient(135deg,#d97706,#f59e0b);box-shadow:0 0 10px rgba(245,158,11,.2);">&#128274; Unlock Specs</button><button class="gbtn gmax" id="btnMax" style="font-size:.6rem;padding:3px 10px;animation:btnGlow 2s ease-in-out infinite;">&#9733; Max All</button></span></div>
         <div class="slot-columns">
           <div class="slot-col">
             <div class="slot-col-ttl">Left Memory</div>
@@ -450,7 +468,7 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
 <div id="tabForum" class="tab-content" style="display:none;">
   <div class="forum-wrap" id="forumApp" style="max-width:900px;margin:0 auto;">
     <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px;flex-wrap:wrap;">
-      <h2 style="font-size:1.8rem;font-weight:900;letter-spacing:.12em;color:#f5c800;">&#128172; Build Forum</h2>
+      <h2 class="gold-grad" style="font-size:1.8rem;font-weight:900;letter-spacing:.12em;">&#128172; Build Forum</h2>
       <div style="position:relative;display:flex;align-items:center;gap:6px;">
         <span id="notifBell" style="font-size:1.1rem;cursor:pointer;padding:2px 6px;border-radius:6px;transition:all .15s;position:relative;" title="Notifications">&#128276;</span>
         <span id="myProfileBtn" style="font-size:.7rem;cursor:pointer;padding:4px 8px;border:1px solid rgba(255,255,255,.08);border-radius:6px;transition:all .15s;color:#94a3b8;display:none;">&#128100;</span>
@@ -7321,7 +7339,7 @@ Promise.all([loadNormalTuningData(),loadDamageTablesData()]).then(function(){
     (function(){
       var ov=document.createElement('div');ov.style.cssText='position:fixed;inset:0;z-index:100000;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;';
       var box=document.createElement('div');box.style.cssText='background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:30px;max-width:500px;width:90%;max-height:85vh;overflow-y:auto;text-align:center;';
-      box.innerHTML='<div style="font-size:2rem;margin-bottom:8px;">&#128220;</div><h2 style="color:#f5c800;font-size:1.1rem;margin-bottom:12px;">MHUR T.U.N.I.N.G. Planner</h2><div style="color:#94a3b8;font-size:.75rem;line-height:1.5;text-align:left;margin-bottom:16px;"><p style="margin-bottom:10px;"><b style="color:#e2e8f0;">Data Source:</b> All game data is obtained from the <a href="https://ultrarumble.com" target="_blank" rel="noopener" style="color:#60a5fa;">Official My Hero Ultra Rumble Database</a>. All information should be credited to them.</p><p style="margin-bottom:10px;"><b style="color:#e2e8f0;">Calculations:</b> All calculations are done to be as close to 1:1 with how they work in the actual game. Some information may be slightly off, but it should be almost as accurate.</p><p style="margin-bottom:10px;"><b style="color:#e2e8f0;">Purpose:</b> This site is for planning future tunings and sharing already made tunings with the community. It is <b style="color:#ef4444;">not</b> a social hangout platform.</p></div><button class="forum-btn" id="dismissDisclaimer" style="font-size:.8rem;padding:8px 24px;">I Understand</button>';
+      box.innerHTML='<div style="font-size:2rem;margin-bottom:8px;">&#128220;</div><h2 class="gold-grad" style="font-size:1.3rem;margin-bottom:12px;">MHUR T.U.N.I.N.G. Planner</h2><div style="color:#94a3b8;font-size:.75rem;line-height:1.5;text-align:left;margin-bottom:16px;"><p style="margin-bottom:10px;"><b style="color:#e2e8f0;">Data Source:</b> All game data is obtained from the <a href="https://ultrarumble.com" target="_blank" rel="noopener" style="color:#60a5fa;">Official My Hero Ultra Rumble Database</a>. All information should be credited to them.</p><p style="margin-bottom:10px;"><b style="color:#e2e8f0;">Calculations:</b> All calculations are done to be as close to 1:1 with how they work in the actual game. Some information may be slightly off, but it should be almost as accurate.</p><p style="margin-bottom:10px;"><b style="color:#e2e8f0;">Purpose:</b> This site is for planning future tunings and sharing already made tunings with the community. It is <b style="color:#ef4444;">not</b> a social hangout platform.</p></div><button class="forum-btn" id="dismissDisclaimer" style="font-size:.8rem;padding:8px 24px;">I Understand</button>';
       ov.appendChild(box);document.body.appendChild(ov);
       document.getElementById('dismissDisclaimer').onclick=function(){ov.remove();localStorage.setItem('mhurDisclaimerDone','1');if(!localStorage.getItem('mhurTutorialDone')){setTimeout(function(){var steps=[
         {sel:'.title',msg:'<b>Welcome to the MHUR T.U.N.I.N.G. Planner!</b><br>This tool lets you plan and optimize your character builds. Click <b>Next</b> for a quick tour.',pos:'bottom'},
@@ -7555,7 +7573,7 @@ function initForum(){
       });
       var topChar=Object.keys(charCount).sort(function(a,b){return charCount[b]-charCount[a];})[0]||'';
       var top=Object.keys(tags).sort(function(a,b){return tags[b]-tags[a];}).slice(0,6);
-      var h='<div class="forum-hero"><div><h2 style="font-size:1.2rem;font-weight:900;color:#f5c800;">&#128172; Build Forum</h2><p style="font-size:.72rem;color:#94a3b8;margin-top:2px;">Share and discover MHUR builds</p></div><div style="display:flex;gap:16px;"><div style="text-align:center;"><div style="font-size:1.3rem;font-weight:900;color:#fff;">'+total+'</div><div style="font-size:.6rem;color:#64748b;text-transform:uppercase;letter-spacing:.05em;">Builds</div></div><div style="text-align:center;border-left:1px solid rgba(255,255,255,.06);padding-left:12px;"><div style="font-size:1.3rem;font-weight:900;color:#fff;">'+totalLikes+'</div><div style="font-size:.6rem;color:#64748b;text-transform:uppercase;letter-spacing:.05em;">Likes</div></div>'+(topChar?'<div style="text-align:center;border-left:1px solid rgba(255,255,255,.06);padding-left:12px;"><div style="font-size:.75rem;font-weight:900;color:#f5c800;">'+esc(topChar.charAt(0).toUpperCase()+topChar.slice(1))+'</div><div style="font-size:.55rem;color:#64748b;text-transform:uppercase;letter-spacing:.04em;">Most Built</div></div>':'')+(newsData&&newsData.season?'<div style="text-align:center;border-left:1px solid rgba(255,255,255,.06);padding-left:12px;"><div style="font-size:1rem;font-weight:900;color:#f5c800;" id="sTimer2">S'+newsData.season+'</div><div style="font-size:.6rem;color:#64748b;text-transform:uppercase;letter-spacing:.05em;">Season</div></div>':'')+'</div></div>';
+      var h='<div class="forum-hero"><div><h2 class="gold-grad" style="font-size:1.3rem;font-weight:900;">&#128172; Build Forum</h2><p style="font-size:.72rem;color:#94a3b8;margin-top:2px;">Share and discover MHUR builds</p></div><div style="display:flex;gap:16px;"><div style="text-align:center;"><div style="font-size:1.3rem;font-weight:900;color:#fff;">'+total+'</div><div style="font-size:.6rem;color:#64748b;text-transform:uppercase;letter-spacing:.05em;">Builds</div></div><div style="text-align:center;border-left:1px solid rgba(255,255,255,.06);padding-left:12px;"><div style="font-size:1.3rem;font-weight:900;color:#fff;">'+totalLikes+'</div><div style="font-size:.6rem;color:#64748b;text-transform:uppercase;letter-spacing:.05em;">Likes</div></div>'+(topChar?'<div style="text-align:center;border-left:1px solid rgba(255,255,255,.06);padding-left:12px;"><div style="font-size:.75rem;font-weight:900;color:#f5c800;">'+esc(topChar.charAt(0).toUpperCase()+topChar.slice(1))+'</div><div style="font-size:.55rem;color:#64748b;text-transform:uppercase;letter-spacing:.04em;">Most Built</div></div>':'')+(newsData&&newsData.season?'<div style="text-align:center;border-left:1px solid rgba(255,255,255,.06);padding-left:12px;"><div style="font-size:1rem;font-weight:900;color:#f5c800;" id="sTimer2">S'+newsData.season+'</div><div style="font-size:.6rem;color:#64748b;text-transform:uppercase;letter-spacing:.05em;">Season</div></div>':'')+'</div></div>';
       if(newsData&&newsData.seasonEnd){(function(es){var t=new Date(es.replace(/-/g,'/')).getTime();function tk(){var df=Math.max(0,t-Date.now()),dd=Math.floor(df/864e5),hh=Math.floor((df%864e5)/36e5),mm=Math.floor((df%36e5)/6e4);var e2=document.getElementById('sTimer2');if(e2)e2.textContent=dd+'d '+hh+'h '+mm+'m';}tk();setInterval(tk,1e4);})(newsData.seasonEnd);}
       if(top.length)h+='<div style="display:flex;gap:4px;margin-bottom:10px;flex-wrap:wrap;align-items:center;"><span style="font-size:.58rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-right:4px;">Tags:</span>'+top.map(function(t){return'<span class="post-tag" style="font-size:.55rem;font-weight:700;background:linear-gradient(135deg,rgba(245,200,0,.12),rgba(245,200,0,.06));color:#f5c800;border:1px solid rgba(245,200,0,.12);border-radius:4px;padding:2px 6px;cursor:pointer;transition:all .15s;" data-tag="'+esc(t)+'">'+esc(t)+'</span>';}).join('')+'</div>';
       h+='<div style="display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;">'+['hot','likes','new'].map(function(s){return'<button class="tab-btn '+(sort===s?'active':'')+'" data-fsort="'+s+'" style="font-size:.68rem;padding:4px 10px;">'+(s==='hot'?'&#128293; Hot':s==='likes'?'&#128147; Top':'&#128337; New')+'</button>';}).join('')+
