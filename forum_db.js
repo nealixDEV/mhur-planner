@@ -272,9 +272,14 @@ function buildAPI(){
     });
   };
 
-  function isAdminKey(key,cb){
-    if(key===MASTER_KEY){cb(true);return;}
-    qOne("SELECT used FROM admin_keys WHERE key_id=$1 AND used=1",[key],function(r){cb(!!r);});
+function isAdminKey(key,cb){
+  if(key===MASTER_KEY){cb(true);return;}
+  if(typeof key==='string'&&key.indexOf('user:')===0){
+    var un=key.substring(5).toLowerCase().trim();
+    qOne("SELECT admin FROM forum_users WHERE username=$1 AND admin>=1",[un],function(r){cb(!!r);});
+    return;
+  }
+  qOne("SELECT used FROM admin_keys WHERE key_id=$1 AND used=1",[key],function(r){cb(!!r);});
   }
   a.like = function(id,cb){qRun("UPDATE posts SET likes=likes+1 WHERE id=$1",[id]);qOne("SELECT likes FROM posts WHERE id=$1",[id],function(r){cb(r?{likes:r.likes}:{error:'Not found'});});};
   a.unlike = function(id,cb){qRun("UPDATE posts SET likes=CASE WHEN likes>0 THEN likes-1 ELSE 0 END WHERE id=$1",[id]);qOne("SELECT likes FROM posts WHERE id=$1",[id],function(r){cb(r?{likes:r.likes}:{error:'Not found'});});};

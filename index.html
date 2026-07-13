@@ -7443,13 +7443,13 @@ function initForum(){
   var mpb=document.getElementById('myProfileBtn');
   if(mpb){mpb.style.display='';mpb.title='My Profile';mpb.onclick=function(){showProfile(sessionName);};}
   masterKey=localStorage.getItem('mhurMasterKey')||'';
-  if(!masterKey&&(localStorage.getItem('forumIsOwner')==='1'||localStorage.getItem('forumIsAdmin')==='1'))masterKey='session';
+  if(!masterKey&&(localStorage.getItem('forumIsOwner')==='1'||localStorage.getItem('forumIsAdmin')==='1'))masterKey='user:'+(localStorage.getItem('forumUsername')||'').toLowerCase();
   var globalSessionName=sessionName;
   // Check if user is admin from database
   var checkAdminName=sessionName||localStorage.getItem('forumUsername')||'';
   if(checkAdminName){
     var vx2=new XMLHttpRequest();vx2.open('GET','/api/check-user?name='+encodeURIComponent(checkAdminName),true);
-    vx2.onload=function(){try{var vr2=JSON.parse(vx2.responseText);if(vr2&&vr2.admin>=1){localStorage.setItem('forumIsAdmin','1');if(vr2.admin>=2){localStorage.setItem('forumIsOwner','1');}else{localStorage.removeItem('forumIsOwner');}}else{localStorage.removeItem('forumIsAdmin');localStorage.removeItem('forumIsOwner');}updateAdminUI();if(window.forumBack&&typeof window.forumBack==='function')window.forumBack();}catch(e){}};
+    vx2.onload=function(){try{var vr2=JSON.parse(vx2.responseText);if(vr2&&vr2.admin>=1){localStorage.setItem('forumIsAdmin','1');if(vr2.admin>=2){localStorage.setItem('forumIsOwner','1');}else{localStorage.removeItem('forumIsOwner');}if(!localStorage.getItem('mhurMasterKey')){masterKey='user:'+sessionName.toLowerCase();localStorage.setItem('mhurMasterKey',masterKey);}}else{localStorage.removeItem('forumIsAdmin');localStorage.removeItem('forumIsOwner');}updateAdminUI();if(window.forumBack&&typeof window.forumBack==='function')window.forumBack();}catch(e){}};
     vx2.send();
   }
   try{var likedLS=JSON.parse(localStorage.getItem('mhurLiked')||'{}');for(var k in likedLS)if(likedLS[k])likedPosts[k]=true;}catch(e){}
@@ -7537,6 +7537,7 @@ function initForum(){
             localStorage.setItem('forumUsername',name);sessionName=name;
             localStorage.setItem('forumLoggedIn','1');
             if(r.avatar)localStorage.setItem('forumAvatar',r.avatar);
+            if(r.admin>=1){localStorage.setItem('forumIsAdmin','1');if(r.admin>=2)localStorage.setItem('forumIsOwner','1');localStorage.setItem('mhurMasterKey','user:'+name.toLowerCase());}
             initForum();return;
           }
           if(!isLogin&&r&&r.registered){
