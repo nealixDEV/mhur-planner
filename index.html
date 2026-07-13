@@ -7443,6 +7443,7 @@ function initForum(){
   var mpb=document.getElementById('myProfileBtn');
   if(mpb){mpb.style.display='';mpb.title='My Profile';mpb.onclick=function(){showProfile(sessionName);};}
   masterKey=localStorage.getItem('mhurMasterKey')||'';
+  if(!masterKey&&(localStorage.getItem('forumIsOwner')==='1'||localStorage.getItem('forumIsAdmin')==='1'))masterKey='session';
   var globalSessionName=sessionName;
   // Check if user is admin from database
   var checkAdminName=sessionName||localStorage.getItem('forumUsername')||'';
