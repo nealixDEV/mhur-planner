@@ -199,6 +199,25 @@ function handler(req, res) {
   if(url === '/api/admin/list-admins' && req.method === 'GET'){
     return forum.listAdmins(function(admins){console.log('listAdmins result:',admins);json(res,{admins:admins});});
   }
+  if(url === '/api/latest' && req.method === 'GET'){
+    var https = require('https');
+    return https.get('https://ultrarumble.com', function(resp){
+      var data='';resp.on('data',function(c){data+=c;});resp.on('end',function(){
+        var chars=[],gachas=[];
+        var parts=data.split('<div class="rel-card');
+        for(var i=1;i<parts.length&&i<=6;i++){
+          var card=parts[i];var img=card.match(/src="([^"]+)"/);var name=card.match(/"rel-name"[^>]*>([\s\S]*?)<\//);
+          if(img)chars.push({img:img[1].replace(/&amp;/g,'&'),name:name?name[1].trim():''});
+        }
+        var gparts=data.split('<div class="gacha-card');
+        for(var gi=1;gi<gparts.length;gi++){
+          var gc=gparts[gi];var gimg=gc.match(/src="([^"]+)"/);var gtype=gc.match(/"gacha-type"[^>]*>([\s\S]*?)<\//);var gname=gc.match(/"gacha-name"[^>]*>([\s\S]*?)<\//);
+          if(gimg)gachas.push({img:gimg[1],type:gtype?gtype[1].trim():'',name:gname?gname[1].trim():''});
+        }
+        json(res,{chars:chars,gachas:gachas});
+      });
+    }).on('error',function(e){json(res,{chars:[],gachas:[]});});
+  }
   if(url === '/api/admin/demote' && req.method === 'POST'){
     return body(req, function(data){
       forum.demoteUser((data.caller||'').toLowerCase().trim(), (data.username||'').trim(), function(result){json(res, result);});
