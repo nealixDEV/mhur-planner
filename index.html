@@ -8059,7 +8059,7 @@ if(adminEl){
       // Owner-only: admin management
       if(localStorage.getItem('forumIsOwner')==='1'){
         var ownerDiv=document.createElement('div');ownerDiv.style.marginTop='16px';ownerDiv.style.borderTop='1px solid rgba(255,255,255,.06)';ownerDiv.style.paddingTop='12px';
-        ownerDiv.innerHTML='<div style="font-size:.7rem;font-weight:900;color:#ef4444;margin-bottom:8px;text-shadow:0 0 10px rgba(239,68,68,.3);">&#128308; Owner Controls</div><div id="adminList" style="font-size:.65rem;color:#94a3b8;">Loading admins...</div>';
+        ownerDiv.innerHTML='<div style="font-size:.7rem;font-weight:900;color:#ef4444;margin-bottom:8px;text-shadow:0 0 10px rgba(239,68,68,.3);">&#128308; Owner Controls</div><div id="adminList" style="font-size:.65rem;color:#94a3b8;">Loading admins...</div><div style="margin-top:12px;font-size:.6rem;font-weight:900;color:#f5c800;border-top:1px solid rgba(255,255,255,.06);padding-top:8px;">&#128101; User Management</div><div style="margin-top:6px;display:flex;gap:4px;"><input id="userMgmtInput" class="forum-input" style="flex:1;font-size:.6rem;padding:4px 6px;" placeholder="Username..."><button class="tab-btn" id="userMgmtLoad" style="font-size:.55rem;padding:2px 6px;">Load</button></div><div id="userMgmtResult" style="font-size:.6rem;color:#94a3b8;margin-top:4px;"></div>';
         document.getElementById('adminKeysList').parentNode.appendChild(ownerDiv);
         function loadAdmins(){
           var al=document.getElementById('adminList');if(!al)return;
@@ -8081,6 +8081,28 @@ if(adminEl){
           xa.send();
         }
         loadAdmins();
+        document.getElementById('userMgmtLoad').onclick=function(){
+          var un=document.getElementById('userMgmtInput').value.trim().toLowerCase();if(!un)return;
+          var res=document.getElementById('userMgmtResult');res.innerHTML='Loading...';
+          var xm=new XMLHttpRequest();xm.open('GET','/api/check-user?name='+encodeURIComponent(un),true);
+          xm.onload=function(){try{var mr=JSON.parse(xm.responseText);if(!mr||!mr.username){res.innerHTML='<span style="color:#ef4444;">User not found.</span>';return;}
+            var isB=mr.banned?'Yes':'No';var muted=mr.muted_until&&mr.muted_until>Date.now()?'Yes (until '+new Date(mr.muted_until).toLocaleDateString()+')':'No';
+            var warnCount=0;try{warnCount=JSON.parse(mr.warnings||'[]').length;}catch(e){}
+            res.innerHTML='<div style="background:rgba(0,0,0,.15);border-radius:6px;padding:6px;"><div style="font-weight:700;color:#e2e8f0;margin-bottom:4px;">'+esc(mr.username)+'</div><div style="color:#94a3b8;margin-bottom:4px;">Banned: <span style="color:'+(mr.banned?'#ef4444':'#4ade80')+';">'+isB+'</span> | Muted: <span style="color:'+(muted.indexOf('Yes')===0?'#f59e0b':'#4ade80')+';">'+muted+'</span> | Warnings: <span style="color:#f5c800;">'+warnCount+'</span></div><div style="display:flex;gap:4px;flex-wrap:wrap;">'+
+              (mr.banned?'<button class="tab-btn" data-uaction="unban" style="font-size:.5rem;padding:2px 5px;color:#4ade80;border-color:rgba(74,222,128,.2);">Unban</button>':'<button class="tab-btn" data-uaction="ban" style="font-size:.5rem;padding:2px 5px;color:#ef4444;border-color:rgba(239,68,68,.2);">Ban</button>')+
+              (muted.indexOf('Yes')===0?'<button class="tab-btn" data-uaction="unmute" style="font-size:.5rem;padding:2px 5px;color:#4ade80;border-color:rgba(74,222,128,.2);">Unmute</button>':'<button class="tab-btn" data-uaction="mute" style="font-size:.5rem;padding:2px 5px;color:#f59e0b;border-color:rgba(245,158,11,.2);">Mute</button>')+
+              '<button class="tab-btn" data-uaction="warn" style="font-size:.5rem;padding:2px 5px;color:#f5c800;border-color:rgba(245,200,0,.2);">Warn</button>'+
+              '</div></div>';
+            document.querySelectorAll('[data-uaction]').forEach(function(b){b.onclick=function(){
+              var action=this.getAttribute('data-uaction');var uname=document.getElementById('userMgmtInput').value.trim().toLowerCase();
+              if(action==='ban'){var reason=prompt('Ban reason:');if(reason===null)return;doAction('/api/admin/ban',{username:uname,reason:reason});}
+              else if(action==='unban'){if(!confirm('Unban '+uname+'?'))return;doAction('/api/admin/unban',{username:uname});}
+              else if(action==='mute'){var mins=prompt('Mute duration in minutes (default 60):','60');if(mins===null)return;doAction('/api/admin/mute',{username:uname,duration:parseInt(mins)*60000});}
+              else if(action==='unmute'){if(!confirm('Unmute '+uname+'?'))return;doAction('/api/admin/unmute',{username:uname});}
+              else if(action==='warn'){var w=prompt('Warning message:');if(w===null)return;doAction('/api/admin/warn',{username:uname,reason:w});}
+            };});function doAction(url,payload){payload.caller=localStorage.getItem('forumUsername');var xx=new XMLHttpRequest();xx.open('POST',url,true);xx.setRequestHeader('Content-Type','application/json');xx.onload=function(){document.getElementById('userMgmtLoad').click();};xx.send(JSON.stringify(payload));}
+          }catch(e){res.innerHTML='<span style="color:#ef4444;">Error loading user.</span>';}};xm.send();
+        };
       }
       return;
     }

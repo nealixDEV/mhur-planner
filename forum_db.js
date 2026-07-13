@@ -113,6 +113,9 @@ module.exports = new Promise(function(resolve){
         db.query("ALTER TABLE forum_users ADD COLUMN IF NOT EXISTS banner TEXT",[],function(){
         db.query("ALTER TABLE forum_users ADD COLUMN IF NOT EXISTS bannerdesc TEXT",[],function(){
         db.query("ALTER TABLE forum_users ADD COLUMN IF NOT EXISTS links TEXT",[],function(){
+        db.query("ALTER TABLE forum_users ADD COLUMN IF NOT EXISTS banned INTEGER DEFAULT 0",[],function(){
+        db.query("ALTER TABLE forum_users ADD COLUMN IF NOT EXISTS muted_until BIGINT DEFAULT 0",[],function(){
+        db.query("ALTER TABLE forum_users ADD COLUMN IF NOT EXISTS warnings TEXT",[],function(){
         db.query("CREATE TABLE IF NOT EXISTS used_admin_keys (key_hash TEXT PRIMARY KEY, usedAt BIGINT)",[],function(){
         db.query("CREATE TABLE IF NOT EXISTS admin_keys (key_id TEXT PRIMARY KEY, used INTEGER DEFAULT 0, createdAt BIGINT)",[],function(){
           console.log('PostgreSQL connected');
@@ -122,7 +125,10 @@ module.exports = new Promise(function(resolve){
         });
         });
         });
+        });
+        });
       });
+    });
     });
     });
     });
@@ -146,6 +152,9 @@ module.exports = new Promise(function(resolve){
       try{db.run("ALTER TABLE forum_users ADD COLUMN banner TEXT");}catch(e){}
       try{db.run("ALTER TABLE forum_users ADD COLUMN bannerDesc TEXT");}catch(e){}
       try{db.run("ALTER TABLE forum_users ADD COLUMN links TEXT");}catch(e){}
+      try{db.run("ALTER TABLE forum_users ADD COLUMN banned INTEGER DEFAULT 0");}catch(e){}
+      try{db.run("ALTER TABLE forum_users ADD COLUMN muted_until INTEGER DEFAULT 0");}catch(e){}
+      try{db.run("ALTER TABLE forum_users ADD COLUMN warnings TEXT");}catch(e){}
       db.run("CREATE TABLE IF NOT EXISTS used_admin_keys (key_hash TEXT PRIMARY KEY, usedAt INTEGER)");
       db.run("CREATE TABLE IF NOT EXISTS admin_keys (key_id TEXT PRIMARY KEY, used INTEGER DEFAULT 0, createdAt INTEGER)");
       save();
@@ -211,6 +220,15 @@ function buildAPI(){
   };
 
   a.create = function(data,cb){
+    var author=(data.author||'').trim();
+    if(author){
+      qOne("SELECT banned,muted_until FROM forum_users WHERE username=$1",[author.toLowerCase()],function(u){
+        if(u&&u.banned){cb({error:'Your account has been banned from posting.'});return;}
+        if(u&&u.muted_until&&u.muted_until>Date.now()){cb({error:'You are muted for '+Math.ceil((u.muted_until-Date.now())/60000)+' more minutes.'});return;}
+        doCreate();
+      });
+    }else{doCreate();}
+    function doCreate(){
     var id=genId(),title=(data.title||'').trim();
     if(!title){cb({error:'Title is required'});return;}
     var tags=JSON.stringify((data.tags||[]).map(function(t){return t.trim().toLowerCase();}).filter(Boolean));
@@ -218,6 +236,7 @@ function buildAPI(){
       [id,data.buildCode||'',title,(data.description||'').trim(),(data.author||'Anonymous').trim(),tags,data.category||'',data.image||'',Date.now(),data.deleteKey||''],function(){
       cb({id:id,buildCode:data.buildCode||'',title:title,description:(data.description||'').trim(),author:(data.author||'Anonymous').trim(),tags:(data.tags||[]).map(function(t){return t.trim().toLowerCase();}).filter(Boolean),category:data.category||'',image:data.image||'',pinned:0,likes:0,views:0,createdAt:Date.now(),comments:[],deleteKey:data.deleteKey,editedAt:0});
     });
+    }
   };
 
   function dk(r){return r.deletekey||r.deleteKey||'';}
@@ -293,11 +312,21 @@ function isAdminKey(key,cb){
   };
 
   a.comment = function(id,data,cb){
+    var ca=(data.author||'').trim();
+    if(ca){
+      qOne("SELECT banned,muted_until FROM forum_users WHERE username=$1",[ca.toLowerCase()],function(u){
+        if(u&&u.banned){cb({error:'Your account has been banned from posting.'});return;}
+        if(u&&u.muted_until&&u.muted_until>Date.now()){cb({error:'You are muted for '+Math.ceil((u.muted_until-Date.now())/60000)+' more minutes.'});return;}
+        doComment();
+      });
+    }else{doComment();}
+    function doComment(){
     var cid=genId(),text=(data.text||'').trim();
     if(!text&&!data.image){cb({error:'Comment text or image is required'});return;}
     var img=data.image||'';
     qRun("INSERT INTO comments(id,postId,text,author,deleteKey,createdAt,editedAt,replyTo,image) VALUES($1,$2,$3,$4,$5,$6,0,$7,$8)",
       [cid,id,text,(data.author||'').trim()||'Anonymous',data.deleteKey||'',Date.now(),data.replyTo||null,img],function(){cb({id:cid,text:text,author:(data.author||'').trim()||'Anonymous',createdAt:Date.now(),image:img});});
+    }
   };
 
   function buildCodeMatch(qs,row){
@@ -450,6 +479,42 @@ function isAdminKey(key,cb){
       if(!caller||caller.admin<2){cb({error:'Only the owner can demote admins'});return;}
       qRun("UPDATE forum_users SET admin=CASE WHEN admin=2 THEN 2 ELSE 0 END WHERE username=$1 AND admin=1",[targetUsername.toLowerCase().trim()],function(){
         cb({demoted:true});
+      });
+    });
+  };
+  a.banUser = function(adminUsername, targetUsername, reason, cb){
+    a.getUser(adminUsername,function(caller){
+      if(!caller||caller.admin<2){cb({error:'Only the owner can ban users'});return;}
+      qRun("UPDATE forum_users SET banned=1 WHERE username=$1",[targetUsername.toLowerCase().trim()],function(){
+        if(reason){var w=JSON.stringify([{type:'ban',reason:reason,date:Date.now(),by:adminUsername}]);qRun("UPDATE forum_users SET warnings=$1 WHERE username=$2",[w,targetUsername.toLowerCase().trim()],function(){cb({banned:true});});}else{cb({banned:true});}
+      });
+    });
+  };
+  a.unbanUser = function(adminUsername, targetUsername, cb){
+    a.getUser(adminUsername,function(caller){
+      if(!caller||caller.admin<2){cb({error:'Only the owner can unban users'});return;}
+      qRun("UPDATE forum_users SET banned=0 WHERE username=$1",[targetUsername.toLowerCase().trim()],function(){cb({unbanned:true});});
+    });
+  };
+  a.muteUser = function(adminUsername, targetUsername, durationMs, cb){
+    a.getUser(adminUsername,function(caller){
+      if(!caller||caller.admin<2){cb({error:'Only the owner can mute users'});return;}
+      qRun("UPDATE forum_users SET muted_until=$1 WHERE username=$2",[Date.now()+durationMs,targetUsername.toLowerCase().trim()],function(){cb({muted:true});});
+    });
+  };
+  a.unmuteUser = function(adminUsername, targetUsername, cb){
+    a.getUser(adminUsername,function(caller){
+      if(!caller||caller.admin<2){cb({error:'Only the owner can unmute users'});return;}
+      qRun("UPDATE forum_users SET muted_until=0 WHERE username=$1",[targetUsername.toLowerCase().trim()],function(){cb({unmuted:true});});
+    });
+  };
+  a.warnUser = function(adminUsername, targetUsername, reason, cb){
+    a.getUser(adminUsername,function(caller){
+      if(!caller||caller.admin<2){cb({error:'Only the owner can warn users'});return;}
+      a.getUser(targetUsername,function(u){
+        var warnings=[];try{warnings=JSON.parse(u.warnings||'[]');}catch(e){}
+        warnings.push({type:'warn',reason:reason,date:Date.now(),by:adminUsername});
+        qRun("UPDATE forum_users SET warnings=$1 WHERE username=$2",[JSON.stringify(warnings),targetUsername.toLowerCase().trim()],function(){cb({warned:true,warnings:warnings});});
       });
     });
   };

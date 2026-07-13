@@ -207,6 +207,31 @@ function handler(req, res) {
       forum.demoteUser((data.caller||'').toLowerCase().trim(), (data.username||'').trim(), function(result){json(res, result);});
     });
   }
+  if(url === '/api/admin/ban' && req.method === 'POST'){
+    return body(req, function(data){
+      forum.banUser((data.caller||'').toLowerCase().trim(), (data.username||'').trim(), data.reason||'', function(result){json(res, result);});
+    });
+  }
+  if(url === '/api/admin/unban' && req.method === 'POST'){
+    return body(req, function(data){
+      forum.unbanUser((data.caller||'').toLowerCase().trim(), (data.username||'').trim(), function(result){json(res, result);});
+    });
+  }
+  if(url === '/api/admin/mute' && req.method === 'POST'){
+    return body(req, function(data){
+      forum.muteUser((data.caller||'').toLowerCase().trim(), (data.username||'').trim(), parseInt(data.duration)||60000, function(result){json(res, result);});
+    });
+  }
+  if(url === '/api/admin/unmute' && req.method === 'POST'){
+    return body(req, function(data){
+      forum.unmuteUser((data.caller||'').toLowerCase().trim(), (data.username||'').trim(), function(result){json(res, result);});
+    });
+  }
+  if(url === '/api/admin/warn' && req.method === 'POST'){
+    return body(req, function(data){
+      forum.warnUser((data.caller||'').toLowerCase().trim(), (data.username||'').trim(), data.reason||'', function(result){json(res, result);});
+    });
+  }
 
   // Backward-compatible: serve old /uploads/* from database
   if(url.match(/^\/uploads\/([a-z0-9]+)\.\w+$/) && req.method === 'GET'){
