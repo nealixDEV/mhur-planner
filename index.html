@@ -7828,7 +7828,7 @@ function initForum(){
       if(!data||!data.items){r('<div style="text-align:center;padding:40px 0;color:#ef4444;">Error loading profile. <button class="tab-btn" onclick="window.forumBack()">Back</button></div>');return;}
       if(!window._adminCache||window._adminCache[(author||'').toLowerCase()]===undefined){setTimeout(function(){showProfile(author,true);},100);return;}
       if(!data||!data.items){r('<div style="text-align:center;padding:40px 0;color:#ef4444;">Error loading profile. <button class="tab-btn" onclick="window.forumBack()">Back</button></div>');return;}
-      var pa=author||'';var pav=window.avatarImg?window.avatarImg(author):'';var isOwnProfile=(author||'').toLowerCase()===(localStorage.getItem('forumUsername')||'').toLowerCase();var targetAdmin=isOwnProfile?(localStorage.getItem('forumIsOwner')==='1'?2:localStorage.getItem('forumIsAdmin')==='1'?1:0):(window._adminCache&&window._adminCache[(author||'').toLowerCase()]||0);
+      var pa=author||'';var pav=window.avatarImg?window.avatarImg(author):'';var isOwnProfile=(author||'').toLowerCase()===(localStorage.getItem('forumUsername')||'').toLowerCase();var targetAdmin=isOwnProfile?(localStorage.getItem('forumIsOwner')==='1'?2:localStorage.getItem('forumIsAdmin')==='1'?1:window._adminCache&&window._adminCache[(author||'').toLowerCase()]||0):(window._adminCache&&window._adminCache[(author||'').toLowerCase()]||0);
       var otherAvatar=window._avatarCache&&window._avatarCache[(author||'').toLowerCase()];
       var otherBanner=window._bannerCache&&window._bannerCache[(author||'').toLowerCase()];
       var bDesc=window._bannerDescCache&&window._bannerDescCache[(author||'').toLowerCase()]||'';
@@ -7944,7 +7944,7 @@ function initForum(){
   if(globalSessionName){
     var un=globalSessionName.toLowerCase();
     var ax=new XMLHttpRequest();ax.open('GET','/api/check-user?name='+encodeURIComponent(globalSessionName),true);
-    ax.onload=function(){try{var ar=JSON.parse(ax.responseText);if(ar){window._bannerCache=window._bannerCache||{};window._bannerDescCache=window._bannerDescCache||{};window._linksCache=window._linksCache||{};window._adminCache=window._adminCache||{};if(ar.banner)window._bannerCache[un]=ar.banner;window._bannerDescCache[un]=ar.bannerdesc||'';window._linksCache[un]=ar.links||'[]';window._adminCache[un]=ar.admin||0;_profileLoading[un]=true;if(!ar.exists){localStorage.removeItem('forumIsAdmin');localStorage.removeItem('forumIsOwner');}}}catch(e){_profileLoading[un]=true;}};
+    ax.onload=function(){try{var ar=JSON.parse(ax.responseText);if(ar){window._bannerCache=window._bannerCache||{};window._bannerDescCache=window._bannerDescCache||{};window._linksCache=window._linksCache||{};window._adminCache=window._adminCache||{};if(ar.banner)window._bannerCache[un]=ar.banner;window._bannerDescCache[un]=ar.bannerdesc||'';window._linksCache[un]=ar.links||'[]';window._adminCache[un]=ar.admin||0;_profileLoading[un]=true;if(ar.admin>=1){localStorage.setItem('forumIsAdmin','1');if(ar.admin>=2)localStorage.setItem('forumIsOwner','1');}else{localStorage.removeItem('forumIsAdmin');localStorage.removeItem('forumIsOwner');}}}catch(e){_profileLoading[un]=true;}};
     ax.send();
   }
   updateAdminUI();
