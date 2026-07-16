@@ -165,6 +165,22 @@ function handler(req, res) {
   if(url === '/api/check-user' && req.method === 'GET'){
     return forum.getUser(query.name||'', function(user){json(res, user||{exists:false});});
   }
+  if(url === '/api/user-titles' && req.method === 'GET'){
+    var uname=(query.name||'').toLowerCase().trim();
+    return forum.getUserTitles(uname, function(result){json(res, result);});
+  }
+  if(url === '/api/set-title' && req.method === 'POST'){
+    return body(req, function(data){
+      var uname=(data.username||'').toLowerCase().trim();
+      var title=(data.title||'').trim();
+      var color=(data.title_color||'').trim();
+      forum.setUserTitle(uname, title, function(){
+        forum.setUserTitleColor(uname, color, function(){
+          json(res,{ok:true});
+        });
+      });
+    });
+  }
   if(url === '/api/users' && req.method === 'GET'){
     return forum.listUsers(function(users){json(res, {users:users});});
   }

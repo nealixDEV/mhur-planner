@@ -116,6 +116,8 @@ module.exports = new Promise(function(resolve){
         db.query("ALTER TABLE forum_users ADD COLUMN IF NOT EXISTS banned INTEGER DEFAULT 0",[],function(){
         db.query("ALTER TABLE forum_users ADD COLUMN IF NOT EXISTS muted_until BIGINT DEFAULT 0",[],function(){
         db.query("ALTER TABLE forum_users ADD COLUMN IF NOT EXISTS warnings TEXT",[],function(){
+        db.query("ALTER TABLE forum_users ADD COLUMN IF NOT EXISTS title TEXT",[],function(){
+        db.query("ALTER TABLE forum_users ADD COLUMN IF NOT EXISTS title_color TEXT",[],function(){
         db.query("CREATE TABLE IF NOT EXISTS used_admin_keys (key_hash TEXT PRIMARY KEY, usedAt BIGINT)",[],function(){
         db.query("CREATE TABLE IF NOT EXISTS admin_keys (key_id TEXT PRIMARY KEY, used INTEGER DEFAULT 0, createdAt BIGINT)",[],function(){
           console.log('PostgreSQL connected');
@@ -136,7 +138,9 @@ module.exports = new Promise(function(resolve){
     });
     });
     });
-  });
+    });
+    });
+    });
   }else{
     var initSqlJs = require('sql.js');
     initSqlJs().then(function(SQL){
@@ -155,6 +159,8 @@ module.exports = new Promise(function(resolve){
       try{db.run("ALTER TABLE forum_users ADD COLUMN banned INTEGER DEFAULT 0");}catch(e){}
       try{db.run("ALTER TABLE forum_users ADD COLUMN muted_until INTEGER DEFAULT 0");}catch(e){}
       try{db.run("ALTER TABLE forum_users ADD COLUMN warnings TEXT");}catch(e){}
+      try{db.run("ALTER TABLE forum_users ADD COLUMN title TEXT");}catch(e){}
+      try{db.run("ALTER TABLE forum_users ADD COLUMN title_color TEXT");}catch(e){}
       db.run("CREATE TABLE IF NOT EXISTS used_admin_keys (key_hash TEXT PRIMARY KEY, usedAt INTEGER)");
       db.run("CREATE TABLE IF NOT EXISTS admin_keys (key_id TEXT PRIMARY KEY, used INTEGER DEFAULT 0, createdAt INTEGER)");
       save();
@@ -561,8 +567,28 @@ function isAdminKey(key,cb){
     qRun("UPDATE forum_users SET links=$1 WHERE username=$2",[links,username.toLowerCase().trim()],cb);
   };
   a.getUser = function(username, cb){
-    qOne("SELECT username,admin,avatar,banner,bannerdesc,links FROM forum_users WHERE username=$1",[username.toLowerCase().trim()],function(r){
+    qOne("SELECT username,admin,avatar,banner,bannerdesc,links,title,title_color FROM forum_users WHERE username=$1",[username.toLowerCase().trim()],function(r){
       cb(r||null);
+    });
+  };
+  a.setUserTitle = function(username, title, cb){
+    qRun("UPDATE forum_users SET title=$1 WHERE username=$2",[title,username.toLowerCase().trim()],cb||function(){});
+  };
+  a.setUserTitleColor = function(username, color, cb){
+    qRun("UPDATE forum_users SET title_color=$1 WHERE username=$2",[color,username.toLowerCase().trim()],cb||function(){});
+  };
+  a.getUserTitles = function(username, cb){
+    var qs=username.toLowerCase().trim();
+    qOne("SELECT COUNT(*) as postCount FROM posts WHERE LOWER(author)=$1",[qs],function(pc){
+      var postCount=pc?pc.postCount||0:0;
+      qOne("SELECT COALESCE(SUM(likes),0) as totalLikes FROM posts WHERE LOWER(author)=$1",[qs],function(lr){
+        var totalLikes=lr?lr.totalLikes||0:0;
+        var titles=[];
+        if(postCount>=5)titles.push({id:'tuning_enthusiast',name:'Tuning Enthusiast',req:'5 posts'});
+        if(postCount>=10&&totalLikes>=10)titles.push({id:'master_tuning_poster',name:'Master Tuning Poster',req:'10 posts with 10+ likes'});
+        if(postCount>=20&&totalLikes>=10)titles.push({id:'pro_tuner',name:'Pro Tuner',req:'20 posts with 10+ likes'});
+        cb({titles:titles,postCount:postCount,totalLikes:totalLikes});
+      });
     });
   };
   a.listByAuthor = function(author, page, cb){
