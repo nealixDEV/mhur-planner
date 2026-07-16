@@ -8562,7 +8562,7 @@ function initForum(){
     ov.appendChild(bx);document.body.appendChild(ov);
     var inp=document.getElementById('editModalInput');inp.focus();inp.select();
     document.getElementById('editModalCancel').onclick=function(){ov.remove();};
-    document.getElementById('editModalSave').onclick=function(){var v=inp.value.trim();if(!v&&!allowEmpty){inp.style.borderColor='#ef4444';return;}cb(v||'');ov.remove();};
+    document.getElementById('editModalSave').onclick=function(){var v=inp.value.trim();if(!v&&!allowEmpty){inp.style.borderColor='#ef4444';return;}ov.remove();cb(v||'');};
     inp.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();document.getElementById('editModalSave').click();}});
     ov.onclick=function(e){if(e.target===ov)ov.remove();};
   };
