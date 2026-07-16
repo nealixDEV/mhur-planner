@@ -1,0 +1,15 @@
+[Unit]
+Description=MHUR Tuning Planner
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+User=ec2-user
+WorkingDirectory=/home/ec2-user/app
+Environment=DATABASE_URL=postgresql://mhur_user:mhur_pass123@127.0.0.1:5432/mhur_planner?sslmode=disable
+ExecStart=/usr/bin/node /home/ec2-user/app/serve.js
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
