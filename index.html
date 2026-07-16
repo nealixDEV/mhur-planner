@@ -8241,11 +8241,11 @@ function initForum(){
         var curTitle=document.getElementById('postTitle').textContent;
         var curDesc=document.getElementById('postDesc')?document.getElementById('postDesc').textContent:'';
         var curTags=document.getElementById('postTags')?Array.from(document.getElementById('postTags').querySelectorAll('.forum-tag')).map(function(t){return t.textContent;}).join(', '):'';
-        var newTitle=prompt('Title:',curTitle);if(newTitle===null)return;
-        var newDesc=prompt('Description:',curDesc);if(newDesc===null)return;
-        var newTags=prompt('Tags (comma separated):',curTags);if(newTags===null)return;
+        window.editModal('Edit Title',curTitle,'Enter new title',function(newTitle){
+        window.editModal('Edit Description',curDesc,'Enter description',function(newDesc){
+        window.editModal('Edit Tags (comma separated)',curTags,'tag1, tag2',function(newTags){
         api2('/'+id,'PUT',{title:newTitle.trim(),description:newDesc.trim(),tags:newTags.split(',').map(function(t){return t.trim();}).filter(Boolean),deleteKey:myKeys[id]||masterKey},function(r2){if(r2&&r2.edited)showPost(id);});
-      });
+        });});});});
       document.getElementById('fcb').addEventListener('click',function(){var inp=document.getElementById('fci'),txt=inp.value.trim(),cimg=document.getElementById('fciuimg').value;if(!txt&&!cimg)return;var ck=genKey();api2('/'+id+'/comment','POST',{text:txt,author:sessionName,deleteKey:ck,image:cimg},function(r2){if(r2&&r2.id){myKeys[id+'_c_'+r2.id]=ck;var ks=JSON.parse(localStorage.getItem('forumKeys')||'{}');ks[id+'_c_'+r2.id]=ck;localStorage.setItem('forumKeys',JSON.stringify(ks));inp.value='';document.getElementById('fciuimg').value='';document.getElementById('fciuprev').style.display='none';showPost(id);}});});
       document.getElementById('fciu').addEventListener('click',function(){document.getElementById('fciufile').click();});
       document.getElementById('fciufile').addEventListener('change',function(){
@@ -8266,12 +8266,11 @@ function initForum(){
       document.querySelectorAll('#forumContent .rep-file').forEach(function(e){e.addEventListener('change',function(){var cid=this.getAttribute('data-cid'),file=this.files[0];if(!file)return;var reader=new FileReader();reader.onload=function(ev){var imgData=ev.target.result;var x=new XMLHttpRequest();x.open('POST','/api/upload',true);x.setRequestHeader('Content-Type','application/json');x.onload=function(){try{var r=JSON.parse(x.responseText);if(r&&r.url){document.getElementById('frp-'+cid).querySelector('.rep-img').value=r.url;document.getElementById('frp-'+cid).querySelector('.rep-preview').src=r.url;document.getElementById('frp-'+cid).querySelector('.rep-prev').style.display='block';}}catch(e){}};x.send(JSON.stringify({image:imgData}));};reader.readAsDataURL(file);});});
       document.querySelectorAll('#forumContent .fdc').forEach(function(e){e.addEventListener('click',function(){var cid=this.getAttribute('data-cid'),key=myKeys[id+'_c_'+cid];if(!key||!confirm('Delete?'))return;api2('/'+id+'/comment/'+cid,'DELETE',{deleteKey:key,isReply:!!this.getAttribute('data-reply')},function(r2){if(r2&&r2.deleted){delete myKeys[id+'_c_'+cid];localStorage.setItem('forumKeys',JSON.stringify(myKeys));showPost(id);}});});});
       document.querySelectorAll('#forumContent .fec').forEach(function(e){e.addEventListener('click',function(){
-        var cid=this.getAttribute('data-cid'),key=myKeys[id+'_c_'+cid],el=document.querySelector('.cmt-text-'+cid);
+        var cid=this.getAttribute('data-cid'),key=myKeys[id+'_c_'+cid],el=document.querySelector('.cmt-text-'+cid),isReply=!!this.getAttribute('data-reply');
         if(!key||!el)return;
-        var newText=prompt('Edit comment:',el.textContent);
-        if(newText===null)return;
-        api2('/'+id+'/comment/'+cid,'PUT',{text:newText.trim(),deleteKey:key,isReply:!!this.getAttribute('data-reply')},function(r2){if(r2&&r2.edited)showPost(id);});
-      });});
+        window.editModal('Edit Comment',el.textContent,'Edit your comment...',function(newText){
+        api2('/'+id+'/comment/'+cid,'PUT',{text:newText.trim(),deleteKey:key,isReply:isReply},function(r2){if(r2&&r2.edited)showPost(id);});
+        });});});
       try{var code=post.buildCode;if(code){var p=JSON.parse(decodeURIComponent(escape(atob(code))));var bp=document.getElementById('fbp');var rc={'strike':'#FF0000','assault':'#FFDD00','rapid':'#00C8FF','technical':'#8400FF','support':'#02DB18'};var html='<div style="margin-bottom:6px;font-size:.68rem;font-weight:900;color:#f5c800;">&#128220; Tuning Layout</div><div style="display:flex;gap:12px;flex-wrap:wrap;">';
         ['left','right'].forEach(function(side){
           var slots=p[side]||[];
@@ -8556,6 +8555,17 @@ function initForum(){
   window.avatarImg=function(u,avatar){var un=(u||'').toLowerCase();var a=avatar||(window._avatarCache&&window._avatarCache[un]);if(!a&&un===(localStorage.getItem('forumUsername')||'').toLowerCase())a=localStorage.getItem('forumAvatar');if(!a&&un&&!window._avatarFetching){window._avatarFetching=window._avatarFetching||{};if(!window._avatarFetching[un]){window._avatarFetching[un]=true;var xf=new XMLHttpRequest();xf.open('GET','/api/check-user?name='+encodeURIComponent(u),true);xf.onload=function(){try{var fr=JSON.parse(xf.responseText);if(fr){window._userTitleCache=window._userTitleCache||{};window._userTitleColorCache=window._userTitleColorCache||{};if(fr.avatar)window._avatarCache=window._avatarCache||{};if(fr.avatar)window._avatarCache[un]=fr.avatar;if(fr.title)window._userTitleCache[un]=fr.title;if(fr.title_color)window._userTitleColorCache[un]=fr.title_color;var ft=document.getElementById('tabForum');if(ft&&ft.style.display!=='none'&&window.forumBack)window.forumBack();}}catch(e){}};xf.send();}}else if(un&&!window._titleFetching){window._titleFetching=window._titleFetching||{};if(!window._titleFetching[un]){window._titleFetching[un]=true;var xt=new XMLHttpRequest();xt.open('GET','/api/check-user?name='+encodeURIComponent(u),true);xt.onload=function(){try{var tr=JSON.parse(xt.responseText);if(tr){window._userTitleCache=window._userTitleCache||{};window._userTitleColorCache=window._userTitleColorCache||{};if(tr.title)window._userTitleCache[un]=tr.title;if(tr.title_color)window._userTitleColorCache[un]=tr.title_color;}}catch(e){}};xt.send();}}return a?'<img src="'+a+'" style="width:18px;height:18px;border-radius:50%;object-fit:cover;vertical-align:middle;margin-right:3px;border:1px solid rgba(255,255,255,.1);">':'';};
   window.userStyle=function(u,adminLevel){if(adminLevel===undefined){var un=(u||'').toLowerCase(),my=(localStorage.getItem('forumUsername')||'').toLowerCase();if(!u||un!==my)return'';adminLevel=localStorage.getItem('forumIsOwner')==='1'?2:localStorage.getItem('forumIsAdmin')==='1'?1:0;}if(adminLevel>=2)return'color:#ef4444;text-shadow:0 0 12px rgba(239,68,68,.4);font-weight:900;';if(adminLevel>=1)return'animation:rainbow 1.5s linear infinite;font-weight:900;';return'';};
   window.titleBadge=function(u){var un=(u||'').toLowerCase();var t=window._userTitleCache&&window._userTitleCache[un];var c=window._userTitleColorCache&&window._userTitleColorCache[un]||'#f5c800';if(!t)return'';return' <span style="font-size:.52rem;font-weight:700;color:'+c+';text-shadow:0 0 6px '+c+'40;white-space:nowrap;">&#127942; '+esc(t)+'</span>'};
+  window.editModal=function(title,value,placeholder,cb){
+    var ov=document.createElement('div');ov.style.cssText='position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;';
+    var bx=document.createElement('div');bx.style.cssText='background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px;max-width:400px;width:90%;';
+    bx.innerHTML='<div style="font-size:.85rem;font-weight:700;color:#f5c800;margin-bottom:8px;">'+esc(title)+'</div><textarea id="editModalInput" class="forum-textarea" style="width:100%;min-height:40px;font-size:.75rem;resize:vertical;margin-bottom:8px;" placeholder="'+esc(placeholder||'')+'">'+esc(value||'')+'</textarea><div style="display:flex;gap:6px;justify-content:flex-end;"><button class="tab-btn" id="editModalCancel" style="font-size:.65rem;padding:4px 10px;">Cancel</button><button class="forum-btn" id="editModalSave" style="font-size:.65rem;padding:4px 14px;">Save</button></div>';
+    ov.appendChild(bx);document.body.appendChild(ov);
+    var inp=document.getElementById('editModalInput');inp.focus();inp.select();
+    document.getElementById('editModalCancel').onclick=function(){ov.remove();};
+    document.getElementById('editModalSave').onclick=function(){var v=inp.value.trim();if(!v){inp.style.borderColor='#ef4444';return;}cb(v);ov.remove();};
+    inp.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();document.getElementById('editModalSave').click();}});
+    ov.onclick=function(e){if(e.target===ov)ov.remove();};
+  };
   showHome();
   var mpb2=document.getElementById('myProfileBtn');
   if(mpb2&&localStorage.getItem('forumAvatar')){mpb2.innerHTML='<img src="'+esc(localStorage.getItem('forumAvatar'))+'" style="width:20px;height:20px;border-radius:50%;object-fit:cover;vertical-align:middle;border:1px solid rgba(255,255,255,.1);">';}
