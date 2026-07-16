@@ -5,6 +5,8 @@ var forum;
 
 const root = __dirname;
 const port = process.env.PORT || 8080;
+
+const CHARS={izuku:"Izuku Midoriya",izuku_ofa:"Izuku Midoriya (OFA)",katsuki:"Katsuki Bakugo",ochaco:"Ochaco Uraraka",tenya:"Tenya Iida",tsuyu:"Tsuyu Asui",shoto:"Shoto Todoroki",eijiro:"Eijiro Kirishima",momo:"Momo Yaoyorozu",fumikage:"Fumikage Tokoyami",denki:"Denki Kaminari",neito:"Neito Monoma",kendo:"Itsuka Kendo",ibara:"Ibara Shiozaki",mirio:"Mirio Togata",tamaki:"Tamaki Amajiki",nejire:"Nejire Hado",hitoshi:"Hitoshi Shinso",allmight:"All Might",armored:"Armored All Might",aizawa:"Shota Aizawa",mic:"Present Mic",cement:"Cementoss",endeavor:"Endeavor",hawks:"Hawks",mirko:"Mirko",star:"Star and Stripe",mtlady:"Mt. Lady",tomura:"Tomura Shigaraki",afo:"All For One",afo_youth:"All For One (Youth)",dabi:"Dabi",himiko:"Himiko Toga",twice:"Twice",compress:"Mr. Compress",kurogiri:"Kurogiri",nagant:"Lady Nagant",overhaul:"Overhaul"};
 const types = {
   '.html':'text/html', '.js':'text/javascript', '.json':'application/json',
   '.css':'text/css', '.png':'image/png', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.gif':'image/gif', '.webp':'image/webp', '.svg':'image/svg+xml',
@@ -257,6 +259,30 @@ function handler(req, res) {
       res.writeHead(200,{'Content-Type':file.mime,'Cache-Control':'no-store'});
       res.end(Buffer.from(file.data,'base64'));
     });
+  }
+
+  // Build preview / OG tags
+  if((url === '/' && query.build) || (url.startsWith('/build/'))){
+    var buildCode = query.build || url.replace('/build/','').split('?')[0];
+    try {
+      var p = JSON.parse(decodeURIComponent(escape(Buffer.from(buildCode,'base64').toString())));
+      var cid = p.charId || '';
+      var cname = CHARS[cid] || 'Unknown';
+      var label = p.label || '';
+      var ogTitle = label ? cname+' - '+label : cname+' Build';
+      var ogDesc = 'MHUR T.U.N.I.N.G. Build for '+cname+(p.left&&p.left.length?' | '+(p.left.filter(function(s){return s.t;}).length||0)+' tunings':'');
+      fs.readFile(path.join(root,'index.html'),'utf8',function(err,html){
+        if(err){res.writeHead(500);res.end('Error');return;}
+        var ogHtml='<meta property="og:title" content="'+ogTitle+'">\n<meta property="og:description" content="'+ogDesc+'">\n<meta property="og:type" content="website">\n<meta name="twitter:card" content="summary">\n<meta property="og:url" content="http://'+req.headers.host+'/?build='+encodeURIComponent(buildCode)+'">';
+        html=html.replace('</title>','</title>\n'+ogHtml);
+        html=html.replace('</head>','<script>document.addEventListener("DOMContentLoaded",function(){setTimeout(function(){var inp=document.getElementById("ioCode");if(inp){inp.value=decodeURIComponent("'+encodeURIComponent(buildCode)+'");document.getElementById("btnImp").click();}},200);});</script>\n</head>');
+        res.writeHead(200,{'Content-Type':'text/html'});
+        res.end(html);
+      });
+      return;
+    } catch(e) {
+      console.log('Build preview error:',e.message);
+    }
   }
 
   // Static files
