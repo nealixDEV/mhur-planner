@@ -7787,6 +7787,7 @@ function doImport(){
     renderAll();
   }catch(err){alert("Invalid build code.");}
 }
+function esc(s){return String(s||'').replace(/[<>&]/g,function(c){return{'<':'&lt;','>':'&gt;','&':'&amp;'}[c];});}
 document.getElementById("btnExp").addEventListener("click",doExport);
 document.getElementById("btnShare").addEventListener("click",function(){
   var ch=gc();if(!ch){alert("Select a character first.");return;}
