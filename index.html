@@ -602,6 +602,7 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
     </div>
     <div class="abts">
       <button class="gbtn g" id="btnExp">Export</button>
+      <button class="gbtn" id="btnShare" style="background:linear-gradient(135deg,#7c3aed,#a78bfa);">&#128279; Share</button>
       <button class="gbtn b" id="btnImp">Import</button>
       <button class="gbtn r" id="btnClr">Clear</button>
       <button class="gbtn" id="btnResetAll" style="background:linear-gradient(135deg,#dc2626,#b91c1c);">Reset All Builds</button>
@@ -7762,6 +7763,11 @@ function doExport(){
     right:ST.right.map(function(s){return{t:s.tid,l:s.lv};}),
     specs:ST.specs.map(function(s){return{t:s.tid,l:s.lv};})};
   document.getElementById("ioCode").value=btoa(unescape(encodeURIComponent(JSON.stringify(p))));
+  var shareUrl=window.location.origin+"/?build="+encodeURIComponent(document.getElementById("ioCode").value);
+  if(navigator.clipboard){navigator.clipboard.writeText(shareUrl).then(function(){
+    var n=document.createElement('div');n.style.cssText='position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:99999;background:#1e1e2e;border:1px solid rgba(245,200,0,.3);border-radius:8px;padding:8px 16px;font-size:.75rem;color:#f5c800;box-shadow:0 4px 20px rgba(0,0,0,.5);animation:fadeIn .3s;';
+    n.innerHTML='&#128279; Share link copied!';document.body.appendChild(n);setTimeout(function(){n.style.opacity='0';n.style.transition='opacity .3s';setTimeout(function(){n.remove();},300);},2000);
+  }).catch(function(){prompt("Share link:",shareUrl);});}else{prompt("Share link:",shareUrl);}
 }
 function importSide(arr,n){
   var out=(arr||[]).map(function(s){return{tid:s.t||"",lv:s.l||1};});
@@ -7782,6 +7788,16 @@ function doImport(){
   }catch(err){alert("Invalid build code.");}
 }
 document.getElementById("btnExp").addEventListener("click",doExport);
+document.getElementById("btnShare").addEventListener("click",function(){
+  var ch=gc();if(!ch){alert("Select a character first.");return;}
+  var p={v:4,charId:ch.id,cosIdx:ST.cosIdx,styleIdx:ST.styleIdx,label:document.getElementById("buildLabel").value.trim(),left:ST.left.map(function(s){return{t:s.tid,l:s.lv};}),right:ST.right.map(function(s){return{t:s.tid,l:s.lv};}),specs:ST.specs.map(function(s){return{t:s.tid,l:s.lv};})};
+  var code=btoa(unescape(encodeURIComponent(JSON.stringify(p))));
+  var shareUrl=window.location.origin+"/?build="+encodeURIComponent(code);
+  if(navigator.clipboard){navigator.clipboard.writeText(shareUrl).then(function(){
+    var n=document.createElement('div');n.style.cssText='position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:99999;background:#1e1e2e;border:1px solid rgba(245,200,0,.3);border-radius:8px;padding:8px 16px;font-size:.75rem;color:#f5c800;box-shadow:0 4px 20px rgba(0,0,0,.5);animation:fadeIn .3s;';
+    n.innerHTML='&#128279; Share link copied!';document.body.appendChild(n);setTimeout(function(){n.style.opacity='0';n.style.transition='opacity .3s';setTimeout(function(){n.remove();},300);},2000);
+  }).catch(function(){prompt("Share link:",shareUrl);});}else{prompt("Share link:",shareUrl);}
+});
 document.getElementById("btnImp").addEventListener("click",doImport);
 document.getElementById("btnClr").addEventListener("click",function(){
   resetBuild();
@@ -7873,6 +7889,8 @@ Promise.all([loadNormalTuningData(),loadDamageTablesData()]).then(function(){
     btn.style.background=bypassSlotLock?"linear-gradient(135deg,#059669,#10b981)":"linear-gradient(135deg,#d97706,#f59e0b)";
   }
   renderAll();
+  // Auto-import from URL
+  try{var urlBuild=new URLSearchParams(window.location.search).get('build');if(urlBuild){document.getElementById('ioCode').value=urlBuild;setTimeout(function(){document.getElementById('btnImp').click();},200);}}catch(e){}
   // Announcement v0.5
   if(!localStorage.getItem('mhurAnnounceSeen_v05')){
     (function(){
