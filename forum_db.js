@@ -456,26 +456,42 @@ function isAdminKey(key,cb){
       });
     });
   };
-  a.login = function(username, password, cb){
-    if(!username||!password){cb({error:'Username and password required'});return;}
-    var uname=username.toLowerCase().trim();
-    qOne("SELECT password FROM forum_users WHERE username=$1",[uname],function(r){
-      if(!r){cb({error:'Account not found'});return;}
-      if(!r.password){
-        qRun("UPDATE forum_users SET password=$1 WHERE username=$2",[hashPw(password),uname],function(){
-          qOne("SELECT username,admin,avatar,email FROM forum_users WHERE username=$1",[uname],function(r2){
-            cb({success:true,username:r2.username,admin:r2.admin,avatar:r2.avatar||'',email:r2.email||null,firstLogin:true});
+  a.login = function(username, email, password, cb){
+    if(typeof email==='function'){cb=email;email='';}
+    if(typeof password==='function'){cb=password;password='';}
+    var uname=(username||'').toLowerCase().trim();
+    var uemail=(email||'').trim().toLowerCase();
+    var pw=password||'';
+    if(!pw){cb({error:'Password required'});return;}
+    // If email provided, look up username from email
+    if(uemail && !uname){
+      qOne("SELECT username FROM forum_users WHERE email=$1",[uemail],function(r){
+        if(!r){cb({error:'No account found with that email'});return;}
+        a.login(r.username, '', pw, cb);
+      });
+      return;
+    }
+    if(uname){
+      qOne("SELECT password FROM forum_users WHERE username=$1",[uname],function(r){
+        if(!r){cb({error:'Account not found'});return;}
+        if(!r.password){
+          qRun("UPDATE forum_users SET password=$1 WHERE username=$2",[hashPw(pw),uname],function(){
+            qOne("SELECT username,admin,avatar,email FROM forum_users WHERE username=$1",[uname],function(r2){
+              cb({success:true,username:r2.username,admin:r2.admin,avatar:r2.avatar||'',email:r2.email||null,firstLogin:true});
+            });
           });
-        });
-      }else{
-        qOne("SELECT username,admin,avatar FROM forum_users WHERE username=$1 AND password=$2",[uname,hashPw(password)],function(r2){
-          if(!r2){cb({error:'Invalid password'});return;}
-          qOne("SELECT email FROM forum_users WHERE username=$1",[uname],function(r3){
-            cb({success:true,username:r2.username,admin:r2.admin,avatar:r2.avatar||'',email:r3?r3.email||null:null});
+        }else{
+          qOne("SELECT username,admin,avatar FROM forum_users WHERE username=$1 AND password=$2",[uname,hashPw(pw)],function(r2){
+            if(!r2){cb({error:'Invalid password'});return;}
+            qOne("SELECT email FROM forum_users WHERE username=$1",[uname],function(r3){
+              cb({success:true,username:r2.username,admin:r2.admin,avatar:r2.avatar||'',email:r3?r3.email||null:null});
+            });
           });
-        });
-      }
-    });
+        }
+      });
+    }else{
+      cb({error:'Username or email required'});
+    }
   };
   a.checkUserExists = function(username, cb){
     qOne("SELECT username FROM forum_users WHERE username=$1",[username.toLowerCase().trim()],function(r){

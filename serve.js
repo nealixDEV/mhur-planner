@@ -160,7 +160,7 @@ function handler(req, res) {
   }
   if(url === '/api/login' && req.method === 'POST'){
     return body(req, function(data){
-      forum.login(data.username||'', data.password||'', function(result){
+      forum.login(data.username||'', data.email||'', data.password||'', function(result){
         // Send login notification email if user has email set
         if(result && result.success && result.email){
           var loginTime = new Date().toLocaleString('en-US',{timeZone:'UTC'});

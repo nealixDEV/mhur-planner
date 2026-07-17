@@ -7838,7 +7838,7 @@ document.getElementById("btnShare").addEventListener("click",function(){
   var forumBtn=document.createElement('button');forumBtn.style.cssText='flex:1;padding:7px;border:none;border-radius:8px;font-size:.68rem;font-weight:700;cursor:pointer;background:linear-gradient(135deg,#eab308,#f59e0b);color:#000;';
   forumBtn.innerHTML='&#128172; Post to Forum';forumBtn.onclick=function(){
     ov.remove();
-    var tab=document.querySelector('.tt[data-tab="forum"]');if(tab)tab.click();
+    var tab=document.querySelector('.tab-btn[data-tab="forum"]');if(tab)tab.click();
     if(typeof showNewForm==='function'){
       window._shareCode=code;
       showNewForm();
@@ -8003,8 +8003,11 @@ Promise.all([loadNormalTuningData(),loadDamageTablesData()]).then(function(){
   // Reset password from URL
   try{var resetToken=new URLSearchParams(window.location.search).get('reset');if(resetToken){
     var fel=document.getElementById('forumContent');
+    document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+    var ft=document.querySelector('.tab-btn[data-tab="forum"]');if(ft)ft.classList.add('active');
+    document.querySelectorAll('.tab-content').forEach(function(t){t.style.display='none';});
+    var tf=document.getElementById('tabForum');if(tf)tf.style.display='block';
     function r2(h){if(fel)fel.innerHTML=h;}
-    var tab=document.querySelector('.tt[data-tab="forum"]');if(tab)tab.click();
     r2('<div style="max-width:400px;margin:40px auto;text-align:center;"><div style="font-size:2.5rem;margin-bottom:8px;">&#128273;</div><h2 style="color:#f5c800;font-size:1.1rem;margin-bottom:4px;">Reset Your Password</h2><p style="color:#94a3b8;font-size:.72rem;margin-bottom:14px;">Enter a new password for your account.</p><input id="rpPass" type="password" class="forum-input" style="width:100%;text-align:center;font-size:.9rem;padding:8px;margin-bottom:8px;" placeholder="New password"><input id="rpPass2" type="password" class="forum-input" style="width:100%;text-align:center;font-size:.9rem;padding:8px;margin-bottom:8px;" placeholder="Confirm new password"><div id="rpErr" style="color:#ef4444;font-size:.65rem;margin-bottom:8px;min-height:1.2em;"></div><button class="forum-btn" id="rpBtn" style="font-size:.8rem;padding:8px 20px;">Reset Password</button></div>');
     document.getElementById('rpBtn').addEventListener('click',function(){
       var pw=document.getElementById('rpPass').value;
@@ -8014,14 +8017,13 @@ Promise.all([loadNormalTuningData(),loadDamageTablesData()]).then(function(){
       var btn=this;btn.disabled=true;btn.textContent='Resetting...';
       var x=new XMLHttpRequest();x.open('POST','/api/reset-password',true);x.setRequestHeader('Content-Type','application/json');
       x.onload=function(){
-        try{var r=JSON.parse(x.responseText);
-          if(r&&r.changed){
+        try{var rr=JSON.parse(x.responseText);
+          if(rr&&rr.changed){
             r2('<div style="max-width:400px;margin:40px auto;text-align:center;"><div style="font-size:3rem;margin-bottom:8px;">&#10004;</div><h2 style="color:#4ade80;font-size:1.1rem;">Password Reset!</h2><p style="color:#94a3b8;font-size:.75rem;margin:8px 0 14px;">Your password has been changed. You can now sign in.</p><button class="forum-btn" id="rpOk" style="font-size:.8rem;padding:8px 20px;">Sign In</button></div>');
             document.getElementById('rpOk').onclick=function(){showUsernameModal(true);};
-            // Clean URL
             window.history.replaceState({},document.title,window.location.pathname);
           }else{
-            document.getElementById('rpErr').textContent=(r&&r.error)||'Failed. Token may be expired.';
+            document.getElementById('rpErr').textContent=(rr&&rr.error)||'Failed. Token may be expired.';
           }
         }catch(e){document.getElementById('rpErr').textContent='Server error.';}
         btn.disabled=false;btn.textContent='Reset Password';
@@ -8030,7 +8032,7 @@ Promise.all([loadNormalTuningData(),loadDamageTablesData()]).then(function(){
       x.send(JSON.stringify({token:resetToken,newPassword:pw}));
     });
   }}catch(e){}
-  // Announcement v0.5
+  // Announcement v0.6?
   if(!localStorage.getItem('mhurAnnounceSeen_v05')){
     (function(){
       var ov=document.createElement('div');ov.style.cssText='position:fixed;inset:0;z-index:100001;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;';
@@ -8204,9 +8206,9 @@ function initForum(){
     var title=isLogin?'Sign In':'Welcome to the Forum!';
     var sub=isLogin?'Sign in to your account.':'Choose a unique username to start posting.';
     var btnLabel=isLogin?'Sign In':'Register';
-    var extraFields=isLogin?'':'<div style="position:relative;width:72px;height:72px;margin:0 auto 12px;cursor:pointer;" id="regAvatarWrap"><img id="regAvatarPreview" src="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'72\' height=\'72\'%3E%3Crect width=\'72\' height=\'72\' fill=\'%23333\' rx=\'36\'/%3E%3Ctext x=\'36\' y=\'44\' font-size=\'30\' text-anchor=\'middle\' fill=\'%2394a3b8\'%3E%3F%3C/text%3E%3C/svg%3E" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.15);"><div style="position:absolute;bottom:0;right:0;background:#f5c800;color:#000;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:900;border:2px solid #1e1e2e;">+</div></div><input type="file" id="regAvatarFile" accept="image/png,image/jpeg,image/gif,image/webp" style="display:none;"><input id="regEmail" type="email" class="forum-input" style="width:100%;text-align:center;font-size:.8rem;padding:7px;margin-bottom:6px;" placeholder="Email (optional — for password resets)" autocomplete="email">';
+    var extraFields=isLogin?'':'<div style="position:relative;width:72px;height:72px;margin:0 auto 12px;cursor:pointer;" id="regAvatarWrap"><img id="regAvatarPreview" src="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'72\' height=\'72\'%3E%3Crect width=\'72\' height=\'72\' fill=\'%23333\' rx=\'36\'/%3E%3Ctext x=\'36\' y=\'44\' font-size=\'30\' text-anchor=\'middle\' fill=\'%2394a3b8\'%3E%3F%3C/text%3E%3C/svg%3E" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.15);"><div style="position:absolute;bottom:0;right:0;background:#f5c800;color:#000;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:900;border:2px solid #1e1e2e;">+</div></div><input type="file" id="regAvatarFile" accept="image/png,image/jpeg,image/gif,image/webp" style="display:none;">';
     var nameVal=isLogin?esc(localStorage.getItem('forumUsername')||''):'';
-    r('<div style="position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;"><div style="background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:30px;max-width:360px;width:90%;text-align:center;"><div style="font-size:1.5rem;margin-bottom:4px;">&#128272;</div><h2 style="color:#f5c800;font-size:1.1rem;margin-bottom:4px;">'+title+'</h2><p style="color:#94a3b8;font-size:.75rem;margin-bottom:16px;">'+sub+'</p>'+extraFields+'<input id="regName" class="forum-input" style="width:100%;text-align:center;font-size:.9rem;padding:8px;margin-bottom:8px;" placeholder="Username..." maxlength="20" value="'+nameVal+'" autocomplete="off"><input id="regPass" type="password" class="forum-input" style="width:100%;text-align:center;font-size:.9rem;padding:8px;margin-bottom:8px;" placeholder="Password..." autocomplete="off"><div id="regErr" style="color:#ef4444;font-size:.65rem;margin-bottom:8px;min-height:1.2em;"></div><button class="forum-btn" id="regBtn" style="width:100%;font-size:.8rem;padding:8px;">'+btnLabel+'</button>'+(isLogin?'<p style="color:#475569;font-size:.55rem;margin-top:6px;cursor:pointer;" id="forgotPwLink">Forgot password?</p><p style="color:#475569;font-size:.55rem;margin-top:6px;cursor:pointer;" id="switchRegMode">New here? Create an account</p>':'<p style="color:#475569;font-size:.55rem;margin-top:6px;cursor:pointer;" id="switchRegMode">Already have an account? Sign In</p>')+'</div></div>');
+    r('<div style="position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;"><div style="background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:30px;max-width:360px;width:90%;text-align:center;"><div style="font-size:1.5rem;margin-bottom:4px;">&#128272;</div><h2 style="color:#f5c800;font-size:1.1rem;margin-bottom:4px;">'+title+'</h2><p style="color:#94a3b8;font-size:.75rem;margin-bottom:16px;">'+sub+'</p>'+extraFields+(isLogin?'':'<input id="regEmail" type="email" class="forum-input" style="width:100%;text-align:center;font-size:.8rem;padding:7px;margin-bottom:6px;" placeholder="Email (optional — for password resets)" autocomplete="email">')+'<input id="regName" class="forum-input" style="width:100%;text-align:center;font-size:.9rem;padding:8px;margin-bottom:8px;" placeholder="Username..." maxlength="20" value="'+nameVal+'" autocomplete="off"><input id="regPass" type="password" class="forum-input" style="width:100%;text-align:center;font-size:.9rem;padding:8px;margin-bottom:8px;" placeholder="Password..." autocomplete="off"><div id="regErr" style="color:#ef4444;font-size:.65rem;margin-bottom:8px;min-height:1.2em;"></div><button class="forum-btn" id="regBtn" style="width:100%;font-size:.8rem;padding:8px;">'+btnLabel+'</button>'+(isLogin?'<p style="color:#475569;font-size:.55rem;margin-top:6px;cursor:pointer;" id="forgotPwLink">Forgot password?</p><p style="color:#475569;font-size:.55rem;margin-top:6px;cursor:pointer;" id="switchRegMode">New here? Create an account</p>':'<p style="color:#475569;font-size:.55rem;margin-top:6px;cursor:pointer;" id="switchRegMode">Already have an account? Sign In</p>')+'</div></div>');
     document.getElementById('regName').focus();
     document.getElementById('regName').addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('regBtn').click();});
     document.getElementById('regPass').addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('regBtn').click();});
@@ -8224,7 +8226,8 @@ function initForum(){
     document.getElementById('regBtn').addEventListener('click',function(){
       var name=document.getElementById('regName').value.trim();
       var pass=document.getElementById('regPass').value;
-      var email=document.getElementById('regEmail')?document.getElementById('regEmail').value.trim():'';
+      var emailEl=document.getElementById('regEmail');
+      var email=emailEl?emailEl.value.trim():'';
       if(email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){document.getElementById('regErr').textContent='Invalid email format.';return;}
       if(!name){document.getElementById('regErr').textContent='Username is required.';return;}
       if(!pass){document.getElementById('regErr').textContent='Password is required.';return;}
@@ -8235,26 +8238,42 @@ function initForum(){
       }
       var btn=this;btn.disabled=true;btn.textContent='Please wait...';
       var url=isLogin?'/api/login':'/api/register-user';
-      var payload={username:name,password:pass};
+      var isEmailLogin=isLogin && name.indexOf('@')>=0;
+      var payload=isEmailLogin?{email:name,password:pass}:{username:name,password:pass};
       if(!isLogin)payload.avatar=regAvatarData;
       if(!isLogin && email)payload.email=email;
       var x=new XMLHttpRequest();x.open('POST',url,true);x.setRequestHeader('Content-Type','application/json');
       x.onload=function(){
-        try{var r=JSON.parse(x.responseText);
-          if(isLogin&&r&&r.success){
-            localStorage.setItem('forumUsername',name);sessionName=name;
+        try{var res=JSON.parse(x.responseText);
+          if(isLogin&&res&&res.success){
+            var uname=res.username||name;
+            localStorage.setItem('forumUsername',uname);sessionName=uname;
             localStorage.setItem('forumLoggedIn','1');
-            if(r.avatar)localStorage.setItem('forumAvatar',r.avatar);
-            if(r.admin>=1){localStorage.setItem('forumIsAdmin','1');if(r.admin>=2)localStorage.setItem('forumIsOwner','1');localStorage.setItem('mhurMasterKey','user:'+name.toLowerCase());}
+            if(res.avatar)localStorage.setItem('forumAvatar',res.avatar);
+            if(res.admin>=1){localStorage.setItem('forumIsAdmin','1');if(res.admin>=2)localStorage.setItem('forumIsOwner','1');localStorage.setItem('mhurMasterKey','user:'+uname.toLowerCase());}
+            if(!res.email){
+              r('<div style="position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;"><div style="background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:30px;max-width:360px;width:90%;text-align:center;"><div style="font-size:2rem;margin-bottom:4px;">&#128231;</div><h2 style="color:#f5c800;font-size:1rem;margin-bottom:4px;">Add Your Email</h2><p style="color:#94a3b8;font-size:.7rem;margin-bottom:12px;">For password resets &amp; login alerts. You can skip this.</p><input id="setEmailInput" type="email" class="forum-input" style="width:100%;text-align:center;font-size:.85rem;padding:8px;margin-bottom:8px;" placeholder="Your email address" autocomplete="email"><div id="setEmailErr" style="color:#ef4444;font-size:.65rem;margin-bottom:6px;min-height:1.2em;"></div><button class="forum-btn" id="setEmailBtn" style="font-size:.75rem;padding:7px 16px;">Save Email</button><p style="color:#475569;font-size:.55rem;margin-top:6px;cursor:pointer;" id="skipEmailBtn">Skip for now</p></div></div>');
+              document.getElementById('setEmailBtn').addEventListener('click',function(){
+                var em=document.getElementById('setEmailInput').value.trim();
+                if(!em||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){document.getElementById('setEmailErr').textContent='Valid email required.';return;}
+                var btn=this;btn.disabled=true;btn.textContent='Saving...';
+                var x=new XMLHttpRequest();x.open('POST','/api/set-email',true);x.setRequestHeader('Content-Type','application/json');
+                x.onload=function(){initForum();};
+                x.onerror=function(){initForum();};
+                x.send(JSON.stringify({username:uname,email:em}));
+              });
+              document.getElementById('skipEmailBtn').onclick=initForum;
+              return;
+            }
             initForum();return;
           }
-          if(!isLogin&&r&&r.registered){
+          if(!isLogin&&res&&res.registered){
             if(regAvatarData)localStorage.setItem('forumAvatar',regAvatarData);
             localStorage.setItem('forumUsername',name);sessionName=name;
             localStorage.setItem('forumLoggedIn','1');
             initForum();return;
           }
-          document.getElementById('regErr').textContent=r&&r.error||'Failed.';
+          document.getElementById('regErr').textContent=res&&res.error||'Failed.';
         }catch(e){document.getElementById('regErr').textContent='Server error.';}
         btn.disabled=false;btn.textContent=btnLabel;
       };
@@ -8276,9 +8295,9 @@ function initForum(){
       var x=new XMLHttpRequest();x.open('POST','/api/forgot-password',true);x.setRequestHeader('Content-Type','application/json');
       x.onload=function(){
         btn.disabled=false;btn.textContent='Send Reset Link';
-        try{var r=JSON.parse(x.responseText);
-          if(r&&r.sent){
-            r('<div style="position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;"><div style="background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:30px;max-width:360px;width:90%;text-align:center;"><div style="font-size:2.5rem;margin-bottom:4px;">&#128231;</div><h2 style="color:#f5c800;font-size:1.1rem;margin-bottom:4px;">Check Your Email</h2><p style="color:#94a3b8;font-size:.75rem;margin-bottom:14px;">If an account exists with that email, a reset link has been sent.</p><button class="forum-btn" id="fpOk" style="font-size:.8rem;padding:8px 20px;">OK</button></div></div>');
+        try{var rr=JSON.parse(x.responseText);
+          if(rr&&rr.sent){
+            r('<div style="position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;"><div style="background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:30px;max-width:360px;width:90%;text-align:center;"><div style="font-size:2.5rem;margin-bottom:4px;">&#128231;</div><h2 style="color:#f5c800;font-size:1.1rem;margin-bottom:4px;">Check Your Email</h2><p style="color:#94a3b8;font-size:.75rem;margin-bottom:8px;">If an account exists with that email, a reset link has been sent.</p><p style="color:#f59e0b;font-size:.7rem;margin-bottom:14px;">&#9888; Check spam folder if you don\'t see it.</p><button class="forum-btn" id="fpOk" style="font-size:.8rem;padding:8px 20px;">OK</button></div></div>');
             document.getElementById('fpOk').onclick=function(){if(localStorage.getItem('forumUsername')){initForum();}else{showUsernameModal(true);}};
           }else{
             document.getElementById('fpErr').textContent='Could not send reset email.';
@@ -8577,7 +8596,7 @@ function initForum(){
       var currentTitleColor=window._userTitleColorCache&&window._userTitleColorCache[author]||'';
       if(currentTitle){h+='<div style="padding:0 12px 6px;"><span style="font-size:.6rem;font-weight:700;color:'+(currentTitleColor||'#f5c800')+';text-shadow:0 0 8px '+(currentTitleColor||'rgba(245,200,0,.4)')+';">&#127942; '+esc(currentTitle)+'</span></div>';}
       h+='</div>';
-      if(isOwnProfile){h+='<input type="file" id="profAvatarFile2" accept="image/png,image/jpeg,image/gif,image/webp" style="display:none;"><div style="margin-top:10px;display:flex;gap:6px;"><button class="tab-btn" id="chgPwBtn" style="font-size:.6rem;padding:3px 10px;">&#128273; Change Password</button><button class="tab-btn" id="logoutBtn" style="font-size:.6rem;padding:3px 10px;color:#ef4444;border-color:rgba(239,68,68,.2);">&#128682; Logout</button></div>';}
+      if(isOwnProfile){h+='<input type="file" id="profAvatarFile2" accept="image/png,image/jpeg,image/gif,image/webp" style="display:none;"><div style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap;"><button class="tab-btn" id="chgPwBtn" style="font-size:.6rem;padding:3px 10px;">&#128273; Change Password</button><button class="tab-btn" id="emailBtn" style="font-size:.6rem;padding:3px 10px;">&#128231; Email</button><button class="tab-btn" id="logoutBtn" style="font-size:.6rem;padding:3px 10px;color:#ef4444;border-color:rgba(239,68,68,.2);">&#128682; Logout</button></div>';}
       if(!data.items.length){h+='<div style="text-align:center;padding:30px 0;color:#475569;">No builds yet.</div>';}else{
         data.items.forEach(function(p){
           var cn=charNameFromCode(p.buildCode);
@@ -8713,6 +8732,30 @@ function initForum(){
         var x=new XMLHttpRequest();x.open('POST','/api/change-password',true);x.setRequestHeader('Content-Type','application/json');
         x.onload=function(){try{var cp=JSON.parse(x.responseText);if(cp&&cp.changed){alert('Password changed successfully!');}else{alert(cp&&cp.error||'Failed.');}}catch(e){alert('Error.');}};
         x.send(JSON.stringify({username:localStorage.getItem('forumUsername'),oldPassword:oldPw,newPassword:newPw}));
+      };
+      var emailBtn=document.getElementById('emailBtn');
+      if(emailBtn)emailBtn.onclick=function(){
+        var x=new XMLHttpRequest();x.open('GET','/api/get-email?username='+encodeURIComponent(localStorage.getItem('forumUsername')),true);
+        x.onload=function(){try{
+          var er=JSON.parse(x.responseText);var curEmail=er&&er.email||'';
+          var ov=document.createElement('div');ov.style.cssText='position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;';
+          var bx=document.createElement('div');bx.style.cssText='background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:30px;max-width:360px;width:90%;text-align:center;';
+          bx.innerHTML='<div style="font-size:2rem;margin-bottom:4px;">&#128231;</div><h2 style="color:#f5c800;font-size:1rem;margin-bottom:4px;">'+(curEmail?'Change Your Email':'Add Your Email')+'</h2><p style="color:#94a3b8;font-size:.7rem;margin-bottom:12px;">Current: '+(curEmail?esc(curEmail):'<span style="color:#475569;">Not set</span>')+'</p><input id="emailInput" type="email" class="forum-input" style="width:100%;text-align:center;font-size:.85rem;padding:8px;margin-bottom:8px;" placeholder="New email address" autocomplete="email"><div id="emailErr" style="color:#ef4444;font-size:.65rem;margin-bottom:6px;min-height:1.2em;"></div><button class="forum-btn" id="emailSaveBtn" style="font-size:.75rem;padding:7px 16px;">Save</button><p style="color:#475569;font-size:.55rem;margin-top:6px;cursor:pointer;" id="emailCancel">Cancel</p></div>';
+          ov.appendChild(bx);document.body.appendChild(ov);
+          bx.addEventListener('click',function(e){e.stopPropagation();});
+          document.getElementById('emailSaveBtn').onclick=function(){
+            var em=document.getElementById('emailInput').value.trim();
+            if(!em||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){document.getElementById('emailErr').textContent='Valid email required.';return;}
+            var btn=this;btn.disabled=true;btn.textContent='Saving...';
+            var xs=new XMLHttpRequest();xs.open('POST','/api/set-email',true);xs.setRequestHeader('Content-Type','application/json');
+            xs.onload=function(){try{var sr=JSON.parse(xs.responseText);if(sr&&sr.updated){ov.remove();bx.remove();showProfile(author,true);}else{document.getElementById('emailErr').textContent=sr&&sr.error||'Failed.';btn.disabled=false;btn.textContent='Save';}}catch(e){document.getElementById('emailErr').textContent='Error.';btn.disabled=false;btn.textContent='Save';}};
+            xs.onerror=function(){document.getElementById('emailErr').textContent='Network error.';btn.disabled=false;btn.textContent='Save';};
+            xs.send(JSON.stringify({username:localStorage.getItem('forumUsername'),email:em}));
+          };
+          document.getElementById('emailCancel').onclick=function(){ov.remove();bx.remove();};
+          ov.onclick=function(){ov.remove();bx.remove();};
+        }catch(e){alert('Error loading email.');}};
+        x.send();
       };
       document.querySelectorAll('#forumContent .forum-post:not([id])').forEach(function(e){e.addEventListener('click',function(){showPost(this.getAttribute('data-id'));});});
       if(data.total>20){
