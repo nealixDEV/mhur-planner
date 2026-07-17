@@ -8000,6 +8000,36 @@ Promise.all([loadNormalTuningData(),loadDamageTablesData()]).then(function(){
       }
     }catch(e){document.getElementById('ioCode').value=urlBuild;setTimeout(function(){document.getElementById('btnImp').click();},200);}
   }}catch(e){}
+  // Reset password from URL
+  try{var resetToken=new URLSearchParams(window.location.search).get('reset');if(resetToken){
+    var fel=document.getElementById('forumContent');
+    function r2(h){if(fel)fel.innerHTML=h;}
+    var tab=document.querySelector('.tt[data-tab="forum"]');if(tab)tab.click();
+    r2('<div style="max-width:400px;margin:40px auto;text-align:center;"><div style="font-size:2.5rem;margin-bottom:8px;">&#128273;</div><h2 style="color:#f5c800;font-size:1.1rem;margin-bottom:4px;">Reset Your Password</h2><p style="color:#94a3b8;font-size:.72rem;margin-bottom:14px;">Enter a new password for your account.</p><input id="rpPass" type="password" class="forum-input" style="width:100%;text-align:center;font-size:.9rem;padding:8px;margin-bottom:8px;" placeholder="New password"><input id="rpPass2" type="password" class="forum-input" style="width:100%;text-align:center;font-size:.9rem;padding:8px;margin-bottom:8px;" placeholder="Confirm new password"><div id="rpErr" style="color:#ef4444;font-size:.65rem;margin-bottom:8px;min-height:1.2em;"></div><button class="forum-btn" id="rpBtn" style="font-size:.8rem;padding:8px 20px;">Reset Password</button></div>');
+    document.getElementById('rpBtn').addEventListener('click',function(){
+      var pw=document.getElementById('rpPass').value;
+      var pw2=document.getElementById('rpPass2').value;
+      if(!pw||pw.length<3){document.getElementById('rpErr').textContent='Password must be 3+ characters.';return;}
+      if(pw!==pw2){document.getElementById('rpErr').textContent='Passwords do not match.';return;}
+      var btn=this;btn.disabled=true;btn.textContent='Resetting...';
+      var x=new XMLHttpRequest();x.open('POST','/api/reset-password',true);x.setRequestHeader('Content-Type','application/json');
+      x.onload=function(){
+        try{var r=JSON.parse(x.responseText);
+          if(r&&r.changed){
+            r2('<div style="max-width:400px;margin:40px auto;text-align:center;"><div style="font-size:3rem;margin-bottom:8px;">&#10004;</div><h2 style="color:#4ade80;font-size:1.1rem;">Password Reset!</h2><p style="color:#94a3b8;font-size:.75rem;margin:8px 0 14px;">Your password has been changed. You can now sign in.</p><button class="forum-btn" id="rpOk" style="font-size:.8rem;padding:8px 20px;">Sign In</button></div>');
+            document.getElementById('rpOk').onclick=function(){showUsernameModal(true);};
+            // Clean URL
+            window.history.replaceState({},document.title,window.location.pathname);
+          }else{
+            document.getElementById('rpErr').textContent=(r&&r.error)||'Failed. Token may be expired.';
+          }
+        }catch(e){document.getElementById('rpErr').textContent='Server error.';}
+        btn.disabled=false;btn.textContent='Reset Password';
+      };
+      x.onerror=function(){document.getElementById('rpErr').textContent='Network error.';btn.disabled=false;btn.textContent='Reset Password';};
+      x.send(JSON.stringify({token:resetToken,newPassword:pw}));
+    });
+  }}catch(e){}
   // Announcement v0.5
   if(!localStorage.getItem('mhurAnnounceSeen_v05')){
     (function(){
@@ -8174,9 +8204,9 @@ function initForum(){
     var title=isLogin?'Sign In':'Welcome to the Forum!';
     var sub=isLogin?'Sign in to your account.':'Choose a unique username to start posting.';
     var btnLabel=isLogin?'Sign In':'Register';
-    var extraFields=isLogin?'':'<div style="position:relative;width:72px;height:72px;margin:0 auto 12px;cursor:pointer;" id="regAvatarWrap"><img id="regAvatarPreview" src="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'72\' height=\'72\'%3E%3Crect width=\'72\' height=\'72\' fill=\'%23333\' rx=\'36\'/%3E%3Ctext x=\'36\' y=\'44\' font-size=\'30\' text-anchor=\'middle\' fill=\'%2394a3b8\'%3E%3F%3C/text%3E%3C/svg%3E" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.15);"><div style="position:absolute;bottom:0;right:0;background:#f5c800;color:#000;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:900;border:2px solid #1e1e2e;">+</div></div><input type="file" id="regAvatarFile" accept="image/png,image/jpeg,image/gif,image/webp" style="display:none;">';
+    var extraFields=isLogin?'':'<div style="position:relative;width:72px;height:72px;margin:0 auto 12px;cursor:pointer;" id="regAvatarWrap"><img id="regAvatarPreview" src="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'72\' height=\'72\'%3E%3Crect width=\'72\' height=\'72\' fill=\'%23333\' rx=\'36\'/%3E%3Ctext x=\'36\' y=\'44\' font-size=\'30\' text-anchor=\'middle\' fill=\'%2394a3b8\'%3E%3F%3C/text%3E%3C/svg%3E" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.15);"><div style="position:absolute;bottom:0;right:0;background:#f5c800;color:#000;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:900;border:2px solid #1e1e2e;">+</div></div><input type="file" id="regAvatarFile" accept="image/png,image/jpeg,image/gif,image/webp" style="display:none;"><input id="regEmail" type="email" class="forum-input" style="width:100%;text-align:center;font-size:.8rem;padding:7px;margin-bottom:6px;" placeholder="Email (optional — for password resets)" autocomplete="email">';
     var nameVal=isLogin?esc(localStorage.getItem('forumUsername')||''):'';
-    r('<div style="position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;"><div style="background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:30px;max-width:360px;width:90%;text-align:center;"><div style="font-size:1.5rem;margin-bottom:4px;">&#128272;</div><h2 style="color:#f5c800;font-size:1.1rem;margin-bottom:4px;">'+title+'</h2><p style="color:#94a3b8;font-size:.75rem;margin-bottom:16px;">'+sub+'</p>'+extraFields+'<input id="regName" class="forum-input" style="width:100%;text-align:center;font-size:.9rem;padding:8px;margin-bottom:8px;" placeholder="Username..." maxlength="20" value="'+nameVal+'" autocomplete="off"><input id="regPass" type="password" class="forum-input" style="width:100%;text-align:center;font-size:.9rem;padding:8px;margin-bottom:8px;" placeholder="Password..." autocomplete="off"><div id="regErr" style="color:#ef4444;font-size:.65rem;margin-bottom:8px;min-height:1.2em;"></div><button class="forum-btn" id="regBtn" style="width:100%;font-size:.8rem;padding:8px;">'+btnLabel+'</button>'+(isLogin?'<p style="color:#475569;font-size:.55rem;margin-top:8px;cursor:pointer;" id="switchRegMode">New here? Create an account</p>':'<p style="color:#475569;font-size:.55rem;margin-top:8px;cursor:pointer;" id="switchRegMode">Already have an account? Sign In</p>')+'</div></div>');
+    r('<div style="position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;"><div style="background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:30px;max-width:360px;width:90%;text-align:center;"><div style="font-size:1.5rem;margin-bottom:4px;">&#128272;</div><h2 style="color:#f5c800;font-size:1.1rem;margin-bottom:4px;">'+title+'</h2><p style="color:#94a3b8;font-size:.75rem;margin-bottom:16px;">'+sub+'</p>'+extraFields+'<input id="regName" class="forum-input" style="width:100%;text-align:center;font-size:.9rem;padding:8px;margin-bottom:8px;" placeholder="Username..." maxlength="20" value="'+nameVal+'" autocomplete="off"><input id="regPass" type="password" class="forum-input" style="width:100%;text-align:center;font-size:.9rem;padding:8px;margin-bottom:8px;" placeholder="Password..." autocomplete="off"><div id="regErr" style="color:#ef4444;font-size:.65rem;margin-bottom:8px;min-height:1.2em;"></div><button class="forum-btn" id="regBtn" style="width:100%;font-size:.8rem;padding:8px;">'+btnLabel+'</button>'+(isLogin?'<p style="color:#475569;font-size:.55rem;margin-top:6px;cursor:pointer;" id="forgotPwLink">Forgot password?</p><p style="color:#475569;font-size:.55rem;margin-top:6px;cursor:pointer;" id="switchRegMode">New here? Create an account</p>':'<p style="color:#475569;font-size:.55rem;margin-top:6px;cursor:pointer;" id="switchRegMode">Already have an account? Sign In</p>')+'</div></div>');
     document.getElementById('regName').focus();
     document.getElementById('regName').addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('regBtn').click();});
     document.getElementById('regPass').addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('regBtn').click();});
@@ -8194,6 +8224,8 @@ function initForum(){
     document.getElementById('regBtn').addEventListener('click',function(){
       var name=document.getElementById('regName').value.trim();
       var pass=document.getElementById('regPass').value;
+      var email=document.getElementById('regEmail')?document.getElementById('regEmail').value.trim():'';
+      if(email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){document.getElementById('regErr').textContent='Invalid email format.';return;}
       if(!name){document.getElementById('regErr').textContent='Username is required.';return;}
       if(!pass){document.getElementById('regErr').textContent='Password is required.';return;}
       if(!isLogin){
@@ -8205,6 +8237,7 @@ function initForum(){
       var url=isLogin?'/api/login':'/api/register-user';
       var payload={username:name,password:pass};
       if(!isLogin)payload.avatar=regAvatarData;
+      if(!isLogin && email)payload.email=email;
       var x=new XMLHttpRequest();x.open('POST',url,true);x.setRequestHeader('Content-Type','application/json');
       x.onload=function(){
         try{var r=JSON.parse(x.responseText);
@@ -8230,7 +8263,36 @@ function initForum(){
     });
     var switchBtn=document.getElementById('switchRegMode');
     if(switchBtn)switchBtn.onclick=function(){showUsernameModal(!isLogin);};
+    var forgotBtn=document.getElementById('forgotPwLink');
+    if(forgotBtn)forgotBtn.onclick=showForgotPasswordModal;
   }
+  function showForgotPasswordModal(){
+    registerEmailToSet=null;
+    r('<div style="position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;"><div style="background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:30px;max-width:360px;width:90%;text-align:center;"><div style="font-size:2rem;margin-bottom:4px;">&#128273;</div><h2 style="color:#f5c800;font-size:1.1rem;margin-bottom:4px;">Reset Password</h2><p style="color:#94a3b8;font-size:.72rem;margin-bottom:14px;">Enter your email and we\'ll send a reset link.</p><input id="fpEmail" type="email" class="forum-input" style="width:100%;text-align:center;font-size:.9rem;padding:8px;margin-bottom:8px;" placeholder="Your email address" autocomplete="email"><div id="fpErr" style="color:#ef4444;font-size:.65rem;margin-bottom:8px;min-height:1.2em;"></div><button class="forum-btn" id="fpBtn" style="width:100%;font-size:.8rem;padding:8px;">Send Reset Link</button><p style="color:#475569;font-size:.55rem;margin-top:8px;cursor:pointer;" id="fpBack">Back to Sign In</p></div></div>');
+    document.getElementById('fpBtn').addEventListener('click',function(){
+      var email=document.getElementById('fpEmail').value.trim();
+      if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){document.getElementById('fpErr').textContent='Valid email required.';return;}
+      var btn=this;btn.disabled=true;btn.textContent='Sending...';
+      var x=new XMLHttpRequest();x.open('POST','/api/forgot-password',true);x.setRequestHeader('Content-Type','application/json');
+      x.onload=function(){
+        btn.disabled=false;btn.textContent='Send Reset Link';
+        try{var r=JSON.parse(x.responseText);
+          if(r&&r.sent){
+            r('<div style="position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;"><div style="background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:30px;max-width:360px;width:90%;text-align:center;"><div style="font-size:2.5rem;margin-bottom:4px;">&#128231;</div><h2 style="color:#f5c800;font-size:1.1rem;margin-bottom:4px;">Check Your Email</h2><p style="color:#94a3b8;font-size:.75rem;margin-bottom:14px;">If an account exists with that email, a reset link has been sent.</p><button class="forum-btn" id="fpOk" style="font-size:.8rem;padding:8px 20px;">OK</button></div></div>');
+            document.getElementById('fpOk').onclick=function(){if(localStorage.getItem('forumUsername')){initForum();}else{showUsernameModal(true);}};
+          }else{
+            document.getElementById('fpErr').textContent='Could not send reset email.';
+          }
+        }catch(e){document.getElementById('fpErr').textContent='Server error.';}
+      };
+      x.onerror=function(){document.getElementById('fpErr').textContent='Network error.';btn.disabled=false;btn.textContent='Send Reset Link';};
+      x.send(JSON.stringify({email:email}));
+    });
+    document.getElementById('fpBack').addEventListener('click',function(){
+      if(localStorage.getItem('forumUsername')){initForum();}else{showUsernameModal(true);}
+    });
+  }
+  var registerEmailToSet=null;
   function skeleton(){return'<div style="padding:4px 0;"><div class="skel skel-banner"></div><div class="skel skel-line"></div><div class="skel skel-line-sm"></div><div class="skel skel-line" style="width:50%;"></div></div>';}
   var _fel=document.getElementById('forumContent');
   function r(h){var el=_fel||document.getElementById('forumContent');if(el)el.innerHTML=h;}

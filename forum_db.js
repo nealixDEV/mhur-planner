@@ -118,6 +118,9 @@ module.exports = new Promise(function(resolve){
         db.query("ALTER TABLE forum_users ADD COLUMN IF NOT EXISTS warnings TEXT",[],function(){
         db.query("ALTER TABLE forum_users ADD COLUMN IF NOT EXISTS title TEXT",[],function(){
         db.query("ALTER TABLE forum_users ADD COLUMN IF NOT EXISTS title_color TEXT",[],function(){
+        db.query("ALTER TABLE forum_users ADD COLUMN IF NOT EXISTS email TEXT",[],function(){
+        db.query("ALTER TABLE forum_users ADD COLUMN IF NOT EXISTS reset_token TEXT",[],function(){
+        db.query("ALTER TABLE forum_users ADD COLUMN IF NOT EXISTS reset_token_expires BIGINT",[],function(){
         db.query("CREATE TABLE IF NOT EXISTS used_admin_keys (key_hash TEXT PRIMARY KEY, usedAt BIGINT)",[],function(){
         db.query("CREATE TABLE IF NOT EXISTS admin_keys (key_id TEXT PRIMARY KEY, used INTEGER DEFAULT 0, createdAt BIGINT)",[],function(){
           console.log('PostgreSQL connected');
@@ -129,18 +132,21 @@ module.exports = new Promise(function(resolve){
         });
         });
         });
-      });
-    });
-    });
-    });
-    });
-    });
-    });
-    });
-    });
-    });
-    });
-    });
+        });
+        });
+        });
+        });
+        });
+        });
+        });
+        });
+        });
+        });
+        });
+        });
+        });
+        });
+        });
   }else{
     var initSqlJs = require('sql.js');
     initSqlJs().then(function(SQL){
@@ -161,6 +167,9 @@ module.exports = new Promise(function(resolve){
       try{db.run("ALTER TABLE forum_users ADD COLUMN warnings TEXT");}catch(e){}
       try{db.run("ALTER TABLE forum_users ADD COLUMN title TEXT");}catch(e){}
       try{db.run("ALTER TABLE forum_users ADD COLUMN title_color TEXT");}catch(e){}
+      try{db.run("ALTER TABLE forum_users ADD COLUMN email TEXT");}catch(e){}
+      try{db.run("ALTER TABLE forum_users ADD COLUMN reset_token TEXT");}catch(e){}
+      try{db.run("ALTER TABLE forum_users ADD COLUMN reset_token_expires INTEGER");}catch(e){}
       db.run("CREATE TABLE IF NOT EXISTS used_admin_keys (key_hash TEXT PRIMARY KEY, usedAt INTEGER)");
       db.run("CREATE TABLE IF NOT EXISTS admin_keys (key_id TEXT PRIMARY KEY, used INTEGER DEFAULT 0, createdAt INTEGER)");
       save();
@@ -400,6 +409,7 @@ function isAdminKey(key,cb){
   };
 
   function hashPw(p){var c=require('crypto');return c.createHash('sha256').update(String(p||'')).digest('hex');}
+  function genToken(){return require('crypto').randomBytes(32).toString('hex');}
   a.registerUser = function(data, cb){
     var username=(typeof data==='string'?data:data&&data.username)||'';
     if(!username||!username.trim()){cb({error:'Username is required'});return;}
@@ -408,15 +418,23 @@ function isAdminKey(key,cb){
     if(!/^[a-z0-9_]+$/.test(name)){cb({error:'Username can only contain letters, numbers, and underscores'});return;}
     var pw=data.password||'';
     if(pw.length<3){cb({error:'Password must be at least 3 characters'});return;}
+    var email=data.email||'';
+    if(email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){cb({error:'Invalid email address'});return;}
     var hpw=hashPw(pw);
     qOne("SELECT username FROM forum_users WHERE password=$1",[hpw],function(existingPw){
       if(existingPw){cb({error:'Password already in use by another account'});return;}
       a.checkUserExists(name,function(exists){
       if(exists){cb({error:'Username already taken'});return;}
       var avatar=data.avatar||'';
-      qRun("INSERT INTO forum_users(username,createdAt,admin,avatar,password) VALUES($1,$2,0,$3,$4)",[name,Date.now(),avatar,hashPw(pw)],function(){
-        cb({registered:true,username:name,avatar:avatar});
-      });
+      if(email){
+        qRun("INSERT INTO forum_users(username,createdAt,admin,avatar,password,email) VALUES($1,$2,0,$3,$4,$5)",[name,Date.now(),avatar,hashPw(pw),email],function(){
+          cb({registered:true,username:name,avatar:avatar});
+        });
+      }else{
+        qRun("INSERT INTO forum_users(username,createdAt,admin,avatar,password) VALUES($1,$2,0,$3,$4)",[name,Date.now(),avatar,hashPw(pw)],function(){
+          cb({registered:true,username:name,avatar:avatar});
+        });
+      }
     });
     });
   };
@@ -441,20 +459,20 @@ function isAdminKey(key,cb){
   a.login = function(username, password, cb){
     if(!username||!password){cb({error:'Username and password required'});return;}
     var uname=username.toLowerCase().trim();
-    // First check if account exists and has a password
     qOne("SELECT password FROM forum_users WHERE username=$1",[uname],function(r){
       if(!r){cb({error:'Account not found'});return;}
       if(!r.password){
-        // Account exists but no password set — set it now
         qRun("UPDATE forum_users SET password=$1 WHERE username=$2",[hashPw(password),uname],function(){
-          qOne("SELECT username,admin,avatar FROM forum_users WHERE username=$1",[uname],function(r2){
-            cb({success:true,username:r2.username,admin:r2.admin,avatar:r2.avatar||'',firstLogin:true});
+          qOne("SELECT username,admin,avatar,email FROM forum_users WHERE username=$1",[uname],function(r2){
+            cb({success:true,username:r2.username,admin:r2.admin,avatar:r2.avatar||'',email:r2.email||null,firstLogin:true});
           });
         });
       }else{
         qOne("SELECT username,admin,avatar FROM forum_users WHERE username=$1 AND password=$2",[uname,hashPw(password)],function(r2){
           if(!r2){cb({error:'Invalid password'});return;}
-          cb({success:true,username:r2.username,admin:r2.admin,avatar:r2.avatar||''});
+          qOne("SELECT email FROM forum_users WHERE username=$1",[uname],function(r3){
+            cb({success:true,username:r2.username,admin:r2.admin,avatar:r2.avatar||'',email:r3?r3.email||null:null});
+          });
         });
       }
     });
@@ -522,6 +540,49 @@ function isAdminKey(key,cb){
         warnings.push({type:'warn',reason:reason,date:Date.now(),by:adminUsername});
         qRun("UPDATE forum_users SET warnings=$1 WHERE username=$2",[JSON.stringify(warnings),targetUsername.toLowerCase().trim()],function(){cb({warned:true,warnings:warnings});});
       });
+    });
+  };
+
+  a.forgotPassword = function(email, token, cb){
+    if(!email||!token){cb({error:'Email required'});return;}
+    qOne("SELECT username FROM forum_users WHERE email=$1",[email],function(r){
+      if(!r){cb({error:'No account found with that email'});return;}
+      var expires=Date.now()+3600000; // 1 hour
+      qRun("UPDATE forum_users SET reset_token=$1, reset_token_expires=$2 WHERE email=$3",[token,expires,email],function(){
+        cb({sent:true,username:r.username});
+      });
+    });
+  };
+  a.resetPassword = function(token, newPassword, cb){
+    if(!token||!newPassword){cb({error:'Token and new password required'});return;}
+    if(newPassword.length<3){cb({error:'Password must be 3+ characters'});return;}
+    var now=Date.now();
+    qOne("SELECT username,reset_token_expires FROM forum_users WHERE reset_token=$1",[token],function(r){
+      if(!r){cb({error:'Invalid or expired reset token'});return;}
+      if(!r.reset_token_expires||r.reset_token_expires<now){cb({error:'Reset token has expired'});return;}
+      var newHash=hashPw(newPassword);
+      // Check if new password is unique
+      qOne("SELECT username FROM forum_users WHERE password=$1 AND username!=$2",[newHash,r.username],function(existing){
+        if(existing){cb({error:'Password already in use by another account'});return;}
+        qRun("UPDATE forum_users SET password=$1, reset_token=NULL, reset_token_expires=NULL WHERE username=$2",[newHash,r.username],function(){
+          cb({changed:true,username:r.username});
+        });
+      });
+    });
+  };
+  a.setUserEmail = function(username, email, cb){
+    if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){cb({error:'Invalid email'});return;}
+    var name=username.toLowerCase().trim();
+    qOne("SELECT username FROM forum_users WHERE email=$1 AND username!=$2",[email,name],function(exists){
+      if(exists){cb({error:'Email already in use'});return;}
+      qRun("UPDATE forum_users SET email=$1 WHERE username=$2",[email,name],function(){
+        cb({updated:true});
+      });
+    });
+  };
+  a.getUserEmail = function(username, cb){
+    qOne("SELECT email FROM forum_users WHERE username=$1",[username.toLowerCase().trim()],function(r){
+      cb(r?r.email||null:null);
     });
   };
 

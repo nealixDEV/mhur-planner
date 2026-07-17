@@ -1,10 +1,34 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 var forum;
 
 const root = __dirname;
 const port = process.env.PORT || 8080;
+
+// Email config
+const EMAIL_USER = process.env.EMAIL_USER || '';
+const EMAIL_PASS = process.env.EMAIL_PASS || '';
+var transporter = null;
+try {
+  if(EMAIL_USER && EMAIL_PASS){
+    var nodemailer = require('nodemailer');
+    transporter = nodemailer.createTransport({
+      service:'gmail',
+      auth:{user:EMAIL_USER, pass:EMAIL_PASS}
+    });
+    console.log('Email configured for',EMAIL_USER);
+  }
+} catch(e){console.log('Email not available:',e.message);}
+
+function sendEmail(to, subject, html){
+  if(!transporter){console.log('Email not configured, skipping');return;}
+  transporter.sendMail({from:EMAIL_USER, to:to, subject:subject, html:html}, function(err, info){
+    if(err)console.log('Send email error:',err.message);
+    else console.log('Email sent to',to);
+  });
+}
 
 const CHARS={izuku:"Izuku Midoriya",izuku_ofa:"Izuku Midoriya (OFA)",katsuki:"Katsuki Bakugo",ochaco:"Ochaco Uraraka",tenya:"Tenya Iida",tsuyu:"Tsuyu Asui",shoto:"Shoto Todoroki",eijiro:"Eijiro Kirishima",momo:"Momo Yaoyorozu",fumikage:"Fumikage Tokoyami",denki:"Denki Kaminari",neito:"Neito Monoma",kendo:"Itsuka Kendo",ibara:"Ibara Shiozaki",mirio:"Mirio Togata",tamaki:"Tamaki Amajiki",nejire:"Nejire Hado",hitoshi:"Hitoshi Shinso",allmight:"All Might",armored:"Armored All Might",aizawa:"Shota Aizawa",mic:"Present Mic",cement:"Cementoss",endeavor:"Endeavor",hawks:"Hawks",mirko:"Mirko",star:"Star and Stripe",mtlady:"Mt. Lady",tomura:"Tomura Shigaraki",afo:"All For One",afo_youth:"All For One (Youth)",dabi:"Dabi",himiko:"Himiko Toga",twice:"Twice",compress:"Mr. Compress",kurogiri:"Kurogiri",nagant:"Lady Nagant",overhaul:"Overhaul"};
 const types = {
@@ -136,7 +160,69 @@ function handler(req, res) {
   }
   if(url === '/api/login' && req.method === 'POST'){
     return body(req, function(data){
-      forum.login(data.username||'', data.password||'', function(result){json(res, result);});
+      forum.login(data.username||'', data.password||'', function(result){
+        // Send login notification email if user has email set
+        if(result && result.success && result.email){
+          var loginTime = new Date().toLocaleString('en-US',{timeZone:'UTC'});
+          var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || 'unknown';
+          sendEmail(result.email, 'MHUR Planner - New Login',
+            '<div style="font-family:sans-serif;max-width:480px;margin:0 auto;padding:20px;background:#1e1e2e;color:#e2e8f0;border-radius:12px;border:1px solid rgba(245,200,0,.2);">'+
+            '<h2 style="color:#f5c800;margin:0 0 12px;">&#128274; New Login Detected</h2>'+
+            '<p style="color:#94a3b8;font-size:.9rem;">Your account <strong style="color:#f5c800;">'+result.username+'</strong> was just logged in to.</p>'+
+            '<div style="background:rgba(0,0,0,.3);border-radius:8px;padding:12px;margin:12px 0;">'+
+            '<p style="margin:0 0 4px;color:#64748b;font-size:.8rem;">Time: <span style="color:#e2e8f0;">'+loginTime+' UTC</span></p>'+
+            '<p style="margin:0;color:#64748b;font-size:.8rem;">IP: <span style="color:#e2e8f0;">'+ip+'</span></p>'+
+            '</div>'+
+            '<p style="color:#64748b;font-size:.75rem;">If this wasn\'t you, someone may have your password. You can reset it at <a href="https://mhur-planner.duckdns.org" style="color:#f5c800;">MHUR Planner</a>.</p>'+
+            '</div>'
+          );
+        }
+        json(res, result);
+      });
+    });
+  }
+  if(url === '/api/forgot-password' && req.method === 'POST'){
+    return body(req, function(data){
+      var email = (data.email||'').trim().toLowerCase();
+      if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+        json(res, {error:'Valid email required'}, 400);return;
+      }
+      var token = crypto.randomBytes(32).toString('hex');
+      forum.forgotPassword(email, token, function(result){
+        if(result && result.sent && result.username){
+          var resetLink = 'https://mhur-planner.duckdns.org/?reset='+token;
+          sendEmail(email, 'MHUR Planner - Password Reset',
+            '<div style="font-family:sans-serif;max-width:480px;margin:0 auto;padding:20px;background:#1e1e2e;color:#e2e8f0;border-radius:12px;border:1px solid rgba(245,200,0,.2);">'+
+            '<h2 style="color:#f5c800;margin:0 0 12px;">&#128273; Password Reset Request</h2>'+
+            '<p style="color:#94a3b8;font-size:.9rem;">Hi <strong style="color:#f5c800;">'+result.username+'</strong>,</p>'+
+            '<p style="color:#94a3b8;font-size:.85rem;margin:8px 0;">Click the button below to reset your password. This link expires in 1 hour.</p>'+
+            '<a href="'+resetLink+'" style="display:inline-block;background:linear-gradient(135deg,#f5c800,#f59e0b);color:#000;font-weight:900;padding:10px 24px;border-radius:8px;text-decoration:none;margin:12px 0;">Reset Password</a>'+
+            '<p style="color:#64748b;font-size:.7rem;">If you didn\'t request this, ignore this email.</p>'+
+            '</div>'
+          );
+          json(res, {sent:true});
+        }else{
+          // Always return sent:true to prevent email enumeration
+          json(res, {sent:true});
+        }
+      });
+    });
+  }
+  if(url === '/api/reset-password' && req.method === 'POST'){
+    return body(req, function(data){
+      forum.resetPassword(data.token||'', data.newPassword||'', function(result){
+        json(res, result);
+      });
+    });
+  }
+  if(url === '/api/set-email' && req.method === 'POST'){
+    return body(req, function(data){
+      forum.setUserEmail(data.username||'', data.email||'', function(result){json(res, result);});
+    });
+  }
+  if(url === '/api/get-email' && req.method === 'GET'){
+    return forum.getUserEmail(query.username||'', function(email){
+      json(res, {email:email||''});
     });
   }
   if(url === '/api/change-password' && req.method === 'POST'){

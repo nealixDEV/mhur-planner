@@ -7,6 +7,8 @@ Type=simple
 User=ec2-user
 WorkingDirectory=/home/ec2-user/app
 Environment=DATABASE_URL=postgresql://mhur_user:mhur_pass123@127.0.0.1:5432/mhur_planner?sslmode=disable
+Environment=EMAIL_USER=andre.abil911@gmail.com
+Environment=EMAIL_PASS=twou zydh lygn qaex
 ExecStart=/usr/bin/node /home/ec2-user/app/serve.js
 Restart=always
 RestartSec=5
