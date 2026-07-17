@@ -8032,6 +8032,19 @@ Promise.all([loadNormalTuningData(),loadDamageTablesData()]).then(function(){
       x.send(JSON.stringify({token:resetToken,newPassword:pw}));
     });
   }}catch(e){}
+  // Render migration announcement
+  if(window.location.hostname.indexOf('render.com')>=0||window.location.hostname.indexOf('onrender')>=0||window.location.hostname==='localhost'){
+    (function(){
+      var ov=document.createElement('div');ov.style.cssText='position:fixed;inset:0;z-index:100002;background:rgba(0,0,0,.9);display:flex;align-items:center;justify-content:center;';
+      var box=document.createElement('div');box.style.cssText='background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(245,200,0,.3);border-radius:16px;padding:30px;max-width:420px;width:90%;text-align:center;';
+      box.innerHTML='<div style="font-size:3rem;margin-bottom:8px;">&#128640;</div><h2 class="gold-grad" style="font-size:1.2rem;margin-bottom:6px;">We Moved!</h2><p style="color:#94a3b8;font-size:.78rem;margin-bottom:8px;">MHUR T.U.N.I.N.G. Planner has moved to a new home!</p><div style="background:rgba(0,0,0,.3);border-radius:8px;padding:10px;margin:8px 0 12px;">'+
+        '<p style="color:#f5c800;font-size:.82rem;font-weight:700;margin-bottom:4px;">&#128279; <a href="https://mhur-planner.duckdns.org" style="color:#60a5fa;text-decoration:underline;">mhur-planner.duckdns.org</a></p>'+
+        '<p style="color:#ef4444;font-size:.7rem;">&#9888; You will need to <b>sign in again</b> on the new site.</p></div>'+
+        '<a href="https://mhur-planner.duckdns.org" style="display:inline-block;background:linear-gradient(135deg,#f5c800,#f59e0b);color:#000;font-weight:900;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:.8rem;">Go to New Site</a>'+
+        '<p style="color:#475569;font-size:.6rem;margin-top:10px;">All builds, posts &amp; accounts have been migrated.</p>';
+      ov.appendChild(box);document.body.appendChild(ov);
+    })();
+  }
   // Announcement v0.6?
   if(!localStorage.getItem('mhurAnnounceSeen_v05')){
     (function(){
