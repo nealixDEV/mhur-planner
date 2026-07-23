@@ -1,8 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <title>MHUR T.U.N.I.N.G. Planner</title>
@@ -402,6 +403,15 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
 .cos-card-check{position:absolute;top:6px;left:6px;width:22px;height:22px;display:flex;align-items:center;justify-content:center;background:#22c55e;border-radius:50%;font-size:.7rem;color:#fff;z-index:2;}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 .mobile-calc-nav{display:none;}
+.mobile-char-select{display:none;}
+.mobile-char-overlay{position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.85);display:none;align-items:flex-end;justify-content:center;}
+.mobile-char-overlay.open{display:flex;}
+.mobile-char-panel{background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(255,255,255,.1);border-radius:16px 16px 0 0;width:100%;height:70vh;display:flex;flex-direction:column;overflow:hidden;animation:fadeIn .2s;padding:0 16px;}
+.mobile-char-grid{display:flex;flex-wrap:wrap;gap:8px;padding:8px 0 16px 0;overflow-y:auto;flex:1 1 0;min-height:0;justify-content:flex-start;}
+.mcc{flex:0 0 calc(25% - 6px);position:relative;border-radius:10px;overflow:hidden;aspect-ratio:.75;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.3);}
+.mcc img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;z-index:1;}
+.mcc-name{position:absolute;bottom:0;left:0;right:0;text-align:center;font-size:.55rem;font-weight:900;color:#fff;padding:3px 2px;background:linear-gradient(transparent,rgba(0,0,0,.8));border-radius:0 0 8px 8px;z-index:2;text-shadow:1px 1px 2px #000;}
+.mcc.selected{outline:2px solid #f5c800;outline-offset:-2px;}
 @media(max-width:1023px){
   .screen{grid-template-columns:180px minmax(0,1fr) 160px;gap:8px;}
   .cgrid{grid-template-columns:repeat(auto-fill,minmax(44px,1fr));}
@@ -413,12 +423,13 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
   body{padding:6px 8px;}
   .screen{display:grid;grid-template-columns:1fr;overflow-x:visible;gap:8px;max-width:430px;margin:0 auto;}
   .title{order:1;grid-column:1;font-size:1rem;padding:6px 0;}
-  .left{order:3;grid-column:1;min-height:auto;}
+  .left{order:3;grid-column:1;min-height:auto;display:none;}
   .cospanel{order:2;position:static;grid-column:1;min-height:auto;max-height:none;}
   .right{order:1;grid-column:1;display:flex;flex-direction:column;gap:8px;}
-  .bot{order:4;grid-column:1;display:flex;flex-wrap:wrap;gap:6px;padding:8px;background:linear-gradient(145deg,rgba(20,30,50,.8),rgba(10,15,25,.9));border:1px solid rgba(255,255,255,.06);border-radius:10px;}
-  .cdisplay{min-height:auto;max-height:none;}
-  .cd-ava{width:70px;height:70px;}
+  .bot{order:4;grid-column:1;display:flex;flex-wrap:wrap;gap:6px;padding:8px;background:linear-gradient(145deg,rgba(20,30,50,.8),rgba(10,15,25,.9));border:1px solid rgba(255,255,255,.06);border-radius:10px;margin-bottom:60px;}
+  .cdisplay{min-height:auto;max-height:none;min-height:200px;position:relative;}
+  .cd-ava{display:none;}
+  .cd-info{padding:8px 12px;background:linear-gradient(90deg,rgba(0,0,0,.6) 0%,rgba(0,0,0,.2) 100%);}
   .cd-info{padding:6px 10px;}
   .cd-name{font-size:1.1rem;}
   .cd-stats{font-size:.65rem;}
@@ -432,12 +443,17 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
   #dmgCalcPanel{display:block;}
   .cgrid{grid-template-columns:repeat(6,1fr);gap:3px;}
   .cc{aspect-ratio:.85;}
+  .cc img{height:100%!important;object-position:top center!important;}
   .cc-name{font-size:.38rem;}
   .cc-role{font-size:.38rem;}
   .dc-level-btns{flex-wrap:wrap;gap:2px;}
   .dc-lvl-btn{min-width:26px;height:26px;font-size:.7rem;}
   .dc-skill-dmg{padding:6px 8px;}
   .mobile-calc-nav{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:100;background:linear-gradient(180deg,#0f1724,#0a0f1a);border-top:1px solid rgba(255,255,255,.08);padding:6px 4px;padding-bottom:env(safe-area-inset-bottom,6px);justify-content:space-around;gap:2px;}
+  .mobile-char-select{display:block;margin-bottom:8px;}
+  .mobile-char-trigger{width:100%;display:flex;align-items:center;gap:10px;padding:10px 14px;background:linear-gradient(135deg,rgba(245,200,0,.12),rgba(245,200,0,.05));border:2px solid rgba(245,200,0,.4);border-radius:10px;color:#f5c800;font-weight:800;font-size:.9rem;cursor:pointer;box-shadow:0 0 12px rgba(245,200,0,.15);}
+  .mobile-char-trigger img{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(245,200,0,.4);}
+  .mobile-char-select select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M0 0l6 8 6-8z' fill='%23f5c800'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:10px 6px;padding-right:30px;}
   .mcn-btn{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 4px;border:none;background:none;border-radius:8px;cursor:pointer;transition:all .15s;flex:1;min-width:0;}
   .mcn-icon{font-size:1.1rem;}
   .mcn-btn span:last-child{font-size:.48rem;font-weight:700;color:#64748b;white-space:nowrap;}
@@ -471,6 +487,18 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
       <button class="gbtn gmax" id="btnSaveBuild" style="background:linear-gradient(135deg,#0891b2,#06b6d4);box-shadow:0 0 10px rgba(6,182,212,.2);font-size:.65rem;padding:4px 10px;position:relative;z-index:10;color:#fff;">&#128190; Save</button>
       <button class="gbtn gmax" id="btnLoadBuild" style="background:linear-gradient(135deg,#7c3aed,#a855f7);font-size:.65rem;padding:4px 10px;position:relative;z-index:10;color:#fff;">&#128194; Load</button>
     </span>
+  </div>
+  <div class="mobile-char-select" id="mobileCharSelect">
+    <button id="mobileCharBtn" class="mobile-char-trigger"></button>
+    <div class="mobile-char-overlay" id="mobileCharOverlay">
+      <div class="mobile-char-panel">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:0 0 12px 0;border-bottom:1px solid rgba(255,255,255,.08);">
+          <span style="font-size:.9rem;font-weight:900;color:#f5c800;">Select Character</span>
+          <span id="mobileCharClose" style="font-size:1.4rem;color:#64748b;cursor:pointer;padding:4px 8px;">&times;</span>
+        </div>
+        <div class="mobile-char-grid" id="mobileCharGrid"></div>
+      </div>
+    </div>
   </div>
   <div class="left">
     <div>
@@ -643,6 +671,7 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
     <div class="abts">
       <button class="gbtn g" id="btnExp">Export</button>
       <button class="gbtn" id="btnShare" style="background:linear-gradient(135deg,#7c3aed,#a78bfa);">&#128279; Share</button>
+      <button class="gbtn" id="btnPng" style="background:linear-gradient(135deg,#059669,#10b981);">&#128247; PNG</button>
       <button class="gbtn b" id="btnImp">Import</button>
       <button class="gbtn r" id="btnClr">Clear</button>
       <button class="gbtn" id="btnResetAll" style="background:linear-gradient(135deg,#dc2626,#b91c1c);">Reset All Builds</button>
@@ -731,12 +760,12 @@ var COSTUME_DATA = {
     {n:"Kung Fu Outfit (Fancy)",ra:"PUR",al:"hero",s:[{r:"Rapid"},{r:"Technical"},{r:"Assault"},{r:"Rapid",a:"hero"},{r:"Assault",a:"villain"},{r:"Rapid"},{r:"Assault"},{r:"Rapid"},{r:"Strike",a:"villain"},{r:"Strike",a:"hero"}],sp1:{r:"Strike"},sp2:{r:"Technical",a:"hero"}},
     {n:"Kung Fu Outfit (Dangerous)",ra:"PUR",al:"villain",s:[{r:"Assault"},{r:"Rapid"},{r:"Strike"},{r:"Strike",a:"hero"},{r:"Technical",a:"hero"},{r:"Rapid"},{r:"Strike"},{r:"Assault"},{r:"Strike",a:"hero"},{r:"Technical",a:"hero"}],sp1:{r:"Support"},sp2:{r:"Support",a:"villain"}},
     {n:"U.A. Track Suit (Fancy)",ra:"R",al:"villain",s:[{r:"Strike"},{r:"Assault"},{r:"Support"},{r:"Support"},{r:"Rapid"},{r:"Strike"},{r:"Rapid"},{r:"Technical"},{r:"Technical"},{r:"Support"}],sp1:{r:"Support"},sp2:{r:"Technical",a:"villain"}},
-    {n:"Costume ε",ra:"PUR",al:"hero",s:[{r:"Assault"},{r:"Strike"},{r:"Rapid"},{r:"Technical",a:"villain"},{r:"Assault",a:"hero"},{r:"Support"},{r:"Rapid"},{r:"Rapid"},{r:"Strike",a:"villain"},{r:"Assault",a:"hero"}],sp1:{r:"Strike"},sp2:{r:"Assault",a:"hero"}},
-    {n:"Costume ε (Villain Style)",ra:"PUR",al:"hero",s:[{r:"Assault"},{r:"Support"},{r:"Strike"},{r:"Assault",a:"villain"},{r:"Strike",a:"villain"},{r:"Strike"},{r:"Rapid"},{r:"Support"},{r:"Assault",a:"hero"},{r:"Rapid",a:"hero"}],sp1:{r:"Rapid"},sp2:{r:"Technical",a:"hero"}},
-    {n:"Costume ε (Heat)",ra:"PUR",al:"villain",s:[{r:"Strike"},{r:"Rapid"},{r:"Rapid"},{r:"Rapid",a:"hero"},{r:"Assault",a:"hero"},{r:"Strike"},{r:"Support"},{r:"Rapid"},{r:"Strike",a:"villain"},{r:"Support",a:"villain"}],sp1:{r:"Technical"},sp2:{r:"Support",a:"villain"}},
-    {n:"Costume ε (Combat)",ra:"PUR",al:"villain",s:[{r:"Support"},{r:"Strike"},{r:"Technical"},{r:"Rapid",a:"villain"},{r:"Technical",a:"villain"},{r:"Technical"},{r:"Assault"},{r:"Technical"},{r:"Technical",a:"villain"},{r:"Strike",a:"hero"}],sp1:{r:"Assault"},sp2:{r:"Rapid",a:"villain"}},
-    {n:"Costume ε (Fancy)",ra:"PUR",al:"hero",s:[{r:"Rapid"},{r:"Assault"},{r:"Support"},{r:"Technical",a:"hero"},{r:"Rapid",a:"hero"},{r:"Technical"},{r:"Strike"},{r:"Assault"},{r:"Strike",a:"hero"},{r:"Technical",a:"hero"}],sp1:{r:"Strike"},sp2:{r:"Strike",a:"hero"}},
-    {n:"Costume ε (Dangerous)",ra:"PUR",al:"hero",s:[{r:"Assault"},{r:"Support"},{r:"Rapid"},{r:"Strike",a:"villain"},{r:"Technical",a:"villain"},{r:"Support"},{r:"Support"},{r:"Support"},{r:"Assault",a:"hero"},{r:"Technical",a:"hero"}],sp1:{r:"Support"},sp2:{r:"Rapid",a:"hero"}},
+    {n:"Costume e",ra:"PUR",al:"hero",s:[{r:"Assault"},{r:"Strike"},{r:"Rapid"},{r:"Technical",a:"villain"},{r:"Assault",a:"hero"},{r:"Support"},{r:"Rapid"},{r:"Rapid"},{r:"Strike",a:"villain"},{r:"Assault",a:"hero"}],sp1:{r:"Strike"},sp2:{r:"Assault",a:"hero"}},
+    {n:"Costume e (Villain Style)",ra:"PUR",al:"hero",s:[{r:"Assault"},{r:"Support"},{r:"Strike"},{r:"Assault",a:"villain"},{r:"Strike",a:"villain"},{r:"Strike"},{r:"Rapid"},{r:"Support"},{r:"Assault",a:"hero"},{r:"Rapid",a:"hero"}],sp1:{r:"Rapid"},sp2:{r:"Technical",a:"hero"}},
+    {n:"Costume e (Heat)",ra:"PUR",al:"villain",s:[{r:"Strike"},{r:"Rapid"},{r:"Rapid"},{r:"Rapid",a:"hero"},{r:"Assault",a:"hero"},{r:"Strike"},{r:"Support"},{r:"Rapid"},{r:"Strike",a:"villain"},{r:"Support",a:"villain"}],sp1:{r:"Technical"},sp2:{r:"Support",a:"villain"}},
+    {n:"Costume e (Combat)",ra:"PUR",al:"villain",s:[{r:"Support"},{r:"Strike"},{r:"Technical"},{r:"Rapid",a:"villain"},{r:"Technical",a:"villain"},{r:"Technical"},{r:"Assault"},{r:"Technical"},{r:"Technical",a:"villain"},{r:"Strike",a:"hero"}],sp1:{r:"Assault"},sp2:{r:"Rapid",a:"villain"}},
+    {n:"Costume e (Fancy)",ra:"PUR",al:"hero",s:[{r:"Rapid"},{r:"Assault"},{r:"Support"},{r:"Technical",a:"hero"},{r:"Rapid",a:"hero"},{r:"Technical"},{r:"Strike"},{r:"Assault"},{r:"Strike",a:"hero"},{r:"Technical",a:"hero"}],sp1:{r:"Strike"},sp2:{r:"Strike",a:"hero"}},
+    {n:"Costume e (Dangerous)",ra:"PUR",al:"hero",s:[{r:"Assault"},{r:"Support"},{r:"Rapid"},{r:"Strike",a:"villain"},{r:"Technical",a:"villain"},{r:"Support"},{r:"Support"},{r:"Support"},{r:"Assault",a:"hero"},{r:"Technical",a:"hero"}],sp1:{r:"Support"},sp2:{r:"Rapid",a:"hero"}},
     {n:"Old Uniform",ra:"PUR",al:"villain",s:[{r:"Assault"},{r:"Rapid"},{r:"Strike"},{r:"Rapid",a:"hero"},{r:"Rapid",a:"hero"},{r:"Assault"},{r:"Strike"},{r:"Technical"},{r:"Rapid",a:"hero"},{r:"Support",a:"hero"}],sp1:{r:"Technical"},sp2:{r:"Assault",a:"villain"}},
     {n:"Old Uniform (Villain Style)",ra:"PUR",al:"hero",s:[{r:"Support"},{r:"Strike"},{r:"Strike"},{r:"Rapid",a:"villain"},{r:"Strike",a:"villain"},{r:"Assault"},{r:"Strike"},{r:"Technical"},{r:"Support",a:"villain"},{r:"Assault",a:"villain"}],sp1:{r:"Strike"},sp2:{r:"Assault",a:"hero"}},
     {n:"Old Uniform (Heat)",ra:"PUR",al:"hero",s:[{r:"Strike"},{r:"Support"},{r:"Assault"},{r:"Assault",a:"hero"},{r:"Assault",a:"hero"},{r:"Strike"},{r:"Strike"},{r:"Rapid"},{r:"Support",a:"villain"},{r:"Strike",a:"hero"}],sp1:{r:"Support"},sp2:{r:"Support",a:"hero"}},
@@ -1508,12 +1537,12 @@ var COSTUME_DATA = {
     {n:"Cyberpunk (Combat)",ra:"PUR",al:"hero",s:[{r:"Rapid"},{r:"Strike"},{r:"Assault"},{r:"Support",a:"villain"},{r:"Technical",a:"hero"},{r:"Rapid"},{r:"Assault"},{r:"Rapid"},{r:"Rapid",a:"hero"},{r:"Support",a:"hero"}],sp1:{r:"Strike"},sp2:{r:"Support",a:"hero"}},
     {n:"Mask Off (Hero Style)",ra:"R",al:"hero",s:[{r:"Assault"},{r:"Rapid"},{r:"Support"},{r:"Support"},{r:"Support"},{r:"Support"},{r:"Technical"},{r:"Assault"},{r:"Strike"},{r:"Assault"}],sp1:{r:"Technical"},sp2:{r:"Support",a:"hero"}},
     {n:"Cyberpunk (Dangerous)",ra:"PUR",al:"villain",s:[{r:"Technical"},{r:"Support"},{r:"Technical"},{r:"Strike",a:"villain"},{r:"Assault",a:"hero"},{r:"Support"},{r:"Rapid"},{r:"Strike"},{r:"Support",a:"villain"},{r:"Strike",a:"hero"}],sp1:{r:"Assault"},sp2:{r:"Technical",a:"villain"}},
-    {n:"Villain Costume Mask +� ver.",ra:"PUR",al:"villain",s:[{r:"Support"},{r:"Strike"},{r:"Strike"},{r:"Technical",a:"hero"},{r:"Rapid",a:"villain"},{r:"Strike"},{r:"Support"},{r:"Assault"},{r:"Technical",a:"villain"},{r:"Assault",a:"hero"}],sp1:{r:"Technical"},sp2:{r:"Strike",a:"villain"}},
-    {n:"Villain Costume Mask +� ver. (Hero Style)",ra:"PUR",al:"villain",s:[{r:"Technical"},{r:"Rapid"},{r:"Assault"},{r:"Rapid",a:"hero"},{r:"Technical",a:"villain"},{r:"Assault"},{r:"Strike"},{r:"Support"},{r:"Rapid",a:"villain"},{r:"Support",a:"hero"}],sp1:{r:"Assault"},sp2:{r:"Support",a:"villain"}},
-    {n:"Villain Costume Mask +� ver. (Heat)",ra:"PUR",al:"hero",s:[{r:"Assault"},{r:"Assault"},{r:"Strike"},{r:"Strike",a:"hero"},{r:"Support",a:"villain"},{r:"Rapid"},{r:"Assault"},{r:"Support"},{r:"Technical",a:"hero"},{r:"Assault",a:"villain"}],sp1:{r:"Technical"},sp2:{r:"Assault",a:"hero"}},
-    {n:"Villain Costume Mask +� ver. (Combat)",ra:"PUR",al:"villain",s:[{r:"Support"},{r:"Rapid"},{r:"Technical"},{r:"Support",a:"villain"},{r:"Rapid",a:"hero"},{r:"Strike"},{r:"Technical"},{r:"Strike"},{r:"Assault",a:"villain"},{r:"Technical",a:"hero"}],sp1:{r:"Support"},sp2:{r:"Rapid",a:"villain"}},
-    {n:"Villain Costume Mask +� ver. (Fancy)",ra:"PUR",al:"hero",s:[{r:"Strike"},{r:"Technical"},{r:"Support"},{r:"Strike",a:"villain"},{r:"Assault",a:"hero"},{r:"Support"},{r:"Strike"},{r:"Technical"},{r:"Rapid",a:"hero"},{r:"Assault",a:"villain"}],sp1:{r:"Strike"},sp2:{r:"Technical",a:"hero"}},
-    {n:"Villain Costume Mask +� ver. (Dangerous)",ra:"PUR",al:"hero",s:[{r:"Rapid"},{r:"Support"},{r:"Rapid"},{r:"Support",a:"hero"},{r:"Strike",a:"villain"},{r:"Assault"},{r:"Support"},{r:"Assault"},{r:"Technical",a:"hero"},{r:"Technical",a:"villain"}],sp1:{r:"Rapid"},sp2:{r:"Rapid",a:"hero"}},
+    {n:"Villain Costume Mask +? ver.",ra:"PUR",al:"villain",s:[{r:"Support"},{r:"Strike"},{r:"Strike"},{r:"Technical",a:"hero"},{r:"Rapid",a:"villain"},{r:"Strike"},{r:"Support"},{r:"Assault"},{r:"Technical",a:"villain"},{r:"Assault",a:"hero"}],sp1:{r:"Technical"},sp2:{r:"Strike",a:"villain"}},
+    {n:"Villain Costume Mask +? ver. (Hero Style)",ra:"PUR",al:"villain",s:[{r:"Technical"},{r:"Rapid"},{r:"Assault"},{r:"Rapid",a:"hero"},{r:"Technical",a:"villain"},{r:"Assault"},{r:"Strike"},{r:"Support"},{r:"Rapid",a:"villain"},{r:"Support",a:"hero"}],sp1:{r:"Assault"},sp2:{r:"Support",a:"villain"}},
+    {n:"Villain Costume Mask +? ver. (Heat)",ra:"PUR",al:"hero",s:[{r:"Assault"},{r:"Assault"},{r:"Strike"},{r:"Strike",a:"hero"},{r:"Support",a:"villain"},{r:"Rapid"},{r:"Assault"},{r:"Support"},{r:"Technical",a:"hero"},{r:"Assault",a:"villain"}],sp1:{r:"Technical"},sp2:{r:"Assault",a:"hero"}},
+    {n:"Villain Costume Mask +? ver. (Combat)",ra:"PUR",al:"villain",s:[{r:"Support"},{r:"Rapid"},{r:"Technical"},{r:"Support",a:"villain"},{r:"Rapid",a:"hero"},{r:"Strike"},{r:"Technical"},{r:"Strike"},{r:"Assault",a:"villain"},{r:"Technical",a:"hero"}],sp1:{r:"Support"},sp2:{r:"Rapid",a:"villain"}},
+    {n:"Villain Costume Mask +? ver. (Fancy)",ra:"PUR",al:"hero",s:[{r:"Strike"},{r:"Technical"},{r:"Support"},{r:"Strike",a:"villain"},{r:"Assault",a:"hero"},{r:"Support"},{r:"Strike"},{r:"Technical"},{r:"Rapid",a:"hero"},{r:"Assault",a:"villain"}],sp1:{r:"Strike"},sp2:{r:"Technical",a:"hero"}},
+    {n:"Villain Costume Mask +? ver. (Dangerous)",ra:"PUR",al:"hero",s:[{r:"Rapid"},{r:"Support"},{r:"Rapid"},{r:"Support",a:"hero"},{r:"Strike",a:"villain"},{r:"Assault"},{r:"Support"},{r:"Assault"},{r:"Technical",a:"hero"},{r:"Technical",a:"villain"}],sp1:{r:"Rapid"},sp2:{r:"Rapid",a:"hero"}},
     {n:"Cyberpunk (Hero Style)",ra:"PUR",al:"villain",s:[{r:"Strike"},{r:"Support"},{r:"Technical"},{r:"Strike",a:"villain"},{r:"Rapid",a:"hero"},{r:"Assault"},{r:"Strike"},{r:"Support"},{r:"Strike",a:"hero"},{r:"Technical",a:"villain"}],sp1:{r:"Technical"},sp2:{r:"Rapid",a:"villain"}},
   ],
   dabi: [
@@ -5013,7 +5042,7 @@ function specialValueText(e,lv){
     return vals.map(function(v){return String(v);}).join(" / ");
   }
   var fallback=levelVal(e,lv);
-  return fallback!==""?fallback:"�";
+  return fallback!==""?fallback:"?";
 }
 function specialBaseValueText(e,lv){
   if(!e)return"";
@@ -6504,7 +6533,7 @@ function _renderDamageStatsInner(){
 }
 
 function fmtReloadValue(n){
-  if(n===null||n===undefined||isNaN(n))return"�";
+  if(n===null||n===undefined||isNaN(n))return"?";
   var v=Math.round(n*100)/100;
   return String(v).replace(/\.00$/,"").replace(/(\.\d)0$/,"$1");
 }
@@ -6562,7 +6591,7 @@ function renderReloadStats(){
       var ammoTable=skill.baseTable||skill.specialTable;
       var ammoText=tableAmmoValue(ammoTable,RELOAD_LEVEL||1,ammoTable&&ammoTable.rows||null);
       var useAmmoText=tableTextValue(ammoTable,RELOAD_LEVEL||1,tableHeaderIndex(ammoTable,["use ammo"]),tableHeaderIndex(ammoTable,["level"]),ammoTable&&ammoTable.rows||null);
-      var ammoCell=ammoText===null||ammoText===undefined?"—":String(ammoText);
+      var ammoCell=ammoText===null||ammoText===undefined?"�":String(ammoText);
       if(useAmmoText!==null&&useAmmoText!==undefined&&String(useAmmoText).trim()!==""){
         ammoCell+=" / "+String(useAmmoText);
       }
@@ -7247,14 +7276,14 @@ function renderHpStats(){
       var vals=specialNumericValues(ev, sp.lv);
       var perTick=specialPerTickHeal(ev);
       var line=document.createElement("div");line.className="dmg-extra-line";
-      var lbl=document.createElement("span");lbl.className="dmg-extra-label";      lbl.innerHTML="<strong>"+specialSummaryLabel(ev)+"</strong>"+(ev.chara!==undefined&&ev.chara!==null&&ev.chara!==""?'<img class="tuning-ic" src="'+(specialTuningIcon(ev)||specialIcon(ev.chara))+'" alt="'+specialSummaryLabel(ev)+'" title="'+specialSummaryLabel(ev)+'" style="background:'+roleColor(ev.role||charaRole(ev.chara))+'"/>':"")+"<br><span style=\"font-size:.58rem;color:#8e8e8e\">"+(sp.guard?"on guard break � ":"")+"Lv"+sp.lv+"</span>";
+      var lbl=document.createElement("span");lbl.className="dmg-extra-label";      lbl.innerHTML="<strong>"+specialSummaryLabel(ev)+"</strong>"+(ev.chara!==undefined&&ev.chara!==null&&ev.chara!==""?'<img class="tuning-ic" src="'+(specialTuningIcon(ev)||specialIcon(ev.chara))+'" alt="'+specialSummaryLabel(ev)+'" title="'+specialSummaryLabel(ev)+'" style="background:'+roleColor(ev.role||charaRole(ev.chara))+'"/>':"")+"<br><span style=\"font-size:.58rem;color:#8e8e8e\">"+(sp.guard?"on guard break ? ":"")+"Lv"+sp.lv+"</span>";
       var val=document.createElement("span");val.className="stat-bonus-value";
       var parts=[];
       if(dur!==""&&dur!==null)parts.push("Dur "+(/^\d+$/.test(String(dur))?dur+"s":dur));
       if(perTick.hp>0)parts.push("+"+perTick.hp+" HP/tick");
       if(perTick.gp>0)parts.push("+"+perTick.gp+" GP/tick");
       if(perTick.hp===0&&perTick.gp===0&&vals.length)parts.push(vals.map(function(v){return String(v);}).join(" / "));
-      val.textContent=parts.join(" � ")||"�";
+      val.textContent=parts.join(" ? ")||"?";
       line.appendChild(lbl);line.appendChild(val);
       var dsc=document.createElement("div");dsc.style.fontSize=".6rem";dsc.style.color="#777";dsc.style.margin="1px 0 4px";dsc.textContent=ev.skillDesc||"";
       hdiv.appendChild(line);hdiv.appendChild(dsc);
@@ -7285,10 +7314,10 @@ function renderHpStats(){
   }
   var mech=[];
   if(ch.id==="dabi"&&activeStyleName(ch)==="Crazy Torch"){
-    mech.push({cn:17,role:"strike",label:"Quirk Skill Y � Crazy Torch",hpOnActivate:-30,hpPerTick:-2,note:"Continually consumes HP to strengthen self (Gamma active)"});
+    mech.push({cn:17,role:"strike",label:"Quirk Skill Y ? Crazy Torch",hpOnActivate:-30,hpPerTick:-2,note:"Continually consumes HP to strengthen self (Gamma active)"});
   }
   if(ch.id==="tomura"&&activeStyleName(ch)==="Thousand-Hand Break"){
-    mech.push({cn:15,role:"technical",label:"Quirk Skill Y � Thousand-Hand Break",hpPerTick:20,gpPerTick:4,note:"Gamma regenerates HP and GP (Hyper Regeneration-like)"});
+    mech.push({cn:15,role:"technical",label:"Quirk Skill Y ? Thousand-Hand Break",hpPerTick:20,gpPerTick:4,note:"Gamma regenerates HP and GP (Hyper Regeneration-like)"});
   }
   if(mech.length){
     var mdiv=document.createElement("div");mdiv.className="dmg-extra";
@@ -7303,9 +7332,9 @@ function renderHpStats(){
       if(me.hpOnActivate!==undefined&&me.hpOnActivate!==0)mparts.push((me.hpOnActivate<0?"":"+")+me.hpOnActivate+" HP (on activate)");
       if(me.hpPerTick!==undefined&&me.hpPerTick!==0)mparts.push((me.hpPerTick<0?"":"+")+me.hpPerTick+" HP/tick");
       if(me.gpPerTick!==undefined&&me.gpPerTick!==0)mparts.push((me.gpPerTick<0?"":"+")+me.gpPerTick+" GP/tick");
-      if(mparts.length===0)mparts.push("�");
+      if(mparts.length===0)mparts.push("?");
       var isNeg=(me.hpOnActivate<0)||(me.hpPerTick<0)||(me.gpPerTick<0);
-      mval.textContent=mparts.join(" � ");
+      mval.textContent=mparts.join(" ? ");
       if(isNeg)mval.style.color="#f87171";
       mline.appendChild(mlbl);mline.appendChild(mval);
       var mdsc=document.createElement("div");mdsc.style.fontSize=".6rem";mdsc.style.color="#777";mdsc.style.margin="1px 0 4px";mdsc.textContent=me.note||"";
@@ -7466,7 +7495,7 @@ function renderManifestStats(){
   var mult=parseLevelValue(manifest, manifestLv);
   if(mult===null||isNaN(mult))mult=1;
   var block=document.createElement("div");block.className="dmg-extra";block.style.color="#fff";
-  var ttl=document.createElement("div");ttl.className="dmg-extra-title";ttl.textContent="Ability Manifest (Tamaki Amajiki) � Lv"+manifestLv+" ? �"+mult.toFixed(2)+" Duration";
+  var ttl=document.createElement("div");ttl.className="dmg-extra-title";ttl.textContent="Ability Manifest (Tamaki Amajiki) ? Lv"+manifestLv+" ? ?"+mult.toFixed(2)+" Duration";
   block.appendChild(ttl);
   var note=document.createElement("div");note.style.fontSize=".6rem";note.style.color="#777";note.style.margin="2px 0 6px";
   note.textContent="Only extends Ability Card buff duration; potency (attack / defense / speed / healing / reload) is unchanged.";
@@ -7576,6 +7605,7 @@ function onCardClick(e){
   buildGrids();var ch=gc();updTitle(ch);updDisplay(ch);buildSlots(ch);
   recalcTeamRoleBonuses();renderTeamRoleBonuses();
   requestAnimationFrame(function(){renderStats();renderDamageStats();renderReloadStats();renderDefenseStats();renderMiscStats();renderHpStats();renderMovementStats();renderManifestStats();});
+  window._syncMobileCharDD&&window._syncMobileCharDD();
 }
 document.getElementById("heroGrid").addEventListener("click",onCardClick);
 document.getElementById("villainGrid").addEventListener("click",onCardClick);
@@ -7812,6 +7842,275 @@ bindCardToggle("puActive","pu",function(){
     recalcTeamRoleBonuses();renderTeamRoleBonuses();renderAll();
   });
 
+// Build PNG Generator
+function generateBuildPNG(){
+  var ch=gc();
+  if(!ch){alert('Select a character first.');return;}
+  var W=1200,H=800;
+  var cv=document.createElement('canvas');cv.width=W;cv.height=H;
+  var ctx=cv.getContext('2d');
+  var role=getCharacterRole(ch);
+  var cos=ch.c?ch.c[ST.cosIdx]:null;
+  var cosName=cos?cos.n:'Default Costume';
+  var cosImgList=COSTUME_IMG[CH_NUM[ch.id]];
+  var roleColors={Strike:'#ff4444',Assault:'#ffd43b',Rapid:'#38bdf8',Technical:'#a855f7',Support:'#4ade80'};
+  var roleGradients={Strike:['#7a0000','#cc0000'],Assault:['#a08000','#e6b800'],Rapid:['#006080','#0099cc'],Technical:['#3d007a','#6600cc'],Support:['#016e0c','#01aa13']};
+  var rc=roleColors[role]||'#94a3b8';
+  var rg=roleGradients[role]||['#1e293b','#334155'];
+
+  function loadImg(src){
+    return new Promise(function(resolve){
+      var img=new Image();img.crossOrigin='anonymous';
+      img.onload=function(){resolve(img);};
+      img.onerror=function(){resolve(null);};
+      img.src=src;
+    });
+  }
+
+  function rr(x,y,w,h,r,fill,stroke){
+    ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+    ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+    ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+    ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);
+    ctx.closePath();
+    if(fill){ctx.fillStyle=fill;ctx.fill();}
+    if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=1;ctx.stroke();}
+  }
+
+  function drawBadge(x,y,text,color){
+    ctx.font='bold 11px Rajdhani,sans-serif';
+    var tw=ctx.measureText(text).width+12;
+    rr(x,y,tw,20,4,color);
+    ctx.fillStyle='#fff';ctx.textAlign='center';
+    ctx.fillText(text,x+tw/2,y+14);ctx.textAlign='left';
+  }
+
+  function wrapText(txt,x,y,maxW,lineH){
+    var words=txt.split(' '),line='';
+    for(var i=0;i<words.length;i++){
+      var test=line+words[i]+' ';
+      if(ctx.measureText(test).width>maxW&&line!==''){
+        ctx.fillText(line.trim(),x,y);y+=lineH;line=words[i]+' ';
+      }else{line=test;}
+    }
+    if(line)ctx.fillText(line.trim(),x,y);
+    return y;
+  }
+
+  function drawSlot(x,y,w,tid,lv){
+    rr(x,y,w,52,6,'rgba(255,255,255,.04)','rgba(255,255,255,.08)');
+    var e=tid?findNormal(tid):null;
+    if(!e)return;
+    var roleC=roleColors[e.role]||'#94a3b8';
+    ctx.fillStyle='#7fb0c8';ctx.font='bold 11px Rajdhani,sans-serif';ctx.textAlign='left';
+    ctx.fillText('#',x+6,y+14);
+    drawBadge(x+20,y+4,e.role||'Empty',roleC);
+    ctx.fillStyle='#f1f5f9';ctx.font='bold 12px Rajdhani,sans-serif';
+    var tn=e.name||'';if(tn.length>32)tn=tn.substring(0,32)+'...';
+    ctx.fillText(tn,x+6,y+30);
+    ctx.fillStyle='#8bb4c6';ctx.font='10px Rajdhani,sans-serif';
+    var td=tuningDesc(e)||'';if(td.length>50)td=td.substring(0,50)+'...';
+    ctx.fillText(td,x+6,y+44);
+    ctx.fillStyle='#fff';ctx.font='bold 11px Rajdhani,sans-serif';ctx.textAlign='right';
+    ctx.fillText('Lv. '+lv,x+w-6,y+14);ctx.textAlign='left';
+    rr(x+6,y+46,w-12,3,2,'rgba(255,255,255,.1)');
+    var pct=Math.min(lv/8,1);
+    rr(x+6,y+46,(w-12)*pct,3,2,roleC);
+    if(e.chara){
+      var pNum=CH_NUM[e.chara];
+      if(pNum){
+        var px=x+w-42,py=y+6;
+        rr(px,py,38,38,6,'rgba(0,0,0,.3)','rgba(255,255,255,.1)');
+      }
+    }
+  }
+
+  async function render(){
+    var chNum=CH_NUM[ch.id];
+    var charImg=chNum?await loadImg(portraitHQ(chNum,ST.cosIdx)):null;
+    var cosImg=null;
+    if(cosImgList&&cosImgList[ST.cosIdx]!==undefined){
+      var cn2=String(chNum).padStart(3,'0');
+      cosImg=await loadImg(BASE+'Ch'+cn2+'/GUI/Costume/L/T_ui_Thumb_4_'+cosImgList[ST.cosIdx]+'_L.png');
+    }
+
+    // Load slot portraits
+    var slotImgs={};
+    var allSlots=ST.left.concat(ST.right);
+    var loadPromises=[];
+    allSlots.forEach(function(s){
+      if(s&&s.tid){
+        var e=findNormal(s.tid);
+        if(e&&e.chara&&!slotImgs[e.chara]){
+          var pNum=CH_NUM[e.chara];
+          if(pNum){
+            slotImgs[e.chara]=null;
+            loadPromises.push(loadImg(portraitHQ(pNum)).then(function(img){slotImgs[e.chara]=img;}));
+          }
+        }
+      }
+    });
+    await Promise.all(loadPromises);
+
+    // Background
+    var grd=ctx.createLinearGradient(0,0,W,H);
+    grd.addColorStop(0,rg[0]);grd.addColorStop(1,rg[1]);
+    ctx.fillStyle=grd;ctx.fillRect(0,0,W,H);
+
+    // Header
+    rr(0,0,W,56,0,'#0a0f1a');
+    ctx.fillStyle='#f5c800';ctx.font='bold 22px Rajdhani,sans-serif';ctx.textAlign='left';
+    ctx.fillText('BUILD SUMMARY',20,36);
+    drawBadge(220,16,role.toUpperCase()+' Type',rc);
+    ctx.fillStyle='#94a3b8';ctx.font='10px Rajdhani,sans-serif';ctx.textAlign='right';
+    ctx.fillText('BUILT WITH',W-20,22);
+    ctx.fillStyle='#f5c800';ctx.font='bold 14px Rajdhani,sans-serif';
+    ctx.fillText('MHA UR BUILD PLANNER',W-20,38);
+    ctx.fillStyle='#64748b';ctx.font='10px Rajdhani,sans-serif';
+    ctx.fillText('mhur-planner.duckdns.org',W-20,50);
+    ctx.textAlign='left';
+
+    // Left section — character
+    var leftW=440;
+    if(charImg){
+      ctx.save();ctx.beginPath();rr(16,66,leftW-32,360,12);ctx.clip();
+      ctx.drawImage(charImg,16,66,leftW-32,360);ctx.restore();
+    }
+    ctx.fillStyle='#fff';ctx.font='bold 34px Rajdhani,sans-serif';
+    ctx.fillText(ch.n.toUpperCase(),20,460);
+    ctx.fillStyle='#94a3b8';ctx.font='15px Rajdhani,sans-serif';
+    ctx.fillText((ch.g==='Hero'?'Pro Hero: ':'Villain: ')+ch.n,20,482);
+    ctx.fillStyle='#64748b';ctx.font='bold 11px Rajdhani,sans-serif';
+    ctx.fillText('Costume',20,508);
+    ctx.fillStyle='#e2e8f0';ctx.font='13px Rajdhani,sans-serif';
+    ctx.fillText(cosName,75,508);
+
+    var tagY=530;
+    if(cos){
+      var ra=cos.ra||'R';
+      var raC={R:'#ef4444',SR:'#f59e0b',PUR:'#a855f7'};
+      var stars=ra==='PUR'?'★★★★':ra==='SR'?'★★':'★';
+      drawBadge(20,tagY,stars+' '+ra,raC[ra]||'#64748b');
+    }
+    drawBadge(80,tagY,ch.g,ch.g==='Hero'?'#1d4ed8':'#991b1b');
+    if(cos){
+      var sp1=cos.sp1||null,sp2=cos.sp2||null;
+      if(sp1)drawBadge(140,tagY,'Special 1: '+sp1.r,roleColors[sp1.r]||'#64748b');
+      if(sp2)drawBadge(320,tagY,'Special 2: '+(sp2.r||'')+(sp2.a?(sp2.a==='hero'?' H':' V'):''),roleColors[sp2.r]||'#64748b');
+    }
+
+    var statsY=560;
+    ctx.fillStyle='#f5c800';ctx.font='bold 13px Rajdhani,sans-serif';
+    ctx.fillText('CHARACTER STATS',20,statsY);
+    [{l:'HP',v:ch.hp+''},{l:'GP',v:ch.gp+''},{l:'Down HP',v:ch.downedHealth+''}].forEach(function(s,i){
+      var sx=20+i*100;
+      rr(sx,statsY+10,90,38,4,'rgba(255,255,255,.05)','rgba(255,255,255,.08)');
+      ctx.fillStyle='#94a3b8';ctx.font='bold 10px Rajdhani,sans-serif';ctx.textAlign='center';
+      ctx.fillText(s.l,sx+45,statsY+24);
+      ctx.fillStyle='#fff';ctx.font='bold 18px Rajdhani,sans-serif';
+      ctx.fillText(s.v,sx+45,statsY+42);ctx.textAlign='left';
+    });
+
+    var descY=630;
+    ctx.fillStyle='#8bb4c6';ctx.font='11px Rajdhani,sans-serif';
+    wrapText(ch.desc||'A skilled fighter ready for battle.',20,descY,leftW-40,14);
+
+    // Right section — tuning
+    var rightX=460;
+    ctx.fillStyle='#f5c800';ctx.font='bold 16px Rajdhani,sans-serif';
+    ctx.fillText('TUNING & MEMORY SLOTS',rightX,85);
+
+    var slotW=340,slotH=52,slotGap=8;
+    ctx.fillStyle='#f5c800';ctx.font='bold 12px Rajdhani,sans-serif';
+    ctx.fillText('LEFT MEMORY',rightX,108);
+    for(var li=0;li<5;li++){
+      var ls=ST.left[li];
+      drawSlot(rightX,118+li*(slotH+slotGap),slotW,ls?ls.tid:null,ls?ls.lv:1);
+      var e1=ls&&ls.tid?findNormal(ls.tid):null;
+      if(e1&&e1.chara&&slotImgs[e1.chara]){
+        var sx=rightX+slotW-42,sy=118+li*(slotH+slotGap)+6;
+        ctx.save();ctx.beginPath();rr(sx,sy,38,38,6);ctx.clip();
+        ctx.drawImage(slotImgs[e1.chara],sx,sy,38,38);ctx.restore();
+      }
+    }
+
+    var rmx=rightX+slotW+20;
+    ctx.fillStyle='#f5c800';ctx.font='bold 12px Rajdhani,sans-serif';
+    ctx.fillText('RIGHT MEMORY',rmx,108);
+    for(var ri=0;ri<5;ri++){
+      var rs=ST.right[ri];
+      drawSlot(rmx,118+ri*(slotH+slotGap),slotW,rs?rs.tid:null,rs?rs.lv:1);
+      var e2=rs&&rs.tid?findNormal(rs.tid):null;
+      if(e2&&e2.chara&&slotImgs[e2.chara]){
+        var sx2=rmx+slotW-42,sy2=118+ri*(slotH+slotGap)+6;
+        ctx.save();ctx.beginPath();rr(sx2,sy2,38,38,6);ctx.clip();
+        ctx.drawImage(slotImgs[e2.chara],sx2,sy2,38,38);ctx.restore();
+      }
+    }
+
+    // Special tuning
+    var specY=118+5*(slotH+slotGap)+16;
+    ctx.fillStyle='#f5c800';ctx.font='bold 13px Rajdhani,sans-serif';
+    ctx.fillText('SPECIAL TUNING',rightX,specY);
+
+    for(var si=0;si<2;si++){
+      var ss=ST.specs[si];
+      var sx3=rightX+si*(slotW+20);
+      rr(sx3,specY+12,slotW,70,6,'rgba(255,255,255,.04)','rgba(167,139,250,.3)');
+      if(ss&&ss.tid){
+        var se=findSpecial(ss.tid);
+        if(se){
+          var specSide=si===0?'LEFT':'RIGHT';
+          var specAlign=se.align||'';
+          var specRole=se.role||'';
+          ctx.fillStyle='#94a3b8';ctx.font='bold 10px Rajdhani,sans-serif';
+          ctx.fillText(specSide,sx3+6,specY+24);
+          drawBadge(sx3+36,specY+14,specRole,roleColors[specRole]||'#64748b');
+          if(specAlign){
+            drawBadge(sx3+36+ctx.measureText(specRole).width+20,specY+14,specAlign.toUpperCase()+(specAlign==='hero'?'':' V'),specAlign==='hero'?'#1d4ed8':'#991b1b');
+          }
+          ctx.fillStyle='#f1f5f9';ctx.font='bold 13px Rajdhani,sans-serif';
+          var sn=se.skillName||se.name||'';if(sn.length>30)sn=sn.substring(0,30)+'...';
+          ctx.fillText(sn,sx3+6,specY+42);
+          ctx.fillStyle='#c084fc';ctx.font='10px Rajdhani,sans-serif';
+          var sd=se.effect||se.desc||'';if(sd.length>45)sd=sd.substring(0,45)+'...';
+          ctx.fillText(sd,sx3+6,specY+56);
+          ctx.fillStyle='#fff';ctx.font='bold 11px Rajdhani,sans-serif';ctx.textAlign='right';
+          ctx.fillText('Lv. '+(ss?ss.lv:1),sx3+slotW-6,specY+24);ctx.textAlign='left';
+          rr(sx3+6,specY+62,slotW-12,4,2,'rgba(255,255,255,.1)');
+          rr(sx3+6,specY+62,(slotW-12)*Math.min((ss?ss.lv:1)/8,1),4,2,'#a855f7');
+        }
+      }
+    }
+
+    // Footer
+    rr(0,H-44,W,44,0,'#0a0f1a');
+    ctx.fillStyle='#475569';ctx.font='11px Rajdhani,sans-serif';ctx.textAlign='left';
+    ctx.fillText('BUILD ID',20,H-26);
+    ctx.fillStyle='#94a3b8';ctx.font='bold 11px Rajdhani,sans-serif';
+    ctx.fillText('#'+btoa(JSON.stringify({c:ch.id,s:ST.styleIdx})).replace(/[^a-zA-Z0-9]/g,'').slice(0,12).toUpperCase(),20,H-10);
+    ctx.fillStyle='#475569';ctx.font='11px Rajdhani,sans-serif';
+    ctx.fillText('PLAYER',160,H-26);
+    ctx.fillStyle='#94a3b8';ctx.font='bold 11px Rajdhani,sans-serif';
+    ctx.fillText(sessionName||'Anonymous',160,H-10);
+    ctx.fillStyle='#475569';ctx.font='11px Rajdhani,sans-serif';
+    ctx.fillText('DATE',320,H-26);
+    ctx.fillStyle='#94a3b8';ctx.font='bold 11px Rajdhani,sans-serif';
+    ctx.fillText(new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',hour:'numeric',minute:'2-digit'}),320,H-10);
+
+    // Download
+    cv.toBlob(function(blob){
+      var url=URL.createObjectURL(blob);
+      var a=document.createElement('a');
+      a.href=url;a.download='MHUR_'+ch.n.replace(/\s+/g,'_')+'_Build.png';
+      document.body.appendChild(a);a.click();document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    },'image/png');
+  }
+  render();
+}
+
+
 function doExport(){
   var p={v:4,charId:ST.charId,cosIdx:ST.cosIdx,styleIdx:ST.styleIdx,
     label:document.getElementById("buildLabel").value||"",
@@ -7905,6 +8204,11 @@ document.getElementById("btnShare").addEventListener("click",function(){
   urlDisp.onclick=function(){if(navigator.clipboard){navigator.clipboard.writeText(shareUrl).then(function(){var n=document.createElement('div');n.style.cssText='position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:99999;background:#1e1e2e;border:1px solid rgba(245,200,0,.3);border-radius:8px;padding:8px 16px;font-size:.75rem;color:#f5c800;box-shadow:0 4px 20px rgba(0,0,0,.5);animation:fadeIn .3s;';n.innerHTML='&#128279; Copied!';document.body.appendChild(n);setTimeout(function(){n.remove();},1500);});}};
   bx.innerHTML=inner;bx.appendChild(urlDisp);btns.appendChild(copyBtn);btns.appendChild(forumBtn);btns.appendChild(cancelBtn);bx.appendChild(btns);ov.appendChild(bx);document.body.appendChild(ov);
   document.getElementById('ioCode').value=code;
+});
+document.getElementById("btnPng").addEventListener("click",function(){
+  var btn=this;btn.disabled=true;btn.textContent='Generating...';
+  generateBuildPNG();
+  setTimeout(function(){btn.disabled=false;btn.textContent='PNG';},2000);
 });
 document.getElementById("btnImp").addEventListener("click",doImport);
 document.getElementById("btnClr").addEventListener("click",function(){
@@ -8211,18 +8515,63 @@ document.querySelectorAll('.tab-btn').forEach(function(btn){
     }
   });
 });
+// Mobile character dropdown with images
+(function(){
+  var btn=document.getElementById('mobileCharBtn');
+  var overlay=document.getElementById('mobileCharOverlay');
+  var grid=document.getElementById('mobileCharGrid');
+  var close=document.getElementById('mobileCharClose');
+  if(!btn||!overlay||!grid)return;
+  var heroes=CH.filter(function(c){return c.g==='Hero';});
+  var villains=CH.filter(function(c){return c.g==='Villain';});
+  var RBG2={Strike:['#7a0000','#FF0000'],Assault:['#a08000','#FFDD00'],Rapid:['#006080','#00C8FF'],Technical:['#3d007a','#8400FF'],Support:['#016e0c','#02DB18']};
+  function roleBg(r){return RBG2[r]||['#1e293b','#334155'];}
+  function buildCard(c){
+    var d=document.createElement('div');
+    var savedSi=styleMem[c.id]||0;
+    var dispRole=savedSi>0&&c.bs&&c.bs[savedSi-1]?c.bs[savedSi-1].t:c.role;
+    d.className='mcc'+(c.id===ST.charId?' selected':'');
+    d.style.background='linear-gradient(160deg,'+roleBg(dispRole)[0]+','+roleBg(dispRole)[1]+')';
+    var chNum=CH_NUM[c.id];
+    if(chNum){var img=document.createElement('img');img.loading='lazy';img.src=portrait(chNum);img.alt=c.n;d.appendChild(img);}
+    var nm=document.createElement('div');nm.className='mcc-name';nm.textContent=c.n.split(' ')[0];d.appendChild(nm);
+    d.addEventListener('click',function(){
+      saveState();ST.charId=c.id;loadState(c.id,styleMem[c.id]||0);styleMem[c.id]=ST.styleIdx;
+      buildGrids();var ch=gc();updTitle(ch);updDisplay(ch);buildSlots(ch);
+      recalcTeamRoleBonuses();renderTeamRoleBonuses();
+      requestAnimationFrame(function(){renderStats();renderDamageStats();renderReloadStats();renderDefenseStats();renderMiscStats();renderHpStats();renderMovementStats();renderManifestStats();});
+      updateBtn();overlay.classList.remove('open');
+    });
+    return d;
+  }
+  function populateGrid(){
+    grid.innerHTML='';
+    heroes.forEach(function(c){grid.appendChild(buildCard(c));});
+    villains.forEach(function(c){grid.appendChild(buildCard(c));});
+  }
+  function updateBtn(){
+    var ch=gc();
+    if(!ch){btn.innerHTML='<span>Character Select</span>';return;}
+    var chNum=CH_NUM[ch.id];
+    var imgHtml=chNum?'<img src="'+portrait(chNum)+'" alt="'+ch.n+'">':'';
+    btn.innerHTML=imgHtml+'<span>Character Select: '+ch.n+'</span>';
+  }
+  btn.addEventListener('click',function(){populateGrid();overlay.classList.add('open');});
+  close.addEventListener('click',function(){overlay.classList.remove('open');});
+  overlay.addEventListener('click',function(e){if(e.target===overlay)overlay.classList.remove('open');});
+  window._syncMobileCharDD=updateBtn;
+  updateBtn();
+})();
 // Mobile calculator tabs
-function mobileCalcTab(btn){
+window.mobileCalcTab=function(btn){
   document.querySelectorAll('.mcn-btn').forEach(function(b){b.classList.remove('active');});
   btn.classList.add('active');
   var calcId=btn.getAttribute('data-calc');
-  var panels=['dmgCalcPanel','reloadPanel','defPanel','hpPanel','miscPanel','movePanel','manifestPanel','teamPanel'];
-  panels.forEach(function(id){
-    var el=document.getElementById(id);
-    if(!el)return;
-    if(id===calcId){el.style.display='block';el.scrollIntoView({behavior:'smooth',block:'start'});}
-    else{el.style.display='none';}
-  });
+  var allPanels=['dmgCalcPanel','reloadPanel','defPanel','hpPanel','miscPanel','movePanel','manifestPanel','teamPanel'];
+  var showMap={'dmgCalcPanel':['dmgCalcPanel'],'reloadPanel':['reloadPanel'],'defPanel':['defPanel','hpPanel'],'miscPanel':['miscPanel','movePanel','manifestPanel','teamPanel']};
+  var show=showMap[calcId]||[calcId];
+  allPanels.forEach(function(id){var el=document.getElementById(id);if(!el)return;el.style.display=show.indexOf(id)!==-1?'block':'none';});
+  var first=document.getElementById(show[0]);if(first)first.scrollIntoView({behavior:'smooth',block:'start'});
 }
 // Forum init
 function initForum(){
@@ -8290,7 +8639,7 @@ function initForum(){
     var btnLabel=isLogin?'Sign In':'Register';
     var extraFields=isLogin?'':'<div style="position:relative;width:72px;height:72px;margin:0 auto 12px;cursor:pointer;" id="regAvatarWrap"><img id="regAvatarPreview" src="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'72\' height=\'72\'%3E%3Crect width=\'72\' height=\'72\' fill=\'%23333\' rx=\'36\'/%3E%3Ctext x=\'36\' y=\'44\' font-size=\'30\' text-anchor=\'middle\' fill=\'%2394a3b8\'%3E%3F%3C/text%3E%3C/svg%3E" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.15);"><div style="position:absolute;bottom:0;right:0;background:#f5c800;color:#000;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:900;border:2px solid #1e1e2e;">+</div></div><input type="file" id="regAvatarFile" accept="image/png,image/jpeg,image/gif,image/webp" style="display:none;">';
     var nameVal=isLogin?esc(localStorage.getItem('forumUsername')||''):'';
-    r('<div style="position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;"><div style="background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:30px;max-width:360px;width:90%;text-align:center;"><div style="font-size:1.5rem;margin-bottom:4px;">&#128272;</div><h2 style="color:#f5c800;font-size:1.1rem;margin-bottom:4px;">'+title+'</h2><p style="color:#94a3b8;font-size:.75rem;margin-bottom:16px;">'+sub+'</p>'+extraFields+(isLogin?'':'<input id="regEmail" type="email" class="forum-input" style="width:100%;text-align:center;font-size:.8rem;padding:7px;margin-bottom:6px;" placeholder="Email (optional — for password resets)" autocomplete="email">')+'<input id="regName" class="forum-input" style="width:100%;text-align:center;font-size:.9rem;padding:8px;margin-bottom:8px;" placeholder="Username..." maxlength="20" value="'+nameVal+'" autocomplete="off"><input id="regPass" type="password" class="forum-input" style="width:100%;text-align:center;font-size:.9rem;padding:8px;margin-bottom:8px;" placeholder="Password..." autocomplete="off"><div id="regErr" style="color:#ef4444;font-size:.65rem;margin-bottom:8px;min-height:1.2em;"></div><button class="forum-btn" id="regBtn" style="width:100%;font-size:.8rem;padding:8px;">'+btnLabel+'</button>'+(isLogin?'<p style="color:#475569;font-size:.55rem;margin-top:6px;cursor:pointer;" id="forgotPwLink">Forgot password?</p><p style="color:#475569;font-size:.55rem;margin-top:6px;cursor:pointer;" id="switchRegMode">New here? Create an account</p>':'<p style="color:#475569;font-size:.55rem;margin-top:6px;cursor:pointer;" id="switchRegMode">Already have an account? Sign In</p>')+'</div></div>');
+    r('<div style="position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;"><div style="background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:30px;max-width:360px;width:90%;text-align:center;"><div style="font-size:1.5rem;margin-bottom:4px;">&#128272;</div><h2 style="color:#f5c800;font-size:1.1rem;margin-bottom:4px;">'+title+'</h2><p style="color:#94a3b8;font-size:.75rem;margin-bottom:16px;">'+sub+'</p>'+extraFields+(isLogin?'':'<input id="regEmail" type="email" class="forum-input" style="width:100%;text-align:center;font-size:.8rem;padding:7px;margin-bottom:6px;" placeholder="Email (optional � for password resets)" autocomplete="email">')+'<input id="regName" class="forum-input" style="width:100%;text-align:center;font-size:.9rem;padding:8px;margin-bottom:8px;" placeholder="Username..." maxlength="20" value="'+nameVal+'" autocomplete="off"><input id="regPass" type="password" class="forum-input" style="width:100%;text-align:center;font-size:.9rem;padding:8px;margin-bottom:8px;" placeholder="Password..." autocomplete="off"><div id="regErr" style="color:#ef4444;font-size:.65rem;margin-bottom:8px;min-height:1.2em;"></div><button class="forum-btn" id="regBtn" style="width:100%;font-size:.8rem;padding:8px;">'+btnLabel+'</button>'+(isLogin?'<p style="color:#475569;font-size:.55rem;margin-top:6px;cursor:pointer;" id="forgotPwLink">Forgot password?</p><p style="color:#475569;font-size:.55rem;margin-top:6px;cursor:pointer;" id="switchRegMode">New here? Create an account</p>':'<p style="color:#475569;font-size:.55rem;margin-top:6px;cursor:pointer;" id="switchRegMode">Already have an account? Sign In</p>')+'</div></div>');
     document.getElementById('regName').focus();
     document.getElementById('regName').addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('regBtn').click();});
     document.getElementById('regPass').addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('regBtn').click();});
