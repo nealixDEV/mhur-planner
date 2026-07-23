@@ -1,4 +1,5 @@
 const http = require('http');
+const https = require('https');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
@@ -369,6 +370,35 @@ function handler(req, res) {
     } catch(e) {
       console.log('Build preview error:',e.message);
     }
+  }
+
+  // Image proxy for canvas PNG export (adds CORS headers)
+  if(url === '/img-proxy' && req.method === 'GET'){
+    var imgUrl = query.url || '';
+    if(!imgUrl.match(/^https:\/\/(ultrarumble\.com|images-wixmp)/)){
+      res.writeHead(400);res.end('Bad request');return;
+    }
+    var parts = imgUrl.split('.');
+    var ext = parts[parts.length-1].split('?')[0].toLowerCase();
+    var mimeType = {'png':'image/png','jpg':'image/jpeg','jpeg':'image/jpeg','webp':'image/webp'}[ext]||'image/png';
+    var fetcher = imgUrl.startsWith('https')?https:http;
+    fetcher.get(imgUrl, function(proxyRes){
+      var data = [];
+      proxyRes.on('data',function(c){data.push(c);});
+      proxyRes.on('end',function(){
+        var buf = Buffer.concat(data);
+        res.writeHead(200,{
+          'Content-Type':mimeType,
+          'Access-Control-Allow-Origin':'*',
+          'Cache-Control':'public, max-age=86400',
+          'Content-Length':buf.length
+        });
+        res.end(buf);
+      });
+    }).on('error',function(){
+      res.writeHead(502);res.end('Proxy error');
+    });
+    return;
   }
 
   // Static files

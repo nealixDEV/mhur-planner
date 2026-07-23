@@ -7857,13 +7857,16 @@ function generateBuildPNG(){
   var roleGradients={Strike:['#7a0000','#cc0000'],Assault:['#a08000','#e6b800'],Rapid:['#006080','#0099cc'],Technical:['#3d007a','#6600cc'],Support:['#016e0c','#01aa13']};
   var rc=roleColors[role]||'#94a3b8';
   var rg=roleGradients[role]||['#1e293b','#334155'];
+  var playerName=localStorage.getItem('forumUsername')||'Anonymous';
+  document.getElementById('btnPng').textContent='Generating...';
 
   function loadImg(src){
     return new Promise(function(resolve){
+      var proxySrc='/img-proxy?url='+encodeURIComponent(src);
       var img=new Image();img.crossOrigin='anonymous';
       img.onload=function(){resolve(img);};
       img.onerror=function(){resolve(null);};
-      img.src=src;
+      img.src=proxySrc;
     });
   }
 
@@ -8002,7 +8005,7 @@ function generateBuildPNG(){
     var statsY=560;
     ctx.fillStyle='#f5c800';ctx.font='bold 13px Rajdhani,sans-serif';
     ctx.fillText('CHARACTER STATS',20,statsY);
-    [{l:'HP',v:ch.hp+''},{l:'GP',v:ch.gp+''},{l:'Down HP',v:ch.downedHealth+''}].forEach(function(s,i){
+    [{l:'HP',v:(CHAR_STATS[ch.id]?CHAR_STATS[ch.id].hp:'?')+''},{l:'GP',v:(CHAR_STATS[ch.id]?CHAR_STATS[ch.id].gp:'?')+''},{l:'Down HP',v:(CHAR_STATS[ch.id]?CHAR_STATS[ch.id].downedHealth:'?')+''}].forEach(function(s,i){
       var sx=20+i*100;
       rr(sx,statsY+10,90,38,4,'rgba(255,255,255,.05)','rgba(255,255,255,.08)');
       ctx.fillStyle='#94a3b8';ctx.font='bold 10px Rajdhani,sans-serif';ctx.textAlign='center';
@@ -8092,7 +8095,7 @@ function generateBuildPNG(){
     ctx.fillStyle='#475569';ctx.font='11px Rajdhani,sans-serif';
     ctx.fillText('PLAYER',160,H-26);
     ctx.fillStyle='#94a3b8';ctx.font='bold 11px Rajdhani,sans-serif';
-    ctx.fillText(sessionName||'Anonymous',160,H-10);
+    ctx.fillText(playerName||'Anonymous',160,H-10);
     ctx.fillStyle='#475569';ctx.font='11px Rajdhani,sans-serif';
     ctx.fillText('DATE',320,H-26);
     ctx.fillStyle='#94a3b8';ctx.font='bold 11px Rajdhani,sans-serif';
@@ -8107,7 +8110,11 @@ function generateBuildPNG(){
       URL.revokeObjectURL(url);
     },'image/png');
   }
-  render();
+  render().catch(function(err){
+    console.error('PNG generation failed:',err);
+    document.getElementById('btnPng').textContent='PNG';
+    alert('Failed to generate image. Check console for details.');
+  });
 }
 
 

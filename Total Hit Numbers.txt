@@ -1,0 +1,485 @@
+Izuku Midoriya OFA
+
+B - Total Hit Damage ( Quintuple ) lv 1 - 155
+B - Total Hit Damage ( Quintuple ) lv 2 - 160
+B - Total Hit Damage ( Quintuple ) lv 3 - 165
+B - Total Hit Damage ( Quintuple ) lv 4 - 170
+B - Total Hit Damage ( Quintuple ) lv 5 - 175
+B - Total Hit Damage ( Quintuple ) lv 6 - 180
+B - Total Hit Damage ( Quintuple ) lv 7 - 185
+B - Total Hit Damage ( Quintuple ) lv 8 - 190
+B - Total Hit Damage ( Quintuple ) lv 9 - 190
+
+
+Strike Bakugo
+
+y - Total Hit Damage  lv 1 - 168
+y - Total Hit Damage  lv 2 - 178
+y - Total Hit Damage  lv 3 - 196
+y - Total Hit Damage  lv 4 - 214
+y - Total Hit Damage  lv 5 - 218
+y - Total Hit Damage  lv 6 - 222
+y - Total Hit Damage  lv 7 - 226
+y - Total Hit Damage  lv 8 - 230
+y - Total Hit Damage  lv 9 - 246
+
+
+Cluster Bomb Bakugo
+
+a - Total Hit Damage  lv 1 - 86
+a - Total Hit Damage  lv 2 - 87
+a - Total Hit Damage  lv 3 - 88
+a - Total Hit Damage  lv 4 - 96
+a - Total Hit Damage  lv 5 - 97
+a - Total Hit Damage  lv 6 - 98
+a - Total Hit Damage  lv 7 - 99
+a - Total Hit Damage  lv 8 - 100
+a - Total Hit Damage  lv 9 - 246
+
+
+Cluster Bomb Bakugo
+
+y - Total Hit Damage  lv 1 - 120
+y - Total Hit Damage  lv 2 - 125
+y - Total Hit Damage  lv 3 - 130
+y - Total Hit Damage  lv 4 - 139
+y - Total Hit Damage  lv 5 - 144
+y - Total Hit Damage  lv 6 - 149
+y - Total Hit Damage  lv 7 - 154
+y - Total Hit Damage  lv 8 - 158
+y - Total Hit Damage  lv 9 - 168
+
+
+Rapid Ochako
+
+b - Total Hit Damage  lv 1 - 114
+b - Total Hit Damage  lv 2 - 120
+b - Total Hit Damage  lv 3 - 126
+b - Total Hit Damage  lv 4 - 132
+b - Total Hit Damage  lv 5 - 135
+b - Total Hit Damage  lv 6 - 138
+b - Total Hit Damage  lv 7 - 141
+b - Total Hit Damage  lv 8 - 144
+b - Total Hit Damage  lv 9 - 150
+
+Zero Satellites Ochako
+
+b - Total Hit Damage  lv 1 - 115
+b - Total Hit Damage  lv 2 - 120
+b - Total Hit Damage  lv 3 - 125
+b - Total Hit Damage  lv 4 - 125
+b - Total Hit Damage  lv 5 - 130
+b - Total Hit Damage  lv 6 - 135
+b - Total Hit Damage  lv 7 - 135
+b - Total Hit Damage  lv 8 - 140
+b - Total Hit Damage  lv 9 - 145
+
+Tokoyami
+
+b - Total Hit Damage  lv 1 - 80
+b - Total Hit Damage  lv 2 - 85
+b - Total Hit Damage  lv 3 - 90
+b - Total Hit Damage  lv 4 - 95
+b - Total Hit Damage  lv 5 - 95
+b - Total Hit Damage  lv 6 - 100
+b - Total Hit Damage  lv 7 - 105
+b - Total Hit Damage  lv 8 - 110
+b - Total Hit Damage  lv 9 - 115
+
+Strike Denki
+
+b - Total Hit Damage  lv 1 - 168
+b - Total Hit Damage  lv 2 - 189
+b - Total Hit Damage  lv 3 - 203
+b - Total Hit Damage  lv 4 - 288
+b - Total Hit Damage  lv 5 - 306
+b - Total Hit Damage  lv 6 - 324
+b - Total Hit Damage  lv 7 - 351
+b - Total Hit Damage  lv 8 - 369
+b - Total Hit Damage  lv 9 - 420
+
+Ibara
+
+y - Total Hit Damage  lv 1 - 87
+y - Total Hit Damage  lv 2 - 91
+y - Total Hit Damage  lv 3 - 96
+y - Total Hit Damage  lv 4 - 176
+y - Total Hit Damage  lv 5 - 181
+y - Total Hit Damage  lv 6 - 185
+y - Total Hit Damage  lv 7 - 190
+y - Total Hit Damage  lv 8 - 195
+y - Total Hit Damage  lv 9 - 219
+
+
+
+Full Counter Mirio
+
+b - Total Hit Damage  lv 1 - 98
+b - Total Hit Damage  lv 2 - 102
+b - Total Hit Damage  lv 3 - 106
+b - Total Hit Damage  lv 4 - 125
+b - Total Hit Damage  lv 5 - 126
+b - Total Hit Damage  lv 6 - 126
+b - Total Hit Damage  lv 7 - 134
+b - Total Hit Damage  lv 8 - 136
+b - Total Hit Damage  lv 9 - 157
+
+
+Armored All Might
+
+b - Total Hit Damage  lv 1 - 112
+b - Total Hit Damage  lv 2 - 115
+b - Total Hit Damage  lv 3 - 118
+b - Total Hit Damage  lv 4 - 124
+b - Total Hit Damage  lv 5 - 125
+b - Total Hit Damage  lv 6 - 128
+b - Total Hit Damage  lv 7 - 131
+b - Total Hit Damage  lv 8 - 134
+b - Total Hit Damage  lv 9 - 140
+
+
+Armored All Might
+
+y - Total Hit Damage  lv 1 - 30
+y - Total Hit Damage  lv 2 - 30
+y - Total Hit Damage  lv 3 - 30
+y - Total Hit Damage  lv 4 - 40
+y - Total Hit Damage  lv 5 - 40
+y - Total Hit Damage  lv 6 - 40
+y - Total Hit Damage  lv 7 - 40
+y - Total Hit Damage  lv 8 - 40
+y - Total Hit Damage  lv 9 - 40
+
+
+Tech Aizawa
+
+y - Total Hit Damage  lv 1 - 120
+y - Total Hit Damage  lv 2 - 130
+y - Total Hit Damage  lv 3 - 140
+y - Total Hit Damage  lv 4 - 150
+y - Total Hit Damage  lv 5 - 160
+y - Total Hit Damage  lv 6 - 170
+y - Total Hit Damage  lv 7 - 180
+y - Total Hit Damage  lv 8 - 190
+y - Total Hit Damage  lv 9 - 190
+
+
+Present mic Strike
+
+b - Total Hit Damage  lv 1 - 144
+b - Total Hit Damage  lv 2 - 150
+b - Total Hit Damage  lv 3 - 156
+b - Total Hit Damage  lv 4 - 162
+b - Total Hit Damage  lv 5 - 168
+b - Total Hit Damage  lv 6 - 174
+b - Total Hit Damage  lv 7 - 180
+b - Total Hit Damage  lv 8 - 186
+b - Total Hit Damage  lv 9 - 192
+
+
+Strike Endeavor
+
+y - Total Hit Damage  lv 1 - 112
+y - Total Hit Damage  lv 2 - 119
+y - Total Hit Damage  lv 3 - 126
+y - Total Hit Damage  lv 4 - 126
+y - Total Hit Damage  lv 5 - 133
+y - Total Hit Damage  lv 6 - 140
+y - Total Hit Damage  lv 7 - 147
+y - Total Hit Damage  lv 8 - 154
+y - Total Hit Damage  lv 9 - 154
+
+
+
+Inferno Fist Endeavor
+
+y - Total Hit Damage  lv 1 - 136
+y - Total Hit Damage  lv 2 - 144
+y - Total Hit Damage  lv 3 - 152
+y - Total Hit Damage  lv 4 - 152
+y - Total Hit Damage  lv 5 - 160
+y - Total Hit Damage  lv 6 - 168
+y - Total Hit Damage  lv 7 - 176
+y - Total Hit Damage  lv 8 - 184
+y - Total Hit Damage  lv 9 - 192
+
+
+Infero Fist Endeavor
+
+b - Total Hit Damage  lv 1 - 69
+b - Total Hit Damage  lv 2 - 71
+b - Total Hit Damage  lv 3 - 73
+b - Total Hit Damage  lv 4 - 75
+b - Total Hit Damage  lv 5 - 77
+b - Total Hit Damage  lv 6 - 78
+b - Total Hit Damage  lv 7 - 80
+b - Total Hit Damage  lv 8 - 82
+b - Total Hit Damage  lv 9 - 83
+
+Rapid Hawks
+
+a - Total Hit Damage  lv 1 - 100
+a - Total Hit Damage  lv 2 - 100
+a - Total Hit Damage  lv 3 - 100
+a - Total Hit Damage  lv 4 - 140
+a - Total Hit Damage  lv 5 - 140
+a - Total Hit Damage  lv 6 - 140
+a - Total Hit Damage  lv 7 - 140
+a - Total Hit Damage  lv 8 - 140
+a - Total Hit Damage  lv 9 - 189
+
+
+Slicing wind Hawks
+
+b - Total Hit Damage  lv 1 - 108
+b - Total Hit Damage  lv 2 - 112
+b - Total Hit Damage  lv 3 - 116
+b - Total Hit Damage  lv 4 - 120
+b - Total Hit Damage  lv 5 - 124
+b - Total Hit Damage  lv 6 - 128
+b - Total Hit Damage  lv 7 - 140
+b - Total Hit Damage  lv 8 - 144
+b - Total Hit Damage  lv 9 - 148
+
+Slicing wind Hawks
+
+y - Total Hit Damage  lv 1 - 60
+y - Total Hit Damage  lv 2 - 61
+y - Total Hit Damage  lv 3 - 62
+y - Total Hit Damage  lv 4 - 63
+y - Total Hit Damage  lv 5 - 64
+y - Total Hit Damage  lv 6 - 65
+y - Total Hit Damage  lv 7 - 96
+y - Total Hit Damage  lv 8 - 98
+y - Total Hit Damage  lv 9 - 100
+
+Mirko
+
+y - Total Hit Damage  lv 1 - 30
+y - Total Hit Damage  lv 2 - 30
+y - Total Hit Damage  lv 3 - 30
+y - Total Hit Damage  lv 4 - 35
+y - Total Hit Damage  lv 5 - 35
+y - Total Hit Damage  lv 6 - 35
+y - Total Hit Damage  lv 7 - 35
+y - Total Hit Damage  lv 8 - 35
+y - Total Hit Damage  lv 9 - 40
+
+
+Stars and stripe
+
+y - Total Hit Damage  lv 1 - 122
+y - Total Hit Damage  lv 2 - 127
+y - Total Hit Damage  lv 3 - 132
+y - Total Hit Damage  lv 4 - 137
+y - Total Hit Damage  lv 5 - 142
+y - Total Hit Damage  lv 6 - 147
+y - Total Hit Damage  lv 7 - 152
+y - Total Hit Damage  lv 8 - 157
+y - Total Hit Damage  lv 9 - 162
+
+Mt.lady
+
+
+y - Total Hit Damage  lv 1 - 121
+y - Total Hit Damage  lv 2 - 126
+y - Total Hit Damage  lv 3 - 131
+y - Total Hit Damage  lv 4 - 140
+y - Total Hit Damage  lv 5 - 142
+y - Total Hit Damage  lv 6 - 144
+y - Total Hit Damage  lv 7 - 146
+y - Total Hit Damage  lv 8 - 148
+y - Total Hit Damage  lv 9 - 150
+
+Tomura Shigaraki
+
+
+a - Total Hit Damage  lv 1 - 68
+a - Total Hit Damage  lv 2 - 72
+a - Total Hit Damage  lv 3 - 76
+a - Total Hit Damage  lv 4 - 80
+a - Total Hit Damage  lv 5 - 84
+a - Total Hit Damage  lv 6 - 88
+a - Total Hit Damage  lv 7 - 92
+a - Total Hit Damage  lv 8 - 96
+a - Total Hit Damage  lv 9 - 100
+
+
+Tomura Shigaraki
+
+
+b - Total Hit Damage  lv 1 - 162
+b - Total Hit Damage  lv 2 - 247
+b - Total Hit Damage  lv 3 - 260
+b - Total Hit Damage  lv 4 - 273
+b - Total Hit Damage  lv 5 - 286
+b - Total Hit Damage  lv 6 - 299
+b - Total Hit Damage  lv 7 - 312
+b - Total Hit Damage  lv 8 - 325
+b - Total Hit Damage  lv 9 - 390
+
+thousand hand break tomura shigaraki
+
+a - Total Hit Damage  lv 1 - 129
+a - Total Hit Damage  lv 2 - 132
+a - Total Hit Damage  lv 3 - 135
+a - Total Hit Damage  lv 4 - 138
+a - Total Hit Damage  lv 5 - 141
+a - Total Hit Damage  lv 6 - 144
+a - Total Hit Damage  lv 7 - 147
+a - Total Hit Damage  lv 8 - 150
+a - Total Hit Damage  lv 9 - 153
+
+all For One
+
+
+b - Total Hit Damage  lv 1 - 108
+b - Total Hit Damage  lv 2 - 114
+b - Total Hit Damage  lv 3 - 114
+b - Total Hit Damage  lv 4 - 120
+b - Total Hit Damage  lv 5 - 126
+b - Total Hit Damage  lv 6 - 132
+b - Total Hit Damage  lv 7 - 138
+b - Total Hit Damage  lv 8 - 144
+b - Total Hit Damage  lv 9 - 150
+
+
+Factor Fusion all for one
+
+a - Total Hit Damage  lv 1 - 50
+a - Total Hit Damage  lv 2 - 55
+a - Total Hit Damage  lv 3 - 60
+a - Total Hit Damage  lv 4 - 65
+a - Total Hit Damage  lv 5 - 70
+a - Total Hit Damage  lv 6 - 75
+a - Total Hit Damage  lv 7 - 80
+a - Total Hit Damage  lv 8 - 85
+a - Total Hit Damage  lv 9 - 90
+
+
+Dabi
+
+
+b - Total Hit Damage  lv 1 - 76
+b - Total Hit Damage  lv 2 - 84
+b - Total Hit Damage  lv 3 - 92
+b - Total Hit Damage  lv 4 - 96
+b - Total Hit Damage  lv 5 - 100
+b - Total Hit Damage  lv 6 - 104
+b - Total Hit Damage  lv 7 - 108
+b - Total Hit Damage  lv 8 - 112g
+b - Total Hit Damage  lv 9 - 116
+
+Crazy torch dabi
+
+b - Total Hit Damage  lv 1 - 137
+b - Total Hit Damage  lv 2 - 141
+b - Total Hit Damage  lv 3 - 145
+b - Total Hit Damage  lv 4 - 150
+b - Total Hit Damage  lv 5 - 153
+b - Total Hit Damage  lv 6 - 156
+b - Total Hit Damage  lv 7 - 160
+b - Total Hit Damage  lv 8 - 167
+b - Total Hit Damage  lv 9 - 174
+
+
+
+Toga Sting Dance
+
+a - Total Hit Damage  lv 1 - 38
+a - Total Hit Damage  lv 2 - 39
+a - Total Hit Damage  lv 3 - 41
+a - Total Hit Damage  lv 4 - 43
+a - Total Hit Damage  lv 5 - 45
+a - Total Hit Damage  lv 6 - 47
+a - Total Hit Damage  lv 7 - 49
+a - Total Hit Damage  lv 8 - 51
+a - Total Hit Damage  lv 9 - 53
+
+Twice
+
+a - Total Hit Damage  lv 1 - 66
+a - Total Hit Damage  lv 2 - 69
+a - Total Hit Damage  lv 3 - 72
+a - Total Hit Damage  lv 4 - 75
+a - Total Hit Damage  lv 5 - 78
+a - Total Hit Damage  lv 6 - 81
+a - Total Hit Damage  lv 7 - 84
+a - Total Hit Damage  lv 8 - 87
+a - Total Hit Damage  lv 9 - 90
+
+Kurogiri
+
+a - Total Hit Damage  lv 1 - 78
+a - Total Hit Damage  lv 2 - 83
+a - Total Hit Damage  lv 3 - 88
+a - Total Hit Damage  lv 4 - 98
+a - Total Hit Damage  lv 5 - 103
+a - Total Hit Damage  lv 6 - 108
+a - Total Hit Damage  lv 7 - 112
+a - Total Hit Damage  lv 8 - 117
+a - Total Hit Damage  lv 9 - 119
+
+Nagant
+
+b - Total Hit Damage  lv 1 - 75
+b - Total Hit Damage  lv 2 - 78
+b - Total Hit Damage  lv 3 - 81
+b - Total Hit Damage  lv 4 - 87
+b - Total Hit Damage  lv 5 - 90g
+b - Total Hit Damage  lv 6 - 93
+b - Total Hit Damage  lv 7 - 96
+b - Total Hit Damage  lv 8 - 99
+b - Total Hit Damage  lv 9 - 105
+
+overhaul
+
+a - Total Hit Damage  lv 1 - 51
+a - Total Hit Damage  lv 2 - 54
+a - Total Hit Damage  lv 3 - 57
+a - Total Hit Damage  lv 4 - 60
+a - Total Hit Damage  lv 5 - 63
+a - Total Hit Damage  lv 6 - 66
+a - Total Hit Damage  lv 7 - 69
+a - Total Hit Damage  lv 8 - 72
+a - Total Hit Damage  lv 9 - 72
+
+overhaul
+
+b - Total Hit Damage  lv 1 - 87
+b - Total Hit Damage  lv 2 - 93
+b - Total Hit Damage  lv 3 - 99
+b - Total Hit Damage  lv 4 - 105
+b - Total Hit Damage  lv 5 - 111
+b - Total Hit Damage  lv 6 - 114
+b - Total Hit Damage  lv 7 - 120
+b - Total Hit Damage  lv 8 - 126
+b - Total Hit Damage  lv 9 - 132
+
+
+
+Blighted precipe overhaul
+
+a - Total Hit Damage  lv 1 - 72
+a - Total Hit Damage  lv 2 - 84
+a - Total Hit Damage  lv 3 - 96
+a - Total Hit Damage  lv 4 - 96
+a - Total Hit Damage  lv 5 - 108
+a - Total Hit Damage  lv 6 - 120
+a - Total Hit Damage  lv 7 - 132
+a - Total Hit Damage  lv 8 - 144
+a - Total Hit Damage  lv 9 - 144
+
+
+
+All for one Youth
+
+b - Total Hit Damage  lv 1 - 150
+b - Total Hit Damage  lv 2 - 160
+b - Total Hit Damage  lv 3 - 170
+b - Total Hit Damage  lv 4 - 170
+b - Total Hit Damage  lv 5 - 180
+b - Total Hit Damage  lv 6 - 190
+b - Total Hit Damage  lv 7 - 200
+b - Total Hit Damage  lv 8 - 210
+b - Total Hit Damage  lv 9 - 210

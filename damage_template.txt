@@ -1,0 +1,1931 @@
+======================================
+DAMAGE VALUES TEMPLATE
+Fill in the number after "Lv X - " for each skill.
+Skip any character/style you don't have data for.
+======================================
+
+--- IZUKU MIDORIYA (Base) ---
+izuku_0 (Default - Assault)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+izuku_1 (Full Bullet - Strike)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- IZUKU MIDORIYA (OFA) ---
+izuku_ofa_0 (Default)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- KATSUKI BAKUGO ---
+katsuki_0 (Default - Strike)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+katsuki_1 (Machine Gun - Rapid)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+katsuki_2 (Cluster - Technical)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- OCHACO URARAKA ---
+ochaco_0 (Default - Rapid)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+ochaco_1 (Zero Satellites - Assault)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- TENYA IIDA ---
+tenya_0 (Default - Rapid)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- TSUYU ASUI ---
+tsuyu_0 (Default - Rapid)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- SHOTO TODOROKI ---
+shoto_0 (Default - Strike)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+shoto_1 (Ice Fang Wind Flame - Technical)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- EIJIRO KIRISHIMA ---
+eijiro_0 (Default - Assault)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+eijiro_1 (Red Drive - Strike)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- MOMO YAOYOROZU ---
+momo_0 (Default - Support)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- FUMIKAGE TOKOYAMI ---
+fumikage_0 (Default - Assault)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- DENKI KAMINARI ---
+denki_0 (Default - Strike)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+denki_1 (Lightning - Technical)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- NEITO MONOMA ---
+neito_0 (Default - Technical)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- ITSUKA KENDO ---
+kendo_0 (Default - Assault)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+kendo_1 (Twin Palm Strike - Strike)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- IBARA SHIOZAKI ---
+ibara_0 (Default - Support)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- MIRIO TOGATA ---
+mirio_0 (Default - Rapid)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+mirio_1 (Sheer Counter - Technical)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- TAMAKI AMAJIKI ---
+tamaki_0 (Default - Strike)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- NEJIRE HADO ---
+nejire_0 (Default - Technical)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+nejire_1 (Fairy - Support)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- HITOSHI SHINSO ---
+hitoshi_0 (Default - Strike)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- ALL MIGHT ---
+allmight_0 (Default - Assault)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+allmight_1 (Gatling - Rapid)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- ARMORED ALL MIGHT ---
+armored_0 (Default - Technical)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- SHOTA AIZAWA ---
+aizawa_0 (Default - Technical)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+aizawa_1 (Flow Runner - Strike)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- PRESENT MIC ---
+mic_0 (Default - Strike)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+mic_1 (D.J. Board - Technical)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- CEMENTOSS ---
+cement_0 (Default - Support)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- ENDEAVOR ---
+endeavor_0 (Default - Strike)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+endeavor_1 (Inferno Fist - Assault)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- HAWKS ---
+hawks_0 (Default - Rapid)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+hawks_1 (Slicing Wind - Strike)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- MIRKO ---
+mirko_0 (Default - Rapid)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- STAR AND STRIPE ---
+star_0 (Default - Strike)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- MT. LADY ---
+mtlady_0 (Default - Assault)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- TOMURA SHIGARAKI ---
+tomura_0 (Default - Strike)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+tomura_1 (Catastrophe - Assault)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+tomura_2 (Thousand-Hand Break - Technical)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- ALL FOR ONE ---
+afo_0 (Default - Technical)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+afo_1 (Factor Fusion - Strike)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- ALL FOR ONE (YOUTH) ---
+afo_youth_0 (Default - Assault)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- DABI ---
+dabi_0 (Default - Technical)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+dabi_1 (Crazy Torch - Strike)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- HIMIKO TOGA ---
+himiko_0 (Default - Technical)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+himiko_1 (Sting Dance - Rapid)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- TWICE ---
+twice_0 (Default - Rapid)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- MR. COMPRESS ---
+compress_0 (Default - Support)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- KUROGIRI ---
+kurogiri_0 (Default - Support)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- LADY NAGANT ---
+nagant_0 (Default - Strike)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+--- OVERHAUL ---
+overhaul_0 (Default - Support)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+
+overhaul_1 (Blighted Precipice - Assault)
+a
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+b
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
+y
+Lv 1 - 
+Lv 2 - 
+Lv 3 - 
+Lv 4 - 
+Lv 5 - 
+Lv 6 - 
+Lv 7 - 
+Lv 8 - 
+Lv 9 - 
