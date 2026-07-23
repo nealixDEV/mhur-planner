@@ -401,6 +401,56 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
 .cos-star-rainbow{background:linear-gradient(135deg,#ef4444,#f59e0b,#22c55e,#38bdf8,#a855f7,#f43f5e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 8px rgba(168,85,247,.6));}
 .cos-card-check{position:absolute;top:6px;left:6px;width:22px;height:22px;display:flex;align-items:center;justify-content:center;background:#22c55e;border-radius:50%;font-size:.7rem;color:#fff;z-index:2;}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.mobile-calc-nav{display:none;}
+@media(max-width:1023px){
+  .screen{grid-template-columns:180px minmax(0,1fr) 160px;gap:8px;}
+  .cgrid{grid-template-columns:repeat(auto-fill,minmax(44px,1fr));}
+  .cospanel-ttl{font-size:.7rem;}
+  .tpanel-ttl{font-size:.7rem;}
+  .slot-col-ttl{font-size:.55rem;}
+}
+@media(max-width:767px){
+  .screen{display:grid;grid-template-columns:1fr;overflow-x:visible;gap:8px;}
+  .title{order:1;grid-column:1;font-size:1rem;padding:6px 0;}
+  .left{order:3;grid-column:1;min-height:auto;}
+  .cospanel{order:2;position:static;grid-column:1;min-height:auto;max-height:none;}
+  .right{order:1;grid-column:1;display:flex;flex-direction:column;gap:8px;}
+  .bot{order:4;grid-column:1;display:flex;flex-wrap:wrap;gap:6px;padding:8px;background:linear-gradient(145deg,rgba(20,30,50,.8),rgba(10,15,25,.9));border:1px solid rgba(255,255,255,.06);border-radius:10px;}
+  .cdisplay{min-height:auto;max-height:none;}
+  .cd-ava{width:70px;height:70px;}
+  .cd-info{padding:6px 10px;}
+  .cd-name{font-size:1.1rem;}
+  .cd-stats{font-size:.65rem;}
+  .ts-row{overflow:visible;}
+  .slot-columns{grid-template-columns:1fr 1fr;gap:6px;}
+  .slot{padding:6px 6px 0 6px;min-height:70px;}
+  .slot-desc{font-size:.55rem;max-height:2.2em;-webkit-line-clamp:2;}
+  .slot-lvbar{gap:3px;}
+  .spanel{padding:8px;}
+  .dpanel,.rpanel{padding:8px;margin-top:8px;display:none;}
+  #dmgCalcPanel{display:block;}
+  .cgrid{grid-template-columns:repeat(6,1fr);gap:3px;}
+  .cc{aspect-ratio:.85;}
+  .cc-name{font-size:.38rem;}
+  .cc-role{font-size:.38rem;}
+  .dc-level-btns{flex-wrap:wrap;gap:2px;}
+  .dc-lvl-btn{min-width:26px;height:26px;font-size:.7rem;}
+  .dc-skill-dmg{padding:6px 8px;}
+  .mobile-calc-nav{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:100;background:linear-gradient(180deg,#0f1724,#0a0f1a);border-top:1px solid rgba(255,255,255,.08);padding:6px 4px;padding-bottom:env(safe-area-inset-bottom,6px);justify-content:space-around;gap:2px;}
+  .mcn-btn{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 4px;border:none;background:none;border-radius:8px;cursor:pointer;transition:all .15s;flex:1;min-width:0;}
+  .mcn-icon{font-size:1.1rem;}
+  .mcn-btn span:last-child{font-size:.48rem;font-weight:700;color:#64748b;white-space:nowrap;}
+  .mcn-btn.active{background:rgba(245,200,0,.1);border:1px solid rgba(245,200,0,.25);}
+  .mcn-btn.active span:last-child{color:#f5c800;}
+  footer{padding-bottom:60px;}
+  .cos-grid{grid-template-columns:repeat(auto-fill,minmax(80px,1fr));}
+  .dc-skill-name{font-size:.6rem;}
+  .dc-dmg-val{font-size:.55rem;}
+  .dc-dmg-label{font-size:.5rem;}
+  .statrow{font-size:.55rem;}
+  .statv{font-size:.6rem;}
+  .sglbl{font-size:.5rem;}
+}
 </style>
 </head>
 <body>
@@ -495,7 +545,7 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
         <input type="hidden" id="dmgLevel" min="1" max="9" step="1" value="1">
         <div id="damageStats"><p class="sempty">Select a character to see damage stats.</p></div>
       </div>
-      <div class="rpanel">
+      <div class="rpanel" id="reloadPanel">
         <div class="dptitle">Reload Calculator</div>
           <label class="cardtoggle" id="lblCardTechnical"><input type="checkbox" id="cardTechnical"> Single Technical Card (+50% Reload)</label>
           <label class="cardtoggle" id="lblCardTechnicalD"><input type="checkbox" id="cardTechnicalD"> Double Technical Card (+100% Reload)</label>
@@ -506,7 +556,7 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
         </div>
         <div id="reloadStats"><p class="sempty">Select a character to see reload stats.</p></div>
       </div>
-      <div class="dpanel">
+      <div class="dpanel" id="defPanel">
         <div class="dptitle">HP / Defense Calculator</div>
           <label class="cardtoggle" id="lblCardAssault"><input type="checkbox" id="cardAssault"> Single Assault Card (20% Damage Reduction)</label>
           <label class="cardtoggle" id="lblCardAssaultD"><input type="checkbox" id="cardAssaultD"> Double Assault Card (40% Damage Reduction)</label>
@@ -516,7 +566,7 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
         </div>
         <div id="defenseStats"><p class="sempty">Select a character to see defense stats.</p></div>
       </div>
-      <div class="dpanel">
+      <div class="dpanel" id="hpPanel">
         <div class="dptitle">HP Calculator</div>
           <label class="cardtoggle" id="lblCardSupport"><input type="checkbox" id="cardSupport"> Single Support Card (+50 HP over 5s)</label>
           <label class="cardtoggle" id="lblCardSupportD"><input type="checkbox" id="cardSupportD"> Double Support Card (+100 HP over 5s)</label>
@@ -527,21 +577,21 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
           </div>
         <div id="hpStats"><p class="sempty">Select a character to see HP / survival stats.</p></div>
       </div>
-      <div class="dpanel">
+      <div class="dpanel" id="miscPanel">
         <div class="dptitle">Misc Calculator</div>
         <div id="miscStats"><p class="sempty">Select a character to see misc stats.</p></div>
       </div>
-      <div class="dpanel">
-         <div class="dptitle">Movement Calculator</div>
+      <div class="dpanel" id="movePanel">
+          <div class="dptitle">Movement Calculator</div>
           <label class="cardtoggle" id="lblCardRapid"><input type="checkbox" id="cardRapid"> Single Rapid Card (+10% Move/Atk, Wall Run)</label>
           <label class="cardtoggle" id="lblCardRapidD"><input type="checkbox" id="cardRapidD"> Double Rapid Card (+20% Move/Atk, Wall Run)</label>
         <div id="movementStats"><p class="sempty">Select a character to see movement stats.</p></div>
       </div>
-<div class="dpanel">
+<div class="dpanel" id="manifestPanel">
          <div class="dptitle">Ability Manifest Calculator</div>
          <div id="manifestStats"><p class="sempty">Equip Tamaki Amajiki's Ability Manifest special tuning to see extended Ability Card durations.</p></div>
        </div>
-<div class="dpanel">
+<div class="dpanel" id="teamPanel">
           <div class="dptitle">Team Role Bonuses</div>
           <label class="cardtoggle" id="lblCardTeam"><input type="checkbox" id="cardTeam" checked> Enable Team Role Bonuses</label>
           <div style="margin-top:8px;">
@@ -596,6 +646,12 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
       <button class="gbtn r" id="btnClr">Clear</button>
       <button class="gbtn" id="btnResetAll" style="background:linear-gradient(135deg,#dc2626,#b91c1c);">Reset All Builds</button>
     </div>
+  </div>
+  <div class="mobile-calc-nav" id="mobileCalcNav">
+    <button class="mcn-btn active" data-calc="dmgCalcPanel" onclick="mobileCalcTab(this)"><span class="mcn-icon">&#128165;</span><span>Damage</span></button>
+    <button class="mcn-btn" data-calc="reloadPanel" onclick="mobileCalcTab(this)"><span class="mcn-icon">&#128260;</span><span>Reload</span></button>
+    <button class="mcn-btn" data-calc="defPanel" onclick="mobileCalcTab(this)"><span class="mcn-icon">&#128737;</span><span>Defense / HP</span></button>
+    <button class="mcn-btn" data-calc="miscPanel" onclick="mobileCalcTab(this)"><span class="mcn-icon">&#128694;</span><span>Misc / Movement</span></button>
   </div>
   <footer>Made by Sirreggix on Discord &mdash; <a href="https://discord.gg/m5NkeHgmzM" target="_blank" style="color:#94a3b8;text-decoration:none;">Join Discord for suggestions/bugs</a></footer>
 </div>
@@ -8154,6 +8210,19 @@ document.querySelectorAll('.tab-btn').forEach(function(btn){
     }
   });
 });
+// Mobile calculator tabs
+function mobileCalcTab(btn){
+  document.querySelectorAll('.mcn-btn').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  var calcId=btn.getAttribute('data-calc');
+  var panels=['dmgCalcPanel','reloadPanel','defPanel','hpPanel','miscPanel','movePanel','manifestPanel','teamPanel'];
+  panels.forEach(function(id){
+    var el=document.getElementById(id);
+    if(!el)return;
+    if(id===calcId){el.style.display='block';el.scrollIntoView({behavior:'smooth',block:'start'});}
+    else{el.style.display='none';}
+  });
+}
 // Forum init
 function initForum(){
   window.esc=function esc(s){return String(s||'').replace(/[<>&]/g,function(c){return{'<':'&lt;','>':'&gt;','&':'&amp;'}[c];});}
