@@ -9005,7 +9005,32 @@ function initForum(){
   }
   function mediaHtml(url){
     if(!url)return'';
-    if(url.match(/\.(mp4|webm|ogg)$/i))return'<video src="'+esc(url)+'" controls style="width:100%;border-radius:8px;margin-bottom:8px;max-height:300px;background:#000;"></video>';
+    var u=url.toLowerCase();
+    // YouTube
+    if(u.indexOf('youtube.com/watch')!==-1||u.indexOf('youtu.be/')!==-1){
+      var vid='';
+      var ym=url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+      if(ym)vid=ym[1];
+      if(vid)return'<div style="position:relative;overflow:hidden;border-radius:8px;aspect-ratio:16/9;margin-bottom:8px;background:#000;"><iframe src="https://www.youtube.com/embed/'+vid+'" style="position:absolute;inset:0;width:100%;height:100%;border:none;" allowfullscreen></iframe></div>';
+      return'<a href="'+esc(url)+'" target="_blank" style="color:#60a5fa;font-size:.78rem;">&#127916; Watch on YouTube</a>';
+    }
+    // Discord CDN (video files)
+    if(u.indexOf('cdn.discordapp.com')!==-1||u.indexOf('media.discordapp.net')!==-1){
+      if(u.match(/\.(mp4|webm|ogg|mov|gif)$/))return'<video src="'+esc(url)+'" controls style="width:100%;border-radius:8px;margin-bottom:8px;max-height:300px;background:#000;"></video>';
+      return'<div style="position:relative;overflow:hidden;border-radius:8px;aspect-ratio:16/9;margin-bottom:8px;background:rgba(0,0,0,.2);"><img src="'+esc(url)+'" onclick="expandImage(this.src)" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;cursor:pointer;" onerror="this.style.display=\'none\'"></div>';
+    }
+    // Medal.tv
+    if(u.indexOf('medal.tv')!==-1){
+      var mm=url.match(/medal\.tv\/clips\/([a-zA-Z0-9_]+)/i);
+      if(mm)return'<div style="position:relative;overflow:hidden;border-radius:8px;aspect-ratio:16/9;margin-bottom:8px;background:#000;"><iframe src="https://medal.tv/clip/'+mm[1]+'?autoplay=false&theater=true" style="position:absolute;inset:0;width:100%;height:100%;border:none;" allowfullscreen></iframe></div>';
+    }
+    // Gyazo
+    if(u.indexOf('gyazo.com')!==-1){
+      return'<div style="position:relative;overflow:hidden;border-radius:8px;aspect-ratio:16/9;margin-bottom:8px;background:rgba(0,0,0,.2);"><img src="'+esc(url)+'" onclick="expandImage(this.src)" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;cursor:pointer;" onerror="this.style.display=\'none\'"></div>';
+    }
+    // Direct video links
+    if(url.match(/\.(mp4|webm|ogg|mov)$/i))return'<video src="'+esc(url)+'" controls style="width:100%;border-radius:8px;margin-bottom:8px;max-height:300px;background:#000;"></video>';
+    // Default: image
     return'<div style="position:relative;overflow:hidden;border-radius:8px;aspect-ratio:16/9;margin-bottom:8px;background:rgba(0,0,0,.2);"><img src="'+esc(url)+'" onclick="expandImage(this.src)" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;cursor:pointer;" onerror="this.style.display=\'none\'"></div>';
   }
   function showUsernameModal(loginMode){
