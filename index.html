@@ -8451,7 +8451,6 @@ function generateBuildPNG(){
 
       btns.appendChild(saveBtn);btns.appendChild(copyBtn);btns.appendChild(linkBtn);btns.appendChild(closeBtn);
       bx.appendChild(btns);ov.appendChild(bx);document.body.appendChild(ov);
-      ov.addEventListener('click',function(e){if(e.target===ov){ov.remove();URL.revokeObjectURL(url);}});
     },'image/png');
   }
   render().catch(function(err){
