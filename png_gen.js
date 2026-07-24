@@ -593,12 +593,30 @@ function generateBuildPNG(){
       var copyBtn=document.createElement('button');
       copyBtn.textContent='Copy Image';
       copyBtn.style.cssText='padding:10px 24px;border:1px solid rgba(255,255,255,.2);border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;background:rgba(255,255,255,.05);color:#e2e8f0;';
-      copyBtn.onclick=function(){navigator.clipboard.write([new ClipboardItem({'image/png':blob})]).then(function(){copyBtn.textContent='Copied!';setTimeout(function(){copyBtn.textContent='Copy Image';},2000);}).catch(function(){alert('Copy failed — try Save instead.');});};
+      copyBtn.onclick=function(){
+        if(navigator.clipboard&&window.ClipboardItem){
+          navigator.clipboard.write([new ClipboardItem({'image/png':blob})]).then(function(){copyBtn.textContent='Copied!';setTimeout(function(){copyBtn.textContent='Copy Image';},2000);}).catch(function(){copyFallback();});
+        }else{copyFallback();}
+        function copyFallback(){
+          var a=document.createElement('a');a.href=url;a.download='MHUR_'+ch.n.replace(/\s+/g,'_')+'_Build.png';document.body.appendChild(a);a.click();document.body.removeChild(a);
+          copyBtn.textContent='Saved!';setTimeout(function(){copyBtn.textContent='Copy Image';},2000);
+        }
+      };
 
       var linkBtn=document.createElement('button');
       linkBtn.textContent='Copy Link';
       linkBtn.style.cssText='padding:10px 24px;border:1px solid rgba(167,139,250,.4);border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;background:rgba(167,139,250,.1);color:#c084fc;';
-      linkBtn.onclick=function(){navigator.clipboard.writeText(buildUrl).then(function(){linkBtn.textContent='Copied!';setTimeout(function(){linkBtn.textContent='Copy Link';},2000);});};
+      linkBtn.onclick=function(){
+        if(navigator.clipboard&&navigator.clipboard.writeText){
+          navigator.clipboard.writeText(buildUrl).then(function(){linkBtn.textContent='Copied!';setTimeout(function(){linkBtn.textContent='Copy Link';},2000);}).catch(function(){linkFallback();});
+        }else{linkFallback();}
+        function linkFallback(){
+          var inp=document.createElement('input');inp.value=buildUrl;document.body.appendChild(inp);inp.select();
+          try{document.execCommand('copy');}catch(e){}
+          document.body.removeChild(inp);
+          linkBtn.textContent='Copied!';setTimeout(function(){linkBtn.textContent='Copy Link';},2000);
+        }
+      };
 
       var closeBtn=document.createElement('button');
       closeBtn.textContent='X';
