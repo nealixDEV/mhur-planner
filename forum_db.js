@@ -34,47 +34,57 @@ function fill(sql,params){
   return sql.replace(/\$\d+/g,function(){return esc(params[i++]);});
 }
 
-function q(sql,params,cb){
+var _qBusy=false;
+var _qQueue=[];
+function _qRun(sql,params,cb){
   if(usePG){
-    db.query(sql,params,function(err,res){
-      if(cb)cb(err?null:res);
-    });
+    _qQueue.push({sql:sql,params:params||[],cb:cb});
+    if(!_qBusy) _qProcess();
   }else{
-    var r = db.exec(fill(sql,params));
+    var r = db.exec(fill(sql,params||[]));
     if(cb)cb(r);
   }
 }
-
+function _qProcess(){
+  if(_qBusy||!_qQueue.length)return;
+  _qBusy=true;
+  var item=_qQueue.shift();
+  try{
+    db.query(item.sql,item.params,function(err,res){
+      _qBusy=false;
+      if(item.cb)item.cb(err?null:res);
+      setImmediate(_qProcess);
+    });
+  }catch(e){
+    _qBusy=false;
+    if(item.cb)item.cb(null);
+    setImmediate(_qProcess);
+  }
+}
+function q(sql,params,cb){
+  if(typeof params==='function'){cb=params;params=[];}
+  _qRun(sql,params,cb);
+}
 function qOne(sql,params,cb){
-  if(usePG){
-    db.query(sql,params,function(err,res){
-      cb(err||!res.rows.length?null:res.rows[0]);
-    });
-  }else{
-    var r = db.exec(fill(sql,params));
-    cb(r[0]&&r[0].values[0]?function(){var cols=r[0].columns,vals=r[0].values[0],o={};for(var i=0;i<cols.length;i++)o[cols[i]]=vals[i];return o;}():null);
-  }
+  if(typeof params==='function'){cb=params;params=[];}
+  _qRun(sql,params,function(res){
+    if(usePG) cb(res&&res.rows&&res.rows.length?res.rows[0]:null);
+    else cb(res&&res[0]&&res[0].values[0]?function(){var cols=res[0].columns,vals=res[0].values[0],o={};for(var i=0;i<cols.length;i++)o[cols[i]]=vals[i];return o;}():null);
+  });
 }
-
 function qAll(sql,params,cb){
-  if(usePG){
-    db.query(sql,params,function(err,res){
-      cb(err?[]:res.rows);
-    });
-  }else{
-    var r = db.exec(fill(sql,params));
-    cb(r[0]?r[0].values.map(function(v){var cols=r[0].columns,o={};for(var i=0;i<cols.length;i++)o[cols[i]]=v[i];return o;}):[]);
-  }
+  if(typeof params==='function'){cb=params;params=[];}
+  _qRun(sql,params,function(res){
+    if(usePG) cb(res&&res.rows?res.rows:[]);
+    else cb(res&&res[0]&&res[0].values?res[0].values.map(function(v){var cols=res[0].columns,o={};for(var i=0;i<cols.length;i++)o[cols[i]]=v[i];return o;}):[]);
+  });
 }
-
 function qRun(sql,params,cb){
-  if(usePG){
-    db.query(sql,params,function(err,res){save();if(cb)cb(err?false:true);});
-  }else{
-    db.run(fill(sql,params));
+  if(typeof params==='function'){cb=params;params=[];}
+  _qRun(sql,params,function(){
     save();
     if(cb)cb(true);
-  }
+  });
 }
 
 function save(){

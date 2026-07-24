@@ -43,9 +43,10 @@ function json(res, data, status){
   res.end(JSON.stringify(data));
 }
 
-// Short build ID storage
+// Short build ID storage with cleanup
 var buildStore = {};
 var buildCounter = 0;
+var BUILD_STORE_MAX = 100;
 function genBuildId(){
   buildCounter++;
   var chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
@@ -53,6 +54,12 @@ function genBuildId(){
   var ts = Date.now().toString(36).toUpperCase();
   for(var i=0;i<Math.min(ts.length,5);i++) id += ts[i];
   id += String(buildCounter).slice(-3);
+  // Cleanup old entries if over limit
+  var keys = Object.keys(buildStore);
+  if(keys.length >= BUILD_STORE_MAX){
+    var oldest = keys.slice(0, keys.length - BUILD_STORE_MAX + 10);
+    oldest.forEach(function(k){ delete buildStore[k]; });
+  }
   return id.slice(0,8);
 }
 function body(req, cb){
