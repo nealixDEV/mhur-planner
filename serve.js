@@ -44,6 +44,7 @@ function json(res, data, status){
 }
 
 // Short build ID storage with cleanup
+var buildStore={};
 var buildCounter = 0;
 function genBuildId(){
   buildCounter++;
@@ -51,6 +52,8 @@ function genBuildId(){
   var ts = Date.now().toString(36).toUpperCase();
   for(var i=0;i<Math.min(ts.length,5);i++) id += ts[i];
   id += String(buildCounter).slice(-3);
+  var keys=Object.keys(buildStore);
+  if(keys.length>500){keys.slice(0,100).forEach(function(k){delete buildStore[k];});}
   return id.slice(0,8);
 }
 function body(req, cb){
@@ -76,17 +79,14 @@ function handler(req, res) {
     return body(req, function(data){
       if(!data||!data.build) return json(res,{error:'No build data'},400);
       var id = genBuildId();
-      forum.saveShortBuild(id, data.build, function(result){
-        return json(res,{id:id});
-      });
+      buildStore[id] = data.build;
+      return json(res,{id:id});
     });
   }
   if(url.match(/^\/api\/builds\/[A-Za-z0-9]+$/) && req.method === 'GET'){
     var bid = url.split('/').pop();
-    forum.getShortBuild(bid, function(build){
-      if(build) return json(res,{build:build});
-      return json(res,{error:'Build not found'},404);
-    });
+    if(buildStore[bid]) return json(res,{build:buildStore[bid]});
+    return json(res,{error:'Build not found'},404);
   }
   // User builds
   if(url === '/api/user-builds' && req.method === 'GET'){
