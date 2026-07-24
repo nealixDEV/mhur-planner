@@ -42,6 +42,19 @@ function json(res, data, status){
   res.writeHead(status||200, {'Content-Type':'application/json','Access-Control-Allow-Origin':'*'});
   res.end(JSON.stringify(data));
 }
+
+// Short build ID storage
+var buildStore = {};
+var buildCounter = 0;
+function genBuildId(){
+  buildCounter++;
+  var chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  var id = '';
+  var ts = Date.now().toString(36).toUpperCase();
+  for(var i=0;i<Math.min(ts.length,5);i++) id += ts[i];
+  id += String(buildCounter).slice(-3);
+  return id.slice(0,8);
+}
 function body(req, cb){
   var parts=[];
   req.on('data',function(d){parts.push(d);});
@@ -60,6 +73,20 @@ function handler(req, res) {
   });
 
   // API routes - all async via callbacks
+  // Build ID endpoints
+  if(url === '/api/builds' && req.method === 'POST'){
+    return body(req, function(data){
+      if(!data||!data.build) return json(res,{error:'No build data'},400);
+      var id = genBuildId();
+      buildStore[id] = data.build;
+      return json(res,{id:id});
+    });
+  }
+  if(url.match(/^\/api\/builds\/[A-Z0-9]+$/) && req.method === 'GET'){
+    var bid = url.split('/').pop();
+    if(buildStore[bid]) return json(res,{build:buildStore[bid]});
+    return json(res,{error:'Build not found'},404);
+  }
   if(url === '/api/posts' && req.method === 'GET'){
     return forum.list(parseInt(query.page)||1, query.sort||'hot', function(data){json(res, data);});
   }
@@ -375,7 +402,7 @@ function handler(req, res) {
   // Image proxy for canvas PNG export (adds CORS headers)
   if(url === '/img-proxy' && req.method === 'GET'){
     var imgUrl = query.url || '';
-    if(!imgUrl.match(/^https:\/\/(ultrarumble\.com|images-wixmp)/)){
+    if(!imgUrl.match(/^https:\/\/(ultrarumble\.com|images-wixmp|mhaur\.bn-ent\.net)/)){
       res.writeHead(400);res.end('Bad request');return;
     }
     var parts = imgUrl.split('.');
