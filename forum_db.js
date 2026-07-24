@@ -704,6 +704,22 @@ function isAdminKey(key,cb){
   a.getUserBuild=function(buildId,cb){
     qOne("SELECT * FROM user_builds WHERE id=$1",[buildId],function(row){cb(row||null);});
   };
+  a.saveShortBuild=function(id,data,cb){
+    var now=Date.now();
+    var sd=JSON.stringify(data);
+    if(usePG){
+      qRun("INSERT INTO user_builds (id,username,charId,cosIdx,styleIdx,label,buildData,createdAt,updatedAt) VALUES ($1,'','','','','',$2,$3,$3) ON CONFLICT (id) DO UPDATE SET buildData=$2,updatedAt=$3",
+        [id,sd,now],function(){cb({id:id});});
+    }else{
+      qRun("INSERT OR REPLACE INTO user_builds (id,username,charId,cosIdx,styleIdx,label,buildData,createdAt,updatedAt) VALUES ($1,'','','','','',$2,$3,$3)",
+        [id,sd,now],function(){cb({id:id});});
+    }
+  };
+  a.getShortBuild=function(id,cb){
+    qOne("SELECT * FROM user_builds WHERE id=$1",[id],function(row){
+      cb(row?JSON.parse(row.buildData||'{}'):null);
+    });
+  };
 
   return a;
 }
