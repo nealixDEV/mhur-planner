@@ -9429,12 +9429,18 @@ function initForum(){
       };
       var loBtn=document.getElementById('logoutBtn');
       if(loBtn)loBtn.onclick=function(){
-        if(!confirm('Logout? You will need to sign in again.'))return;
-        localStorage.removeItem('forumUsername');localStorage.removeItem('forumLoggedIn');
-        localStorage.removeItem('forumAvatar');localStorage.removeItem('forumIsAdmin');
-        localStorage.removeItem('forumIsOwner');localStorage.removeItem('mhurMasterKey');
-        localStorage.removeItem('forumName');localStorage.removeItem('mhurLiked');
-        showUsernameModal(true);
+        var ov=document.createElement('div');ov.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:99998;display:flex;align-items:center;justify-content:center;';
+        var bx=document.createElement('div');bx.style.cssText='background:#1e1e2e;border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px;max-width:320px;width:90%;text-align:center;';
+        bx.innerHTML='<div style="font-size:.9rem;font-weight:700;color:#f1f5f9;margin-bottom:8px;">Logout?</div><div style="font-size:.72rem;color:#94a3b8;margin-bottom:14px;">You will need to sign in again.</div><div style="display:flex;gap:8px;justify-content:center;"><button id="loConfirm" style="padding:8px 20px;border:none;border-radius:8px;font-weight:700;cursor:pointer;background:#ef4444;color:#fff;font-size:.78rem;">Logout</button><button id="loCancel" style="padding:8px 20px;border:1px solid rgba(255,255,255,.15);border-radius:8px;font-weight:700;cursor:pointer;background:transparent;color:#94a3b8;font-size:.78rem;">Cancel</button></div>';
+        ov.appendChild(bx);document.body.appendChild(ov);
+        document.getElementById('loConfirm').onclick=function(){
+          localStorage.removeItem('forumUsername');localStorage.removeItem('forumLoggedIn');
+          localStorage.removeItem('forumAvatar');localStorage.removeItem('forumIsAdmin');
+          localStorage.removeItem('forumIsOwner');localStorage.removeItem('mhurMasterKey');
+          localStorage.removeItem('forumName');localStorage.removeItem('mhurLiked');
+          ov.remove();showUsernameModal(true);
+        };
+        document.getElementById('loCancel').onclick=function(){ov.remove();};
       };
       var titleBtn=document.getElementById('titleBtn');
       if(titleBtn)titleBtn.onclick=function(){
@@ -9504,15 +9510,23 @@ function initForum(){
       };
       var cpwBtn=document.getElementById('chgPwBtn');
       if(cpwBtn)cpwBtn.onclick=function(){
-        var oldPw=prompt('Enter current password:');
-        if(!oldPw)return;
-        var newPw=prompt('Enter new password (3+ characters):');
-        if(!newPw||newPw.length<3){alert('Password must be 3+ characters.');return;}
-        var confPw=prompt('Confirm new password:');
-        if(newPw!==confPw){alert('Passwords do not match.');return;}
-        var x=new XMLHttpRequest();x.open('POST','/api/change-password',true);x.setRequestHeader('Content-Type','application/json');
-        x.onload=function(){try{var cp=JSON.parse(x.responseText);if(cp&&cp.changed){alert('Password changed successfully!');}else{alert(cp&&cp.error||'Failed.');}}catch(e){alert('Error.');}};
-        x.send(JSON.stringify({username:localStorage.getItem('forumUsername'),oldPassword:oldPw,newPassword:newPw}));
+        var ov=document.createElement('div');ov.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:99998;display:flex;align-items:center;justify-content:center;';
+        var bx=document.createElement('div');bx.style.cssText='background:#1e1e2e;border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px;max-width:350px;width:90%;';
+        bx.innerHTML='<div style="font-size:.9rem;font-weight:700;color:#f1f5f9;margin-bottom:12px;">Change Password</div><div style="margin-bottom:8px;"><label style="font-size:.68rem;color:#94a3b8;display:block;margin-bottom:3px;">Current Password</label><input id="cpOldPw" type="password" style="width:100%;padding:8px;border:1px solid rgba(255,255,255,.1);border-radius:6px;background:rgba(0,0,0,.3);color:#f1f5f9;font-size:.8rem;"></div><div style="margin-bottom:8px;"><label style="font-size:.68rem;color:#94a3b8;display:block;margin-bottom:3px;">New Password</label><input id="cpNewPw" type="password" style="width:100%;padding:8px;border:1px solid rgba(255,255,255,.1);border-radius:6px;background:rgba(0,0,0,.3);color:#f1f5f9;font-size:.8rem;"></div><div style="margin-bottom:14px;"><label style="font-size:.68rem;color:#94a3b8;display:block;margin-bottom:3px;">Confirm New Password</label><input id="cpConfPw" type="password" style="width:100%;padding:8px;border:1px solid rgba(255,255,255,.1);border-radius:6px;background:rgba(0,0,0,.3);color:#f1f5f9;font-size:.8rem;"></div><div id="cpError" style="color:#ef4444;font-size:.7rem;margin-bottom:8px;display:none;"></div><div style="display:flex;gap:8px;"><button id="cpSave" style="flex:1;padding:8px;border:none;border-radius:8px;font-weight:700;cursor:pointer;background:linear-gradient(135deg,#7c3aed,#a78bfa);color:#fff;font-size:.78rem;">Save</button><button id="cpCancel" style="padding:8px 16px;border:1px solid rgba(255,255,255,.15);border-radius:8px;font-weight:700;cursor:pointer;background:transparent;color:#94a3b8;font-size:.78rem;">Cancel</button></div>';
+        ov.appendChild(bx);document.body.appendChild(ov);
+        document.getElementById('cpCancel').onclick=function(){ov.remove();};
+        document.getElementById('cpSave').onclick=function(){
+          var oldPw=document.getElementById('cpOldPw').value;
+          var newPw=document.getElementById('cpNewPw').value;
+          var confPw=document.getElementById('cpConfPw').value;
+          var errEl=document.getElementById('cpError');
+          if(!oldPw){errEl.textContent='Enter current password.';errEl.style.display='block';return;}
+          if(!newPw||newPw.length<3){errEl.textContent='Password must be 3+ characters.';errEl.style.display='block';return;}
+          if(newPw!==confPw){errEl.textContent='Passwords do not match.';errEl.style.display='block';return;}
+          var x=new XMLHttpRequest();x.open('POST','/api/change-password',true);x.setRequestHeader('Content-Type','application/json');
+          x.onload=function(){try{var cp=JSON.parse(x.responseText);if(cp&&cp.changed){ov.remove();alert('Password changed!');}else{errEl.textContent=cp&&cp.error||'Failed.';errEl.style.display='block';}}catch(e){errEl.textContent='Error.';errEl.style.display='block';}};
+          x.send(JSON.stringify({username:localStorage.getItem('forumUsername'),oldPassword:oldPw,newPassword:newPw}));
+        };
       };
       var emailBtn=document.getElementById('emailBtn');
       if(emailBtn)emailBtn.onclick=function(){
