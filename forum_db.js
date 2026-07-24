@@ -123,6 +123,8 @@ module.exports = new Promise(function(resolve){
         db.query("ALTER TABLE forum_users ADD COLUMN IF NOT EXISTS reset_token_expires BIGINT",[],function(){
         db.query("CREATE TABLE IF NOT EXISTS used_admin_keys (key_hash TEXT PRIMARY KEY, usedAt BIGINT)",[],function(){
         db.query("CREATE TABLE IF NOT EXISTS admin_keys (key_id TEXT PRIMARY KEY, used INTEGER DEFAULT 0, createdAt BIGINT)",[],function(){
+        db.query("CREATE TABLE IF NOT EXISTS user_builds (id TEXT PRIMARY KEY, username TEXT, charId TEXT, cosIdx INTEGER DEFAULT 0, styleIdx INTEGER DEFAULT 0, label TEXT, buildData TEXT, createdAt BIGINT, updatedAt BIGINT)",[],function(){
+        db.query("CREATE INDEX IF NOT EXISTS idx_builds_user ON user_builds(username)",[],function(){
           console.log('PostgreSQL connected');
           resolve(buildAPI());
         });
@@ -172,6 +174,8 @@ module.exports = new Promise(function(resolve){
       try{db.run("ALTER TABLE forum_users ADD COLUMN reset_token_expires INTEGER");}catch(e){}
       db.run("CREATE TABLE IF NOT EXISTS used_admin_keys (key_hash TEXT PRIMARY KEY, usedAt INTEGER)");
       db.run("CREATE TABLE IF NOT EXISTS admin_keys (key_id TEXT PRIMARY KEY, used INTEGER DEFAULT 0, createdAt INTEGER)");
+      db.run("CREATE TABLE IF NOT EXISTS user_builds (id TEXT PRIMARY KEY, username TEXT, charId TEXT, cosIdx INTEGER DEFAULT 0, styleIdx INTEGER DEFAULT 0, label TEXT, buildData TEXT, createdAt INTEGER, updatedAt INTEGER)");
+      try{db.run("CREATE INDEX IF NOT EXISTS idx_builds_user ON user_builds(username)");}catch(e){}
       save();
       console.log('SQLite ready');
       resolve(buildAPI());
@@ -684,6 +688,32 @@ function isAdminKey(key,cb){
         });
       });
     });
+  };
+
+  // User builds
+  a.saveUserBuild=function(username,data,cb){
+    var id=data.id||genId();
+    var now=Date.now();
+    qOne("SELECT id FROM user_builds WHERE id=$1",[id],function(existing){
+      if(existing){
+        qRun("UPDATE user_builds SET charId=$1,cosIdx=$2,styleIdx=$3,label=$4,buildData=$5,updatedAt=$6 WHERE id=$7",
+          [data.charId,data.cosIdx||0,data.styleIdx||0,data.label||'',JSON.stringify(data),now,id],function(){cb({id:id});});
+      }else{
+        qRun("INSERT INTO user_builds (id,username,charId,cosIdx,styleIdx,label,buildData,createdAt,updatedAt) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)",
+          [id,username,data.charId,data.cosIdx||0,data.styleIdx||0,data.label||'',JSON.stringify(data),now,now],function(){cb({id:id});});
+      }
+    });
+  };
+  a.loadUserBuilds=function(username,cb){
+    qAll("SELECT * FROM user_builds WHERE username=$1 ORDER BY updatedAt DESC",[username],function(rows){
+      cb(rows||[]);
+    });
+  };
+  a.deleteUserBuild=function(username,buildId,cb){
+    qRun("DELETE FROM user_builds WHERE id=$1 AND username=$2",[buildId,username],function(ok){cb(ok);});
+  };
+  a.getUserBuild=function(buildId,cb){
+    qOne("SELECT * FROM user_builds WHERE id=$1",[buildId],function(row){cb(row||null);});
   };
 
   return a;

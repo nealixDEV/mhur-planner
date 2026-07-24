@@ -87,6 +87,29 @@ function handler(req, res) {
     if(buildStore[bid]) return json(res,{build:buildStore[bid]});
     return json(res,{error:'Build not found'},404);
   }
+  // User builds
+  if(url === '/api/user-builds' && req.method === 'GET'){
+    var username = query.username || '';
+    if(!username) return json(res,{builds:[]});
+    return forum.loadUserBuilds(username,function(builds){
+      json(res,{builds:builds.map(function(b){
+        return {id:b.id,charId:b.charId,cosIdx:b.cosIdx,styleIdx:b.styleIdx,label:b.label,buildData:JSON.parse(b.buildData||'{}'),updatedAt:b.updatedAt};
+      })});
+    });
+  }
+  if(url === '/api/user-builds' && req.method === 'POST'){
+    return body(req, function(data){
+      if(!data||!data.username) return json(res,{error:'No username'},400);
+      forum.saveUserBuild(data.username,data.build,function(result){json(res,result);});
+    });
+  }
+  if(url.match(/^\/api\/user-builds\/.+$/) && req.method === 'DELETE'){
+    var parts=url.split('/');
+    var buildId=parts[parts.length-1];
+    var u=query.username||'';
+    if(!u) return json(res,{error:'No username'},400);
+    forum.deleteUserBuild(u,buildId,function(ok){json(res,{ok:ok});});
+  }
   if(url === '/api/posts' && req.method === 'GET'){
     return forum.list(parseInt(query.page)||1, query.sort||'hot', function(data){json(res, data);});
   }

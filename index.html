@@ -4316,7 +4316,40 @@ var CHAR_STATS={
 
 var ST={charId:CH[0].id,cosIdx:0,styleIdx:0,left:bk(5),right:bk(5),specs:bk(2)};
 var savedStates={};
-function saveState(){var k=ST.charId+"_"+(ST.styleIdx||0);savedStates[k]={charId:ST.charId,cosIdx:ST.cosIdx,styleIdx:ST.styleIdx,left:ST.left.map(function(s){return{tid:s.tid,lv:s.lv};}),right:ST.right.map(function(s){return{tid:s.tid,lv:s.lv};}),specs:ST.specs.map(function(s){return{tid:s.tid,lv:s.lv};})};}
+var _buildSyncTimer=null;
+function syncBuildsToServer(){
+  var user=localStorage.getItem('forumUsername');
+  if(!user)return;
+  clearTimeout(_buildSyncTimer);
+  _buildSyncTimer=setTimeout(function(){
+    Object.keys(savedStates).forEach(function(k){
+      var s=savedStates[k];if(!s||!s.left||!s.left.some(function(x){return x.tid;}))return;
+      var xhr=new XMLHttpRequest();
+      xhr.open('POST','/api/user-builds',true);
+      xhr.setRequestHeader('Content-Type','application/json');
+      xhr.send(JSON.stringify({username:user,build:{id:k.replace(/[^a-zA-Z0-9_]/g,'_'),charId:s.charId,cosIdx:s.cosIdx,styleIdx:s.styleIdx,label:'',buildData:s}}));
+    });
+  },2000);
+}
+function loadBuildsFromServer(){
+  var user=localStorage.getItem('forumUsername');
+  if(!user)return;
+  var xhr=new XMLHttpRequest();
+  xhr.open('GET','/api/user-builds?username='+encodeURIComponent(user),false);
+  xhr.send();
+  if(xhr.status===200){
+    var resp=JSON.parse(xhr.responseText);
+    if(resp.builds){
+      resp.builds.forEach(function(b){
+        var k=b.charId+'_'+(b.styleIdx||0);
+        if(!savedStates[k]&&b.buildData){
+          savedStates[k]=b.buildData;
+        }
+      });
+    }
+  }
+}
+function saveState(){var k=ST.charId+"_"+(ST.styleIdx||0);savedStates[k]={charId:ST.charId,cosIdx:ST.cosIdx,styleIdx:ST.styleIdx,left:ST.left.map(function(s){return{tid:s.tid,lv:s.lv};}),right:ST.right.map(function(s){return{tid:s.tid,lv:s.lv};}),specs:ST.specs.map(function(s){return{tid:s.tid,lv:s.lv};})};syncBuildsToServer();}
 function loadState(cid,sid){var k=cid+"_"+(sid||0);var s=savedStates[k];if(s){ST.cosIdx=s.cosIdx;ST.styleIdx=s.styleIdx||0;ST.left=s.left.map(function(x){return{tid:x.tid||'',lv:x.lv||1};});ST.right=s.right.map(function(x){return{tid:x.tid||'',lv:x.lv||1};});ST.specs=s.specs.map(function(x){return{tid:x.tid||'',lv:x.lv||1};});}else{ST.cosIdx=0;ST.styleIdx=sid||0;resetBuild();}}
 var BUILD_TAGS_LIST=["damage","support","movement","defense","burst","teamplay","revive","mobility"];
 var styleMem={};styleMem[CH[0].id]=0;
@@ -8993,6 +9026,7 @@ function initForum(){
             var uname=res.username||name;
             localStorage.setItem('forumUsername',uname);sessionName=uname;
             localStorage.setItem('forumLoggedIn','1');
+            loadBuildsFromServer();
             if(res.avatar)localStorage.setItem('forumAvatar',res.avatar);
             if(res.admin>=1){localStorage.setItem('forumIsAdmin','1');if(res.admin>=2)localStorage.setItem('forumIsOwner','1');localStorage.setItem('mhurMasterKey','user:'+uname.toLowerCase());}
             if(!res.email){
@@ -9015,6 +9049,7 @@ function initForum(){
             if(regAvatarData)localStorage.setItem('forumAvatar',regAvatarData);
             localStorage.setItem('forumUsername',name);sessionName=name;
             localStorage.setItem('forumLoggedIn','1');
+            loadBuildsFromServer();
             initForum();return;
           }
           document.getElementById('regErr').textContent=res&&res.error||'Failed.';
