@@ -127,28 +127,7 @@ module.exports = new Promise(function(resolve){
         db.query("CREATE INDEX IF NOT EXISTS idx_builds_user ON user_builds(username)",[],function(){
           console.log('PostgreSQL connected');
           resolve(buildAPI());
-        });
-        });
-        });
-        });
-        });
-        });
-        });
-        });
-        });
-        });
-        });
-        });
-        });
-        });
-        });
-        });
-        });
-        });
-        });
-        });
-        });
-        });
+        });});});});});});});});});});});});});});});});});});});});});});});});
   }else{
     var initSqlJs = require('sql.js');
     initSqlJs().then(function(SQL){
