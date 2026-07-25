@@ -81,9 +81,9 @@ function qAll(sql,params,cb){
 }
 function qRun(sql,params,cb){
   if(typeof params==='function'){cb=params;params=[];}
-  _qRun(sql,params,function(){
+  _qRun(sql,params,function(res){
     save();
-    if(cb)cb(true);
+    if(cb)cb(!!res);
   });
 }
 
@@ -707,18 +707,24 @@ function isAdminKey(key,cb){
   a.saveShortBuild=function(id,data,cb){
     var now=Date.now();
     var sd=JSON.stringify(data);
-    if(usePG){
-      qRun("INSERT INTO user_builds (id,username,charId,cosIdx,styleIdx,label,buildData,createdAt,updatedAt) VALUES ($1,'','','','','',$2,$3,$3) ON CONFLICT (id) DO UPDATE SET buildData=$2,updatedAt=$3",
-        [id,sd,now],function(){cb({id:id});});
-    }else{
-      qRun("INSERT OR REPLACE INTO user_builds (id,username,charId,cosIdx,styleIdx,label,buildData,createdAt,updatedAt) VALUES ($1,'','','','','',$2,$3,$3)",
-        [id,sd,now],function(){cb({id:id});});
-    }
+    var sql="INSERT INTO user_builds (id,username,charId,cosIdx,styleIdx,label,buildData,createdAt,updatedAt) VALUES ("+esc(id)+",'','',0,0,'',"+esc(sd)+","+now+","+now+") ON CONFLICT (id) DO UPDATE SET buildData="+esc(sd)+",updatedAt="+now;
+    try{
+      if(usePG){db.query(sql,function(err){if(cb)cb({id:id});});}
+      else{db.exec(sql);save();if(cb)cb({id:id});}
+    }catch(e){if(cb)cb({id:id});}
   };
   a.getShortBuild=function(id,cb){
-    qOne("SELECT * FROM user_builds WHERE id=$1",[id],function(row){
-      cb(row?JSON.parse(row.buildData||'{}'):null);
-    });
+    var sql="SELECT * FROM user_builds WHERE id="+esc(id);
+    try{
+      if(usePG){
+        db.query(sql,function(err,res){
+          if(cb)try{cb(res&&res.rows&&res.rows[0]?JSON.parse(res.rows[0].buildData):null);}catch(e2){cb(null);}
+        });
+      }else{
+        var r=db.exec(sql);var row=r&&r[0]&&r[0].values&&r[0].values[0];var idx=r[0].columns.indexOf('buildData');
+        if(cb)cb(row&&idx>=0?JSON.parse(row[idx]):null);
+      }
+    }catch(e){if(cb)cb(null);}
   };
 
   return a;
