@@ -649,10 +649,10 @@ function isAdminKey(key,cb){
   };
   a.getUserTitles = function(username, cb){
     var qs=username.toLowerCase().trim();
-    qOne("SELECT COUNT(*) as postCount FROM posts WHERE LOWER(author)=$1",[qs],function(pc){
-      var postCount=pc?pc.postCount||0:0;
-      qOne("SELECT COALESCE(SUM(likes),0) as totalLikes FROM posts WHERE LOWER(author)=$1",[qs],function(lr){
-        var totalLikes=lr?lr.totalLikes||0:0;
+    qOne("SELECT COUNT(*) as postcount FROM posts WHERE LOWER(author)=$1",[qs],function(pc){
+      var postCount=pc?pc.postcount||0:0;
+      qOne("SELECT COALESCE(SUM(likes),0) as totallikes FROM posts WHERE LOWER(author)=$1",[qs],function(lr){
+        var totalLikes=lr?lr.totallikes||0:0;
         var titles=[];
         if(postCount>=5)titles.push({id:'tuning_enthusiast',name:'Tuning Enthusiast',req:'5 posts'});
         if(postCount>=10&&totalLikes>=10)titles.push({id:'master_tuning_poster',name:'Master Tuning Poster',req:'10 posts with 10+ likes'});
