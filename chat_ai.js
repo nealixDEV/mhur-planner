@@ -53,8 +53,10 @@ function processCoach(txt){
     addCoachMsg(pick(['Got it.','Fair.','Okay!','Alright.']),false);return;
   }
   
-  // Build commands — handle locally, no API cost
-  var isBuildCmd=lower.match(/analyze|review|check|how'?s (my|this|the|it)|rate|evaluate|look at|explain|breakdown|what'?s wrong|issues?|problem|weak(ness|est)?|swap|replace|improve|upgrade|fix|change|suggestion|damage|defense|defence|reload|mobility|slot|tune|scor|build(\s|$)/i);
+  // Build commands — only trigger when user asks about THEIR build specifically
+  var isBuildCmd=lower.match(/(analyze|review|check|rate|evaluate|explain|breakdown|what'?s wrong|improve|fix|upgrade|swap|replace) (my|this|the|it)|how'?s (my|this|the|it) (build|look|setup|tuning)|look at (my|this|the)/i)||
+                  lower.match(/^my (damage|defense|reload|mobility|build|tunings?|slot|score)/i)||
+                  (lower.match(/build|tune|slot|scor/)&&lower.match(/(my|check|review|rate|analyze|help|how'?s|what'?s)/i));
   
   if(isBuildCmd){
     if(!ch){addCoachMsg('Pick a character first!',false);return;}
@@ -88,10 +90,9 @@ function processCoach(txt){
     return;
   }
   
-  // Everything else goes to Mei (Groq)
-  var ctx=ch?ch.n:'someone';
-  groqChat(txt+' (user is looking at a '+ctx+' build in MHUR)', function(reply){
+  // Everything else goes to Mei (Groq) — no forced context, let her be natural
+  groqChat(txt, function(reply){
     if(reply)addCoachMsg(reply,false);
-    else addCoachMsg(pick(['Hmm, not sure. Want me to look at your build?','I got nothing on that one. Try asking about your build?']),false);
+    else addCoachMsg(pick(['Hmm, not sure. Want me to look at your build?','I got nothing. Try asking about your build?']),false);
   });
 }
