@@ -4,6 +4,8 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 var forum;
+var GROQ_API_KEY = process.env.GROQ_API_KEY || '';
+var GROQ_MODEL = 'llama-3.1-8b-instant';
 
 const root = __dirname;
 const port = process.env.PORT || 8080;
@@ -453,6 +455,38 @@ function handler(req, res) {
       res.writeHead(502);res.end('Proxy error');
     });
     return;
+  }
+
+  // AI Chat via Groq (free, no regional restrictions)
+  if(url === '/api/chat' && req.method === 'POST'){
+    if(!GROQ_API_KEY) return json(res,{error:'AI not configured'},503);
+    return body(req, function(data){
+      if(!data||!data.message) return json(res,{error:'No message'},400);
+      var groqBody = JSON.stringify({
+        model: GROQ_MODEL,
+        messages: [
+          {role:'system', content:'You are Mei Hatsume from My Hero Academia, a support course student who loves inventing and optimizing. You help players tune their MHUR builds. Keep responses short, natural, and conversational (1-3 sentences). You are 80% engineer, 15% nerd, 5% chaotic. You get excited about good builds and optimization. Never pretend to have played the game. Never give long lectures. Be casual like a Discord chat.'},
+          {role:'user', content: data.message}
+        ],
+        max_tokens: 200,
+        temperature: 0.7
+      });
+      var groqReq = https.request({
+        hostname: 'api.groq.com', path: '/openai/v1/chat/completions',
+        method: 'POST',
+        headers: {'Content-Type':'application/json','Authorization':'Bearer '+GROQ_API_KEY}
+      }, function(groqRes){
+        var body = []; groqRes.on('data',function(c){body.push(c);});
+        groqRes.on('end',function(){
+          try { var r = JSON.parse(Buffer.concat(body).toString());
+            if(r.choices&&r.choices[0]) return json(res,{reply:r.choices[0].message.content});
+            else return json(res,{error:'No response'},502);
+          } catch(e){return json(res,{error:'Parse error'},502);}
+        });
+      });
+      groqReq.on('error',function(e){return json(res,{error:e.message},502);});
+      groqReq.write(groqBody); groqReq.end();
+    });
   }
 
   // Static files
