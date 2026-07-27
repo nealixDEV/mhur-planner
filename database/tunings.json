@@ -1,0 +1,1916 @@
+{
+  "n0": {
+    "chara": "1",
+    "role": "Assault",
+    "cl": "HERO",
+    "name": "Izuku Midoriya",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 0.99",
+      "Level 2: 0.985",
+      "Level 3: 0.98",
+      "Level 4: 0.975"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill γ Defense+",
+        "sd": "Decreases damage taken from Quirk Skill γ",
+        "lv": [
+          "Level 1: 0.99",
+          "Level 2: 0.985",
+          "Level 3: 0.98",
+          "Level 4: 0.975"
+        ]
+      }
+    ]
+  },
+  "n1": {
+    "chara": "1",
+    "role": "Strike",
+    "cl": "HERO",
+    "name": "Izuku Midoriya (Full Bullet)",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "GP Attack Power+",
+        "sd": "Increases damage dealt towards GP",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
+  },
+  "n2": {
+    "chara": "2",
+    "role": "Strike",
+    "cl": "HERO",
+    "name": "Katsuki Bakugo",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill α Attack Power+",
+        "sd": "Increases damage dealt for Quirk Skill α",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
+  },
+  "n3": {
+    "chara": "2",
+    "role": "Rapid",
+    "cl": "HERO",
+    "name": "Katsuki Bakugo (Machine Gun)",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 5",
+      "Level 2: 10",
+      "Level 3: 15",
+      "Level 4: 20"
+    ],
+    "sub": [
+      {
+        "sn": "Wall Jump HT+",
+        "sd": "Increases your Wall Jump height",
+        "lv": [
+          "Level 1: 5",
+          "Level 2: 10",
+          "Level 3: 15",
+          "Level 4: 20"
+        ]
+      },
+      {
+        "sn": "Quirk Skill γ Attack Power+",
+        "sd": "Increases damage dealt for Quirk Skill γ",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
+  },
+  "n4": {
+    "chara": "2",
+    "role": "Technical",
+    "cl": "HERO",
+    "name": "Katsuki Bakugo (Cluster)",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "PU/PC Reload+",
+        "sd": "Increases PU/PC Gauge filling speed",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      },
+      {
+        "sn": "Quirk Skill γ Attack Power+",
+        "sd": "Increases damage dealt for Quirk Skill γ",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
+  },
+  "n5": {
+    "chara": "3",
+    "role": "Rapid",
+    "cl": "HERO",
+    "name": "Ochaco Uraraka",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 5",
+      "Level 2: 10",
+      "Level 3: 15",
+      "Level 4: 20"
+    ],
+    "sub": [
+      {
+        "sn": "Forward Jump HT+",
+        "sd": "Increases your forward Jump height",
+        "lv": [
+          "Level 1: 5",
+          "Level 2: 10",
+          "Level 3: 15",
+          "Level 4: 20"
+        ]
+      }
+    ]
+  },
+  "n6": {
+    "chara": "3",
+    "role": "Assault",
+    "cl": "HERO",
+    "name": "Ochaco Uraraka (Zero Satellites)",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 0.99",
+      "Level 2: 0.985",
+      "Level 3: 0.98",
+      "Level 4: 0.975"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill β Defense+",
+        "sd": "Decreases damage taken from Quirk Skill β",
+        "lv": [
+          "Level 1: 0.99",
+          "Level 2: 0.985",
+          "Level 3: 0.98",
+          "Level 4: 0.975"
+        ]
+      },
+      {
+        "sn": "Vertical Jump HT+",
+        "sd": "Increases your vertical Jump height",
+        "lv": [
+          "Level 1: 5",
+          "Level 2: 10",
+          "Level 3: 15",
+          "Level 4: 20"
+        ]
+      }
+    ]
+  },
+  "n7": {
+    "chara": "4",
+    "role": "Strike",
+    "cl": "HERO",
+    "name": "Shoto Todoroki",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill γ Attack Power+",
+        "sd": "Increases damage dealt for Quirk Skill γ",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
+  },
+  "n8": {
+    "chara": "4",
+    "role": "Technical",
+    "cl": "HERO",
+    "name": "Shoto Todoroki (Ice Fang Wind Flame)",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill β Reload+",
+        "sd": "Increases reload speed of Quirk Skill β",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      },
+      {
+        "sn": "Quirk Skill γ Defense+",
+        "sd": "Decreases damage taken from Quirk Skill γ",
+        "lv": [
+          "Level 1: 0.99",
+          "Level 2: 0.985",
+          "Level 3: 0.98",
+          "Level 4: 0.975"
+        ]
+      }
+    ]
+  },
+  "n9": {
+    "chara": "5",
+    "role": "Rapid",
+    "cl": "HERO",
+    "name": "Tenya Iida",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.02",
+      "Level 3: 1.03",
+      "Level 4: 1.04"
+    ],
+    "sub": [
+      {
+        "sn": "Dash Speed+",
+        "sd": "Increases your Dash speed",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.02",
+          "Level 3: 1.03",
+          "Level 4: 1.04"
+        ]
+      }
+    ]
+  },
+  "n10": {
+    "chara": "6",
+    "role": "Rapid",
+    "cl": "HERO",
+    "name": "Tsuyu Asui",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.02",
+      "Level 3: 1.03",
+      "Level 4: 1.04"
+    ],
+    "sub": [
+      {
+        "sn": "Wall Shuffle Speed+",
+        "sd": "Increases your Wall Shuffle speed",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.02",
+          "Level 3: 1.03",
+          "Level 4: 1.04"
+        ]
+      }
+    ]
+  },
+  "n11": {
+    "chara": "7",
+    "role": "Strike",
+    "cl": "HERO",
+    "name": "Denki Kaminari",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill β Attack Power+",
+        "sd": "Increases damage dealt for Quirk Skill β",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
+  },
+  "n12": {
+    "chara": "7",
+    "role": "Technical",
+    "cl": "HERO",
+    "name": "Denki Kaminari (Lightning)",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill α Reload+",
+        "sd": "Increases reload speed of Quirk Skill α",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      },
+      {
+        "sn": "Quirk Skill α Attack Power+",
+        "sd": "Increases damage dealt for Quirk Skill α",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
+  },
+  "n13": {
+    "chara": "8",
+    "role": "Assault",
+    "cl": "HERO",
+    "name": "Eijiro Kirishima",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 0.99",
+      "Level 2: 0.985",
+      "Level 3: 0.98",
+      "Level 4: 0.975"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill α Defense+",
+        "sd": "Decreases damage taken from Quirk Skill α",
+        "lv": [
+          "Level 1: 0.99",
+          "Level 2: 0.985",
+          "Level 3: 0.98",
+          "Level 4: 0.975"
+        ]
+      }
+    ]
+  },
+  "n14": {
+    "chara": "8",
+    "role": "Strike",
+    "cl": "HERO",
+    "name": "Eijiro Kirishima (Red Drive)",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill β Attack Power+",
+        "sd": "Increases damage dealt for Quirk Skill β",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      },
+      {
+        "sn": "Quirk Skill γ Defense+",
+        "sd": "Decreases damage taken from Quirk Skill γ",
+        "lv": [
+          "Level 1: 0.99",
+          "Level 2: 0.985",
+          "Level 3: 0.98",
+          "Level 4: 0.975"
+        ]
+      }
+    ]
+  },
+  "n15": {
+    "chara": "10",
+    "role": "Support",
+    "cl": "HERO",
+    "name": "Momo Yaoyorozu",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1",
+      "Level 2: 2",
+      "Level 3: 3",
+      "Level 4: 4"
+    ],
+    "sub": [
+      {
+        "sn": "Max GP+",
+        "sd": "Increases Max GP",
+        "lv": [
+          "Level 1: 1",
+          "Level 2: 2",
+          "Level 3: 3",
+          "Level 4: 4"
+        ]
+      }
+    ]
+  },
+  "n16": {
+    "chara": "11",
+    "role": "Assault",
+    "cl": "HERO",
+    "name": "Fumikage Tokoyami",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 0.99",
+      "Level 2: 0.985",
+      "Level 3: 0.98",
+      "Level 4: 0.975"
+    ],
+    "sub": [
+      {
+        "sn": "Melee Defense+",
+        "sd": "Decreases damage taken from Melee Attacks",
+        "lv": [
+          "Level 1: 0.99",
+          "Level 2: 0.985",
+          "Level 3: 0.98",
+          "Level 4: 0.975"
+        ]
+      },
+      {
+        "sn": "Max DOWN HP+",
+        "sd": "Increases your HP when DOWN",
+        "lv": [
+          "Level 1: 5",
+          "Level 2: 10",
+          "Level 3: 15",
+          "Level 4: 20"
+        ]
+      }
+    ]
+  },
+  "n17": {
+    "chara": "12",
+    "role": "Assault",
+    "cl": "HERO",
+    "name": "All Might",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 0.99",
+      "Level 2: 0.985",
+      "Level 3: 0.98",
+      "Level 4: 0.975"
+    ],
+    "sub": [
+      {
+        "sn": "HP Defense+",
+        "sd": "Decreases damage taken towards HP",
+        "lv": [
+          "Level 1: 0.99",
+          "Level 2: 0.985",
+          "Level 3: 0.98",
+          "Level 4: 0.975"
+        ]
+      }
+    ]
+  },
+  "n18": {
+    "chara": "12",
+    "role": "Rapid",
+    "cl": "HERO",
+    "name": "All Might (Gatling)",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 5",
+      "Level 2: 10",
+      "Level 3: 15",
+      "Level 4: 20"
+    ],
+    "sub": [
+      {
+        "sn": "Vertical Jump HT+",
+        "sd": "Increases your vertical Jump height",
+        "lv": [
+          "Level 1: 5",
+          "Level 2: 10",
+          "Level 3: 15",
+          "Level 4: 20"
+        ]
+      },
+      {
+        "sn": "Melee Attack Power+",
+        "sd": "Increases damage dealt for Melee Attacks",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
+  },
+  "n19": {
+    "chara": "13",
+    "role": "Technical",
+    "cl": "HERO",
+    "name": "Shota Aizawa",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill α Reload+",
+        "sd": "Increases reload speed of Quirk Skill α",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
+  },
+  "n20": {
+    "chara": "13",
+    "role": "Strike",
+    "cl": "HERO",
+    "name": "Shota Aizawa (Flow Runner)",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill α Attack Power+",
+        "sd": "Increases damage dealt for Quirk Skill α",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      },
+      {
+        "sn": "Vertical Jump HT+",
+        "sd": "Increases your vertical Jump height",
+        "lv": [
+          "Level 1: 5",
+          "Level 2: 10",
+          "Level 3: 15",
+          "Level 4: 20"
+        ]
+      }
+    ]
+  },
+  "n21": {
+    "chara": "15",
+    "role": "Strike",
+    "cl": "VILLAIN",
+    "name": "Tomura Shigaraki",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "Melee Attack Power+",
+        "sd": "Increases damage dealt for Melee Attacks",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
+  },
+  "n22": {
+    "chara": "15",
+    "role": "Assault",
+    "cl": "VILLAIN",
+    "name": "Tomura Shigaraki (Catastrophe)",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 0.99",
+      "Level 2: 0.985",
+      "Level 3: 0.98",
+      "Level 4: 0.975"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill α Defense+",
+        "sd": "Decreases damage taken from Quirk Skill α",
+        "lv": [
+          "Level 1: 0.99",
+          "Level 2: 0.985",
+          "Level 3: 0.98",
+          "Level 4: 0.975"
+        ]
+      },
+      {
+        "sn": "Melee Attack Power+",
+        "sd": "Increases damage dealt for Melee Attacks",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
+  },
+  "n23": {
+    "chara": "15",
+    "role": "Technical",
+    "cl": "VILLAIN",
+    "name": "Tomura Shigaraki (Thousand-Hand Break)",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill α Reload+",
+        "sd": "Increases reload speed of Quirk Skill α",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      },
+      {
+        "sn": "HP Defense+",
+        "sd": "Decreases damage taken towards HP",
+        "lv": [
+          "Level 1: 0.99",
+          "Level 2: 0.985",
+          "Level 3: 0.98",
+          "Level 4: 0.975"
+        ]
+      }
+    ]
+  },
+  "n24": {
+    "chara": "16",
+    "role": "Technical",
+    "cl": "VILLAIN",
+    "name": "All For One",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "Special Action Reload+",
+        "sd": "Increases reload speed of Special Action",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      },
+      {
+        "sn": "Max HP+",
+        "sd": "Increases Max HP",
+        "lv": [
+          "Level 1: 1",
+          "Level 2: 2",
+          "Level 3: 3",
+          "Level 4: 4"
+        ]
+      }
+    ]
+  },
+  "n25": {
+    "chara": "16",
+    "role": "Strike",
+    "cl": "VILLAIN",
+    "name": "All For One (Factor Fusion)",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "HP Attack Power+",
+        "sd": "Increases damage dealt towards HP",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      },
+      {
+        "sn": "Downed Crawl Speed+",
+        "sd": "Increases your Movement speed when DOWN",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.02",
+          "Level 3: 1.03",
+          "Level 4: 1.04"
+        ]
+      }
+    ]
+  },
+  "n26": {
+    "chara": "17",
+    "role": "Technical",
+    "cl": "VILLAIN",
+    "name": "Dabi",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill β Reload+",
+        "sd": "Increases reload speed of Quirk Skill β",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
+  },
+  "n27": {
+    "chara": "17",
+    "role": "Strike",
+    "cl": "VILLAIN",
+    "name": "Dabi (Crazy Torch)",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill α Attack Power+",
+        "sd": "Increases damage dealt for Quirk Skill α",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      },
+      {
+        "sn": "Melee Defense+",
+        "sd": "Decreases damage taken from Melee Attacks",
+        "lv": [
+          "Level 1: 0.99",
+          "Level 2: 0.985",
+          "Level 3: 0.98",
+          "Level 4: 0.975"
+        ]
+      }
+    ]
+  },
+  "n28": {
+    "chara": "18",
+    "role": "Technical",
+    "cl": "VILLAIN",
+    "name": "Himiko Toga",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill γ Reload+",
+        "sd": "Increases reload speed of Quirk Skill γ",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
+  },
+  "n29": {
+    "chara": "18",
+    "role": "Rapid",
+    "cl": "VILLAIN",
+    "name": "Himiko Toga (Sting Dance)",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 5",
+      "Level 2: 10",
+      "Level 3: 15",
+      "Level 4: 20"
+    ],
+    "sub": [
+      {
+        "sn": "Forward Jump HT+",
+        "sd": "Increases your forward Jump height",
+        "lv": [
+          "Level 1: 5",
+          "Level 2: 10",
+          "Level 3: 15",
+          "Level 4: 20"
+        ]
+      },
+      {
+        "sn": "Quirk Skill γ Reload+",
+        "sd": "Increases reload speed of Quirk Skill γ",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
+  },
+  "n30": {
+    "chara": "23",
+    "role": "Strike",
+    "cl": "HERO",
+    "name": "Endeavor",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "HP Attack Power+",
+        "sd": "Increases damage dealt towards HP",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
+  },
+  "n31": {
+    "chara": "23",
+    "role": "Assault",
+    "cl": "HERO",
+    "name": "Endeavor (Inferno Fist)",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 0.99",
+      "Level 2: 0.985",
+      "Level 3: 0.98",
+      "Level 4: 0.975"
+    ],
+    "sub": [
+      {
+        "sn": "HP Defense+",
+        "sd": "Decreases damage taken towards HP",
+        "lv": [
+          "Level 1: 0.99",
+          "Level 2: 0.985",
+          "Level 3: 0.98",
+          "Level 4: 0.975"
+        ]
+      },
+      {
+        "sn": "GP Attack Power+",
+        "sd": "Increases damage dealt towards GP",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
+  },
+  "n32": {
+    "chara": "24",
+    "role": "Rapid",
+    "cl": "HERO",
+    "name": "Mirio Togata",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.02",
+      "Level 3: 1.03",
+      "Level 4: 1.04"
+    ],
+    "sub": [
+      {
+        "sn": "Dash Speed+",
+        "sd": "Increases your Dash speed",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.02",
+          "Level 3: 1.03",
+          "Level 4: 1.04"
+        ]
+      },
+      {
+        "sn": "Quirk Skill α Reload+",
+        "sd": "Increases reload speed of Quirk Skill α",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
+  },
+  "n33": {
+    "chara": "24",
+    "role": "Technical",
+    "cl": "HERO",
+    "name": "Mirio Togata (Sheer Counter)",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill γ Reload+",
+        "sd": "Increases reload speed of Quirk Skill γ",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      },
+      {
+        "sn": "Quirk Skill α Defense+",
+        "sd": "Decreases damage taken from Quirk Skill α",
+        "lv": [
+          "Level 1: 0.99",
+          "Level 2: 0.985",
+          "Level 3: 0.98",
+          "Level 4: 0.975"
+        ]
+      }
+    ]
+  },
+  "n34": {
+    "chara": "25",
+    "role": "Technical",
+    "cl": "HERO",
+    "name": "Nejire Hado",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "PU/PC Reload+",
+        "sd": "Increases PU/PC Gauge filling speed",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      },
+      {
+        "sn": "Quirk Skill γ Reload+",
+        "sd": "Increases reload speed of Quirk Skill γ",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
+  },
+  "n35": {
+    "chara": "25",
+    "role": "Support",
+    "cl": "HERO",
+    "name": "Nejire Hado (Fairy)",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1",
+      "Level 2: 2",
+      "Level 3: 3",
+      "Level 4: 4"
+    ],
+    "sub": [
+      {
+        "sn": "Max GP+",
+        "sd": "Increases Max GP",
+        "lv": [
+          "Level 1: 1",
+          "Level 2: 2",
+          "Level 3: 3",
+          "Level 4: 4"
+        ]
+      },
+      {
+        "sn": "Max HP+",
+        "sd": "Increases Max HP",
+        "lv": [
+          "Level 1: 1",
+          "Level 2: 2",
+          "Level 3: 3",
+          "Level 4: 4"
+        ]
+      }
+    ]
+  },
+  "n36": {
+    "chara": "26",
+    "role": "Strike",
+    "cl": "HERO",
+    "name": "Tamaki Amajiki",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill γ Attack Power+",
+        "sd": "Increases damage dealt for Quirk Skill γ",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      },
+      {
+        "sn": "Wall Jump HT+",
+        "sd": "Increases your Wall Jump height",
+        "lv": [
+          "Level 1: 5",
+          "Level 2: 10",
+          "Level 3: 15",
+          "Level 4: 20"
+        ]
+      }
+    ]
+  },
+  "n37": {
+    "chara": "34",
+    "role": "Support",
+    "cl": "VILLAIN",
+    "name": "Overhaul",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1",
+      "Level 2: 2",
+      "Level 3: 3",
+      "Level 4: 4"
+    ],
+    "sub": [
+      {
+        "sn": "Max HP+",
+        "sd": "Increases Max HP",
+        "lv": [
+          "Level 1: 1",
+          "Level 2: 2",
+          "Level 3: 3",
+          "Level 4: 4"
+        ]
+      },
+      {
+        "sn": "Quirk Skill γ Attack Power+",
+        "sd": "Increases damage dealt for Quirk Skill γ",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
+  },
+  "n38": {
+    "chara": "34",
+    "role": "Assault",
+    "cl": "VILLAIN",
+    "name": "Overhaul (Blighted Precipice)",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 0.99",
+      "Level 2: 0.985",
+      "Level 3: 0.98",
+      "Level 4: 0.975"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill β Defense+",
+        "sd": "Decreases damage taken from Quirk Skill β",
+        "lv": [
+          "Level 1: 0.99",
+          "Level 2: 0.985",
+          "Level 3: 0.98",
+          "Level 4: 0.975"
+        ]
+      },
+      {
+        "sn": "GP Attack Power+",
+        "sd": "Increases damage dealt towards GP",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
+  },
+  "n39": {
+    "chara": "37",
+    "role": "Rapid",
+    "cl": "VILLAIN",
+    "name": "Twice",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.02",
+      "Level 3: 1.03",
+      "Level 4: 1.04"
+    ],
+    "sub": [
+      {
+        "sn": "Downed Crawl Speed+",
+        "sd": "Increases your Movement speed when DOWN",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.02",
+          "Level 3: 1.03",
+          "Level 4: 1.04"
+        ]
+      },
+      {
+        "sn": "Quirk Skill β Reload+",
+        "sd": "Increases reload speed of Quirk Skill β",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
+  },
+  "n40": {
+    "chara": "38",
+    "role": "Support",
+    "cl": "VILLAIN",
+    "name": "Mr. Compress",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 5",
+      "Level 2: 10",
+      "Level 3: 15",
+      "Level 4: 20"
+    ],
+    "sub": [
+      {
+        "sn": "Max DOWN HP+",
+        "sd": "Increases your HP when DOWN",
+        "lv": [
+          "Level 1: 5",
+          "Level 2: 10",
+          "Level 3: 15",
+          "Level 4: 20"
+        ]
+      }
+    ]
+  },
+  "n41": {
+    "chara": "43",
+    "role": "Rapid",
+    "cl": "HERO",
+    "name": "Hawks",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.02",
+      "Level 3: 1.03",
+      "Level 4: 1.04"
+    ],
+    "sub": [
+      {
+        "sn": "Dash Speed+",
+        "sd": "Increases your Dash speed",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.02",
+          "Level 3: 1.03",
+          "Level 4: 1.04"
+        ]
+      },
+      {
+        "sn": "Wall Shuffle Speed+",
+        "sd": "Increases your Wall Shuffle speed",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.02",
+          "Level 3: 1.03",
+          "Level 4: 1.04"
+        ]
+      }
+    ]
+  },
+  "n42": {
+    "chara": "43",
+    "role": "Strike",
+    "cl": "HERO",
+    "name": "Hawks (Slicing Wind)",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill β Attack Power+",
+        "sd": "Increases damage dealt for Quirk Skill β",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      },
+      {
+        "sn": "Max DOWN HP+",
+        "sd": "Increases your HP when DOWN",
+        "lv": [
+          "Level 1: 5",
+          "Level 2: 10",
+          "Level 3: 15",
+          "Level 4: 20"
+        ]
+      }
+    ]
+  },
+  "n43": {
+    "chara": "46",
+    "role": "Assault",
+    "cl": "HERO",
+    "name": "Itsuka Kendo",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 0.99",
+      "Level 2: 0.985",
+      "Level 3: 0.98",
+      "Level 4: 0.975"
+    ],
+    "sub": [
+      {
+        "sn": "Melee Defense+",
+        "sd": "Decreases damage taken from Melee Attacks",
+        "lv": [
+          "Level 1: 0.99",
+          "Level 2: 0.985",
+          "Level 3: 0.98",
+          "Level 4: 0.975"
+        ]
+      }
+    ]
+  },
+  "n44": {
+    "chara": "46",
+    "role": "Strike",
+    "cl": "HERO",
+    "name": "Itsuka Kendo (Twin Palm Strike)",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill β Attack Power+",
+        "sd": "Increases damage dealt for Quirk Skill β",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      },
+      {
+        "sn": "Quirk Skill β Defense+",
+        "sd": "Decreases damage taken from Quirk Skill β",
+        "lv": [
+          "Level 1: 0.99",
+          "Level 2: 0.985",
+          "Level 3: 0.98",
+          "Level 4: 0.975"
+        ]
+      }
+    ]
+  },
+  "n45": {
+    "chara": "100",
+    "role": "Assault",
+    "cl": "HERO",
+    "name": "Mt. Lady",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 0.99",
+      "Level 2: 0.985",
+      "Level 3: 0.98",
+      "Level 4: 0.975"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill β Defense+",
+        "sd": "Decreases damage taken from Quirk Skill β",
+        "lv": [
+          "Level 1: 0.99",
+          "Level 2: 0.985",
+          "Level 3: 0.98",
+          "Level 4: 0.975"
+        ]
+      }
+    ]
+  },
+  "n46": {
+    "chara": "101",
+    "role": "Support",
+    "cl": "HERO",
+    "name": "Cementoss",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.02",
+      "Level 3: 1.03",
+      "Level 4: 1.04"
+    ],
+    "sub": [
+      {
+        "sn": "Run Speed+",
+        "sd": "Increases your Run speed",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.02",
+          "Level 3: 1.03",
+          "Level 4: 1.04"
+        ]
+      }
+    ]
+  },
+  "n47": {
+    "chara": "102",
+    "role": "Support",
+    "cl": "HERO",
+    "name": "Ibara Shiozaki",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1",
+      "Level 2: 2",
+      "Level 3: 3",
+      "Level 4: 4"
+    ],
+    "sub": [
+      {
+        "sn": "Max HP+",
+        "sd": "Increases Max HP",
+        "lv": [
+          "Level 1: 1",
+          "Level 2: 2",
+          "Level 3: 3",
+          "Level 4: 4"
+        ]
+      }
+    ]
+  },
+  "n48": {
+    "chara": "103",
+    "role": "Support",
+    "cl": "VILLAIN",
+    "name": "Kurogiri",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1",
+      "Level 2: 2",
+      "Level 3: 3",
+      "Level 4: 4"
+    ],
+    "sub": [
+      {
+        "sn": "Max GP+",
+        "sd": "Increases Max GP",
+        "lv": [
+          "Level 1: 1",
+          "Level 2: 2",
+          "Level 3: 3",
+          "Level 4: 4"
+        ]
+      },
+      {
+        "sn": "Melee Defense+",
+        "sd": "Decreases damage taken from Melee Attacks",
+        "lv": [
+          "Level 1: 0.99",
+          "Level 2: 0.985",
+          "Level 3: 0.98",
+          "Level 4: 0.975"
+        ]
+      }
+    ]
+  },
+  "n49": {
+    "chara": "104",
+    "role": "Technical",
+    "cl": "HERO",
+    "name": "Neito Monoma",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "Special Action Reload+",
+        "sd": "Increases reload speed of Special Action",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      },
+      {
+        "sn": "Downed Crawl Speed+",
+        "sd": "Increases your Movement speed when DOWN",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.02",
+          "Level 3: 1.03",
+          "Level 4: 1.04"
+        ]
+      }
+    ]
+  },
+  "n50": {
+    "chara": "105",
+    "role": "Strike",
+    "cl": "HERO",
+    "name": "Hitoshi Shinso",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill β Attack Power+",
+        "sd": "Increases damage dealt for Quirk Skill β",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      },
+      {
+        "sn": "Forward Jump HT+",
+        "sd": "Increases your forward Jump height",
+        "lv": [
+          "Level 1: 5",
+          "Level 2: 10",
+          "Level 3: 15",
+          "Level 4: 20"
+        ]
+      }
+    ]
+  },
+  "n51": {
+    "chara": "109",
+    "role": "Strike",
+    "cl": "HERO",
+    "name": "Present Mic",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "HP Attack Power+",
+        "sd": "Increases damage dealt towards HP",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      },
+      {
+        "sn": "Special Action Reload+",
+        "sd": "Increases reload speed of Special Action",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
+  },
+  "n52": {
+    "chara": "109",
+    "role": "Technical",
+    "cl": "HERO",
+    "name": "Present Mic (D.J. Board)",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill β Reload+",
+        "sd": "Increases reload speed of Quirk Skill β",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      },
+      {
+        "sn": "Dash Speed+",
+        "sd": "Increases your Dash speed",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.02",
+          "Level 3: 1.03",
+          "Level 4: 1.04"
+        ]
+      }
+    ]
+  },
+  "n53": {
+    "chara": "111",
+    "role": "Rapid",
+    "cl": "HERO",
+    "name": "Mirko",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 5",
+      "Level 2: 10",
+      "Level 3: 15",
+      "Level 4: 20"
+    ],
+    "sub": [
+      {
+        "sn": "Wall Jump HT+",
+        "sd": "Increases your Wall Jump height",
+        "lv": [
+          "Level 1: 5",
+          "Level 2: 10",
+          "Level 3: 15",
+          "Level 4: 20"
+        ]
+      },
+      {
+        "sn": "Quirk Skill β Attack Power+",
+        "sd": "Increases damage dealt for Quirk Skill β",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
+  },
+  "n54": {
+    "chara": "114",
+    "role": "Strike",
+    "cl": "HERO",
+    "name": "Star and Stripe",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "Melee Attack Power+",
+        "sd": "Increases damage dealt for Melee Attacks",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      },
+      {
+        "sn": "HP Defense+",
+        "sd": "Decreases damage taken towards HP",
+        "lv": [
+          "Level 1: 0.99",
+          "Level 2: 0.985",
+          "Level 3: 0.98",
+          "Level 4: 0.975"
+        ]
+      }
+    ]
+  },
+  "n55": {
+    "chara": "115",
+    "role": "Strike",
+    "cl": "VILLAIN",
+    "name": "Lady Nagant",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill α Attack Power+",
+        "sd": "Increases damage dealt for Quirk Skill α",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      },
+      {
+        "sn": "Wall Jump HT+",
+        "sd": "Increases your Wall Jump height",
+        "lv": [
+          "Level 1: 5",
+          "Level 2: 10",
+          "Level 3: 15",
+          "Level 4: 20"
+        ]
+      }
+    ]
+  },
+  "n56": {
+    "chara": "200",
+    "role": "Technical",
+    "cl": "HERO",
+    "name": "Armored All Might",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill β Reload+",
+        "sd": "Increases reload speed of Quirk Skill β",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      },
+      {
+        "sn": "Vertical Jump HT+",
+        "sd": "Increases your vertical Jump height",
+        "lv": [
+          "Level 1: 5",
+          "Level 2: 10",
+          "Level 3: 15",
+          "Level 4: 20"
+        ]
+      }
+    ]
+  },
+  "n57": {
+    "chara": "201",
+    "role": "Assault",
+    "cl": "VILLAIN",
+    "name": "All For One (Youth age)",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 0.99",
+      "Level 2: 0.985",
+      "Level 3: 0.98",
+      "Level 4: 0.975"
+    ],
+    "sub": [
+      {
+        "sn": "Quirk Skill γ Defense+",
+        "sd": "Decreases damage taken from Quirk Skill γ",
+        "lv": [
+          "Level 1: 0.99",
+          "Level 2: 0.985",
+          "Level 3: 0.98",
+          "Level 4: 0.975"
+        ]
+      },
+      {
+        "sn": "PU/PC Reload+",
+        "sd": "Increases PU/PC Gauge filling speed",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
+  },
+  "n58": {
+    "chara": "202",
+    "role": "Rapid",
+    "cl": "HERO",
+    "name": "Izuku Midoriya OFA",
+    "sn": "",
+    "sd": "",
+    "lv": [
+      "Level 1: 1.01",
+      "Level 2: 1.02",
+      "Level 3: 1.03",
+      "Level 4: 1.04"
+    ],
+    "sub": [
+      {
+        "sn": "Run Speed+",
+        "sd": "Increases your Run speed",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.02",
+          "Level 3: 1.03",
+          "Level 4: 1.04"
+        ]
+      },
+      {
+        "sn": "Melee Attack Power+",
+        "sd": "Increases damage dealt for Melee Attacks",
+        "lv": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
+  }
+}

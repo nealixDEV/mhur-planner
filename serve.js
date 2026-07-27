@@ -25,6 +25,29 @@ try {
   }
 } catch(e){console.log('Email not available:',e.message);}
 
+// Maintenance mode
+var MAINTENANCE_MODE = false;
+var MAINTENANCE_PASSWORD = 'mhur2024';
+var MAINTENANCE_COOKIE = 'mhur_bypass';
+
+function isMaintenanceBypassed(req){
+  if(!MAINTENANCE_MODE)return true;
+  var cookies = (req.headers.cookie||'').split(';').map(function(c){return c.trim();});
+  for(var i=0;i<cookies.length;i++){
+    if(cookies[i].indexOf(MAINTENANCE_COOKIE+'=')===0){
+      var val = cookies[i].substring(MAINTENANCE_COOKIE.length+1);
+      if(val === MAINTENANCE_PASSWORD)return true;
+    }
+  }
+  return false;
+}
+
+function sendMaintenancePage(res){
+  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MHUR Planner — Maintenance</title><style>body{margin:0;min-height:100vh;background:#0f172a;display:flex;align-items:center;justify-content:center;font-family:system-ui,sans-serif;color:#e2e8f0;}#box{text-align:center;padding:40px;max-width:400px;}h1{font-size:1.6rem;color:#f5c800;margin-bottom:8px;}p{color:#94a3b8;font-size:.85rem;margin-bottom:20px;}input{padding:10px 14px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#e2e8f0;font-size:.9rem;width:100%;box-sizing:border-box;outline:none;}input:focus{border-color:#f5c800;}button{margin-top:12px;padding:10px 24px;border-radius:8px;border:none;background:#f5c800;color:#0f172a;font-weight:700;font-size:.85rem;cursor:pointer;}button:hover{opacity:.9;}#error{color:#ef4444;font-size:.75rem;margin-top:8px;display:none;}</style></head><body><div id="box"><h1>🔧 Under Maintenance</h1><p>The MHUR T.U.N.I.N.G. Planner is being updated. Enter the maintenance password to continue.</p><input type="password" id="pw" placeholder="Maintenance password" onkeydown="if(event.key==\'Enter\')check()"><br><button onclick="check()">Continue</button><div id="error">Incorrect password</div></div><script>function check(){var p=document.getElementById(\'pw\').value;if(!p)return;var x=new XMLHttpRequest();x.open(\'POST\',\'/api/maintenance-bypass\',true);x.setRequestHeader(\'Content-Type\',\'application/json\');x.onload=function(){try{var r=JSON.parse(x.responseText);if(r.ok){location.reload();}else{document.getElementById(\'error\').style.display=\'block\';}}catch(e){}};x.send(JSON.stringify({password:p}));}</script></body></html>';
+  res.writeHead(503,{'Content-Type':'text/html'});
+  res.end(html);
+}
+
 function sendEmail(to, subject, html){
   if(!transporter){console.log('Email not configured, skipping');return;}
   transporter.sendMail({from:EMAIL_USER, to:to, subject:subject, html:html}, function(err, info){
@@ -76,6 +99,29 @@ function handler(req, res) {
   });
 
   // API routes - all async via callbacks
+  // Maintenance mode bypass and toggle (always accessible)
+  if(url === '/api/maintenance-bypass' && req.method === 'POST'){
+    return body(req, function(data){
+      if(data && data.password === MAINTENANCE_PASSWORD){
+        res.writeHead(200,{'Set-Cookie':MAINTENANCE_COOKIE+'='+MAINTENANCE_PASSWORD+'; Path=/; Max-Age=86400','Content-Type':'application/json'});
+        res.end(JSON.stringify({ok:true}));
+      }else{
+        json(res,{ok:false},401);
+      }
+    });
+  }
+  if(url === '/api/maintenance-toggle' && req.method === 'POST'){
+    return body(req, function(data){
+      if(data && data.key === MAINTENANCE_PASSWORD){
+        MAINTENANCE_MODE = !MAINTENANCE_MODE;
+        json(res,{maintenance:MAINTENANCE_MODE});
+      }else{json(res,{error:'Invalid key'},401);}
+    });
+  }
+  // Check maintenance mode for non-API requests
+  if(MAINTENANCE_MODE && url.indexOf('/api/')!==0 && !isMaintenanceBypassed(req)){
+    return sendMaintenancePage(res);
+  }
   // Build ID endpoints
   if(url === '/api/builds' && req.method === 'POST'){
     return body(req, function(data){
@@ -462,12 +508,16 @@ function handler(req, res) {
     if(!GROQ_API_KEY) return json(res,{error:'AI not configured'},503);
     return body(req, function(data){
       if(!data||!data.message) return json(res,{error:'No message'},400);
+      var msgs = [{role:'system', content:'You are Mei Hatsume from My Hero Academia. You ONLY talk about the VIDEO GAME "My Hero Ultra Rumble" (MHUR) — a battle royale game on Roblox. NEVER reference the manga, anime, or show plot. Never say "in the show" or reference anime-only concepts. Only talk about MHUR game mechanics: character skills in the game, tuning effects, damage numbers, battle royale strategy, costumes, and game updates. If asked about a character, answer based on their in-game abilities only, never their anime counterpart. Keep responses short and casual (1-2 sentences). Be like a Discord friend who plays MHUR.'}];
+      // Add conversation history if provided
+      if(data.history && Array.isArray(data.history)){
+        data.history.forEach(function(h){msgs.push({role:h.role, content:h.content});});
+      }else{
+        msgs.push({role:'user', content: data.message});
+      }
       var groqBody = JSON.stringify({
         model: GROQ_MODEL,
-        messages: [
-          {role:'system', content:'You are Mei Hatsume from My Hero Academia, but you\'re helping with the game MY HERO ULTRA RUMBLE (the battle royale game). You know about characters, abilities, and tuning in the game. Keep responses short and casual (1-2 sentences). Match the user\'s tone — joke around if they are, be serious if they are. If they ask about something you don\'t know, just say so. Never give long lectures. Be like a Discord friend who plays MHUR.'},
-          {role:'user', content: data.message}
-        ],
+        messages: msgs,
         max_tokens: 200,
         temperature: 0.7
       });

@@ -1,0 +1,230 @@
+{
+  "izuku": {
+    "id": "izuku",
+    "g": "Hero",
+    "role": "Assault",
+    "n": "Izuku Midoriya"
+  },
+  "izuku_ofa": {
+    "id": "izuku_ofa",
+    "g": "Hero",
+    "role": "Rapid",
+    "n": "Izuku Midoriya (OFA)"
+  },
+  "katsuki": {
+    "id": "katsuki",
+    "g": "Hero",
+    "role": "Strike",
+    "n": "Katsuki Bakugo"
+  },
+  "ochaco": {
+    "id": "ochaco",
+    "g": "Hero",
+    "role": "Rapid",
+    "n": "Ochaco Uraraka"
+  },
+  "tenya": {
+    "id": "tenya",
+    "g": "Hero",
+    "role": "Rapid",
+    "n": "Tenya Iida"
+  },
+  "tsuyu": {
+    "id": "tsuyu",
+    "g": "Hero",
+    "role": "Rapid",
+    "n": "Tsuyu Asui"
+  },
+  "shoto": {
+    "id": "shoto",
+    "g": "Hero",
+    "role": "Strike",
+    "n": "Shoto Todoroki"
+  },
+  "eijiro": {
+    "id": "eijiro",
+    "g": "Hero",
+    "role": "Assault",
+    "n": "Eijiro Kirishima"
+  },
+  "momo": {
+    "id": "momo",
+    "g": "Hero",
+    "role": "Support",
+    "n": "Momo Yaoyorozu"
+  },
+  "fumikage": {
+    "id": "fumikage",
+    "g": "Hero",
+    "role": "Assault",
+    "n": "Fumikage Tokoyami"
+  },
+  "denki": {
+    "id": "denki",
+    "g": "Hero",
+    "role": "Strike",
+    "n": "Denki Kaminari"
+  },
+  "neito": {
+    "id": "neito",
+    "g": "Hero",
+    "role": "Technical",
+    "n": "Neito Monoma"
+  },
+  "kendo": {
+    "id": "kendo",
+    "g": "Hero",
+    "role": "Assault",
+    "n": "Itsuka Kendo"
+  },
+  "ibara": {
+    "id": "ibara",
+    "g": "Hero",
+    "role": "Support",
+    "n": "Ibara Shiozaki"
+  },
+  "mirio": {
+    "id": "mirio",
+    "g": "Hero",
+    "role": "Rapid",
+    "n": "Mirio Togata"
+  },
+  "tamaki": {
+    "id": "tamaki",
+    "g": "Hero",
+    "role": "Strike",
+    "n": "Tamaki Amajiki"
+  },
+  "nejire": {
+    "id": "nejire",
+    "g": "Hero",
+    "role": "Technical",
+    "n": "Nejire Hado"
+  },
+  "hitoshi": {
+    "id": "hitoshi",
+    "g": "Hero",
+    "role": "Strike",
+    "n": "Hitoshi Shinso"
+  },
+  "allmight": {
+    "id": "allmight",
+    "g": "Hero",
+    "role": "Assault",
+    "n": "All Might"
+  },
+  "armored": {
+    "id": "armored",
+    "g": "Hero",
+    "role": "Technical",
+    "n": "Armored All Might"
+  },
+  "aizawa": {
+    "id": "aizawa",
+    "g": "Hero",
+    "role": "Technical",
+    "n": "Shota Aizawa"
+  },
+  "mic": {
+    "id": "mic",
+    "g": "Hero",
+    "role": "Strike",
+    "n": "Present Mic"
+  },
+  "cement": {
+    "id": "cement",
+    "g": "Hero",
+    "role": "Support",
+    "n": "Cementoss"
+  },
+  "endeavor": {
+    "id": "endeavor",
+    "g": "Hero",
+    "role": "Strike",
+    "n": "Endeavor"
+  },
+  "hawks": {
+    "id": "hawks",
+    "g": "Hero",
+    "role": "Rapid",
+    "n": "Hawks"
+  },
+  "mirko": {
+    "id": "mirko",
+    "g": "Hero",
+    "role": "Rapid",
+    "n": "Mirko"
+  },
+  "star": {
+    "id": "star",
+    "g": "Hero",
+    "role": "Strike",
+    "n": "Star and Stripe"
+  },
+  "mtlady": {
+    "id": "mtlady",
+    "g": "Hero",
+    "role": "Assault",
+    "n": "Mt. Lady"
+  },
+  "tomura": {
+    "id": "tomura",
+    "g": "Villain",
+    "role": "Strike",
+    "n": "Tomura Shigaraki"
+  },
+  "afo": {
+    "id": "afo",
+    "g": "Villain",
+    "role": "Technical",
+    "n": "All For One"
+  },
+  "afo_youth": {
+    "id": "afo_youth",
+    "g": "Villain",
+    "role": "Assault",
+    "n": "All For One (Youth)"
+  },
+  "dabi": {
+    "id": "dabi",
+    "g": "Villain",
+    "role": "Technical",
+    "n": "Dabi"
+  },
+  "himiko": {
+    "id": "himiko",
+    "g": "Villain",
+    "role": "Technical",
+    "n": "Himiko Toga"
+  },
+  "twice": {
+    "id": "twice",
+    "g": "Villain",
+    "role": "Rapid",
+    "n": "Twice"
+  },
+  "compress": {
+    "id": "compress",
+    "g": "Villain",
+    "role": "Support",
+    "n": "Mr. Compress"
+  },
+  "kurogiri": {
+    "id": "kurogiri",
+    "g": "Villain",
+    "role": "Support",
+    "n": "Kurogiri"
+  },
+  "nagant": {
+    "id": "nagant",
+    "g": "Villain",
+    "role": "Strike",
+    "n": "Lady Nagant"
+  },
+  "overhaul": {
+    "id": "overhaul",
+    "g": "Villain",
+    "role": "Support",
+    "n": "Overhaul"
+  }
+}

@@ -9,6 +9,7 @@ WorkingDirectory=/home/ec2-user/app
 Environment=DATABASE_URL=postgresql://mhur_user:mhur_pass123@127.0.0.1:5432/mhur_planner?sslmode=disable
 Environment=EMAIL_USER=rumblealtra@gmail.com
 Environment="EMAIL_PASS=djno nuyv mqws dtkc"
+Environment=GROQ_API_KEY=
 ExecStart=/usr/bin/node /home/ec2-user/app/serve.js
 Restart=always
 RestartSec=5

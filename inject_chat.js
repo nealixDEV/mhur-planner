@@ -1,0 +1,11 @@
+var fs=require('fs');
+var html=fs.readFileSync('C:\\Users\\sport\\Documents\\MyHeroUltraTuning\\index.html','utf8');
+var marker='window.damageStyleFor=damageStyleFor;';
+var idx=html.lastIndexOf(marker);
+var scriptClose=html.indexOf('</script>',idx)+9;
+var bodyClose=html.indexOf('</body>',scriptClose);
+var before=html.substring(0,scriptClose);
+var after=html.substring(bodyClose);
+var insert='\n<script src="multi_hit_data.js"></script>\n<script src="melee_data.js"></script>\n<script src="build_coach.js"></script>\n<script src="chat_ai.js"></script>\n';
+fs.writeFileSync('C:\\Users\\sport\\Documents\\MyHeroUltraTuning\\index.html',before+insert+after,'utf8');
+console.log('OK');
