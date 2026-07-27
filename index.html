@@ -716,6 +716,30 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
     <div id="forumContent"><div style="text-align:center;padding:60px 0;color:#64748b;font-size:.9rem;">Loading forum...</div></div>
   </div>
 </div>
+<!-- Floating AI Coach Button -->
+<div id="coachFloatingBtn" style="position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:999;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;background:linear-gradient(180deg,#059669,#047857);border:1px solid rgba(16,185,129,.3);border-radius:12px;padding:10px 8px;box-shadow:0 4px 20px rgba(5,150,105,.3),0 0 40px rgba(5,150,105,.08);transition:all .2s;" onmouseover="this.style.transform='translateY(-50%) scale(1.05)';" onmouseout="this.style.transform='translateY(-50%) scale(1)';" onclick="toggleCoachChat()">
+  <span style="font-size:1.4rem;">&#129302;</span>
+  <span style="font-size:.55rem;font-weight:900;color:#fff;letter-spacing:.5px;writing-mode:vertical-rl;text-orientation:mixed;">AI</span>
+</div>
+<!-- AI Chat Panel -->
+<div id="coachChatPanel" style="position:fixed;right:0;top:0;bottom:0;z-index:99998;width:380px;max-width:100vw;background:linear-gradient(180deg,#131325,#0d0d1a);border-left:1px solid rgba(255,255,255,.06);display:none;flex-direction:column;box-shadow:-8px 0 40px rgba(0,0,0,.5);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.06);">
+    <div><span style="font-size:.9rem;font-weight:900;color:#f5c800;">&#9881; Mei's Workshop</span><div style="font-size:.55rem;color:#64748b;">MHUR Build Optimizer</div></div>
+    <span style="cursor:pointer;color:#64748b;font-size:1.2rem;" onclick="toggleCoachChat()">&times;</span>
+  </div>
+  <div id="coachMessages" style="flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;">
+    <div class="coach-msg bot" style="background:rgba(255,255,255,.04);border-radius:10px;padding:10px 12px;max-width:90%;align-self:flex-start;font-size:.72rem;color:#cbd5e1;line-height:1.5;">
+      Hey! I'm Mei. I love optimizing builds. Let me know what you're working on!<br>
+      <span style="color:#94a3b8;">• "check my build"</span><br>
+      <span style="color:#94a3b8;">• "explain my damage"</span><br>
+      <span style="color:#94a3b8;">• "what's wrong"</span>
+    </div>
+  </div>
+  <div style="padding:10px 12px;border-top:1px solid rgba(255,255,255,.06);display:flex;gap:8px;">
+    <input id="coachInput" type="text" style="flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:8px 10px;font-size:.72rem;color:#e2e8f0;outline:none;" placeholder="Ask the AI coach..." onkeydown="if(event.key==='Enter')sendCoachMsg()">
+    <button onclick="sendCoachMsg()" style="background:linear-gradient(135deg,#059669,#047857);border:none;border-radius:8px;padding:8px 14px;cursor:pointer;font-size:.72rem;font-weight:700;color:#fff;">Send</button>
+  </div>
+</div>
 <script src="normal_tuning_parsed.js"></script>
 <script>
 (function(){
@@ -2726,11 +2750,13 @@ var MHUR_VARIANT = {};
 function initDamageTables(data){
   DAMAGE_TABLES=data||null;
   DAMAGE_TABLES_BY_ID={};
-  if(!data||!data.characters)return;
-  for(var i=0;i<data.characters.length;i++){
-    var ch=data.characters[i];
-    if(ch&&ch.id)DAMAGE_TABLES_BY_ID[ch.id]=ch;
+  if(data&&data.characters){
+    for(var i=0;i<data.characters.length;i++){
+      var ch=data.characters[i];
+      if(ch&&ch.id)DAMAGE_TABLES_BY_ID[ch.id]=ch;
+    }
   }
+  window.DAMAGE_TABLES_BY_ID=DAMAGE_TABLES_BY_ID;
 }
 function loadDamageTablesData(){
   return fetch("damage_tables.json",{cache:"no-store"})
@@ -9828,9 +9854,26 @@ if(adminEl){
     }
   };
 }
+// Export key functions for AI Coach (accessible from external scripts)
+window.gc=gc;window.findNormal=findNormal;window.findSpecial=findSpecial;
+window.buildSlotDefs=buildSlotDefs;window.gcos=gcos;window.getCharacterRole=getCharacterRole;
+window.tuningDesc=tuningDesc;window.CH_NUM=CH_NUM;window.ST=ST;window.CH=CH;
+window.specialColumnMultiplier=specialColumnMultiplier;window.calculateDamageIncrease=calculateDamageIncrease;
+window.getStatBonus=getStatBonus;window.getStatBonusForSkill=getStatBonusForSkill;
+window.normalOptions=normalOptions;window.specialOptions=specialOptions;window.usedTids=usedTids;window.SPECIAL_TUNING=SPECIAL_TUNING;
+window.calculateDamageIncreaseForSkill=calculateDamageIncreaseForSkill;
+window.getAllDamageBonuses=getAllDamageBonuses;
+window.damageStyleFor=damageStyleFor;
+window.getAllReloadBonuses=getAllReloadBonuses;window.getAllDefenseBonuses=getAllDefenseBonuses;
+window.specialTuningKind=specialTuningKind;window.fmtSigned=fmtSigned;window.CHAR_STATS=CHAR_STATS;
+window.COSTUME_IMG=COSTUME_IMG;window.RCSS=RCSS;window.RLBL=RLBL;window.RC=RC;
+window.esc=esc;
+window.DAMAGE_TABLES_BY_ID=DAMAGE_TABLES_BY_ID;
 })();
 </script>
 <script src="multi_hit_data.js"></script>
 <script src="melee_data.js"></script>
+<script src="build_coach.js"></script>
+<script src="chat_ai.js"></script>
 </body>
 </html>
