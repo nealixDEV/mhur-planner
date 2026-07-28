@@ -922,7 +922,8 @@ var _adminAuthed=false;
 function showAdminPanel(){
   var existing=document.getElementById('adminModal');
   if(existing)existing.remove();
-  var ov=document.createElement('div');ov.id='adminModal';ov.className='modal-ov';
+  var ov=document.createElement('div');ov.id='adminModal';
+  ov.style.cssText='position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:rgba(1,8,11,.7);backdrop-filter:blur(10px);';
   var box=document.createElement('div');box.className='modal-box';
   box.style.cssText='background:linear-gradient(145deg,rgba(8,25,32,.98),rgba(4,12,18,.99));border:1px solid rgba(72,208,218,.35);border-top:3px solid #f0c63b;border-radius:6px;padding:24px;max-width:380px;width:90%;text-align:center;';
   if(_adminAuthed){
@@ -9069,7 +9070,7 @@ Promise.all([loadNormalTuningData(),loadDamageTablesData()]).then(function(){
   // Announcement v1.7
   if(!localStorage.getItem('mhurAnnounceSeen_v17')){
     (function(){
-      var ov=document.createElement('div');ov.className='modal-ov';
+      var ov=document.createElement('div');ov.style.cssText='position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:rgba(1,8,11,.7);backdrop-filter:blur(10px);';
       var box=document.createElement('div');box.className='modal-box';
       box.innerHTML='<div style="font-size:2rem;margin-bottom:6px;">&#128640;</div><h2>Update v1.7</h2><div class="sub">Premium build cards &amp; major improvements</div><div class="body"><div style="margin-bottom:8px;"><b class="gold">&#127912; Premium Build Card Export</b><br>Share Build generates a game-quality PNG with golden name, role-colored cards, and stat dashboard.</div><div style="margin-bottom:8px;"><b class="gold">&#128279; Short Build IDs</b><br>Builds get short importable codes like #MRYL61 instead of giant URLs.</div><div style="margin-bottom:8px;"><b class="gold">&#128190; Cross-Device Builds</b><br>Builds save to your account. Log in anywhere to access them.</div><div style="margin-bottom:8px;"><b class="gold">&#128272; Browse Without Login</b><br>View forum posts without signing in.</div><div style="margin-bottom:8px;"><b class="gold">&#128241; Mobile Fixes</b><br>Logout &amp; password change now use proper modals.</div><div style="margin-bottom:8px;"><b class="gold">&#128200; Down HP Fix</b><br>Down HP bonuses now boost the correct stat.</div></div><button class="close-btn" id="dismissV17">Got it!</button>';
       ov.appendChild(box);document.body.appendChild(ov);
@@ -9080,7 +9081,7 @@ Promise.all([loadNormalTuningData(),loadDamageTablesData()]).then(function(){
   // Announcement v0.6?
   if(!localStorage.getItem('mhurAnnounceSeen_v05')){
     (function(){
-      var ov=document.createElement('div');ov.className='modal-ov';
+      var ov=document.createElement('div');ov.style.cssText='position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:rgba(1,8,11,.7);backdrop-filter:blur(10px);';
       var box=document.createElement('div');box.className='modal-box';
       box.innerHTML='<div style="font-size:2rem;margin-bottom:6px;">&#127881;</div><h2 class="gold-grad" style="font-size:1.1rem;margin-bottom:4px;">Update v0.5</h2><div style="color:#64748b;font-size:.65rem;margin-bottom:10px;">New features and improvements</div><div style="text-align:left;font-size:.72rem;color:#cbd5e1;line-height:1.5;margin-bottom:12px;"><div style="margin-bottom:8px;"><b style="color:#f5c800;">&#127912; Costume Selector</b><br>Visual grid with images, search, favorites & rarity stars.</div><div style="margin-bottom:8px;"><b style="color:#f5c800;">&#127942; Title System</b><br>Unlock titles by posting! Tuning Enthusiast &#8594; Master Tuning Poster &#8594; Pro Tuner.</div><div style="margin-bottom:8px;"><b style="color:#f5c800;">&#128260; Cross-Style Builds</b><br>Builds now save per style &#8212; switch freely without losing progress.</div><div style="margin-bottom:8px;"><b style="color:#f5c800;">&#128203; Multi-Hit Database</b><br>Dozens of characters updated with accurate per-hit damage data.</div><div style="margin-bottom:8px;"><b style="color:#f5c800;">&#128200; Revised Calculators</b><br>Defense & Reload calculators fixed. Stat/Damage summary improved.</div><div style="margin-bottom:8px;"><b style="color:#f5c800;">&#127987;&#65039; H/V Slot Labels</b><br>See Hero/Villain restrictions at a glance on tuning slots.</div><div style="margin-bottom:8px;"><b style="color:#f5c800;">&#128241; Mobile Layout</b><br>Site now scales to fit phone and tablet screens.</div><div style="margin-bottom:8px;"><b style="color:#f5c800;">&#127912; UI Polish</b><br>Dropdown fixes, font improvements, tuning totals view, and more.</div></div><button class="forum-btn" id="dismissAnnounce" style="font-size:.78rem;padding:7px 20px;">&#127881; Got it!</button>';
       ov.appendChild(box);document.body.appendChild(ov);
@@ -9090,7 +9091,7 @@ Promise.all([loadNormalTuningData(),loadDamageTablesData()]).then(function(){
   // First-time disclaimer
   if(!localStorage.getItem('mhurDisclaimerDone')){
     (function(){
-      var ov=document.createElement('div');ov.className='modal-ov';
+      var ov=document.createElement('div');ov.style.cssText='position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:rgba(1,8,11,.7);backdrop-filter:blur(10px);';
       var box=document.createElement('div');box.className='modal-box';
       box.innerHTML='<div style="font-size:2rem;margin-bottom:8px;">&#128220;</div><h2 class="gold-grad" style="font-size:1.3rem;margin-bottom:12px;">MHUR T.U.N.I.N.G. Planner</h2><div style="color:#94a3b8;font-size:.75rem;line-height:1.5;text-align:left;margin-bottom:16px;"><p style="margin-bottom:10px;"><b style="color:#e2e8f0;">Data Source:</b> All game data is obtained from the <a href="https://ultrarumble.com" target="_blank" rel="noopener" style="color:#60a5fa;">Official My Hero Ultra Rumble Database</a>. All information should be credited to them.</p><p style="margin-bottom:10px;"><b style="color:#e2e8f0;">Calculations:</b> All calculations are done to be as close to 1:1 with how they work in the actual game. Some information may be slightly off, but it should be almost as accurate.</p><p style="margin-bottom:10px;"><b style="color:#e2e8f0;">Purpose:</b> This site is for planning future tunings and sharing already made tunings with the community. It is <b style="color:#ef4444;">not</b> a social hangout platform.</p></div><button class="forum-btn" id="dismissDisclaimer" style="font-size:.8rem;padding:8px 24px;">I Understand</button>';
       ov.appendChild(box);document.body.appendChild(ov);
@@ -9801,7 +9802,8 @@ function initForum(){
           var curTitle=window._userTitleCache&&window._userTitleCache[author]||'';
           var curColor=window._userTitleColorCache&&window._userTitleColorCache[author]||'#f5c800';
           var colors=[{c:'#f5c800',n:'Gold'},{c:'#ef4444',n:'Red'},{c:'#38bdf8',n:'Blue'},{c:'#4ade80',n:'Green'},{c:'#a855f7',n:'Purple'},{c:'#f97316',n:'Orange'},{c:'#ec4899',n:'Pink'},{c:'#ffffff',n:'White'}];
-          var ov=document.createElement('div');ov.className='modal-ov';
+          var ov=document.createElement('div');
+          ov.style.cssText='position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:rgba(1,8,11,.7);backdrop-filter:blur(10px);';
           var bx=document.createElement('div');bx.className='modal-box';
           var html='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;"><span style="font-size:.9rem;font-weight:900;color:#f5c800;">&#127942; Titles</span><span style="cursor:pointer;color:#64748b;font-size:1.2rem;" id="titleClose">&times;</span></div>';
           html+='<div style="font-size:.65rem;color:#64748b;margin-bottom:8px;">Posts: '+(r.postCount||0)+' | Likes: '+(r.totalLikes||0)+'</div>';
@@ -9826,7 +9828,7 @@ function initForum(){
           html+='</div>';
           html+='<div style="margin-top:8px;"><button class="tab-btn" id="clearTitle" style="font-size:.6rem;padding:3px 8px;color:#ef4444;border-color:rgba(239,68,68,.2);">Clear Title</button></div>';
           bx.innerHTML=html;
-          document.body.appendChild(ov);document.body.appendChild(bx);
+          document.body.appendChild(ov);ov.appendChild(bx);
           document.getElementById('titleClose').onclick=function(){ov.remove();bx.remove();};
           ov.onclick=function(){ov.remove();bx.remove();};
           function applyTitle(title,color){
