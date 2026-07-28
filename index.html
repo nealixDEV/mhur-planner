@@ -1008,7 +1008,7 @@ function toggleMaintenance(){
 <!-- AI Chat Panel -->
 <div id="coachChatPanel" style="position:fixed;right:0;top:0;bottom:0;z-index:99998;width:380px;max-width:100vw;background:linear-gradient(180deg,#131325,#0d0d1a);border-left:1px solid rgba(255,255,255,.06);display:none;flex-direction:column;box-shadow:-8px 0 40px rgba(0,0,0,.5);">
   <div class="coach-head">
-    <div class="coach-avatar"><img src="/favicon.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.parentNode.textContent='M'" loading="lazy"></div><div class="coach-identity"><span>Mei's Workshop</span><div><i></i> BUILD ENGINEER ONLINE</div></div>
+    <div class="coach-avatar"><img id="meiAvatar" src="/mei.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.parentNode.textContent='M'" loading="lazy"></div><div class="coach-identity"><span>Mei's Workshop</span><div><i></i> BUILD ENGINEER ONLINE</div></div>
     <button class="coach-close" aria-label="Close chat" onclick="toggleCoachChat()">&times;</button>
   </div>
   <div class="coach-context"><span>ACTIVE LOADOUT</span><b id="coachContextChar">Select a hero to begin</b></div>
