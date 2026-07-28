@@ -19,7 +19,7 @@ function addCoachMsg(text,isUser){
   var d=document.createElement('div');
   var thinking=/Thinking\.\.\./i.test(text);
   d.className='coach-msg '+(isUser?'coach-msg--user':'coach-msg--ai')+(thinking?' coach-msg--thinking':'');
-  d.innerHTML='<div class="coach-msg-meta">'+(isUser?'':'<img src="/mei.png" style="width:18px;height:18px;object-fit:cover;border-radius:50%;flex-shrink:0;" onerror="this.style.display=\'none\'" loading="lazy">')+'<span class="coach-msg-badge">'+(isUser?'YOU':'MEI')+'</span><span>'+(thinking?'CALCULATING':'BUILD LAB')+'</span></div><div class="coach-msg-body">'+text+'</div>';
+  d.innerHTML='<div class="coach-msg-meta">'+(isUser?'':'<img src="/mei.png" style="width:24px;height:24px;object-fit:cover;border-radius:50%;flex-shrink:0;" onerror="this.style.display=\'none\'" loading="lazy">')+'<span class="coach-msg-badge">'+(isUser?'YOU':'MEI')+'</span><span>'+(thinking?'CALCULATING':'BUILD LAB')+'</span></div><div class="coach-msg-body">'+text+'</div>';
   m.appendChild(d);m.scrollTop=m.scrollHeight;
 }
 function coachPrompt(prompt){
@@ -36,7 +36,7 @@ function coachThinkDetailed(main,sub){
   var d=document.createElement('div');
   d.className='coach-msg coach-msg--ai coach-msg--thinking';
   d.id='coachThinking';
-  d.innerHTML='<div class="coach-msg-meta"><img src="/mei.png" style="width:18px;height:18px;object-fit:cover;border-radius:50%;flex-shrink:0;" onerror="this.style.display=\'none\'" loading="lazy"><span class="coach-msg-badge">MEI</span><span>CALCULATING</span></div><div class="coach-msg-body">'+main+'<br><span style="color:#8db9be;font-size:.72em;">'+esc(sub)+'</span></div>';
+  d.innerHTML='<div class="coach-msg-meta"><img src="/mei.png" style="width:24px;height:24px;object-fit:cover;border-radius:50%;flex-shrink:0;" onerror="this.style.display=\'none\'" loading="lazy"><span class="coach-msg-badge">MEI</span><span>CALCULATING</span></div><div class="coach-msg-body">'+main+'<br><span style="color:#8db9be;font-size:.72em;">'+esc(sub)+'</span></div>';
   m.appendChild(d);m.scrollTop=m.scrollHeight;
 }
 function coachStop(){
