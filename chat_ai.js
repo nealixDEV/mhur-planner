@@ -5,15 +5,28 @@ var MAX_HISTORY=10; // keep last 5 exchanges (user + bot)
 function toggleCoachChat(){
   var p=document.getElementById('coachChatPanel');
   p.style.display=p.style.display==='none'||!p.style.display?'flex':'none';
-  if(p.style.display==='flex')setTimeout(function(){document.getElementById('coachInput').focus();},100);
+  if(p.style.display==='flex'){
+    var context=document.getElementById('coachContextChar');
+    var character=window.gc&&window.gc();
+    var styleIndex=window.ST?window.ST.styleIdx:0;
+    if(context)context.textContent=character?character.n+' // '+((character.bs&&character.bs[styleIndex])?character.bs[styleIndex].n:'Current build'):'Select a hero to begin';
+    setTimeout(function(){document.getElementById('coachInput').focus();},100);
+  }
 }
 function addCoachMsg(text,isUser){
   var m=document.getElementById('coachMessages');
   if(!text||!text.trim())text='...';
   var d=document.createElement('div');
-  d.style.cssText='background:'+(isUser?'rgba(5,150,105,.12)':'rgba(255,255,255,.04)')+';border-radius:10px;padding:8px 12px;max-width:90%;align-self:'+(isUser?'flex-end':'flex-start')+';font-size:.72rem;color:#cbd5e1;line-height:1.5;'+(isUser?'border:1px solid rgba(5,150,105,.15);':'');
-  d.innerHTML=text;
+  var thinking=/Thinking\.\.\./i.test(text);
+  d.className='coach-msg '+(isUser?'coach-msg--user':'coach-msg--ai')+(thinking?' coach-msg--thinking':'');
+  d.innerHTML='<div class="coach-msg-meta"><span class="coach-msg-badge">'+(isUser?'YOU':'MEI')+'</span><span>'+(thinking?'CALCULATING':'BUILD LAB')+'</span></div><div class="coach-msg-body">'+text+'</div>';
   m.appendChild(d);m.scrollTop=m.scrollHeight;
+}
+function coachPrompt(prompt){
+  var input=document.getElementById('coachInput');
+  if(!input)return;
+  input.value=prompt;
+  sendCoachMsg();
 }
 function coachThink(){addCoachMsg('<span style="color:#64748b;">Thinking...</span>',false);}
 // Show a "thinking" message with detailed sub-text
@@ -21,9 +34,9 @@ function coachThinkDetailed(main,sub){
   var m=document.getElementById('coachMessages');
   coachStop();
   var d=document.createElement('div');
-  d.style.cssText='background:rgba(255,255,255,.04);border-radius:10px;padding:8px 12px;max-width:90%;align-self:flex-start;font-size:.72rem;color:#cbd5e1;line-height:1.5;';
+  d.className='coach-msg coach-msg--ai coach-msg--thinking';
   d.id='coachThinking';
-  d.innerHTML=main+'<br><span style="color:#64748b;font-size:.6rem;">'+esc(sub)+'</span>';
+  d.innerHTML='<div class="coach-msg-meta"><span class="coach-msg-badge">MEI</span><span>CALCULATING</span></div><div class="coach-msg-body">'+main+'<br><span style="color:#8db9be;font-size:.72em;">'+esc(sub)+'</span></div>';
   m.appendChild(d);m.scrollTop=m.scrollHeight;
 }
 function coachStop(){
