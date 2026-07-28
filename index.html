@@ -333,7 +333,7 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
 .tab-content{animation:fadeIn .3s ease-out;grid-column:1/-1;overflow:visible;}
 .forum-hero{background:linear-gradient(135deg,rgba(245,200,0,.06),rgba(168,85,247,.06));border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:18px 22px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;box-shadow:0 4px 20px rgba(0,0,0,.1);position:relative;overflow:hidden;}
 .forum-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(245,200,0,.03),transparent);transform:translateX(-100%);animation:shimmer 4s ease-in-out infinite;}
-.forum-post{background:linear-gradient(145deg,rgba(30,35,50,.7),rgba(20,25,40,.8));border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:12px 14px;margin-bottom:8px;cursor:pointer;transition:border-color .2s;box-shadow:0 2px 8px rgba(0,0,0,.08);content-visibility:auto;contain-intrinsic-size:80px;will-change:transform;}
+.forum-post{background:linear-gradient(145deg,rgba(30,35,50,.7),rgba(20,25,40,.8));border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:12px 14px;margin-bottom:8px;cursor:pointer;transition:border-color .2s;box-shadow:0 2px 8px rgba(0,0,0,.08);content-visibility:auto;contain-intrinsic-size:80px;touch-action:pan-y;}
 .forum-post:hover{border-color:rgba(245,200,0,.2);}
 .forum-post:hover{background:rgba(255,255,255,.06);border-color:rgba(245,200,0,.12);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.15),0 0 20px rgba(245,200,0,.04);}
 .forum-post .post-author{display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
@@ -467,6 +467,7 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
   .statrow{font-size:.55rem;}
   .statv{font-size:.6rem;}
   .sglbl{font-size:.5rem;}
+  input,textarea,select{font-size:16px!important;}
 }
 /* --- Ultra Rumble presentation skin: visual-only overrides --- */
 :root{--ui-ink:#050a0e;--ui-panel:#07141b;--ui-panel-2:#0a2029;--ui-line:rgba(61,221,232,.25);--ui-cyan:#22d9e6;--ui-gold:#ffc400;--ui-text:#eaf8f9;--ui-muted:#7fa8ae;}
