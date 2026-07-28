@@ -685,7 +685,23 @@ body::after{animation:atmosphereDrift 34s ease-in-out infinite!important;will-ch
   .dc-dmg-note{font-size:.65rem;}
   .dc-dmg-arrow{font-size:1rem;padding:0 4px;}
   .dc-melee-grid{grid-template-columns:repeat(2,1fr);gap:6px;}
-}</style>
+}/* === Unified modal overlay === */
+.modal-ov{position:fixed;inset:0;z-index:100000;background:rgba(1,8,11,.7);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;}
+.modal-box{background:linear-gradient(145deg,rgba(8,25,32,.98),rgba(4,12,18,.99));border:1px solid rgba(72,208,218,.35);border-top:3px solid #f0c63b;border-radius:6px;padding:24px;max-width:480px;width:90%;max-height:80vh;overflow-y:auto;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.65),inset 0 1px rgba(255,255,255,.08);animation:modalIn .2s ease-out both;}
+.modal-box h2{font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#f3d066;margin-bottom:4px;}
+.modal-box .sub{font-size:.65rem;color:#7fa8ae;margin-bottom:10px;}
+.modal-box .body{text-align:left;font-size:.72rem;color:#c9d1d9;line-height:1.55;margin-bottom:14px;}
+.modal-box .body b{color:#e2e8f0;}
+.modal-box .body b.gold{color:#f5c800;}
+.modal-box .body b.red{color:#ef4444;}
+.modal-box .body a{color:#60a5fa;}
+.modal-box .body p{margin-bottom:10px;}
+.modal-box .close-btn{background:linear-gradient(180deg,#ffe064,#e4aa09);color:#1d1b0d;border:none;border-radius:4px;padding:8px 24px;font-family:'Rajdhani',sans-serif;font-size:.8rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;box-shadow:inset 0 -2px rgba(0,0,0,.2),0 3px 0 rgba(0,0,0,.42);transition:all .14s;}
+.modal-box .close-btn:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,0,0,.35);}
+.modal-box .close-btn:active{transform:translateY(1px);box-shadow:none;}
+.modal-box input{background:#02090d;border:1px solid rgba(82,194,203,.38);border-radius:4px;color:#edfafa;padding:8px 12px;font-size:.85rem;width:100%;margin-bottom:10px;}
+.modal-box input:focus{outline:none;border-color:#4fe0e9;box-shadow:0 0 0 2px rgba(79,224,233,.12);}
+.modal-box .err{color:#ef4444;font-size:.65rem;margin-bottom:8px;display:none;}</style>
 </head>
 <body>
 <div style="text-align:center;padding:6px 0 4px;border-bottom:1px solid rgba(255,255,255,.05);margin-bottom:6px;">
@@ -906,9 +922,9 @@ var _adminAuthed=false;
 function showAdminPanel(){
   var existing=document.getElementById('adminModal');
   if(existing)existing.remove();
-  var ov=document.createElement('div');ov.id='adminModal';ov.className='app-modal-overlay';
+  var ov=document.createElement('div');ov.id='adminModal';ov.className='modal-ov';
   ov.style.cssText='position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;';
-  var box=document.createElement('div');box.className='app-modal';
+  var box=document.createElement('div');box.className='modal-box';
   box.style.cssText='background:#1e293b;border:1px solid #334155;border-radius:12px;padding:24px;width:300px;text-align:center;';
   if(_adminAuthed){
     box.innerHTML='<div style="font-size:1.1rem;font-weight:900;color:#f5c800;margin-bottom:12px;">Admin Panel</div><button onclick="toggleMaintenance()" style="padding:10px 20px;border-radius:8px;border:none;background:#f5c800;color:#0f172a;font-weight:700;font-size:.85rem;cursor:pointer;width:100%;">Toggle Maintenance Mode</button><br><br><button onclick="this.closest(\'#adminModal\').remove()" style="padding:6px 14px;border-radius:6px;border:1px solid #334155;background:transparent;color:#94a3b8;cursor:pointer;font-size:.75rem;">Close</button>';
@@ -9054,9 +9070,9 @@ Promise.all([loadNormalTuningData(),loadDamageTablesData()]).then(function(){
   // Announcement v1.7
   if(!localStorage.getItem('mhurAnnounceSeen_v17')){
     (function(){
-      var ov=document.createElement('div');ov.style.cssText='position:fixed;inset:0;z-index:100003;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;';
-      var box=document.createElement('div');box.style.cssText='background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:24px;max-width:480px;width:90%;max-height:80vh;overflow-y:auto;text-align:center;';
-      box.innerHTML='<div style="font-size:2rem;margin-bottom:6px;">&#128640;</div><h2 class="gold-grad" style="font-size:1.1rem;margin-bottom:4px;">Update v1.7</h2><div style="color:#64748b;font-size:.65rem;margin-bottom:10px;">Premium build cards &amp; major improvements</div><div style="text-align:left;font-size:.72rem;color:#cbd5e1;line-height:1.5;margin-bottom:12px;"><div style="margin-bottom:8px;"><b style="color:#f5c800;">&#127912; Premium Build Card Export</b><br>Share Build generates a game-quality PNG with golden name, role-colored cards, and stat dashboard.</div><div style="margin-bottom:8px;"><b style="color:#f5c800;">&#128279; Short Build IDs</b><br>Builds get short importable codes like #MRYL61 instead of giant URLs.</div><div style="margin-bottom:8px;"><b style="color:#f5c800;">&#128190; Cross-Device Builds</b><br>Builds save to your account. Log in anywhere to access them.</div><div style="margin-bottom:8px;"><b style="color:#f5c800;">&#128272; Browse Without Login</b><br>View forum posts without signing in.</div><div style="margin-bottom:8px;"><b style="color:#f5c800;">&#128241; Mobile Fixes</b><br>Logout &amp; password change now use proper modals.</div><div style="margin-bottom:8px;"><b style="color:#f5c800;">&#128200; Down HP Fix</b><br>Down HP bonuses now boost the correct stat.</div></div><button class="forum-btn" id="dismissV17" style="font-size:.78rem;padding:7px 20px;">Got it!</button>';
+      var ov=document.createElement('div');ov.className='modal-ov';
+      var box=document.createElement('div');box.className='modal-box';
+      box.innerHTML='<div style="font-size:2rem;margin-bottom:6px;">&#128640;</div><h2>Update v1.7</h2><div class="sub">Premium build cards &amp; major improvements</div><div class="body"><div style="margin-bottom:8px;"><b class="gold">&#127912; Premium Build Card Export</b><br>Share Build generates a game-quality PNG with golden name, role-colored cards, and stat dashboard.</div><div style="margin-bottom:8px;"><b class="gold">&#128279; Short Build IDs</b><br>Builds get short importable codes like #MRYL61 instead of giant URLs.</div><div style="margin-bottom:8px;"><b class="gold">&#128190; Cross-Device Builds</b><br>Builds save to your account. Log in anywhere to access them.</div><div style="margin-bottom:8px;"><b class="gold">&#128272; Browse Without Login</b><br>View forum posts without signing in.</div><div style="margin-bottom:8px;"><b class="gold">&#128241; Mobile Fixes</b><br>Logout &amp; password change now use proper modals.</div><div style="margin-bottom:8px;"><b class="gold">&#128200; Down HP Fix</b><br>Down HP bonuses now boost the correct stat.</div></div><button class="close-btn" id="dismissV17">Got it!</button>';
       ov.appendChild(box);document.body.appendChild(ov);
       document.getElementById('dismissV17').onclick=function(){ov.remove();localStorage.setItem('mhurAnnounceSeen_v17','1');};
     })();
@@ -9065,8 +9081,8 @@ Promise.all([loadNormalTuningData(),loadDamageTablesData()]).then(function(){
   // Announcement v0.6?
   if(!localStorage.getItem('mhurAnnounceSeen_v05')){
     (function(){
-      var ov=document.createElement('div');ov.style.cssText='position:fixed;inset:0;z-index:100001;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;';
-      var box=document.createElement('div');box.style.cssText='background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:24px;max-width:480px;width:90%;max-height:80vh;overflow-y:auto;text-align:center;';
+      var ov=document.createElement('div');ov.className='modal-ov';
+      var box=document.createElement('div');box.className='modal-box';
       box.innerHTML='<div style="font-size:2rem;margin-bottom:6px;">&#127881;</div><h2 class="gold-grad" style="font-size:1.1rem;margin-bottom:4px;">Update v0.5</h2><div style="color:#64748b;font-size:.65rem;margin-bottom:10px;">New features and improvements</div><div style="text-align:left;font-size:.72rem;color:#cbd5e1;line-height:1.5;margin-bottom:12px;"><div style="margin-bottom:8px;"><b style="color:#f5c800;">&#127912; Costume Selector</b><br>Visual grid with images, search, favorites & rarity stars.</div><div style="margin-bottom:8px;"><b style="color:#f5c800;">&#127942; Title System</b><br>Unlock titles by posting! Tuning Enthusiast &#8594; Master Tuning Poster &#8594; Pro Tuner.</div><div style="margin-bottom:8px;"><b style="color:#f5c800;">&#128260; Cross-Style Builds</b><br>Builds now save per style &#8212; switch freely without losing progress.</div><div style="margin-bottom:8px;"><b style="color:#f5c800;">&#128203; Multi-Hit Database</b><br>Dozens of characters updated with accurate per-hit damage data.</div><div style="margin-bottom:8px;"><b style="color:#f5c800;">&#128200; Revised Calculators</b><br>Defense & Reload calculators fixed. Stat/Damage summary improved.</div><div style="margin-bottom:8px;"><b style="color:#f5c800;">&#127987;&#65039; H/V Slot Labels</b><br>See Hero/Villain restrictions at a glance on tuning slots.</div><div style="margin-bottom:8px;"><b style="color:#f5c800;">&#128241; Mobile Layout</b><br>Site now scales to fit phone and tablet screens.</div><div style="margin-bottom:8px;"><b style="color:#f5c800;">&#127912; UI Polish</b><br>Dropdown fixes, font improvements, tuning totals view, and more.</div></div><button class="forum-btn" id="dismissAnnounce" style="font-size:.78rem;padding:7px 20px;">&#127881; Got it!</button>';
       ov.appendChild(box);document.body.appendChild(ov);
       document.getElementById('dismissAnnounce').onclick=function(){ov.remove();localStorage.setItem('mhurAnnounceSeen_v05','1');};
@@ -9075,8 +9091,8 @@ Promise.all([loadNormalTuningData(),loadDamageTablesData()]).then(function(){
   // First-time disclaimer
   if(!localStorage.getItem('mhurDisclaimerDone')){
     (function(){
-      var ov=document.createElement('div');ov.style.cssText='position:fixed;inset:0;z-index:100000;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;';
-      var box=document.createElement('div');box.style.cssText='background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:30px;max-width:500px;width:90%;max-height:85vh;overflow-y:auto;text-align:center;';
+      var ov=document.createElement('div');ov.className='modal-ov';
+      var box=document.createElement('div');box.className='modal-box';
       box.innerHTML='<div style="font-size:2rem;margin-bottom:8px;">&#128220;</div><h2 class="gold-grad" style="font-size:1.3rem;margin-bottom:12px;">MHUR T.U.N.I.N.G. Planner</h2><div style="color:#94a3b8;font-size:.75rem;line-height:1.5;text-align:left;margin-bottom:16px;"><p style="margin-bottom:10px;"><b style="color:#e2e8f0;">Data Source:</b> All game data is obtained from the <a href="https://ultrarumble.com" target="_blank" rel="noopener" style="color:#60a5fa;">Official My Hero Ultra Rumble Database</a>. All information should be credited to them.</p><p style="margin-bottom:10px;"><b style="color:#e2e8f0;">Calculations:</b> All calculations are done to be as close to 1:1 with how they work in the actual game. Some information may be slightly off, but it should be almost as accurate.</p><p style="margin-bottom:10px;"><b style="color:#e2e8f0;">Purpose:</b> This site is for planning future tunings and sharing already made tunings with the community. It is <b style="color:#ef4444;">not</b> a social hangout platform.</p></div><button class="forum-btn" id="dismissDisclaimer" style="font-size:.8rem;padding:8px 24px;">I Understand</button>';
       ov.appendChild(box);document.body.appendChild(ov);
       document.getElementById('dismissDisclaimer').onclick=function(){ov.remove();localStorage.setItem('mhurDisclaimerDone','1');if(!localStorage.getItem('mhurTutorialDone')){setTimeout(function(){var steps=[
@@ -9114,7 +9130,7 @@ Promise.all([loadNormalTuningData(),loadDamageTablesData()]).then(function(){
         highlightEl.style.width=rect.width+'px';highlightEl.style.height=rect.height+'px';
         document.body.appendChild(highlightEl);
         tutorialEl=document.createElement('div');
-        tutorialEl.style.cssText='position:fixed;z-index:99999;background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(245,200,0,.3);border-radius:12px;padding:16px 20px;max-width:360px;box-shadow:0 10px 40px rgba(0,0,0,.5);font-size:.75rem;color:#e2e8f0;line-height:1.5;';
+        tutorialEl.style.cssText='position:fixed;z-index:99999;background:linear-gradient(145deg,rgba(8,25,32,.98),rgba(4,12,18,.99));border:1px solid rgba(72,208,218,.3);border-top:3px solid #f0c63b;border-radius:6px;padding:16px 20px;max-width:360px;box-shadow:0 10px 40px rgba(0,0,0,.6);font-size:.75rem;color:#c9d1d9;line-height:1.5;';
         var topPos,leftPos;
         if(s.pos==='bottom'){topPos=rect.bottom+12;leftPos=Math.max(10,Math.min(window.innerWidth-380,rect.left+rect.width/2-170));}
         else if(s.pos==='top'){topPos=rect.top-12-200;leftPos=Math.max(10,Math.min(window.innerWidth-380,rect.left+rect.width/2-170));}
@@ -9786,8 +9802,8 @@ function initForum(){
           var curTitle=window._userTitleCache&&window._userTitleCache[author]||'';
           var curColor=window._userTitleColorCache&&window._userTitleColorCache[author]||'#f5c800';
           var colors=[{c:'#f5c800',n:'Gold'},{c:'#ef4444',n:'Red'},{c:'#38bdf8',n:'Blue'},{c:'#4ade80',n:'Green'},{c:'#a855f7',n:'Purple'},{c:'#f97316',n:'Orange'},{c:'#ec4899',n:'Pink'},{c:'#ffffff',n:'White'}];
-          var ov=document.createElement('div');ov.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:99998;';
-          var bx=document.createElement('div');bx.style.cssText='position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:99999;background:linear-gradient(145deg,#1e1e2e,#2a2a3e);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:20px;max-width:350px;width:90%;max-height:70vh;overflow-y:auto;';
+          var ov=document.createElement('div');ov.className='modal-ov';
+          var bx=document.createElement('div');bx.className='modal-box';
           var html='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;"><span style="font-size:.9rem;font-weight:900;color:#f5c800;">&#127942; Titles</span><span style="cursor:pointer;color:#64748b;font-size:1.2rem;" id="titleClose">&times;</span></div>';
           html+='<div style="font-size:.65rem;color:#64748b;margin-bottom:8px;">Posts: '+(r.postCount||0)+' | Likes: '+(r.totalLikes||0)+'</div>';
           html+='<div style="margin-bottom:10px;font-size:.68rem;color:#94a3b8;">Available Titles:</div>';
