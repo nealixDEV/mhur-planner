@@ -127,9 +127,9 @@ var CHAR_ROLE_STYLES={
 // Special tuning priority lists by goal type
 var SPEC_PRIORITY={
   damage:[
-    {n:'fixer',s:55},{n:'revenge strike',s:50},{n:'iron fist',s:45},{n:'embrittlement',s:45},
-    {n:'hip hop',s:40},{n:'hiphop',s:40},{n:'ability manifest',s:35},{n:'twisted fortune',s:30},
-    {n:'plus ultra intensified',s:25},{n:'power intensified',s:25}
+    {n:'fixer',s:55},{n:'revenge strike',s:50},{n:'trance blow',s:48},{n:'embrittlement',s:48},
+    {n:'iron fist',s:45},{n:'hip hop',s:40},{n:'hiphop',s:40},{n:'ability manifest',s:35},
+    {n:'twisted fortune',s:30},{n:'plus ultra intensified',s:25},{n:'power intensified',s:25}
   ],
   defense:[
     {n:'revenge support',s:50},{n:'revenge assault',s:50},{n:'willpower',s:45},{n:'quasi-permeation',s:42},
@@ -1194,8 +1194,16 @@ function answerFromBuild(state,lower){
                   if(!sp.a||!so.class||sp.a.toLowerCase()===so.class.toLowerCase()){
                     for(var pi=0;pi<priorityList.length&&pi<5;pi++){
                       if(sn.indexOf(priorityList[pi].n)>=0){
-                        if(priorityList[pi].s>bestSingle){
-                          bestSingle=priorityList[pi].s;
+                        var sc=priorityList[pi].s;
+                        // Apply melee focus bonus in costume search too
+                        if(g&&g.focus==='melee'){
+                          if(sn.indexOf('embrittlement')>=0||sn.indexOf('trance blow')>=0)sc+=50;
+                          else if(sn.indexOf('iron fist')>=0)sc+=30;
+                          else if(sn.indexOf('perception')>=0)sc+=15;
+                          else if(sn.indexOf('sisterly')>=0)sc+=10;
+                        }
+                        if(sc>bestSingle){
+                          bestSingle=sc;
                           if(pi<2)hasTopSp[si]=true;
                         }
                       }
