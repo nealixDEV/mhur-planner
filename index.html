@@ -1027,6 +1027,7 @@ function toggleMaintenance(){
   </div>
 </div>
 <script src="normal_tuning_parsed.js"></script>
+<script src="advanced_search.js"></script>
 <script>
 (function(){
 "use strict";
@@ -5873,14 +5874,22 @@ function rebuildCosOptions(ch,filter){
     document.addEventListener("click",function(){catList.style.display="none";catArrow.style.transform="";});
     searchWrap.appendChild(catWrap);modal.appendChild(searchWrap);
     var body=document.createElement("div");body.className="cos-modal-body";modal.appendChild(body);
+    // Advanced Search Panel
+    if(typeof advSearchBuild==='function')advSearchBuild(modal,ch,function(){render(searchInput.value);});
     overlay.appendChild(modal);document.body.appendChild(overlay);
     overlay.addEventListener("click",function(e){if(e.target===overlay)overlay.remove();});
     function rc(r){var m={strike:"#ef4444",assault:"#eab308",rapid:"#38bdf8",technical:"#a855f7",support:"#22c55e"};return m[(r||"").toLowerCase()]||"#94a3b8";}
     function slotClass(r){return"cos-slot-"+(r||"").toLowerCase();}
     function render(filterText){
       body.innerHTML="";var ft=(filterText||"").toLowerCase().trim();var cat=catFilter.value;
-      var favItems=[],normalItems=[];
+      var advResults=window.__advSearchResults||null;
+      var itemOrder=[];
+      // Determine item order based on advanced search
+      if(advResults){
+        itemOrder=advResults.map(function(r){return r.idx;});
+      }
       for(var i=0;i<ch.c.length;i++){
+        if(advResults && itemOrder.indexOf(i)===-1)continue;
         var cos=ch.c[i];
         if(ft&&(cos.n||"").toLowerCase().indexOf(ft)===-1)continue;
         if(cat&&cat!=="all types"){
@@ -5890,6 +5899,14 @@ function rebuildCosOptions(ch,filter){
           if(!hasSlot)continue;
         }
         if(favs.indexOf(i)!==-1)favItems.push(i);else normalItems.push(i);
+      }
+      // Sort advanced results by score
+      if(advResults){
+        normalItems.sort(function(a,b){
+          var sa=advResults.find(function(r){return r.idx===a;});
+          var sb=advResults.find(function(r){return r.idx===b;});
+          return (sb?sb.score.score:0)-(sa?sa.score.score:0);
+        });
       }
       function rarityStars(ra){
         if(!ra)return'<span class="star cos-star-grey">&#9733;</span>';
@@ -5910,6 +5927,16 @@ function rebuildCosOptions(ch,filter){
           var idx=items[j];var cos=ch.c[idx];
           var card=document.createElement("div");card.className="cos-card";
           if(idx===ST.cosIdx)card.classList.add("selected");
+          // Advanced search score badge
+          if(window.__advSearchResults){
+            var ar=window.__advSearchResults.find(function(r){return r.idx===idx;});
+            if(ar&&ar.score&&ar.score.maxScore>0){
+              var badge=document.createElement("div");
+              badge.style.cssText='position:absolute;top:28px;left:4px;z-index:6;padding:1px 4px;border-radius:2px;background:rgba(0,0,0,.7);font-size:.45rem;font-weight:900;color:#f59e0b;';
+              badge.textContent=ar.score.efficiency+'%';
+              card.appendChild(badge);
+            }
+          }
           var num=CH_NUM[ch.id];
           var cosImgList=COSTUME_IMG[num];
           var cosImgUrl=null;

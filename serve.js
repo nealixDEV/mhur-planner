@@ -541,7 +541,7 @@ function handler(req, res) {
       var groqBody = JSON.stringify({
         model: GROQ_MODEL,
         messages: msgs,
-        max_tokens: 200,
+        max_tokens: 300,
         temperature: 0.7
       });
       var groqReq = https.request({
