@@ -635,6 +635,7 @@ body::after{animation:atmosphereDrift 34s ease-in-out infinite!important;will-ch
 /* === Final overrides for slot/roster animations === */
 .cc.sel{animation:selGlow 3s ease-in-out infinite!important;border-color:#f5c800!important;outline:2px solid rgba(245,200,0,.4)!important;box-shadow:0 0 12px rgba(245,200,0,.2),0 0 24px rgba(245,200,0,.1)!important;}
 .slot.filled{animation:slotGlow 3s ease-in-out infinite!important;border-left-width:4px!important;}
+input#coachInput{font-size:16px!important;}
 /* === Restored damage calculator spacing from last commit === */
 .dc-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;flex-wrap:wrap;}
 .dc-title{font-size:.95rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;background:linear-gradient(135deg,#c084fc,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 8px rgba(192,132,252,.3));}
@@ -1021,7 +1022,7 @@ function toggleMaintenance(){
   </div>
   <div class="coach-prompts"><button onclick="coachPrompt('Check my build')">Analyze build</button><button onclick="coachPrompt('Make me a max damage build')">Max damage</button><button onclick="coachPrompt('Explain my damage')">Explain damage</button></div>
   <div class="coach-compose">
-    <input id="coachInput" type="text" placeholder="Message Mei about your build..." onkeydown="if(event.key==='Enter')sendCoachMsg()">
+    <input id="coachInput" type="text" placeholder="Message Mei about your build..." style="font-size:16px!important;" onkeydown="if(event.key==='Enter')sendCoachMsg()">
     <button aria-label="Send message" onclick="sendCoachMsg()"><span>Send</span> &#10148;</button>
   </div>
 </div>
