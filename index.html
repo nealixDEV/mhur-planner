@@ -5668,7 +5668,7 @@ function buildGrid(gid,grp){
     }
     var nm=document.createElement("div");nm.className="cc-name";nm.textContent=ch.n.split(" ")[0];d.appendChild(nm);
     var rl=document.createElement("div");rl.className="cc-role";rl.textContent=dispRole;d.appendChild(rl);
-    var ri=document.createElement("img");ri.src="https://raw.githubusercontent.com/HydrosPlays/ultrarumbleguide/refs/heads/main/images/"+dispRole.toLowerCase()+"big.png";ri.style.cssText="position:absolute;top:2px;right:2px;z-index:4;width:22px;height:22px;object-fit:contain;filter:drop-shadow(0 0 3px rgba(0,0,0,.6));";ri.loading="lazy";ri.onerror=function(){this.style.display="none";};d.appendChild(ri);
+    var ri=document.createElement("img");ri.src="https://raw.githubusercontent.com/HydrosPlays/ultrarumbleguide/refs/heads/main/images/"+dispRole.toLowerCase()+"big.png";ri.style.cssText="position:absolute;top:1px;right:1px;z-index:4;width:19px;height:19px;object-fit:contain;filter:drop-shadow(0 0 3px rgba(0,0,0,.6));";ri.loading="lazy";ri.onerror=function(){this.style.display="none";};d.appendChild(ri);
     grid.appendChild(d);
   }
 }
@@ -5780,7 +5780,7 @@ function updDisplay(ch){
   }
   document.getElementById("cdroledot").style.background=rc;
   var rolelbl=document.getElementById("cdrolelbl");rolelbl.textContent=t+" Type";rolelbl.style.color=rc;
-  var cdri=document.getElementById("cdRoleIcon");if(!cdri){cdri=document.createElement("img");cdri.id="cdRoleIcon";cdri.style.cssText="width:24px;height:24px;object-fit:contain;flex-shrink:0;";document.getElementById("cdroledot").parentNode.insertBefore(cdri,document.getElementById("cdroledot"));}cdri.src="https://raw.githubusercontent.com/HydrosPlays/ultrarumbleguide/refs/heads/main/images/"+t.toLowerCase()+"big.png";cdri.onerror=function(){this.style.display="none";};
+  var cdri=document.getElementById("cdRoleIcon");if(!cdri){cdri=document.createElement("img");cdri.id="cdRoleIcon";cdri.style.cssText="width:24px;height:24px;object-fit:contain;flex-shrink:0;";document.getElementById("cdroledot").parentNode.insertBefore(cdri,document.getElementById("cdroledot"));}document.getElementById("cdroledot").style.display="none";cdri.src="https://raw.githubusercontent.com/HydrosPlays/ultrarumbleguide/refs/heads/main/images/"+t.toLowerCase()+"big.png";cdri.onerror=function(){this.style.display="none";};
   document.getElementById("cdname").textContent=ch.n;
   document.getElementById("cdgrp").textContent=ch.g+" Character";
   
