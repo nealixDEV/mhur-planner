@@ -240,8 +240,10 @@ function scoreTuning(t,goal){
   if(goal.damage<0.3&&(t.name||'').match(/(attack|damage|power|strike)/i))sc-=5;
   return Math.max(1,sc);
 }
-function generateBuild(ch,si,goal,cosIdx){
+function generateBuild(ch,si,goal,cosIdx,reservedTids){
   var cos=window.gcos(ch),CH_NUM=window.CH_NUM,used={};
+  // Merge reserved tids into used so they get excluded during generation
+  if(reservedTids){Object.keys(reservedTids).forEach(function(t){used[t]=true;});}
   // Set costume index if specified
   if(cosIdx!==undefined&&ch.c&&ch.c[cosIdx]){window.ST.cosIdx=cosIdx;cos=ch.c[cosIdx];}
   var build={left:[],right:[],specs:[],charId:ch.id,styleIdx:si,cosIdx:window.ST.cosIdx};
@@ -296,8 +298,16 @@ function generateBuild(ch,si,goal,cosIdx){
       else if(goal.reload>0.4)priorityList=SPEC_PRIORITY.reload;
       else if(goal.gp>0.3)priorityList=SPEC_PRIORITY.support;
       if(priorityList){
+        // Boost melee specials when focus is melee
+        var meleeBonus=(goal.focus==='melee')?30:0;
         for(var pi=0;pi<priorityList.length;pi++){
-          if(sn.indexOf(priorityList[pi].n)>=0){sc+=priorityList[pi].s;break;}
+          if(sn.indexOf(priorityList[pi].n)>=0){
+            var bonus=meleeBonus;
+            // Extra boost for melee-specific specials
+            if(goal.focus==='melee'&&(sn.indexOf('embrittlement')>=0||sn.indexOf('trance blow')>=0))bonus+=20;
+            else if(goal.focus==='melee'&&sn.indexOf('iron fist')>=0)bonus+=10;
+            sc+=priorityList[pi].s+bonus;break;
+          }
         }
       }
       // Mobility/reload specials also get secondary bonuses from goal values
@@ -869,8 +879,12 @@ function generateAndShowBuild(state){
   var analysisMsg='🔍 <b>Scanning '+ch.n+' costumes...</b><br><span style="color:#64748b;font-size:.6rem;">'+reasoning+'<br>Scanned '+totalOpts+' tunings for <b>'+esc(goal.display||goal.desc)+'</b>.</span>';
   addCoachMsg(analysisMsg,false);
   
-  // Generate
-  var build=generateBuild(ch,si,goal,state.cosIdx);
+  // Generate — pass reservedTids from special overrides to prevent duplicates
+  var genReserved={};
+  if(state._specialOverrides){
+    state._specialOverrides.forEach(function(ov){if(ov.tid)genReserved[ov.tid]=true;});
+  }
+  var build=generateBuild(ch,si,goal,state.cosIdx,Object.keys(genReserved).length?genReserved:null);
   // Reapply any special overrides (e.g. Fixer chosen by user)
   if(state._specialOverrides){
     var usedOverrideTids={};
@@ -1223,8 +1237,16 @@ function answerFromBuild(state,lower){
                 if(sp.a&&so.class&&sp.a.toLowerCase()!==so.class.toLowerCase())return;
                 var sn=(so.skillName||so.name||'').toLowerCase();
                 for(var pi=0;pi<priorityList.length;pi++){
-                  if(sn.indexOf(priorityList[pi].n)>=0&&priorityList[pi].s>bestForSlotScore){
-                    bestForSlotScore=priorityList[pi].s;bestForSlot=so;break;
+                  if(sn.indexOf(priorityList[pi].n)>=0){
+                    var sc=priorityList[pi].s;
+                    // Boost melee specials when focus is melee
+                    if(g&&g.focus==='melee'){
+                      if(sn.indexOf('embrittlement')>=0||sn.indexOf('trance blow')>=0)sc+=50;
+                      else if(sn.indexOf('iron fist')>=0)sc+=30;
+                      else if(sn.indexOf('perception')>=0)sc+=15;
+                      else if(sn.indexOf('sisterly')>=0)sc+=10;
+                    }
+                    if(sc>bestForSlotScore){bestForSlotScore=sc;bestForSlot=so;break;}
                   }
                 }
               });
@@ -1235,7 +1257,8 @@ function answerFromBuild(state,lower){
                 }
             });
             var tmpGoal=bs.goal||goalFromText('balanced');
-            var tmpBuild=generateBuild(bs.char,bs.styleIdx,tmpGoal,bestCosIdx);
+            // Pass reservedTids so generateBuild doesn't pick already-reserved specials
+            var tmpBuild=generateBuild(bs.char,bs.styleIdx,tmpGoal,bestCosIdx,usedSpecialTids);
             overrides.forEach(function(ov){
               if(tmpBuild&&tmpBuild.specs&&tmpBuild.specs[ov.idx]){
                 tmpBuild.specs[ov.idx].tid=ov.tid;
@@ -1477,7 +1500,9 @@ function answerFromBuild(state,lower){
           if(overrides.length>0){
             bs._specialOverrides=overrides;
             var tmpGoal=bs.goal||goalFromText('balanced');
-            var tmpBuild=generateBuild(bs.char,bs.styleIdx,tmpGoal,bs.cosIdx);
+            var editReserved={};
+            overrides.forEach(function(ov){editReserved[ov.tid]=true;});
+            var tmpBuild=generateBuild(bs.char,bs.styleIdx,tmpGoal,bs.cosIdx,editReserved);
             overrides.forEach(function(ov){
               if(tmpBuild&&tmpBuild.specs&&tmpBuild.specs[ov.idx]){
                 tmpBuild.specs[ov.idx].tid=ov.tid;
