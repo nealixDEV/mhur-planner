@@ -686,7 +686,7 @@ body::after{animation:atmosphereDrift 34s ease-in-out infinite!important;will-ch
   .dc-dmg-arrow{font-size:1rem;padding:0 4px;}
   .dc-melee-grid{grid-template-columns:repeat(2,1fr);gap:6px;}
 }/* === Unified modal overlay === */
-.modal-ov{position:fixed;inset:0;z-index:100000;background:rgba(1,8,11,.7);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;}
+.modal-ov{position:fixed !important;inset:0 !important;z-index:100000 !important;background:rgba(1,8,11,.7);backdrop-filter:blur(10px);display:flex !important;align-items:center !important;justify-content:center !important;}
 .modal-box{background:linear-gradient(145deg,rgba(8,25,32,.98),rgba(4,12,18,.99));border:1px solid rgba(72,208,218,.35);border-top:3px solid #f0c63b;border-radius:6px;padding:24px;max-width:480px;width:90%;max-height:80vh;overflow-y:auto;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.65),inset 0 1px rgba(255,255,255,.08);animation:modalIn .2s ease-out both;}
 .modal-box h2{font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#f3d066;margin-bottom:4px;}
 .modal-box .sub{font-size:.65rem;color:#7fa8ae;margin-bottom:10px;}
@@ -923,7 +923,7 @@ function showAdminPanel(){
   var existing=document.getElementById('adminModal');
   if(existing)existing.remove();
   var ov=document.createElement('div');ov.id='adminModal';ov.className='modal-ov';
-  ov.style.cssText='position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;';
+  ov.style.cssText='position:fixed !important;inset:0 !important;z-index:99999 !important;display:flex !important;align-items:center !important;justify-content:center !important;';
   var box=document.createElement('div');box.className='modal-box';
   box.style.cssText='background:#1e293b;border:1px solid #334155;border-radius:12px;padding:24px;width:300px;text-align:center;';
   if(_adminAuthed){
@@ -10169,6 +10169,14 @@ window.DAMAGE_TABLES_BY_ID=DAMAGE_TABLES_BY_ID;
     });});
   }).observe(document.body,{childList:true,subtree:true});
 })();
-</script>
+
+// Reset modals for testing (run in console: resetModals())
+function resetModals(){
+  localStorage.removeItem('mhurDisclaimerDone');
+  localStorage.removeItem('mhurAnnounceSeen_v17');
+  localStorage.removeItem('mhurAnnounceSeen_v05');
+  localStorage.removeItem('mhurTutorialDone');
+  console.log('All modals reset. Refresh the page.');
+}</script>
 </body>
 </html>
