@@ -5668,7 +5668,7 @@ function buildGrid(gid,grp){
     }
     var nm=document.createElement("div");nm.className="cc-name";nm.textContent=ch.n.split(" ")[0];d.appendChild(nm);
     var rl=document.createElement("div");rl.className="cc-role";rl.textContent=dispRole;d.appendChild(rl);
-    var ri=document.createElement("img");ri.src="https://raw.githubusercontent.com/HydrosPlays/ultrarumbleguide/refs/heads/main/images/"+dispRole.toLowerCase()+"big.png";ri.style.cssText="position:absolute;top:2px;right:2px;z-index:4;width:16px;height:16px;object-fit:contain;filter:drop-shadow(0 0 3px rgba(0,0,0,.6));";ri.loading="lazy";ri.onerror=function(){this.style.display="none";};d.appendChild(ri);
+    var ri=document.createElement("img");ri.src="https://raw.githubusercontent.com/HydrosPlays/ultrarumbleguide/refs/heads/main/images/"+dispRole.toLowerCase()+"big.png";ri.style.cssText="position:absolute;top:2px;right:2px;z-index:4;width:22px;height:22px;object-fit:contain;filter:drop-shadow(0 0 3px rgba(0,0,0,.6));";ri.loading="lazy";ri.onerror=function(){this.style.display="none";};d.appendChild(ri);
     grid.appendChild(d);
   }
 }
@@ -5780,7 +5780,7 @@ function updDisplay(ch){
   }
   document.getElementById("cdroledot").style.background=rc;
   var rolelbl=document.getElementById("cdrolelbl");rolelbl.textContent=t+" Type";rolelbl.style.color=rc;
-  var cdri=document.getElementById("cdRoleIcon");if(!cdri){cdri=document.createElement("img");cdri.id="cdRoleIcon";cdri.style.cssText="width:18px;height:18px;object-fit:contain;flex-shrink:0;";document.getElementById("cdroledot").parentNode.insertBefore(cdri,document.getElementById("cdroledot"));}cdri.src="https://raw.githubusercontent.com/HydrosPlays/ultrarumbleguide/refs/heads/main/images/"+t.toLowerCase()+"big.png";cdri.onerror=function(){this.style.display="none";};
+  var cdri=document.getElementById("cdRoleIcon");if(!cdri){cdri=document.createElement("img");cdri.id="cdRoleIcon";cdri.style.cssText="width:24px;height:24px;object-fit:contain;flex-shrink:0;";document.getElementById("cdroledot").parentNode.insertBefore(cdri,document.getElementById("cdroledot"));}cdri.src="https://raw.githubusercontent.com/HydrosPlays/ultrarumbleguide/refs/heads/main/images/"+t.toLowerCase()+"big.png";cdri.onerror=function(){this.style.display="none";};
   document.getElementById("cdname").textContent=ch.n;
   document.getElementById("cdgrp").textContent=ch.g+" Character";
   
@@ -6010,7 +6010,7 @@ function buildNormalSide(gridId,side,ch){
     var numRole=document.createElement("div");numRole.className="slot-num-role";
     var sn=document.createElement("span");sn.className="snum";sn.textContent="#"+(i+1);
     var sr=document.createElement("span");sr.className="srole";sr.textContent=roleLabel(role)+(al?" "+(al==="hero"?"H":"V"):"");
-    numRole.appendChild(sn);numRole.appendChild(sr);var ri=document.createElement("img");ri.src="https://raw.githubusercontent.com/HydrosPlays/ultrarumbleguide/refs/heads/main/images/"+role+"big.png";ri.style.cssText="width:14px;height:14px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 0 2px rgba(0,0,0,.4));";ri.loading="lazy";ri.onerror=function(){this.style.display="none";};numRole.appendChild(ri);head.appendChild(numRole);
+    numRole.appendChild(sn);numRole.appendChild(sr);var ri=document.createElement("img");ri.src="https://raw.githubusercontent.com/HydrosPlays/ultrarumbleguide/refs/heads/main/images/"+role+"big.png";ri.style.cssText="width:20px;height:20px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 0 2px rgba(0,0,0,.4));";ri.loading="lazy";ri.onerror=function(){this.style.display="none";};numRole.appendChild(ri);head.appendChild(numRole);
     var chosen=findNormal(s.tid);
     var port=document.createElement("div");port.className="slot-portrait";
     if(chosen&&chosen.chara){
@@ -6067,7 +6067,7 @@ function buildSpecs(ch){
     var numRole=document.createElement("div");numRole.className="slot-num-role";
     var sn=document.createElement("span");sn.className="snum";sn.textContent=(i===0?"Left":"Right");
     var sr=document.createElement("span");sr.className="srole";sr.textContent=specType+(specAlign?" "+(specAlign==="hero"?"H":"V"):"");
-    numRole.appendChild(sn);numRole.appendChild(sr);var ri=document.createElement("img");ri.src="https://raw.githubusercontent.com/HydrosPlays/ultrarumbleguide/refs/heads/main/images/"+role+"big.png";ri.style.cssText="width:14px;height:14px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 0 2px rgba(0,0,0,.4));";ri.loading="lazy";ri.onerror=function(){this.style.display="none";};numRole.appendChild(ri);head.appendChild(numRole);
+    numRole.appendChild(sn);numRole.appendChild(sr);var ri=document.createElement("img");ri.src="https://raw.githubusercontent.com/HydrosPlays/ultrarumbleguide/refs/heads/main/images/"+role+"big.png";ri.style.cssText="width:20px;height:20px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 0 2px rgba(0,0,0,.4));";ri.loading="lazy";ri.onerror=function(){this.style.display="none";};numRole.appendChild(ri);head.appendChild(numRole);
     var chosen=findSpecial(s.tid);
     var mx=maxLv(side,i,true);
     var lv=Math.max(1,Math.min(s.lv||1,mx));
