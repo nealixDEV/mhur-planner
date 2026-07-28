@@ -5873,15 +5873,16 @@ function rebuildCosOptions(ch,filter){
     });
     document.addEventListener("click",function(){catList.style.display="none";catArrow.style.transform="";});
     searchWrap.appendChild(catWrap);modal.appendChild(searchWrap);
-    var body=document.createElement("div");body.className="cos-modal-body";modal.appendChild(body);
     // Advanced Search Panel
     if(typeof advSearchBuild==='function')advSearchBuild(modal,ch,function(){render(searchInput.value);});
+    var body=document.createElement("div");body.className="cos-modal-body";modal.appendChild(body);
     overlay.appendChild(modal);document.body.appendChild(overlay);
     overlay.addEventListener("click",function(e){if(e.target===overlay)overlay.remove();});
     function rc(r){var m={strike:"#ef4444",assault:"#eab308",rapid:"#38bdf8",technical:"#a855f7",support:"#22c55e"};return m[(r||"").toLowerCase()]||"#94a3b8";}
     function slotClass(r){return"cos-slot-"+(r||"").toLowerCase();}
     function render(filterText){
       body.innerHTML="";var ft=(filterText||"").toLowerCase().trim();var cat=catFilter.value;
+      var favItems=[],normalItems=[];
       var advResults=window.__advSearchResults||null;
       var itemOrder=[];
       // Determine item order based on advanced search
