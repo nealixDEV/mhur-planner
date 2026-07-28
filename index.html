@@ -683,7 +683,42 @@ footer{grid-column:1/-1;text-align:center;font-size:.6rem;color:rgba(255,255,255
     <button class="mcn-btn" data-calc="defPanel" onclick="mobileCalcTab(this)"><span class="mcn-icon">&#128737;</span><span>Defense / HP</span></button>
     <button class="mcn-btn" data-calc="miscPanel" onclick="mobileCalcTab(this)"><span class="mcn-icon">&#128694;</span><span>Misc / Movement</span></button>
   </div>
-  <footer>Made by Sirreggix on Discord &mdash; <a href="https://discord.gg/m5NkeHgmzM" target="_blank" style="color:#94a3b8;text-decoration:none;">Join Discord for suggestions/bugs</a></footer>
+  <footer>Made by Sirreggix on Discord &mdash; <a href="https://discord.gg/m5NkeHgmzM" target="_blank" style="color:#94a3b8;text-decoration:none;">Join Discord for suggestions/bugs</a> <span id="adminBtn" style="cursor:pointer;margin-left:8px;font-size:.7rem;color:#334155;" title="Admin" onclick="showAdminPanel()">⚙</span></footer>
+<script>
+var _adminAuthed=false;
+function showAdminPanel(){
+  var existing=document.getElementById('adminModal');
+  if(existing)existing.remove();
+  var ov=document.createElement('div');ov.id='adminModal';
+  ov.style.cssText='position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;';
+  var box=document.createElement('div');
+  box.style.cssText='background:#1e293b;border:1px solid #334155;border-radius:12px;padding:24px;width:300px;text-align:center;';
+  if(_adminAuthed){
+    box.innerHTML='<div style="font-size:1.1rem;font-weight:900;color:#f5c800;margin-bottom:12px;">Admin Panel</div><button onclick="toggleMaintenance()" style="padding:10px 20px;border-radius:8px;border:none;background:#f5c800;color:#0f172a;font-weight:700;font-size:.85rem;cursor:pointer;width:100%;">Toggle Maintenance Mode</button><br><br><button onclick="this.closest(\'#adminModal\').remove()" style="padding:6px 14px;border-radius:6px;border:1px solid #334155;background:transparent;color:#94a3b8;cursor:pointer;font-size:.75rem;">Close</button>';
+  }else{
+    box.innerHTML='<div style="font-size:1.1rem;font-weight:900;color:#f5c800;margin-bottom:12px;">Admin</div><input id="adminPw" type="password" placeholder="Password" style="width:100%;padding:10px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#e2e8f0;font-size:.85rem;box-sizing:border-box;outline:none;margin-bottom:10px;" onkeydown="if(event.key==\'Enter\')document.getElementById(\'adminLoginBtn\').click()"><div id="adminErr" style="color:#ef4444;font-size:.7rem;margin-bottom:8px;display:none;">Wrong password</div><button id="adminLoginBtn" onclick="adminLogin()" style="padding:10px 20px;border-radius:8px;border:none;background:#f5c800;color:#0f172a;font-weight:700;font-size:.85rem;cursor:pointer;width:100%;">Login</button><br><br><button onclick="this.closest(\'#adminModal\').remove()" style="padding:6px 14px;border-radius:6px;border:1px solid #334155;background:transparent;color:#94a3b8;cursor:pointer;font-size:.75rem;">Cancel</button>';
+  }
+  ov.appendChild(box);document.body.appendChild(ov);
+  if(!_adminAuthed)setTimeout(function(){document.getElementById('adminPw').focus();},100);
+}
+function adminLogin(){
+  var p=document.getElementById('adminPw').value;if(!p)return;
+  var x=new XMLHttpRequest();x.open('POST','/api/maintenance-bypass',true);
+  x.setRequestHeader('Content-Type','application/json');
+  x.onload=function(){
+    try{var r=JSON.parse(x.responseText);if(r.ok){_adminAuthed=true;showAdminPanel();}else{document.getElementById('adminErr').style.display='block';}}catch(e){}
+  };
+  x.send(JSON.stringify({password:p}));
+}
+function toggleMaintenance(){
+  var x=new XMLHttpRequest();x.open('POST','/api/maintenance-toggle',true);
+  x.setRequestHeader('Content-Type','application/json');
+  x.onload=function(){
+    try{var r=JSON.parse(x.responseText);document.getElementById('adminModal').remove();alert(r.maintenance?'🔧 Maintenance ON':'✅ Maintenance OFF');}catch(e){}
+  };
+  x.send(JSON.stringify({key:'mhur2024'}));
+}
+</script>
 </div>
 </div>
 <div id="savesPanel" style="display:none;position:fixed;inset:0;z-index:500;align-items:center;justify-content:center;">
@@ -9863,6 +9898,7 @@ window.getStatBonus=getStatBonus;window.getStatBonusForSkill=getStatBonusForSkil
 window.normalOptions=normalOptions;window.specialOptions=specialOptions;window.usedTids=usedTids;window.SPECIAL_TUNING=SPECIAL_TUNING;
 window.calculateDamageIncreaseForSkill=calculateDamageIncreaseForSkill;
 window.getAllDamageBonuses=getAllDamageBonuses;
+window.saveState=saveState;window.renderAll=renderAll;window.loadState=loadState;window.resetBuild=resetBuild;
 window.damageStyleFor=damageStyleFor;
 window.getAllReloadBonuses=getAllReloadBonuses;window.getAllDefenseBonuses=getAllDefenseBonuses;
 window.specialTuningKind=specialTuningKind;window.fmtSigned=fmtSigned;window.CHAR_STATS=CHAR_STATS;

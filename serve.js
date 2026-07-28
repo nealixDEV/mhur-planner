@@ -7,6 +7,13 @@ var forum;
 var GROQ_API_KEY = process.env.GROQ_API_KEY || '';
 var GROQ_MODEL = 'llama-3.1-8b-instant';
 
+// Load MHUR knowledge base for grounded AI responses
+var MHUR_KNOWLEDGE = {};
+try {
+  var kPath = path.join(__dirname, 'mhur_knowledge.json');
+  if(fs.existsSync(kPath)) MHUR_KNOWLEDGE = JSON.parse(fs.readFileSync(kPath, 'utf8'));
+} catch(e){console.log('Knowledge base load error:', e.message);}
+
 const root = __dirname;
 const port = process.env.PORT || 8080;
 
@@ -25,10 +32,25 @@ try {
   }
 } catch(e){console.log('Email not available:',e.message);}
 
-// Maintenance mode
+// Maintenance mode — persisted to file so it survives restarts
+var MAINTENANCE_FILE = path.join(root, '.maintenance.json');
 var MAINTENANCE_MODE = false;
 var MAINTENANCE_PASSWORD = 'mhur2024';
 var MAINTENANCE_COOKIE = 'mhur_bypass';
+
+// Load persisted maintenance state
+try {
+  if(fs.existsSync(MAINTENANCE_FILE)){
+    var mData = JSON.parse(fs.readFileSync(MAINTENANCE_FILE, 'utf8'));
+    MAINTENANCE_MODE = mData.on === true;
+  }
+} catch(e){}
+
+function saveMaintenanceState(){
+  try {
+    fs.writeFileSync(MAINTENANCE_FILE, JSON.stringify({on:MAINTENANCE_MODE, updated:Date.now()}));
+  } catch(e){}
+}
 
 function isMaintenanceBypassed(req){
   if(!MAINTENANCE_MODE)return true;
@@ -114,6 +136,7 @@ function handler(req, res) {
     return body(req, function(data){
       if(data && data.key === MAINTENANCE_PASSWORD){
         MAINTENANCE_MODE = !MAINTENANCE_MODE;
+        saveMaintenanceState();
         json(res,{maintenance:MAINTENANCE_MODE});
       }else{json(res,{error:'Invalid key'},401);}
     });
@@ -508,7 +531,7 @@ function handler(req, res) {
     if(!GROQ_API_KEY) return json(res,{error:'AI not configured'},503);
     return body(req, function(data){
       if(!data||!data.message) return json(res,{error:'No message'},400);
-      var msgs = [{role:'system', content:'You are Mei Hatsume from My Hero Academia. You ONLY talk about the VIDEO GAME "My Hero Ultra Rumble" (MHUR) — a battle royale game on Roblox. NEVER reference the manga, anime, or show plot. Never say "in the show" or reference anime-only concepts. Only talk about MHUR game mechanics: character skills in the game, tuning effects, damage numbers, battle royale strategy, costumes, and game updates. If asked about a character, answer based on their in-game abilities only, never their anime counterpart. Keep responses short and casual (1-2 sentences). Be like a Discord friend who plays MHUR.'}];
+      var msgs = [{role:'system', content:'You are Mei Hatsume, an MHUR (My Hero Ultra Rumble) build engineer and theorycrafter. You experiment with tuning combinations — you do NOT play matches. CRITICAL RULES: 1) NEVER invent game mechanics, damage values, tuning effects, or ability interactions. 2) NEVER claim personal experiences ("I got wins", "I struggled"). 3) ONLY mention tunings, specials, and mechanics listed below. 4) If unsure, say "I don\'t have data on that." 5) When corrected, admit the mistake. 6) When refusing requests, stay in character as Mei. Keep responses short (1-2 sentences). Confirmed tunings: Attack Power+, HP+, GP+, Reload+, Dash Speed+, Run Speed+, Jump HT+, Quirk Skill α/β/γ Attack/Reload/Defense, Melee Attack/Defense, Special Action Reload, PU/PC Reload, Max HP/GP, DOWN HP. Confirmed specials: Fixer, Wall Runner, Space Hop, Willpower, HP Sucker, GP Sucker, Revenge Strike/Assault/Support/Rapid/Technical, Embrittlement, Iron Fist, Hip-Hop Spirit, Kota Finder, Indestructible, Symbol of Peace, Hyper Regeneration, Reinforced Revive, Warp Heal, Foundation of Peace, Quasi-Permeation, Critical Permeation, Bunny Hop, PU Turbo, Acceleration, Spiraling Leap, Quirk Factor Release, Annihilation, Card Duplication, Area Analysis, Battlefield Analysis, Divine Protection, Ability Manifest, Twisted Fortune. Fixer effect: Enhances tunings in same column (does NOT directly boost damage). Revenge effect: Activates after guard break for temporary boost. HP Sucker: Restores your own HP when dealing damage. GP Sucker: Restores your own GP (shield) when dealing damage. Embrittlement: Reduces enemy defense on melee hit. Max tuning level: 4. Max special level: 11.'}];
       // Add conversation history if provided
       if(data.history && Array.isArray(data.history)){
         data.history.forEach(function(h){msgs.push({role:h.role, content:h.content});});

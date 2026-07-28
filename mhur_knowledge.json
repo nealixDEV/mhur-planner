@@ -1,0 +1,93 @@
+{
+  "_note": "MHUR Knowledge Base — vetted facts only. No speculation, no invented mechanics.",
+  "characters": {
+    "izuku": { "name": "Izuku Midoriya", "role": "Assault", "styles": ["Full Bullet (Strike)"] },
+    "izuku_ofa": { "name": "Izuku Midoriya (OFA)", "role": "Rapid", "styles": [] },
+    "katsuki": { "name": "Katsuki Bakugo", "role": "Strike", "styles": ["Machine Gun (Rapid)", "Cluster (Technical)"] },
+    "ochaco": { "name": "Ochaco Uraraka", "role": "Rapid", "styles": ["Zero Satellites (Assault)"] },
+    "tenya": { "name": "Tenya Iida", "role": "Rapid", "styles": [] },
+    "tsuyu": { "name": "Tsuyu Asui", "role": "Rapid", "styles": [] },
+    "shoto": { "name": "Shoto Todoroki", "role": "Strike", "styles": ["Ice Fang Wind Flame (Technical)"] },
+    "eijiro": { "name": "Eijiro Kirishima", "role": "Assault", "styles": ["Red Drive (Strike)"] },
+    "momo": { "name": "Momo Yaoyorozu", "role": "Support", "styles": [] },
+    "fumikage": { "name": "Fumikage Tokoyami", "role": "Assault", "styles": [] },
+    "denki": { "name": "Denki Kaminari", "role": "Strike", "styles": ["Lightning (Technical)"] },
+    "neito": { "name": "Neito Monoma", "role": "Technical", "styles": [] },
+    "kendo": { "name": "Itsuka Kendo", "role": "Assault", "styles": ["Twin Palm Strike (Strike)"] },
+    "ibara": { "name": "Ibara Shiozaki", "role": "Support", "styles": [] },
+    "mirio": { "name": "Mirio Togata", "role": "Rapid", "styles": ["Sheer Counter (Technical)"] },
+    "tamaki": { "name": "Tamaki Amajiki", "role": "Strike", "styles": [] },
+    "nejire": { "name": "Nejire Hado", "role": "Technical", "styles": ["Fairy (Support)"] },
+    "hitoshi": { "name": "Hitoshi Shinso", "role": "Strike", "styles": [] },
+    "allmight": { "name": "All Might", "role": "Assault", "styles": ["Gatling (Rapid)"] },
+    "armored": { "name": "Armored All Might", "role": "Technical", "styles": [] },
+    "aizawa": { "name": "Shota Aizawa", "role": "Technical", "styles": ["Flow Runner (Strike)"] },
+    "mic": { "name": "Present Mic", "role": "Strike", "styles": ["D.J. Board (Technical)"] },
+    "cement": { "name": "Cementoss", "role": "Support", "styles": [] },
+    "endeavor": { "name": "Endeavor", "role": "Strike", "styles": ["Inferno Fist (Assault)"] },
+    "hawks": { "name": "Hawks", "role": "Rapid", "styles": ["Slicing Wind (Strike)"] },
+    "mirko": { "name": "Mirko", "role": "Rapid", "styles": [] },
+    "star": { "name": "Star and Stripe", "role": "Strike", "styles": [] },
+    "mtlady": { "name": "Mt. Lady", "role": "Assault", "styles": [] },
+    "tomura": { "name": "Tomura Shigaraki", "role": "Strike", "styles": ["Catastrophe (Assault)", "Thousand-Hand Break (Technical)"] },
+    "afo": { "name": "All For One", "role": "Technical", "styles": ["Factor Fusion (Strike)"] },
+    "afo_youth": { "name": "All For One (Youth)", "role": "Assault", "styles": [] },
+    "dabi": { "name": "Dabi", "role": "Technical", "styles": ["Crazy Torch (Strike)"] },
+    "himiko": { "name": "Himiko Toga", "role": "Technical", "styles": ["Sting Dance (Rapid)"] },
+    "twice": { "name": "Twice", "role": "Rapid", "styles": [] },
+    "compress": { "name": "Mr. Compress", "role": "Support", "styles": [] },
+    "kurogiri": { "name": "Kurogiri", "role": "Support", "styles": [] },
+    "nagant": { "name": "Lady Nagant", "role": "Strike", "styles": [] },
+    "overhaul": { "name": "Overhaul", "role": "Support", "styles": ["Blighted Precipice (Assault)"] }
+  },
+  "tuning_types": {
+    "damage": ["Attack Power+", "HP Attack Power+", "GP Attack Power+", "Melee Attack Power+", "Quirk Skill α Attack Power+", "Quirk Skill β Attack Power+", "Quirk Skill γ Attack Power+"],
+    "defense": ["HP Defense+", "GP Defense+", "Melee Defense+", "Quirk Skill α Defense+", "Quirk Skill β Defense+", "Quirk Skill γ Defense+", "Max HP+", "Max GP+", "Max DOWN HP+"],
+    "reload": ["Reload Speed+", "Quirk Skill α Reload+", "Quirk Skill β Reload+", "Quirk Skill γ Reload+", "Special Action Reload+", "PU/PC Reload+", "Quick Reload"],
+    "mobility": ["Dash Speed+", "Run Speed+", "Wall Jump HT+", "Vertical Jump HT+", "Forward Jump HT+", "Wall Shuffle Speed+", "Downed Crawl Speed+", "Movement Speed+"]
+  },
+  "special_tunings": {
+    "damage": {
+      "s_tier": ["Fixer", "Revenge Strike", "Iron Fist", "Embrittlement", "Hip-Hop Spirit"],
+      "a_tier": ["Ability Manifest", "Twisted Fortune", "Plus Ultra Intensified", "Power Intensified"]
+    },
+    "defense": {
+      "s_tier": ["Revenge Support", "Revenge Assault", "Willpower", "Quasi-Permeation", "Critical Permeation"],
+      "a_tier": ["HP Sucker", "GP Sucker", "Reinforced Revive", "Hyper Regeneration", "High-Speed Replenishment"]
+    },
+    "mobility": {
+      "s_tier": ["Space Hop", "Wall Runner"],
+      "a_tier": ["Revenge Rapid", "Bunny Hop", "PU Turbo", "Acceleration", "Spiraling Leap"]
+    },
+    "reload": {
+      "s_tier": ["Revenge Technical", "Quirk Factor Release"],
+      "a_tier": ["Special Attack Reload Boost", "Quick Reload", "PU/PC Reload", "High-Speed Replenishment"]
+    },
+    "support": {
+      "s_tier": ["Reinforced Revive", "Warp Heal", "Foundation of Peace"],
+      "a_tier": ["Card Duplication", "Annihilation", "Area Analysis", "Battlefield Analysis", "Divine Protection", "Kota Finder"]
+    }
+  },
+  "mechanics": {
+    "fixer": "Fixer enhances the effects of tunings in the same column (left or right). It does NOT directly boost damage — it multiplies the effects of equipped tunings in its column.",
+    "revenge": "Revenge-type specials activate after your guard breaks. They provide temporary boosts to damage, defense, speed, or reload depending on the variant.",
+    "hp_sucker": "HP Sucker restores your own HP when dealing damage. It does NOT drain enemy HP.",
+    "gp_sucker": "GP Sucker restores your own GP (shield) when dealing damage. It does NOT drain enemy GP.",
+    "embrittlement": "Embrittlement reduces the defense of enemies hit by your melee attacks, increasing damage they take.",
+    "wall_runner": "Wall Runner allows you to run on walls for a duration after the battle starts.",
+    "space_hop": "Space Hop enhances your vertical jumps for a duration after the battle starts.",
+    "max_tuning_level": 4,
+    "max_special_level": 11,
+    "slot_roles": ["Strike", "Assault", "Rapid", "Technical", "Support"],
+    "slot_alignments": ["hero", "villain"],
+    "costume_rarities": ["R", "SR", "UR", "PUR"]
+  },
+  "tips": [
+    "Fixer is one of the strongest specials because it multiplies column effects.",
+    "Revenge Support + Revenge Assault together provide strong survivability after guard break.",
+    "Wall Runner and Space Hop are the best mobility specials.",
+    "Level 4 is the max for normal tunings, level 11 for specials.",
+    "Costume slot roles determine which tunings can be equipped.",
+    "Special tunings have a role and alignment that must match the costume's special slot."
+  ]
+}
