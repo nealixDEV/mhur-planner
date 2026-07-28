@@ -48,11 +48,11 @@
   },
   "special_tunings": {
     "damage": {
-      "s_tier": ["Fixer", "Revenge Strike", "Iron Fist", "Embrittlement", "Hip-Hop Spirit"],
+      "s_tier": ["Fixer", "Revenge Strike", "Iron Fist", "Embrittlement", "Hip-Hop Spirit", "Trance Blow"],
       "a_tier": ["Ability Manifest", "Twisted Fortune", "Plus Ultra Intensified", "Power Intensified"]
     },
     "defense": {
-      "s_tier": ["Revenge Support", "Revenge Assault", "Willpower", "Quasi-Permeation", "Critical Permeation"],
+      "s_tier": ["Revenge Support", "Revenge Assault", "Willpower", "Quasi-Permeation", "Critical Permeation", "Sisterly Disposition"],
       "a_tier": ["HP Sucker", "GP Sucker", "Reinforced Revive", "Hyper Regeneration", "High-Speed Replenishment"]
     },
     "mobility": {
@@ -64,8 +64,8 @@
       "a_tier": ["Special Attack Reload Boost", "Quick Reload", "PU/PC Reload", "High-Speed Replenishment"]
     },
     "support": {
-      "s_tier": ["Reinforced Revive", "Warp Heal", "Foundation of Peace"],
-      "a_tier": ["Card Duplication", "Annihilation", "Area Analysis", "Battlefield Analysis", "Divine Protection", "Kota Finder"]
+      "s_tier": ["Reinforced Revive", "Warp Heal", "Foundation of Peace", "Perception"],
+      "a_tier": ["Card Duplication", "Annihilation", "Area Analysis", "Battlefield Analysis", "Divine Protection", "Kota Finder", "Sisterly Disposition"]
     }
   },
   "mechanics": {

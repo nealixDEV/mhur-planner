@@ -873,11 +873,15 @@ function generateAndShowBuild(state){
   var build=generateBuild(ch,si,goal,state.cosIdx);
   // Reapply any special overrides (e.g. Fixer chosen by user)
   if(state._specialOverrides){
+    var usedOverrideTids={};
     state._specialOverrides.forEach(function(ov){
       if(build&&build.specs&&build.specs[ov.idx]){
+        // Skip if this tid is already applied to another slot (dedup)
+        if(usedOverrideTids[ov.tid])return;
         build.specs[ov.idx].tid=ov.tid;
         build.specs[ov.idx].name=ov.name;
         build.specs[ov.idx].lv=SPECIAL_MAX_LV;
+        usedOverrideTids[ov.tid]=true;
       }
     });
   }
@@ -1214,7 +1218,7 @@ function answerFromBuild(state,lower){
               if(!sp||!sp.r)return;
               var bestForSlot=null,bestForSlotScore=0;
               allSt.forEach(function(so){
-                if(usedSpecialTids[so.id])return;
+                if(usedSpecialTids[so.id]){console.log('DEDUP SKIP:',so.skillName,so.id);return;}
                 if(so.role!==sp.r)return;
                 if(sp.a&&so.class&&sp.a.toLowerCase()!==so.class.toLowerCase())return;
                 var sn=(so.skillName||so.name||'').toLowerCase();
@@ -1225,6 +1229,7 @@ function answerFromBuild(state,lower){
                 }
               });
               if(bestForSlot&&bestForSlot.id){
+                  console.log('OVERRIDE SLOT',si,':',bestForSlot.skillName,bestForSlot.id,'score:',bestForSlotScore);
                   usedSpecialTids[bestForSlot.id]=true;
                   overrides.push({idx:si,tid:bestForSlot.id,name:bestForSlot.skillName||bestForSlot.name||'Special'});
                 }
