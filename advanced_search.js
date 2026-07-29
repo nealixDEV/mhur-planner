@@ -233,13 +233,47 @@
 
     // Apply
     applyBtn.onclick=function(){
-      // Simple test: just reverse the costume order
+      var filters={
+        leftSpec:leftRow.sel.value,
+        rightSpec:rightRow.sel.value,
+        lrPos:!posChk.checked,
+        tunings:[]
+      };
+      for(var ti=0;ti<tuningFilters.length;ti++){
+        var tf=tuningFilters[ti];
+        var name=tf.sel.value;
+        var min=parseInt(tf.min.value)||0;
+        if(name){filters.tunings.push({name:name,min:min});}
+      }
       var scored=[];
       for(var ci=0;ci<ch.c.length;ci++){
-        scored.push({idx:ci,cos:ch.c[ci],score:{score:0,maxScore:0,efficiency:0},pass:true});
+        var cos=ch.c[ci];
+        var s={score:0,maxScore:0,efficiency:0,leftScore:0,rightScore:0,tuningCounts:{}};
+        try{s=scoreCostume(cos,ch,filters);}catch(e){}
+        var pass=true;
+        if(filters.leftSpec && s.leftScore===0)pass=false;
+        if(filters.rightSpec && s.rightScore===0)pass=false;
+        if(filters.tunings && filters.tunings.length){
+          for(var tti=0;tti<filters.tunings.length;tti++){
+            var ft=filters.tunings[tti];
+            if(!ft.name)continue;
+            if(s.tuningCounts && s.tuningCounts[ft.name] < ft.min){pass=false;break;}
+          }
+        }
+        scored.push({idx:ci,cos:cos,score:s,pass:pass});
       }
-      scored.reverse();
+      scored.sort(function(a,b){return b.score.score-a.score.score;});
       window.__advSearchResults=scored;
+      // Debug label
+      var lbl=document.getElementById('advStatus');
+      if(!lbl){
+        lbl=document.createElement('div');lbl.id='advStatus';
+        lbl.style.cssText='padding:3px 6px;font-size:.5rem;color:#f59e0b;background:rgba(245,158,11,.08);border-radius:2px;text-align:center;';
+        var be=document.querySelector('.cos-modal-body');
+        if(be)be.insertBefore(lbl,be.firstChild);
+      }
+      var count=scored.filter(function(r){return r.pass;}).length;
+      lbl.textContent='Pass: '+count+'/'+scored.length;
       baseRender();
     };
     resetBtn.onclick=function(){
