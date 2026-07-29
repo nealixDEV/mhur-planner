@@ -47,35 +47,35 @@
     return false;
   }
 
-  // Count normal tuning slots matching a specific effect name
-  // Handles dual-effect tunings by checking all sub-effects
+  // Count how many slots CAN equip a given tuning effect
+  // Uses slot role + available normal tunings for that role
   function countTuningSlots(cos,effectName){
     var slotMap=cos.s||[];
     var count=0;
-    var lc=effectName.toLowerCase();
-    // Filter out the "+" for matching since some names have it and some don't
-    var cleanName=lc.replace(/[+]/g,'').trim();
-    var foundSlots=[];
+    var cleanName=effectName.replace(/[+]/g,'').trim().toLowerCase();
     for(var si=0;si<slotMap.length;si++){
       var slot=slotMap[si];
-      if(!slot||!slot.tid){
-        // Empty slots can potentially be filled with any tuning
-        continue;
-      }
-      var e=findNormal(slot.tid);
-      if(!e||!e.subEffects)continue;
-      for(var ei=0;ei<e.subEffects.length;ei++){
-        var se=e.subEffects[ei];
-        if(se&&se.skillName){
-          var sn=se.skillName.replace(/[+]/g,'').trim().toLowerCase();
-          if(sn===cleanName || sn.indexOf(cleanName)!==-1 || cleanName.indexOf(sn)!==-1){
-            foundSlots.push(si);
-            break;
+      if(!slot||!slot.r)continue;
+      var slotRole=normRole(slot.r);
+      // Find all normal tunings matching this slot role
+      for(var ni=0;ni<NORMAL_TUNING.length;ni++){
+        var nt=NORMAL_TUNING[ni];
+        if(normRole(nt.role)!==slotRole)continue;
+        if(!nt.subEffects)continue;
+        for(var ei=0;ei<nt.subEffects.length;ei++){
+          var se=nt.subEffects[ei];
+          if(se&&se.skillName){
+            var sn=se.skillName.replace(/[+]/g,'').trim().toLowerCase();
+            if(sn===cleanName || sn.indexOf(cleanName)!==-1 || cleanName.indexOf(sn)!==-1){
+              count++;
+              ni=NORMAL_TUNING.length; // break outer loop
+              break;
+            }
           }
         }
       }
     }
-    return foundSlots.length;
+    return count;
   }
 
   // Score a costume against filters
@@ -105,11 +105,13 @@
     }
 
     // Normal tuning slot matching
+    var tuningCounts={};
     if(filters.tunings && filters.tunings.length){
       for(var ti=0;ti<filters.tunings.length;ti++){
         var ft=filters.tunings[ti];
         if(!ft.name)continue;
         var count=countTuningSlots(cos,ft.name);
+        tuningCounts[ft.name]=count;
         // Also count empty slots as potential
         var emptySlots=0;
         var slotMap=cos.s||[];
@@ -127,7 +129,12 @@
     var usedSlots=usedSlotsCount;
     var wasted=Math.max(0,totalSlots-usedSlots);
     var efficiency=maxScore>0?Math.round((score/maxScore)*100):0;
-    return {score:score,maxScore:maxScore,efficiency:efficiency,used:usedSlots,wasted:wasted};
+    return {
+      score:score,maxScore:maxScore,efficiency:efficiency,
+      used:usedSlots,wasted:wasted,
+      leftScore:leftMatch?10:0,rightScore:rightMatch?10:0,
+      tuningCounts:tuningCounts||{}
+    };
   }
 
   // Build the advanced search UI
@@ -226,27 +233,13 @@
 
     // Apply
     applyBtn.onclick=function(){
-      var filters={
-        leftSpec:leftRow.sel.value,
-        rightSpec:rightRow.sel.value,
-        lrPos:!posChk.checked,
-        tunings:[]
-      };
-      for(var ti=0;ti<tuningFilters.length;ti++){
-        var tf=tuningFilters[ti];
-        var name=tf.sel.value;
-        var min=parseInt(tf.min.value)||0;
-        if(name){filters.tunings.push({name:name,min:min});}
-      }
+      // Simple test: just reverse the costume order
       var scored=[];
       for(var ci=0;ci<ch.c.length;ci++){
-        var cos=ch.c[ci];
-        var s=scoreCostume(cos,ch,filters);
-        scored.push({idx:ci,cos:cos,score:s});
+        scored.push({idx:ci,cos:ch.c[ci],score:{score:0,maxScore:0,efficiency:0},pass:true});
       }
-      scored.sort(function(a,b){return b.score.score-a.score.score;});
+      scored.reverse();
       window.__advSearchResults=scored;
-      window.__advSearchFilters=filters;
       baseRender();
     };
     resetBtn.onclick=function(){

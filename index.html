@@ -5831,6 +5831,7 @@ function rebuildCosOptions(ch,filter){
   for(var i=0;i<ch.c.length;i++){sel.appendChild(mkOpt(String(i),ch.c[i].n||"",i===ST.cosIdx));}
   var ownCn=CH_NUM[ch.id]?String(CH_NUM[ch.id]):null;
   function openCosModal(){
+    window.__advSearchResults=null;window.__advSearchFilters=null;
     var favs=JSON.parse(localStorage.getItem("mhurCosFavs_"+ownCn)||"[]");
     var overlay=document.createElement("div");overlay.className="cos-modal-overlay";
     var modal=document.createElement("div");modal.className="cos-modal";
@@ -5873,9 +5874,9 @@ function rebuildCosOptions(ch,filter){
     });
     document.addEventListener("click",function(){catList.style.display="none";catArrow.style.transform="";});
     searchWrap.appendChild(catWrap);modal.appendChild(searchWrap);
-    // Advanced Search Panel
-    if(typeof advSearchBuild==='function')advSearchBuild(modal,ch,function(){render(searchInput.value);});
     var body=document.createElement("div");body.className="cos-modal-body";modal.appendChild(body);
+    // Advanced Search Panel (inserted before body)
+    if(typeof advSearchBuild==='function')advSearchBuild(modal,ch,function(){render(searchInput.value);});
     overlay.appendChild(modal);document.body.appendChild(overlay);
     overlay.addEventListener("click",function(e){if(e.target===overlay)overlay.remove();});
     function rc(r){var m={strike:"#ef4444",assault:"#eab308",rapid:"#38bdf8",technical:"#a855f7",support:"#22c55e"};return m[(r||"").toLowerCase()]||"#94a3b8";}
@@ -5884,13 +5885,12 @@ function rebuildCosOptions(ch,filter){
       body.innerHTML="";var ft=(filterText||"").toLowerCase().trim();var cat=catFilter.value;
       var favItems=[],normalItems=[];
       var advResults=window.__advSearchResults||null;
-      var itemOrder=[];
-      // Determine item order based on advanced search
-      if(advResults){
-        itemOrder=advResults.map(function(r){return r.idx;});
-      }
       for(var i=0;i<ch.c.length;i++){
-        if(advResults && itemOrder.indexOf(i)===-1)continue;
+        // Advanced filter: only show costumes that pass
+        if(advResults){
+          var ar=advResults.find(function(r){return r.idx===i;});
+          if(!ar||!ar.pass)continue;
+        }
         var cos=ch.c[i];
         if(ft&&(cos.n||"").toLowerCase().indexOf(ft)===-1)continue;
         if(cat&&cat!=="all types"){
