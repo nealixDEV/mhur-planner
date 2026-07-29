@@ -32,17 +32,12 @@
   // Check if a costume slot can accept a given special tuning
   function canEquipSpecial(cosSlot,ch,specName){
     if(!cosSlot||!cosSlot.r||!specName)return false;
-    var role=normRole(cosSlot.r);
+    var role=window.normRole(cosSlot.r);
+    if(!role)return false;
     var align=cosSlot.a?cosSlot.a.toLowerCase():null;
-    // Find the special tuning by name
-    for(var i=0;i<SPECIAL_TUNING.length;i++){
-      var st=SPECIAL_TUNING[i];
-      if(st.skillName!==specName)continue;
-      // Check role match
-      if(normRole(st.role)!==role)continue;
-      // Check alignment if specified
-      if(align && st.class && st.class.toLowerCase()!==align)continue;
-      return true;
+    var available=specialOptions(role,null,align,null)||[];
+    for(var i=0;i<available.length;i++){
+      if(available[i].skillName===specName)return true;
     }
     return false;
   }
@@ -56,11 +51,11 @@
     for(var si=0;si<slotMap.length;si++){
       var slot=slotMap[si];
       if(!slot||!slot.r)continue;
-      var slotRole=normRole(slot.r);
+      var slotRole=window.normRole(slot.r);
       // Find all normal tunings matching this slot role
-      for(var ni=0;ni<NORMAL_TUNING.length;ni++){
-        var nt=NORMAL_TUNING[ni];
-        if(normRole(nt.role)!==slotRole)continue;
+      for(var ni=0;ni<window.NORMAL_TUNING.length;ni++){
+        var nt=window.NORMAL_TUNING[ni];
+        if(window.normRole(nt.role)!==slotRole)continue;
         if(!nt.subEffects)continue;
         for(var ei=0;ei<nt.subEffects.length;ei++){
           var se=nt.subEffects[ei];
@@ -68,7 +63,7 @@
             var sn=se.skillName.replace(/[+]/g,'').trim().toLowerCase();
             if(sn===cleanName || sn.indexOf(cleanName)!==-1 || cleanName.indexOf(sn)!==-1){
               count++;
-              ni=NORMAL_TUNING.length; // break outer loop
+              ni=window.NORMAL_TUNING.length; // break outer loop
               break;
             }
           }
@@ -246,6 +241,7 @@
         if(name){filters.tunings.push({name:name,min:min});}
       }
       var scored=[];
+      var debugInfo='';
       for(var ci=0;ci<ch.c.length;ci++){
         var cos=ch.c[ci];
         var s={score:0,maxScore:0,efficiency:0,leftScore:0,rightScore:0,tuningCounts:{}};
@@ -261,6 +257,14 @@
           }
         }
         scored.push({idx:ci,cos:cos,score:s,pass:pass});
+        // Debug: show first costume info
+        if(ci===0 && filters.leftSpec){
+          var sp1=cos.sp1||(cos.s&&cos.s[0]?{r:cos.s[0].r}:null);
+          var sp2=cos.sp2||(cos.s&&cos.s[5]?{r:cos.s[5].r}:null);
+          var av1=sp1?specialOptions(String(sp1.r||"").toLowerCase(),null,sp1.a?sp1.a.toLowerCase():null,null):[];
+          var av2=sp2?specialOptions(String(sp2.r||"").toLowerCase(),null,sp2.a?sp2.a.toLowerCase():null,null):[];
+          debugInfo='Costume 0: "'+cos.n+'" | sp1:'+(sp1?sp1.r:'?')+' ('+av1.length+' avail) | sp2:'+(sp2?sp2.r:'?')+' ('+av2.length+' avail) | leftScore:'+s.leftScore;
+        }
       }
       scored.sort(function(a,b){return b.score.score-a.score.score;});
       window.__advSearchResults=scored;
@@ -268,12 +272,12 @@
       var lbl=document.getElementById('advStatus');
       if(!lbl){
         lbl=document.createElement('div');lbl.id='advStatus';
-        lbl.style.cssText='padding:3px 6px;font-size:.5rem;color:#f59e0b;background:rgba(245,158,11,.08);border-radius:2px;text-align:center;';
+        lbl.style.cssText='padding:3px 6px;font-size:.5rem;color:#f59e0b;background:rgba(245,158,11,.08);border-radius:2px;text-align:center;word-break:break-all;';
         var be=document.querySelector('.cos-modal-body');
         if(be)be.insertBefore(lbl,be.firstChild);
       }
       var count=scored.filter(function(r){return r.pass;}).length;
-      lbl.textContent='Pass: '+count+'/'+scored.length;
+      lbl.textContent='Pass: '+count+'/'+scored.length+' | '+debugInfo;
       baseRender();
     };
     resetBtn.onclick=function(){
