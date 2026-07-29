@@ -2620,6 +2620,16 @@ var COSTUME_DATA = {
     {n:"Formal Suit (Fancy)",ra:"PUR",al:"hero",s:[{r:"Support"},{r:"Rapid"},{r:"Strike"},{r:"Assault",a:"villain"},{r:"Rapid",a:"hero"},{r:"Rapid"},{r:"Technical"},{r:"Assault"},{r:"Support",a:"hero"},{r:"Technical",a:"villain"}],sp1:{r:"Support"},sp2:{r:"Support",a:"hero"}},
     {n:"Formal Suit (Dangerous)",ra:"PUR",al:"villain",s:[{r:"Technical"},{r:"Assault"},{r:"Technical"},{r:"Assault",a:"hero"},{r:"Strike",a:"hero"},{r:"Rapid"},{r:"Support"},{r:"Technical"},{r:"Strike",a:"villain"},{r:"Rapid",a:"villain"}],sp1:{r:"Assault"},sp2:{r:"Rapid",a:"villain"}},
   ],
+  gentle: [
+    {n:"Villain Coat",ra:"R",al:"villain",s:[{r:"Assault"},{r:"Technical"},{r:"Rapid"},{r:"Strike"},{r:"Support"},{r:"Technical"},{r:"Assault"},{r:"Rapid"},{r:"Strike"},{r:"Support"}],sp1:{r:"Technical"},sp2:{r:"Assault",a:"villain"}},
+    {n:"Villain Coat (Hero Style)",ra:"R",al:"villain",s:[{r:"Strike"},{r:"Rapid"},{r:"Assault"},{r:"Technical"},{r:"Support"},{r:"Rapid"},{r:"Technical"},{r:"Strike"},{r:"Assault"},{r:"Support"}],sp1:{r:"Assault"},sp2:{r:"Technical",a:"villain"}},
+    {n:"Villain Coat (Heat)",ra:"R",al:"villain",s:[{r:"Technical"},{r:"Support"},{r:"Rapid"},{r:"Assault"},{r:"Strike"},{r:"Technical"},{r:"Rapid"},{r:"Support"},{r:"Assault"},{r:"Strike"}],sp1:{r:"Support"},sp2:{r:"Rapid",a:"villain"}},
+    {n:"Villain Coat (Combat)",ra:"R",al:"villain",s:[{r:"Support"},{r:"Technical"},{r:"Strike"},{r:"Assault"},{r:"Rapid"},{r:"Support"},{r:"Technical"},{r:"Strike"},{r:"Assault"},{r:"Rapid"}],sp1:{r:"Rapid"},sp2:{r:"Strike",a:"villain"}},
+    {n:"Villain Coat (Dangerous)",ra:"R",al:"villain",s:[{r:"Rapid"},{r:"Assault"},{r:"Technical"},{r:"Strike"},{r:"Support"},{r:"Rapid"},{r:"Technical"},{r:"Assault"},{r:"Strike"},{r:"Support"}],sp1:{r:"Strike"},sp2:{r:"Technical",a:"villain"}},
+    {n:"Casual Wear",ra:"SR",al:"villain",s:[{r:"Technical"},{r:"Assault"},{r:"Support"},{r:"Rapid",a:"hero"},{r:"Strike",a:"villain"},{r:"Technical"},{r:"Rapid"},{r:"Assault"},{r:"Support",a:"hero"},{r:"Strike",a:"villain"}],sp1:{r:"Technical"},sp2:{r:"Assault",a:"villain"}},
+    {n:"Hero Fest 2019 ver.",ra:"PUR",al:"villain",s:[{r:"Technical"},{r:"Rapid"},{r:"Support"},{r:"Assault",a:"hero"},{r:"Strike",a:"villain"},{r:"Technical"},{r:"Rapid"},{r:"Assault"},{r:"Support",a:"hero"},{r:"Strike",a:"villain"}],sp1:{r:"Rapid"},sp2:{r:"Technical",a:"villain"}},
+    {n:"Hero Fest 2019 ver. (Hero Style)",ra:"PUR",al:"villain",s:[{r:"Assault"},{r:"Technical"},{r:"Strike"},{r:"Support",a:"hero"},{r:"Rapid",a:"villain"},{r:"Assault"},{r:"Technical"},{r:"Strike"},{r:"Support",a:"hero"},{r:"Rapid",a:"villain"}],sp1:{r:"Assault"},sp2:{r:"Support",a:"villain"}},
+  ],
   izuku_ofa: [
     {n:"Hero Costume",ra:"R",al:"hero",s:[{r:"Assault"},{r:"Support"},{r:"Technical"},{r:"Strike"},{r:"Rapid"},{r:"Rapid"},{r:"Assault"},{r:"Technical"},{r:"Strike"},{r:"Support"}],sp1:{r:"Rapid"},sp2:{r:"Assault",a:"hero"}},
     {n:"Hero Costume (Heat)",ra:"R",al:"hero",s:[{r:"Support"},{r:"Technical"},{r:"Strike"},{r:"Rapid"},{r:"Assault"},{r:"Assault"},{r:"Rapid"},{r:"Assault"},{r:"Support"},{r:"Technical"}],sp1:{r:"Strike"},sp2:{r:"Technical",a:"hero"}},
@@ -2696,8 +2706,9 @@ function bnPortrait(chNum,styleIdx){
     23:"endeavor",24:"mirio",25:"nejire",26:"amajiki",
     34:"overhaul",37:"twice",38:"compress",43:"hawks",46:"kendo",
     100:"lady",101:"cementos",102:"shiozaki",103:"kurogiri",104:"monoma",
-    105:"sinso",109:"mic",111:"mirko",114:"star_and_stripe",115:"lady_nagant",
-    200:"armored_allmight",201:"allforone_youth",202:"midoriya_ofa"
+     105:"sinso",109:"mic",111:"mirko",114:"star_and_stripe",115:"lady_nagant",
+     108:"gentle",
+     200:"armored_allmight",201:"allforone_youth",202:"midoriya_ofa"
   };
   var styleOverrides={
     "aizawa_1":"https://i.ytimg.com/vi/HwjRxH9hAtU/maxresdefault.jpg",
@@ -2767,8 +2778,9 @@ var COSTUME_IMG={
   115:[115000000,115000003,115000004,115000006,115000100,115000101,115000103,115000104,115000105,115000106,115103100,115103101,115103103,115103104,115103105,115103106,115603100,115603101,115603103,115603104,115603105,115603106,115601100,115601101,115601103,115601104,115601105,115601106],
   200:[200000000,200000002,200000004,200000005,200000100,200000102,200000103,200000104,200000105,200000106,200001100,200001102,200001103,200001104,200001105,200001106,200003100,200003102,200003103,200003104,200003105,200003106,200603100,200603102,200603103,200603104,200603105,200603106],
   201:[201000000,201000001,201000005,201000006,201000100,201000101,201000103,201000104,201000105,201000106,201004100,201004101,201004103,201004104,201004105,201004106,201005100,201005101,201005103,201005104,201005105,201005106],
-  202:[202000000,202000003,202000004,202000006,202004100,202004102,202004103,202004104,202004105,202004106,202611100,202611104,202607100,202607102,202607103,202607104,202607105,202607106,202611103,202619100,202619102,202619103,202619104,202619105,202619106]
-};
+   202:[202000000,202000003,202000004,202000006,202004100,202004102,202004103,202004104,202004105,202004106,202611100,202611104,202607100,202607102,202607103,202607104,202607105,202607106,202611103,202619100,202619102,202619103,202619104,202619105,202619106],
+   108:[108000000,108000001,108000002,108000003,108000004,108000005,108000006,108000007]
+ };
 function costumePreview(ch){
   if(!ch)return null;
   var num=CH_NUM[ch.id];if(num===undefined)return null;
@@ -2784,7 +2796,7 @@ var CH_NUM={
   aizawa:13,mic:109,cement:101,endeavor:23,hawks:43,mirko:111,
   star:114,mtlady:100,
   tomura:15,afo:16,afo_youth:201,dabi:17,himiko:18,twice:37,
-  compress:38,kurogiri:103,nagant:115,overhaul:34
+  compress:38,kurogiri:103,nagant:115,overhaul:34,gentle:108
 };
 
 var RC={Strike:"#FF0000",Assault:"#FFDD00",Rapid:"#00C8FF",Technical:"#8400FF",Support:"#02DB18"};
@@ -4535,6 +4547,20 @@ var SPECIAL_TUNING = [
       "Sub Effect 2: 1.2"
     ],
     "id": "202_acceleration"
+  },
+  {
+    "chara": "108",
+    "role": "Technical",
+    "class": "VILLAIN",
+    "name": "Gentle Criminal",
+    "skillName": "Gently Jump",
+    "skillDesc": "For a set amount of time after the battle starts, crouching for a while enables a huge jump.",
+    "levels": ["Level 1: 240","Level 2: 220","Level 3: 200","Level 4: 180","Level 5: 160","Level 6: 120","Level 7: 100","Level 8: 80","Level 9: 60","Level 10: 40","Level 11: 20"],
+    "subEffects": [
+      "Sub Effect 1: 30",
+      "Sub Effect 2: 1.2"
+    ],
+    "id": "108_gentle_jump"
   }
 ];
 
@@ -4576,7 +4602,8 @@ var CH=[
   {id:"compress",n:"Mr. Compress",        g:"Villain", role:"Support",   bs:[]},
   {id:"kurogiri",n:"Kurogiri",            g:"Villain", role:"Support",   bs:[]},
   {id:"nagant",  n:"Lady Nagant",         g:"Villain", role:"Strike",    bs:[]},
-  {id:"overhaul",n:"Overhaul",            g:"Villain", role:"Support",   bs:[{n:"Blighted Precipice",t:"Assault"}]}
+  {id:"overhaul",n:"Overhaul",            g:"Villain", role:"Support",   bs:[{n:"Blighted Precipice",t:"Assault"}]},
+  {id:"gentle",  n:"Gentle Criminal",     g:"Villain", role:"Technical", bs:[]}
 ];
 
 // Inject real costume data from COSTUME_DATA
@@ -4624,7 +4651,8 @@ var CHAR_STATS={
   compress:{id:'compress',num:38,hp:300,gp:250,melee:null,alpha:22,beta:60,gamma:70,sa:null,downedHealth:400,puPcDuration:20,movement:{runSpeed:600,dashSpeed:1000,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:300,forwardJumpHeight:150,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:300,shield:250,total:550},size:'Unknown',udClass:'Support'},
   kurogiri:{id:'kurogiri',num:103,hp:350,gp:250,melee:null,alpha:44,beta:100,gamma:25,sa:null,downedHealth:400,puPcDuration:20,movement:{runSpeed:600,dashSpeed:1050,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:300,forwardJumpHeight:175,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:350,shield:250,total:600},size:'Unknown',udClass:'Support'},
   nagant:{id:'nagant',num:115,hp:250,gp:250,melee:null,alpha:47,beta:25,gamma:120,sa:null,downedHealth:400,puPcDuration:20,movement:{runSpeed:0,dashSpeed:0,wallShuffleSpeed:0,downedCrawlSpeed:0,floatiness:0,jumpHeight:0,forwardJumpHeight:0,wallJumpHeight:0},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1.05,Shield:1.05,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:250,shield:250,total:500},size:'Unknown',udClass:'Strike'},
-  overhaul:{id:'overhaul',num:34,hp:350,gp:250,melee:null,alpha:12,beta:30,gamma:15,sa:54,downedHealth:400,puPcDuration:20,movement:{runSpeed:600,dashSpeed:1050,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:300,forwardJumpHeight:150,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:350,shield:250,total:600},size:'Unknown',udClass:'Support'}
+  overhaul:{id:'overhaul',num:34,hp:350,gp:250,melee:null,alpha:12,beta:30,gamma:15,sa:54,downedHealth:400,puPcDuration:20,movement:{runSpeed:600,dashSpeed:1050,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:300,forwardJumpHeight:150,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:350,shield:250,total:600},size:'Unknown',udClass:'Support'},
+  gentle:{id:'gentle',num:108,hp:300,gp:250,melee:15,alpha:60,beta:70,gamma:40,sa:0,downedHealth:400,puPcDuration:20,movement:{runSpeed:600,dashSpeed:1000,wallShuffleSpeed:700,downedCrawlSpeed:0,floatiness:0,jumpHeight:300,forwardJumpHeight:150,wallJumpHeight:250},defenseMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1},damageMult:{Health:1,Shield:1,Alpha:1,Beta:1,Gamma:1,Melee:1,PC:1.2},reloadMult:{Alpha:1,Beta:1,Gamma:1,Special:1,PC:0.668},effective:{health:300,shield:250,total:550},size:'Medium',udClass:'Technical'}
 };
 
 var ST={charId:CH[0].id,cosIdx:0,styleIdx:0,left:bk(5),right:bk(5),specs:bk(2)};

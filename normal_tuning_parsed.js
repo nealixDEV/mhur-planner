@@ -1912,5 +1912,41 @@ window.NORMAL_TUNING_DATA = [
         ]
       }
     ]
+  },
+  {
+    "chara": "108",
+    "role": "Technical",
+    "class": "VILLAIN",
+    "name": "Gentle Criminal",
+    "skillName": "",
+    "skillDesc": "",
+    "levels": [
+      "Level 1: 1.0",
+      "Level 2: 1.0",
+      "Level 3: 1.0",
+      "Level 4: 1.0"
+    ],
+    "subEffects": [
+      {
+        "skillName": "Special Action Reload+",
+        "skillDesc": "Increases reload speed of Special Action",
+        "levels": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      },
+      {
+        "skillName": "Forward Jump HT+",
+        "skillDesc": "Increases your forward Jump height",
+        "levels": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
   }
 ];
