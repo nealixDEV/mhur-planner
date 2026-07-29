@@ -5876,7 +5876,7 @@ function rebuildCosOptions(ch,filter){
     searchWrap.appendChild(catWrap);modal.appendChild(searchWrap);
     var body=document.createElement("div");body.className="cos-modal-body";modal.appendChild(body);
     // Advanced Search Panel (inserted before body)
-    if(typeof advSearchBuild==='function')advSearchBuild(modal,ch,function(){render(searchInput.value);});
+    if(typeof advSearchBuild==='function')advSearchBuild(modal,ch,function(){render(searchInput.value);}); else console.log('advSearchBuild not found');
     overlay.appendChild(modal);document.body.appendChild(overlay);
     overlay.addEventListener("click",function(e){if(e.target===overlay)overlay.remove();});
     function rc(r){var m={strike:"#ef4444",assault:"#eab308",rapid:"#38bdf8",technical:"#a855f7",support:"#22c55e"};return m[(r||"").toLowerCase()]||"#94a3b8";}

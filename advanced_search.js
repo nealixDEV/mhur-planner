@@ -323,6 +323,7 @@
     }
 
     function buildAdvancedSearch(modal, ch, baseRender) {
+        try {
         var toggleBtn = document.createElement('button');
         toggleBtn.textContent = 'Advanced Filters';
         toggleBtn.style.cssText = 'margin:8px;padding:6px 12px;cursor:pointer;background:#333;color:#fff;border:1px solid #555;border-radius:4px;';
@@ -417,6 +418,13 @@
         panel.appendChild(btnRow);
 
         var inserted = false;
+        // Insert toggle button into modal
+        var bodyEl = modal.querySelector('.cos-modal-body');
+        if (bodyEl && bodyEl.parentNode) {
+            bodyEl.parentNode.insertBefore(toggleBtn, bodyEl);
+        } else {
+            modal.appendChild(toggleBtn);
+        }
 
         toggleBtn.addEventListener('click', function () {
             if (panel.style.display === 'none' || panel.style.display === '') {
@@ -492,6 +500,7 @@
         });
 
         modal.insertBefore(toggleBtn, modal.firstChild);
+        } catch (e) { console.error('AdvSearch:', e); }
     }
 
     window.advSearchBuild = buildAdvancedSearch;
