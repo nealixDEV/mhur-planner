@@ -1,515 +1,296 @@
-(function () {
-    var specialList = [];
-    var normalTuningNames = [];
+// Advanced Costume Search Engine v2
+(function(){
+  var specialList = [];
+  var normalTuningNames = [];
 
-    function initTuningData() {
-        specialList = [];
-        normalTuningNames = [];
-        if (window.SPECIAL_TUNING) {
-            for (var i = 0; i < window.SPECIAL_TUNING.length; i++) {
-                var st = window.SPECIAL_TUNING[i];
-                if (st && st.skillName) {
-                    specialList.push({ v: st.skillName, l: st.skillName });
-                }
+  function initTuningData(){
+    if(specialList.length)return;
+    // Collect all unique special tuning names
+    for(var i=0;i<SPECIAL_TUNING.length;i++){
+      var s=SPECIAL_TUNING[i];
+      if(s.skillName && specialList.indexOf(s.skillName)===-1)specialList.push(s.skillName);
+    }
+    specialList.sort();
+    // Exact normal tuning names from user spec
+    normalTuningNames=[
+      "Max HP+","Max DOWN HP+","HP Attack Power+","HP Defense+",
+      "Max GP+","GP Attack Power+","GP Defense+",
+      "Run Speed+","Dash Speed+","Wall Shuffle Speed+","Downed Crawl Speed+",
+      "Forward Jump HT+","Vertical Jump HT+","Wall Jump HT+",
+      "Quirk Skill α Attack Power+","Quirk Skill β Attack Power+","Quirk Skill γ Attack Power+",
+      "Melee Attack Power+",
+      "Quirk Skill α Defense+","Quirk Skill β Defense+","Quirk Skill γ Defense+",
+      "Melee Defense+",
+      "Quirk Skill α Reload+","Quirk Skill β Reload+","Quirk Skill γ Reload+",
+      "Special Action Reload+","PU/PC Reload+","PU/PC Active Duration+"
+    ];
+  }
+
+  function getSpecialOptions(){initTuningData();var o=[{v:"",l:"Any"}];for(var i=0;i<specialList.length;i++){o.push({v:specialList[i],l:specialList[i]});}return o;}
+  function getNormalOptions(){initTuningData();var o=[{v:"",l:"Any"}];for(var i=0;i<normalTuningNames.length;i++){o.push({v:normalTuningNames[i],l:normalTuningNames[i]});}return o;}
+
+  // Check if a costume slot can accept a given special tuning
+  function canEquipSpecial(cosSlot,ch,specName){
+    if(!cosSlot||!cosSlot.r||!specName)return false;
+    var role=window.normRole(cosSlot.r);
+    if(!role)return false;
+    var align=cosSlot.a?cosSlot.a.toLowerCase():null;
+    var available=specialOptions(role,null,align,null)||[];
+    for(var i=0;i<available.length;i++){
+      if(available[i].skillName===specName)return true;
+    }
+    return false;
+  }
+
+  // Count how many slots CAN equip a given tuning effect
+  // Uses slot role + available normal tunings for that role
+  function countTuningSlots(cos,effectName){
+    var slotMap=cos.s||[];
+    var count=0;
+    var cleanName=effectName.replace(/[+]/g,'').trim().toLowerCase();
+    for(var si=0;si<slotMap.length;si++){
+      var slot=slotMap[si];
+      if(!slot||!slot.r)continue;
+      var slotRole=window.normRole(slot.r);
+      // Find all normal tunings matching this slot role
+      for(var ni=0;ni<window.NORMAL_TUNING.length;ni++){
+        var nt=window.NORMAL_TUNING[ni];
+        if(window.normRole(nt.role)!==slotRole)continue;
+        if(!nt.subEffects)continue;
+        for(var ei=0;ei<nt.subEffects.length;ei++){
+          var se=nt.subEffects[ei];
+          if(se&&se.skillName){
+            var sn=se.skillName.replace(/[+]/g,'').trim().toLowerCase();
+            if(sn===cleanName || sn.indexOf(cleanName)!==-1 || cleanName.indexOf(sn)!==-1){
+              count++;
+              ni=window.NORMAL_TUNING.length; // break outer loop
+              break;
             }
+          }
         }
-        if (window.NORMAL_TUNING) {
-            var seen = {};
-            for (var j = 0; j < window.NORMAL_TUNING.length; j++) {
-                var nt = window.NORMAL_TUNING[j];
-                if (nt) {
-                    var charaName = nt.charaName || nt.characterName || '';
-                    var eff = nt.effects || [];
-                    var labelParts = [charaName];
-                    for (var k = 0; k < eff.length; k++) {
-                        labelParts.push(eff[k]);
-                    }
-                    var label = labelParts.join('|');
-                    var role = nt.role || '';
-                    if (!seen[label]) {
-                        seen[label] = true;
-                        normalTuningNames.push({ v: label, l: label, role: role });
-                    }
-                }
-            }
-        }
+      }
+    }
+    return count;
+  }
+
+  // Score a costume against filters
+  function scoreCostume(cos,ch,filters){
+    var score=0,maxScore=0;
+    var totalSlots=10;
+    var usedSlotsCount=0;
+
+    var sp1=cos.sp1||(cos.s&&cos.s[0]?{r:cos.s[0].r,a:cos.s[0].a}:null);
+    var sp2=cos.sp2||(cos.s&&cos.s[5]?{r:cos.s[5].r,a:cos.s[5].a}:null);
+
+    // Special slot matching with role/alignment check
+    var leftMatch=false,rightMatch=false;
+    if(filters.leftSpec && filters.leftSpec!==""){
+      leftMatch=canEquipSpecial(sp1,ch,filters.leftSpec) || canEquipSpecial(sp2,ch,filters.leftSpec);
+      if(filters.lrPos && canEquipSpecial(sp1,ch,filters.leftSpec)){
+        leftMatch=true;score+=10;
+      }else if(!filters.lrPos && leftMatch){score+=10;}
+      maxScore+=10;
+    }
+    if(filters.rightSpec && filters.rightSpec!==""){
+      rightMatch=canEquipSpecial(sp2,ch,filters.rightSpec) || canEquipSpecial(sp1,ch,filters.rightSpec);
+      if(filters.lrPos && canEquipSpecial(sp2,ch,filters.rightSpec)){
+        rightMatch=true;score+=10;
+      }else if(!filters.lrPos && rightMatch){score+=10;}
+      maxScore+=10;
     }
 
-    function getSpecialOptions() {
-        var arr = [{ v: '', l: 'Any' }];
-        for (var i = 0; i < specialList.length; i++) {
-            arr.push(specialList[i]);
+    // Normal tuning slot matching
+    var tuningCounts={};
+    if(filters.tunings && filters.tunings.length){
+      for(var ti=0;ti<filters.tunings.length;ti++){
+        var ft=filters.tunings[ti];
+        if(!ft.name)continue;
+        var count=countTuningSlots(cos,ft.name);
+        tuningCounts[ft.name]=count;
+        // Also count empty slots as potential
+        var emptySlots=0;
+        var slotMap=cos.s||[];
+        for(var ei=0;ei<slotMap.length;ei++){if(!slotMap[ei]||!slotMap[ei].tid)emptySlots++;}
+        var totalPossible=count+emptySlots;
+        if(ft.min){
+          var achieved=Math.max(0,count);
+          var pts=Math.min(achieved,ft.min)*5;
+          score+=pts;
+          maxScore+=ft.min*5;
+          usedSlotsCount+=Math.min(achieved,ft.min);
         }
-        return arr;
+      }
     }
-
-    function getNormalOptions() {
-        return normalTuningNames;
-    }
-
-    function canEquipSpecial(cosSlot, ch, specName) {
-        if (!specName) return true;
-        var role = ch.role || ch.roleType || '';
-        var align = ch.alignment || ch.align || '';
-        var opts = window.specialOptions(role, null, align, null);
-        if (!opts || !opts.length) return false;
-        for (var i = 0; i < opts.length; i++) {
-            if (opts[i] && opts[i].skillName === specName) return true;
-        }
-        return false;
-    }
-
-    function countTuningSlots(cos, tuningRole) {
-        var count = 0;
-        if (!cos || !cos.s) return count;
-        for (var i = 0; i < cos.s.length; i++) {
-            var slot = cos.s[i];
-            if (slot && slot.role === tuningRole) count++;
-        }
-        return count;
-    }
-
-    function scoreCostume(cos, ch, filters) {
-        var score = 0;
-        var maxScore = 0;
-        var used = 0;
-        var wasted = 0;
-        var leftScore = 0;
-        var rightScore = 0;
-        var tuningCounts = {};
-        var leftFilter = filters.left || '';
-        var rightFilter = filters.right || '';
-        var normalFilters = filters.normal || [];
-
-        if (!cos || !cos.s) return { score: 0, maxScore: 0, efficiency: 0, used: 0, wasted: 0, leftScore: 0, rightScore: 0, tuningCounts: {} };
-
-        var role = ch.role || ch.roleType || '';
-        var align = ch.alignment || ch.align || '';
-        var specialOpts = window.specialOptions ? window.specialOptions(role, null, align, null) : [];
-
-        for (var i = 0; i < cos.s.length; i++) {
-            var slot = cos.s[i];
-            if (!slot || !slot.role) continue;
-            var tRole = slot.role;
-            if (!tuningCounts[tRole]) tuningCounts[tRole] = 0;
-            tuningCounts[tRole]++;
-
-            var isSpecial = (slot.skillName && slot.skillName.length > 0);
-            var slotMax = 10;
-            maxScore += slotMax;
-
-            if (isSpecial) {
-                var matchesSpecial = false;
-                if (slot.skillName === leftFilter || slot.skillName === rightFilter) {
-                    matchesSpecial = true;
-                }
-                for (var s = 0; s < specialOpts.length; s++) {
-                    if (specialOpts[s] && specialOpts[s].skillName === slot.skillName) {
-                        matchesSpecial = true;
-                        break;
-                    }
-                }
-                if (matchesSpecial) {
-                    score += slotMax;
-                    used++;
-                    if (slot.skillName === leftFilter) leftScore += slotMax;
-                    if (slot.skillName === rightFilter) rightScore += slotMax;
-                } else {
-                    wasted++;
-                }
-            } else {
-                var normalMatch = false;
-                if (normalFilters.length === 0) {
-                    normalMatch = true;
-                } else {
-                    for (var n = 0; n < normalFilters.length; n++) {
-                        var nf = normalFilters[n];
-                        if (!nf) continue;
-                        if (slot.effects) {
-                            var matched = true;
-                            for (var e = 0; e < nf.length; e++) {
-                                if (slot.effects.indexOf(nf[e]) === -1) {
-                                    matched = false;
-                                    break;
-                                }
-                            }
-                            if (matched) {
-                                normalMatch = true;
-                                break;
-                            }
-                        }
-                    }
-                }
-                if (normalMatch) {
-                    score += slotMax;
-                    used++;
-                } else {
-                    wasted++;
-                }
-            }
-        }
-
-        var efficiency = maxScore > 0 ? Math.round((score / maxScore) * 100) : 0;
-
-        return { score: score, maxScore: maxScore, efficiency: efficiency, used: used, wasted: wasted, leftScore: leftScore, rightScore: rightScore, tuningCounts: tuningCounts };
-    }
-
-    var roleIcons = {
-        strike: 'https://raw.githubusercontent.com/HydrosPlays/ultrarumbleguide/refs/heads/main/images/strikebig.png',
-        assault: 'https://raw.githubusercontent.com/HydrosPlays/ultrarumbleguide/refs/heads/main/images/assaultbig.png',
-        rapid: 'https://raw.githubusercontent.com/HydrosPlays/ultrarumbleguide/refs/heads/main/images/rapidbig.png',
-        technical: 'https://raw.githubusercontent.com/HydrosPlays/ultrarumbleguide/refs/heads/main/images/technicalbig.png',
-        support: 'https://raw.githubusercontent.com/HydrosPlays/ultrarumbleguide/refs/heads/main/images/supportbig.png'
+    var usedSlots=usedSlotsCount;
+    var wasted=Math.max(0,totalSlots-usedSlots);
+    var efficiency=maxScore>0?Math.round((score/maxScore)*100):0;
+    return {
+      score:score,maxScore:maxScore,efficiency:efficiency,
+      used:usedSlots,wasted:wasted,
+      leftScore:leftMatch?10:0,rightScore:rightMatch?10:0,
+      tuningCounts:tuningCounts||{}
     };
+  }
 
-    var roleColors = {
-        strike: '#ef4444',
-        assault: '#eab308',
-        rapid: '#38bdf8',
-        technical: '#a855f7',
-        support: '#22c55e'
+  // Build the advanced search UI
+  function buildAdvancedSearch(modal,ch,baseRender){
+    var advWrap=document.createElement("div");
+    advWrap.style.cssText='padding:6px 8px 2px;border-bottom:1px solid rgba(72,208,218,.1);';
+
+    var toggleBtn=document.createElement("button");
+    toggleBtn.textContent="Advanced Filters";
+    toggleBtn.style.cssText='width:100%;padding:5px;border:1px solid rgba(72,208,218,.2);border-radius:3px;background:rgba(72,208,218,.06);color:#b9f5f8;font-size:.62rem;font-weight:800;cursor:pointer;letter-spacing:.04em;';
+    advWrap.appendChild(toggleBtn);
+
+    var panel=document.createElement("div");
+    panel.style.cssText='display:none;margin-top:5px;';
+
+    // === SPECIAL SLOTS ===
+    var specSec=document.createElement("div");
+    specSec.style.cssText='margin-bottom:4px;';
+    var specTitle=document.createElement("div");
+    specTitle.textContent="Special Slot Filters";
+    specTitle.style.cssText='font-size:.55rem;font-weight:900;color:#b9f5f8;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px;';
+    specSec.appendChild(specTitle);
+
+    function makeSpecialRow(label,defVal){
+      var row=document.createElement("div");row.style.cssText='display:flex;gap:3px;align-items:center;margin-bottom:2px;';
+      var lbl=document.createElement("span");lbl.textContent=label;lbl.style.cssText='font-size:.52rem;color:#7fa8ae;min-width:30px;';
+      var sel=document.createElement("select");
+      sel.style.cssText='flex:1;padding:2px 4px;font-size:.52rem;background:#030a0e;color:#e4fafb;border:1px solid rgba(72,208,218,.2);border-radius:2px;';
+      var opts=getSpecialOptions();
+      for(var i=0;i<opts.length;i++){var o=document.createElement("option");o.value=opts[i].v;o.textContent=opts[i].l.length>30?opts[i].l.slice(0,30)+'...':opts[i].l;sel.appendChild(o);}
+      if(defVal)sel.value=defVal;
+      row.appendChild(lbl);row.appendChild(sel);
+      return {el:row,sel:sel};
+    }
+    var leftRow=makeSpecialRow("Left");
+    var rightRow=makeSpecialRow("Right");
+    specSec.appendChild(leftRow.el);specSec.appendChild(rightRow.el);
+
+    var posRow=document.createElement("div");posRow.style.cssText='display:flex;align-items:center;gap:3px;margin-bottom:2px;';
+    var posChk=document.createElement("input");posChk.type="checkbox";posChk.id="advPosChk2";posChk.style.cssText='accent-color:#f59e0b;width:11px;height:11px;';
+    var posLbl=document.createElement("label");posLbl.htmlFor="advPosChk2";posLbl.style.cssText='font-size:.5rem;color:#7fa8ae;';posLbl.textContent="Ignore slot position";
+    posRow.appendChild(posChk);posRow.appendChild(posLbl);
+    specSec.appendChild(posRow);
+
+    // === NORMAL TUNING SLOTS ===
+    var normSec=document.createElement("div");
+    normSec.style.cssText='margin-bottom:4px;';
+    var normTitle=document.createElement("div");
+    normTitle.textContent="Normal Tuning Filters (min slots)";
+    normTitle.style.cssText='font-size:.55rem;font-weight:900;color:#b9f5f8;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px;';
+    normSec.appendChild(normTitle);
+
+    var tuningFilters=[];
+    function addTuningRow(val,minVal){
+      var row=document.createElement("div");row.style.cssText='display:flex;gap:2px;align-items:center;margin-bottom:1px;';
+      var sel=document.createElement("select");
+      sel.style.cssText='flex:1;padding:1px 3px;font-size:.5rem;background:#030a0e;color:#e4fafb;border:1px solid rgba(72,208,218,.15);border-radius:2px;';
+      var opts=getNormalOptions();
+      for(var i=0;i<opts.length;i++){var o=document.createElement("option");o.value=opts[i].v;o.textContent=opts[i].l;sel.appendChild(o);}
+      if(val)sel.value=val;
+      var minInput=document.createElement("input");minInput.type="number";minInput.min="1";max="10";minInput.value=minVal||"1";
+      minInput.style.cssText='width:26px;padding:1px 2px;font-size:.5rem;background:#030a0e;color:#e4fafb;border:1px solid rgba(72,208,218,.15);border-radius:2px;text-align:center;';
+      var rmBtn=document.createElement("span");rmBtn.textContent="X";rmBtn.style.cssText='font-size:.45rem;color:#ef4444;cursor:pointer;padding:1px 3px;';
+      rmBtn.onclick=function(){row.remove();};
+      row.appendChild(sel);row.appendChild(minInput);row.appendChild(rmBtn);
+      tuningFilters.push({el:row,sel:sel,min:minInput});
+      normSec.appendChild(row);
+    }
+    var addBtn=document.createElement("span");
+    addBtn.textContent="+ Add Tuning";
+    addBtn.style.cssText='display:inline-block;font-size:.5rem;color:#b9f5f8;cursor:pointer;padding:1px 4px;border:1px dashed rgba(72,208,218,.15);border-radius:2px;margin-top:1px;';
+    addBtn.onclick=function(){addTuningRow();};
+    normSec.appendChild(addBtn);
+
+    // === ACTIONS ===
+    var actions=document.createElement("div");actions.style.cssText='display:flex;gap:3px;margin-top:4px;';
+    var applyBtn=document.createElement("button");
+    applyBtn.textContent="Apply";
+    applyBtn.style.cssText='flex:1;padding:4px;border:none;border-radius:3px;background:linear-gradient(180deg,#ffe064,#e4aa09);color:#1d1b0d;font-size:.58rem;font-weight:900;cursor:pointer;';
+    actions.appendChild(applyBtn);
+    var resetBtn=document.createElement("button");
+    resetBtn.textContent="Clear";
+    resetBtn.style.cssText='padding:4px 8px;border:1px solid rgba(72,208,218,.15);border-radius:2px;background:transparent;color:#7fa8ae;font-size:.52rem;cursor:pointer;';
+    actions.appendChild(resetBtn);
+    panel.appendChild(specSec);panel.appendChild(normSec);panel.appendChild(actions);
+
+    toggleBtn.onclick=function(){
+      var open=panel.style.display!="none";
+      panel.style.display=open?"none":"block";
+      toggleBtn.textContent=open?"Advanced Filters":"Hide Filters";
     };
+    advWrap.appendChild(panel);
+    // Insert after searchWrap, before body
+    var body=modal.querySelector('.cos-modal-body');
+    modal.insertBefore(advWrap,body);
 
-    function customDropdown(opts, selectedVal, onChange) {
-        var wrap = document.createElement('div');
-        wrap.style.cssText = 'position:relative;display:inline-block;';
-
-        var hidden = document.createElement('select');
-        hidden.style.display = 'none';
-        wrap.appendChild(hidden);
-
-        var trigger = document.createElement('div');
-        trigger.style.cssText = 'display:flex;align-items:center;cursor:pointer;padding:4px 8px;border:1px solid #555;border-radius:4px;background:#222;color:#fff;min-width:120px;justify-content:space-between;';
-        trigger.textContent = '';
-        var triggerSpan = document.createElement('span');
-        triggerSpan.textContent = selectedVal || 'Any';
-        var arrow = document.createElement('span');
-        arrow.textContent = ' \u25BC';
-        arrow.style.cssText = 'margin-left:4px;font-size:10px;';
-        trigger.appendChild(triggerSpan);
-        trigger.appendChild(arrow);
-        wrap.appendChild(trigger);
-
-        var popup = document.createElement('div');
-        popup.style.cssText = 'position:absolute;top:100%;left:0;z-index:9999;background:#1a1a1a;border:1px solid #555;border-radius:4px;max-height:300px;overflow-y:auto;display:none;min-width:180px;';
-        wrap.appendChild(popup);
-
-        var optionItems = [];
-
-        function buildOptions() {
-            popup.innerHTML = '';
-            optionItems = [];
-            for (var i = 0; i < opts.length; i++) {
-                var o = opts[i];
-                var item = document.createElement('div');
-                item.style.cssText = 'display:flex;align-items:center;padding:6px 8px;cursor:pointer;gap:6px;';
-                item.style.borderBottom = '1px solid #333';
-
-                var iconImg = document.createElement('img');
-                iconImg.style.cssText = 'width:24px;height:24px;border-radius:4px;object-fit:contain;';
-                if (o.icon) {
-                    iconImg.src = o.icon;
-                } else {
-                    iconImg.style.display = 'none';
-                }
-                item.appendChild(iconImg);
-
-                if (o.roleIcon) {
-                    var roleImg = document.createElement('img');
-                    roleImg.style.cssText = 'width:16px;height:16px;object-fit:contain;';
-                    roleImg.src = o.roleIcon;
-                    item.appendChild(roleImg);
-                }
-
-                var labelSpan = document.createElement('span');
-                labelSpan.textContent = o.l;
-                if (o.color) {
-                    labelSpan.style.color = o.color;
-                } else {
-                    labelSpan.style.color = '#fff';
-                }
-                item.appendChild(labelSpan);
-
-                item._label = o.l;
-                item._val = o.v;
-                optionItems.push(item);
-
-                (function (val) {
-                    item.addEventListener('click', function (e) {
-                        e.stopPropagation();
-                        set(val);
-                        if (onChange) onChange(val);
-                        popup.style.display = 'none';
-                    });
-                })(o.v);
-
-                popup.appendChild(item);
-            }
+    // Apply
+    applyBtn.onclick=function(){
+      var filters={
+        leftSpec:leftRow.sel.value,
+        rightSpec:rightRow.sel.value,
+        lrPos:!posChk.checked,
+        tunings:[]
+      };
+      for(var ti=0;ti<tuningFilters.length;ti++){
+        var tf=tuningFilters[ti];
+        var name=tf.sel.value;
+        var min=parseInt(tf.min.value)||0;
+        if(name){filters.tunings.push({name:name,min:min});}
+      }
+      var scored=[];
+      var debugInfo='';
+      for(var ci=0;ci<ch.c.length;ci++){
+        var cos=ch.c[ci];
+        var s={score:0,maxScore:0,efficiency:0,leftScore:0,rightScore:0,tuningCounts:{}};
+        try{s=scoreCostume(cos,ch,filters);}catch(e){}
+        var pass=true;
+        if(filters.leftSpec && s.leftScore===0)pass=false;
+        if(filters.rightSpec && s.rightScore===0)pass=false;
+        if(filters.tunings && filters.tunings.length){
+          for(var tti=0;tti<filters.tunings.length;tti++){
+            var ft=filters.tunings[tti];
+            if(!ft.name)continue;
+            if(s.tuningCounts && s.tuningCounts[ft.name] < ft.min){pass=false;break;}
+          }
         }
-
-        function set(val) {
-            for (var i = 0; i < optionItems.length; i++) {
-                if (optionItems[i]._val === val) {
-                    triggerSpan.textContent = optionItems[i]._label;
-                    hidden.value = val;
-                    return;
-                }
-            }
-            triggerSpan.textContent = val || 'Any';
-            hidden.value = val || '';
+        scored.push({idx:ci,cos:cos,score:s,pass:pass});
+        // Debug: show first costume info
+        if(ci===0 && filters.leftSpec){
+          var sp1=cos.sp1||(cos.s&&cos.s[0]?{r:cos.s[0].r}:null);
+          var sp2=cos.sp2||(cos.s&&cos.s[5]?{r:cos.s[5].r}:null);
+          var av1=sp1?specialOptions(String(sp1.r||"").toLowerCase(),null,sp1.a?sp1.a.toLowerCase():null,null):[];
+          var av2=sp2?specialOptions(String(sp2.r||"").toLowerCase(),null,sp2.a?sp2.a.toLowerCase():null,null):[];
+          debugInfo='Costume 0: "'+cos.n+'" | sp1:'+(sp1?sp1.r:'?')+' ('+av1.length+' avail) | sp2:'+(sp2?sp2.r:'?')+' ('+av2.length+' avail) | leftScore:'+s.leftScore;
         }
+      }
+      scored.sort(function(a,b){return b.score.score-a.score.score;});
+      window.__advSearchResults=scored;
+      // Debug label
+      var lbl=document.getElementById('advStatus');
+      if(!lbl){
+        lbl=document.createElement('div');lbl.id='advStatus';
+        lbl.style.cssText='padding:3px 6px;font-size:.5rem;color:#f59e0b;background:rgba(245,158,11,.08);border-radius:2px;text-align:center;word-break:break-all;';
+        var be=document.querySelector('.cos-modal-body');
+        if(be)be.insertBefore(lbl,be.firstChild);
+      }
+      var count=scored.filter(function(r){return r.pass;}).length;
+      lbl.textContent='Pass: '+count+'/'+scored.length+' | '+debugInfo;
+      baseRender();
+    };
+    resetBtn.onclick=function(){
+      leftRow.sel.value="";rightRow.sel.value="";posChk.checked=false;
+      tuningFilters.forEach(function(tf){tf.sel.value="";tf.min.value="1";});
+      window.__advSearchResults=null;window.__advSearchFilters=null;
+      baseRender();
+    };
+  }
 
-        function val() {
-            return hidden.value;
-        }
-
-        buildOptions();
-
-        var initialSet = false;
-        for (var i = 0; i < optionItems.length; i++) {
-            if (optionItems[i]._val === selectedVal) {
-                triggerSpan.textContent = optionItems[i]._label;
-                hidden.value = selectedVal;
-                initialSet = true;
-                break;
-            }
-        }
-        if (!initialSet) {
-            triggerSpan.textContent = 'Any';
-            hidden.value = '';
-        }
-
-        trigger.addEventListener('click', function (e) {
-            e.stopPropagation();
-            if (popup.style.display === 'none' || popup.style.display === '') {
-                popup.style.display = 'block';
-            } else {
-                popup.style.display = 'none';
-            }
-        });
-
-        function outsideClickHandler(e) {
-            if (!wrap.contains(e.target)) {
-                popup.style.display = 'none';
-            }
-        }
-        document.addEventListener('click', outsideClickHandler);
-
-        return { wrap: wrap, hidden: hidden, trigger: trigger, popup: popup, val: val, set: set };
-    }
-
-    function buildNormalTuningOptions() {
-        var result = [];
-        var seen = {};
-        if (window.NORMAL_TUNING) {
-            for (var i = 0; i < window.NORMAL_TUNING.length; i++) {
-                var nt = window.NORMAL_TUNING[i];
-                if (!nt) continue;
-                var charaName = nt.charaName || nt.characterName || '';
-                var eff = nt.effects || [];
-                var labelParts = [charaName];
-                for (var j = 0; j < eff.length; j++) {
-                    labelParts.push(eff[j]);
-                }
-                var label = labelParts.join('|');
-                var role = nt.role || '';
-                if (!seen[label]) {
-                    seen[label] = true;
-                    result.push({ v: label, l: label, icon: null, roleIcon: roleIcons[role] || '', color: roleColors[role] || '#fff', role: role });
-                }
-            }
-        }
-        return result;
-    }
-
-    function buildAdvancedSearch(modal, ch, baseRender) {
-        try {
-        var toggleBtn = document.createElement('button');
-        toggleBtn.textContent = 'Advanced Filters';
-        toggleBtn.style.cssText = 'margin:8px;padding:6px 12px;cursor:pointer;background:#333;color:#fff;border:1px solid #555;border-radius:4px;';
-
-        var panel = document.createElement('div');
-        panel.style.cssText = 'display:none;padding:10px;background:#2a2a2a;border:1px solid #444;border-radius:4px;margin:8px;';
-
-        var leftLabel = document.createElement('div');
-        leftLabel.textContent = 'Left Special:';
-        leftLabel.style.cssText = 'color:#fff;margin-bottom:4px;';
-
-        var rightLabel = document.createElement('div');
-        rightLabel.textContent = 'Right Special:';
-        rightLabel.style.cssText = 'color:#fff;margin-bottom:4px;';
-
-        var leftDD = customDropdown(getSpecialOptions(), '', function () {});
-        var rightDD = customDropdown(getSpecialOptions(), '', function () {});
-
-        var specialRow = document.createElement('div');
-        specialRow.style.cssText = 'display:flex;gap:16px;margin-bottom:12px;';
-        var leftCol = document.createElement('div');
-        leftCol.appendChild(leftLabel);
-        leftCol.appendChild(leftDD.wrap);
-        var rightCol = document.createElement('div');
-        rightCol.appendChild(rightLabel);
-        rightCol.appendChild(rightDD.wrap);
-        specialRow.appendChild(leftCol);
-        specialRow.appendChild(rightCol);
-        panel.appendChild(specialRow);
-
-        var normalLabel = document.createElement('div');
-        normalLabel.textContent = 'Normal Tuning Filters:';
-        normalLabel.style.cssText = 'color:#fff;margin-bottom:4px;';
-
-        var normalFiltersDiv = document.createElement('div');
-        normalFiltersDiv.style.cssText = 'display:flex;flex-direction:column;gap:6px;margin-bottom:8px;';
-
-        var normalOpts = buildNormalTuningOptions();
-        var normalFilterList = [];
-
-        function addNormalFilter() {
-            var filterRow = document.createElement('div');
-            filterRow.style.cssText = 'display:flex;align-items:center;gap:8px;';
-
-            var dd = customDropdown(normalOpts, '', function () {});
-            var removeBtn = document.createElement('button');
-            removeBtn.textContent = 'X';
-            removeBtn.style.cssText = 'cursor:pointer;background:#c0392b;color:#fff;border:none;border-radius:3px;padding:2px 8px;';
-
-            var tf = { dd: dd, row: filterRow, removeBtn: removeBtn };
-
-            (function (tfObj) {
-                removeBtn.addEventListener('click', function () {
-                    normalFiltersDiv.removeChild(tfObj.row);
-                    var idx = normalFilterList.indexOf(tfObj);
-                    if (idx !== -1) normalFilterList.splice(idx, 1);
-                });
-            })(tf);
-
-            filterRow.appendChild(dd.wrap);
-            filterRow.appendChild(removeBtn);
-            normalFiltersDiv.appendChild(filterRow);
-            normalFilterList.push(tf);
-        }
-
-        var addFilterBtn = document.createElement('button');
-        addFilterBtn.textContent = '+ Add Normal Filter';
-        addFilterBtn.style.cssText = 'cursor:pointer;background:#27ae60;color:#fff;border:none;border-radius:3px;padding:4px 10px;margin-bottom:8px;';
-        addFilterBtn.addEventListener('click', addNormalFilter);
-
-        panel.appendChild(normalLabel);
-        panel.appendChild(normalFiltersDiv);
-        panel.appendChild(addFilterBtn);
-
-        var debugLabel = document.createElement('div');
-        debugLabel.textContent = 'Pass: 0';
-        debugLabel.style.cssText = 'color:#aaa;margin-bottom:8px;font-size:12px;';
-        panel.appendChild(debugLabel);
-
-        var applyBtn = document.createElement('button');
-        applyBtn.textContent = 'Apply';
-        applyBtn.style.cssText = 'cursor:pointer;background:#3498db;color:#fff;border:none;border-radius:3px;padding:6px 16px;margin-right:8px;';
-
-        var resetBtn = document.createElement('button');
-        resetBtn.textContent = 'Reset';
-        resetBtn.style.cssText = 'cursor:pointer;background:#666;color:#fff;border:none;border-radius:3px;padding:6px 16px;';
-
-        var btnRow = document.createElement('div');
-        btnRow.style.cssText = 'display:flex;gap:8px;';
-        btnRow.appendChild(applyBtn);
-        btnRow.appendChild(resetBtn);
-        panel.appendChild(btnRow);
-
-        var inserted = false;
-        // Insert toggle button into modal
-        var bodyEl = modal.querySelector('.cos-modal-body');
-        if (bodyEl && bodyEl.parentNode) {
-            bodyEl.parentNode.insertBefore(toggleBtn, bodyEl);
-        } else {
-            modal.appendChild(toggleBtn);
-        }
-
-        toggleBtn.addEventListener('click', function () {
-            if (panel.style.display === 'none' || panel.style.display === '') {
-                panel.style.display = 'block';
-                if (!inserted) {
-                    initTuningData();
-                    var body = modal.querySelector('.cos-modal-body');
-                    if (body && body.parentNode) {
-                        body.parentNode.insertBefore(panel, body);
-                    } else {
-                        modal.appendChild(panel);
-                    }
-                    inserted = true;
-                }
-            } else {
-                panel.style.display = 'none';
-            }
-        });
-
-        applyBtn.addEventListener('click', function () {
-            var leftVal = leftDD.val();
-            var rightVal = rightDD.val();
-            var normalFilters = [];
-            for (var i = 0; i < normalFilterList.length; i++) {
-                var nv = normalFilterList[i].dd.val();
-                if (nv) {
-                    var parts = nv.split('|');
-                    var effects = parts.slice(1);
-                    normalFilters.push(effects);
-                }
-            }
-
-            window.__advSearchFilters = { left: leftVal, right: rightVal, normal: normalFilters };
-
-            var costumes = [];
-            if (ch && ch.costumes) {
-                costumes = ch.costumes;
-            } else if (window.__costumeData) {
-                costumes = window.__costumeData;
-            }
-
-            var results = [];
-            for (var c = 0; c < costumes.length; c++) {
-                var cos = costumes[c];
-                if (!cos) continue;
-                var s = scoreCostume(cos, ch, window.__advSearchFilters);
-                if (s.score > 0 || (leftVal === '' && rightVal === '' && normalFilters.length === 0)) {
-                    results.push({ costume: cos, score: s });
-                }
-            }
-
-            results.sort(function (a, b) {
-                return b.score.score - a.score.score;
-            });
-
-            window.__advSearchResults = results;
-            debugLabel.textContent = 'Pass: ' + results.length;
-            if (baseRender) baseRender();
-        });
-
-        resetBtn.addEventListener('click', function () {
-            leftDD.set('');
-            rightDD.set('');
-            while (normalFilterList.length > 0) {
-                var tf = normalFilterList[0];
-                normalFiltersDiv.removeChild(tf.row);
-                normalFilterList.splice(0, 1);
-            }
-            window.__advSearchResults = [];
-            window.__advSearchFilters = { left: '', right: '', normal: [] };
-            debugLabel.textContent = 'Pass: 0';
-            if (baseRender) baseRender();
-        });
-
-        modal.insertBefore(toggleBtn, modal.firstChild);
-        } catch (e) { console.error('AdvSearch:', e); }
-    }
-
-    window.advSearchBuild = buildAdvancedSearch;
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function () {
-            initTuningData();
-        });
-    } else {
-        initTuningData();
-    }
+  function init(){initTuningData();window.__advSearchResults=null;window.__advSearchFilters=null;}
+  window.advSearchInit=init;
+  window.advSearchBuild=buildAdvancedSearch;
+  window.advSearchScore=scoreCostume;
+  if(document.readyState==='complete')init();else window.addEventListener('DOMContentLoaded',init);
 })();
