@@ -1280,6 +1280,42 @@ window.NORMAL_TUNING_DATA = [
     ]
   },
   {
+    "chara": "37",
+    "role": "Support",
+    "class": "VILLAIN",
+    "name": "Twice",
+    "skillName": "",
+    "skillDesc": "",
+    "levels": [
+      "Level 1: 1.01",
+      "Level 2: 1.02",
+      "Level 3: 1.03",
+      "Level 4: 1.04"
+    ],
+    "subEffects": [
+      {
+        "skillName": "Max GP+",
+        "skillDesc": "Increases Max GP",
+        "levels": [
+          "Level 1: 1",
+          "Level 2: 2",
+          "Level 3: 3",
+          "Level 4: 4"
+        ]
+      },
+      {
+        "skillName": "Downed Crawl Speed+",
+        "skillDesc": "Increases your Movement speed when DOWN",
+        "levels": [
+          "Level 1: 1.01",
+          "Level 2: 1.02",
+          "Level 3: 1.03",
+          "Level 4: 1.04"
+        ]
+      }
+    ]
+  },
+  {
     "chara": "38",
     "role": "Support",
     "class": "VILLAIN",

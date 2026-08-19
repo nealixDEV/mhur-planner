@@ -1,0 +1,405 @@
+{
+  "name": "Character Image Manifest",
+  "version": 1,
+  "description": "Roster portrait, 4K character portrait, and banner image URLs for every character in the MHUR roster.",
+  "imageCategories": {
+    "rosterPng": "Small roster face portrait PNG.",
+    "fourKPng": "Large character portrait PNG.",
+    "banner": "Default character banner. Style-specific banners are listed in styleBanners when available."
+  },
+  "characters": [
+    {
+      "id": "izuku",
+      "name": "Izuku Midoriya",
+      "characterNumber": 1,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch001/GUI/FaceIcon/T_ui_com_cahraface_Ch001.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch001/GUI/FaceIcon/T_ui_Ch001_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_midoriya.jpg",
+      "styleBanners": [
+        { "styleIndex": 1, "styleName": "Full Bullet", "url": "https://mhaur.bn-ent.net/images/chara/img_ill_midoriya_02.jpg" }
+      ]
+    },
+    {
+      "id": "izuku_ofa",
+      "name": "Izuku Midoriya (OFA)",
+      "characterNumber": 202,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch202/GUI/FaceIcon/T_ui_com_cahraface_Ch202.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch202/GUI/FaceIcon/T_ui_Ch202_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_midoriya_ofa.jpg",
+      "styleBanners": []
+    },
+    {
+      "id": "katsuki",
+      "name": "Katsuki Bakugo",
+      "characterNumber": 2,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch002/GUI/FaceIcon/T_ui_com_cahraface_Ch002.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch002/GUI/FaceIcon/T_ui_Ch002_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_bakugo.jpg",
+      "styleBanners": [
+        { "styleIndex": 1, "styleName": "Machine Gun", "url": "https://mhaur.bn-ent.net/images/chara/img_ill_bakugo_02.jpg" },
+        { "styleIndex": 2, "styleName": "Cluster", "url": "https://mhaur.bn-ent.net/images/chara/img_ill_bakugo_03.jpg" }
+      ]
+    },
+    {
+      "id": "ochaco",
+      "name": "Ochaco Uraraka",
+      "characterNumber": 3,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch003/GUI/FaceIcon/T_ui_com_cahraface_Ch003.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch003/GUI/FaceIcon/T_ui_Ch003_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_uraraka.jpg",
+      "styleBanners": [
+        { "styleIndex": 1, "styleName": "Zero Satellites", "url": "https://mhaur.bn-ent.net/images/chara/img_ill_uraraka_02.jpg" }
+      ]
+    },
+    {
+      "id": "tenya",
+      "name": "Tenya Iida",
+      "characterNumber": 5,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch005/GUI/FaceIcon/T_ui_com_cahraface_Ch005.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch005/GUI/FaceIcon/T_ui_Ch005_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_iida.jpg",
+      "styleBanners": []
+    },
+    {
+      "id": "tsuyu",
+      "name": "Tsuyu Asui",
+      "characterNumber": 6,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch006/GUI/FaceIcon/T_ui_com_cahraface_Ch006.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch006/GUI/FaceIcon/T_ui_Ch006_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_asui.jpg",
+      "styleBanners": []
+    },
+    {
+      "id": "shoto",
+      "name": "Shoto Todoroki",
+      "characterNumber": 4,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch004/GUI/FaceIcon/T_ui_com_cahraface_Ch004.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch004/GUI/FaceIcon/T_ui_Ch004_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_todoroki.jpg",
+      "styleBanners": [
+        { "styleIndex": 1, "styleName": "Ice Fang Wind Flame", "url": "https://mhaur.bn-ent.net/images/chara/img_ill_todoroki_02.jpg" }
+      ]
+    },
+    {
+      "id": "eijiro",
+      "name": "Eijiro Kirishima",
+      "characterNumber": 8,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch008/GUI/FaceIcon/T_ui_com_cahraface_Ch008.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch008/GUI/FaceIcon/T_ui_Ch008_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_kirishima.jpg",
+      "styleBanners": [
+        { "styleIndex": 1, "styleName": "Red Drive", "url": "https://mhaur.bn-ent.net/images/chara/img_ill_kirishima_02.jpg" }
+      ]
+    },
+    {
+      "id": "momo",
+      "name": "Momo Yaoyorozu",
+      "characterNumber": 10,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch010/GUI/FaceIcon/T_ui_com_cahraface_Ch010.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch010/GUI/FaceIcon/T_ui_Ch010_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_yaoyorozu.jpg",
+      "styleBanners": []
+    },
+    {
+      "id": "fumikage",
+      "name": "Fumikage Tokoyami",
+      "characterNumber": 11,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch011/GUI/FaceIcon/T_ui_com_cahraface_Ch011.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch011/GUI/FaceIcon/T_ui_Ch011_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_tokoyami.jpg",
+      "styleBanners": []
+    },
+    {
+      "id": "denki",
+      "name": "Denki Kaminari",
+      "characterNumber": 7,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch007/GUI/FaceIcon/T_ui_com_cahraface_Ch007.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch007/GUI/FaceIcon/T_ui_Ch007_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_kaminari.jpg",
+      "styleBanners": [
+        { "styleIndex": 1, "styleName": "Lightning", "url": "https://mhaur.bn-ent.net/images/chara/img_ill_kaminari_02.jpg" }
+      ]
+    },
+    {
+      "id": "neito",
+      "name": "Neito Monoma",
+      "characterNumber": 104,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch104/GUI/FaceIcon/T_ui_com_cahraface_Ch104.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch104/GUI/FaceIcon/T_ui_Ch104_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_monoma.jpg",
+      "styleBanners": []
+    },
+    {
+      "id": "kendo",
+      "name": "Itsuka Kendo",
+      "characterNumber": 46,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch046/GUI/FaceIcon/T_ui_com_cahraface_Ch046.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch046/GUI/FaceIcon/T_ui_Ch046_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_kendo.jpg",
+      "styleBanners": [
+        { "styleIndex": 1, "styleName": "Twin Palm Strike", "url": "https://mhaur.bn-ent.net/images/chara/img_ill_kendo_02.jpg" }
+      ]
+    },
+    {
+      "id": "ibara",
+      "name": "Ibara Shiozaki",
+      "characterNumber": 102,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch102/GUI/FaceIcon/T_ui_com_cahraface_Ch102.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch102/GUI/FaceIcon/T_ui_Ch102_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_shiozaki.jpg",
+      "styleBanners": []
+    },
+    {
+      "id": "mirio",
+      "name": "Mirio Togata",
+      "characterNumber": 24,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch024/GUI/FaceIcon/T_ui_com_cahraface_Ch024.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch024/GUI/FaceIcon/T_ui_Ch024_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_mirio.jpg",
+      "styleBanners": [
+        { "styleIndex": 1, "styleName": "Sheer Counter", "url": "https://mhaur.bn-ent.net/images/chara/img_ill_mirio_02.jpg" }
+      ]
+    },
+    {
+      "id": "tamaki",
+      "name": "Tamaki Amajiki",
+      "characterNumber": 26,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch026/GUI/FaceIcon/T_ui_com_cahraface_Ch026.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch026/GUI/FaceIcon/T_ui_Ch026_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_amajiki.jpg",
+      "styleBanners": []
+    },
+    {
+      "id": "nejire",
+      "name": "Nejire Hado",
+      "characterNumber": 25,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch025/GUI/FaceIcon/T_ui_com_cahraface_Ch025.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch025/GUI/FaceIcon/T_ui_Ch025_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_nejire.jpg",
+      "styleBanners": [
+        { "styleIndex": 1, "styleName": "Fairy", "url": "https://mhaur.bn-ent.net/images/chara/img_ill_nejire_02.jpg" }
+      ]
+    },
+    {
+      "id": "hitoshi",
+      "name": "Hitoshi Shinso",
+      "characterNumber": 105,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch105/GUI/FaceIcon/T_ui_com_cahraface_Ch105.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch105/GUI/FaceIcon/T_ui_Ch105_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_sinso.jpg",
+      "styleBanners": []
+    },
+    {
+      "id": "allmight",
+      "name": "All Might",
+      "characterNumber": 12,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch012/GUI/FaceIcon/T_ui_com_cahraface_Ch012.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch012/GUI/FaceIcon/T_ui_Ch012_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_allmight.jpg",
+      "styleBanners": [
+        { "styleIndex": 1, "styleName": "Gatling", "url": "https://mhaur.bn-ent.net/images/chara/img_ill_allmight_02.jpg" }
+      ]
+    },
+    {
+      "id": "armored",
+      "name": "Armored All Might",
+      "characterNumber": 200,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch200/GUI/FaceIcon/T_ui_com_cahraface_Ch200.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch200/GUI/FaceIcon/T_ui_Ch200_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_armored_allmight.jpg",
+      "styleBanners": []
+    },
+    {
+      "id": "aizawa",
+      "name": "Shota Aizawa",
+      "characterNumber": 13,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch013/GUI/FaceIcon/T_ui_com_cahraface_Ch013.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch013/GUI/FaceIcon/T_ui_Ch013_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_aizawa.jpg",
+      "styleBanners": [
+        { "styleIndex": 1, "styleName": "Flow Runner", "url": "https://i.ytimg.com/vi/HwjRxH9hAtU/maxresdefault.jpg" }
+      ]
+    },
+    {
+      "id": "mic",
+      "name": "Present Mic",
+      "characterNumber": 109,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch109/GUI/FaceIcon/T_ui_com_cahraface_Ch109.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch109/GUI/FaceIcon/T_ui_Ch109_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_mic.jpg",
+      "styleBanners": [
+        { "styleIndex": 1, "styleName": "D.J. Board", "url": "https://i.ytimg.com/vi/1oijwnU6uaw/maxresdefault.jpg" }
+      ]
+    },
+    {
+      "id": "cement",
+      "name": "Cementoss",
+      "characterNumber": 101,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch101/GUI/FaceIcon/T_ui_com_cahraface_Ch101.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch101/GUI/FaceIcon/T_ui_Ch101_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_cementos.jpg",
+      "styleBanners": []
+    },
+    {
+      "id": "endeavor",
+      "name": "Endeavor",
+      "characterNumber": 23,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch023/GUI/FaceIcon/T_ui_com_cahraface_Ch023.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch023/GUI/FaceIcon/T_ui_Ch023_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_endeavor.jpg",
+      "styleBanners": [
+        { "styleIndex": 1, "styleName": "Inferno Fist", "url": "https://mhaur.bn-ent.net/images/chara/img_ill_endeavor_02.jpg" }
+      ]
+    },
+    {
+      "id": "hawks",
+      "name": "Hawks",
+      "characterNumber": 43,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch043/GUI/FaceIcon/T_ui_com_cahraface_Ch043.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch043/GUI/FaceIcon/T_ui_Ch043_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_hawks.jpg",
+      "styleBanners": [
+        { "styleIndex": 1, "styleName": "Slicing Wind", "url": "https://mhaur.bn-ent.net/images/chara/img_ill_hawks_02.jpg" }
+      ]
+    },
+    {
+      "id": "mirko",
+      "name": "Mirko",
+      "characterNumber": 111,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch111/GUI/FaceIcon/T_ui_com_cahraface_Ch111.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch111/GUI/FaceIcon/T_ui_Ch111_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_mirko.jpg",
+      "styleBanners": []
+    },
+    {
+      "id": "star",
+      "name": "Star and Stripe",
+      "characterNumber": 114,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch114/GUI/FaceIcon/T_ui_com_cahraface_Ch114.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch114/GUI/FaceIcon/T_ui_Ch114_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_star_and_stripe.jpg",
+      "styleBanners": []
+    },
+    {
+      "id": "mtlady",
+      "name": "Mt. Lady",
+      "characterNumber": 100,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch100/GUI/FaceIcon/T_ui_com_cahraface_Ch100.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch100/GUI/FaceIcon/T_ui_Ch100_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_lady.jpg",
+      "styleBanners": []
+    },
+    {
+      "id": "tomura",
+      "name": "Tomura Shigaraki",
+      "characterNumber": 15,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch015/GUI/FaceIcon/T_ui_com_cahraface_Ch015.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch015/GUI/FaceIcon/T_ui_Ch015_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_shigaraki.jpg",
+      "styleBanners": [
+        { "styleIndex": 1, "styleName": "Catastrophe", "url": "https://mhaur.bn-ent.net/images/chara/img_ill_shigaraki_02.jpg" },
+        { "styleIndex": 2, "styleName": "Thousand-Hand Break", "url": "https://mhaur.bn-ent.net/images/chara/img_ill_shigaraki_03.jpg" }
+      ]
+    },
+    {
+      "id": "afo",
+      "name": "All For One",
+      "characterNumber": 16,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch016/GUI/FaceIcon/T_ui_com_cahraface_Ch016.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch016/GUI/FaceIcon/T_ui_Ch016_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_allforone.jpg",
+      "styleBanners": [
+        { "styleIndex": 1, "styleName": "Factor Fusion", "url": "https://mhaur.bn-ent.net/images/chara/img_ill_allforone_02.jpg" }
+      ]
+    },
+    {
+      "id": "afo_youth",
+      "name": "All For One (Youth)",
+      "characterNumber": 201,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch201/GUI/FaceIcon/T_ui_com_cahraface_Ch201.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch201/GUI/FaceIcon/T_ui_Ch201_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_allforone_youth.jpg",
+      "styleBanners": []
+    },
+    {
+      "id": "dabi",
+      "name": "Dabi",
+      "characterNumber": 17,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch017/GUI/FaceIcon/T_ui_com_cahraface_Ch017.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch017/GUI/FaceIcon/T_ui_Ch017_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_dabi.jpg",
+      "styleBanners": [
+        { "styleIndex": 1, "styleName": "Crazy Torch", "url": "https://mhaur.bn-ent.net/images/chara/img_ill_dabi_02.jpg" }
+      ]
+    },
+    {
+      "id": "himiko",
+      "name": "Himiko Toga",
+      "characterNumber": 18,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch018/GUI/FaceIcon/T_ui_com_cahraface_Ch018.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch018/GUI/FaceIcon/T_ui_Ch018_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_toga.jpg",
+      "styleBanners": [
+        { "styleIndex": 1, "styleName": "Sting Dance", "url": "https://mhaur.bn-ent.net/images/chara/img_ill_toga_02.jpg" }
+      ]
+    },
+    {
+      "id": "twice",
+      "name": "Twice",
+      "characterNumber": 37,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch037/GUI/FaceIcon/T_ui_com_cahraface_Ch037.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch037/GUI/FaceIcon/T_ui_Ch037_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_twice.jpg",
+      "styleBanners": [
+        { "styleIndex": 1, "styleName": "Sad Man's Parade", "url": "https://media.discordapp.net/attachments/1157716728202133705/1531881082797162586/T_ui_title_image_18201_Full.png?ex=6a86826f&is=6a8530ef&hm=6463aa2d7caa561f7a5bb84af0a97e4055689987e4aa6be99ec432f997c9652d&=&format=webp&quality=lossless" }
+      ]
+    },
+    {
+      "id": "compress",
+      "name": "Mr. Compress",
+      "characterNumber": 38,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch038/GUI/FaceIcon/T_ui_com_cahraface_Ch038.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch038/GUI/FaceIcon/T_ui_Ch038_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_compress.jpg",
+      "styleBanners": []
+    },
+    {
+      "id": "kurogiri",
+      "name": "Kurogiri",
+      "characterNumber": 103,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch103/GUI/FaceIcon/T_ui_com_cahraface_Ch103.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch103/GUI/FaceIcon/T_ui_Ch103_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_kurogiri.jpg",
+      "styleBanners": []
+    },
+    {
+      "id": "nagant",
+      "name": "Lady Nagant",
+      "characterNumber": 115,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch115/GUI/FaceIcon/T_ui_com_cahraface_Ch115.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch115/GUI/FaceIcon/T_ui_Ch115_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_lady_nagant.jpg",
+      "styleBanners": []
+    },
+    {
+      "id": "overhaul",
+      "name": "Overhaul",
+      "characterNumber": 34,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch034/GUI/FaceIcon/T_ui_com_cahraface_Ch034.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch034/GUI/FaceIcon/T_ui_Ch034_CharaImage.png",
+      "banner": "https://mhaur.bn-ent.net/images/chara/img_ill_overhaul.jpg",
+      "styleBanners": [
+        { "styleIndex": 1, "styleName": "Blighted Precipice", "url": "https://mhaur.bn-ent.net/images/chara/img_ill_overhaul_02.jpg" }
+      ]
+    },
+    {
+      "id": "gentle",
+      "name": "Gentle Criminal",
+      "characterNumber": 108,
+      "rosterPng": "https://ultrarumble.com/assets/Character/Ch108/GUI/FaceIcon/T_ui_com_cahraface_Ch108.png",
+      "fourKPng": "https://ultrarumble.com/assets/Character/Ch108/GUI/FaceIcon/T_ui_Ch108_CharaImage.png",
+      "banner": "https://media.discordapp.net/attachments/1157716728202133705/1531875504460927136/T_ui_Ch108_Variation_10800.png?ex=6a6acdbd&is=6a697c3d&hm=539ad9e9416114280b00f1b7e1c2f188eb423cd4b895e83942cc2adfb18b4033&=&format=webp&quality=lossless",
+      "styleBanners": []
+    }
+  ]
+}

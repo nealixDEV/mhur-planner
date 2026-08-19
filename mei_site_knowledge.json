@@ -1,0 +1,52 @@
+{
+  "_note": "Live MHUR site knowledge for Mei's small talk. Sourced from ultrarumble.com (MHUR Database). Update the values below when the game updates. Mei may reference these facts casually; she must NOT invent details beyond them.",
+  "_source": "https://ultrarumble.com",
+  "_lastUpdated": "2026-07-30",
+  "season": {
+    "number": 18,
+    "startJST": "2026-07-29 13:00:00",
+    "endJST": "2026-09-30 12:59:59",
+    "note": "Season 18 is the current season, running late July through end of September 2026 (JST)."
+  },
+  "currentEvents": [
+    "Beginner Mission Event — an intro event for new players.",
+    "Battle Event Vol. 10 — combat challenge featuring Endeavor and Nejire Hado costumes, plus a Nejire emote, voice line, and nameplate."
+  ],
+  "upcomingEvents": [
+    "T.U.N.I.N.G. Mission Event Vol. 5 (Aug 5–19)",
+    "Drop Event Vol. 18 (Aug 19 – Sep 2)",
+    "3-Pick Battle Event Vol. 1 (Aug 26 – Sep 30) — Bakugo & Shigaraki costumes",
+    "T.U.N.I.N.G. Mission Event Vol. 6 (Sep 9–30)",
+    "License Event Vol. 4 (Sep 16–30)"
+  ],
+  "currentGachas": [
+    "Character rolls: Gentle Criminal (Original) and Fumikage Tokoyami (Original).",
+    "Alternative-style rolls: Katsuki Bakugo (Cluster) and Tomura Shigaraki (Thousand-Hand Break).",
+    "Costume Pick Up Roll 'Vol. Disguise' — 10x roll for 10,000 Hero Crystals, six PUR Disguise costumes, featured costume guaranteed after 30 rolls."
+  ],
+  "upcomingGachas": [
+    "Originals: Izuku Midoriya OFA, Neito Monoma, Nejire Hado (from Sep 16).",
+    "Alternatives: Tsuyu Asui (Froppy Hopper), All For One (Factor Fusion), Twice (Sad Man's Parade), Hitoshi Shinso.",
+    "Parallel World costume roll: Bakugo, Uraraka, Todoroki, Asui, Kaminari, Kirishima."
+  ],
+  "campaigns": [
+    "Special Login Bonus: 10 Roll Tickets every day.",
+    "Birthday campaigns (Roll Ticket x10 each) for Itsuka Kendo, Ibara Shiozaki, Gentle Criminal, Tenya Iida, Himiko Toga, Endeavor, and Mt. Lady."
+  ],
+  "latestPatch": "Data Update v1.17.0-14.5 (July 29, 2026).",
+  "maps": ["U.S.J. Ver. 03", "Neo Academia", "Chaos City Ver. 02"],
+  "modes": ["Solo battle", "3-player team (squad) battle"],
+  "newestCharacters": ["Gentle Criminal", "D.J. Board (Present Mic style)", "Flow Runner (Aizawa style)"],
+  "communityFlavor": [
+    "Players affectionately call Izuku 'Deku' and often shorten characters (Baku/Bakugo, Shig/Shigaraki, Toga, Mt. Lady).",
+    "The community jokes about solo-queue teammates who don't revive, and about getting third-partied in fights.",
+    "Fixer is a running favorite in build talk; players love theorycrafting tuning combos.",
+    "The vibe is casual, meme-friendly, and build-obsessed — hype about new characters and costume drops."
+  ],
+  "communityNote": "General community flavor for relatability. Mei can use this casual tone but must NOT present memes/jokes as game facts or invent mechanics.",
+  "smallTalkTips": [
+    "When chatting casually, Mei can mention the current season, live events, gacha banners, birthday campaigns, or the newest characters — but only what's listed here.",
+    "Mei can express excitement about content (e.g. the Disguise costume roll or Battle Event Vol. 10) without inventing rewards or dates beyond what's listed.",
+    "If asked about something not in this data, Mei should say she doesn't have that info yet rather than guessing."
+  ]
+}
