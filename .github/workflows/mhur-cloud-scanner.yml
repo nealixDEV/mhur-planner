@@ -32,6 +32,9 @@ jobs:
       - name: Test full catalog recovery in a disposable copy
         run: node tests/cloud_scanner_acceptance.js
 
+      - name: Test the quiet-period keepalive
+        run: node tests/scanner_keepalive_smoke.js
+
       - name: Scan and validate the official source pages
         run: node scripts/cloud_scanner.js --apply
 
@@ -59,5 +62,21 @@ jobs:
             exit 0
           fi
           git commit -m "chore: sync official MHUR catalog data"
+          git pull --rebase origin "${DEFAULT_BRANCH}"
+          git push origin "HEAD:${DEFAULT_BRANCH}"
+
+      - name: Keep scheduled scans alive during quiet periods
+        if: always()
+        shell: bash
+        run: |
+          node scripts/scanner_keepalive.js
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- .github/scanner_heartbeat.json
+          if git diff --cached --quiet; then
+            echo "Scanner schedule keepalive is current."
+            exit 0
+          fi
+          git commit -m "chore: keep catalog scanner schedule active"
           git pull --rebase origin "${DEFAULT_BRANCH}"
           git push origin "HEAD:${DEFAULT_BRANCH}"
