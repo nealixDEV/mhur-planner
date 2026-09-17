@@ -1,0 +1,63 @@
+name: MHUR cloud catalog scanner
+
+on:
+  schedule:
+    - cron: '13 */2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mhur-cloud-catalog-${{ github.event.repository.default_branch }}
+  cancel-in-progress: false
+
+jobs:
+  scan-and-sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+    steps:
+      - name: Check out the default branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Test full catalog recovery in a disposable copy
+        run: node tests/cloud_scanner_acceptance.js
+
+      - name: Scan and validate the official source pages
+        run: node scripts/cloud_scanner.js --apply
+
+      - name: Commit only validated game-data updates
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- \
+            character_image_manifest.json \
+            costume_slots_raw.json \
+            damage_export.json \
+            damage_tables.csv \
+            damage_tables.json \
+            database/character_ids.json \
+            database/character_index.json \
+            database/characters.json \
+            database/costumes.json \
+            database/official_patch_snapshot.json \
+            database/scrape_manifest.json \
+            normal_tuning_parsed.json \
+            special_tuning_parsed.json
+          if git diff --cached --quiet; then
+            echo "No official catalog changes found."
+            exit 0
+          fi
+          git commit -m "chore: sync official MHUR catalog data"
+          git pull --rebase origin "${DEFAULT_BRANCH}"
+          git push origin "HEAD:${DEFAULT_BRANCH}"
