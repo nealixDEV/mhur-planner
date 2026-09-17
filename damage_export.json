@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T03:04:19.525Z",
+  "generatedAt": "2026-09-17T08:10:59.338Z",
   "source": "workspace scrape data",
   "characterCount": 38,
   "characters": [
@@ -33,7 +33,7 @@
       "role": "Rapid",
       "battleStyles": [],
       "stats": {
-        "hp": 300,
+        "hp": 250,
         "gp": 250,
         "melee": null,
         "alpha": 80,
@@ -64,7 +64,7 @@
         "melee": null,
         "alpha": 58,
         "beta": 75,
-        "gamma": 4,
+        "gamma": 1,
         "sa": 18
       }
     },
@@ -108,23 +108,6 @@
       }
     },
     {
-      "id": "tsuyu",
-      "num": 6,
-      "name": "Tsuyu Asui",
-      "group": "Hero",
-      "role": "Rapid",
-      "battleStyles": [],
-      "stats": {
-        "hp": 250,
-        "gp": 250,
-        "melee": null,
-        "alpha": 55,
-        "beta": 76,
-        "gamma": null,
-        "sa": null
-      }
-    },
-    {
       "id": "shoto",
       "num": 4,
       "name": "Shoto Todoroki",
@@ -142,8 +125,30 @@
         "melee": null,
         "alpha": 54,
         "beta": 130,
-        "gamma": 54,
+        "gamma": 26,
         "sa": 55
+      }
+    },
+    {
+      "id": "tsuyu",
+      "num": 6,
+      "name": "Tsuyu Asui",
+      "group": "Hero",
+      "role": "Rapid",
+      "battleStyles": [
+        {
+          "name": "Froppy Hopper",
+          "type": "Strike"
+        }
+      ],
+      "stats": {
+        "hp": 250,
+        "gp": 250,
+        "melee": null,
+        "alpha": 55.25,
+        "beta": 76,
+        "gamma": null,
+        "sa": null
       }
     },
     {
@@ -218,8 +223,8 @@
         "hp": 350,
         "gp": 250,
         "melee": null,
-        "alpha": 55,
-        "beta": 55,
+        "alpha": 54,
+        "beta": 24,
         "gamma": 80,
         "sa": 31
       }
@@ -315,7 +320,7 @@
         "melee": null,
         "alpha": 55,
         "beta": 110,
-        "gamma": 55,
+        "gamma": 27,
         "sa": null
       }
     },
@@ -337,7 +342,7 @@
         "melee": null,
         "alpha": 22,
         "beta": 23,
-        "gamma": 22,
+        "gamma": 110,
         "sa": 35
       }
     },
@@ -353,7 +358,7 @@
         "gp": 250,
         "melee": null,
         "alpha": 25,
-        "beta": 25,
+        "beta": 120,
         "gamma": 0,
         "sa": null
       }
@@ -388,7 +393,7 @@
       "role": "Technical",
       "battleStyles": [],
       "stats": {
-        "hp": 350,
+        "hp": 300,
         "gp": 250,
         "melee": null,
         "alpha": 30,
@@ -435,8 +440,8 @@
         "hp": 300,
         "gp": 250,
         "melee": null,
-        "alpha": 55,
-        "beta": 80,
+        "alpha": 45,
+        "beta": 60,
         "gamma": 100,
         "sa": 55
       }
@@ -514,7 +519,7 @@
         "gp": 250,
         "melee": null,
         "alpha": 32,
-        "beta": 32,
+        "beta": 40,
         "gamma": 6,
         "sa": null
       }
@@ -548,7 +553,7 @@
         "gp": 250,
         "melee": null,
         "alpha": 30,
-        "beta": 30,
+        "beta": 45,
         "gamma": 85,
         "sa": null
       }
@@ -614,8 +619,8 @@
         "melee": null,
         "alpha": 56,
         "beta": 5,
-        "gamma": 56,
-        "sa": null
+        "gamma": 42,
+        "sa": 50
       }
     },
     {
@@ -634,7 +639,7 @@
         "hp": 350,
         "gp": 250,
         "melee": null,
-        "alpha": 20,
+        "alpha": 42,
         "beta": 20,
         "gamma": 20,
         "sa": 60
@@ -668,14 +673,19 @@
       "name": "Twice",
       "group": "Villain",
       "role": "Rapid",
-      "battleStyles": [],
+      "battleStyles": [
+        {
+          "name": "Sad Man's Parade",
+          "type": "Support"
+        }
+      ],
       "stats": {
         "hp": 300,
         "gp": 250,
         "melee": null,
         "alpha": 23,
-        "beta": 23,
-        "gamma": null,
+        "beta": 94,
+        "gamma": 20,
         "sa": null
       }
     },
@@ -724,9 +734,25 @@
         "hp": 250,
         "gp": 250,
         "melee": null,
-        "alpha": 47,
-        "beta": 25,
-        "gamma": 120,
+        "alpha": 35,
+        "beta": 20,
+        "gamma": 100,
+        "sa": null
+      }
+    },
+    {
+      "id": "gentle_criminal",
+      "num": 108,
+      "name": "Gentle Criminal",
+      "group": "Villain",
+      "role": "Technical",
+      "battleStyles": [],
+      "stats": {
+        "hp": 300,
+        "gp": 250,
+        "alpha": 60,
+        "beta": 70,
+        "gamma": 40,
         "sa": null
       }
     },
@@ -748,8 +774,8 @@
         "melee": null,
         "alpha": 15,
         "beta": 30,
-        "gamma": 15,
-        "sa": 54
+        "gamma": 80,
+        "sa": 80
       }
     }
   ],

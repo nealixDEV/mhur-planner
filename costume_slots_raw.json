@@ -6395,6 +6395,51 @@
       "a": "villain"
     }
   },
+  "2100106": {
+    "s": [
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Strike"
+    },
+    "sp2": {
+      "r": "Technical",
+      "a": "villain"
+    }
+  },
   "2200100": {
     "s": [
       {
@@ -9565,6 +9610,276 @@
     "sp2": {
       "r": "Technical",
       "a": "hero"
+    }
+  },
+  "2618100": {
+    "s": [
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Assault"
+    },
+    "sp2": {
+      "r": "Assault",
+      "a": "villain"
+    }
+  },
+  "2618102": {
+    "s": [
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Support",
+        "a": "hero"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Rapid"
+    },
+    "sp2": {
+      "r": "Rapid",
+      "a": "hero"
+    }
+  },
+  "2618103": {
+    "s": [
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Technical"
+    },
+    "sp2": {
+      "r": "Strike",
+      "a": "hero"
+    }
+  },
+  "2618104": {
+    "s": [
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Strike"
+    },
+    "sp2": {
+      "r": "Rapid",
+      "a": "villain"
+    }
+  },
+  "2618105": {
+    "s": [
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Support"
+    },
+    "sp2": {
+      "r": "Support",
+      "a": "hero"
+    }
+  },
+  "2618106": {
+    "s": [
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Support",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Technical"
+    },
+    "sp2": {
+      "r": "Technical",
+      "a": "villain"
     }
   },
   "2619100": {
@@ -17055,6 +17370,96 @@
       "a": "hero"
     }
   },
+  "4618100": {
+    "s": [
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Support",
+        "a": "hero"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Assault"
+    },
+    "sp2": {
+      "r": "Rapid",
+      "a": "hero"
+    }
+  },
+  "4618105": {
+    "s": [
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Support",
+        "a": "hero"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Rapid"
+    },
+    "sp2": {
+      "r": "Rapid",
+      "a": "hero"
+    }
+  },
   "5000000": {
     "s": [
       {
@@ -19187,6 +19592,276 @@
       "a": "villain"
     }
   },
+  "5308100": {
+    "s": [
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Strike"
+    },
+    "sp2": {
+      "r": "Technical",
+      "a": "hero"
+    }
+  },
+  "5308102": {
+    "s": [
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Rapid"
+    },
+    "sp2": {
+      "r": "Support",
+      "a": "hero"
+    }
+  },
+  "5308103": {
+    "s": [
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Support"
+    },
+    "sp2": {
+      "r": "Strike",
+      "a": "villain"
+    }
+  },
+  "5308104": {
+    "s": [
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Technical"
+    },
+    "sp2": {
+      "r": "Technical",
+      "a": "villain"
+    }
+  },
+  "5308105": {
+    "s": [
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Assault"
+    },
+    "sp2": {
+      "r": "Assault",
+      "a": "villain"
+    }
+  },
+  "5308106": {
+    "s": [
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      {
+        "r": "Support",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Rapid"
+    },
+    "sp2": {
+      "r": "Rapid",
+      "a": "hero"
+    }
+  },
   "5601100": {
     "s": [
       {
@@ -21212,6 +21887,276 @@
     },
     "sp2": {
       "r": "Rapid",
+      "a": "hero"
+    }
+  },
+  "6308100": {
+    "s": [
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      },
+      {
+        "r": "Support",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Rapid"
+    },
+    "sp2": {
+      "r": "Rapid",
+      "a": "villain"
+    }
+  },
+  "6308102": {
+    "s": [
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Support"
+    },
+    "sp2": {
+      "r": "Support",
+      "a": "villain"
+    }
+  },
+  "6308103": {
+    "s": [
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Technical"
+    },
+    "sp2": {
+      "r": "Strike",
+      "a": "villain"
+    }
+  },
+  "6308104": {
+    "s": [
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Strike"
+    },
+    "sp2": {
+      "r": "Technical",
+      "a": "hero"
+    }
+  },
+  "6308105": {
+    "s": [
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      },
+      {
+        "r": "Support",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Assault"
+    },
+    "sp2": {
+      "r": "Assault",
+      "a": "hero"
+    }
+  },
+  "6308106": {
+    "s": [
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Strike"
+    },
+    "sp2": {
+      "r": "Support",
       "a": "hero"
     }
   },
@@ -30471,6 +31416,276 @@
       "a": "villain"
     }
   },
+  "11601100": {
+    "s": [
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Support"
+    },
+    "sp2": {
+      "r": "Strike",
+      "a": "villain"
+    }
+  },
+  "11601102": {
+    "s": [
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Support",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Rapid"
+    },
+    "sp2": {
+      "r": "Assault",
+      "a": "hero"
+    }
+  },
+  "11601103": {
+    "s": [
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Strike"
+    },
+    "sp2": {
+      "r": "Rapid",
+      "a": "hero"
+    }
+  },
+  "11601104": {
+    "s": [
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      },
+      {
+        "r": "Support",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Assault"
+    },
+    "sp2": {
+      "r": "Support",
+      "a": "villain"
+    }
+  },
+  "11601105": {
+    "s": [
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Support",
+        "a": "hero"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Technical"
+    },
+    "sp2": {
+      "r": "Technical",
+      "a": "hero"
+    }
+  },
+  "11601106": {
+    "s": [
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Assault"
+    },
+    "sp2": {
+      "r": "Technical",
+      "a": "villain"
+    }
+  },
   "11604100": {
     "s": [
       {
@@ -37699,6 +38914,51 @@
       "a": "hero"
     }
   },
+  "15001101": {
+    "s": [
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Assault"
+    },
+    "sp2": {
+      "r": "Assault",
+      "a": "hero"
+    }
+  },
   "15001104": {
     "s": [
       {
@@ -39727,6 +40987,276 @@
       "a": "hero"
     }
   },
+  "15614100": {
+    "s": [
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Support"
+    },
+    "sp2": {
+      "r": "Rapid",
+      "a": "hero"
+    }
+  },
+  "15614101": {
+    "s": [
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Technical"
+    },
+    "sp2": {
+      "r": "Support",
+      "a": "hero"
+    }
+  },
+  "15614103": {
+    "s": [
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Strike"
+    },
+    "sp2": {
+      "r": "Assault",
+      "a": "villain"
+    }
+  },
+  "15614104": {
+    "s": [
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Assault"
+    },
+    "sp2": {
+      "r": "Technical",
+      "a": "hero"
+    }
+  },
+  "15614105": {
+    "s": [
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Support",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Rapid"
+    },
+    "sp2": {
+      "r": "Strike",
+      "a": "villain"
+    }
+  },
+  "15614106": {
+    "s": [
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Support"
+    },
+    "sp2": {
+      "r": "Assault",
+      "a": "villain"
+    }
+  },
   "16000000": {
     "s": [
       {
@@ -41337,6 +42867,276 @@
     "sp2": {
       "r": "Support",
       "a": "hero"
+    }
+  },
+  "16614100": {
+    "s": [
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Technical"
+    },
+    "sp2": {
+      "r": "Strike",
+      "a": "hero"
+    }
+  },
+  "16614101": {
+    "s": [
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Rapid"
+    },
+    "sp2": {
+      "r": "Assault",
+      "a": "villain"
+    }
+  },
+  "16614103": {
+    "s": [
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Strike"
+    },
+    "sp2": {
+      "r": "Strike",
+      "a": "hero"
+    }
+  },
+  "16614104": {
+    "s": [
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Assault"
+    },
+    "sp2": {
+      "r": "Rapid",
+      "a": "hero"
+    }
+  },
+  "16614105": {
+    "s": [
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Support"
+    },
+    "sp2": {
+      "r": "Support",
+      "a": "villain"
+    }
+  },
+  "16614106": {
+    "s": [
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Technical"
+    },
+    "sp2": {
+      "r": "Technical",
+      "a": "villain"
     }
   },
   "17000000": {
@@ -46175,6 +47975,276 @@
       "a": "villain"
     }
   },
+  "18607100": {
+    "s": [
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Strike"
+    },
+    "sp2": {
+      "r": "Technical",
+      "a": "villain"
+    }
+  },
+  "18607101": {
+    "s": [
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Assault"
+    },
+    "sp2": {
+      "r": "Rapid",
+      "a": "hero"
+    }
+  },
+  "18607103": {
+    "s": [
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Technical"
+    },
+    "sp2": {
+      "r": "Assault",
+      "a": "hero"
+    }
+  },
+  "18607104": {
+    "s": [
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Support"
+    },
+    "sp2": {
+      "r": "Technical",
+      "a": "hero"
+    }
+  },
+  "18607105": {
+    "s": [
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      },
+      {
+        "r": "Support",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Rapid"
+    },
+    "sp2": {
+      "r": "Support",
+      "a": "villain"
+    }
+  },
+  "18607106": {
+    "s": [
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Assault"
+    },
+    "sp2": {
+      "r": "Strike",
+      "a": "villain"
+    }
+  },
   "18615100": {
     "s": [
       {
@@ -46953,6 +49023,47 @@
     "sp2": {
       "r": "Technical",
       "a": "villain"
+    }
+  },
+  "23001103": {
+    "s": [
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Support"
+      }
+    ],
+    "sp1": {
+      "r": "Assault"
+    },
+    "sp2": {
+      "r": "Strike",
+      "a": "hero"
     }
   },
   "23001104": {
@@ -51944,6 +54055,47 @@
     },
     "sp2": {
       "r": "Rapid",
+      "a": "hero"
+    }
+  },
+  "25401103": {
+    "s": [
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Technical"
+      }
+    ],
+    "sp1": {
+      "r": "Rapid"
+    },
+    "sp2": {
+      "r": "Strike",
       "a": "hero"
     }
   },
@@ -57043,6 +59195,276 @@
       "a": "hero"
     }
   },
+  "37607100": {
+    "s": [
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Support",
+        "a": "hero"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Technical"
+    },
+    "sp2": {
+      "r": "Rapid",
+      "a": "villain"
+    }
+  },
+  "37607101": {
+    "s": [
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Assault"
+    },
+    "sp2": {
+      "r": "Strike",
+      "a": "hero"
+    }
+  },
+  "37607103": {
+    "s": [
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Strike"
+    },
+    "sp2": {
+      "r": "Technical",
+      "a": "villain"
+    }
+  },
+  "37607104": {
+    "s": [
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Support"
+    },
+    "sp2": {
+      "r": "Assault",
+      "a": "villain"
+    }
+  },
+  "37607105": {
+    "s": [
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Rapid"
+    },
+    "sp2": {
+      "r": "Rapid",
+      "a": "hero"
+    }
+  },
+  "37607106": {
+    "s": [
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Support"
+    },
+    "sp2": {
+      "r": "Support",
+      "a": "hero"
+    }
+  },
   "37609100": {
     "s": [
       {
@@ -57405,6 +59827,51 @@
     "sp2": {
       "r": "Support",
       "a": "hero"
+    }
+  },
+  "37615103": {
+    "s": [
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Support"
+    },
+    "sp2": {
+      "r": "Support",
+      "a": "villain"
     }
   },
   "37615105": {
@@ -59121,6 +61588,51 @@
     "sp2": {
       "r": "Strike",
       "a": "villain"
+    }
+  },
+  "38615103": {
+    "s": [
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Support"
+    },
+    "sp2": {
+      "r": "Support",
+      "a": "hero"
     }
   },
   "43000000": {
@@ -69211,6 +71723,276 @@
       "a": "villain"
     }
   },
+  "104601100": {
+    "s": [
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Strike"
+    },
+    "sp2": {
+      "r": "Technical",
+      "a": "hero"
+    }
+  },
+  "104601102": {
+    "s": [
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Support",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Support"
+    },
+    "sp2": {
+      "r": "Support",
+      "a": "villain"
+    }
+  },
+  "104601103": {
+    "s": [
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Support",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Assault"
+    },
+    "sp2": {
+      "r": "Rapid",
+      "a": "villain"
+    }
+  },
+  "104601104": {
+    "s": [
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Rapid"
+    },
+    "sp2": {
+      "r": "Strike",
+      "a": "villain"
+    }
+  },
+  "104601105": {
+    "s": [
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Technical"
+    },
+    "sp2": {
+      "r": "Support",
+      "a": "hero"
+    }
+  },
+  "104601106": {
+    "s": [
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Support",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Assault"
+    },
+    "sp2": {
+      "r": "Assault",
+      "a": "hero"
+    }
+  },
   "104604100": {
     "s": [
       {
@@ -71083,6 +73865,276 @@
       "a": "villain"
     }
   },
+  "105604100": {
+    "s": [
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Support",
+        "a": "hero"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Assault"
+    },
+    "sp2": {
+      "r": "Support",
+      "a": "villain"
+    }
+  },
+  "105604102": {
+    "s": [
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Support",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Rapid"
+    },
+    "sp2": {
+      "r": "Rapid",
+      "a": "hero"
+    }
+  },
+  "105604103": {
+    "s": [
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Strike"
+    },
+    "sp2": {
+      "r": "Assault",
+      "a": "hero"
+    }
+  },
+  "105604104": {
+    "s": [
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Technical"
+    },
+    "sp2": {
+      "r": "Technical",
+      "a": "villain"
+    }
+  },
+  "105604105": {
+    "s": [
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      },
+      {
+        "r": "Support",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Support"
+    },
+    "sp2": {
+      "r": "Strike",
+      "a": "hero"
+    }
+  },
+  "105604106": {
+    "s": [
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Rapid"
+    },
+    "sp2": {
+      "r": "Assault",
+      "a": "villain"
+    }
+  },
   "105612100": {
     "s": [
       {
@@ -71393,6 +74445,710 @@
     "sp2": {
       "r": "Strike",
       "a": "villain"
+    }
+  },
+  "108000000": {
+    "s": [
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Support"
+      }
+    ],
+    "sp1": {
+      "r": "Rapid"
+    },
+    "sp2": {
+      "r": "Support",
+      "a": "hero"
+    }
+  },
+  "108000001": {
+    "s": [
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Rapid"
+      }
+    ],
+    "sp1": {
+      "r": "Strike"
+    },
+    "sp2": {
+      "r": "Assault",
+      "a": "villain"
+    }
+  },
+  "108000004": {
+    "s": [
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Strike"
+      }
+    ],
+    "sp1": {
+      "r": "Support"
+    },
+    "sp2": {
+      "r": "Technical",
+      "a": "villain"
+    }
+  },
+  "108000006": {
+    "s": [
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Assault"
+      }
+    ],
+    "sp1": {
+      "r": "Technical"
+    },
+    "sp2": {
+      "r": "Assault",
+      "a": "villain"
+    }
+  },
+  "108100100": {
+    "s": [
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Assault"
+    },
+    "sp2": {
+      "r": "Technical",
+      "a": "hero"
+    }
+  },
+  "108100101": {
+    "s": [
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support",
+        "a": "hero"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Strike"
+    },
+    "sp2": {
+      "r": "Support",
+      "a": "villain"
+    }
+  },
+  "108100103": {
+    "s": [
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Support",
+        "a": "hero"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Technical"
+    },
+    "sp2": {
+      "r": "Assault",
+      "a": "hero"
+    }
+  },
+  "108100104": {
+    "s": [
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Rapid"
+    },
+    "sp2": {
+      "r": "Strike",
+      "a": "villain"
+    }
+  },
+  "108100105": {
+    "s": [
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Support"
+    },
+    "sp2": {
+      "r": "Support",
+      "a": "hero"
+    }
+  },
+  "108100106": {
+    "s": [
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Rapid"
+    },
+    "sp2": {
+      "r": "Rapid",
+      "a": "villain"
+    }
+  },
+  "108607100": {
+    "s": [
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      {
+        "r": "Support",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Support"
+    },
+    "sp2": {
+      "r": "Strike",
+      "a": "hero"
+    }
+  },
+  "108607101": {
+    "s": [
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Support"
+    },
+    "sp2": {
+      "r": "Technical",
+      "a": "villain"
+    }
+  },
+  "108607103": {
+    "s": [
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Strike"
+    },
+    "sp2": {
+      "r": "Strike",
+      "a": "villain"
+    }
+  },
+  "108607104": {
+    "s": [
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Rapid"
+    },
+    "sp2": {
+      "r": "Assault",
+      "a": "villain"
+    }
+  },
+  "108607105": {
+    "s": [
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support",
+        "a": "hero"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Assault"
+    },
+    "sp2": {
+      "r": "Support",
+      "a": "hero"
+    }
+  },
+  "108607106": {
+    "s": [
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      },
+      {
+        "r": "Assault",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Technical"
+    },
+    "sp2": {
+      "r": "Rapid",
+      "a": "hero"
     }
   },
   "109000000": {
@@ -79193,6 +82949,276 @@
     "sp2": {
       "r": "Technical",
       "a": "villain"
+    }
+  },
+  "202308100": {
+    "s": [
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Assault"
+    },
+    "sp2": {
+      "r": "Rapid",
+      "a": "hero"
+    }
+  },
+  "202308102": {
+    "s": [
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Strike"
+    },
+    "sp2": {
+      "r": "Assault",
+      "a": "hero"
+    }
+  },
+  "202308103": {
+    "s": [
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Technical",
+        "a": "villain"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Technical"
+    },
+    "sp2": {
+      "r": "Strike",
+      "a": "villain"
+    }
+  },
+  "202308104": {
+    "s": [
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Support",
+        "a": "hero"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      },
+      {
+        "r": "Strike",
+        "a": "villain"
+      }
+    ],
+    "sp1": {
+      "r": "Support"
+    },
+    "sp2": {
+      "r": "Support",
+      "a": "villain"
+    }
+  },
+  "202308105": {
+    "s": [
+      {
+        "r": "Technical"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Strike",
+        "a": "hero"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Rapid"
+    },
+    "sp2": {
+      "r": "Technical",
+      "a": "villain"
+    }
+  },
+  "202308106": {
+    "s": [
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Strike"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Technical",
+        "a": "hero"
+      },
+      {
+        "r": "Assault",
+        "a": "villain"
+      },
+      {
+        "r": "Rapid"
+      },
+      {
+        "r": "Support"
+      },
+      {
+        "r": "Assault"
+      },
+      {
+        "r": "Support",
+        "a": "villain"
+      },
+      {
+        "r": "Rapid",
+        "a": "hero"
+      }
+    ],
+    "sp1": {
+      "r": "Strike"
+    },
+    "sp2": {
+      "r": "Support",
+      "a": "hero"
     }
   },
   "202607100": {

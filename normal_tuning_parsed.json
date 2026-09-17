@@ -105,10 +105,10 @@
         "skillName": "Quirk Skill γ Attack Power+",
         "skillDesc": "Increases damage dealt for Quirk Skill γ",
         "levels": [
-          "Level 1: 1.01",
-          "Level 2: 1.015",
-          "Level 3: 1.02",
-          "Level 4: 1.025"
+          "Level 1: 5",
+          "Level 2: 10",
+          "Level 3: 15",
+          "Level 4: 20"
         ]
       }
     ]
@@ -203,10 +203,10 @@
         "skillName": "Vertical Jump HT+",
         "skillDesc": "Increases your vertical Jump height",
         "levels": [
-          "Level 1: 5",
-          "Level 2: 10",
-          "Level 3: 15",
-          "Level 4: 20"
+          "Level 1: 0.99",
+          "Level 2: 0.985",
+          "Level 3: 0.98",
+          "Level 4: 0.975"
         ]
       }
     ]
@@ -265,10 +265,10 @@
         "skillName": "Quirk Skill γ Defense+",
         "skillDesc": "Decreases damage taken from Quirk Skill γ",
         "levels": [
-          "Level 1: 0.99",
-          "Level 2: 0.985",
-          "Level 3: 0.98",
-          "Level 4: 0.975"
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
         ]
       }
     ]
@@ -321,6 +321,42 @@
           "Level 2: 1.02",
           "Level 3: 1.03",
           "Level 4: 1.04"
+        ]
+      }
+    ]
+  },
+  {
+    "chara": "6",
+    "role": "Strike",
+    "class": "HERO",
+    "name": "Tsuyu Asui (Froppy Hopper)",
+    "skillName": "",
+    "skillDesc": "",
+    "levels": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "subEffects": [
+      {
+        "skillName": "GP Attack Power+",
+        "skillDesc": "Increases damage dealt towards GP",
+        "levels": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      },
+      {
+        "skillName": "Run Speed+",
+        "skillDesc": "Increases your Run speed",
+        "levels": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
         ]
       }
     ]
@@ -441,10 +477,10 @@
         "skillName": "Quirk Skill γ Defense+",
         "skillDesc": "Decreases damage taken from Quirk Skill γ",
         "levels": [
-          "Level 1: 0.99",
-          "Level 2: 0.985",
-          "Level 3: 0.98",
-          "Level 4: 0.975"
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
         ]
       }
     ]
@@ -503,10 +539,10 @@
         "skillName": "Max DOWN HP+",
         "skillDesc": "Increases your HP when DOWN",
         "levels": [
-          "Level 1: 5",
-          "Level 2: 10",
-          "Level 3: 15",
-          "Level 4: 20"
+          "Level 1: 0.99",
+          "Level 2: 0.985",
+          "Level 3: 0.98",
+          "Level 4: 0.975"
         ]
       }
     ]
@@ -565,10 +601,10 @@
         "skillName": "Melee Attack Power+",
         "skillDesc": "Increases damage dealt for Melee Attacks",
         "levels": [
-          "Level 1: 1.01",
-          "Level 2: 1.015",
-          "Level 3: 1.02",
-          "Level 4: 1.025"
+          "Level 1: 5",
+          "Level 2: 10",
+          "Level 3: 15",
+          "Level 4: 20"
         ]
       }
     ]
@@ -627,10 +663,10 @@
         "skillName": "Vertical Jump HT+",
         "skillDesc": "Increases your vertical Jump height",
         "levels": [
-          "Level 1: 5",
-          "Level 2: 10",
-          "Level 3: 15",
-          "Level 4: 20"
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
         ]
       }
     ]
@@ -689,10 +725,10 @@
         "skillName": "Melee Attack Power+",
         "skillDesc": "Increases damage dealt for Melee Attacks",
         "levels": [
-          "Level 1: 1.01",
-          "Level 2: 1.015",
-          "Level 3: 1.02",
-          "Level 4: 1.025"
+          "Level 1: 0.99",
+          "Level 2: 0.985",
+          "Level 3: 0.98",
+          "Level 4: 0.975"
         ]
       }
     ]
@@ -725,10 +761,10 @@
         "skillName": "HP Defense+",
         "skillDesc": "Decreases damage taken towards HP",
         "levels": [
-          "Level 1: 0.99",
-          "Level 2: 0.985",
-          "Level 3: 0.98",
-          "Level 4: 0.975"
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
         ]
       }
     ]
@@ -761,10 +797,10 @@
         "skillName": "Max HP+",
         "skillDesc": "Increases Max HP",
         "levels": [
-          "Level 1: 1",
-          "Level 2: 2",
-          "Level 3: 3",
-          "Level 4: 4"
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
         ]
       }
     ]
@@ -798,9 +834,9 @@
         "skillDesc": "Increases your Movement speed when DOWN",
         "levels": [
           "Level 1: 1.01",
-          "Level 2: 1.02",
-          "Level 3: 1.03",
-          "Level 4: 1.04"
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
         ]
       }
     ]
@@ -859,10 +895,10 @@
         "skillName": "Melee Defense+",
         "skillDesc": "Decreases damage taken from Melee Attacks",
         "levels": [
-          "Level 1: 0.99",
-          "Level 2: 0.985",
-          "Level 3: 0.98",
-          "Level 4: 0.975"
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
         ]
       }
     ]
@@ -921,10 +957,10 @@
         "skillName": "Quirk Skill γ Reload+",
         "skillDesc": "Increases reload speed of Quirk Skill γ",
         "levels": [
-          "Level 1: 1.01",
-          "Level 2: 1.015",
-          "Level 3: 1.02",
-          "Level 4: 1.025"
+          "Level 1: 5",
+          "Level 2: 10",
+          "Level 3: 15",
+          "Level 4: 20"
         ]
       }
     ]
@@ -983,10 +1019,10 @@
         "skillName": "GP Attack Power+",
         "skillDesc": "Increases damage dealt towards GP",
         "levels": [
-          "Level 1: 1.01",
-          "Level 2: 1.015",
-          "Level 3: 1.02",
-          "Level 4: 1.025"
+          "Level 1: 0.99",
+          "Level 2: 0.985",
+          "Level 3: 0.98",
+          "Level 4: 0.975"
         ]
       }
     ]
@@ -1020,9 +1056,9 @@
         "skillDesc": "Increases reload speed of Quirk Skill α",
         "levels": [
           "Level 1: 1.01",
-          "Level 2: 1.015",
-          "Level 3: 1.02",
-          "Level 4: 1.025"
+          "Level 2: 1.02",
+          "Level 3: 1.03",
+          "Level 4: 1.04"
         ]
       }
     ]
@@ -1055,10 +1091,10 @@
         "skillName": "Quirk Skill α Defense+",
         "skillDesc": "Decreases damage taken from Quirk Skill α",
         "levels": [
-          "Level 1: 0.99",
-          "Level 2: 0.985",
-          "Level 3: 0.98",
-          "Level 4: 0.975"
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
         ]
       }
     ]
@@ -1163,10 +1199,10 @@
         "skillName": "Wall Jump HT+",
         "skillDesc": "Increases your Wall Jump height",
         "levels": [
-          "Level 1: 5",
-          "Level 2: 10",
-          "Level 3: 15",
-          "Level 4: 20"
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
         ]
       }
     ]
@@ -1199,10 +1235,10 @@
         "skillName": "Quirk Skill γ Attack Power+",
         "skillDesc": "Increases damage dealt for Quirk Skill γ",
         "levels": [
-          "Level 1: 1.01",
-          "Level 2: 1.015",
-          "Level 3: 1.02",
-          "Level 4: 1.025"
+          "Level 1: 1",
+          "Level 2: 2",
+          "Level 3: 3",
+          "Level 4: 4"
         ]
       }
     ]
@@ -1235,10 +1271,10 @@
         "skillName": "GP Attack Power+",
         "skillDesc": "Increases damage dealt towards GP",
         "levels": [
-          "Level 1: 1.01",
-          "Level 2: 1.015",
-          "Level 3: 1.02",
-          "Level 4: 1.025"
+          "Level 1: 0.99",
+          "Level 2: 0.985",
+          "Level 3: 0.98",
+          "Level 4: 0.975"
         ]
       }
     ]
@@ -1272,9 +1308,45 @@
         "skillDesc": "Increases reload speed of Quirk Skill β",
         "levels": [
           "Level 1: 1.01",
-          "Level 2: 1.015",
-          "Level 3: 1.02",
-          "Level 4: 1.025"
+          "Level 2: 1.02",
+          "Level 3: 1.03",
+          "Level 4: 1.04"
+        ]
+      }
+    ]
+  },
+  {
+    "chara": "37",
+    "role": "Support",
+    "class": "VILLAIN",
+    "name": "Twice (Sad Man's Parade)",
+    "skillName": "",
+    "skillDesc": "",
+    "levels": [
+      "Level 1: 1",
+      "Level 2: 2",
+      "Level 3: 3",
+      "Level 4: 4"
+    ],
+    "subEffects": [
+      {
+        "skillName": "Max GP+",
+        "skillDesc": "Increases Max GP",
+        "levels": [
+          "Level 1: 1",
+          "Level 2: 2",
+          "Level 3: 3",
+          "Level 4: 4"
+        ]
+      },
+      {
+        "skillName": "Downed Crawl Speed+",
+        "skillDesc": "Increases your Movement speed when DOWN",
+        "levels": [
+          "Level 1: 1",
+          "Level 2: 2",
+          "Level 3: 3",
+          "Level 4: 4"
         ]
       }
     ]
@@ -1369,10 +1441,10 @@
         "skillName": "Max DOWN HP+",
         "skillDesc": "Increases your HP when DOWN",
         "levels": [
-          "Level 1: 5",
-          "Level 2: 10",
-          "Level 3: 15",
-          "Level 4: 20"
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
         ]
       }
     ]
@@ -1431,10 +1503,10 @@
         "skillName": "Quirk Skill β Defense+",
         "skillDesc": "Decreases damage taken from Quirk Skill β",
         "levels": [
-          "Level 1: 0.99",
-          "Level 2: 0.985",
-          "Level 3: 0.98",
-          "Level 4: 0.975"
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
         ]
       }
     ]
@@ -1545,10 +1617,10 @@
         "skillName": "Melee Defense+",
         "skillDesc": "Decreases damage taken from Melee Attacks",
         "levels": [
-          "Level 1: 0.99",
-          "Level 2: 0.985",
-          "Level 3: 0.98",
-          "Level 4: 0.975"
+          "Level 1: 1",
+          "Level 2: 2",
+          "Level 3: 3",
+          "Level 4: 4"
         ]
       }
     ]
@@ -1582,9 +1654,9 @@
         "skillDesc": "Increases your Movement speed when DOWN",
         "levels": [
           "Level 1: 1.01",
-          "Level 2: 1.02",
-          "Level 3: 1.03",
-          "Level 4: 1.04"
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
         ]
       }
     ]
@@ -1617,10 +1689,46 @@
         "skillName": "Forward Jump HT+",
         "skillDesc": "Increases your forward Jump height",
         "levels": [
-          "Level 1: 5",
-          "Level 2: 10",
-          "Level 3: 15",
-          "Level 4: 20"
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      }
+    ]
+  },
+  {
+    "chara": "108",
+    "role": "Technical",
+    "class": "VILLAIN",
+    "name": "Gentle Criminal",
+    "skillName": "",
+    "skillDesc": "",
+    "levels": [
+      "Level 1: 1.01",
+      "Level 2: 1.015",
+      "Level 3: 1.02",
+      "Level 4: 1.025"
+    ],
+    "subEffects": [
+      {
+        "skillName": "Special Action Reload+",
+        "skillDesc": "Increases reload speed of Special Action",
+        "levels": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
+        ]
+      },
+      {
+        "skillName": "Forward Jump HT+",
+        "skillDesc": "Increases your forward Jump height",
+        "levels": [
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
         ]
       }
     ]
@@ -1690,9 +1798,9 @@
         "skillDesc": "Increases your Dash speed",
         "levels": [
           "Level 1: 1.01",
-          "Level 2: 1.02",
-          "Level 3: 1.03",
-          "Level 4: 1.04"
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
         ]
       }
     ]
@@ -1725,10 +1833,10 @@
         "skillName": "Quirk Skill β Attack Power+",
         "skillDesc": "Increases damage dealt for Quirk Skill β",
         "levels": [
-          "Level 1: 1.01",
-          "Level 2: 1.015",
-          "Level 3: 1.02",
-          "Level 4: 1.025"
+          "Level 1: 5",
+          "Level 2: 10",
+          "Level 3: 15",
+          "Level 4: 20"
         ]
       }
     ]
@@ -1761,10 +1869,10 @@
         "skillName": "HP Defense+",
         "skillDesc": "Decreases damage taken towards HP",
         "levels": [
-          "Level 1: 0.99",
-          "Level 2: 0.985",
-          "Level 3: 0.98",
-          "Level 4: 0.975"
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
         ]
       }
     ]
@@ -1797,10 +1905,10 @@
         "skillName": "Wall Jump HT+",
         "skillDesc": "Increases your Wall Jump height",
         "levels": [
-          "Level 1: 5",
-          "Level 2: 10",
-          "Level 3: 15",
-          "Level 4: 20"
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
         ]
       }
     ]
@@ -1833,10 +1941,10 @@
         "skillName": "Vertical Jump HT+",
         "skillDesc": "Increases your vertical Jump height",
         "levels": [
-          "Level 1: 5",
-          "Level 2: 10",
-          "Level 3: 15",
-          "Level 4: 20"
+          "Level 1: 1.01",
+          "Level 2: 1.015",
+          "Level 3: 1.02",
+          "Level 4: 1.025"
         ]
       }
     ]
@@ -1869,10 +1977,10 @@
         "skillName": "PU/PC Reload+",
         "skillDesc": "Increases PU/PC Gauge filling speed",
         "levels": [
-          "Level 1: 1.01",
-          "Level 2: 1.015",
-          "Level 3: 1.02",
-          "Level 4: 1.025"
+          "Level 1: 0.99",
+          "Level 2: 0.985",
+          "Level 3: 0.98",
+          "Level 4: 0.975"
         ]
       }
     ]
@@ -1906,9 +2014,9 @@
         "skillDesc": "Increases damage dealt for Melee Attacks",
         "levels": [
           "Level 1: 1.01",
-          "Level 2: 1.015",
-          "Level 3: 1.02",
-          "Level 4: 1.025"
+          "Level 2: 1.02",
+          "Level 3: 1.03",
+          "Level 4: 1.04"
         ]
       }
     ]

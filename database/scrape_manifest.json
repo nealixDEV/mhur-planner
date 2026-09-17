@@ -1,0 +1,56 @@
+{
+  "updatedAt": "2026-09-17T08:10:59.429Z",
+  "source": "https://ultrarumble.com/costumes",
+  "sourceCount": 1628,
+  "damageTables": {
+    "generatedAt": "2026-09-17T08:10:59.338Z",
+    "source": "https://ultrarumble.com/characters",
+    "characters": 39,
+    "styleBlocks": 62,
+    "skillImages": 248,
+    "skills": 248,
+    "failedCharacters": []
+  },
+  "tunings": {
+    "source": "https://ultrarumble.com/tuning",
+    "normal": 62,
+    "special": 62
+  },
+  "latestReleases": [
+    {
+      "characterId": "tsuyu",
+      "characterNumber": 6,
+      "styleIndex": 1,
+      "url": "https://ultrarumble.com/assets/chara_banners/601.png"
+    },
+    {
+      "characterId": "twice",
+      "characterNumber": 37,
+      "styleIndex": 1,
+      "url": "https://ultrarumble.com/assets/chara_banners/3701.png"
+    },
+    {
+      "characterId": "gentle_criminal",
+      "characterNumber": 108,
+      "styleIndex": 0,
+      "url": "https://ultrarumble.com/assets/chara_banners/10800.png"
+    },
+    {
+      "characterId": "aizawa",
+      "characterNumber": 13,
+      "styleIndex": 1,
+      "url": "https://ultrarumble.com/assets/chara_banners/1301.png"
+    }
+  ],
+  "cloudScanner": {
+    "source": "https://ultrarumble.com",
+    "costumeRecords": 1628,
+    "newCostumes": 103,
+    "characters": 39,
+    "battleStyles": 62,
+    "normalTunings": 62,
+    "specialTunings": 62,
+    "skillImages": 248,
+    "patchUrl": "https://ultrarumble.com/patch/1789531429"
+  }
+}

@@ -4343,6 +4343,366 @@
         "r": "Strike",
         "a": "hero"
       }
+    },
+    {
+      "idx": 90,
+      "name": "Costume ε",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Assault",
+          "a": null
+        },
+        {
+          "r": "Strike",
+          "a": null
+        },
+        {
+          "r": "Rapid",
+          "a": null
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Support",
+          "a": null
+        },
+        {
+          "r": "Rapid",
+          "a": null
+        },
+        {
+          "r": "Rapid",
+          "a": null
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Strike",
+        "a": null
+      },
+      "sp2": {
+        "r": "Assault",
+        "a": "hero"
+      },
+      "sourceId": "1006100",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch001/GUI/Costume/L/T_ui_Thumb_4_1006100_L.png"
+      }
+    },
+    {
+      "idx": 91,
+      "name": "Costume ε (Villain Style)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Assault",
+          "a": null
+        },
+        {
+          "r": "Support",
+          "a": null
+        },
+        {
+          "r": "Strike",
+          "a": null
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Strike",
+          "a": null
+        },
+        {
+          "r": "Rapid",
+          "a": null
+        },
+        {
+          "r": "Support",
+          "a": null
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Rapid",
+        "a": null
+      },
+      "sp2": {
+        "r": "Technical",
+        "a": "hero"
+      },
+      "sourceId": "1006102",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch001/GUI/Costume/L/T_ui_Thumb_4_1006102_L.png"
+      }
+    },
+    {
+      "idx": 92,
+      "name": "Costume ε (Heat)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Strike",
+          "a": null
+        },
+        {
+          "r": "Rapid",
+          "a": null
+        },
+        {
+          "r": "Rapid",
+          "a": null
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Strike",
+          "a": null
+        },
+        {
+          "r": "Support",
+          "a": null
+        },
+        {
+          "r": "Rapid",
+          "a": null
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Technical",
+        "a": null
+      },
+      "sp2": {
+        "r": "Support",
+        "a": "villain"
+      },
+      "sourceId": "1006103",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch001/GUI/Costume/L/T_ui_Thumb_4_1006103_L.png"
+      }
+    },
+    {
+      "idx": 93,
+      "name": "Costume ε (Combat)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Support",
+          "a": null
+        },
+        {
+          "r": "Strike",
+          "a": null
+        },
+        {
+          "r": "Technical",
+          "a": null
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        },
+        {
+          "r": "Technical",
+          "a": null
+        },
+        {
+          "r": "Assault",
+          "a": null
+        },
+        {
+          "r": "Technical",
+          "a": null
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Assault",
+        "a": null
+      },
+      "sp2": {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      "sourceId": "1006104",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch001/GUI/Costume/L/T_ui_Thumb_4_1006104_L.png"
+      }
+    },
+    {
+      "idx": 94,
+      "name": "Costume ε (Fancy)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Rapid",
+          "a": null
+        },
+        {
+          "r": "Assault",
+          "a": null
+        },
+        {
+          "r": "Support",
+          "a": null
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Technical",
+          "a": null
+        },
+        {
+          "r": "Strike",
+          "a": null
+        },
+        {
+          "r": "Assault",
+          "a": null
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Strike",
+        "a": null
+      },
+      "sp2": {
+        "r": "Strike",
+        "a": "hero"
+      },
+      "sourceId": "1006105",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch001/GUI/Costume/L/T_ui_Thumb_4_1006105_L.png"
+      }
+    },
+    {
+      "idx": 95,
+      "name": "Costume ε (Dangerous)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Assault",
+          "a": null
+        },
+        {
+          "r": "Support",
+          "a": null
+        },
+        {
+          "r": "Rapid",
+          "a": null
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        },
+        {
+          "r": "Support",
+          "a": null
+        },
+        {
+          "r": "Support",
+          "a": null
+        },
+        {
+          "r": "Support",
+          "a": null
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Support",
+        "a": null
+      },
+      "sp2": {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      "sourceId": "1006106",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch001/GUI/Costume/L/T_ui_Thumb_4_1006106_L.png"
+      }
     }
   ],
   "katsuki": [
@@ -9182,6 +9542,377 @@
       "sp2": {
         "r": "Assault",
         "a": "hero"
+      }
+    },
+    {
+      "idx": 100,
+      "name": "Summer Leisure",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Assault"
+      },
+      "sp2": {
+        "r": "Assault",
+        "a": "villain"
+      },
+      "sourceId": "2618100",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch002/GUI/Costume/L/T_ui_Thumb_4_2618100_L.png"
+      }
+    },
+    {
+      "idx": 101,
+      "name": "Summer Leisure (Villain Style)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Rapid"
+      },
+      "sp2": {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      "sourceId": "2618102",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch002/GUI/Costume/L/T_ui_Thumb_4_2618102_L.png"
+      }
+    },
+    {
+      "idx": 102,
+      "name": "Summer Leisure (Heat)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Technical"
+      },
+      "sp2": {
+        "r": "Strike",
+        "a": "hero"
+      },
+      "sourceId": "2618103",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch002/GUI/Costume/L/T_ui_Thumb_4_2618103_L.png"
+      }
+    },
+    {
+      "idx": 103,
+      "name": "Summer Leisure (Combat)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Strike"
+      },
+      "sp2": {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      "sourceId": "2618104",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch002/GUI/Costume/L/T_ui_Thumb_4_2618104_L.png"
+      }
+    },
+    {
+      "idx": 104,
+      "name": "Summer Leisure (Fancy)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Support"
+      },
+      "sp2": {
+        "r": "Support",
+        "a": "hero"
+      },
+      "sourceId": "2618105",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch002/GUI/Costume/L/T_ui_Thumb_4_2618105_L.png"
+      }
+    },
+    {
+      "idx": 105,
+      "name": "Summer Leisure (Dangerous)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Technical"
+      },
+      "sp2": {
+        "r": "Technical",
+        "a": "villain"
+      },
+      "sourceId": "2618106",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch002/GUI/Costume/L/T_ui_Thumb_4_2618106_L.png"
+      }
+    },
+    {
+      "idx": 106,
+      "name": "Casual Wear (Dangerous)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Strike"
+      },
+      "sp2": {
+        "r": "Technical",
+        "a": "villain"
+      },
+      "sourceId": "2100106",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch002/GUI/Costume/L/T_ui_Thumb_4_2100106_L.png"
       }
     }
   ],
@@ -15835,6 +16566,112 @@
         "r": "Support",
         "a": "hero"
       }
+    },
+    {
+      "idx": 64,
+      "name": "Summer Leisure",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Assault"
+      },
+      "sp2": {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      "sourceId": "4618100",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch004/GUI/Costume/L/T_ui_Thumb_4_4618100_L.png"
+      }
+    },
+    {
+      "idx": 65,
+      "name": "Summer Leisure (Fancy)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Rapid"
+      },
+      "sp2": {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      "sourceId": "4618105",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch004/GUI/Costume/L/T_ui_Thumb_4_4618105_L.png"
+      }
     }
   ],
   "tenya": [
@@ -18087,6 +18924,324 @@
       "sp2": {
         "r": "Strike",
         "a": "hero"
+      }
+    },
+    {
+      "idx": 47,
+      "name": "Hero Fest 2019 ver.",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Strike"
+      },
+      "sp2": {
+        "r": "Technical",
+        "a": "hero"
+      },
+      "sourceId": "5308100",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch005/GUI/Costume/L/T_ui_Thumb_4_5308100_L.png"
+      }
+    },
+    {
+      "idx": 48,
+      "name": "Hero Fest 2019 ver. (Villain Style)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Rapid"
+      },
+      "sp2": {
+        "r": "Support",
+        "a": "hero"
+      },
+      "sourceId": "5308102",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch005/GUI/Costume/L/T_ui_Thumb_4_5308102_L.png"
+      }
+    },
+    {
+      "idx": 49,
+      "name": "Hero Fest 2019 ver. (Heat)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Support"
+      },
+      "sp2": {
+        "r": "Strike",
+        "a": "villain"
+      },
+      "sourceId": "5308103",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch005/GUI/Costume/L/T_ui_Thumb_4_5308103_L.png"
+      }
+    },
+    {
+      "idx": 50,
+      "name": "Hero Fest 2019 ver. (Combat)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Technical"
+      },
+      "sp2": {
+        "r": "Technical",
+        "a": "villain"
+      },
+      "sourceId": "5308104",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch005/GUI/Costume/L/T_ui_Thumb_4_5308104_L.png"
+      }
+    },
+    {
+      "idx": 51,
+      "name": "Hero Fest 2019 ver. (Fancy)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Assault"
+      },
+      "sp2": {
+        "r": "Assault",
+        "a": "villain"
+      },
+      "sourceId": "5308105",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch005/GUI/Costume/L/T_ui_Thumb_4_5308105_L.png"
+      }
+    },
+    {
+      "idx": 52,
+      "name": "Hero Fest 2019 ver. (Dangerous)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Rapid"
+      },
+      "sp2": {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      "sourceId": "5308106",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch005/GUI/Costume/L/T_ui_Thumb_4_5308106_L.png"
       }
     }
   ],
@@ -20626,6 +21781,324 @@
       "sp2": {
         "r": "Rapid",
         "a": "villain"
+      }
+    },
+    {
+      "idx": 53,
+      "name": "Hero Fest 2019 ver.",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Rapid"
+      },
+      "sp2": {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      "sourceId": "6308100",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch006/GUI/Costume/L/T_ui_Thumb_4_6308100_L.png"
+      }
+    },
+    {
+      "idx": 54,
+      "name": "Hero Fest 2019 ver. (Villain Style)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Support"
+      },
+      "sp2": {
+        "r": "Support",
+        "a": "villain"
+      },
+      "sourceId": "6308102",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch006/GUI/Costume/L/T_ui_Thumb_4_6308102_L.png"
+      }
+    },
+    {
+      "idx": 55,
+      "name": "Hero Fest 2019 ver. (Heat)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Technical"
+      },
+      "sp2": {
+        "r": "Strike",
+        "a": "villain"
+      },
+      "sourceId": "6308103",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch006/GUI/Costume/L/T_ui_Thumb_4_6308103_L.png"
+      }
+    },
+    {
+      "idx": 56,
+      "name": "Hero Fest 2019 ver. (Combat)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Strike"
+      },
+      "sp2": {
+        "r": "Technical",
+        "a": "hero"
+      },
+      "sourceId": "6308104",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch006/GUI/Costume/L/T_ui_Thumb_4_6308104_L.png"
+      }
+    },
+    {
+      "idx": 57,
+      "name": "Hero Fest 2019 ver. (Fancy)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Assault"
+      },
+      "sp2": {
+        "r": "Assault",
+        "a": "hero"
+      },
+      "sourceId": "6308105",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch006/GUI/Costume/L/T_ui_Thumb_4_6308105_L.png"
+      }
+    },
+    {
+      "idx": 58,
+      "name": "Hero Fest 2019 ver. (Dangerous)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Strike"
+      },
+      "sp2": {
+        "r": "Support",
+        "a": "hero"
+      },
+      "sourceId": "6308106",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch006/GUI/Costume/L/T_ui_Thumb_4_6308106_L.png"
       }
     }
   ],
@@ -28504,6 +29977,324 @@
       "sp2": {
         "r": "Technical",
         "a": "villain"
+      }
+    },
+    {
+      "idx": 16,
+      "name": "Shinobi",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Support"
+      },
+      "sp2": {
+        "r": "Strike",
+        "a": "villain"
+      },
+      "sourceId": "11601100",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch011/GUI/Costume/L/T_ui_Thumb_4_11601100_L.png"
+      }
+    },
+    {
+      "idx": 17,
+      "name": "Shinobi (Villain Style)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Rapid"
+      },
+      "sp2": {
+        "r": "Assault",
+        "a": "hero"
+      },
+      "sourceId": "11601102",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch011/GUI/Costume/L/T_ui_Thumb_4_11601102_L.png"
+      }
+    },
+    {
+      "idx": 18,
+      "name": "Shinobi (Heat)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Strike"
+      },
+      "sp2": {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      "sourceId": "11601103",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch011/GUI/Costume/L/T_ui_Thumb_4_11601103_L.png"
+      }
+    },
+    {
+      "idx": 19,
+      "name": "Shinobi (Combat)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Assault"
+      },
+      "sp2": {
+        "r": "Support",
+        "a": "villain"
+      },
+      "sourceId": "11601104",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch011/GUI/Costume/L/T_ui_Thumb_4_11601104_L.png"
+      }
+    },
+    {
+      "idx": 20,
+      "name": "Shinobi (Fancy)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Technical"
+      },
+      "sp2": {
+        "r": "Technical",
+        "a": "hero"
+      },
+      "sourceId": "11601105",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch011/GUI/Costume/L/T_ui_Thumb_4_11601105_L.png"
+      }
+    },
+    {
+      "idx": 21,
+      "name": "Shinobi (Dangerous)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Assault"
+      },
+      "sp2": {
+        "r": "Technical",
+        "a": "villain"
+      },
+      "sourceId": "11601106",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch011/GUI/Costume/L/T_ui_Thumb_4_11601106_L.png"
       }
     }
   ],
@@ -36771,6 +38562,377 @@
         "r": "Assault",
         "a": "hero"
       }
+    },
+    {
+      "idx": 51,
+      "name": "Scorching Sands",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Support"
+      },
+      "sp2": {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      "sourceId": "15614100",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch015/GUI/Costume/L/T_ui_Thumb_4_15614100_L.png"
+      }
+    },
+    {
+      "idx": 52,
+      "name": "Scorching Sands (Hero Style)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Technical"
+      },
+      "sp2": {
+        "r": "Support",
+        "a": "hero"
+      },
+      "sourceId": "15614101",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch015/GUI/Costume/L/T_ui_Thumb_4_15614101_L.png"
+      }
+    },
+    {
+      "idx": 53,
+      "name": "Scorching Sands (Heat)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Strike"
+      },
+      "sp2": {
+        "r": "Assault",
+        "a": "villain"
+      },
+      "sourceId": "15614103",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch015/GUI/Costume/L/T_ui_Thumb_4_15614103_L.png"
+      }
+    },
+    {
+      "idx": 54,
+      "name": "Scorching Sands (Combat)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Assault"
+      },
+      "sp2": {
+        "r": "Technical",
+        "a": "hero"
+      },
+      "sourceId": "15614104",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch015/GUI/Costume/L/T_ui_Thumb_4_15614104_L.png"
+      }
+    },
+    {
+      "idx": 55,
+      "name": "Scorching Sands (Fancy)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Rapid"
+      },
+      "sp2": {
+        "r": "Strike",
+        "a": "villain"
+      },
+      "sourceId": "15614105",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch015/GUI/Costume/L/T_ui_Thumb_4_15614105_L.png"
+      }
+    },
+    {
+      "idx": 56,
+      "name": "Scorching Sands (Dangerous)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Support"
+      },
+      "sp2": {
+        "r": "Assault",
+        "a": "villain"
+      },
+      "sourceId": "15614106",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch015/GUI/Costume/L/T_ui_Thumb_4_15614106_L.png"
+      }
+    },
+    {
+      "idx": 57,
+      "name": "Villain Coat (Hero Style)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Assault"
+      },
+      "sp2": {
+        "r": "Assault",
+        "a": "hero"
+      },
+      "sourceId": "15001101",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch015/GUI/Costume/L/T_ui_Thumb_4_15001101_L.png"
+      }
     }
   ],
   "afo": [
@@ -38261,6 +40423,684 @@
       "sp2": {
         "r": "Rapid",
         "a": "villain"
+      }
+    },
+    {
+      "idx": 31,
+      "name": "Villain Costume Mask β ver.",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Support",
+          "a": null
+        },
+        {
+          "r": "Strike",
+          "a": null
+        },
+        {
+          "r": "Strike",
+          "a": null
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Strike",
+          "a": null
+        },
+        {
+          "r": "Support",
+          "a": null
+        },
+        {
+          "r": "Assault",
+          "a": null
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Technical",
+        "a": null
+      },
+      "sp2": {
+        "r": "Strike",
+        "a": "villain"
+      },
+      "sourceId": "16101100",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch016/GUI/Costume/L/T_ui_Thumb_4_16101100_L.png"
+      }
+    },
+    {
+      "idx": 32,
+      "name": "Villain Costume Mask β ver. (Hero Style)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Technical",
+          "a": null
+        },
+        {
+          "r": "Rapid",
+          "a": null
+        },
+        {
+          "r": "Assault",
+          "a": null
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        },
+        {
+          "r": "Assault",
+          "a": null
+        },
+        {
+          "r": "Strike",
+          "a": null
+        },
+        {
+          "r": "Support",
+          "a": null
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Assault",
+        "a": null
+      },
+      "sp2": {
+        "r": "Support",
+        "a": "villain"
+      },
+      "sourceId": "16101101",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch016/GUI/Costume/L/T_ui_Thumb_4_16101101_L.png"
+      }
+    },
+    {
+      "idx": 33,
+      "name": "Villain Costume Mask β ver. (Heat)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Assault",
+          "a": null
+        },
+        {
+          "r": "Assault",
+          "a": null
+        },
+        {
+          "r": "Strike",
+          "a": null
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Rapid",
+          "a": null
+        },
+        {
+          "r": "Assault",
+          "a": null
+        },
+        {
+          "r": "Support",
+          "a": null
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Technical",
+        "a": null
+      },
+      "sp2": {
+        "r": "Assault",
+        "a": "hero"
+      },
+      "sourceId": "16101103",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch016/GUI/Costume/L/T_ui_Thumb_4_16101103_L.png"
+      }
+    },
+    {
+      "idx": 34,
+      "name": "Villain Costume Mask β ver. (Combat)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Support",
+          "a": null
+        },
+        {
+          "r": "Rapid",
+          "a": null
+        },
+        {
+          "r": "Technical",
+          "a": null
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Strike",
+          "a": null
+        },
+        {
+          "r": "Technical",
+          "a": null
+        },
+        {
+          "r": "Strike",
+          "a": null
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Support",
+        "a": null
+      },
+      "sp2": {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      "sourceId": "16101104",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch016/GUI/Costume/L/T_ui_Thumb_4_16101104_L.png"
+      }
+    },
+    {
+      "idx": 35,
+      "name": "Villain Costume Mask β ver. (Fancy)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Strike",
+          "a": null
+        },
+        {
+          "r": "Technical",
+          "a": null
+        },
+        {
+          "r": "Support",
+          "a": null
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Support",
+          "a": null
+        },
+        {
+          "r": "Strike",
+          "a": null
+        },
+        {
+          "r": "Technical",
+          "a": null
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Strike",
+        "a": null
+      },
+      "sp2": {
+        "r": "Technical",
+        "a": "hero"
+      },
+      "sourceId": "16101105",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch016/GUI/Costume/L/T_ui_Thumb_4_16101105_L.png"
+      }
+    },
+    {
+      "idx": 36,
+      "name": "Villain Costume Mask β ver. (Dangerous)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Rapid",
+          "a": null
+        },
+        {
+          "r": "Support",
+          "a": null
+        },
+        {
+          "r": "Rapid",
+          "a": null
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Assault",
+          "a": null
+        },
+        {
+          "r": "Support",
+          "a": null
+        },
+        {
+          "r": "Assault",
+          "a": null
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Rapid",
+        "a": null
+      },
+      "sp2": {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      "sourceId": "16101106",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch016/GUI/Costume/L/T_ui_Thumb_4_16101106_L.png"
+      }
+    },
+    {
+      "idx": 37,
+      "name": "Scorching Sands",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Technical"
+      },
+      "sp2": {
+        "r": "Strike",
+        "a": "hero"
+      },
+      "sourceId": "16614100",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch016/GUI/Costume/L/T_ui_Thumb_4_16614100_L.png"
+      }
+    },
+    {
+      "idx": 38,
+      "name": "Scorching Sands (Hero Style)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Rapid"
+      },
+      "sp2": {
+        "r": "Assault",
+        "a": "villain"
+      },
+      "sourceId": "16614101",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch016/GUI/Costume/L/T_ui_Thumb_4_16614101_L.png"
+      }
+    },
+    {
+      "idx": 39,
+      "name": "Scorching Sands (Heat)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Strike"
+      },
+      "sp2": {
+        "r": "Strike",
+        "a": "hero"
+      },
+      "sourceId": "16614103",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch016/GUI/Costume/L/T_ui_Thumb_4_16614103_L.png"
+      }
+    },
+    {
+      "idx": 40,
+      "name": "Scorching Sands (Combat)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Assault"
+      },
+      "sp2": {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      "sourceId": "16614104",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch016/GUI/Costume/L/T_ui_Thumb_4_16614104_L.png"
+      }
+    },
+    {
+      "idx": 41,
+      "name": "Scorching Sands (Fancy)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Support"
+      },
+      "sp2": {
+        "r": "Support",
+        "a": "villain"
+      },
+      "sourceId": "16614105",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch016/GUI/Costume/L/T_ui_Thumb_4_16614105_L.png"
+      }
+    },
+    {
+      "idx": 42,
+      "name": "Scorching Sands (Dangerous)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Technical"
+      },
+      "sp2": {
+        "r": "Technical",
+        "a": "villain"
+      },
+      "sourceId": "16614106",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch016/GUI/Costume/L/T_ui_Thumb_4_16614106_L.png"
       }
     }
   ],
@@ -43019,6 +45859,324 @@
         "r": "Support",
         "a": "villain"
       }
+    },
+    {
+      "idx": 52,
+      "name": "Quirk Boost Gear",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Strike"
+      },
+      "sp2": {
+        "r": "Technical",
+        "a": "villain"
+      },
+      "sourceId": "18607100",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch018/GUI/Costume/L/T_ui_Thumb_4_18607100_L.png"
+      }
+    },
+    {
+      "idx": 53,
+      "name": "Quirk Boost Gear (Hero Style)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Assault"
+      },
+      "sp2": {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      "sourceId": "18607101",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch018/GUI/Costume/L/T_ui_Thumb_4_18607101_L.png"
+      }
+    },
+    {
+      "idx": 54,
+      "name": "Quirk Boost Gear (Heat)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Technical"
+      },
+      "sp2": {
+        "r": "Assault",
+        "a": "hero"
+      },
+      "sourceId": "18607103",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch018/GUI/Costume/L/T_ui_Thumb_4_18607103_L.png"
+      }
+    },
+    {
+      "idx": 55,
+      "name": "Quirk Boost Gear (Combat)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Support"
+      },
+      "sp2": {
+        "r": "Technical",
+        "a": "hero"
+      },
+      "sourceId": "18607104",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch018/GUI/Costume/L/T_ui_Thumb_4_18607104_L.png"
+      }
+    },
+    {
+      "idx": 56,
+      "name": "Quirk Boost Gear (Fancy)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Rapid"
+      },
+      "sp2": {
+        "r": "Support",
+        "a": "villain"
+      },
+      "sourceId": "18607105",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch018/GUI/Costume/L/T_ui_Thumb_4_18607105_L.png"
+      }
+    },
+    {
+      "idx": 57,
+      "name": "Quirk Boost Gear (Dangerous)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Assault"
+      },
+      "sp2": {
+        "r": "Strike",
+        "a": "villain"
+      },
+      "sourceId": "18607106",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch018/GUI/Costume/L/T_ui_Thumb_4_18607106_L.png"
+      }
     }
   ],
   "endeavor": [
@@ -45328,6 +48486,55 @@
       "sp2": {
         "r": "Strike",
         "a": "villain"
+      }
+    },
+    {
+      "idx": 48,
+      "name": "Hero Costume Alpha ver. (Heat)",
+      "rarity": "R",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Support"
+        }
+      ],
+      "sp1": {
+        "r": "Assault"
+      },
+      "sp2": {
+        "r": "Strike",
+        "a": "hero"
+      },
+      "sourceId": "23001103",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch023/GUI/Costume/L/T_ui_Thumb_4_23001103_L.png"
       }
     }
   ],
@@ -48702,6 +51909,55 @@
       "sp2": {
         "r": "Rapid",
         "a": "hero"
+      }
+    },
+    {
+      "idx": 36,
+      "name": "U.A. High Winter Uniform (Heat)",
+      "rarity": "R",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Technical"
+        }
+      ],
+      "sp1": {
+        "r": "Rapid"
+      },
+      "sp2": {
+        "r": "Strike",
+        "a": "hero"
+      },
+      "sourceId": "25401103",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch025/GUI/Costume/L/T_ui_Thumb_4_25401103_L.png"
       }
     }
   ],
@@ -53178,6 +56434,377 @@
         "r": "Assault",
         "a": "villain"
       }
+    },
+    {
+      "idx": 32,
+      "name": "Villain Pirates (Heat)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Support"
+      },
+      "sp2": {
+        "r": "Support",
+        "a": "villain"
+      },
+      "sourceId": "37615103",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch037/GUI/Costume/L/T_ui_Thumb_4_37615103_L.png"
+      }
+    },
+    {
+      "idx": 33,
+      "name": "Quirk Boost Gear",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Technical"
+      },
+      "sp2": {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      "sourceId": "37607100",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch037/GUI/Costume/L/T_ui_Thumb_4_37607100_L.png"
+      }
+    },
+    {
+      "idx": 34,
+      "name": "Quirk Boost Gear (Hero Style)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Assault"
+      },
+      "sp2": {
+        "r": "Strike",
+        "a": "hero"
+      },
+      "sourceId": "37607101",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch037/GUI/Costume/L/T_ui_Thumb_4_37607101_L.png"
+      }
+    },
+    {
+      "idx": 35,
+      "name": "Quirk Boost Gear (Heat)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Strike"
+      },
+      "sp2": {
+        "r": "Technical",
+        "a": "villain"
+      },
+      "sourceId": "37607103",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch037/GUI/Costume/L/T_ui_Thumb_4_37607103_L.png"
+      }
+    },
+    {
+      "idx": 36,
+      "name": "Quirk Boost Gear (Combat)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Support"
+      },
+      "sp2": {
+        "r": "Assault",
+        "a": "villain"
+      },
+      "sourceId": "37607104",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch037/GUI/Costume/L/T_ui_Thumb_4_37607104_L.png"
+      }
+    },
+    {
+      "idx": 37,
+      "name": "Quirk Boost Gear (Fancy)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Rapid"
+      },
+      "sp2": {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      "sourceId": "37607105",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch037/GUI/Costume/L/T_ui_Thumb_4_37607105_L.png"
+      }
+    },
+    {
+      "idx": 38,
+      "name": "Quirk Boost Gear (Dangerous)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Support"
+      },
+      "sp2": {
+        "r": "Support",
+        "a": "hero"
+      },
+      "sourceId": "37607106",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch037/GUI/Costume/L/T_ui_Thumb_4_37607106_L.png"
+      }
     }
   ],
   "compress": [
@@ -54709,6 +58336,59 @@
       "sp2": {
         "r": "Strike",
         "a": "hero"
+      }
+    },
+    {
+      "idx": 32,
+      "name": "Villain Pirates (Heat)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Support"
+      },
+      "sp2": {
+        "r": "Support",
+        "a": "hero"
+      },
+      "sourceId": "38615103",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch038/GUI/Costume/L/T_ui_Thumb_4_38615103_L.png"
       }
     }
   ],
@@ -64872,6 +68552,324 @@
         "r": "Rapid",
         "a": "villain"
       }
+    },
+    {
+      "idx": 25,
+      "name": "Shinobi",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Strike"
+      },
+      "sp2": {
+        "r": "Technical",
+        "a": "hero"
+      },
+      "sourceId": "104601100",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch104/GUI/Costume/L/T_ui_Thumb_4_104601100_L.png"
+      }
+    },
+    {
+      "idx": 26,
+      "name": "Shinobi (Villain Style)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Support"
+      },
+      "sp2": {
+        "r": "Support",
+        "a": "villain"
+      },
+      "sourceId": "104601102",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch104/GUI/Costume/L/T_ui_Thumb_4_104601102_L.png"
+      }
+    },
+    {
+      "idx": 27,
+      "name": "Shinobi (Heat)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Assault"
+      },
+      "sp2": {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      "sourceId": "104601103",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch104/GUI/Costume/L/T_ui_Thumb_4_104601103_L.png"
+      }
+    },
+    {
+      "idx": 28,
+      "name": "Shinobi (Combat)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Rapid"
+      },
+      "sp2": {
+        "r": "Strike",
+        "a": "villain"
+      },
+      "sourceId": "104601104",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch104/GUI/Costume/L/T_ui_Thumb_4_104601104_L.png"
+      }
+    },
+    {
+      "idx": 29,
+      "name": "Shinobi (Fancy)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Technical"
+      },
+      "sp2": {
+        "r": "Support",
+        "a": "hero"
+      },
+      "sourceId": "104601105",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch104/GUI/Costume/L/T_ui_Thumb_4_104601105_L.png"
+      }
+    },
+    {
+      "idx": 30,
+      "name": "Shinobi (Dangerous)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Assault"
+      },
+      "sp2": {
+        "r": "Assault",
+        "a": "hero"
+      },
+      "sourceId": "104601106",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch104/GUI/Costume/L/T_ui_Thumb_4_104601106_L.png"
+      }
     }
   ],
   "hitoshi": [
@@ -66033,6 +70031,324 @@
       "sp2": {
         "r": "Strike",
         "a": "villain"
+      }
+    },
+    {
+      "idx": 24,
+      "name": "Parallel World",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Assault"
+      },
+      "sp2": {
+        "r": "Support",
+        "a": "villain"
+      },
+      "sourceId": "105604100",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch105/GUI/Costume/L/T_ui_Thumb_4_105604100_L.png"
+      }
+    },
+    {
+      "idx": 25,
+      "name": "Parallel World (Villain Style)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Rapid"
+      },
+      "sp2": {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      "sourceId": "105604102",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch105/GUI/Costume/L/T_ui_Thumb_4_105604102_L.png"
+      }
+    },
+    {
+      "idx": 26,
+      "name": "Parallel World (Heat)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Strike"
+      },
+      "sp2": {
+        "r": "Assault",
+        "a": "hero"
+      },
+      "sourceId": "105604103",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch105/GUI/Costume/L/T_ui_Thumb_4_105604103_L.png"
+      }
+    },
+    {
+      "idx": 27,
+      "name": "Parallel World (Combat)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Technical"
+      },
+      "sp2": {
+        "r": "Technical",
+        "a": "villain"
+      },
+      "sourceId": "105604104",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch105/GUI/Costume/L/T_ui_Thumb_4_105604104_L.png"
+      }
+    },
+    {
+      "idx": 28,
+      "name": "Parallel World (Fancy)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Support"
+      },
+      "sp2": {
+        "r": "Strike",
+        "a": "hero"
+      },
+      "sourceId": "105604105",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch105/GUI/Costume/L/T_ui_Thumb_4_105604105_L.png"
+      }
+    },
+    {
+      "idx": 29,
+      "name": "Parallel World (Dangerous)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Rapid"
+      },
+      "sp2": {
+        "r": "Assault",
+        "a": "villain"
+      },
+      "sourceId": "105604106",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch105/GUI/Costume/L/T_ui_Thumb_4_105604106_L.png"
       }
     }
   ],
@@ -73963,6 +78279,1218 @@
       "sp2": {
         "r": "Strike",
         "a": "villain"
+      }
+    },
+    {
+      "idx": 24,
+      "name": "Playing Cards - Clubs (Horizon)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Strike",
+          "a": null
+        },
+        {
+          "r": "Support",
+          "a": null
+        },
+        {
+          "r": "Assault",
+          "a": null
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": null
+        },
+        {
+          "r": "Assault",
+          "a": null
+        },
+        {
+          "r": "Rapid",
+          "a": null
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Support",
+        "a": null
+      },
+      "sp2": {
+        "r": "Assault",
+        "a": "hero"
+      },
+      "sourceId": "202619106",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch202/GUI/Costume/L/T_ui_Thumb_4_202619106_L.png"
+      }
+    },
+    {
+      "idx": 25,
+      "name": "Hero Fest 2019 ver.",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Assault"
+      },
+      "sp2": {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      "sourceId": "202308100",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch202/GUI/Costume/L/T_ui_Thumb_4_202308100_L.png"
+      }
+    },
+    {
+      "idx": 26,
+      "name": "Hero Fest 2019 ver. (Villain Style)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Strike"
+      },
+      "sp2": {
+        "r": "Assault",
+        "a": "hero"
+      },
+      "sourceId": "202308102",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch202/GUI/Costume/L/T_ui_Thumb_4_202308102_L.png"
+      }
+    },
+    {
+      "idx": 27,
+      "name": "Hero Fest 2019 ver. (Heat)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Technical"
+      },
+      "sp2": {
+        "r": "Strike",
+        "a": "villain"
+      },
+      "sourceId": "202308103",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch202/GUI/Costume/L/T_ui_Thumb_4_202308103_L.png"
+      }
+    },
+    {
+      "idx": 28,
+      "name": "Hero Fest 2019 ver. (Combat)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Support"
+      },
+      "sp2": {
+        "r": "Support",
+        "a": "villain"
+      },
+      "sourceId": "202308104",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch202/GUI/Costume/L/T_ui_Thumb_4_202308104_L.png"
+      }
+    },
+    {
+      "idx": 29,
+      "name": "Hero Fest 2019 ver. (Fancy)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Rapid"
+      },
+      "sp2": {
+        "r": "Technical",
+        "a": "villain"
+      },
+      "sourceId": "202308105",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch202/GUI/Costume/L/T_ui_Thumb_4_202308105_L.png"
+      }
+    },
+    {
+      "idx": 30,
+      "name": "Hero Fest 2019 ver. (Dangerous)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Strike"
+      },
+      "sp2": {
+        "r": "Support",
+        "a": "hero"
+      },
+      "sourceId": "202308106",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch202/GUI/Costume/L/T_ui_Thumb_4_202308106_L.png"
+      }
+    }
+  ],
+  "gentle_criminal": [
+    {
+      "idx": 0,
+      "name": "Villain Costume",
+      "rarity": "R",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Support"
+        }
+      ],
+      "sp1": {
+        "r": "Rapid"
+      },
+      "sp2": {
+        "r": "Support",
+        "a": "hero"
+      },
+      "sourceId": "108000000",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch108/GUI/Costume/L/T_ui_Thumb_4_108000000_L.png"
+      }
+    },
+    {
+      "idx": 1,
+      "name": "Villain Costume (Hero Style)",
+      "rarity": "R",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Rapid"
+        }
+      ],
+      "sp1": {
+        "r": "Strike"
+      },
+      "sp2": {
+        "r": "Assault",
+        "a": "villain"
+      },
+      "sourceId": "108000001",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch108/GUI/Costume/L/T_ui_Thumb_4_108000001_L.png"
+      }
+    },
+    {
+      "idx": 2,
+      "name": "Villain Costume (Combat)",
+      "rarity": "R",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Strike"
+        }
+      ],
+      "sp1": {
+        "r": "Support"
+      },
+      "sp2": {
+        "r": "Technical",
+        "a": "villain"
+      },
+      "sourceId": "108000004",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch108/GUI/Costume/L/T_ui_Thumb_4_108000004_L.png"
+      }
+    },
+    {
+      "idx": 3,
+      "name": "Villain Costume (Dangerous)",
+      "rarity": "R",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Assault"
+        }
+      ],
+      "sp1": {
+        "r": "Technical"
+      },
+      "sp2": {
+        "r": "Assault",
+        "a": "villain"
+      },
+      "sourceId": "108000006",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch108/GUI/Costume/L/T_ui_Thumb_4_108000006_L.png"
+      }
+    },
+    {
+      "idx": 4,
+      "name": "Casual Style",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Assault"
+      },
+      "sp2": {
+        "r": "Technical",
+        "a": "hero"
+      },
+      "sourceId": "108100100",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch108/GUI/Costume/L/T_ui_Thumb_4_108100100_L.png"
+      }
+    },
+    {
+      "idx": 5,
+      "name": "Casual Style (Hero Style)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Strike"
+      },
+      "sp2": {
+        "r": "Support",
+        "a": "villain"
+      },
+      "sourceId": "108100101",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch108/GUI/Costume/L/T_ui_Thumb_4_108100101_L.png"
+      }
+    },
+    {
+      "idx": 6,
+      "name": "Casual Style (Heat)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Technical"
+      },
+      "sp2": {
+        "r": "Assault",
+        "a": "hero"
+      },
+      "sourceId": "108100103",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch108/GUI/Costume/L/T_ui_Thumb_4_108100103_L.png"
+      }
+    },
+    {
+      "idx": 7,
+      "name": "Casual Style (Combat)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Rapid"
+      },
+      "sp2": {
+        "r": "Strike",
+        "a": "villain"
+      },
+      "sourceId": "108100104",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch108/GUI/Costume/L/T_ui_Thumb_4_108100104_L.png"
+      }
+    },
+    {
+      "idx": 8,
+      "name": "Casual Style (Fancy)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Support"
+      },
+      "sp2": {
+        "r": "Support",
+        "a": "hero"
+      },
+      "sourceId": "108100105",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch108/GUI/Costume/L/T_ui_Thumb_4_108100105_L.png"
+      }
+    },
+    {
+      "idx": 9,
+      "name": "Casual Style (Dangerous)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Rapid"
+      },
+      "sp2": {
+        "r": "Rapid",
+        "a": "villain"
+      },
+      "sourceId": "108100106",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch108/GUI/Costume/L/T_ui_Thumb_4_108100106_L.png"
+      }
+    },
+    {
+      "idx": 10,
+      "name": "Quirk Boost Gear",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Support"
+      },
+      "sp2": {
+        "r": "Strike",
+        "a": "hero"
+      },
+      "sourceId": "108607100",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch108/GUI/Costume/L/T_ui_Thumb_4_108607100_L.png"
+      }
+    },
+    {
+      "idx": 11,
+      "name": "Quirk Boost Gear (Hero Style)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Support"
+      },
+      "sp2": {
+        "r": "Technical",
+        "a": "villain"
+      },
+      "sourceId": "108607101",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch108/GUI/Costume/L/T_ui_Thumb_4_108607101_L.png"
+      }
+    },
+    {
+      "idx": 12,
+      "name": "Quirk Boost Gear (Heat)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Strike"
+      },
+      "sp2": {
+        "r": "Strike",
+        "a": "villain"
+      },
+      "sourceId": "108607103",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch108/GUI/Costume/L/T_ui_Thumb_4_108607103_L.png"
+      }
+    },
+    {
+      "idx": 13,
+      "name": "Quirk Boost Gear (Combat)",
+      "rarity": "PUR",
+      "align": "villain",
+      "slots": [
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Rapid",
+          "a": "villain"
+        },
+        {
+          "r": "Strike",
+          "a": "hero"
+        },
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Rapid"
+      },
+      "sp2": {
+        "r": "Assault",
+        "a": "villain"
+      },
+      "sourceId": "108607104",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch108/GUI/Costume/L/T_ui_Thumb_4_108607104_L.png"
+      }
+    },
+    {
+      "idx": 14,
+      "name": "Quirk Boost Gear (Fancy)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Rapid"
+        },
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support",
+          "a": "hero"
+        },
+        {
+          "r": "Assault",
+          "a": "villain"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Rapid",
+          "a": "hero"
+        },
+        {
+          "r": "Technical",
+          "a": "villain"
+        }
+      ],
+      "sp1": {
+        "r": "Assault"
+      },
+      "sp2": {
+        "r": "Support",
+        "a": "hero"
+      },
+      "sourceId": "108607105",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch108/GUI/Costume/L/T_ui_Thumb_4_108607105_L.png"
+      }
+    },
+    {
+      "idx": 15,
+      "name": "Quirk Boost Gear (Dangerous)",
+      "rarity": "PUR",
+      "align": "hero",
+      "slots": [
+        {
+          "r": "Technical"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Assault"
+        },
+        {
+          "r": "Strike",
+          "a": "villain"
+        },
+        {
+          "r": "Support",
+          "a": "villain"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Support"
+        },
+        {
+          "r": "Strike"
+        },
+        {
+          "r": "Technical",
+          "a": "hero"
+        },
+        {
+          "r": "Assault",
+          "a": "hero"
+        }
+      ],
+      "sp1": {
+        "r": "Technical"
+      },
+      "sp2": {
+        "r": "Rapid",
+        "a": "hero"
+      },
+      "sourceId": "108607106",
+      "assets": {
+        "thumbnailUrl": "https://ultrarumble.com/assets/Character/Ch108/GUI/Costume/L/T_ui_Thumb_4_108607106_L.png"
       }
     }
   ]

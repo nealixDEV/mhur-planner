@@ -3,228 +3,273 @@
     "id": "izuku",
     "g": "Hero",
     "role": "Assault",
-    "n": "Izuku Midoriya"
+    "n": "Izuku Midoriya",
+    "characterNumber": 1
   },
   "izuku_ofa": {
     "id": "izuku_ofa",
     "g": "Hero",
     "role": "Rapid",
-    "n": "Izuku Midoriya (OFA)"
+    "n": "Izuku Midoriya (OFA)",
+    "characterNumber": 202
   },
   "katsuki": {
     "id": "katsuki",
     "g": "Hero",
     "role": "Strike",
-    "n": "Katsuki Bakugo"
+    "n": "Katsuki Bakugo",
+    "characterNumber": 2
   },
   "ochaco": {
     "id": "ochaco",
     "g": "Hero",
     "role": "Rapid",
-    "n": "Ochaco Uraraka"
+    "n": "Ochaco Uraraka",
+    "characterNumber": 3
   },
   "tenya": {
     "id": "tenya",
     "g": "Hero",
     "role": "Rapid",
-    "n": "Tenya Iida"
+    "n": "Tenya Iida",
+    "characterNumber": 5
   },
   "tsuyu": {
     "id": "tsuyu",
     "g": "Hero",
     "role": "Rapid",
-    "n": "Tsuyu Asui"
+    "n": "Tsuyu Asui",
+    "characterNumber": 6
   },
   "shoto": {
     "id": "shoto",
     "g": "Hero",
     "role": "Strike",
-    "n": "Shoto Todoroki"
+    "n": "Shoto Todoroki",
+    "characterNumber": 4
   },
   "eijiro": {
     "id": "eijiro",
     "g": "Hero",
     "role": "Assault",
-    "n": "Eijiro Kirishima"
+    "n": "Eijiro Kirishima",
+    "characterNumber": 8
   },
   "momo": {
     "id": "momo",
     "g": "Hero",
     "role": "Support",
-    "n": "Momo Yaoyorozu"
+    "n": "Momo Yaoyorozu",
+    "characterNumber": 10
   },
   "fumikage": {
     "id": "fumikage",
     "g": "Hero",
     "role": "Assault",
-    "n": "Fumikage Tokoyami"
+    "n": "Fumikage Tokoyami",
+    "characterNumber": 11
   },
   "denki": {
     "id": "denki",
     "g": "Hero",
     "role": "Strike",
-    "n": "Denki Kaminari"
+    "n": "Denki Kaminari",
+    "characterNumber": 7
   },
   "neito": {
     "id": "neito",
     "g": "Hero",
     "role": "Technical",
-    "n": "Neito Monoma"
+    "n": "Neito Monoma",
+    "characterNumber": 104
   },
   "kendo": {
     "id": "kendo",
     "g": "Hero",
     "role": "Assault",
-    "n": "Itsuka Kendo"
+    "n": "Itsuka Kendo",
+    "characterNumber": 46
   },
   "ibara": {
     "id": "ibara",
     "g": "Hero",
     "role": "Support",
-    "n": "Ibara Shiozaki"
+    "n": "Ibara Shiozaki",
+    "characterNumber": 102
   },
   "mirio": {
     "id": "mirio",
     "g": "Hero",
     "role": "Rapid",
-    "n": "Mirio Togata"
+    "n": "Mirio Togata",
+    "characterNumber": 24
   },
   "tamaki": {
     "id": "tamaki",
     "g": "Hero",
     "role": "Strike",
-    "n": "Tamaki Amajiki"
+    "n": "Tamaki Amajiki",
+    "characterNumber": 26
   },
   "nejire": {
     "id": "nejire",
     "g": "Hero",
     "role": "Technical",
-    "n": "Nejire Hado"
+    "n": "Nejire Hado",
+    "characterNumber": 25
   },
   "hitoshi": {
     "id": "hitoshi",
     "g": "Hero",
     "role": "Strike",
-    "n": "Hitoshi Shinso"
+    "n": "Hitoshi Shinso",
+    "characterNumber": 105
   },
   "allmight": {
     "id": "allmight",
     "g": "Hero",
     "role": "Assault",
-    "n": "All Might"
+    "n": "All Might",
+    "characterNumber": 12
   },
   "armored": {
     "id": "armored",
     "g": "Hero",
     "role": "Technical",
-    "n": "Armored All Might"
+    "n": "Armored All Might",
+    "characterNumber": 200
   },
   "aizawa": {
     "id": "aizawa",
     "g": "Hero",
     "role": "Technical",
-    "n": "Shota Aizawa"
+    "n": "Shota Aizawa",
+    "characterNumber": 13
   },
   "mic": {
     "id": "mic",
     "g": "Hero",
     "role": "Strike",
-    "n": "Present Mic"
+    "n": "Present Mic",
+    "characterNumber": 109
   },
   "cement": {
     "id": "cement",
     "g": "Hero",
     "role": "Support",
-    "n": "Cementoss"
+    "n": "Cementoss",
+    "characterNumber": 101
   },
   "endeavor": {
     "id": "endeavor",
     "g": "Hero",
     "role": "Strike",
-    "n": "Endeavor"
+    "n": "Endeavor",
+    "characterNumber": 23
   },
   "hawks": {
     "id": "hawks",
     "g": "Hero",
     "role": "Rapid",
-    "n": "Hawks"
+    "n": "Hawks",
+    "characterNumber": 43
   },
   "mirko": {
     "id": "mirko",
     "g": "Hero",
     "role": "Rapid",
-    "n": "Mirko"
+    "n": "Mirko",
+    "characterNumber": 111
   },
   "star": {
     "id": "star",
     "g": "Hero",
     "role": "Strike",
-    "n": "Star and Stripe"
+    "n": "Star and Stripe",
+    "characterNumber": 114
   },
   "mtlady": {
     "id": "mtlady",
     "g": "Hero",
     "role": "Assault",
-    "n": "Mt. Lady"
+    "n": "Mt. Lady",
+    "characterNumber": 100
   },
   "tomura": {
     "id": "tomura",
     "g": "Villain",
     "role": "Strike",
-    "n": "Tomura Shigaraki"
+    "n": "Tomura Shigaraki",
+    "characterNumber": 15
   },
   "afo": {
     "id": "afo",
     "g": "Villain",
     "role": "Technical",
-    "n": "All For One"
+    "n": "All For One",
+    "characterNumber": 16
   },
   "afo_youth": {
     "id": "afo_youth",
     "g": "Villain",
     "role": "Assault",
-    "n": "All For One (Youth)"
+    "n": "All For One (Youth)",
+    "characterNumber": 201
   },
   "dabi": {
     "id": "dabi",
     "g": "Villain",
     "role": "Technical",
-    "n": "Dabi"
+    "n": "Dabi",
+    "characterNumber": 17
   },
   "himiko": {
     "id": "himiko",
     "g": "Villain",
     "role": "Technical",
-    "n": "Himiko Toga"
+    "n": "Himiko Toga",
+    "characterNumber": 18
   },
   "twice": {
     "id": "twice",
     "g": "Villain",
     "role": "Rapid",
-    "n": "Twice"
+    "n": "Twice",
+    "characterNumber": 37
   },
   "compress": {
     "id": "compress",
     "g": "Villain",
     "role": "Support",
-    "n": "Mr. Compress"
+    "n": "Mr. Compress",
+    "characterNumber": 38
   },
   "kurogiri": {
     "id": "kurogiri",
     "g": "Villain",
     "role": "Support",
-    "n": "Kurogiri"
+    "n": "Kurogiri",
+    "characterNumber": 103
   },
   "nagant": {
     "id": "nagant",
     "g": "Villain",
     "role": "Strike",
-    "n": "Lady Nagant"
+    "n": "Lady Nagant",
+    "characterNumber": 115
   },
   "overhaul": {
     "id": "overhaul",
     "g": "Villain",
     "role": "Support",
-    "n": "Overhaul"
+    "n": "Overhaul",
+    "characterNumber": 34
+  },
+  "gentle_criminal": {
+    "id": "gentle_criminal",
+    "g": "Villain",
+    "role": "Technical",
+    "n": "Gentle Criminal",
+    "characterNumber": 108
   }
 }
