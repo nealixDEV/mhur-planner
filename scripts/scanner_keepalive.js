@@ -25,11 +25,12 @@ function refreshKeepalive(options) {
     lastActivityMs = Number(lastActivityMs);
   }
 
-  if (Number.isFinite(lastActivityMs) && now - lastActivityMs < QUIET_PERIOD_MS) {
+  const heartbeatPath = path.join(root, HEARTBEAT_RELATIVE_PATH);
+  const heartbeatExists = fs.existsSync(heartbeatPath);
+  if (heartbeatExists && Number.isFinite(lastActivityMs) && now - lastActivityMs < QUIET_PERIOD_MS) {
     return { updated: false, reason: 'Recent repository activity already keeps the schedule awake.' };
   }
 
-  const heartbeatPath = path.join(root, HEARTBEAT_RELATIVE_PATH);
   fs.mkdirSync(path.dirname(heartbeatPath), { recursive: true });
   const record = {
     checkedAt: new Date(now).toISOString(),

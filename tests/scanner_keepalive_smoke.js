@@ -11,8 +11,8 @@ const now = Date.parse('2026-09-17T12:00:00.000Z');
 const heartbeatPath = path.join(root, '.github', 'scanner_heartbeat.json');
 
 try {
-  const first = refreshKeepalive({ root, now, lastActivityMs: now - QUIET_PERIOD_MS });
-  assert.equal(first.updated, true, 'A quiet repository should get a keepalive record.');
+  const first = refreshKeepalive({ root, now, lastActivityMs: now });
+  assert.equal(first.updated, true, 'A missing keepalive record should be initialized.');
   assert.equal(JSON.parse(fs.readFileSync(heartbeatPath, 'utf8')).checkedAt, new Date(now).toISOString());
 
   const fresh = refreshKeepalive({ root, now: now + 5 * 24 * 60 * 60 * 1000, lastActivityMs: now });
